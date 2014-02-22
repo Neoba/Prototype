@@ -38,6 +38,12 @@ cd Prototype\com.neoba.dsync.client\dist
 java -jar com.neoba.dsync.client.jar
 ```
 
+Screenshots
+-----------
+![Starting](https://raw2.github.com/Neoba/Prototype/master/Capture1.PNG)
+![Updating](https://raw2.github.com/Neoba/Prototype/master/Capture2.PNG)
+![Syncing](https://raw2.github.com/Neoba/Prototype/master/Capture3.PNG)
+
 Version
 ----
 
