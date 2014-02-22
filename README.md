@@ -40,9 +40,9 @@ java -jar com.neoba.dsync.client.jar
 
 Screenshots
 -----------
-![Starting](https://github.com/Neoba/Prototype/blob/master/Capture1.PNG)
-![Updating](https://github.com/Neoba/Prototype/blob/master/Capture2.PNG)
-![Syncing](https://github.com/Neoba/Prototype/blob/master/Capture3.PNG)
+![Starting](https://raw2.github.com/Neoba/Prototype/master/Capture1.PNG)
+![Updating](https://raw2.github.com/Neoba/Prototype/master/Capture2.PNG)
+![Syncing](https://raw2.github.com/Neoba/Prototype/master/Capture3.PNG)
 
 Version
 ----
