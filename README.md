@@ -34,8 +34,8 @@ java -jar com.neoba.dsync.client.jar
 ```
 - Server
 ```
-cd Prototype\com.neoba.dsync.client\dist
-java -jar com.neoba.dsync.client.jar
+cd Prototype\com.neoba.dsync.server\dist
+java -jar com.neoba.dsync.server.jar
 ```
 
 Screenshots
