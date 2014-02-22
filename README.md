@@ -1,13 +1,44 @@
-Prototype
-=========
+Dsync
+=====
 
-Build using netbeans. To run the prebuilt jars, 
+Neoba Dsync is a vcdiff based data synchronization platform
 
-1. Server:
-  cd com.neoba.dsync.server/dist
-  java -jar com.neoba.dsync.server
-  
-2. Client:
-  a. double click on the icon in dist if you have a gui or
-  b.  cd com.neoba.dsync.client/dist
-      java -jar com.neoba.dsync.server
+Features
+--------
+
+- client-server messages in wire are in *vcdiff* (Although slightly non-conformant to RFC 3284)
+- MD5 hash based versioning
+- This is a Proof of Concept program
+
+To Do
+-----
+
+- All messages in wire should be in vcdiff format
+- vcdiff format should conform to RFC 3284
+- diff currently being sent as a serialized `List<Object>`
+- diff should be compressed
+- Android/iOS clients
+- Users,Permissions & Everything in the specifications document
+
+Building
+--------
+All three components of this prototype are built using NetBeans IDE. Use Export.
+
+Running
+-------
+Use either the pre built version or build your own jar.
+- Client
+```
+cd Prototype\com.neoba.dsync.client\dist
+java -jar com.neoba.dsync.client.jar
+```
+- Server
+```
+cd Prototype\com.neoba.dsync.client\dist
+java -jar com.neoba.dsync.client.jar
+```
+
+Version
+----
+
+0.1
