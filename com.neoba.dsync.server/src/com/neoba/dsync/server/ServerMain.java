@@ -28,7 +28,6 @@ public class ServerMain extends Thread {
     private ServerSocket serverSocket;
 
     private String dictionary = "";
-    private String Targ = "";
 
     public ServerMain(int port) throws IOException {
         serverSocket = new ServerSocket(port);
@@ -69,7 +68,7 @@ public class ServerMain extends Thread {
                     } else {
                         delta = (List<Object>) ob;
                         System.out.println(delta);
-                        if (delta.size() == 0) {
+                        if (delta.isEmpty()) {
                             dictionary = "";
                         } else if (delta.size() == 1) {
                             dictionary = (String) delta.get(0);
