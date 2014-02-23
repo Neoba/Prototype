@@ -15,6 +15,7 @@ import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,10 +29,10 @@ public class ServerMain extends Thread {
     private ServerSocket serverSocket;
 
     private String dictionary = "";
+    private HashMap deltaHistory=new HashMap();
 
     public ServerMain(int port) throws IOException {
         serverSocket = new ServerSocket(port);
-        //serverSocket.setSoTimeout(10000);
     }
 
     public String getHash(String dictionary) throws NoSuchAlgorithmException {
@@ -44,9 +45,10 @@ public class ServerMain extends Thread {
         while (hashtext.length() < 32) {
             hashtext = "0" + hashtext;
         }
-        return hashtext;
+        return hashtext.substring(2, 12);
     }
 
+    @Override
     public void run() {
         while (true) {
             try {
@@ -54,32 +56,34 @@ public class ServerMain extends Thread {
                 Boolean f = false;
                 v = new Vcdiff();
                 v.blockSize = 3;
-                //ServerSocket serverSocket = new ServerSocket(1234);
                 Socket socket = serverSocket.accept();
-                List<Object> delta = new ArrayList<Object>();
+                List<Object> delta = new ArrayList<>();
                 try {
                     ObjectInputStream objectInput = new ObjectInputStream(socket.getInputStream());
                     Object ob = objectInput.readObject();
                     if (ob.getClass() == String.class) {
-                        String reply = (String) ob;
                         if (ob.equals("get_dictionary")) {
                             f = true;
                         }
                     } else {
                         delta = (List<Object>) ob;
-                        System.out.println(delta);
+                        //System.out.println(delta);
                         if (delta.isEmpty()) {
                             dictionary = "";
+                            
                         } else if (delta.size() == 1) {
+                            deltaHistory.clear();
                             dictionary = (String) delta.get(0);
+                            deltaHistory.put(getHash(dictionary), delta);
                         } else {
                             dictionary = v.decode(dictionary, delta);
+                            deltaHistory.put(getHash(dictionary), delta);
                             //System.out.println(dictionary);
                         }
                     }
-
-                    String hashtext=getHash(dictionary);
-                    System.out.println("entity version: " + hashtext);
+                    System.out.println(deltaHistory);
+                    //String hashtext=getHash(dictionary);
+                    //System.out.println("entity version: " + hashtext);
                     ObjectOutputStream objectOutput = new ObjectOutputStream(socket.getOutputStream());
                     if (f) {
                         objectOutput.writeObject(dictionary);
@@ -88,14 +92,10 @@ public class ServerMain extends Thread {
                         objectOutput.writeObject("Recived_delta");
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(ServerMain.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (NoSuchAlgorithmException ex) {
+                } catch (        ClassNotFoundException | NoSuchAlgorithmException ex) {
                     Logger.getLogger(ServerMain.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } catch (IOException e) {
-                e.printStackTrace();
             }
         }
     }
@@ -106,7 +106,6 @@ public class ServerMain extends Thread {
             Thread t = new ServerMain(port);
             t.start();
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
