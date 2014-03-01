@@ -20,7 +20,7 @@ public class RollingHash {
  * @param modulo the prime number used in finding modulo
  * @return base^power in modulo
  */
-    int moduloExponet(int base, int power, int modulo) {
+    int moduloExponent(int base, int power, int modulo) {
         int toReturn = 1, i;
         for (i = 0; i < power; i += 1) {
             toReturn = (base * toReturn) % modulo;
@@ -38,10 +38,10 @@ public class RollingHash {
         int i;
         int len = hashArray.length;
         for (i = 0; i < len; i += 1) {
-            hash += ((int) (hashArray[i]) * moduloExponet(base, len - 1 - i, mod)) % mod;
+            hash += ((int) (hashArray[i]) * moduloExponent(base, len - 1 - i, mod)) % mod;
             hash %= mod;
         }
-        lastPower = moduloExponet(base, len - 1, mod);
+        lastPower = moduloExponent(base, len - 1, mod);
         lastString = toHash;
         lastHash = hash;
         return hash;
