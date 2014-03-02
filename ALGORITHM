@@ -6,8 +6,9 @@ All the operations are done modulo a prime number so that we don’t have to dea
 
 Inputs: String S of size n, String P of size m
 
-global an				#the last power used
+global an			      	#the last power used
 global rolling_hash 	#iniial value
+global a=10           #coefficient(base)
 
 algorithm hash(String S)
 	an=1
@@ -21,7 +22,7 @@ algorithm hash(String S)
 hashp=hash(P)
 rolling_hash=hash(S)
 
-algorithm rollinghash(String a):
+algorithm rollinghash(String S):
 	if rolling_hash = hash_p:
   		we found a match: S==P
 	for i from 1 to m - n + 1 do

@@ -30,20 +30,23 @@ public class RollingHashTest extends TestCase {
      */
     public void testHash() {
         System.out.println("testing RollingHashTest: hash");
-        RollingHash instance = new RollingHash();        
+        RollingHash instance = new RollingHash();   
+        assertEquals(instance.hash(""), 0);
+        assertEquals(instance.hash("a"), 97);
+        assertEquals(instance.hash("ab"), 25027); //used later
         assertEquals(instance.hash("no"), 28381);
+        assertEquals(instance.hash("test"), 975753401);
     }
 
     /**
      * Test of nextHash method, of class RollingHash.
      */
     public void testNextHash() {
-        System.out.println("nextHash");
-        char toAdd = ' ';
+        //TODO add more test cases
+        System.out.println("testing RollingHashTest: nextHash");
         RollingHash instance = new RollingHash();
-        int expResult = 0;
-        int result = instance.nextHash(toAdd);
-        assertEquals(expResult, result);
+        instance.hash("ab");
+        assertEquals(instance.nextHash('c'), (25027-257*97)*257+99); //(lastHash-lastPower*new_char)*base+new_character
     }
     
 }

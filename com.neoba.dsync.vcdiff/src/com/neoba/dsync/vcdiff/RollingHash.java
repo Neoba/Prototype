@@ -37,11 +37,11 @@ public class RollingHash {
  */
     int hash(String toHash) {
         int hash = 0;
-        char[] hashArray = toHash.toCharArray();
+        char[] toHashArray = toHash.toCharArray();
         int i;
-        int len = hashArray.length;
+        int len = toHashArray.length;
         for (i = 0; i < len; i += 1) {
-            hash += ((int) (hashArray[i]) * moduloExponent(base, len - 1 - i, mod)) % mod;
+            hash += ((int) (toHashArray[i]) * moduloExponent(base, len - 1 - i, mod)) % mod;
             hash %= mod;
         }
         lastPower = moduloExponent(base, len - 1, mod);
