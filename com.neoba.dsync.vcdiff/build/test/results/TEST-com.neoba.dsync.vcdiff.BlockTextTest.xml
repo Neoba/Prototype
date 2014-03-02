@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="AtulVinayak-PC" name="com.neoba.dsync.vcdiff.RollingHashTest" skipped="0" tests="3" time="0.216" timestamp="2014-03-02T08:06:53">
+<testsuite errors="1" failures="0" hostname="AtulVinayak-PC" name="com.neoba.dsync.vcdiff.BlockTextTest" skipped="0" tests="1" time="0.133" timestamp="2014-03-02T08:06:52">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -42,7 +42,7 @@
     <property name="user.name" value="Atul Vinayak" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.neoba.dsync.vcdiff.RollingHashTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\test\results\TEST-com.neoba.dsync.vcdiff.RollingHashTest.xml crashfile=C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\junitvmwatcher2886896511926203893.properties propsfile=C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\junit7374847762570187946.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.neoba.dsync.vcdiff.BlockTextTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\test\results\TEST-com.neoba.dsync.vcdiff.BlockTextTest.xml crashfile=C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\junitvmwatcher2997000103558186856.properties propsfile=C:\Users\Atul Vinayak\Documents\GitHub\Prototype\com.neoba.dsync.vcdiff\build\junit1836860298543790428.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -167,7 +167,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
     <property name="netbeans.user" value="C:\Users\Atul Vinayak\AppData\Roaming\NetBeans\7.4" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\ATULVI~1\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -310,12 +309,13 @@
     <property name="do.archive+splashscreen.available" value="true" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="com.neoba.dsync.vcdiff.RollingHashTest" name="testHash" time="0.006" />
-  <testcase classname="com.neoba.dsync.vcdiff.RollingHashTest" name="testNextHash" time="0.004" />
-  <testcase classname="com.neoba.dsync.vcdiff.RollingHashTest" name="testModuloExponent" time="0.0" />
-  <system-out><![CDATA[testing RollingHashTest: hash
-testing RollingHashTest: nextHash
-testing RollingHashTest: moduloExponent
+  <testcase classname="com.neoba.dsync.vcdiff.BlockTextTest" name="testBlockText" time="0.012">
+    <error message="String index out of range: 8" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: 8
+	at java.lang.String.substring(String.java:1907)
+	at com.neoba.dsync.vcdiff.BlockTextTest.testBlockText(BlockTextTest.java:30)
+</error>
+  </testcase>
+  <system-out><![CDATA[BlockText: BlockText
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

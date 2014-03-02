@@ -1,6 +1,6 @@
 Rabin-Karp Algorithm
 ====================
-
+This is used in RollingHash.java of com.neoba.dsync.vcdiff package
 Problem: Given a string P of length n and a string S of length m find out all the occurrences of P within S
 All the operations are done modulo a prime number so that we don’t have to deal with large integers.
 
