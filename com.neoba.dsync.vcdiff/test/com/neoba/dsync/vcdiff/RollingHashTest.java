@@ -34,18 +34,16 @@ public class RollingHashTest extends TestCase {
         assertEquals(instance.hash("no"), 28381);
     }
 
-//    /**
-//     * Test of nextHash method, of class RollingHash.
-//     */
-//    public void testNextHash() {
-//        System.out.println("nextHash");
-//        char toAdd = ' ';
-//        RollingHash instance = new RollingHash();
-//        int expResult = 0;
-//        int result = instance.nextHash(toAdd);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
-//    }
-//    
+    /**
+     * Test of nextHash method, of class RollingHash.
+     */
+    public void testNextHash() {
+        System.out.println("nextHash");
+        char toAdd = ' ';
+        RollingHash instance = new RollingHash();
+        int expResult = 0;
+        int result = instance.nextHash(toAdd);
+        assertEquals(expResult, result);
+    }
+    
 }

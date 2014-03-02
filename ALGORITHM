@@ -1,0 +1,31 @@
+Rabin-Karp Algorithm
+====================
+
+Problem: Given a string P of length n and a string S of length m find out all the occurrences of P within S
+All the operations are done modulo a prime number so that we don’t have to deal with large integers.
+
+Inputs: String S of size n, String P of size m
+
+global an				#the last power used
+global rolling_hash 	#iniial value
+
+algorithm hash(String S)
+	an=1
+	rolling_hash = 0
+	for i from 0 to n do
+  		rolling_hash = (rolling_hash * a + S[i]) % MOD
+  		an = (an * a) % MOD
+  	done
+  	return rolling_hash
+
+hashp=hash(P)
+rolling_hash=hash(S)
+
+algorithm rollinghash(String a):
+	if rolling_hash = hash_p:
+  		we found a match: S==P
+	for i from 1 to m - n + 1 do
+  		rolling_hash = (rolling_hash * a + S[i + n - 1] - an * S[i - 1]) % MOD
+  		if rolling_hash = hash_p:
+      		we found a match: S[i .. i + n - 1]==P
+    done

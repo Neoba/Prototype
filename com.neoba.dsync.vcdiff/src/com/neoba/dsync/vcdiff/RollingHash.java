@@ -28,7 +28,10 @@ public class RollingHash {
         return toReturn;
     }
 /**
- * Rabin-Karp rolling hash used inside the encoder.
+ * Rabin-Karp rolling hash
+ * this function calculates the initial value of the hash,
+ * so that additional characters(hash of) can be added to the 
+ * current hash using nextHash.
  * @param toHash the string whose hash is to be calculated
  * @return the hash of the input string
  */
@@ -48,8 +51,10 @@ public class RollingHash {
     }
 
 /**
- * Rabin-Karp rolling hash used inside the encoder.
+ * Rabin-Karp rolling hash
  * nextHash is used once a hash is already calculated.
+ * the first character's value*lastPower is decreased and 
+ * new character's hash is added to the previous hash
  * @param toAdd
  * @return 
  */
