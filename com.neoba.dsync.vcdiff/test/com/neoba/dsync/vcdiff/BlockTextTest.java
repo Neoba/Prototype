@@ -6,7 +6,6 @@
 
 package com.neoba.dsync.vcdiff;
 
-import java.util.List;
 import junit.framework.TestCase;
 
 /**
@@ -20,7 +19,7 @@ public class BlockTextTest extends TestCase {
     }
 
     /**
-     * Test of getBlocks method, of class BlockText.
+     * Test of constructor, of class BlockText.
      */
     public void testBlockText() {
         System.out.println("BlockText: BlockText");
