@@ -16,12 +16,10 @@ public class Dictionary {
     }
 
     void put(int key, Block block) {
-        List<Block> p = new ArrayList<Block>();
-        List<Block> q = new ArrayList<Block>();
+        List<Block> q;
         if (!this.dictionary.containsKey(key)) {
-            dictionary.put(key, p);
+            dictionary.put(key, new ArrayList<>());
         }
-
         q = (List<Block>) this.dictionary.get(key);
         q.add((Block) block);
         this.dictionary.put(key, q);

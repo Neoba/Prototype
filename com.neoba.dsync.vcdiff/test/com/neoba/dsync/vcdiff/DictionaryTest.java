@@ -22,27 +22,25 @@ public class DictionaryTest extends TestCase {
      * Test of put method, of class Dictionary.
      */
     public void testPut() {
-        System.out.println("put");
-        int key = 0;
-        Block block = null;
+        System.out.println("Dictionary: put");
+        int key = 123;
+        Block block = new Block("test",1);
         Dictionary instance = new Dictionary();
         instance.put(key, block);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of populateDictionary method, of class Dictionary.
      */
-//    public void testPopulateDictionary() {
-//        System.out.println("populateDictionary");
-//        BlockText dictText = null;
-//        RollingHash hasher = null;
-//        Dictionary instance = new Dictionary();
-//        instance.populateDictionary(dictText, hasher);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    public void testPopulateDictionary() {
+        System.out.println("populateDictionary");
+        BlockText dictText = null;
+        RollingHash hasher = null;
+        Dictionary instance = new Dictionary();
+        instance.populateDictionary(dictText, hasher);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 //
 //    /**
 //     * Test of getMatch method, of class Dictionary.
