@@ -44,7 +44,7 @@ public class Dictionary {
         if (this.dictionary.containsKey(hash)) {
             blocks = (List<Block>) this.dictionary.get(hash);
             for (i = 0, len = blocks.size(); i < len; i += 1) {
-                if (blocks.get(i).getText().equals(target.substring(0, blockSize))) {
+                if (blocks.get(i).getText().equals(target.substring(0,blockSize))) {
                     if (this.dictionaryText != null && blocks.get(i).getNextBlock() == null) {
                         dictText = this.dictionaryText.getOriginalText().substring(blocks.get(i).getOffset() + blockSize);
                         targetText = target.substring(blockSize);

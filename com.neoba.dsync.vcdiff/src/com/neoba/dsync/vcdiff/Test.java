@@ -27,5 +27,14 @@ public class Test {
         //System.out.println(out.size());
         String s = v.decode(dd_,delta);
         System.out.println(s);
+        
+        String testcase="abcdcdcd";
+        BlockText dictText = new BlockText(testcase,2);
+        RollingHash hasher = new RollingHash();
+        Dictionary instance = new Dictionary();
+        instance.populateDictionary(dictText, hasher);
+        
+        System.out.println(instance.getMatch(25543, 2, "cd").text);
+        
     }
 }

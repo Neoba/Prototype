@@ -45,6 +45,7 @@ public class DictionaryTest extends TestCase {
         // {25543:[("cd",2)] , 25027:[("ab",0),("ab",4)]}
         assertEquals(((ArrayList<Block>)instance.dictionary.get(25543)).get(0).text,"cd");
         assertEquals(((ArrayList<Block>)instance.dictionary.get(25543)).get(0).offset,2);
+        
         assertEquals(((ArrayList<Block>)instance.dictionary.get(25027)).get(0).text,"ab");
         assertEquals(((ArrayList<Block>)instance.dictionary.get(25027)).get(0).offset,0);
         assertEquals(((ArrayList<Block>)instance.dictionary.get(25027)).get(1).text,"ab");
@@ -52,21 +53,22 @@ public class DictionaryTest extends TestCase {
         
         
     }
-//
-//    /**
-//     * Test of getMatch method, of class Dictionary.
-//     */
-//    public void testGetMatch() {
-//        System.out.println("getMatch");
-//        int hash = 0;
-//        int blockSize = 0;
-//        String target = "";
-//        Dictionary instance = new Dictionary();
-//        Block expResult = null;
-//        Block result = instance.getMatch(hash, blockSize, target);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//    
+
+    /**
+     * Test of getMatch method, of class Dictionary.
+     */
+    public void testGetMatch() {
+        System.out.println("getMatch");
+        int hash = 0;
+        int blockSize = 0;
+        String target = "";
+        Dictionary instance = new Dictionary();
+        Block expResult = null;
+        Block result = instance.getMatch(hash, blockSize, target);
+        assertEquals(expResult, result);
+        // TODO this function is still untested.
+        // Deploy tests that cover all possible inputs
+        
+    }
+    
 }

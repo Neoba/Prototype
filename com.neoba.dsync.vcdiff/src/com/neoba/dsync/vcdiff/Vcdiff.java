@@ -17,7 +17,7 @@ public class Vcdiff {
     }
 
    public List<Object> encode(String dict, String target) {
-        List<Object> diffString = new ArrayList<Object>();
+        List<Object> diffString = new ArrayList<>();
         int targetLength;
         int targetIndex;
         int currentHash;
