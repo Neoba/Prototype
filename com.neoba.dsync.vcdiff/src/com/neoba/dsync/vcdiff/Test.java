@@ -14,8 +14,8 @@ public class Test {
     public static void main(String args[]) throws IOException, ClassNotFoundException {
         Vcdiff v;
         v = new Vcdiff();
-        v.blockSize = 3;
-        List<Object> delta = v.encode(dd_, tt_);
+        v.blockSize = 2;
+        List<Object> delta = v.encode("abcdefghijklmnop","abcdwxyzefghefghefghzzzz");
         System.out.println(delta);
 
         //ByteArrayOutputStream out = new ByteArrayOutputStream();
