@@ -8,7 +8,11 @@ public class BlockText {
     String originalText;
     int blockSize;
     List<Block> blocks;
-
+    /**
+     * creates a list of Blocks
+     * @param originalText
+     * @param blockSize 
+     */
     BlockText(String originalText, int blockSize) {
         this.originalText = originalText;
         this.blockSize = blockSize;
