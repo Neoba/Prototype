@@ -27,7 +27,10 @@
 		
 		[b initwith:s1:i];
 		[blocks addObject:[b copy]];
-		
+		/*for(j=0;j<[blocks count];++j)
+		{
+			NSLog(@"%@%d\n",[[blocks objectAtIndex:j] gettext],j);
+		}	*/
 	}
 			
 }
