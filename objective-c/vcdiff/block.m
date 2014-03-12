@@ -10,13 +10,14 @@
 
 
 @implementation block
--(void) initwith:(NSString *) str:(int) off
+-(void) initwith:(NSMutableString *) str:(int) off
 {
 	text=str;
 	offset=off;
+	nextblock=NULL;
 	
 }
--(NSString *) gettext
+-(NSMutableString *) gettext
 {
 	return text;
 }

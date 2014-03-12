@@ -9,12 +9,12 @@
 @interface block :NSObject <NSCopying>
 {
 	int offset;
-	NSString *text;
+	NSMutableString *text;
 	block *nextblock;
 	
 }
--(void) initwith:(NSString *) str:(int) off; 
--(NSString *) gettext;
+-(void) initwith:(NSMutableString *) str:(int) off; 
+-(NSMutableString *) gettext;
 -(int) getoffset;
 -(void) setnextblock:(block *) b;
 -(block *) getnextblock;

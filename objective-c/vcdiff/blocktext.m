@@ -10,9 +10,9 @@
 
 
 @implementation blocktext
--(void)initwith:(NSString *)orgtxt:(int) bsize
+-(void)initwith:(NSMutableString *)orgtxt:(int) bsize
 {
-	NSString *s1=[[NSString alloc]init];
+	NSMutableString *s1=[[NSMutableString alloc]init];
 	blocks=[[NSMutableArray alloc] init];
 	block *b=[[block alloc] init];
 	originaltext=orgtxt;
@@ -27,11 +27,7 @@
 		
 		[b initwith:s1:i];
 		[blocks addObject:[b copy]];
-		/*for(j=0;j<[blocks count];++j)
-		{
-			NSLog(@"%@%d\n",[[blocks objectAtIndex:j] gettext],j);
-		}	*/
-	}
+			}
 			
 }
 -(NSMutableArray *)getblocks
@@ -39,7 +35,7 @@
 	
 	return blocks;
 }
--(NSString *)getoriginaltext
+-(NSMutableString *)getoriginaltext
 {
 	return originaltext;
 }
