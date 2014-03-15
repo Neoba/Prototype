@@ -4,12 +4,10 @@ public class Block {
 
     String text;
     int offset;
-    Block nextBlock;
-
+    
     Block(String text, int offset) {
         this.text = text;
         this.offset = offset;
-        this.nextBlock = null;
     }
 
     String getText() {
@@ -18,13 +16,5 @@ public class Block {
 
     int getOffset() {
         return this.offset;
-    }
-
-    void setNextBlock(Block nextBlock) {
-        this.nextBlock = nextBlock;
-    }
-    
-    Block getNextBlock() {
-        return this.nextBlock;
     }
 }

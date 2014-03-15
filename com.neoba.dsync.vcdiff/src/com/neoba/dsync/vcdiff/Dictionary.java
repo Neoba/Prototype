@@ -45,7 +45,7 @@ public class Dictionary {
             blocks = (List<Block>) this.dictionary.get(hash);
             for (i = 0, len = blocks.size(); i < len; i += 1) {
                 if (blocks.get(i).getText().equals(target.substring(0,blockSize))) {
-                    if (this.dictionaryText != null && blocks.get(i).getNextBlock() == null) {
+                    if (this.dictionaryText != null) {
                         dictText = this.dictionaryText.getOriginalText().substring(blocks.get(i).getOffset() + blockSize);
                         targetText = target.substring(blockSize);
                         if (dictText.length() == 0 || targetText.length() == 0) {
@@ -57,8 +57,6 @@ public class Dictionary {
                             currentPointer += 1;
                         }
                         return new Block(blocks.get(i).getText() + dictText.substring(0, currentPointer), blocks.get(i).getOffset());
-                    } else if (blocks.get(i).getNextBlock() != null) {
-                        return blocks.get(i);
                     } else {
                         return blocks.get(i);
                     }
