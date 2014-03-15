@@ -19,7 +19,7 @@ public class BlockText {
         int i;
         int len = originalText.split("").length - 1;
         int endIndex;
-        blocks = new ArrayList<Block>();
+        blocks = new ArrayList<>();
 
         for (i = 0; i < len; i += blockSize) {
             endIndex = i + blockSize >= len ? len : i + blockSize;
