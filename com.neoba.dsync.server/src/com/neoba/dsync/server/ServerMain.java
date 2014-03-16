@@ -55,7 +55,7 @@ public class ServerMain extends Thread {
                 Vcdiff v;
                 Boolean f = false;
                 v = new Vcdiff();
-                v.blockSize = 3;
+                v.blockSize = 2;
                 Socket socket = serverSocket.accept();
                 List<Object> delta = new ArrayList<>();
                 try {

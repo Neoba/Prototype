@@ -1,2 +1,4 @@
 /com.neoba.dsync.vcdiff/dist/
 /com.neoba.dsync.vcdiff/build/
+/com.neoba.dsync.server/build/
+/com.neoba.dsync.client/build/

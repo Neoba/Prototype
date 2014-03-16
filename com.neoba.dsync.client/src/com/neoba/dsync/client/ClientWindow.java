@@ -196,7 +196,7 @@ public class ClientWindow extends javax.swing.JFrame {
             String target = taEntity.getText();
             Vcdiff v;
             v = new Vcdiff();
-            v.blockSize = 3;
+            v.blockSize = 2;
 
             List<Object> delta = v.encode(dictionary, target);
             dictionary = target;

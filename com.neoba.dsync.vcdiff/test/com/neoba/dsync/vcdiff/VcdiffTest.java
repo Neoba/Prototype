@@ -33,9 +33,13 @@ public class VcdiffTest extends TestCase {
         assertEquals((Integer)result.get(0),(Integer)0);
         assertEquals((Integer)result.get(1),(Integer)4);
         assertEquals((String)result.get(2),"wxyz");
-        assertEquals((Integer)result.get(3),(Integer) (-6));
+        assertEquals((Integer)result.get(3),(Integer)4);
         assertEquals((Integer)result.get(4),(Integer)4);
-        assertEquals((String)result.get(5),"zzzz");
+        assertEquals((Integer)result.get(5),(Integer)4);
+        assertEquals((Integer)result.get(6),(Integer)4);
+        assertEquals((Integer)result.get(7),(Integer)4);
+        assertEquals((Integer)result.get(8),(Integer)4);
+        assertEquals((String)result.get(9),"zzzz");
         
     }
 
@@ -62,15 +66,16 @@ public class VcdiffTest extends TestCase {
         String result = instance.decode("abcdefghijklmnop", diff);
         assertEquals("abcdwxyzefghefghefghzzzz", result);
         
-        diff = new ArrayList<>();
-        diff.add(0);
-        diff.add(4);
-        diff.add("wxyz");
-        diff.add(-6);
-        diff.add(4);
-        diff.add("zzzz");
-        result = instance.decode("abcdefghijklmnop", diff);
-        assertEquals("abcdwxyzefghefghefghzzzz", result);
+        //RLE input
+//        diff = new ArrayList<>();
+//        diff.add(0);
+//        diff.add(4);
+//        diff.add("wxyz");
+//        diff.add(-6);
+//        diff.add(4);
+//        diff.add("zzzz");
+//        result = instance.decode("abcdefghijklmnop", diff);
+//        assertEquals("abcdwxyzefghefghefghzzzz", result);
     }
     
 }
