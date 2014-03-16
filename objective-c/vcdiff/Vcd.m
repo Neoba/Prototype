@@ -1,18 +1,34 @@
 #import <Foundation/Foundation.h>
-#include "blocktext.h"
-#include "rollinghash.h"
-
+#include "dictionary.h"
+#define SIZE 3
 int main(int argc, char *argv[])
 {
-	int h=1,i;
 	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	rollinghash *rh=[[rollinghash alloc] init];
-	[rh initwith];
-	NSMutableString *str=[[NSMutableString alloc] init];
-	[str setString:@"a"];
-	h=[rh hash:str];
-	i=[rh nexthash:'b'];
-	NSLog(@"%i %i",h,i);
-	[pool drain];
+	int i,has;
+	
+	block *blk;
+	blocktext *b= [[blocktext alloc] init];
+	dictionary *d=[[dictionary alloc] init];
+	rollinghash *h=[[rollinghash alloc] init];
+	[h initwith];
+	[d initwith];
+	NSMutableString *dict=[[NSMutableString alloc] init];
+	[dict setString:@"Akassh k Sunny"];
+	NSMutableString *target=[[NSMutableString alloc] init],*tb=[[NSMutableString alloc] init];
+	[target setString:@"Akasch k Sunny"];	
+	[b initwith: dict:SIZE];
+	[d populatedictionary:b :h];
+	for(i=0;i<=[target length]-SIZE;++i)
+	{
+		[tb setString:[target substringWithRange:NSMakeRange(i, SIZE)]];
+			has=[h hash:tb];
+		blk=[[block alloc] init];
+		if(blk=[d getmatch:has :SIZE :[target substringFromIndex:i]])
+			NSLog(@"%d %@ %d",i,[blk gettext],[blk getoffset]);
+	
+	}
+	
+	
 	return 0;	
+	[pool drain];
 }

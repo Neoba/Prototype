@@ -38,7 +38,6 @@
 	lastpower=[self moduloexponent:base:len-1:mod];
 	laststring=tohash;
 	lasthash=hash;
-	NSLog(@"%@",laststring);
 	return hash;
 }
 -(int) nexthash:(char)toadd
@@ -51,7 +50,6 @@
 		hash+=mod;
 	[laststring deleteCharactersInRange:NSMakeRange(0, 1)];
 	[laststring appendString:[NSMutableString stringWithFormat:@"%c", toadd]];
-	NSLog(@"%@",laststring);
 	lasthash=hash;
 	return hash;
 }

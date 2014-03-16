@@ -9,13 +9,13 @@
 #include "block.h"
 
 @interface blocktext : NSObject {
-	NSString *originaltext;
+	NSMutableString *originaltext;
 	int blocksize;
 	NSMutableArray *blocks;
 
 }
--(void)initwith:(NSString *)orgtxt: (int) bsize;
+-(void)initwith:(NSMutableString *)orgtxt: (int) bsize;
 -(NSMutableArray *)getblocks;
--(NSString *)getoriginaltext;
+-(NSMutableString *)getoriginaltext;
 -(int)getblocksize;
 @end
