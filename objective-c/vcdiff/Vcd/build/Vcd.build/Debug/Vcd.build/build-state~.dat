@@ -1,0 +1,93 @@
+TVcd
+v7
+r0
+t415955794.303230
+cCheck dependencies
+cProcessPCH /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch Vcd_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o /Users/neoba/Desktop/Vcd/Vcd.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/neoba/Desktop/Vcd/build/Debug/Vcd normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c0000000053189BED00000000000000EE
+t1394121709
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004A600B8400000000000013E6
+t1247808388
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004DDDB0010000000000B38DD0
+t1306374145
+s11767248
+
+N/Users/neoba/Desktop/Vcd/Vcd.m
+c00000000531AC3CF00000000000002FE
+t1394262991
+s766
+i<Foundation/Foundation.h>
+
+N/Users/neoba/Desktop/Vcd/Vcd_Prefix.pch
+c00000000531AC3B90000000000000094
+t1394262969
+s148
+i<Foundation/Foundation.h>
+
+N/Users/neoba/Desktop/Vcd/build/Debug/Vcd
+t1394262994
+s10624
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.LinkFileList
+c00000000531AC3CF0000000000000055
+t1394262991
+s85
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o
+t1394262994
+s11912
+
+N/var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch
+t1394262994
+s41405200
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies415955791#415955791#0(0"0(0#1#0"4300882208#0"0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o /Users/neoba/Desktop/Vcd/Vcd.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s415955794.164540
+e415955794.279902
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o
+x/Users/neoba/Desktop/Vcd/Vcd.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@38"Compile /Users/neoba/Desktop/Vcd/Vcd.m415955794#415955794#0(0"0(0#0#30"/Users/neoba/Desktop/Vcd/Vcd.m4300882208#1214"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/Vcd.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o0#
+
+CLd /Users/neoba/Desktop/Vcd/build/Debug/Vcd normal x86_64
+s415955794.280009
+e415955794.303175
+r1
+xLd
+x/Users/neoba/Desktop/Vcd/build/Debug/Vcd
+xnormal
+xx86_64
+lSLF07#2@45"Link /Users/neoba/Desktop/Vcd/build/Debug/Vcd415955794#415955794#0(0"0(0#0#0"4300882208#434"    cd /Users/neoba/Desktop/Vcd    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/neoba/Desktop/Vcd/build/Debug -F/Users/neoba/Desktop/Vcd/build/Debug -filelist /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/neoba/Desktop/Vcd/build/Debug/Vcd0#
+
+CProcessPCH /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch Vcd_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s415955791.646074
+e415955794.164296
+r1
+xProcessPCH
+x/var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch
+xVcd_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@25"Precompile Vcd_Prefix.pch415955791#415955794#0(0"0(0#0#39"/Users/neoba/Desktop/Vcd/Vcd_Prefix.pch4300882208#1140"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -c /Users/neoba/Desktop/Vcd/Vcd_Prefix.pch -o /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch0#
+
