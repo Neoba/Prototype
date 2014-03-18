@@ -2,8 +2,8 @@
 //  rollinghash.h
 //  Vcd
 //
-//  Created by Neoba Systems on 09/03/14.
-//  Copyright 2014 __MyCompanyName__. All rights reserved.
+//  Created by Akash K Sunny on 09/03/14.
+//  Copyright 2014 Neoba Systems. All rights reserved.
 //
 
 

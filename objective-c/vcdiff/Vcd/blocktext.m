@@ -2,8 +2,8 @@
 //  blocktext.m
 //  Vcd
 //
-//  Created by Neoba Systems on 08/03/14.
-//  Copyright 2014 __MyCompanyName__. All rights reserved.
+//  Created by Akash K Sunny on 08/03/14.
+//  Copyright 2014 Neoba Systems. All rights reserved.
 //
 
 #import "blocktext.h"

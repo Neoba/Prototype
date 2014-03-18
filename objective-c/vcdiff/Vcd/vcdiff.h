@@ -2,8 +2,8 @@
 //  vcdiff.h
 //  Vcd
 //
-//  Created by Neoba Systems on 15/03/14.
-//  Copyright 2014 __MyCompanyName__. All rights reserved.
+//  Created by Akash K Sunny on 15/03/14.
+//  Copyright 2014 Neoba Systems. All rights reserved.
 //
 
 #import "dictionary.h"
