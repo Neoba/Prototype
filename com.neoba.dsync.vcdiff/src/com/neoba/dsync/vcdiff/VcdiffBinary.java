@@ -1,33 +1,53 @@
 package com.neoba.dsync.vcdiff;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.DataFormatException;
 
 public class VcdiffBinary {
 
     RollingHash hash;
     Dictionary dictText;
+    Charset charset;
+    CharsetEncoder encoder;
+    CharsetDecoder decoder;
+    byte nullByte;
     public int blockSize;
+    boolean enableCompression;
 
-    public VcdiffBinary() {
+    public VcdiffBinary(boolean enableCompression) {
         this.hash = new RollingHash();
         this.dictText = new Dictionary();
         this.blockSize = 20;
         this.hash = new RollingHash();
+        this.charset = Charset.forName("UTF-8");
+        this.encoder = charset.newEncoder();
+        this.decoder = charset.newDecoder();
+        this.nullByte = 0x0;
+        this.enableCompression=enableCompression;
     }
 
-    public List<Object> encode(String dict, String target) {
-        List<Object> diffString = new ArrayList<>();
+    public byte[] encode(String dict, String target) throws CharacterCodingException, FileNotFoundException, IOException {
+        List<Object> diffArray = new ArrayList<>();
         int targetLength;
         int targetIndex;
         int currentHash;
-        int runLength;
+        ByteBuffer buf;
         String addBuffer = "";
         Block match;
         if (dict.equals(target)) {
-            diffString.add(0);
-            diffString.add(0);
-            return diffString;
+            if(enableCompression)
+                return CompressionUtils.compress(new byte[]{0, 0, 0, 0, 0, 0, 0, 0});
+            else
+                return new byte[]{0, 0, 0, 0, 0, 0, 0, 0};
         }
         this.dictText.populateDictionary(new BlockText(dict, this.blockSize), this.hash);
         targetLength = target.length();
@@ -35,7 +55,7 @@ public class VcdiffBinary {
         currentHash = -1;
         while (targetIndex < targetLength) {
             if (targetLength - targetIndex < this.blockSize) {
-                diffString.add(addBuffer + target.substring(targetIndex, targetLength));
+                diffArray.add(addBuffer + target.substring(targetIndex, targetLength));
                 break;
             } else {
                 if (currentHash == -1) {
@@ -52,49 +72,85 @@ public class VcdiffBinary {
                     targetIndex += 1;
                 } else {
                     if (addBuffer.length() > 0) {
-                        diffString.add(addBuffer);
+                        diffArray.add(addBuffer);
                         addBuffer = "";
                     }
-                    diffString.add(match.getOffset());
-                    diffString.add(match.getText().length());
+                    diffArray.add(match.getOffset());
+                    diffArray.add(match.getText().length());
                     targetIndex += match.getText().length();
                     currentHash = -1;
                 }
             }
         }
-        int index=0;
-        int len=diffString.size();
-        for(int i=0;i<len;i++){
-            if(diffString.get(i).getClass()==String.class){
-                diffString.add(diffString.get(i));
-                diffString.set(i,-1*++index );
+        int stringsTotalBytes = 0;
+        int index = 0;
+        int len = diffArray.size();
+        for (int i = 0; i < len; i++) {
+            if (diffArray.get(i).getClass() == String.class) {
+                diffArray.add(diffArray.get(i));
+                stringsTotalBytes += (((String) diffArray.get(i)).length() + 1);
+                diffArray.set(i, -1 * ++index);
             }
         }
-        diffString.add(0, index);
-        diffString.add(0, len);
-        return diffString;
+        diffArray.add(0, index);
+        diffArray.add(0, len);
+
+        buf = ByteBuffer.allocate((len + 2) * 4 + stringsTotalBytes);
+        for (int i = 0; i < len + 2; i++) {
+            buf.putInt((int) diffArray.get(i));
+        }
+        if (len > 0) {
+            for (int i = len + 2; i < len + 2 + index; i++) {
+                buf.put(encoder.encode(CharBuffer.wrap((String) diffArray.get(i))));
+                buf.put(nullByte);
+            }
+        }
+        buf.flip();
+        ByteBuffer finalbuf = ByteBuffer.wrap(enableCompression?CompressionUtils.compress(buf.array()):buf.array());
+        return finalbuf.array();
+
     }
 
-    public String decode(String dict, List<Object> diff) {
+    public String decode(String dict, byte[] diffBuffer) throws FileNotFoundException, IOException, DataFormatException {
         List<String> output = new ArrayList<>();
-
+        List<Object> diff = new ArrayList<>();
+        byte[] data;
         String outs = "";
         int i;
-        int len=(int)diff.remove(0);
-        int strcount=(int)diff.remove(0);
-        for(i=0;i<len;i++){
-            if((int)diff.get(i)<0){
-                diff.set(i, diff.get(len-1+(-1)*(int)diff.get(i)));
-                
+
+        data = enableCompression?CompressionUtils.decompress(diffBuffer):diffBuffer;
+        ByteBuffer buf = ByteBuffer.wrap(data);
+
+        int len = (int) buf.getInt();
+        int strcount = (int) buf.getInt(4);
+        for (i = 8; i < (len + 2) * 4; i += 4) {
+            diff.add((int) buf.getInt(i));
+        }
+
+        while (i < data.length) {
+            String temp;
+            temp = "";
+            while (buf.get(i) != nullByte) {
+                temp += (char) buf.get(i);
+                i++;
+            }
+            i++;
+            diff.add(temp);
+        }
+
+        for (i = 0; i < len; i++) {
+            if ((int) diff.get(i) < 0) {
+                diff.set(i, diff.get(len - 1 + (-1) * (int) diff.get(i)));
+
             }
         }
-        if(len>0) for(i=strcount+len-1;i>=len;i--){
-            diff.remove(i);
-        }
-        if (diff.isEmpty()) {
+        if (len > 0)
+            for (i = strcount + len - 1; i >= len; i--)
+                diff.remove(i);
+
+        if (diff.isEmpty())
             return dict;
-        }
-        
+
         for (i = 0; i < diff.size(); i += 1) {
             if (diff.get(i).getClass() == Integer.class) {
                 output.add(dict.substring((Integer) diff.get(i), (Integer) diff.get(i) + (Integer) diff.get(i + 1)));
