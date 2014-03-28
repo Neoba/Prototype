@@ -1,0 +1,248 @@
+TVcd
+v7
+r0
+t417724637.238328
+cCheck dependencies
+cProcessPCH /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch Vcd_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o /Users/neoba/Desktop/Vcd/Vcd.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/block.o /Users/neoba/Desktop/Vcd/block.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/blocktext.o /Users/neoba/Desktop/Vcd/blocktext.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/rollinghash.o /Users/neoba/Desktop/Vcd/rollinghash.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/dictionary.o /Users/neoba/Desktop/Vcd/dictionary.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/vcdiff.o /Users/neoba/Desktop/Vcd/vcdiff.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/neoba/Desktop/Vcd/build/Debug/Vcd normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c0000000053189BED00000000000000EE
+t1394121709
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004A600B8400000000000013E6
+t1247808388
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004DDDB0010000000000B38DD0
+t1306374145
+s11767248
+
+N/Users/neoba/Desktop/Vcd/Vcd.m
+c000000005335BF060000000000000266
+t1396031238
+s614
+i<Foundation/Foundation.h>
+i"vcdiff.h"
+
+N/Users/neoba/Desktop/Vcd/Vcd_Prefix.pch
+c00000000531AC3B90000000000000094
+t1394262969
+s148
+i<Foundation/Foundation.h>
+
+N/Users/neoba/Desktop/Vcd/block.h
+c000000005335BBEB00000000000001D0
+t1396030443
+s464
+
+N/Users/neoba/Desktop/Vcd/block.m
+c000000005335BCEA0000000000000162
+t1396030698
+s354
+i"block.h"
+
+N/Users/neoba/Desktop/Vcd/blocktext.h
+c000000005335BE090000000000000255
+t1396030985
+s597
+i"block.h"
+
+N/Users/neoba/Desktop/Vcd/blocktext.m
+c000000005335BE2D0000000000000413
+t1396031021
+s1043
+i"blocktext.h"
+
+N/Users/neoba/Desktop/Vcd/build/Debug/Vcd
+t1396031837
+s28304
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.LinkFileList
+c00000000532405B80000000000000218
+t1394869688
+s536
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o
+t1396031836
+s9164
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/block.o
+t1396031836
+s9264
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/blocktext.o
+t1396031836
+s12560
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/dictionary.o
+t1396031836
+s17588
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/rollinghash.o
+t1396031836
+s12876
+
+N/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/vcdiff.o
+t1396031836
+s18704
+
+N/Users/neoba/Desktop/Vcd/dictionary.h
+c000000005320820B00000000000001E5
+t1394639371
+s485
+i"blocktext.h"
+i"rollinghash.h"
+
+N/Users/neoba/Desktop/Vcd/dictionary.m
+c000000005335BCD10000000000000FAA
+t1396030673
+s4010
+i"dictionary.h"
+
+N/Users/neoba/Desktop/Vcd/rollinghash.h
+c000000005335BE8A0000000000000469
+t1396031114
+s1129
+
+N/Users/neoba/Desktop/Vcd/rollinghash.m
+c000000005335B9CB00000000000005CD
+t1396029899
+s1485
+i"rollinghash.h"
+
+N/Users/neoba/Desktop/Vcd/vcdiff.h
+c000000005335BEC50000000000000248
+t1396031173
+s584
+i"dictionary.h"
+
+N/Users/neoba/Desktop/Vcd/vcdiff.m
+c000000005335BA17000000000000129D
+t1396029975
+s4765
+i"vcdiff.h"
+
+N/var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch
+t1394262994
+s41405200
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies417724635#417724635#0(0"0(0#1#0"4300882208#0"0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o /Users/neoba/Desktop/Vcd/Vcd.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724635.638388
+e417724636.197255
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o
+x/Users/neoba/Desktop/Vcd/Vcd.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@38"Compile /Users/neoba/Desktop/Vcd/Vcd.m417724635#417724636#0(0"0(0#0#30"/Users/neoba/Desktop/Vcd/Vcd.m4300882208#1214"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/Vcd.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.o0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/block.o /Users/neoba/Desktop/Vcd/block.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724635.963501
+e417724636.503315
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/block.o
+x/Users/neoba/Desktop/Vcd/block.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@40"Compile /Users/neoba/Desktop/Vcd/block.m417724635#417724636#0(0"0(0#0#32"/Users/neoba/Desktop/Vcd/block.m4300882208#1218"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/block.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/block.o0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/blocktext.o /Users/neoba/Desktop/Vcd/blocktext.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724636.197362
+e417724636.680479
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/blocktext.o
+x/Users/neoba/Desktop/Vcd/blocktext.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@44"Compile /Users/neoba/Desktop/Vcd/blocktext.m417724636#417724636#0(0"0(0#0#36"/Users/neoba/Desktop/Vcd/blocktext.m4300882208#1226"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/blocktext.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/blocktext.o0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/dictionary.o /Users/neoba/Desktop/Vcd/dictionary.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724636.680599
+e417724636.879701
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/dictionary.o
+x/Users/neoba/Desktop/Vcd/dictionary.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/neoba/Desktop/Vcd/dictionary.m417724636#417724636#0(0"0(0#0#37"/Users/neoba/Desktop/Vcd/dictionary.m4300882208#1228"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/dictionary.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/dictionary.o0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/rollinghash.o /Users/neoba/Desktop/Vcd/rollinghash.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724636.503433
+e417724636.699262
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/rollinghash.o
+x/Users/neoba/Desktop/Vcd/rollinghash.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Compile /Users/neoba/Desktop/Vcd/rollinghash.m417724636#417724636#0(0"0(0#0#38"/Users/neoba/Desktop/Vcd/rollinghash.m4300882208#1230"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/rollinghash.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/rollinghash.o0#
+
+CCompileC build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/vcdiff.o /Users/neoba/Desktop/Vcd/vcdiff.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s417724636.699370
+e417724636.888972
+r1
+xCompileC
+xbuild/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/vcdiff.o
+x/Users/neoba/Desktop/Vcd/vcdiff.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@41"Compile /Users/neoba/Desktop/Vcd/vcdiff.m417724636#417724636#0(0"0(0#0#33"/Users/neoba/Desktop/Vcd/vcdiff.m4300882208#1220"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -include /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch -c /Users/neoba/Desktop/Vcd/vcdiff.m -o /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/vcdiff.o0#
+
+CLd /Users/neoba/Desktop/Vcd/build/Debug/Vcd normal x86_64
+s417724636.889075
+e417724637.238174
+r1
+xLd
+x/Users/neoba/Desktop/Vcd/build/Debug/Vcd
+xnormal
+xx86_64
+lSLF07#2@45"Link /Users/neoba/Desktop/Vcd/build/Debug/Vcd417724636#417724637#0(0"0(0#0#0"4300882208#434"    cd /Users/neoba/Desktop/Vcd    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/neoba/Desktop/Vcd/build/Debug -F/Users/neoba/Desktop/Vcd/build/Debug -filelist /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Objects-normal/x86_64/Vcd.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/neoba/Desktop/Vcd/build/Debug/Vcd0#
+
+CProcessPCH /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch Vcd_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s415955791.646074
+e415955794.164296
+r1
+xProcessPCH
+x/var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch
+xVcd_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@25"Precompile Vcd_Prefix.pch415955791#415955794#0(0"0(0#0#39"/Users/neoba/Desktop/Vcd/Vcd_Prefix.pch4300882208#1140"    cd /Users/neoba/Desktop/Vcd    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-generated-files.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-own-target-headers.hmap -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-all-target-headers.hmap -iquote /Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/Vcd-project-headers.hmap -F/Users/neoba/Desktop/Vcd/build/Debug -I/Users/neoba/Desktop/Vcd/build/Debug/include -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources/x86_64 -I/Users/neoba/Desktop/Vcd/build/Vcd.build/Debug/Vcd.build/DerivedSources -c /Users/neoba/Desktop/Vcd/Vcd_Prefix.pch -o /var/folders/OR/OR6HlHNeFjiIecsrNNpr7++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/Vcd_Prefix-cwaeubqswuwecefzrjqukxjwhbpa/Vcd_Prefix.pch.gch0#
+

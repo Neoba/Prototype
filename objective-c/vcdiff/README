@@ -1,1 +1,10 @@
-To be compiled on Xcode 3.2
+Folder Contents
+
+SRC
+Contains all the source files, vcd.m is contains main(), *.h are prototypes of classes,other *.m files are definitions of *.h classes
+
+Project
+The project folder contains entire project files used in xcode. To be compiled on Xcode 3.2
+
+Bin
+Contains executable binary, compiled source. currently, an interface for vcd is not added an example code is executed.
