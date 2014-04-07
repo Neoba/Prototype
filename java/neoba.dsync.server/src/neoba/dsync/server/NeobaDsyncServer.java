@@ -19,8 +19,11 @@ import openvcdiffjava.Openvcdiffjava;
 public class NeobaDsyncServer {
 
     private Selector selector;
+    private int age = 5;
+    private int ROLL_FWD_COUNT = 5;
     private Charset charset = Charset.forName("UTF-8");
     SocketChannel sc;
+    String dict = "";
 
     public void init() throws Exception {
         selector = Selector.open();
@@ -30,6 +33,7 @@ public class NeobaDsyncServer {
         server.configureBlocking(false);
         server.register(selector, SelectionKey.OP_ACCEPT);
         while (selector.select() > 0) {
+            int count = 0, size = 0;
             for (SelectionKey key : selector.selectedKeys()) {
                 selector.selectedKeys().remove(key);
                 if (key.isAcceptable()) {
@@ -44,32 +48,41 @@ public class NeobaDsyncServer {
                     ByteBuffer buff = ByteBuffer.allocate(9000);
                     String content = "";
                     try {
-                        int count = 0, size = 0;
+
                         while ((size = sc.read(buff)) > 0) {
                             count += size;
                             buff.flip();
                         }
-                        delta = new byte[count];
-                        for (int i = 0; i < count; i++) {
-                            delta[i] = buff.get(i);
+                        if (count > 0) {
+                            delta = new byte[count];
+                            for (int i = 0; i < count; i++) {
+                                delta[i] = buff.get(i);
+                            }
+                            content = new Openvcdiffjava().vcdiffDecode(dict, delta);
+                            System.out.println("- " + content);
+                            printhex(delta);
+                            key.interestOps(SelectionKey.OP_READ);
                         }
-                        System.out.println("===== " + new Openvcdiffjava().vcdiffDecode("", delta));
-                        printhex(delta);
-                        key.interestOps(SelectionKey.OP_READ);
                     } catch (IOException e) {
                         key.cancel();
                         if (key.channel() != null) {
                             key.channel().close();
                         }
                     }
-                    if (delta.length > 0) {
+                    if (count > 0 && delta.length > 0) {
+
                         for (SelectionKey sk : selector.keys()) {
                             Channel targetchannel = sk.channel();
-                            if (targetchannel instanceof SocketChannel) {//  && targetchannel!=sc) {
+                            if (targetchannel instanceof SocketChannel) {// && targetchannel!=sc) {
                                 SocketChannel dest = (SocketChannel) targetchannel;
 
                                 dest.write(ByteBuffer.wrap(delta));
                             }
+                        }
+                        age += 1;
+                        if (age > ROLL_FWD_COUNT) {
+                            dict = content;
+                            age = 0;
                         }
                     }
                 }
@@ -80,27 +93,26 @@ public class NeobaDsyncServer {
     public static void printhex(byte[] b) {
         int rem = b.length;
         String outs;
-        int ran=0;
+        int ran = 0;
+        System.out.println(b.length +"B dump");
         for (int i = 0; i < ((b.length / 10) + 1); i++) {
             for (int j = 0; (j < rem && j < 10); j++) {
-                outs=Integer.toHexString(b[j + b.length - rem] >= 0 ? b[j + b.length - rem] : -1 * b[j + b.length - rem]) + " ";
-                if( b[j + b.length - rem]==0)outs="00 ";
-                System.out.print(outs.length()<=2?"0"+outs:outs);
+                outs = String.format("%02X ", b[j + b.length - rem] & 0xff);
+
+                System.out.print(outs);
                 ran++;
             }
-            if(ran<3)System.out.print("\t\t\t");
-            if(ran<6)System.out.print("\t\t");
-            //if(ran<7)Syst)System.ouem.out.print("\t");
-            System.out.print("\t");
-            ran=0;
+            for (int j = 0; j < 29 - (ran * 2 + ran - 1); j++) {
+                System.out.print(" ");
+            }
+            ran = 0;
             for (int j = 0; (j < rem && j < 10); j++) {
-                System.out.print((char) (b[j + b.length - rem] >= 'a' && b[j + b.length - rem] <= 'z' ? b[j + b.length - rem] : '.') + " ");
+                System.out.print((char) (b[j + b.length - rem] >= 30 && b[j + b.length - rem] <= 127 ? b[j + b.length - rem] : '.') + " ");
             }
             rem -= 10;
-            
+
             System.out.println("");
-            
-            
+
         }
 
     }

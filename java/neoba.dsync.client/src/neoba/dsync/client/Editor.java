@@ -7,6 +7,8 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import openvcdiffjava.Openvcdiffjava;
@@ -18,14 +20,20 @@ public class Editor extends javax.swing.JFrame {
     private SocketChannel sc = null;
     private String dict = "";
     private Openvcdiffjava differ = new Openvcdiffjava();
-
-    public Editor() throws IOException {
+    private int age=5;
+    private final int ROLL_FWD_COUNT=5;
+    private final MessageDigest md;
+    
+    public Editor() throws IOException, NoSuchAlgorithmException {
+        md = MessageDigest.getInstance("MD5");
         initComponents();
         selector = Selector.open();
         InetSocketAddress isa = new InetSocketAddress("127.0.0.1", 3000);
         sc = SocketChannel.open(isa);
         sc.configureBlocking(false);
         sc.register(selector, SelectionKey.OP_READ);
+        hashdictLabel.setText("Dictionary: "+md5hash(md,dict.getBytes()));
+        hashdocLabel.setText("Document: "+md5hash(md,new byte[] {}));
         new ClientThread().start();
 
     }
@@ -36,8 +44,8 @@ public class Editor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         DocArea = new javax.swing.JTextArea();
         syncButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        hashdocLabel = new javax.swing.JLabel();
+        hashdictLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,9 +61,9 @@ public class Editor extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Document: ");
+        hashdocLabel.setText("Document: ");
 
-        jLabel2.setText("Dictionary: ");
+        hashdictLabel.setText("Dictionary: ");
 
         jLabel3.setText("Neoba Dsync Client");
 
@@ -67,30 +75,29 @@ public class Editor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel2)
-                        .addGap(0, 135, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(syncButton)))
+                        .addComponent(syncButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(hashdocLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hashdictLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(syncButton)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-                .addGap(9, 9, 9)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)))
+                    .addComponent(hashdictLabel)
+                    .addComponent(hashdocLabel)))
         );
 
         pack();
@@ -98,8 +105,10 @@ public class Editor extends javax.swing.JFrame {
 
     private void syncButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncButtonActionPerformed
         try {
-            ByteBuffer buf = ByteBuffer.wrap(differ.vcdiffEncode(dict, DocArea.getText()));
+            byte[] delta=differ.vcdiffEncode(dict, DocArea.getText());
+            ByteBuffer buf = ByteBuffer.wrap(delta);
             sc.write(buf);
+            hashdocLabel.setText("Document: "+md5hash(md,delta));
         } catch (IOException ex) {
             Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -127,8 +136,15 @@ public class Editor extends javax.swing.JFrame {
                             }
                             String content = differ.vcdiffDecode(dict, delta);
                             DocArea.setText(content);
+                            hashdocLabel.setText("Document: "+md5hash(md,delta));
                             System.out.println("Recieved: " + content);
-                            sk.interestOps(SelectionKey.OP_READ);;
+                            age+=1;
+                            if(age>ROLL_FWD_COUNT){
+                                dict=content;
+                                age=0;
+                                hashdictLabel.setText("Dictionary: "+md5hash(md,dict.getBytes()));
+                            }
+                            sk.interestOps(SelectionKey.OP_READ);
                         }
                     }
                 }
@@ -138,6 +154,14 @@ public class Editor extends javax.swing.JFrame {
         }
     }
 
+    private String md5hash(MessageDigest md, byte[] arr){
+        byte[] hash=md.digest(arr);
+        StringBuilder sb = new StringBuilder();
+		for (byte b : hash) {
+			sb.append(String.format("%02X", b & 0xff));
+		}
+                return sb.toString().substring(0,8);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -169,6 +193,8 @@ public class Editor extends javax.swing.JFrame {
                     new Editor().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -176,8 +202,8 @@ public class Editor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DocArea;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel hashdictLabel;
+    private javax.swing.JLabel hashdocLabel;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton syncButton;
