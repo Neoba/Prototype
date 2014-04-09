@@ -19,7 +19,7 @@ import openvcdiffjava.Openvcdiffjava;
 public class NeobaDsyncServer {
 
     private Selector selector;
-    private byte age = 4;
+    private byte age = 5;
     private final byte ROLL_FWD_COUNT = 5;
     private final Charset charset = Charset.forName("UTF-8");
     private final int BUFF_SIZE = 10000;

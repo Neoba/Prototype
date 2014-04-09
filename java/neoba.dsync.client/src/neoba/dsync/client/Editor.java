@@ -20,7 +20,7 @@ public class Editor extends javax.swing.JFrame {
     private SocketChannel sc = null;
     private String dict = " ";
     private Openvcdiffjava differ = new Openvcdiffjava();
-    private byte age = 4;
+    private byte age = 5;
     private final byte ROLL_FWD_COUNT = 5;
     private final int BUFF_SIZE = 10000;
     private final MessageDigest md;
