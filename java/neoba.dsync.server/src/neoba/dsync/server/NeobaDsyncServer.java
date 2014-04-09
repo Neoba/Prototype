@@ -19,11 +19,13 @@ import openvcdiffjava.Openvcdiffjava;
 public class NeobaDsyncServer {
 
     private Selector selector;
-    private int age = 5;
-    private int ROLL_FWD_COUNT = 5;
-    private Charset charset = Charset.forName("UTF-8");
+    private byte age = 4;
+    private final byte ROLL_FWD_COUNT = 5;
+    private final Charset charset = Charset.forName("UTF-8");
+    private final int BUFF_SIZE = 10000;
     SocketChannel sc;
-    String dict = "";
+    byte[] delta = null;
+    String dict = " ";
 
     public void init() throws Exception {
         selector = Selector.open();
@@ -41,11 +43,31 @@ public class NeobaDsyncServer {
                     sc.configureBlocking(false);
                     sc.register(selector, SelectionKey.OP_READ);
                     key.interestOps(SelectionKey.OP_ACCEPT);
+
+                    //sc.write(ByteBuffer.wrap(new byte[] {age}));
+                    ByteBuffer welcome = null;
+
+                    if (delta != null) {
+                        welcome = ByteBuffer.allocate(9 + dict.length() + delta.length);
+                        welcome.put(age);
+                        welcome.putInt(delta.length);
+                        welcome.put(delta);
+
+                    } else {
+                        welcome = ByteBuffer.allocate(9 + dict.length());
+                        welcome.put(age);
+                        welcome.putInt(0);
+
+                    }
+                    welcome.putInt(dict.length());
+                    welcome.put(charset.encode(dict));
+                    welcome.flip();
+
+                    sc.write(welcome);
                 }
                 if (key.isReadable()) {
-                    byte[] delta = null;
                     sc = (SocketChannel) key.channel();
-                    ByteBuffer buff = ByteBuffer.allocate(9000);
+                    ByteBuffer buff = ByteBuffer.allocate(BUFF_SIZE);
                     String content = "";
                     try {
 
@@ -83,6 +105,7 @@ public class NeobaDsyncServer {
                         if (age > ROLL_FWD_COUNT) {
                             dict = content;
                             age = 0;
+                            delta = null;
                         }
                     }
                 }
@@ -94,7 +117,7 @@ public class NeobaDsyncServer {
         int rem = b.length;
         String outs;
         int ran = 0;
-        System.out.println(b.length +"B dump");
+        System.out.println(b.length + "B dump");
         for (int i = 0; i < ((b.length / 10) + 1); i++) {
             for (int j = 0; (j < rem && j < 10); j++) {
                 outs = String.format("%02X ", b[j + b.length - rem] & 0xff);

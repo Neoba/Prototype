@@ -18,12 +18,14 @@ public class Editor extends javax.swing.JFrame {
     private final Selector selector;
     private final Charset charset = Charset.forName("UTF-8");
     private SocketChannel sc = null;
-    private String dict = "";
+    private String dict = " ";
     private Openvcdiffjava differ = new Openvcdiffjava();
-    private int age=5;
-    private final int ROLL_FWD_COUNT=5;
+    private byte age = 4;
+    private final byte ROLL_FWD_COUNT = 5;
+    private final int BUFF_SIZE = 10000;
     private final MessageDigest md;
-    
+    byte[] delta = null;
+
     public Editor() throws IOException, NoSuchAlgorithmException {
         md = MessageDigest.getInstance("MD5");
         initComponents();
@@ -32,8 +34,7 @@ public class Editor extends javax.swing.JFrame {
         sc = SocketChannel.open(isa);
         sc.configureBlocking(false);
         sc.register(selector, SelectionKey.OP_READ);
-        hashdictLabel.setText("Dictionary: "+md5hash(md,dict.getBytes()));
-        hashdocLabel.setText("Document: "+md5hash(md,new byte[] {}));
+
         new ClientThread().start();
 
     }
@@ -82,7 +83,7 @@ public class Editor extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(hashdocLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hashdictLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)))
+                        .addComponent(hashdictLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,10 +106,10 @@ public class Editor extends javax.swing.JFrame {
 
     private void syncButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncButtonActionPerformed
         try {
-            byte[] delta=differ.vcdiffEncode(dict, DocArea.getText());
+            delta = differ.vcdiffEncode(dict, DocArea.getText());
             ByteBuffer buf = ByteBuffer.wrap(delta);
             sc.write(buf);
-            hashdocLabel.setText("Document: "+md5hash(md,delta));
+            hashdocLabel.setText("Document: " + md5hash(md, delta));
         } catch (IOException ex) {
             Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -119,30 +120,52 @@ public class Editor extends javax.swing.JFrame {
         @Override
         public void run() {
             try {
+                ByteBuffer buff = ByteBuffer.allocate(BUFF_SIZE);
+                while (sc.read(buff) > 0) {
+                    buff.flip();
+                }
+                age = buff.get();
+                int deltasize = buff.getInt();
+                if (deltasize > 0) {
+                    delta = new byte[deltasize];
+                    buff.get(delta, 0, deltasize);
+                }
+                int dictsize = buff.getInt();
+                byte[] dictarr = new byte[dictsize];
+                buff.get(dictarr);
+                dict = charset.decode(ByteBuffer.wrap(dictarr)).toString();
+                if (delta != null) {
+                    DocArea.setText(differ.vcdiffDecode(dict, delta));
+                } else {
+                    DocArea.setText(dict);
+                }
+                hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
+                hashdocLabel.setText("Document: " + md5hash(md, new byte[]{}));
                 while (selector.select() > 0) {
                     for (SelectionKey sk : selector.selectedKeys()) {
                         selector.selectedKeys().remove(sk);
                         if (sk.isReadable()) {
                             SocketChannel sc = (SocketChannel) sk.channel();
-                            ByteBuffer buff = ByteBuffer.allocate(9000);
+                            buff = ByteBuffer.allocate(BUFF_SIZE);
                             int count = 0, size = 0;
                             while ((size = sc.read(buff)) > 0) {
                                 count += size;
                                 buff.flip();
                             }
-                            byte[] delta = new byte[count];
+                            delta = new byte[count];
                             for (int i = 0; i < count; i++) {
                                 delta[i] = buff.get(i);
                             }
                             String content = differ.vcdiffDecode(dict, delta);
                             DocArea.setText(content);
-                            hashdocLabel.setText("Document: "+md5hash(md,delta));
+                            hashdocLabel.setText("Document: " + md5hash(md, delta));
                             System.out.println("Recieved: " + content);
-                            age+=1;
-                            if(age>ROLL_FWD_COUNT){
-                                dict=content;
-                                age=0;
-                                hashdictLabel.setText("Dictionary: "+md5hash(md,dict.getBytes()));
+                            age += 1;
+                            if (age > ROLL_FWD_COUNT) {
+                                dict = content;
+                                age = 0;
+                                hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
+
                             }
                             sk.interestOps(SelectionKey.OP_READ);
                         }
@@ -154,14 +177,15 @@ public class Editor extends javax.swing.JFrame {
         }
     }
 
-    private String md5hash(MessageDigest md, byte[] arr){
-        byte[] hash=md.digest(arr);
+    private String md5hash(MessageDigest md, byte[] arr) {
+        byte[] hash = md.digest(arr);
         StringBuilder sb = new StringBuilder();
-		for (byte b : hash) {
-			sb.append(String.format("%02X", b & 0xff));
-		}
-                return sb.toString().substring(0,8);
+        for (byte b : hash) {
+            sb.append(String.format("%02X", b & 0xff));
+        }
+        return sb.toString().substring(0, 8);
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -35,7 +35,7 @@
                   <Group type="102" attributes="0">
                       <Component id="hashdocLabel" min="-2" pref="161" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="hashdictLabel" pref="313" max="32767" attributes="0"/>
+                      <Component id="hashdictLabel" pref="309" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
