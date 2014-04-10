@@ -43,10 +43,7 @@ public class NeobaDsyncServer {
                     sc.configureBlocking(false);
                     sc.register(selector, SelectionKey.OP_READ);
                     key.interestOps(SelectionKey.OP_ACCEPT);
-
-                    //sc.write(ByteBuffer.wrap(new byte[] {age}));
-                    ByteBuffer welcome = null;
-
+                    ByteBuffer welcome;
                     if (delta != null) {
                         welcome = ByteBuffer.allocate(9 + dict.length() + delta.length);
                         welcome.put(age);

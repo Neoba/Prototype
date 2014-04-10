@@ -53,6 +53,11 @@ public class Editor extends javax.swing.JFrame {
 
         DocArea.setColumns(20);
         DocArea.setRows(5);
+        DocArea.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DocAreaKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(DocArea);
 
         syncButton.setText("Sync");
@@ -109,12 +114,17 @@ public class Editor extends javax.swing.JFrame {
             delta = differ.vcdiffEncode(dict, DocArea.getText());
             ByteBuffer buf = ByteBuffer.wrap(delta);
             sc.write(buf);
-            hashdocLabel.setText("Document: " + md5hash(md, delta));
+            hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
         } catch (IOException ex) {
             Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_syncButtonActionPerformed
+
+    private void DocAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DocAreaKeyTyped
+        // TODO add your handling code here:
+        hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
+    }//GEN-LAST:event_DocAreaKeyTyped
     private class ClientThread extends Thread {
 
         @Override
@@ -140,7 +150,7 @@ public class Editor extends javax.swing.JFrame {
                     DocArea.setText(dict);
                 }
                 hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
-                hashdocLabel.setText("Document: " + md5hash(md, new byte[]{}));
+                hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
                 while (selector.select() > 0) {
                     for (SelectionKey sk : selector.selectedKeys()) {
                         selector.selectedKeys().remove(sk);
@@ -158,7 +168,7 @@ public class Editor extends javax.swing.JFrame {
                             }
                             String content = differ.vcdiffDecode(dict, delta);
                             DocArea.setText(content);
-                            hashdocLabel.setText("Document: " + md5hash(md, delta));
+                            hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
                             System.out.println("Recieved: " + content);
                             age += 1;
                             if (age > ROLL_FWD_COUNT) {

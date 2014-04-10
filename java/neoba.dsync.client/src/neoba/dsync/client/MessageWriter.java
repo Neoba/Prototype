@@ -10,13 +10,10 @@ package neoba.dsync.client;
  *
  * @author Atul Vinayak
  */
-public class NeobaDsyncClient {
+public class MessageWriter {
 
-    /**
-     * @param args the command line arguments
-//     */
-//    public static void main(String[] args) {
-//        // TODO code application logic here
+//    public static ByteBuffer WelcomeMessage(byte age,byte[] delta,String dict){
+//        
 //    }
     
 }
