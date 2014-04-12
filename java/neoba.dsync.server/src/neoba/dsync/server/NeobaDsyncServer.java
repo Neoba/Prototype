@@ -43,24 +43,7 @@ public class NeobaDsyncServer {
                     sc.configureBlocking(false);
                     sc.register(selector, SelectionKey.OP_READ);
                     key.interestOps(SelectionKey.OP_ACCEPT);
-                    ByteBuffer welcome;
-                    if (delta != null) {
-                        welcome = ByteBuffer.allocate(9 + dict.length() + delta.length);
-                        welcome.put(age);
-                        welcome.putInt(delta.length);
-                        welcome.put(delta);
-
-                    } else {
-                        welcome = ByteBuffer.allocate(9 + dict.length());
-                        welcome.put(age);
-                        welcome.putInt(0);
-
-                    }
-                    welcome.putInt(dict.length());
-                    welcome.put(charset.encode(dict));
-                    welcome.flip();
-
-                    sc.write(welcome);
+                    sc.write(new WelcomeMessageMaker( age, delta, dict).getBuffer());
                 }
                 if (key.isReadable()) {
                     sc = (SocketChannel) key.channel();
