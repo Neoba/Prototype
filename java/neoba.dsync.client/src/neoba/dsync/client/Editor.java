@@ -11,6 +11,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import openvcdiffjava.Openvcdiffjava;
 
 public class Editor extends javax.swing.JFrame {
@@ -25,12 +26,15 @@ public class Editor extends javax.swing.JFrame {
     private final int BUFF_SIZE = 10000;
     private final MessageDigest md;
     byte[] delta = null;
-
+    private String username;
+    private String ip;
     public Editor() throws IOException, NoSuchAlgorithmException {
         md = MessageDigest.getInstance("MD5");
         initComponents();
         selector = Selector.open();
-        InetSocketAddress isa = new InetSocketAddress("127.0.0.1", 3000);
+        username=JOptionPane.showInputDialog("Enter username");
+        ip=JOptionPane.showInputDialog("Enter server address");
+        InetSocketAddress isa = new InetSocketAddress(ip.equals("")?"127.0.0.1":ip, 3000);
         sc = SocketChannel.open(isa);
         sc.configureBlocking(false);
         sc.register(selector, SelectionKey.OP_READ);
@@ -134,16 +138,10 @@ public class Editor extends javax.swing.JFrame {
                 while (sc.read(buff) > 0) {
                     buff.flip();
                 }
-                age = buff.get();
-                int deltasize = buff.getInt();
-                if (deltasize > 0) {
-                    delta = new byte[deltasize];
-                    buff.get(delta, 0, deltasize);
-                }
-                int dictsize = buff.getInt();
-                byte[] dictarr = new byte[dictsize];
-                buff.get(dictarr);
-                dict = charset.decode(ByteBuffer.wrap(dictarr)).toString();
+                WelcomeMessageReader wmr=new WelcomeMessageReader(buff);
+                delta=wmr.getDelta();
+                dict=wmr.getDict();
+                age=wmr.getAge();
                 if (delta != null) {
                     DocArea.setText(differ.vcdiffDecode(dict, delta));
                 } else {
