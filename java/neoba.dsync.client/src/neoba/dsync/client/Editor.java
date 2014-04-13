@@ -28,17 +28,18 @@ public class Editor extends javax.swing.JFrame {
     byte[] delta = null;
     private String username;
     private String ip;
+
     public Editor() throws IOException, NoSuchAlgorithmException {
+        this.setTitle("Neoba Dsync Client");
         md = MessageDigest.getInstance("MD5");
         initComponents();
         selector = Selector.open();
-        username=JOptionPane.showInputDialog("Enter username");
-        ip=JOptionPane.showInputDialog("Enter server address");
-        InetSocketAddress isa = new InetSocketAddress(ip.equals("")?"127.0.0.1":ip, 3000);
+        username = JOptionPane.showInputDialog("Enter username");
+        ip = JOptionPane.showInputDialog("Enter server address");
+        InetSocketAddress isa = new InetSocketAddress(ip.equals("") ? "127.0.0.1" : ip, 3000);
         sc = SocketChannel.open(isa);
         sc.configureBlocking(false);
         sc.register(selector, SelectionKey.OP_READ);
-
         new ClientThread().start();
 
     }
@@ -52,6 +53,7 @@ public class Editor extends javax.swing.JFrame {
         hashdocLabel = new javax.swing.JLabel();
         hashdictLabel = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +79,8 @@ public class Editor extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jButton1.setText("Create");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,12 +91,14 @@ public class Editor extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(syncButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(syncButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(hashdocLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hashdictLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)))
+                        .addComponent(hashdictLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -101,7 +107,8 @@ public class Editor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(syncButton)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -118,7 +125,8 @@ public class Editor extends javax.swing.JFrame {
             delta = differ.vcdiffEncode(dict, DocArea.getText());
             ByteBuffer buf = ByteBuffer.wrap(delta);
             sc.write(buf);
-            hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
+            hashdocLabel.setText("Document: " + md5hash(md, DocArea.getText().getBytes()));
+            ageInc(DocArea.getText());
         } catch (IOException ex) {
             Logger.getLogger(Editor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -126,8 +134,7 @@ public class Editor extends javax.swing.JFrame {
     }//GEN-LAST:event_syncButtonActionPerformed
 
     private void DocAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DocAreaKeyTyped
-        // TODO add your handling code here:
-        hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
+        hashdocLabel.setText("Document: " + md5hash(md, DocArea.getText().getBytes()));
     }//GEN-LAST:event_DocAreaKeyTyped
     private class ClientThread extends Thread {
 
@@ -138,17 +145,17 @@ public class Editor extends javax.swing.JFrame {
                 while (sc.read(buff) > 0) {
                     buff.flip();
                 }
-                WelcomeMessageReader wmr=new WelcomeMessageReader(buff);
-                delta=wmr.getDelta();
-                dict=wmr.getDict();
-                age=wmr.getAge();
+                WelcomeMessageReader wmr = new WelcomeMessageReader(buff);
+                delta = wmr.getDelta();
+                dict = wmr.getDict();
+                age = wmr.getAge();
                 if (delta != null) {
                     DocArea.setText(differ.vcdiffDecode(dict, delta));
                 } else {
                     DocArea.setText(dict);
                 }
                 hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
-                hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
+                hashdocLabel.setText("Document: " + md5hash(md, DocArea.getText().getBytes()));
                 while (selector.select() > 0) {
                     for (SelectionKey sk : selector.selectedKeys()) {
                         selector.selectedKeys().remove(sk);
@@ -166,15 +173,9 @@ public class Editor extends javax.swing.JFrame {
                             }
                             String content = differ.vcdiffDecode(dict, delta);
                             DocArea.setText(content);
-                            hashdocLabel.setText("Document: " + md5hash(md,DocArea.getText().getBytes()));
+                            hashdocLabel.setText("Document: " + md5hash(md, DocArea.getText().getBytes()));
                             System.out.println("Recieved: " + content);
-                            age += 1;
-                            if (age > ROLL_FWD_COUNT) {
-                                dict = content;
-                                age = 0;
-                                hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
-
-                            }
+                            ageInc(content);
                             sk.interestOps(SelectionKey.OP_READ);
                         }
                     }
@@ -192,6 +193,16 @@ public class Editor extends javax.swing.JFrame {
             sb.append(String.format("%02X", b & 0xff));
         }
         return sb.toString().substring(0, 8);
+    }
+
+    private void ageInc(String content) {
+        age += 1;
+        if (age > ROLL_FWD_COUNT) {
+            dict = content;
+            age = 0;
+            hashdictLabel.setText("Dictionary: " + md5hash(md, dict.getBytes()));
+
+        }
     }
 
     public static void main(String args[]) {
@@ -236,6 +247,7 @@ public class Editor extends javax.swing.JFrame {
     private javax.swing.JTextArea DocArea;
     private javax.swing.JLabel hashdictLabel;
     private javax.swing.JLabel hashdocLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton syncButton;
