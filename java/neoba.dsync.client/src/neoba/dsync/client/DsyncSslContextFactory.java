@@ -31,7 +31,7 @@ import javax.net.ssl.TrustManager;
 /**
  * Creates a bogus {@link SSLContext}.  A client-side context created by this
  * factory accepts any certificate even if it is invalid.  A server-side context
- * created by this factory sends a bogus certificate defined in {@link SecureChatKeyStore}.
+ * created by this factory sends a bogus certificate defined in {@link DsyncKeyStore}.
  * <p>
  * You will have to create your context differently in a real world application.
  *
@@ -51,7 +51,7 @@ import javax.net.ssl.TrustManager;
  *     to validate the client certificate.</li>
  * </ul>
  */
-public final class SecureChatSslContextFactory {
+public final class DsyncSslContextFactory {
 
     private static final String PROTOCOL = "TLS";
     private static final SSLContext SERVER_CONTEXT;
@@ -67,12 +67,12 @@ public final class SecureChatSslContextFactory {
         SSLContext clientContext;
         try {
             KeyStore ks = KeyStore.getInstance("JKS");
-            ks.load(SecureChatKeyStore.asInputStream(),
-                    SecureChatKeyStore.getKeyStorePassword());
+            ks.load(DsyncKeyStore.asInputStream(),
+                    DsyncKeyStore.getKeyStorePassword());
 
             // Set up key manager factory to use our key store
             KeyManagerFactory kmf = KeyManagerFactory.getInstance(algorithm);
-            kmf.init(ks, SecureChatKeyStore.getCertificatePassword());
+            kmf.init(ks, DsyncKeyStore.getCertificatePassword());
 
             // Initialize the SSLContext to work with our key managers.
             serverContext = SSLContext.getInstance(PROTOCOL);
@@ -84,7 +84,7 @@ public final class SecureChatSslContextFactory {
 
         try {
             clientContext = SSLContext.getInstance(PROTOCOL);
-            clientContext.init(null, SecureChatTrustManagerFactory.getTrustManagers(), null);
+            clientContext.init(null, DsyncTrustManagerFactory.getTrustManagers(), null);
         } catch (Exception e) {
             throw new Error(
                     "Failed to initialize the client-side SSLContext", e);
@@ -102,7 +102,7 @@ public final class SecureChatSslContextFactory {
         return CLIENT_CONTEXT;
     }
 
-    private SecureChatSslContextFactory() {
+    private DsyncSslContextFactory() {
         // Unused
     }
 }

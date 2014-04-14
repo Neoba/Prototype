@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package neoba.dsync.server;
+package neoba.dsync.client;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -30,7 +30,7 @@ import java.io.InputStream;
  *          -keystore cert.jks
  * </pre>
  */
-public final class SecureChatKeyStore {
+public final class DsyncKeyStore {
     private static final short[] DATA = {
         0xfe, 0xed, 0xfe, 0xed, 0x00, 0x00, 0x00, 0x02,
         0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01,
@@ -307,7 +307,7 @@ public final class SecureChatKeyStore {
         return "secret".toCharArray();
     }
 
-    private SecureChatKeyStore() {
+    private DsyncKeyStore() {
         // Unused
     }
 }

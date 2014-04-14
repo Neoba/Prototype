@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package neoba.dsync.client;
+package neoba.dsync.server;
 
 import javax.net.ssl.ManagerFactoryParameters;
 import javax.net.ssl.TrustManager;
@@ -28,7 +28,7 @@ import java.security.cert.X509Certificate;
  * Bogus {@link TrustManagerFactorySpi} which accepts any certificate
  * even if it is invalid.
  */
-public class SecureChatTrustManagerFactory extends TrustManagerFactorySpi {
+public class DsyncTrustManagerFactory extends TrustManagerFactorySpi {
 
     private static final TrustManager DUMMY_TRUST_MANAGER = new X509TrustManager() {
         @Override
