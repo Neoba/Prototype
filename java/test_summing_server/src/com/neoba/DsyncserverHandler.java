@@ -9,12 +9,7 @@ package com.neoba;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import java.nio.charset.Charset;
 
-/**
- *
- * @author atul
- */
 class DsyncserverHandler extends
         ChannelInboundHandlerAdapter {
 
@@ -22,18 +17,9 @@ class DsyncserverHandler extends
     public void channelRead(ChannelHandlerContext ctx,
         Object msg) {
         ByteBuf in = (ByteBuf) msg;
-        
-        
-        int a=in.getInt(0);
-        int b=in.getInt(4);
-      
-        System.out.println("SServer received: "+a+" "+b);
-        //System.out.println("SServer received: " + in.toString(Charset.forName("UTF-8")));
-//        int a= Integer.parseInt(in.toString(Charset.forName("UTF-8")).split(" ")[0]);
-//        int b= Integer.parseInt(in.toString(Charset.forName("UTF-8")).split(" ")[1]);
-        in.clear();
-        in.writeInt(a+b);
-        ctx.write(in);
+        MessageInterpreter mi=new MessageInterpreter(in);
+        ByteBuf reply=mi.generateReply();
+        ctx.write(reply);
 
     }
 
