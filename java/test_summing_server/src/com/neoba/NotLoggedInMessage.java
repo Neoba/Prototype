@@ -8,26 +8,24 @@ package com.neoba;
 
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
-import io.netty.channel.Channel;
 
 /**
  *
  * @author atul
  */
-class PingPongMessage implements Message{
+class NotLoggedInMessage implements Message{
+    
+    public NotLoggedInMessage() {
 
-    public PingPongMessage(Channel ch) {
-        System.out.println("ping received from "+Dsyncserver.usersessions.getKey(ch));
     }
     
     @Override
     public ByteBuf result(){
-       
+        
         ByteBuf reply=buffer(6);
         reply.writeByte(Constants.VERSION);
-        reply.writeByte(Constants.PINGPONG);
-        reply.writeInt(Constants.W_PING);
-       
+        reply.writeByte(Constants.CREDENTIAL_REQ);
+        reply.writeByte(Constants.W_ERR_NOT_LOGGED_IN);
         return reply;
     }
     
