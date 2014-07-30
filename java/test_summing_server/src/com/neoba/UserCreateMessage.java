@@ -48,6 +48,8 @@ class UserCreateMessage implements Message{
             user.put("password", passb.toString());
             user.put("type", "user");
             user.put("followers", new JSONArray());
+            user.put("docs", new JSONArray());
+            user.put("edit_docs", new JSONArray());
             Dsyncserver.cclient.add(id.toString(), user.toString());
         }
     }

@@ -16,10 +16,7 @@ import io.netty.channel.Channel;
  */
 class PingPongMessage implements Message{
 
-    public PingPongMessage(Channel ch) {
-        System.out.println("ping received from "+Dsyncserver.usersessions.getKey(ch));
-    }
-    
+
     @Override
     public ByteBuf result(){
        

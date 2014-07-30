@@ -3,60 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.neoba;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.Channel;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.group.ChannelGroup;
-import io.netty.channel.group.DefaultChannelGroup;
-import io.netty.handler.timeout.ReadTimeoutException;
-import io.netty.util.concurrent.GlobalEventExecutor;
-import java.io.IOException;
-import net.dongliu.vcdiff.exception.VcdiffDecodeException;
-import net.dongliu.vcdiff.exception.VcdiffEncodeException;
-import org.codehaus.jettison.json.JSONException;
+import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.handler.codec.http.DefaultFullHttpResponse;
+import io.netty.handler.codec.http.FullHttpResponse;
+import io.netty.handler.codec.http.HttpContent;
+import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;
+import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
+import static io.netty.handler.codec.http.HttpResponseStatus.OK;
+import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-class DsyncserverHandler extends ChannelInboundHandlerAdapter {
-    static final ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
-    
-    @Override
-    public void channelActive(final ChannelHandlerContext ctx) throws Exception {
-        channels.add(ctx.channel());
-    }
-
-    @Override
-    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("removed "+Dsyncserver.usersessions.getKey(ctx.channel()));
-        Dsyncserver.usersessions.removeValue((Channel)ctx.channel());
-        System.out.println("disconnected user");    
-    }
-        
-    @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException {
-        ByteBuf in = (ByteBuf) msg;
-        MessageInterpreter mi=new MessageInterpreter(ctx,in);
-        ByteBuf reply=mi.generateReply();
-        ctx.write(reply);
-
-    }
+/**
+ *
+ * @author atul
+ */
+public class DsyncserverHandler extends SimpleChannelInboundHandler<HttpContent> {
 
     @Override
-    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        ctx.flush();
+    protected void channelRead0(ChannelHandlerContext ctx, HttpContent con) throws Exception {
+
+        ByteBuf in = (ByteBuf) con.copy().content();
+        if (in.array().length == 0) {
+            String time=(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date())).toString();
+            respondAndFlush(Unpooled.wrappedBuffer(("<h1>Neoba Experimental Server 1</h1>"+time+"<br>Status:OK<br>Please use the client").getBytes()), ctx,true);
+            return;
+        }
+        //System.out.println(new String(in.array()));
+        Utils.printhex(in.array(), in.array().length);
+        MessageInterpreter mi = new MessageInterpreter(ctx, in);
+        ByteBuf reply = mi.generateReply();
+        respondAndFlush(reply, ctx,false);
+
     }
 
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx,
-        Throwable cause) {
-        if (cause instanceof ReadTimeoutException) {
-            System.out.println("removed by timeout "+Dsyncserver.usersessions.getKey(ctx.channel()));
-            Dsyncserver.usersessions.removeValue((Channel)ctx.channel());
-         }
-        else
-            cause.printStackTrace();
-        ctx.close();
+    void respondAndFlush(ByteBuf reply, ChannelHandlerContext ctx, boolean isBrowser) {
+        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, reply);
+        response.headers().set(CONTENT_TYPE, isBrowser?"text/html":"application/octet-stream");
+        response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
+        ctx.writeAndFlush(response);
     }
+
 }

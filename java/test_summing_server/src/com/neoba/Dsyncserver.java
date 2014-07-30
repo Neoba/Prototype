@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.neoba;
 
 import com.couchbase.client.CouchbaseClient;
@@ -12,7 +7,9 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.timeout.ReadTimeoutHandler;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpResponseEncoder;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.ArrayList;
@@ -57,8 +54,10 @@ public class Dsyncserver {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new ReadTimeoutHandler(120));
-                            ch.pipeline().addLast(new DsyncserverHandler());
+                            ch.pipeline().addLast("httpDecoder", new HttpRequestDecoder());
+                            ch.pipeline().addLast("httpAggregator",new HttpObjectAggregator(Constants.HTTP_MAX_BODY_SIZE));
+                            ch.pipeline().addLast("httpEncoder", new HttpResponseEncoder());
+                            ch.pipeline().addLast("handler", new DsyncserverHandler());
                         }
                     });
 
@@ -72,7 +71,7 @@ public class Dsyncserver {
 
     public static void main(String[] args) throws Exception {
 
-        new Dsyncserver(2810).start();
+        new Dsyncserver(2811).start();
     }
 
 }

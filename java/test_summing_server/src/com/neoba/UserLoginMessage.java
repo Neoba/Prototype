@@ -12,6 +12,10 @@ import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
+import static io.netty.buffer.Unpooled.buffer;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
@@ -23,6 +27,7 @@ class UserLoginMessage implements Message{
 
     Boolean found=false;
     String id=null;
+    UUID sessid;
     int response;
     public UserLoginMessage(String username, byte[] passhash) throws JSONException {
         StringBuilder passb = new StringBuilder();
@@ -47,7 +52,11 @@ class UserLoginMessage implements Message{
             if(!((String)user.get("password")).equals(passb.toString()))
                 response=Constants.W_ERR_PWD_INCORRECT;
             else
+            {
                 response=Constants.W_SUCCESS;
+                sessid=UUID.randomUUID();
+                Dsyncserver.usersessions.put(sessid, id.toString());
+            }
         }
         else
             response=Constants.W_ERR_NONEXISTENT_USER;
@@ -56,10 +65,14 @@ class UserLoginMessage implements Message{
 
     @Override
     public ByteBuf result() {
-        
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(UserLoginMessage.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         ByteBuf reply;
             if(response==Constants.W_SUCCESS)
-                reply=buffer(6+8);
+                reply=buffer(6+16);
             else
                 reply=buffer(6);
                 
@@ -67,7 +80,10 @@ class UserLoginMessage implements Message{
         reply.writeByte(Constants.USER_LOGIN);
         reply.writeInt(response);
         if(response==Constants.W_SUCCESS)
-            reply.writeLong(Long.parseLong(id));
+        {
+            reply.writeLong(sessid.getLeastSignificantBits());
+            reply.writeLong(sessid.getMostSignificantBits());
+        }
         return reply;
     }
     

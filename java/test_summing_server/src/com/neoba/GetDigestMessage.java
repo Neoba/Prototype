@@ -5,13 +5,12 @@
  */
 package com.neoba;
 
-import com.couchbase.client.protocol.views.Query;
-import com.couchbase.client.protocol.views.View;
-import com.couchbase.client.protocol.views.ViewResponse;
-import com.couchbase.client.protocol.views.ViewRow;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
+import java.util.TreeSet;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -20,57 +19,77 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class GetDigestMessage implements Message{
+class GetDigestMessage implements Message {
 
-    ViewResponse result;
+    JSONArray docs;
+    JSONArray wdocs;
     int bufsize = 2 + 4;
     int doccount = 0;
 
-    public GetDigestMessage() throws JSONException {
-        View view = Dsyncserver.cclient.getView("dev_neoba", "idsview");
-        Query query = new Query();
-        query.setIncludeDocs(true);
-        result = Dsyncserver.cclient.query(view, query);
-        for (ViewRow row : result) {
-            doccount += 1;
-            System.out.println(row.getKey() + " :" + row.getValue());
-            JSONObject json = new JSONObject(row.getValue());
-            bufsize += ((JSONArray) json.get("diff")).length();
-            bufsize += ((String) json.get("dict")).length();
-            bufsize += ((String) json.get("title")).length();
+    public GetDigestMessage(UUID sessid) throws JSONException {
+        String userid = (String) Dsyncserver.usersessions.get(sessid);
+        JSONObject user = new JSONObject((String) Dsyncserver.cclient.get(userid));
+        docs = user.getJSONArray("docs");
+        wdocs = user.getJSONArray("edit_docs");
+
+        for (int i = 0; i < docs.length(); i++) {
+            JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get((String) docs.get(i)));
+            System.out.println((String) doc.get("title") + ":version" + (Integer) doc.get("version"));
+            bufsize += ((JSONArray) doc.get("diff")).length();
+            bufsize += ((String) doc.get("dict")).length();
+            bufsize += ((String) doc.get("title")).length();
             bufsize += (16 + 4 + 4 + 4 + 4);
+            bufsize += 1;
+            doccount += 1;
         }
     }
 
     @Override
     public ByteBuf result() {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(UserLoginMessage.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        TreeSet<String> wset = new TreeSet();
+        for (int i = 0; i < wdocs.length(); i++) {
+            try {
+                wset.add(wdocs.getString(i));
+            } catch (JSONException ex) {
+                Logger.getLogger(GetDigestMessage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         ByteBuf reply = buffer(bufsize);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.GET_DIGEST);
         reply.writeInt(doccount);
-        try{
-        for (ViewRow row : result) {
-            JSONObject json = new JSONObject(row.getValue());
-            UUID id = UUID.fromString(row.getKey());
-            reply.writeLong(id.getLeastSignificantBits());
-            reply.writeLong(id.getMostSignificantBits());
-            reply.writeInt(((JSONArray) json.get("diff")).length());
-            for (int i = 0; i < ((JSONArray) json.get("diff")).length(); i++) {
-                reply.writeByte((int) ((JSONArray) json.get("diff")).get(i));
+        try {
+            for (int i = 0; i < docs.length(); i++) {
+                JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get((String) docs.get(i)));
+                
+                UUID id = UUID.fromString((String) docs.get(i));
+                reply.writeLong(id.getLeastSignificantBits());
+                reply.writeLong(id.getMostSignificantBits());
+                reply.writeInt(((JSONArray) doc.get("diff")).length());
+                for (int k = 0; k < ((JSONArray) doc.get("diff")).length(); k++) {
+                    reply.writeByte((int) ((JSONArray) doc.get("diff")).get(k));
+                }
+                reply.writeInt(((String) doc.get("dict")).length());
+                for (byte b : ((String) doc.get("dict")).getBytes()) {
+                    reply.writeByte(b);
+                }
+                reply.writeInt(((String) doc.get("title")).length());
+                for (byte b : ((String) doc.get("title")).getBytes()) {
+                    reply.writeByte(b);
+                }
+                reply.writeInt(doc.getInt("version"));
+                if(wset.contains((String) docs.get(i)))
+                    reply.writeByte(Constants.PERMISSION_EDIT);
+                else
+                    reply.writeByte(Constants.PERMISSION_READ);
             }
-            reply.writeInt(((String) json.get("dict")).length());
-            for (byte b : ((String) json.get("dict")).getBytes()) {
-                reply.writeByte(b);
-            }
-            reply.writeInt(((String) json.get("title")).length());
-            for (byte b : ((String) json.get("title")).getBytes()) {
-                reply.writeByte(b);
-            }
-            reply.writeInt(json.getInt("age"));
-        }
-        }
-        catch(JSONException J)
-        {
+
+        } catch (Exception J) {
             System.err.println(J);
         }
         return reply;

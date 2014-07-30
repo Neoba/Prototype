@@ -22,6 +22,8 @@ public class Constants {
     static final byte USER_LOGIN=0x6;
     static final byte USER_FOLLOW=0x7;
     static final byte GRANT_PERMISSION=0x8;
+    static final byte LOGOUT=0x9;
+    static final byte CLIENT_ACK=(byte) 0xFF;
     
     static final int W_SUCCESS=0xFFFF;
     static final int W_PING=0x504F4E47;
@@ -35,13 +37,19 @@ public class Constants {
     static final int W_ERR_SHARE_WITH_UNFOLLOWED_USER=0x8005;
     static final int W_ERR_UNPRIVILAGED_USER=0x8006;
     static final int W_ERR_ALREADY_FOLLOWING=0x8007;
+    static final int W_ERR_DOCUMENT_OUT_OF_SYNC=0x8008;
+    static final int W_ERR_SELF_FOLLOW=0x8009;
+    static final int W_ERR_SESSION_NOT_FOUND=0x800A;
     
     static final byte CREDENTIAL_REQ=0x70;
+    static final byte GRANTED_PERMISSION=0x71;
     
     static final byte PERMISSION_NONE=0x00;
     static final byte PERMISSION_READ=0x01;
     static final byte PERMISSION_EDIT=0x02;
     
-
-
+    static final int HTTP_MAX_BODY_SIZE=1048576;
+    
+    static final String NEOBA_SECRET="cetian";
+    
 }

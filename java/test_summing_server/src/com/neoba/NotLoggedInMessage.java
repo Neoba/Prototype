@@ -25,7 +25,7 @@ class NotLoggedInMessage implements Message{
         ByteBuf reply=buffer(6);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.CREDENTIAL_REQ);
-        reply.writeByte(Constants.W_ERR_NOT_LOGGED_IN);
+        reply.writeInt(Constants.W_ERR_NOT_LOGGED_IN);
         return reply;
     }
     
