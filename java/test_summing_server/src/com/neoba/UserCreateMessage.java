@@ -25,16 +25,17 @@ class UserCreateMessage implements Message{
     Boolean isnametaken=false;
     UserCreateMessage(String username, byte[] passhash) throws JSONException {
         
-        View view = Dsyncserver.cclient.getView("dev_neoba", "usernamelistview");
+        View view = Dsyncserver.cclient.getView("dev_neoba", "userstoid");
         Query query = new Query();
-        query.setIncludeDocs(true);
+        query.setKey(username);
         ViewResponse result = Dsyncserver.cclient.query(view, query);
-        for(ViewRow row : result) {
-            
-            if(row.getKey().equals(username)){
-                isnametaken=true;
-                break;
-            }
+        
+        if(result.size()!=0)
+        {
+            isnametaken=true;
+        }else
+        {
+            //System.out.println(result.iterator().next());
         }
         if (!isnametaken) {
             StringBuilder passb = new StringBuilder();
@@ -48,6 +49,8 @@ class UserCreateMessage implements Message{
             user.put("password", passb.toString());
             user.put("type", "user");
             user.put("followers", new JSONArray());
+            user.put("gcm_registration","");
+            user.put("following", new JSONArray());
             user.put("docs", new JSONArray());
             user.put("edit_docs", new JSONArray());
             Dsyncserver.cclient.add(id.toString(), user.toString());

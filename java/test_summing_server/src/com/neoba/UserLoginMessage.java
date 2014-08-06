@@ -29,7 +29,7 @@ class UserLoginMessage implements Message{
     String id=null;
     UUID sessid;
     int response;
-    public UserLoginMessage(String username, byte[] passhash) throws JSONException {
+    public UserLoginMessage(String username, byte[] passhash,String regid) throws JSONException {
         StringBuilder passb = new StringBuilder();
         for (byte b : passhash) {
             passb.append(String.format("%02X", b));
@@ -55,6 +55,7 @@ class UserLoginMessage implements Message{
             {
                 response=Constants.W_SUCCESS;
                 sessid=UUID.randomUUID();
+                CouchManager.setGcmRegId(id, regid);
                 Dsyncserver.usersessions.put(sessid, id.toString());
             }
         }

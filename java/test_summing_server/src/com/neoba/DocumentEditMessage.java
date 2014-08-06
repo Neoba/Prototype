@@ -25,7 +25,11 @@ class DocumentEditMessage implements Message {
         JSONArray diffarray = null;
         JSONArray editors = json.getJSONArray("permission_edit");
         String user = (String) Dsyncserver.usersessions.get(sessid);
-        for (int i = 0; i < editors.length(); i++) {
+        if(((String)json.get("creator")).equals(user)){
+            haspermission=true;
+        }
+        
+        if(!haspermission) for (int i = 0; i < editors.length(); i++) {
             if (user.equals(editors.get(i))) {
                 haspermission = true;
                 break;
@@ -40,7 +44,6 @@ class DocumentEditMessage implements Message {
             System.out.println("diff: ");
             Utils.printhex(diff, diff.length);
             age += 1;
-            
             String dict = json.getString("dict");
 
             if (age % 5 == 0) {

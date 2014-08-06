@@ -55,7 +55,10 @@ class MessageInterpreter {
                 string = buff.toString(6, size, Charset.forName("UTF-8"));
                 passhash = new byte[20];
                 buff.getBytes(6 + size, passhash, 0, 20);
-                UserLoginMessage sess = new UserLoginMessage(string, passhash);
+                int reglength=buff.getInt(6+size+20);
+                String regid=buff.toString(6+size+20+4, reglength, Charset.forName("UTF-8"));
+                System.out.println("REG : "+regid);
+                UserLoginMessage sess = new UserLoginMessage(string, passhash,regid);
                 if (sess.getid() != null) {
                     System.out.println("New user session: " + Dsyncserver.usersessions);
                 }
@@ -78,7 +81,8 @@ class MessageInterpreter {
                 case Constants.GET_DIGEST:
                     return new GetDigestMessage(sessid).result();
                 case Constants.USER_FOLLOW:
-                    return new UserFollowMessage(buff.getLong(6+16), sessid).result();
+                    string = buff.toString(6+16, size, Charset.forName("UTF-8"));
+                    return new UserFollowMessage(string, sessid).result();
                 case Constants.LOGOUT:
                     return new UserLogoutMessage(sessid).result();
                 case Constants.GRANT_PERMISSION:

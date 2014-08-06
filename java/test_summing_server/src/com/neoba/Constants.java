@@ -1,4 +1,4 @@
-/*
+/*1
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -50,6 +50,6 @@ public class Constants {
     
     static final int HTTP_MAX_BODY_SIZE=1048576;
     
-    static final String NEOBA_SECRET="cetian";
+    static final int NEOBA_SECRET=0xCE71A9;
     
 }

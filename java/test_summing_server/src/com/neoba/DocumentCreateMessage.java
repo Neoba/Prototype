@@ -42,14 +42,15 @@ class DocumentCreateMessage implements Message{
         json.put("type", "document");
         json.put("creator",userid);
         json.put("global", false);
-        json.put("permission_read",(new JSONArray()).put(userid));
-        json.put("permission_edit",(new JSONArray()).put(userid));
+        json.put("permission_read",(new JSONArray()));
+        json.put("permission_edit",(new JSONArray()));
         Dsyncserver.cclient.set(this.id.toString(),json.toString());
         
         JSONObject user = new JSONObject((String) Dsyncserver.cclient.get(userid));
         JSONArray docs=user.getJSONArray("docs");
         docs.put(id.toString());
         JSONArray edits=user.getJSONArray("edit_docs");
+
         edits.put(id.toString());
         user.put("docs",docs);
         user.put("edit_docs",edits);
