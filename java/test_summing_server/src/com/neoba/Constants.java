@@ -23,6 +23,7 @@ public class Constants {
     static final byte USER_FOLLOW=0x7;
     static final byte GRANT_PERMISSION=0x8;
     static final byte LOGOUT=0x9;
+    static final byte POKE=0xA;
     static final byte CLIENT_ACK=(byte) 0xFF;
     
     static final int W_SUCCESS=0xFFFF;
@@ -40,6 +41,7 @@ public class Constants {
     static final int W_ERR_DOCUMENT_OUT_OF_SYNC=0x8008;
     static final int W_ERR_SELF_FOLLOW=0x8009;
     static final int W_ERR_SESSION_NOT_FOUND=0x800A;
+    static final int W_ERR_PUSH_FAILED=0x800B;
     
     static final byte CREDENTIAL_REQ=0x70;
     static final byte GRANTED_PERMISSION=0x71;
@@ -51,5 +53,6 @@ public class Constants {
     static final int HTTP_MAX_BODY_SIZE=1048576;
     
     static final int NEOBA_SECRET=0xCE71A9;
+    
     
 }

@@ -16,14 +16,11 @@ public class Postman {
 	        String url = "http://10.42.0.53:2811";
 	        URL obj = new URL(url);
 	        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-	        //add reuqest header
 	        con.setRequestMethod("POST");
 	        con.setRequestProperty("User-Agent", "Android 7.9 Upsidedown cake");
 	        con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 	        con.setRequestProperty("Content-Type", "application/octet-stream");
 	        con.setConnectTimeout(10000);
-	        // Send post request
 	        a.flip();
 	        DataOutputStream wr=null;
 	        con.setDoOutput(true);
@@ -31,7 +28,7 @@ public class Postman {
 	        wr = new DataOutputStream(con.getOutputStream());
 	        }
 	        catch(Exception e){
-	        	Log.d("HTTTTTP",""+e);
+	        	Log.d("HTTP err",""+e);
 	        	return null;
 	        }
 	        byte[] p=a.array();

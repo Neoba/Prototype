@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.neoba.syncpad.FollActivity" >
+
+    <item
+        android:id="@+id/action_poke"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="poke"/>
+    <item
+        android:id="@+id/action_follow"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="follow"/>
+
+</menu>

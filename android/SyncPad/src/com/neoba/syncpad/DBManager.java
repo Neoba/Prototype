@@ -1,10 +1,13 @@
 package com.neoba.syncpad;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 
 import net.dongliu.vcdiff.VcdiffDecoder;
+import net.dongliu.vcdiff.VcdiffEncoder;
 import net.dongliu.vcdiff.exception.VcdiffDecodeException;
+import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 
 import com.neoba.syncpad.ByteMessenger.document;
 
@@ -13,6 +16,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 
 public class DBManager {
 
@@ -20,7 +24,6 @@ public class DBManager {
 	public static final int DATABASE_VERSION = 1;
 	// Database Name
 	public static final String DATABASE_NAME = "docs.db";
-	public static final String DATABASE_TABLE = "docs";
 	SQLiteDatabase db;
 	Context context;
 	DatabaseHelper DBHelper;
@@ -39,14 +42,30 @@ public class DBManager {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			String CREATE_BOOK_TABLE = "CREATE TABLE docs ( "
-					+ "id TEXT PRIMARY KEY, " + "diff TEXT, "
+					+ "id TEXT, " + "diff TEXT, "
 					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG )";
 			db.execSQL(CREATE_BOOK_TABLE);
+			String CREATE_FOLLOWERS_TABLE = "CREATE TABLE follower ( "
+					+ "id LONG, " + "username TEXT "
+					+")";
+			db.execSQL(CREATE_FOLLOWERS_TABLE);
+			String CREATE_FOLLOWING_TABLE = "CREATE TABLE following ( "
+					+ "id LONG , " + "username TEXT "
+					+")";
+			db.execSQL(CREATE_FOLLOWING_TABLE);
+			String CREATE_PERMISSIONS_TABLE = "CREATE TABLE permissions ( "
+					+ "docid TEXT, username TEXT,userid LONG,permission INTEGER "
+					+")";
+			db.execSQL( CREATE_PERMISSIONS_TABLE);
+
 		}
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			db.execSQL("DROP TABLE IF EXISTS docs");
+			db.execSQL("DROP TABLE IF EXISTS follower");
+			db.execSQL("DROP TABLE IF EXISTS following");
+			db.execSQL("DROP TABLE IF EXISTS permssions");
 			this.onCreate(db);
 
 		}
@@ -72,8 +91,22 @@ public class DBManager {
 		return d;
 	}
 
+	public void deleteDoc(String id){
+		String sql = "delete from docs where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, id);
+		updateStmt.executeUpdateDelete();
+		db.execSQL("vacuum");
+	}
 	public void insertDoc(document doc) {
-		String sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date) VALUES(?,?,?,?,?,?,?)";
+		String sql = "delete from docs where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, doc.id);
+		updateStmt.executeUpdateDelete();
+
+		sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date) VALUES(?,?,?,?,?,?,?)";
 		SQLiteStatement insertStmt = db.compileStatement(sql);
 		insertStmt.clearBindings();
 		insertStmt.bindString(1, doc.id);
@@ -83,6 +116,59 @@ public class DBManager {
 		insertStmt.bindString(5, doc.title);
 		insertStmt.bindLong(6, doc.permission);
 		insertStmt.bindLong(7, new Date().getTime());
+		insertStmt.executeInsert();
+		db.execSQL("vacuum");
+	}
+	public void editDoc(String id, byte[] diff, int int1) throws IOException, VcdiffDecodeException, VcdiffEncodeException {
+		String sql = "update docs set diff=?,age=?,date=? where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindBlob(1, diff);
+		updateStmt.bindString(4, id);
+		updateStmt.bindLong(2, int1);
+		updateStmt.bindLong(3,new Date().getTime());
+
+		updateStmt.executeUpdateDelete();
+		if(int1%5==0)
+		{
+			String sql1 = "update docs set dict=?,diff=? where id=?";
+			SQLiteStatement updateStmt1 = db.compileStatement(sql1);
+			String dict=getDict(id);
+			Log.d("updatedictbefore", getDict(id));
+			dict=new VcdiffDecoder(dict, diff).decode();
+			updateStmt1.bindString(1, dict);
+			updateStmt1.bindBlob(2, new VcdiffEncoder(dict, dict).encode());
+			updateStmt1.bindString(3, id);
+			updateStmt1.executeUpdateDelete();
+			Log.d("updatedictafter", getDict(id));
+			
+		}
+	}
+	public void insertFollower(Long id,String username) {
+		String sql = "INSERT INTO follower (id,username) VALUES(?,?)";
+		SQLiteStatement insertStmt = db.compileStatement(sql);
+		insertStmt.clearBindings();
+		insertStmt.bindLong(1, id);
+		insertStmt.bindString(2, username);
+		
+		insertStmt.executeInsert();
+	}
+	public void insertFollowing(Long id,String username) {
+		String sql = "INSERT INTO following (id,username) VALUES(?,?)";
+		SQLiteStatement insertStmt = db.compileStatement(sql);
+		insertStmt.clearBindings();
+		insertStmt.bindLong(1, id);
+		insertStmt.bindString(2, username);
+		insertStmt.executeInsert();
+	}
+	public void insertPermission(String docid,String username,Long userid,int permission) {
+		String sql = "INSERT INTO permissions (docid,username,userid,permission) VALUES(?,?,?,?)";
+		SQLiteStatement insertStmt = db.compileStatement(sql);
+		insertStmt.clearBindings();
+		insertStmt.bindString(1, docid);
+		insertStmt.bindString(2, username);
+		insertStmt.bindLong(3, userid);
+		insertStmt.bindLong(4, permission);
 		insertStmt.executeInsert();
 	}
 	public void updateContent(document doc) {
@@ -96,22 +182,61 @@ public class DBManager {
 		updateStmt.bindString(5, doc.id);
 		updateStmt.executeUpdateDelete();
 	}
+	public void escalatePermission(String docid,Long id) {
+		String sql = "update permissions set permission=2 where userid=? and docid=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindLong(1, id);
+		updateStmt.bindString(2, docid);
+		updateStmt.executeUpdateDelete();
+	}
+	
+	public String getFollowerUsername(Long userid) {
+		String sql = "SELECT username FROM follower where id=?";
+		Cursor cursor = db.rawQuery(sql, new String[] {Long.toString(userid)});
+		cursor.moveToFirst();
+		return cursor.getString(0);
+	}
+	public Long getFollowerid(String username) {
+		String sql = "SELECT id FROM follower where username=?";
+		Cursor cursor = db.rawQuery(sql, new String[] {username});
+		cursor.moveToFirst();
+		return cursor.getLong(0);
+	}
+	
+	public Cursor getPermissions(){
+		String sql = "SELECT rowid _id ,* FROM permissions";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
+	public Cursor getAllFollower() {
 
-	public Cursor getAllDocs() {
+		String sql = "SELECT rowid _id ,* FROM follower";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
 
-		String sql = "SELECT rowid _id ,* FROM docs";
+	}
+	public Cursor getAllFollowing() {
+		String sql = "SELECT rowid _id ,* FROM following";
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 
 	}
 
-	public String getDoc(int rowid) throws IOException, VcdiffDecodeException {
+	public Cursor getAllDocs() {
+		String sql = "SELECT rowid _id ,* FROM docs";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
 
-		String sql = "SELECT dict,diff from docs where rowid=?";
-		Cursor c = db.rawQuery(sql, new String[] { Integer.toString(rowid) });
+	public String getDoc(String id) throws IOException, VcdiffDecodeException {
+
+		String sql = "SELECT dict,diff from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { id});
 		c.moveToFirst();
 		String dict = c.getString(0);
 		byte[] diff = c.getBlob(1);
+		Log.d("DICTGETDOC", dict+Arrays.toString(diff)+":"+new VcdiffDecoder(dict, diff).decode());
 		return new VcdiffDecoder(dict, diff).decode();
 
 	}
@@ -133,13 +258,46 @@ public class DBManager {
 		return c.getString(0);
 
 	}
+	public String getDict(String rowid) {
 
-	public void Truncate() {
-		String sql = "DELETE from docs";
-		SQLiteStatement insertStmt = db.compileStatement(sql);
-		insertStmt.clearBindings();
-		insertStmt.executeUpdateDelete();
-		
+		String sql = "SELECT dict from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { rowid});
+		c.moveToFirst();
+		return c.getString(0);
+
 	}
+	
+	public String getId(int rowid) {
+
+		String sql = "SELECT id from docs where rowid=?";
+		Cursor c = db.rawQuery(sql, new String[] { Integer.toString(rowid) });
+		c.moveToFirst();
+		Log.d("dbgetid",""+rowid);
+		return c.getString(0);
+
+	}
+
+	public void clearPermissions(String docid){
+		SQLiteStatement updateStmt=db.compileStatement("DELETE from permissions where docid=?");
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, docid);
+		updateStmt.executeUpdateDelete();
+	}
+	public void Truncate() {
+
+		db.compileStatement("DELETE from docs").executeUpdateDelete();
+		db.compileStatement("DELETE from follower").executeUpdateDelete();
+		db.compileStatement("DELETE from following").executeUpdateDelete();
+		db.compileStatement("DELETE from permissions").executeUpdateDelete();
+
+	}
+
+	public Cursor getPermissionsForDoc(String docid) {
+		String sql = "SELECT username,userid,permission FROM permissions where docid=?";
+		Cursor cursor = db.rawQuery(sql, new String[] {docid});
+		return cursor;
+	}
+
+
 
 }

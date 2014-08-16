@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class DocViewerActivity extends Activity {
 
 	int rowid;
+	String docid=null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,9 +28,10 @@ public class DocViewerActivity extends Activity {
 		DBManager db=new DBManager(this);
 		db.open();
 		rowid=getIntent().getExtras().getInt("rowid");
+		docid=getIntent().getExtras().getString("docid");
 		String doc=null;
 		try {
-			doc = db.getDoc(rowid);
+			doc = db.getDoc(docid);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,8 +46,6 @@ public class DocViewerActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		
 		getMenuInflater().inflate(R.menu.doc_viewer_activity_actions, menu);
 		return true;
 	}
@@ -61,21 +61,19 @@ public class DocViewerActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_edit) {
 			
 			Intent in=new Intent("com.neoba.syncpad.DOCEDITOR");
 			in.putExtra("rowid",rowid);
+			in.putExtra("docid",docid);
 			startActivityForResult(in, 0);
 			return true;
 		}
 		if (id == R.id.action_share) {
 			
 			Intent in=new Intent("com.neoba.syncpad.SHARELIST");
-			in.putExtra("rowid",rowid);
+			in.putExtra("docid",docid);
 			startActivityForResult(in, 0);
 			return true;
 		}

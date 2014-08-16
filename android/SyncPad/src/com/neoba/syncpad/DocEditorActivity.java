@@ -25,6 +25,7 @@ import android.widget.Toast;
 public class DocEditorActivity extends Activity {
 
 	int rowid;
+	String docid;
 	EditText doceditor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,11 @@ public class DocEditorActivity extends Activity {
 		doceditor=(EditText) findViewById(R.id.etDocument);
 		DBManager db=new DBManager(this);
 		db.open();
+		docid=getIntent().getExtras().getString("docid");
 		rowid=getIntent().getExtras().getInt("rowid");
 		String doc=null;
 		try {
-			doc = db.getDoc(rowid);
+			doc = db.getDoc(docid);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

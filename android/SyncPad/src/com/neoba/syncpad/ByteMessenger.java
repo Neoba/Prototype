@@ -3,12 +3,15 @@ package com.neoba.syncpad;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
 
 import net.dongliu.vcdiff.VcdiffDecoder;
 import net.dongliu.vcdiff.VcdiffEncoder;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 public class ByteMessenger {
@@ -46,43 +49,30 @@ public class ByteMessenger {
 			this.title = t;
 			this.permission = p;
 		}
+		
+		public String toString(){
+			return this.id+Arrays.toString(diff)+this.dict+this.permission+this.age+this.title;
+		}
 	}
 	static class Share{
 		public long userid;
+		public String docid;
 		public String username;
-		public long getUserid() {
-			return userid;
-		}
-		public void setUserid(long userid) {
-			this.userid = userid;
-		}
-		public String getUsername() {
-			return username;
-		}
-		public void setUsername(String username) {
-			this.username = username;
-		}
-		public byte getPermission() {
-			return permission;
-		}
-		public void setPermission(byte permission) {
-			this.permission = permission;
-		}
 		public byte permission;
-		public Share(long userid, String username, byte permission) {
+		public Share(String docid,long userid, String username, byte permission) {
 			super();
+			this.docid=docid;
 			this.userid = userid;
 			this.username = username;
 			this.permission = permission;
 		}
-		public Share() {
-			// TODO Auto-generated constructor stub
+		public void setPermission(byte p){
+			this.permission=p;
 		}
-		public Share(String string) {
-			// TODO Auto-generated constructor stub
-			this.username=string;
+		@Override
+		public String toString() {
+			return username+" "+permission+" *";
 		}
-
 		
 	}
 
@@ -97,8 +87,36 @@ public class ByteMessenger {
 		return result;
 	}
 
-	public static UUID Login(String username, String password) throws Exception {
-		ByteBuffer buff = ByteBuffer.allocate(6 + 20 + username.length());
+	public static ArrayList<Share> ShareMessage(ArrayList<Share> shares,UUID docid,UUID cookie) throws Exception{
+        ByteBuffer buff = ByteBuffer.allocate(6 + 16 + 16 + 9 * shares.size());
+        buff.put((byte) 0x01);
+        buff.put((byte) 0x08);
+        buff.putInt(shares.size());
+        putcookie(buff, cookie);
+        buff.putLong(docid.getLeastSignificantBits());
+        buff.putLong(docid.getMostSignificantBits());
+        for(Share s:shares) {
+            switch (s.permission) {
+                case 1:
+                    buff.put((byte) 0x01);
+                    break;
+                case 2:
+                    buff.put((byte) 0x02);
+                    break;
+            }
+
+            buff.putLong(s.userid);
+            
+        }
+        ByteBuffer in = Postman.post(buff);
+        buff.clear();
+        
+        if(in.getInt(2)==0xFFFF)
+        	return shares;
+		return null;
+	}
+	public static UUID Login(String username, String password,String regid) throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 20 + username.length()+4+regid.length());
 		UUID cookie = null;
 		buff.put((byte) 0x01);
 		buff.put((byte) 0x06);
@@ -108,6 +126,8 @@ public class ByteMessenger {
 				password.getBytes())) {
 			buff.put(b);
 		}
+        buff.putInt(regid.length());
+        buff.put(regid.getBytes());
 		ByteBuffer in = Postman.post(buff);
 		buff.clear();
 		if (in != null) {
@@ -124,8 +144,8 @@ public class ByteMessenger {
 
 	}
 
-	public static HashMap<UUID, document> getDigest(UUID cookie)
-			throws Exception {
+	@SuppressLint("UseSparseArrays")
+	public static ArrayList<Object> getDigest(UUID cookie) throws Exception {
 		ByteBuffer buff = ByteBuffer.allocate(6 + 16);
 		HashMap<UUID, document> cache = new HashMap<UUID, document>();
 		buff.put((byte) 0x01);
@@ -171,7 +191,79 @@ public class ByteMessenger {
 			Log.d("NEOBA", "added to cache: " + cache.get(id).title);
 
 		}
-		return cache;
+		HashMap<Long,String> follower=new HashMap<Long,String>();
+		ArrayList<Object> ret=new ArrayList<Object>();
+		ret.add(cache);
+		int followerc = in.getInt(base);
+        base += 4;
+        for (int i = 0; i < followerc; i++) {
+            int strc = in.getInt(base);
+            base += 4;
+            byte[] ff = new byte[strc];
+
+            for (int j = 0; j < strc; j++) {
+                ff[j] = in.get(base + j);
+
+            }
+            base += strc;
+            String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+            Long ii=in.getLong(base);
+            Log.d("GD","follower" + dict);
+            Log.d("GD","with id" + ii);
+            follower.put(ii, dict);
+            base += 8;
+        }
+        HashMap<Long,String> following=new HashMap<Long,String>();
+        followerc = in.getInt(base);
+        base+=4;
+            System.out.println(followerc);
+        for (int i = 0; i < followerc; i++) {
+            int strc = in.getInt(base);
+            base += 4;
+            byte[] ff = new byte[strc];
+
+            for (int j = 0; j < strc; j++) {
+                ff[j] = in.get(base + j);
+
+            }
+            base += strc;
+            String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+            Log.d("GD","following" + dict);
+            Long ii=in.getLong(base);
+            Log.d("GD"," id " + ii);
+            following.put(ii, dict);
+            base += 8;
+        }
+        ret.add(follower);
+        ret.add(following);
+        
+        int ownc = in.getInt(base);
+        ArrayList<ShareSchema> shares=new ArrayList<ShareSchema>();
+        base += 4;
+        for (int i = 0; i < ownc; i++) {
+        	
+            UUID doc = new UUID(in.getLong(base + 8), in.getLong(base));
+            System.err.println("OWNS!--> " + doc.toString());
+            ShareSchema ss=new ShareSchema(doc.toString());
+            base += 16;
+            int reac = in.getInt(base);
+            base += 4;
+            for (int j = 0; j < reac; j++) {
+                System.err.println("READS!-->" + in.getLong(base));
+                ss.addread(in.getLong(base));
+                base += 8;
+            }
+            reac = in.getInt(base);
+            base += 4;
+            for (int j = 0; j < reac; j++) {
+                System.err.println(in.getLong(base));
+                ss.addedit(in.getLong(base));
+                base += 8;
+            }
+            shares.add(ss);
+        }
+        ret.add(shares);
+		return ret;
 	}
 
 	private static void putcookie(ByteBuffer buff, UUID cookie) {
@@ -200,8 +292,8 @@ public class ByteMessenger {
 				docs.age += 1;
 
 				if (docs.age % 5 == 0) {
-					docs.dict = new VcdiffDecoder(docs.dict, docs.diff)
-							.decode();
+					docs.dict = new VcdiffDecoder(docs.dict, docs.diff).decode();
+					docs.diff = new VcdiffEncoder(docs.dict, docs.dict).encode();
 					Log.d("Bytemessenger", "dictionary updated.. new dict: \n"
 							+ docs.dict);
 				}
@@ -214,8 +306,39 @@ public class ByteMessenger {
 		return null;
 	}
 
-	public static document CreateDoc(String docname, UUID cookie)
-			throws Exception {
+	public static Long FollowUser(String username,UUID cookie) throws Exception{
+        ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+        buff.put((byte) 0x01);
+        buff.put((byte) 0x07);
+        buff.putInt(username.length());
+        putcookie(buff, cookie);
+        buff.put(username.getBytes());
+        ByteBuffer in = Postman.post(buff);
+        buff.clear();
+        if (in.getInt(2) == 0xFFFF) {
+            Log.d("FOLLOWW!","followed " + in.getLong(6));
+            return in.getLong(6);
+        }
+		return null;
+	}
+	
+	
+	public static Long PokeUser(String username,UUID cookie) throws Exception{
+        ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+        buff.put((byte) 0x01);
+        buff.put((byte) 0x0A);
+        buff.putInt(username.length());
+        putcookie(buff, cookie);
+        buff.put(username.getBytes());
+        ByteBuffer in = Postman.post(buff);
+        buff.clear();
+        if (in.getInt(2) == 0xFFFF) {
+            Log.d("poked!","poked " + in.getLong(6));
+            return in.getLong(6);
+        }
+		return null;
+	}
+	public static document CreateDoc(String docname, UUID cookie) throws Exception {
 
 		ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + docname.length());
 		buff.put((byte) 0x01);
@@ -224,12 +347,18 @@ public class ByteMessenger {
 		putcookie(buff, cookie);
 		buff.put(docname.getBytes());
 		ByteBuffer in = Postman.post(buff);
+		try{
 		if (in.getInt(2) == 0xFFFF) {
 			UUID docid = new UUID(in.getLong(14), in.getLong(6));
 			document rdoc = new document(docid.toString(), docname,new VcdiffEncoder("", "").encode(), -1, "", (byte) 2);
 			return rdoc;
 		} else {
-			Log.d("CREATEDOC", "som error "+in.getInt(2));
+			Log.d("CREATEDOC", "error "+Integer.toHexString(in.getInt(2)));
+		}
+		}
+		catch(Exception e){
+			Log.d("CREATEDOC", "server down probably "+in.getInt(2));
+			return null;
 		}
 		buff.clear();
 		return null;

@@ -14,5 +14,12 @@
     <string name="title_activity_doc_viewer">DocViewer</string>
     <string name="title_activity_doc_editor">DocEditorActivity</string>
     <string name="title_activity_share_list">Share</string>
+    <string name="title_activity_users">UsersActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_user_manager">UserManagerActivity</string>
+    <string name="title_activity_foll">FollActivity</string>
+    <string name="title_activity_sign_up">SignUp</string>
 
 </resources>

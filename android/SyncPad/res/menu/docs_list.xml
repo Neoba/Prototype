@@ -13,10 +13,10 @@
         android:showAsAction="always"
         android:title="create"/>
     <item
-        android:id="@+id/action_follow"
+        android:id="@+id/action_users"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:title="follow"/>
+        android:title="user"/>
 
 
 </menu>

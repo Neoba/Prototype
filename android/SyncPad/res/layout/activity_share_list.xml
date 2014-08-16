@@ -8,20 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.neoba.syncpad.ShareListActivity" >
 
-    <EditText
-        android:id="@+id/etSLusername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/bSLAdd"
-        android:ems="10" />
-
     <Button
         android:id="@+id/bSLAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/etSLusername"
         android:layout_alignParentRight="true"
         android:text="Add" />
 
@@ -29,9 +19,18 @@
         android:id="@+id/lvShares"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etSLusername"
+        android:layout_below="@+id/bSLAdd"
         android:layout_centerHorizontal="true" >
 
     </ListView>
+
+    <Spinner
+        android:id="@+id/spFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bSLAdd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/bSLAdd" />
 
 </RelativeLayout>

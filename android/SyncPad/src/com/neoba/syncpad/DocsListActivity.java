@@ -26,6 +26,7 @@ import android.view.ViewConfiguration;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class DocsListActivity extends ListActivity {
 
@@ -67,7 +68,12 @@ public class DocsListActivity extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Log.d(this.getClass().getName(), "clicked list element at " + position);
 		Intent in = new Intent("com.neoba.syncpad.DOCVIEWER");
+		
 		in.putExtra("rowid", position + 1);
+		DBManager db = new DBManager(this);
+		db.open();
+		in.putExtra("docid", db.getId(position+1));
+		db.close();
 		startActivityForResult(in, 0);
 
 	}
@@ -119,15 +125,16 @@ public class DocsListActivity extends ListActivity {
 			
 			
 		}
+		if (id == R.id.action_users) {
+			startActivity(new Intent("com.neoba.syncpad.USERS"));
+		}
 		if (id == R.id.action_create) {
 			LayoutInflater li = LayoutInflater.from(this);
 			View promptsView = li.inflate(R.layout.dialog_create, null);
 
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-					this);
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 			alertDialogBuilder.setView(promptsView);
-			final EditText userInput = (EditText) promptsView
-					.findViewById(R.id.editTextDialogUserInput);
+			final EditText userInput = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
 
 			// set dialog message
 			alertDialogBuilder
@@ -137,7 +144,14 @@ public class DocsListActivity extends ListActivity {
 								public void onClick(DialogInterface dialog,
 										int id) {
 									Log.d("Listview action", userInput.getText().toString());
-									
+									if(alertDialog.isShowing())
+										alertDialog.dismiss();
+									try {
+										Thread.sleep(1000);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 									new CreateDocument().execute(userInput.getText().toString());
 								}
 							})
@@ -159,7 +173,7 @@ public class DocsListActivity extends ListActivity {
 	}
 
 	public class CreateDocument extends AsyncTask<String, Void, document> {
-		private ProgressDialog dialog = new ProgressDialog(DocsListActivity.this);
+		private ProgressDialog dialog;
 
 		@Override
 		protected void onPostExecute(document result) {
@@ -181,15 +195,16 @@ public class DocsListActivity extends ListActivity {
 
 		@Override
 		protected void onPreExecute() {
-			this.dialog
-					.setMessage("Creating a new document..");
+			if(alertDialog.isShowing())
+				alertDialog.dismiss();
+			this.dialog= new ProgressDialog(DocsListActivity.this);
+			this.dialog.setMessage("Creating a new document..");
 			this.dialog.show();
 		}
 
 		@Override
 		protected document doInBackground(String... params) {
-			DBManager db=new DBManager(DocsListActivity.this);
-			db.open();
+
 			document doc=null;
 			try {
 				doc = ByteMessenger.CreateDoc(params[0],getCookie());
@@ -197,8 +212,33 @@ public class DocsListActivity extends ListActivity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			db.insertDoc(doc);
-			db.close();
+			if(doc!=null){
+				DBManager db=new DBManager(DocsListActivity.this);
+				db.open();
+				db.insertDoc(doc);
+				db.close();
+			}else
+			{
+				if (dialog.isShowing()) {
+					dialog.dismiss();
+				}
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				   runOnUiThread(new Runnable(){
+
+				          @Override
+				          public void run(){
+				        	  Toast.makeText(getApplicationContext(),"Sorry.. Can't connect to our server :(", Toast.LENGTH_LONG).show();
+				          }
+				       });
+				
+			}
+
 			
 			return null;
 		}

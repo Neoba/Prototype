@@ -42,7 +42,7 @@ class MessageInterpreter {
         this.ctx = ctx;
     }
 
-    ByteBuf generateReply() throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException {
+    ByteBuf generateReply() throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException, Exception {
         switch (type) {
             case Constants.PINGPONG:
                 return new PingPongMessage().result();  
@@ -83,6 +83,9 @@ class MessageInterpreter {
                 case Constants.USER_FOLLOW:
                     string = buff.toString(6+16, size, Charset.forName("UTF-8"));
                     return new UserFollowMessage(string, sessid).result();
+                case Constants.POKE:
+                    string = buff.toString(6+16, size, Charset.forName("UTF-8"));
+                    return new PokeMessage(string, sessid).result();
                 case Constants.LOGOUT:
                     return new UserLogoutMessage(sessid).result();
                 case Constants.GRANT_PERMISSION:
