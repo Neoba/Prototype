@@ -180,6 +180,7 @@ public class ShareListActivity extends Activity {
 		protected void onPostExecute(ArrayList<Share> result) {
 			if (dialog.isShowing()) {
 				dialog.dismiss();
+				dialog=null;
 			}
 			
 			if(result==null){

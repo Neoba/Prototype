@@ -9,11 +9,13 @@
         android:title="Logout"/>
     <item
         android:id="@+id/action_create"
+        android:icon="@drawable/ic_create"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="create"/>
     <item
         android:id="@+id/action_users"
+        android:icon="@drawable/ic_users"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="user"/>

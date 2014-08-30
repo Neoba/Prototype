@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.neoba;
+
+import java.util.ArrayList;
+import java.util.UUID;
+import org.apache.log4j.Logger;
+import org.codehaus.jettison.json.JSONException;
 
 /**
  *
@@ -12,31 +16,34 @@ package com.neoba;
  */
 public class Utils {
 
-       public static void printhex(byte[] b,int count) {
+    static Logger logger = Logger.getLogger(Utils.class);
+
+    public static void printhex(String title,byte[] b, int count) {
         int rem = count;
         String outs;
         int ran = 0;
-        //System.out.println(count + "B dump");
+        logger.debug("buffer : "+title);
+        logger.debug("size : "+count+" bytes");
+        StringBuilder sb ;
         for (int i = 0; i < ((count / 10) + 1); i++) {
+            sb = new StringBuilder();
             for (int j = 0; (j < rem && j < 10); j++) {
                 outs = String.format("%02X ", b[j + count - rem] & 0xff);
-
-                System.out.print(outs);
+                sb.append(outs);
                 ran++;
             }
             for (int j = 0; j < 29 - (ran * 2 + ran - 1); j++) {
-                System.out.print(" ");
+                sb.append(" ");
             }
             ran = 0;
             for (int j = 0; (j < rem && j < 10); j++) {
-                System.out.print((char) (b[j + count - rem] >= 30 && b[j + count - rem] <= 127 ? b[j + count - rem] : '.') + " ");
+                sb.append((char) (b[j + count - rem] >= 30 && b[j + count - rem] <= 127 ? b[j + count - rem] : '.') + " ");
             }
             rem -= 10;
-
-            System.out.println("");
+            logger.debug(sb.toString());
 
         }
-
     }
-}
+    
 
+}

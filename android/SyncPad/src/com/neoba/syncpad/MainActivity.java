@@ -65,6 +65,16 @@ public class MainActivity extends Activity {
 				getRegId();
 			}
 		});
+		
+		Join.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent docintent = new Intent("com.neoba.syncpad.SIGNUP");
+				startActivityForResult(docintent,10);
+				
+			}
+		});
 
 	}
 
@@ -78,9 +88,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -321,19 +329,28 @@ public class MainActivity extends Activity {
 			protected void onPostExecute(Boolean res) {
 				dialogr.dismiss();
 				dialogr=null;
-				runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(getBaseContext(), regid,
-								Toast.LENGTH_SHORT).show();
-						wrongpass.setText("");
-					}
-				});
+
 				if (res)
 					new Login().execute(username.getText().toString(), password
 							.getText().toString(), regid);
 
 			}
 		}.execute(null, null, null);
+	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+	    if (requestCode == 10) {
+	        if(resultCode == RESULT_OK){
+	            String usern=data.getStringExtra("username");
+	            String pass=data.getStringExtra("password");
+	            username.setText(usern);
+	            password.setText(pass);
+	        }
+	        if (resultCode == RESULT_CANCELED) {
+	            //Write your code if there's no result
+	        }
+	    }
 	}
 
 }

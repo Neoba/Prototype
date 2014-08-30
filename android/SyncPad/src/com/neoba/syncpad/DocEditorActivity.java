@@ -27,16 +27,17 @@ public class DocEditorActivity extends Activity {
 	int rowid;
 	String docid;
 	EditText doceditor;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_doc_editor);
-		doceditor=(EditText) findViewById(R.id.etDocument);
-		DBManager db=new DBManager(this);
+		doceditor = (EditText) findViewById(R.id.etDocument);
+		DBManager db = new DBManager(this);
 		db.open();
-		docid=getIntent().getExtras().getString("docid");
-		rowid=getIntent().getExtras().getInt("rowid");
-		String doc=null;
+		docid = getIntent().getExtras().getString("docid");
+		rowid = getIntent().getExtras().getInt("rowid");
+		String doc = null;
 		try {
 			doc = db.getDoc(docid);
 		} catch (IOException e) {
@@ -46,7 +47,7 @@ public class DocEditorActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		doceditor.setText(doc);
 		db.close();
 	}
@@ -66,11 +67,11 @@ public class DocEditorActivity extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_sync) {
 			Log.d(this.getClass().getCanonicalName(), "syncc");
-			DBManager db=new DBManager(this);
+			DBManager db = new DBManager(this);
 			db.open();
-			document doc=db.getDocument(rowid);
+			document doc = db.getDocument(rowid);
 			try {
-				doc.diff=new VcdiffEncoder(doc.dict, doceditor.getText().toString()).encode();
+				doc.diff = new VcdiffEncoder(doc.dict, doceditor.getText().toString()).encode();
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -84,6 +85,7 @@ public class DocEditorActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 	private UUID getCookie() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -96,8 +98,9 @@ public class DocEditorActivity extends Activity {
 
 	}
 
-	public class DocEditor extends	AsyncTask<document, Void,document> {
-		private ProgressDialog dialog = new ProgressDialog(DocEditorActivity.this);
+	public class DocEditor extends AsyncTask<document, Void, document> {
+		private ProgressDialog dialog = new ProgressDialog(
+				DocEditorActivity.this);
 
 		@Override
 		protected void onPreExecute() {
@@ -107,37 +110,32 @@ public class DocEditorActivity extends Activity {
 			super.onPreExecute();
 		}
 
-
 		@Override
 		protected void onPostExecute(document result) {
 			if (dialog.isShowing()) {
 				dialog.dismiss();
+				dialog = null;
+			}
+			if (result != null) {
+				DBManager db = new DBManager(DocEditorActivity.this);
+				db.open();
+				db.updateContent(result);
+				db.close();
 			}
 
-			if(result!=null)
-			{
-	 			DBManager db=new DBManager(DocEditorActivity.this);
-	 			db.open();
-	 			db.updateContent(result);
-	 			db.close();
-			}
-			
 			super.onPostExecute(result);
 		}
-
 
 		@Override
 		protected document doInBackground(document... params) {
 			try {
-				document new1=ByteMessenger.Editdoc(params[0], getCookie());
+				document new1 = ByteMessenger.Editdoc(params[0], getCookie());
 				return new1;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return null;
 		}
-
-
 
 	}
 

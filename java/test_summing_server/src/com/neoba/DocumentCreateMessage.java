@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.UUID;
 import net.dongliu.vcdiff.VcdiffEncoder;
 import net.dongliu.vcdiff.exception.VcdiffEncodeException;
+import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -25,6 +26,7 @@ class DocumentCreateMessage implements Message{
     UUID id;
     String name;
     String userid;
+    Logger logger=Logger.getLogger(DocumentCreateMessage.class);
     public DocumentCreateMessage(String name,UUID session) throws JSONException, IOException, VcdiffEncodeException {
         this.name=name;
         this.id=UUID.randomUUID();
@@ -55,19 +57,18 @@ class DocumentCreateMessage implements Message{
         user.put("docs",docs);
         user.put("edit_docs",edits);
         Dsyncserver.cclient.replace(userid, user.toString());
-        System.out.println("Created new Document ["+ this.id.toString()+"] : "+(String)Dsyncserver.cclient.get(this.id.toString()));
+        logger.info(session+": Created new Document ["+ this.id.toString()+"] : "+(String)Dsyncserver.cclient.get(this.id.toString()));
     }
     
     @Override
     public ByteBuf result(){
        
-        ByteBuf reply=buffer(2+4+Long.SIZE*2);
+        ByteBuf reply=buffer(2+4+16);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.DOCUMENT_CREATE);
         reply.writeInt(Constants.W_SUCCESS);
         reply.writeLong(id.getLeastSignificantBits());
         reply.writeLong(id.getMostSignificantBits());
-        //printhex(reply.array());
         return reply;
     }
     

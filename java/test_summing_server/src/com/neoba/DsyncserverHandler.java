@@ -18,6 +18,7 @@ import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -25,6 +26,8 @@ import java.util.Date;
  */
 public class DsyncserverHandler extends SimpleChannelInboundHandler<HttpContent> {
 
+    Logger logger = Logger.getLogger(DsyncserverHandler.class);
+    static int msgcount;
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpContent con) throws Exception {
 
@@ -32,13 +35,18 @@ public class DsyncserverHandler extends SimpleChannelInboundHandler<HttpContent>
         if (in.array().length == 0) {
             String time=(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date())).toString();
             respondAndFlush(Unpooled.wrappedBuffer(("<h1>Neoba Experimental Server 1</h1>"+time+"<br>Status:OK<br>Please use the client").getBytes()), ctx,true);
+            logger.info("Browser request - responded");
             return;
         }
         //System.out.println(new String(in.array()));
-        Utils.printhex(in.array(), in.array().length);
+        msgcount+=1;
+        logger.info("Message Received from ip "+ctx.channel().remoteAddress()+":"+msgcount);
+        Utils.printhex("request",in.array(), in.array().length);
         MessageInterpreter mi = new MessageInterpreter(ctx, in);
         ByteBuf reply = mi.generateReply();
+        Utils.printhex("response",reply.array(), reply.array().length);
         respondAndFlush(reply, ctx,false);
+        logger.info("Message Responded :"+msgcount);
 
     }
 

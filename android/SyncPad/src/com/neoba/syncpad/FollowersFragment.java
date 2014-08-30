@@ -1,6 +1,10 @@
 package com.neoba.syncpad;
 
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
@@ -48,4 +52,31 @@ public class FollowersFragment extends Fragment {
 		db.close();
 		return rootView;
 	}
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    getActivity() .registerReceiver(mMessageReceiver, new IntentFilter("com.neoba.syncpad.FOLLOWERUPDATE"));
+	}
+
+	//Must unregister onPause()
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    getActivity().unregisterReceiver(mMessageReceiver);
+	}
+
+
+	//This is the handler that will manager to process the broadcast intent
+	private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+	    @Override
+	    public void onReceive(Context context, Intent intent) {
+			DBManager db = new DBManager(getActivity());
+			db.open();
+			ListView followers=(ListView)getView().getRootView().findViewById(R.id.lvFollowing);
+			followers.setAdapter(new SimpleCursorAdapter(getView().getRootView().getContext(),
+					R.layout.follower_list_element, db.getAllFollower(), new String[] {"username" }, new int[] { R.id.feleUsername },
+					CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER));
+			db.close();
+	    }
+	};
 }

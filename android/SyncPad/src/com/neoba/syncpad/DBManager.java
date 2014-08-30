@@ -32,6 +32,8 @@ public class DBManager {
 		this.context = context;
 		DBHelper = new DatabaseHelper(context);
 	}
+	
+
 
 	private static class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -43,7 +45,7 @@ public class DBManager {
 		public void onCreate(SQLiteDatabase db) {
 			String CREATE_BOOK_TABLE = "CREATE TABLE docs ( "
 					+ "id TEXT, " + "diff TEXT, "
-					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG )";
+					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1)";
 			db.execSQL(CREATE_BOOK_TABLE);
 			String CREATE_FOLLOWERS_TABLE = "CREATE TABLE follower ( "
 					+ "id LONG, " + "username TEXT "
@@ -59,6 +61,8 @@ public class DBManager {
 			db.execSQL( CREATE_PERMISSIONS_TABLE);
 
 		}
+		
+
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -90,7 +94,21 @@ public class DBManager {
 				c.getInt(3), c.getString(2), (byte) c.getInt(5));
 		return d;
 	}
-
+	
+	public boolean isDocMine(String docid){
+		String sql = "SELECT owns from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { docid });
+		c.moveToFirst();
+		int out=c.getInt(0);
+		return out==1;
+	}
+	public boolean isDocEditable(String docid){
+		String sql = "SELECT permission from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { docid });
+		c.moveToFirst();
+		int out=c.getInt(0);
+		return out==2;
+	}
 	public void deleteDoc(String id){
 		String sql = "delete from docs where id=?";
 		SQLiteStatement updateStmt = db.compileStatement(sql);
@@ -106,7 +124,7 @@ public class DBManager {
 		updateStmt.bindString(1, doc.id);
 		updateStmt.executeUpdateDelete();
 
-		sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date) VALUES(?,?,?,?,?,?,?)";
+		sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date,owns) VALUES(?,?,?,?,?,?,?,?)";
 		SQLiteStatement insertStmt = db.compileStatement(sql);
 		insertStmt.clearBindings();
 		insertStmt.bindString(1, doc.id);
@@ -116,6 +134,7 @@ public class DBManager {
 		insertStmt.bindString(5, doc.title);
 		insertStmt.bindLong(6, doc.permission);
 		insertStmt.bindLong(7, new Date().getTime());
+		insertStmt.bindLong(8, doc.owns?1:0);
 		insertStmt.executeInsert();
 		db.execSQL("vacuum");
 	}
@@ -152,6 +171,22 @@ public class DBManager {
 		insertStmt.bindString(2, username);
 		
 		insertStmt.executeInsert();
+	}
+	public void deleteFollower(String id){
+		String sql = "delete from follower where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, id);
+		updateStmt.executeUpdateDelete();
+		db.execSQL("vacuum");
+	}
+	public void deleteFollowing(String id){
+		String sql = "delete from following where username=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, id);
+		updateStmt.executeUpdateDelete();
+		db.execSQL("vacuum");
 	}
 	public void insertFollowing(Long id,String username) {
 		String sql = "INSERT INTO following (id,username) VALUES(?,?)";
@@ -197,6 +232,20 @@ public class DBManager {
 		cursor.moveToFirst();
 		return cursor.getString(0);
 	}
+	public String getFollowingUserid(String username) {
+		String sql = "SELECT id FROM followingr where username=?";
+		Cursor cursor = db.rawQuery(sql, new String[] {username});
+		cursor.moveToFirst();
+		return cursor.getString(0);
+	}
+	
+	public String getFollowingUsernameFromRowid(int i) {
+		String sql = "SELECT username FROM following where rowid=?";
+		Cursor cursor = db.rawQuery(sql, new String[] {Integer.toString(i)});
+		cursor.moveToFirst();
+		return cursor.getString(0);
+	}
+	
 	public Long getFollowerid(String username) {
 		String sql = "SELECT id FROM follower where username=?";
 		Cursor cursor = db.rawQuery(sql, new String[] {username});
@@ -281,6 +330,13 @@ public class DBManager {
 		SQLiteStatement updateStmt=db.compileStatement("DELETE from permissions where docid=?");
 		updateStmt.clearBindings();
 		updateStmt.bindString(1, docid);
+		updateStmt.executeUpdateDelete();
+	}
+	public void clearPermissions(String docid,String userid){
+		SQLiteStatement updateStmt=db.compileStatement("DELETE from permissions where docid=? and userid=?");
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, docid);
+		updateStmt.bindLong(2, Long.parseLong(userid));
 		updateStmt.executeUpdateDelete();
 	}
 	public void Truncate() {

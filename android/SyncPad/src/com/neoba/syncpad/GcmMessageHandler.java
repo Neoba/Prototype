@@ -6,6 +6,7 @@ import java.util.UUID;
 import net.dongliu.vcdiff.exception.VcdiffDecodeException;
 import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,6 +19,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.WakefulBroadcastReceiver;
@@ -52,7 +56,8 @@ public class GcmMessageHandler extends IntentService {
 		title = extras.getString("title");
 		content = extras.getString("content");
 		action= extras.getString("action");
-		showToast();
+		showNotification(title,content, getApplicationContext());
+		//showToast();
 		Log.i("GCM","Received : (" + messageType + ")  "+ extras.getString("title"));
 
 		try {
@@ -64,7 +69,9 @@ public class GcmMessageHandler extends IntentService {
 				db.open();
 				db.insertFollower(Long.parseLong( jaction.getString("id")), jaction.getString("username"));
 				db.close();
+				updateFollowerListActivity(getApplicationContext());
 			}else if(jaction.getString("type").equals("permission_grant")){
+				
 				Log.d("GCMPOKE",jaction.toString());
 				DBManager db = new DBManager(this);
 				db.open();
@@ -73,22 +80,45 @@ public class GcmMessageHandler extends IntentService {
 						,Base64.decode(jaction.getString("diff"))
 						,jaction.getInt("age")
 						,jaction.getString("dict")
-						,(byte)jaction.getInt("permission"));
+						,(byte)jaction.getInt("permission"),false);
 				db.insertDoc(pushed);
 				Log.d("pushre",pushed.toString());
 				db.close();
+				updateDocsListActivity(getApplicationContext());
 			}else if(jaction.getString("type").equals("permission_revoke")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.deleteDoc(jaction.getString("id"));
 				db.close();
+				updateDocsListActivity(getApplicationContext());
 			}else if(jaction.getString("type").equals("edit")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.editDoc(jaction.getString("id"),Base64.decode(jaction.getString("diff")),jaction.getInt("age"));
 				db.close();
+				updateViewerActivity(this);
+			}else if(jaction.getString("type").equals("delete")){
+				DBManager db = new DBManager(this);
+				db.open();
+				db.deleteDoc(jaction.getString("id"));
+				db.close();
+				updateDocsListActivity(getApplicationContext());
+			}else if(jaction.getString("type").equals("user_deleted")){
+				DBManager db = new DBManager(this);
+				db.open();
+				db.clearPermissions(jaction.getString("docid"));
+				db.close();
+				updateDocsListActivity(getApplicationContext());
+			}else if(jaction.getString("type").equals("unfollowed")){
+				updateFollowerListActivity(getApplicationContext());
+				DBManager db = new DBManager(this);
+				db.open();
+				JSONArray docs=jaction.getJSONArray("docs");
+				for(int i=0;i<docs.length();i++)
+					db.clearPermissions(docs.getString(i),jaction.getString("userid"));
+				db.deleteFollower(jaction.getString("userid"));
+				db.close();
 			}
-
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -108,14 +138,26 @@ public class GcmMessageHandler extends IntentService {
 		WakefulBroadcastReceiver.completeWakefulIntent(intent);
 
 	}
-
+	static void updateDocsListActivity(Context context) {
+	    Intent intent = new Intent("com.neoba.syncpad.LISTUPDATE");
+	    context.sendBroadcast(intent);
+	}
+	
+	static void updateFollowerListActivity(Context context) {
+	    Intent intent = new Intent("com.neoba.syncpad.FOLLOWERUPDATE");
+	    context.sendBroadcast(intent);
+	}
+	static void updateViewerActivity(Context context) {
+	    Intent intent = new Intent("com.neoba.syncpad.VIEWERUPDATE");
+	    context.sendBroadcast(intent);
+	}
 	public void showToast() {
 		handler.post(new Runnable() {
 			@Override
 			public void run() {
 				Toast.makeText(getApplicationContext(),action, Toast.LENGTH_LONG)
 						.show();
-				showNotification(title,content, getApplicationContext());
+				
 			}
 		});
 
@@ -124,7 +166,7 @@ public class GcmMessageHandler extends IntentService {
 	private void showNotification(String title,String content, Context ctx) {
 
 		// Set the icon, scrolling text and timestamp
-		Notification notification = new Notification(R.drawable.common_signin_btn_icon_light, "SyncPad",System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.notelogo, "SyncPad",System.currentTimeMillis());
 
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		// The PendingIntent to launch our activity if the user selects this
@@ -136,5 +178,13 @@ public class GcmMessageHandler extends IntentService {
 
 		// Send the notification.
 		notificationManager.notify("SyncPad", 0, notification);
+		
+		try {
+		    Uri rt = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), rt);
+		    r.play();
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
 	}
 }

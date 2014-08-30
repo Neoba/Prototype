@@ -1,6 +1,7 @@
 package com.neoba;
 
 import com.couchbase.client.protocol.views.Query;
+import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
@@ -9,7 +10,7 @@ import static io.netty.buffer.Unpooled.buffer;
 import java.util.TreeSet;
 import java.util.UUID;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -28,23 +29,29 @@ class GetDigestMessage implements Message {
     int bufsize = 2 + 4;
     int doccount = 0, followerc = 0, followingc = 0, createdc = 0;
     ViewResponse result;
-
+    static final Logger logger = Logger.getLogger(GetDigestMessage.class);
+    UUID sessid;    
+    TreeSet<String> ownedset;
+    
     public GetDigestMessage(UUID sessid) throws JSONException {
+        this.sessid = sessid;
         userid = (String) Dsyncserver.usersessions.get(sessid);
         JSONObject user = new JSONObject((String) Dsyncserver.cclient.get(userid));
         docs = user.getJSONArray("docs");
         wdocs = user.getJSONArray("edit_docs");
         followers = user.getJSONArray("followers");
         following = user.getJSONArray("following");
-
+        ownedset=getOwnedSet(userid);
+        
         for (int i = 0; i < docs.length(); i++) {
             JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get((String) docs.get(i)));
-            System.out.println((String) doc.get("title") + ":version" + (Integer) doc.get("version"));
+            logger.debug(sessid + " :calculating digest of " + doc.get("title") + " version " + (Integer) doc.get("version"));
             bufsize += ((JSONArray) doc.get("diff")).length();
             bufsize += ((String) doc.get("dict")).length();
             bufsize += ((String) doc.get("title")).length();
             bufsize += (16 + 4 + 4 + 4 + 4);
             bufsize += 1;
+            bufsize+=1;
             doccount += 1;
         }
         bufsize += (4 + 4);     //4 each for specifiying count of followers and following list
@@ -66,10 +73,10 @@ class GetDigestMessage implements Message {
         View view = Dsyncserver.cclient.getView("dev_neoba", "created_docs");
         Query query = new Query();
         query.setKey(String.format("\"%s\"", userid));
+        query.setStale( Stale.FALSE );
         ViewResponse result = Dsyncserver.cclient.query(view, query);
         bufsize += 4;
         for (ViewRow row : result) {
-            System.out.println(row.getValue());
             bufsize += 16;
             bufsize += (4 + 4);
             JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get(row.getValue()));
@@ -80,20 +87,29 @@ class GetDigestMessage implements Message {
         }
         bufsize += 4;
     }
+    
+    public TreeSet<String> getOwnedSet(String userid){
+        View view = Dsyncserver.cclient.getView("dev_neoba", "created_docs");
+        Query query = new Query();
+        query.setKey(String.format("\"%s\"", userid));
+        query.setStale( Stale.FALSE );
+        ViewResponse result = Dsyncserver.cclient.query(view, query);
+        TreeSet<String> ts=new TreeSet<String>();
+        for(ViewRow row : result){
+            ts.add(row.getValue());
+        }
+        return ts;
+        
+    }
 
     @Override
     public ByteBuf result() {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException ex) {
-//            Logger.getLogger(UserLoginMessage.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         TreeSet<String> wset = new TreeSet();
         for (int i = 0; i < wdocs.length(); i++) {
             try {
                 wset.add(wdocs.getString(i));
             } catch (JSONException ex) {
-                Logger.getLogger(GetDigestMessage.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(sessid + " :Broken JSON " + ex);
             }
         }
         ByteBuf reply = buffer(bufsize);
@@ -103,7 +119,7 @@ class GetDigestMessage implements Message {
         try {
             for (int i = 0; i < docs.length(); i++) {
                 JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get((String) docs.get(i)));
-
+                logger.debug(sessid + " :digesting doc " + doc.get("title") + " version " + (Integer) doc.get("version"));
                 UUID id = UUID.fromString((String) docs.get(i));
                 reply.writeLong(id.getLeastSignificantBits());
                 reply.writeLong(id.getMostSignificantBits());
@@ -125,11 +141,17 @@ class GetDigestMessage implements Message {
                 } else {
                     reply.writeByte(Constants.PERMISSION_READ);
                 }
+                
+                if(ownedset.contains((String) docs.get(i)))
+                    reply.writeByte(1);
+                else
+                    reply.writeByte(0);
             }
             reply.writeInt(followerc);
             for (int i = 0; i < followers.length(); i++) {
                 JSONObject f = (JSONObject) followers.get(i);
                 reply.writeInt(f.getString("username").length());
+                logger.debug(sessid + " :digesting follower " + f.getString("username"));
                 for (byte b : ((String) f.get("username")).getBytes()) {
                     reply.writeByte(b);
                 }
@@ -138,6 +160,7 @@ class GetDigestMessage implements Message {
             reply.writeInt(followingc);
             for (int i = 0; i < following.length(); i++) {
                 JSONObject f = (JSONObject) following.get(i);
+                logger.debug(sessid + " :digesting follower " + f.getString("username"));
                 reply.writeInt(f.getString("username").length());
                 for (byte b : ((String) f.get("username")).getBytes()) {
                     reply.writeByte(b);
@@ -167,8 +190,11 @@ class GetDigestMessage implements Message {
 
             }
 
+            logger.debug(sessid + " :digested permissions info ");
+            logger.info(sessid + " :digestion successful ");
+
         } catch (Exception J) {
-            System.err.println(J);
+            logger.error(sessid + " :Error preparing digest " + J);
         }
         return reply;
 

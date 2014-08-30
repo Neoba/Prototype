@@ -96,13 +96,13 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 		if (id == R.id.action_poke) {
 
 			LayoutInflater li = LayoutInflater.from(this);
-			View promptsView = li.inflate(R.layout.dialog_follow, null);
+			View promptsView = li.inflate(R.layout.dialog_poke, null);
 
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					this);
 			alertDialogBuilder.setView(promptsView);
 			final EditText userInput = (EditText) promptsView
-					.findViewById(R.id.editTextDialogUserInput);
+					.findViewById(R.id.editTextDialogUserInputPoke);
 
 			// set dialog message
 			alertDialogBuilder
@@ -148,7 +148,7 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 					this);
 			alertDialogBuilder.setView(promptsView);
 			final EditText userInput = (EditText) promptsView
-					.findViewById(R.id.editTextDialogUserInput);
+					.findViewById(R.id.editTextDialogUserInputPoke);
 
 			// set dialog message
 			alertDialogBuilder
@@ -253,6 +253,7 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 			super.onPostExecute(result);
 			if (dialog.isShowing()) {
 				dialog.dismiss();
+				dialog=null;
 			}
 			
 			startActivity(new Intent("com.neoba.syncpad.USERS"));
@@ -279,9 +280,7 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if (dialog.isShowing()) {
-				dialog.dismiss();
-			}
+
 			if(doc!=null){
 				DBManager db=new DBManager(FollActivity.this);
 				db.open();
@@ -322,6 +321,7 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 			super.onPostExecute(result);
 			if (dialog.isShowing()) {
 				dialog.dismiss();
+				dialog=null;
 			}
 			
 			startActivity(new Intent("com.neoba.syncpad.USERS"));
@@ -348,9 +348,7 @@ public class FollActivity extends Activity implements ActionBar.TabListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if (dialog.isShowing()) {
-				dialog.dismiss();
-			}
+
 			if(doc!=null){
 
 				Log.d("poked",doc+""+params[0]);

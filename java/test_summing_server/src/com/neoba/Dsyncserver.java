@@ -13,8 +13,13 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
+import java.util.logging.Level;
 import org.apache.commons.collections.BidiMap;
 import org.apache.commons.collections.bidimap.TreeBidiMap;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
@@ -24,23 +29,23 @@ public class Dsyncserver {
 
     private final int port;
     static CouchbaseClient cclient = null;
-    static BidiMap usersessions=new TreeBidiMap();
-
-
+    static HashMap<UUID,String> usersessions=new HashMap<UUID,String>();
+    static HashMap<UUID,Byte> useragents=new HashMap<UUID,Byte>();
+    
+    Logger logger = Logger.getLogger(Dsyncserver.class);
     public Dsyncserver(int port) {
         this.port = port;
+        PropertyConfigurator.configure("logging.properties");
     }
 
     public void start() throws Exception {
-        ArrayList<URI> nodes = new ArrayList<URI>();
-            //System.setProperty("viewmode", "development");
-        // Add one or more nodes of your cluster (exchange the IP with yours)
-        nodes.add(URI.create("http://127.0.0.1:8091/pools"));
-
+        logger.info("kickstarting server..");
+        ArrayList<URI> nodes = new ArrayList<>();
         try {
+            nodes.add(URI.create("http://127.0.0.1:8091/pools"));
             cclient = new CouchbaseClient(nodes, "default", "");
         } catch (Exception e) {
-            System.err.println("Error connecting to Couchbase: " + e.getMessage());
+            logger.fatal("Error connecting to Couchbase: " + e.getMessage());
             System.exit(1);
         }
     //cclient.add("idgenerator", 271397319);
@@ -62,7 +67,7 @@ public class Dsyncserver {
                     });
 
             ChannelFuture f = b.bind().sync();
-            System.out.println(Dsyncserver.class.getName() + " started and listen on " + f.channel().localAddress());
+            logger.info(Dsyncserver.class.getName() + " started and listen on " + f.channel().localAddress());
             f.channel().closeFuture().sync();
         } finally {
             group.shutdownGracefully().sync();

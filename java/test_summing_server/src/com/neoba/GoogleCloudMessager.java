@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.neoba;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -12,68 +12,84 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.List;
+import java.util.UUID;
+import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONObject;
 
-/**
- * Sample Smack implementation of a client for GCM Cloud Connection Server. This
- * code can be run as a standalone CCS client.
- *
- * <p>For illustration purposes only.
- */
-public class GoogleCloudMessager
-{
-   public static boolean Push(List<String> regs,String title,String content,JSONObject action) throws Exception
-    {
-        System.out.println( "Sending POST to GCM" );
+public class GoogleCloudMessager {
+
+    static Logger logger = Logger.getLogger(GoogleCloudMessager.class);
+    static UUID session;
+
+    public static boolean Push(UUID sess, List<String> regs, String title, String content, JSONObject action) throws Exception {
+        logger.debug(sess + " GCM Post Initializing");
+        session = sess;
         //String ou1t=" { \"data\": { \"title\": \"without a doubt the best out put\",\"message\": \"Test Message\"},\"registration_ids\": [\"APA91bG5FNex2MbGC0yRXQ3eg_i8gtDO4c4VHGPvsO3q3ZKzOLKd4GuL6sSu20uEqb0s2or43C6TcnD2JFZSan2eTEOLb3ygqDgzWiWhPe5HLf_C6zaKC6NDtBuzJ_8FaWE-OXBbeCmSXX3nSsDwS5-Wl4Oz5SnhKA\"] } ";
-        JSONObject data=new JSONObject();
-        JSONObject finalo=new JSONObject();
-        data.put("title",title);
-        data.put("content",content);
+        JSONObject data = new JSONObject();
+        JSONObject finalo = new JSONObject();
+        data.put("title", title);
+        data.put("content", content);
         data.put("action", action);
-        JSONArray regids=new JSONArray(regs);
+        JSONArray regids = new JSONArray(regs);
         finalo.put("data", data);
         finalo.put("registration_ids", regids);
-        System.out.println(finalo.toString());
-        ByteBuffer a=sendPost(ByteBuffer.wrap(finalo.toString().getBytes()));
-        if(a==null)
+        logger.debug(sess + "GCM push payload: " + finalo.toString());
+        ByteBuffer a = sendPost(ByteBuffer.wrap(finalo.toString().getBytes()));
+        if (a == null) {
             return false;
-        System.out.println(new String(a.array()));
+        }
+        logger.debug((new String(a.array())));
         return true;
-        
+
     }
+
     static ByteBuffer sendPost(ByteBuffer a) throws Exception {
 
-        String url = "https://android.googleapis.com/gcm/send";
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        byte[] result = null;
+        int tries=Constants.GCM_MAX_RETRY;
+        while (tries>=0) {
+            try {
+                String url = "https://android.googleapis.com/gcm/send";
+                URL obj = new URL(url);
+                HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-        //add reuqest header
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Authorization","key=AIzaSyC7EVwGwadMtVj_XZMBbhsp1YT7b4_Bcf4");
-        con.setRequestProperty("Content-Type", "application/json");
-        // Send post request
-        a.flip();
-        con.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.write(a.array());
-        wr.flush();
-        wr.close();
+                con.setRequestMethod("POST");
+                con.setRequestProperty("Authorization", "key=AIzaSyC7EVwGwadMtVj_XZMBbhsp1YT7b4_Bcf4");
+                con.setRequestProperty("Content-Type", "application/json");
 
-        int responseCode = con.getResponseCode();
-        if(responseCode==400)
-            return null;
-        BufferedInputStream in = new BufferedInputStream(con.getInputStream());
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        int next = in.read();
-        while (next > -1) {
-            bos.write(next);
-            next = in.read();
+                a.flip();
+                con.setDoOutput(true);
+                DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+                wr.write(a.array());
+                wr.flush();
+                wr.close();
+
+                int responseCode = con.getResponseCode();
+
+                BufferedInputStream in = new BufferedInputStream(con.getInputStream());
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                int next = in.read();
+                while (next > -1) {
+                    bos.write(next);
+                    next = in.read();
+                }
+                bos.flush();
+                result = bos.toByteArray();
+                break;
+            } catch (Exception e) {
+                logger.error(session + " :GCM Connection error- " + e.getMessage());
+                logger.info(session+" retrying GCM :"+tries);
+                //infinite looping this ugh..
+                Thread.sleep(0x3e8);
+                tries+=1;
+            }
         }
-        bos.flush();
-        byte[] result = bos.toByteArray();
-        return ByteBuffer.wrap(result);
+        if (result != null) {
+            return ByteBuffer.wrap(result);
+        } else {
+            return null;
+        }
 
     }
 }
