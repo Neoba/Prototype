@@ -3,6 +3,7 @@
     tools:context="com.neoba.syncpad.ShareListActivity" >
     <item
         android:id="@+id/action_sync_share"
+        android:icon="@drawable/ic_tick"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="OK"/>

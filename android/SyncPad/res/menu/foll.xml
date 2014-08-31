@@ -4,11 +4,13 @@
 
     <item
         android:id="@+id/action_poke"
+        android:icon="@drawable/ic_poke"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="poke"/>
     <item
         android:id="@+id/action_follow"
+        android:icon="@drawable/ic_follow"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="follow"/>

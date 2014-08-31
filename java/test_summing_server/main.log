@@ -14725,3 +14725,1113 @@ Also, most of this checklist also applies to the web service.
 2014-08-30 23:12:37 DEBUG Utils:26 - size : 6 bytes
 2014-08-30 23:12:37 DEBUG Utils:43 - 01 03 00 00 FF FF             . . . . . . 
 2014-08-30 23:12:37 INFO  DsyncserverHandler:49 - Message Responded :88
+2014-08-31 09:44:54 INFO  Dsyncserver:42 - kickstarting server..
+2014-08-31 09:44:59 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-08-31 09:44:59 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-08-31 09:44:59 DEBUG PlatformDependent:409 - Platform: Windows
+2014-08-31 09:44:59 DEBUG PlatformDependent:540 - Java version: 7
+2014-08-31 09:44:59 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-08-31 09:44:59 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-08-31 09:44:59 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-08-31 09:44:59 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-08-31 09:44:59 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-08-31 09:44:59 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-08-31 09:44:59 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-08-31 09:44:59 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-08-31 09:44:59 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-08-31 09:44:59 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-08-31 09:44:59 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: C:\Users\ATULVI~1\AppData\Local\Temp (java.io.tmpdir)
+2014-08-31 09:44:59 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-08-31 09:44:59 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-08-31 09:45:00 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-08-31 09:45:00 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-08-31 09:45:00 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x99ba810bf047df3d
+2014-08-31 09:45:00 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-08-31 09:45:00 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-08-31 09:45:00 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-08-31 09:45:01 DEBUG NetUtil:155 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2014-08-31 09:45:01 INFO  Dsyncserver:70 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-08-31 09:45:05 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-08-31 09:45:05 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:43983:1
+2014-08-31 09:45:05 DEBUG Utils:25 - buffer : request
+2014-08-31 09:45:05 DEBUG Utils:26 - size : 22 bytes
+2014-08-31 09:45:05 DEBUG Utils:43 - 01 09 00 00 FF FF 9A D0 35 1E . . . . . . . . 5  
+2014-08-31 09:45:05 DEBUG Utils:43 - 4A 4D DF 32 0B 0A 1B 9E B4 A8 J M . 2 . . . . . . 
+2014-08-31 09:45:05 DEBUG Utils:43 - 42 B1                         B . 
+2014-08-31 09:45:05 INFO  MessageInterpreter:141 - session id received is non-existant: 0b0a1b9e-b4a8-42b1-9ad0-351e4a4ddf32
+2014-08-31 09:45:05 DEBUG Utils:25 - buffer : response
+2014-08-31 09:45:05 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 09:45:05 DEBUG Utils:43 - 01 70 00 00 80 03             . p . . . . 
+2014-08-31 09:45:05 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-08-31 10:08:53 INFO  Dsyncserver:42 - kickstarting server..
+2014-08-31 10:08:54 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-08-31 10:08:54 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-08-31 10:08:54 DEBUG PlatformDependent:409 - Platform: Windows
+2014-08-31 10:08:54 DEBUG PlatformDependent:540 - Java version: 7
+2014-08-31 10:08:54 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-08-31 10:08:54 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-08-31 10:08:54 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-08-31 10:08:54 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-08-31 10:08:54 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-08-31 10:08:54 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-08-31 10:08:54 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-08-31 10:08:54 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-08-31 10:08:54 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-08-31 10:08:54 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-08-31 10:08:54 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: C:\Users\ATULVI~1\AppData\Local\Temp (java.io.tmpdir)
+2014-08-31 10:08:54 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-08-31 10:08:54 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-08-31 10:08:54 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-08-31 10:08:54 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-08-31 10:08:54 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x454296acf35f5470
+2014-08-31 10:08:54 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-08-31 10:08:54 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-08-31 10:08:54 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-08-31 10:08:54 DEBUG NetUtil:155 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2014-08-31 10:08:54 INFO  Dsyncserver:70 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-08-31 10:09:05 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-08-31 10:09:05 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:1
+2014-08-31 10:09:05 DEBUG Utils:25 - buffer : request
+2014-08-31 10:09:05 DEBUG Utils:26 - size : 195 bytes
+2014-08-31 10:09:05 DEBUG Utils:43 - 01 06 00 00 00 02 6E 65 D1 85 . . . . . . n e . . 
+2014-08-31 10:09:05 DEBUG Utils:43 - 4C AE 89 1E C7 B2 91 61 CC AF L . .  . . . a . . 
+2014-08-31 10:09:05 DEBUG Utils:43 - 79 A2 4B 00 C2 74 BD AA 0A 00 y . K . . t . . . . 
+2014-08-31 10:09:05 DEBUG Utils:43 - 00 00 A2 41 50 41 39 31 62 47 . . . A P A 9 1 b G 
+2014-08-31 10:09:05 DEBUG Utils:43 - 35 46 4E 65 78 32 4D 62 47 43 5 F N e x 2 M b G C 
+2014-08-31 10:09:05 DEBUG Utils:43 - 30 79 52 58 51 33 65 67 5F 69 0 y R X Q 3 e g _ i 
+2014-08-31 10:09:05 DEBUG Utils:43 - 38 67 74 44 4F 34 63 34 56 48 8 g t D O 4 c 4 V H 
+2014-08-31 10:09:05 DEBUG Utils:43 - 47 50 76 73 4F 33 71 33 5A 4B G P v s O 3 q 3 Z K 
+2014-08-31 10:09:05 DEBUG Utils:43 - 7A 4F 4C 4B 64 34 47 75 4C 36 z O L K d 4 G u L 6 
+2014-08-31 10:09:05 DEBUG Utils:43 - 73 53 75 32 30 75 45 71 62 30 s S u 2 0 u E q b 0 
+2014-08-31 10:09:05 DEBUG Utils:43 - 73 32 6F 72 34 33 43 36 54 63 s 2 o r 4 3 C 6 T c 
+2014-08-31 10:09:05 DEBUG Utils:43 - 6E 44 32 4A 46 5A 53 61 6E 32 n D 2 J F Z S a n 2 
+2014-08-31 10:09:05 DEBUG Utils:43 - 65 54 45 4F 4C 62 33 79 67 71 e T E O L b 3 y g q 
+2014-08-31 10:09:05 DEBUG Utils:43 - 44 67 7A 57 69 57 68 50 65 35 D g z W i W h P e 5 
+2014-08-31 10:09:05 DEBUG Utils:43 - 48 4C 66 5F 43 36 7A 61 4B 43 H L f _ C 6 z a K C 
+2014-08-31 10:09:05 DEBUG Utils:43 - 36 4E 44 74 42 75 7A 4A 5F 38 6 N D t B u z J _ 8 
+2014-08-31 10:09:05 DEBUG Utils:43 - 46 61 57 45 2D 4F 58 42 62 65 F a W E - O X B b e 
+2014-08-31 10:09:05 DEBUG Utils:43 - 43 6D 53 58 58 33 6E 53 73 44 C m S X X 3 n S s D 
+2014-08-31 10:09:05 DEBUG Utils:43 - 77 53 35 2D 57 6C 34 4F 7A 35 w S 5 - W l 4 O z 5 
+2014-08-31 10:09:05 DEBUG Utils:43 - 53 6E 68 4B 41                S n h K A 
+2014-08-31 10:09:05 INFO  MessageInterpreter:68 - user agent detected: Android OS >= 4.0.3
+2014-08-31 10:09:05 DEBUG MessageInterpreter:79 - User Agent: 10
+2014-08-31 10:09:05 INFO  MessageInterpreter:81 - logging in new user
+2014-08-31 10:09:18 INFO  UserLoginMessage:79 - ne :user dosn't exist 
+2014-08-31 10:09:18 DEBUG Utils:25 - buffer : response
+2014-08-31 10:09:18 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:09:18 DEBUG Utils:43 - 01 06 00 00 80 02             . . . . . . 
+2014-08-31 10:09:18 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-08-31 10:09:19 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:2
+2014-08-31 10:09:19 DEBUG Utils:25 - buffer : request
+2014-08-31 10:09:19 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:09:19 DEBUG Utils:43 - 01 01 50 49 4E 47             . . P I N G 
+2014-08-31 10:09:19 INFO  MessageInterpreter:51 - Ping received
+2014-08-31 10:09:19 DEBUG Utils:25 - buffer : response
+2014-08-31 10:09:19 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:09:19 DEBUG Utils:43 - 01 01 50 4F 4E 47             . . P O N G 
+2014-08-31 10:09:19 INFO  DsyncserverHandler:49 - Message Responded :2
+2014-08-31 10:09:24 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:3
+2014-08-31 10:09:24 DEBUG Utils:25 - buffer : request
+2014-08-31 10:09:24 DEBUG Utils:26 - size : 196 bytes
+2014-08-31 10:09:24 DEBUG Utils:43 - 01 06 00 00 00 03 6E 65 64 D1 . . . . . . n e d . 
+2014-08-31 10:09:24 DEBUG Utils:43 - 85 4C AE 89 1E C7 B2 91 61 CC . L . .  . . . a . 
+2014-08-31 10:09:24 DEBUG Utils:43 - AF 79 A2 4B 00 C2 74 BD AA 0A . y . K . . t . . . 
+2014-08-31 10:09:24 DEBUG Utils:43 - 00 00 00 A2 41 50 41 39 31 62 . . . . A P A 9 1 b 
+2014-08-31 10:09:24 DEBUG Utils:43 - 47 35 46 4E 65 78 32 4D 62 47 G 5 F N e x 2 M b G 
+2014-08-31 10:09:24 DEBUG Utils:43 - 43 30 79 52 58 51 33 65 67 5F C 0 y R X Q 3 e g _ 
+2014-08-31 10:09:24 DEBUG Utils:43 - 69 38 67 74 44 4F 34 63 34 56 i 8 g t D O 4 c 4 V 
+2014-08-31 10:09:24 DEBUG Utils:43 - 48 47 50 76 73 4F 33 71 33 5A H G P v s O 3 q 3 Z 
+2014-08-31 10:09:24 DEBUG Utils:43 - 4B 7A 4F 4C 4B 64 34 47 75 4C K z O L K d 4 G u L 
+2014-08-31 10:09:24 DEBUG Utils:43 - 36 73 53 75 32 30 75 45 71 62 6 s S u 2 0 u E q b 
+2014-08-31 10:09:24 DEBUG Utils:43 - 30 73 32 6F 72 34 33 43 36 54 0 s 2 o r 4 3 C 6 T 
+2014-08-31 10:09:24 DEBUG Utils:43 - 63 6E 44 32 4A 46 5A 53 61 6E c n D 2 J F Z S a n 
+2014-08-31 10:09:24 DEBUG Utils:43 - 32 65 54 45 4F 4C 62 33 79 67 2 e T E O L b 3 y g 
+2014-08-31 10:09:24 DEBUG Utils:43 - 71 44 67 7A 57 69 57 68 50 65 q D g z W i W h P e 
+2014-08-31 10:09:24 DEBUG Utils:43 - 35 48 4C 66 5F 43 36 7A 61 4B 5 H L f _ C 6 z a K 
+2014-08-31 10:09:24 DEBUG Utils:43 - 43 36 4E 44 74 42 75 7A 4A 5F C 6 N D t B u z J _ 
+2014-08-31 10:09:24 DEBUG Utils:43 - 38 46 61 57 45 2D 4F 58 42 62 8 F a W E - O X B b 
+2014-08-31 10:09:24 DEBUG Utils:43 - 65 43 6D 53 58 58 33 6E 53 73 e C m S X X 3 n S s 
+2014-08-31 10:09:24 DEBUG Utils:43 - 44 77 53 35 2D 57 6C 34 4F 7A D w S 5 - W l 4 O z 
+2014-08-31 10:09:24 DEBUG Utils:43 - 35 53 6E 68 4B 41             5 S n h K A 
+2014-08-31 10:09:24 INFO  MessageInterpreter:68 - user agent detected: Android OS >= 4.0.3
+2014-08-31 10:09:24 DEBUG MessageInterpreter:79 - User Agent: 10
+2014-08-31 10:09:24 INFO  MessageInterpreter:81 - logging in new user
+2014-08-31 10:09:25 INFO  UserLoginMessage:72 - ned :user found
+2014-08-31 10:09:25 INFO  UserLoginMessage:73 - ned :session- 16c6ff71-e300-451e-8dc6-0b7fa1e4db74
+2014-08-31 10:09:25 INFO  MessageInterpreter:84 - new user session: 1152921504606846978 ned
+2014-08-31 10:09:25 INFO  MessageInterpreter:86 - user_agents: {16c6ff71-e300-451e-8dc6-0b7fa1e4db74=10}
+2014-08-31 10:09:25 DEBUG Utils:25 - buffer : response
+2014-08-31 10:09:25 DEBUG Utils:26 - size : 22 bytes
+2014-08-31 10:09:25 DEBUG Utils:43 - 01 06 00 00 FF FF 8D C6 0B 7F . . . . . . . . .  
+2014-08-31 10:09:25 DEBUG Utils:43 - A1 E4 DB 74 16 C6 FF 71 E3 00 . . . t . . . q . . 
+2014-08-31 10:09:25 DEBUG Utils:43 - 45 1E                         E  
+2014-08-31 10:09:25 INFO  DsyncserverHandler:49 - Message Responded :3
+2014-08-31 10:09:25 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:4
+2014-08-31 10:09:25 DEBUG Utils:25 - buffer : request
+2014-08-31 10:09:25 DEBUG Utils:26 - size : 22 bytes
+2014-08-31 10:09:25 DEBUG Utils:43 - 01 04 00 00 FF FF 8D C6 0B 7F . . . . . . . . .  
+2014-08-31 10:09:25 DEBUG Utils:43 - A1 E4 DB 74 16 C6 FF 71 E3 00 . . . t . . . q . . 
+2014-08-31 10:09:25 DEBUG Utils:43 - 45 1E                         E  
+2014-08-31 10:09:25 INFO  MessageInterpreter:40 - Authenticated message from user 1152921504606846978 with session 16c6ff71-e300-451e-8dc6-0b7fa1e4db74
+2014-08-31 10:09:25 INFO  MessageInterpreter:111 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :getting digest
+2014-08-31 10:09:25 DEBUG GetDigestMessage:48 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :calculating digest of seeds of fury version 5
+2014-08-31 10:09:28 DEBUG GetDigestMessage:122 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :digesting doc seeds of fury version 5
+2014-08-31 10:09:28 DEBUG GetDigestMessage:154 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :digesting follower sony
+2014-08-31 10:09:28 DEBUG GetDigestMessage:154 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :digesting follower mark
+2014-08-31 10:09:28 DEBUG GetDigestMessage:193 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :digested permissions info 
+2014-08-31 10:09:28 INFO  GetDigestMessage:194 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :digestion successful 
+2014-08-31 10:09:28 DEBUG Utils:25 - buffer : response
+2014-08-31 10:09:28 DEBUG Utils:26 - size : 199 bytes
+2014-08-31 10:09:28 DEBUG Utils:43 - 01 04 00 00 00 01 B8 9F 2E 8E . . . . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 26 5C 88 3E 47 2C 2B 51 2F 31 & \ . > G , + Q / 1 
+2014-08-31 10:09:28 DEBUG Utils:43 - 46 28 00 00 00 11 D6 C3 C4 00 F ( . . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 01 29 00 08 29 00 00 02 01 . . ) . . ) . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 73 29 00 00 00 00 29 65 6E 6F s ) . . . . ) e n o 
+2014-08-31 10:09:28 DEBUG Utils:43 - 75 67 68 20 74 68 75 73 20 69 u g h   t h u s   i 
+2014-08-31 10:09:28 DEBUG Utils:43 - 73 20 74 6F 6F 20 6D 69 73 63 s   t o o   m i s c 
+2014-08-31 10:09:28 DEBUG Utils:43 - 2E 2E 2E 20 77 74 68 68 61 74 . . .   w t h h a t 
+2014-08-31 10:09:28 DEBUG Utils:43 - 65 76 65 72 20 43 42 53 00 00 e v e r   C B S . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 0D 73 65 65 64 73 20 6F 66 . . s e e d s   o f 
+2014-08-31 10:09:28 DEBUG Utils:43 - 20 66 75 72 79 00 00 00 05 02   f u r y . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 01 00 00 00 02 00 00 00 04 73 . . . . . . . . . s 
+2014-08-31 10:09:28 DEBUG Utils:43 - 6F 6E 79 10 00 00 00 00 00 00 o n y . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 00 00 00 04 6D 61 72 6B 10 . . . . . m a r k . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 00 00 00 00 00 01 00 00 00 . . . . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 00 00 00 01 B8 9F 2E 8E 26 . . . . . . . . . & 
+2014-08-31 10:09:28 DEBUG Utils:43 - 5C 88 3E 47 2C 2B 51 2F 31 46 \ . > G , + Q / 1 F 
+2014-08-31 10:09:28 DEBUG Utils:43 - 28 00 00 00 01 10 00 00 00 00 ( . . . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 00 01 00 00 00 01 10 00 00 . . . . . . . . . . 
+2014-08-31 10:09:28 DEBUG Utils:43 - 00 00 00 00 01 00 00 00 00    . . . . . . . . . 
+2014-08-31 10:09:28 INFO  DsyncserverHandler:49 - Message Responded :4
+2014-08-31 10:10:33 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:5
+2014-08-31 10:10:33 DEBUG Utils:25 - buffer : request
+2014-08-31 10:10:33 DEBUG Utils:26 - size : 2080 bytes
+2014-08-31 10:10:33 DEBUG Utils:43 - 01 03 00 00 07 F6 8D C6 0B 7F . . . . . . . . .  
+2014-08-31 10:10:33 DEBUG Utils:43 - A1 E4 DB 74 16 C6 FF 71 E3 00 . . . t . . . q . . 
+2014-08-31 10:10:33 DEBUG Utils:43 - 45 1E B8 9F 2E 8E 26 5C 88 3E E  . . . . & \ . > 
+2014-08-31 10:10:33 DEBUG Utils:43 - 47 2C 2B 51 2F 31 46 28 D6 C3 G , + Q / 1 F ( . . 
+2014-08-31 10:10:33 DEBUG Utils:43 - C4 00 00 01 29 00 8F 6C 8F 62 . . . . ) . . l . b 
+2014-08-31 10:10:33 DEBUG Utils:43 - 00 8F 62 03 00 0A 0A 4C 61 73 . . b . . . . L a s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 20 65 64 69 74 65 64 20 32 t   e d i t e d   2 
+2014-08-31 10:10:33 DEBUG Utils:43 - 32 20 64 61 79 73 20 61 67 6F 2   d a y s   a g o 
+2014-08-31 10:10:33 DEBUG Utils:43 - C2 A0 62 79 C2 A0 41 6C 62 61 . . b y . . A l b a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 79 20 4E 59 0A 0A 53 63 69 n y   N Y . . S c i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 6E 74 69 66 69 63 20 63 6F e n t i f i c   c o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 74 72 6F 6C 0A 0A 46 6F 72 n t r o l . . F o r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 6F 74 68 65 72 20 75 73 65   o t h e r   u s e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 73 2C 20 73 65 65 C2 A0 43 6F s ,   s e e . . C o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 74 72 6F 6C 2E 0A 0A 54 68 n t r o l . . . T h 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 73 20 70 61 67 65 20 68 61 i s   p a g e   h a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 73 20 73 6F 6D 65 20 69 73 73 s   s o m e   i s s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 75 65 73 0A 0A EF BF BC 0A 0A u e s . . . . . . . 
+2014-08-31 10:10:33 DEBUG Utils:43 - 54 61 6B 65 20 69 64 65 6E 74 T a k e   i d e n t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 63 61 6C 20 67 72 6F 77 69 i c a l   g r o w i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 67 20 70 6C 61 6E 74 73 20 n g   p l a n t s   
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 6E 64 20 67 69 76 65 20 66 a n d   g i v e   f 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 6F 20 68 61 6C 66 20 6F 66 t o   h a l f   o f 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 74 68 65 6D 2E 20 49 66 20   t h e m .   I f   
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 65 72 65 20 61 72 65 20 t h e r e   a r e   
+2014-08-31 10:10:33 DEBUG Utils:43 - 64 69 66 66 65 72 65 6E 63 65 d i f f e r e n c e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 73 20 62 65 74 77 65 65 6E 20 s   b e t w e e n   
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 65 20 66 65 72 74 69 6C t h e   f e r t i l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 7A 65 64 20 67 72 6F 75 70 i z e d   g r o u p 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 61 6E 64 20 74 68 65 20 75   a n d   t h e   u 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 66 65 72 74 69 6C 69 7A 65 n f e r t i l i z e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 64 20 22 63 6F 6E 74 72 6F 6C d   " c o n t r o l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 22 20 67 72 6F 75 70 2C 20 74 "   g r o u p ,   t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 68 65 73 65 20 64 69 66 66 65 h e s e   d i f f e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 65 6E 63 65 73 20 6D 61 79 r e n c e s   m a y 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 62 65 20 64 75 65 20 74 6F   b e   d u e   t o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 74 68 65 20 66 65 72 74 69   t h e   f e r t i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6C 69 7A 65 72 2E 0A 0A 41 C2 l i z e r . . . A . 
+2014-08-31 10:10:33 DEBUG Utils:43 - A0 73 63 69 65 6E 74 69 66 69 . s c i e n t i f i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 63 20 63 6F 6E 74 72 6F 6C C2 c   c o n t r o l . 
+2014-08-31 10:10:33 DEBUG Utils:43 - A0 69 73 20 61 6E C2 A0 65 78 . i s   a n . . e x 
+2014-08-31 10:10:33 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 C2 A0 p e r i m e n t . . 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6F 72 C2 A0 6F 62 73 65 72 76 o r . . o b s e r v 
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 74 69 6F 6E C2 A0 64 65 73 a t i o n . . d e s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 67 6E 65 64 20 74 6F 20 6D i g n e d   t o   m 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 6E 69 6D 69 7A 65 20 74 68 i n i m i z e   t h 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 20 65 66 66 65 63 74 73 20 e   e f f e c t s   
+2014-08-31 10:10:33 DEBUG Utils:43 - 6F 66 20 76 61 72 69 61 62 6C o f   v a r i a b l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 73 20 6F 74 68 65 72 20 74 e s   o t h e r   t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 68 61 6E 20 74 68 65 20 73 69 h a n   t h e   s i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 67 6C 65 C2 A0 69 6E 64 65 n g l e . . i n d e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 70 65 6E 64 65 6E 74 20 76 61 p e n d e n t   v a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 69 61 62 6C 65 2E 20 54 68 r i a b l e .   T h 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 73 20 69 6E 63 72 65 61 73 i s   i n c r e a s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 73 20 74 68 65 20 72 65 6C e s   t h e   r e l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 61 62 69 6C 69 74 79 20 6F i a b i l i t y   o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 66 20 74 68 65 20 72 65 73 75 f   t h e   r e s u 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6C 74 73 2C 20 6F 66 74 65 6E l t s ,   o f t e n 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 74 68 72 6F 75 67 68 20 61   t h r o u g h   a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 63 6F 6D 70 61 72 69 73 6F   c o m p a r i s o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 20 62 65 74 77 65 65 6E 20 n   b e t w e e n   
+2014-08-31 10:10:33 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 65 c o n t r o l   m e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 73 75 72 65 6D 65 6E 74 73 a s u r e m e n t s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 61 6E 64 20 74 68 65 20 6F   a n d   t h e   o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 65 72 20 6D 65 61 73 75 t h e r   m e a s u 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 65 6D 65 6E 74 73 2E 20 53 r e m e n t s .   S 
+2014-08-31 10:10:33 DEBUG Utils:43 - 63 69 65 6E 74 69 66 69 63 20 c i e n t i f i c   
+2014-08-31 10:10:33 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 73 20 61 c o n t r o l s   a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 65 20 61 20 70 61 72 74 20 r e   a   p a r t   
+2014-08-31 10:10:33 DEBUG Utils:43 - 6F 66 20 74 68 65 C2 A0 73 63 o f   t h e . . s c 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 65 6E 74 69 66 69 63 20 6D i e n t i f i c   m 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 74 68 6F 64 2E 0A 0A 41 6E e t h o d . . . A n 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 65 78 61 6D 70 6C 65 20 6F   e x a m p l e   o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 66 20 61 6E 20 65 78 70 65 72 f   a n   e x p e r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 6D 65 6E 74 61 6C 20 63 6F i m e n t a l   c o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 74 72 6F 6C 20 6D 69 67 68 n t r o l   m i g h 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 20 62 65 20 74 65 73 74 69 t   b e   t e s t i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 67 20 70 6C 61 6E 74 20 66 n g   p l a n t   f 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:33 DEBUG Utils:43 - 62 79 20 67 69 76 69 6E 67 20 b y   g i v i n g   
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 74 20 74 6F 20 6F 6E 6C 79 i t   t o   o n l y 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 68 61 6C 66 20 74 68 65 20   h a l f   t h e   
+2014-08-31 10:10:33 DEBUG Utils:43 - 70 6C 61 6E 74 73 20 69 6E 20 p l a n t s   i n   
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 20 67 61 72 64 65 6E 3A 20 a   g a r d e n :   
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 65 20 70 6C 61 6E 74 73 t h e   p l a n t s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 74 68 61 74 20 72 65 63 65   t h a t   r e c e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 76 65 20 6E 6F 20 66 65 72 i v e   n o   f e r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 69 6C 69 7A 65 72 20 61 72 t i l i z e r   a r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 20 74 68 65 20 63 6F 6E 74 e   t h e   c o n t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 6F 6C 20 67 72 6F 75 70 2C r o l   g r o u p , 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 62 65 63 61 75 73 65 20 74   b e c a u s e   t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 68 65 79 20 65 73 74 61 62 6C h e y   e s t a b l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 73 68 20 74 68 65 20 62 61 i s h   t h e   b a 
+2014-08-31 10:10:33 DEBUG Utils:43 - 73 65 6C 69 6E 65 20 6C 65 76 s e l i n e   l e v 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 6C 20 6F 66 20 67 72 6F 77 e l   o f   g r o w 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 20 74 68 61 74 20 74 68 t h   t h a t   t h 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 20 66 65 72 74 69 6C 69 7A e   f e r t i l i z 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 72 2D 74 72 65 61 74 65 64 e r - t r e a t e d 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 70 6C 61 6E 74 73 20 77 69   p l a n t s   w i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6C 6C 20 62 65 20 63 6F 6D 70 l l   b e   c o m p 
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 72 65 64 20 61 67 61 69 6E a r e d   a g a i n 
+2014-08-31 10:10:33 DEBUG Utils:43 - 73 74 2E 20 57 69 74 68 6F 75 s t .   W i t h o u 
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 20 61 20 63 6F 6E 74 72 6F t   a   c o n t r o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6C 20 67 72 6F 75 70 2C 20 74 l   g r o u p ,   t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 68 65 20 65 78 70 65 72 69 6D h e   e x p e r i m 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 6E 74 20 63 61 6E 6E 6F 74 e n t   c a n n o t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 64 65 74 65 72 6D 69 6E 65   d e t e r m i n e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 77 68 65 74 68 65 72 20 74   w h e t h e r   t 
+2014-08-31 10:10:33 DEBUG Utils:43 - 68 65 20 66 65 72 74 69 6C 69 h e   f e r t i l i 
+2014-08-31 10:10:33 DEBUG Utils:43 - 7A 65 72 2D 74 72 65 61 74 65 z e r - t r e a t e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 64 20 70 6C 61 6E 74 73 20 67 d   p l a n t s   g 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 6F 77 C2 A0 6D 6F 72 65 20 r o w . . m o r e   
+2014-08-31 10:10:33 DEBUG Utils:43 - 74 68 61 6E C2 A0 74 68 65 79 t h a n . . t h e y 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 77 6F 75 6C 64 20 68 61 76   w o u l d   h a v 
+2014-08-31 10:10:33 DEBUG Utils:43 - 65 20 69 66 20 75 6E 74 72 65 e   i f   u n t r e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 74 65 64 2E 0A 0A 49 64 65 a t e d . . . I d e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 6C 6C 79 2C 20 61 6C 6C 20 a l l y ,   a l l   
+2014-08-31 10:10:33 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 73 20 v a r i a b l e s   
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 6E 20 61 6E 20 65 78 70 65 i n   a n   e x p e 
+2014-08-31 10:10:33 DEBUG Utils:43 - 72 69 6D 65 6E 74 20 77 69 6C r i m e n t   w i l 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6C 20 62 65 20 63 6F 6E 74 72 l   b e   c o n t r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6F 6C 6C 65 64 20 28 61 63 63 o l l e d   ( a c c 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6F 75 6E 74 65 64 20 66 6F 72 o u n t e d   f o r 
+2014-08-31 10:10:33 DEBUG Utils:43 - 20 62 79 20 74 68 65 20 63 6F   b y   t h e   c o 
+2014-08-31 10:10:33 DEBUG Utils:43 - 6E 74 72 6F 6C 20 6D 65 61 73 n t r o l   m e a s 
+2014-08-31 10:10:33 DEBUG Utils:43 - 75 72 65 6D 65 6E 74 73 29 20 u r e m e n t s )   
+2014-08-31 10:10:33 DEBUG Utils:43 - 61 6E 64 20 6E 6F 6E 65 20 77 a n d   n o n e   w 
+2014-08-31 10:10:33 DEBUG Utils:43 - 69 6C 6C 20 62 65 20 75 6E 63 i l l   b e   u n c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 2E o n t r o l l e d . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 49 6E 20 73 75 63 68 20 61   I n   s u c h   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 20 65 78 70 65 72 69 6D 65 n   e x p e r i m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 2C 20 69 66 20 61 6C 6C n t ,   i f   a l l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 20 63 6F 6E 74 72   t h e   c o n t r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6C 73 20 77 6F 72 6B 20 61 o l s   w o r k   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 65 78 70 65 63 74 65 64 s   e x p e c t e d 
+2014-08-31 10:10:34 DEBUG Utils:43 - 2C 20 69 74 20 69 73 20 70 6F ,   i t   i s   p o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 73 69 62 6C 65 20 74 6F 20 s s i b l e   t o   
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6E 63 6C 75 64 65 20 74 c o n c l u d e   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 61 74 20 74 68 65 20 65 78 h a t   t h e   e x 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 20 69 p e r i m e n t   i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 77 6F 72 6B 69 6E 67 20 s   w o r k i n g   
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 73 20 69 6E 74 65 6E 64 65 a s   i n t e n d e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 20 61 6E 64 20 74 68 61 74 d   a n d   t h a t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 20 72 65 73 75 6C   t h e   r e s u l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 73 20 6F 66 20 74 68 65 20 t s   o f   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 72 65 20 64 75 65 20 74   a r e   d u e   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 20 74 68 65 20 65 66 66 65 o   t h e   e f f e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 74 20 6F 66 20 74 68 65 20 c t   o f   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 20 62 v a r i a b l e   b 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 69 6E 67 20 74 65 73 74 65 e i n g   t e s t e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 2E 20 54 68 61 74 20 69 73 d .   T h a t   i s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 2C 20 73 63 69 65 6E 74 69 66 ,   s c i e n t i f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 63 20 63 6F 6E 74 72 6F 6C i c   c o n t r o l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 61 6C 6C 6F 77 20 61 6E s   a l l o w   a n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 69 6E 76 65 73 74 69 67 61   i n v e s t i g a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 6F 72 20 74 6F 20 6D 61 6B t o r   t o   m a k 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 61 20 63 6C 61 69 6D 20 e   a   c l a i m   
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 69 6B 65 20 22 54 77 6F 20 l i k e   " T w o   
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 69 74 75 61 74 69 6F 6E 73 s i t u a t i o n s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 77 65 72 65 20 69 64 65 6E   w e r e   i d e n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 69 63 61 6C 20 75 6E 74 69 t i c a l   u n t i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 20 66 61 63 74 6F 72 20 58 l   f a c t o r   X 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6F 63 63 75 72 72 65 64 2E   o c c u r r e d . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 53 69 6E 63 65 20 66 61 63   S i n c e   f a c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 6F 72 20 58 20 69 73 20 74 t o r   X   i s   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 65 20 6F 6E 6C 79 20 64 69 h e   o n l y   d i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 66 65 72 65 6E 63 65 20 62 f f e r e n c e   b 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 74 77 65 65 6E 20 74 68 65 e t w e e n   t h e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 77 6F 20 73 69 74 75 61   t w o   s i t u a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 69 6F 6E 73 2C 20 74 68 65 t i o n s ,   t h e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6E 65 77 20 6F 75 74 63 6F   n e w   o u t c o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 65 20 77 61 73 20 63 61 75 m e   w a s   c a u 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 65 64 20 62 79 20 66 61 63 s e d   b y   f a c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 6F 72 20 58 2E 22 0A 0A 43 t o r   X . " . . C 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6E 74 65 6E 74 73 0A 0A 43 o n t e n t s . . C 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 20 o n t r o l l e d   
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 54 79 70 65 73 20 6F 66 20 s T y p e s   o f   
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 4E 65 67 c o n t r o l N e g 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 74 69 76 65 50 6F 73 69 74 a t i v e P o s i t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 76 65 52 61 6E 64 6F 6D 69 i v e R a n d o m i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 7A 61 74 69 6F 6E 42 6C 69 6E z a t i o n B l i n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 20 65 78 70 65 72 69 6D 65 d   e x p e r i m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 73 44 6F 75 62 6C 65 2D n t s D o u b l e - 
+2014-08-31 10:10:34 DEBUG Utils:43 - 62 6C 69 6E 64 20 65 78 70 65 b l i n d   e x p e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 69 6D 65 6E 74 73 53 65 65 r i m e n t s S e e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 6C 73 6F 52 65 66 65 72   a l s o R e f e r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 6E 63 65 73 0A 0A 43 6F 6E e n c e s . . C o n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 65 78 t r o l l e d   e x 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 45 p e r i m e n t s E 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 69 74 0A 0A 53 65 65 20 61 d i t . . S e e   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 73 6F 3A C2 A0 53 63 69 65 l s o : . . S c i e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 69 66 69 63 20 6D 65 74 n t i f i c   m e t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 6F 64 C2 A0 61 6E 64 C2 A0 h o d . . a n d . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 45 78 70 65 72 69 6D 65 6E 74 E x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 6C 20 64 65 73 69 67 6E 0A a l   d e s i g n . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 0A 54 68 65 72 65 20 61 72 65 . T h e r e   a r e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6D 61 6E 79 20 66 6F 72 6D   m a n y   f o r m 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 6F 66 20 63 6F 6E 74 72 s   o f   c o n t r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6C 6C 65 64 20 65 78 70 65 o l l e d   e x p e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 69 6D 65 6E 74 73 2E 20 41 r i m e n t s .   A 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 72 65 6C 61 74 69 76 65 6C   r e l a t i v e l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 79 20 73 69 6D 70 6C 65 20 6F y   s i m p l e   o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 65 20 73 65 70 61 72 61 74 n e   s e p a r a t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 73 20 72 65 73 65 61 72 63 e s   r e s e a r c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 20 73 01 8F 62 00 00 00 06 h   s . . b . . . . 
+2014-08-31 10:10:34 DEBUG Utils:43 -                               
+2014-08-31 10:10:34 INFO  MessageInterpreter:40 - Authenticated message from user 1152921504606846978 with session 16c6ff71-e300-451e-8dc6-0b7fa1e4db74
+2014-08-31 10:10:34 INFO  MessageInterpreter:108 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :editing document - 472c2b51-2f31-4628-b89f-2e8e265c883e
+2014-08-31 10:10:34 INFO  DocumentEditMessage:40 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :edited by the creator itself
+2014-08-31 10:10:34 DEBUG DocumentEditMessage:42 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 editors of the document- ["1152921504606846977"]
+2014-08-31 10:10:34 DEBUG DocumentEditMessage:43 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 readers of the document- ["1152921504606846977"]
+2014-08-31 10:10:34 INFO  DocumentEditMessage:60 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :sync check passed
+2014-08-31 10:10:34 DEBUG Utils:25 - buffer : diff_received
+2014-08-31 10:10:34 DEBUG Utils:26 - size : 2038 bytes
+2014-08-31 10:10:34 DEBUG Utils:43 - D6 C3 C4 00 00 01 29 00 8F 6C . . . . . . ) . . l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 8F 62 00 8F 62 03 00 0A 0A 4C . b . . b . . . . L 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 73 74 20 65 64 69 74 65 64 a s t   e d i t e d 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 32 32 20 64 61 79 73 20 61   2 2   d a y s   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 67 6F C2 A0 62 79 C2 A0 41 6C g o . . b y . . A l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 62 61 6E 79 20 4E 59 0A 0A 53 b a n y   N Y . . S 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 69 65 6E 74 69 66 69 63 20 c i e n t i f i c   
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 0A 0A 46 c o n t r o l . . F 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 72 20 6F 74 68 65 72 20 75 o r   o t h e r   u 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 65 73 2C 20 73 65 65 C2 A0 s e s ,   s e e . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 43 6F 6E 74 72 6F 6C 2E 0A 0A C o n t r o l . . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 54 68 69 73 20 70 61 67 65 20 T h i s   p a g e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 61 73 20 73 6F 6D 65 20 69 h a s   s o m e   i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 73 75 65 73 0A 0A EF BF BC s s u e s . . . . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 0A 0A 54 61 6B 65 20 69 64 65 . . T a k e   i d e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 69 63 61 6C 20 67 72 6F n t i c a l   g r o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 77 69 6E 67 20 70 6C 61 6E 74 w i n g   p l a n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 61 6E 64 20 67 69 76 65 s   a n d   g i v e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 66 65 72 74 69 6C 69 7A 65   f e r t i l i z e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 20 74 6F 20 68 61 6C 66 20 r   t o   h a l f   
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 66 20 74 68 65 6D 2E 20 49 o f   t h e m .   I 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 20 74 68 65 72 65 20 61 72 f   t h e r e   a r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 64 69 66 66 65 72 65 6E e   d i f f e r e n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 65 73 20 62 65 74 77 65 65 c e s   b e t w e e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 20 74 68 65 20 66 65 72 74 n   t h e   f e r t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 6C 69 7A 65 64 20 67 72 6F i l i z e d   g r o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 75 70 20 61 6E 64 20 74 68 65 u p   a n d   t h e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 75 6E 66 65 72 74 69 6C 69   u n f e r t i l i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 7A 65 64 20 22 63 6F 6E 74 72 z e d   " c o n t r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6C 22 20 67 72 6F 75 70 2C o l "   g r o u p , 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 73 65 20 64 69 66   t h e s e   d i f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 65 72 65 6E 63 65 73 20 6D f e r e n c e s   m 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 79 20 62 65 20 64 75 65 20 a y   b e   d u e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 6F 20 74 68 65 20 66 65 72 t o   t h e   f e r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 69 6C 69 7A 65 72 2E 0A 0A t i l i z e r . . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 41 C2 A0 73 63 69 65 6E 74 69 A . . s c i e n t i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 69 63 20 63 6F 6E 74 72 6F f i c   c o n t r o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C C2 A0 69 73 20 61 6E C2 A0 l . . i s   a n . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - C2 A0 6F 72 C2 A0 6F 62 73 65 . . o r . . o b s e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 76 61 74 69 6F 6E C2 A0 64 r v a t i o n . . d 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 73 69 67 6E 65 64 20 74 6F e s i g n e d   t o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6D 69 6E 69 6D 69 7A 65 20   m i n i m i z e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 68 65 20 65 66 66 65 63 74 t h e   e f f e c t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 6F 66 20 76 61 72 69 61 s   o f   v a r i a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 62 6C 65 73 20 6F 74 68 65 72 b l e s   o t h e r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 61 6E 20 74 68 65 20   t h a n   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 69 6E 67 6C 65 C2 A0 69 6E s i n g l e . . i n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 65 70 65 6E 64 65 6E 74 20 d e p e n d e n t   
+2014-08-31 10:10:34 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 2E 20 v a r i a b l e .   
+2014-08-31 10:10:34 DEBUG Utils:43 - 54 68 69 73 20 69 6E 63 72 65 T h i s   i n c r e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 73 65 73 20 74 68 65 20 72 a s e s   t h e   r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 6C 69 61 62 69 6C 69 74 79 e l i a b i l i t y 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6F 66 20 74 68 65 20 72 65   o f   t h e   r e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 75 6C 74 73 2C 20 6F 66 74 s u l t s ,   o f t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 6E 20 74 68 72 6F 75 67 68 e n   t h r o u g h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 20 63 6F 6D 70 61 72 69   a   c o m p a r i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 6F 6E 20 62 65 74 77 65 65 s o n   b e t w e e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 20 63 6F 6E 74 72 6F 6C 20 n   c o n t r o l   
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 65 61 73 75 72 65 6D 65 6E m e a s u r e m e n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 73 20 61 6E 64 20 74 68 65 t s   a n d   t h e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6F 74 68 65 72 20 6D 65 61   o t h e r   m e a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 75 72 65 6D 65 6E 74 73 2E s u r e m e n t s . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 53 63 69 65 6E 74 69 66 69   S c i e n t i f i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 20 63 6F 6E 74 72 6F 6C 73 c   c o n t r o l s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 72 65 20 61 20 70 61 72   a r e   a   p a r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 20 6F 66 20 74 68 65 C2 A0 t   o f   t h e . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 63 69 65 6E 74 69 66 69 63 s c i e n t i f i c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6D 65 74 68 6F 64 2E 0A 0A   m e t h o d . . . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 41 6E 20 65 78 61 6D 70 6C 65 A n   e x a m p l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6F 66 20 61 6E 20 65 78 70   o f   a n   e x p 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 72 69 6D 65 6E 74 61 6C 20 e r i m e n t a l   
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 69 c o n t r o l   m i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 67 68 74 20 62 65 20 74 65 73 g h t   b e   t e s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 69 6E 67 20 70 6C 61 6E 74 t i n g   p l a n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 66 65 72 74 69 6C 69 7A 65   f e r t i l i z e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 20 62 79 20 67 69 76 69 6E r   b y   g i v i n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 67 20 69 74 20 74 6F 20 6F 6E g   i t   t o   o n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 79 20 68 61 6C 66 20 74 68 l y   h a l f   t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 70 6C 61 6E 74 73 20 69 e   p l a n t s   i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 20 61 20 67 61 72 64 65 6E n   a   g a r d e n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 3A 20 74 68 65 20 70 6C 61 6E :   t h e   p l a n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 73 20 74 68 61 74 20 72 65 t s   t h a t   r e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 65 69 76 65 20 6E 6F 20 66 c e i v e   n o   f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 72 65 20 74 68 65 20 63 6F a r e   t h e   c o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 72 6F 6C 20 67 72 6F 75 n t r o l   g r o u 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 2C 20 62 65 63 61 75 73 65 p ,   b e c a u s e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 79 20 65 73 74 61   t h e y   e s t a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 62 6C 69 73 68 20 74 68 65 20 b l i s h   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 62 61 73 65 6C 69 6E 65 20 6C b a s e l i n e   l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 76 65 6C 20 6F 66 20 67 72 e v e l   o f   g r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 77 74 68 20 74 68 61 74 20 o w t h   t h a t   
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 68 65 20 66 65 72 74 69 6C t h e   f e r t i l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 7A 65 72 2D 74 72 65 61 74 i z e r - t r e a t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 64 20 70 6C 61 6E 74 73 20 e d   p l a n t s   
+2014-08-31 10:10:34 DEBUG Utils:43 - 77 69 6C 6C 20 62 65 20 63 6F w i l l   b e   c o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 70 61 72 65 64 20 61 67 61 m p a r e d   a g a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 6E 73 74 2E 20 57 69 74 68 i n s t .   W i t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 75 74 20 61 20 63 6F 6E 74 o u t   a   c o n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 6F 6C 20 67 72 6F 75 70 2C r o l   g r o u p , 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 20 65 78 70 65 72   t h e   e x p e r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 6D 65 6E 74 20 63 61 6E 6E i m e n t   c a n n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 74 20 64 65 74 65 72 6D 69 o t   d e t e r m i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 65 20 77 68 65 74 68 65 72 n e   w h e t h e r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 20 66 65 72 74 69   t h e   f e r t i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 69 7A 65 72 2D 74 72 65 61 l i z e r - t r e a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 65 64 20 70 6C 61 6E 74 73 t e d   p l a n t s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 67 72 6F 77 C2 A0 6D 6F 72   g r o w . . m o r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 74 68 61 6E C2 A0 74 68 e   t h a n . . t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 79 20 77 6F 75 6C 64 20 68 e y   w o u l d   h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 76 65 20 69 66 20 75 6E 74 a v e   i f   u n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 65 61 74 65 64 2E 0A 0A 49 r e a t e d . . . I 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 65 61 6C 6C 79 2C 20 61 6C d e a l l y ,   a l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 20 76 61 72 69 61 62 6C 65 l   v a r i a b l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 20 69 6E 20 61 6E 20 65 78 s   i n   a n   e x 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 20 77 p e r i m e n t   w 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 6C 6C 20 62 65 20 63 6F 6E i l l   b e   c o n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 28 61 t r o l l e d   ( a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 63 6F 75 6E 74 65 64 20 66 c c o u n t e d   f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 72 20 62 79 20 74 68 65 20 o r   b y   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 65 c o n t r o l   m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 73 75 72 65 6D 65 6E 74 73 a s u r e m e n t s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 29 20 61 6E 64 20 6E 6F 6E 65 )   a n d   n o n e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 77 69 6C 6C 20 62 65 20 75   w i l l   b e   u 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 63 6F 6E 74 72 6F 6C 6C 65 n c o n t r o l l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 2E 20 49 6E 20 73 75 63 68 d .   I n   s u c h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 6E 20 65 78 70 65 72 69   a n   e x p e r i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 65 6E 74 2C 20 69 66 20 61 m e n t ,   i f   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6C 6C 20 74 68 65 20 63 6F 6E l l   t h e   c o n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 72 6F 6C 73 20 77 6F 72 6B t r o l s   w o r k 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 73 20 65 78 70 65 63 74   a s   e x p e c t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 64 2C 20 69 74 20 69 73 20 e d ,   i t   i s   
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 6F 73 73 69 62 6C 65 20 74 p o s s i b l e   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 20 63 6F 6E 63 6C 75 64 65 o   c o n c l u d e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 61 74 20 74 68 65 20   t h a t   t h e   
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 69 73 20 77 6F 72 6B 69 6E   i s   w o r k i n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 67 20 61 73 20 69 6E 74 65 6E g   a s   i n t e n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 65 64 20 61 6E 64 20 74 68 d e d   a n d   t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 74 20 74 68 65 20 72 65 73 a t   t h e   r e s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 75 6C 74 73 20 6F 66 20 74 68 u l t s   o f   t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 65 78 70 65 72 69 6D 65 e   e x p e r i m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 20 61 72 65 20 64 75 65 n t   a r e   d u e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 6F 20 74 68 65 20 65 66   t o   t h e   e f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 65 63 74 20 6F 66 20 74 68 f e c t   o f   t h 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 20 76 61 72 69 61 62 6C 65 e   v a r i a b l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 62 65 69 6E 67 20 74 65 73   b e i n g   t e s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 65 64 2E 20 54 68 61 74 20 t e d .   T h a t   
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 73 2C 20 73 63 69 65 6E 74 i s ,   s c i e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 66 69 63 20 63 6F 6E 74 72 i f i c   c o n t r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6C 73 20 61 6C 6C 6F 77 20 o l s   a l l o w   
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 6E 20 69 6E 76 65 73 74 69 a n   i n v e s t i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 67 61 74 6F 72 20 74 6F 20 6D g a t o r   t o   m 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 6B 65 20 61 20 63 6C 61 69 a k e   a   c l a i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 20 6C 69 6B 65 20 22 54 77 m   l i k e   " T w 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 20 73 69 74 75 61 74 69 6F o   s i t u a t i o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 73 20 77 65 72 65 20 69 64 n s   w e r e   i d 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 6E 74 69 63 61 6C 20 75 6E e n t i c a l   u n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 69 6C 20 66 61 63 74 6F 72 t i l   f a c t o r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 58 20 6F 63 63 75 72 72 65   X   o c c u r r e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 2E 20 53 69 6E 63 65 20 66 d .   S i n c e   f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 63 74 6F 72 20 58 20 69 73 a c t o r   X   i s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 74 68 65 20 6F 6E 6C 79 20   t h e   o n l y   
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 69 66 66 65 72 65 6E 63 65 d i f f e r e n c e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 62 65 74 77 65 65 6E 20 74   b e t w e e n   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 65 20 74 77 6F 20 73 69 74 h e   t w o   s i t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 75 61 74 69 6F 6E 73 2C 20 74 u a t i o n s ,   t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 68 65 20 6E 65 77 20 6F 75 74 h e   n e w   o u t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 63 6F 6D 65 20 77 61 73 20 63 c o m e   w a s   c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 75 73 65 64 20 62 79 20 66 a u s e d   b y   f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 63 74 6F 72 20 58 2E 22 0A a c t o r   X . " . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 0A 43 6F 6E 74 65 6E 74 73 0A . C o n t e n t s . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 0A 43 6F 6E 74 72 6F 6C 6C 65 . C o n t r o l l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 64 20 65 78 70 65 72 69 6D 65 d   e x p e r i m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 73 54 79 70 65 73 20 6F n t s T y p e s   o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 66 20 63 6F 6E 74 72 6F 6C 4E f   c o n t r o l N 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 67 61 74 69 76 65 50 6F 73 e g a t i v e P o s 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 74 69 76 65 52 61 6E 64 6F i t i v e R a n d o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 69 7A 61 74 69 6F 6E 42 6C m i z a t i o n B l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 6E 64 20 65 78 70 65 72 69 i n d   e x p e r i 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6D 65 6E 74 73 44 6F 75 62 6C m e n t s D o u b l 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 2D 62 6C 69 6E 64 20 65 78 e - b l i n d   e x 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 53 p e r i m e n t s S 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 65 20 61 6C 73 6F 52 65 66 e e   a l s o R e f 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 72 65 6E 63 65 73 0A 0A 43 e r e n c e s . . C 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 20 o n t r o l l e d   
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:34 DEBUG Utils:43 - 73 45 64 69 74 0A 0A 53 65 65 s E d i t . . S e e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 61 6C 73 6F 3A C2 A0 53 63   a l s o : . . S c 
+2014-08-31 10:10:34 DEBUG Utils:43 - 69 65 6E 74 69 66 69 63 20 6D i e n t i f i c   m 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 74 68 6F 64 C2 A0 61 6E 64 e t h o d . . a n d 
+2014-08-31 10:10:34 DEBUG Utils:43 - C2 A0 45 78 70 65 72 69 6D 65 . . E x p e r i m e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 74 61 6C 20 64 65 73 69 67 n t a l   d e s i g 
+2014-08-31 10:10:34 DEBUG Utils:43 - 6E 0A 0A 54 68 65 72 65 20 61 n . . T h e r e   a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 65 20 6D 61 6E 79 20 66 6F r e   m a n y   f o 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 6D 73 20 6F 66 20 63 6F 6E r m s   o f   c o n 
+2014-08-31 10:10:34 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 65 78 t r o l l e d   e x 
+2014-08-31 10:10:34 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 2E p e r i m e n t s . 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 41 20 72 65 6C 61 74 69 76   A   r e l a t i v 
+2014-08-31 10:10:34 DEBUG Utils:43 - 65 6C 79 20 73 69 6D 70 6C 65 e l y   s i m p l e 
+2014-08-31 10:10:34 DEBUG Utils:43 - 20 6F 6E 65 20 73 65 70 61 72   o n e   s e p a r 
+2014-08-31 10:10:34 DEBUG Utils:43 - 61 74 65 73 20 72 65 73 65 61 a t e s   r e s e a 
+2014-08-31 10:10:34 DEBUG Utils:43 - 72 63 68 20 73 01 8F 62       r c h   s . . b 
+2014-08-31 10:10:34 INFO  DocumentEditMessage:82 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 's copy: 
+
+Last edited 22 days ago by Albany NY
+
+Scientific control
+
+For other uses, see Control.
+
+This page has some issues
+
+￼
+
+Take identical growing plants and give fertilizer to half of them. If there are differences between the fertilized group and the unfertilized "control" group, these differences may be due to the fertilizer.
+
+A scientific control is an experiment or observation designed to minimize the effects of variables other than the single independent variable. This increases the reliability of the results, often through a comparison between control measurements and the other measurements. Scientific controls are a part of the scientific method.
+
+An example of an experimental control might be testing plant fertilizer by giving it to only half the plants in a garden: the plants that receive no fertilizer are the control group, because they establish the baseline level of growth that the fertilizer-treated plants will be compared against. Without a control group, the experiment cannot determine whether the fertilizer-treated plants grow more than they would have if untreated.
+
+Ideally, all variables in an experiment will be controlled (accounted for by the control measurements) and none will be uncontrolled. In such an experiment, if all the controls work as expected, it is possible to conclude that the experiment is working as intended and that the results of the experiment are due to the effect of the variable being tested. That is, scientific controls allow an investigator to make a claim like "Two situations were identical until factor X occurred. Since factor X is the only difference between the two situations, the new outcome was caused by factor X."
+
+Contents
+
+Controlled experimentsTypes of controlNegativePositiveRandomizationBlind experimentsDouble-blind experimentsSee alsoReferences
+
+Controlled experimentsEdit
+
+See also: Scientific method and Experimental design
+
+There are many forms of controlled experiments. A relatively simple one separates research s
+2014-08-31 10:10:34 INFO  DocumentEditMessage:83 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 version: 6
+2014-08-31 10:10:34 DEBUG DocumentEditMessage:102 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 GCM ids: []
+2014-08-31 10:10:34 DEBUG Utils:25 - buffer : response
+2014-08-31 10:10:34 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:10:34 DEBUG Utils:43 - 01 03 00 00 FF FF             . . . . . . 
+2014-08-31 10:10:34 INFO  DsyncserverHandler:49 - Message Responded :5
+2014-08-31 10:10:51 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:44292:6
+2014-08-31 10:10:51 DEBUG Utils:25 - buffer : request
+2014-08-31 10:10:51 DEBUG Utils:26 - size : 2080 bytes
+2014-08-31 10:10:51 DEBUG Utils:43 - 01 03 00 00 07 F6 8D C6 0B 7F . . . . . . . . .  
+2014-08-31 10:10:51 DEBUG Utils:43 - A1 E4 DB 74 16 C6 FF 71 E3 00 . . . t . . . q . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 45 1E B8 9F 2E 8E 26 5C 88 3E E  . . . . & \ . > 
+2014-08-31 10:10:51 DEBUG Utils:43 - 47 2C 2B 51 2F 31 46 28 D6 C3 G , + Q / 1 F ( . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - C4 00 00 01 29 00 8F 6C 8F 62 . . . . ) . . l . b 
+2014-08-31 10:10:51 DEBUG Utils:43 - 00 8F 62 03 00 0A 0A 4C 61 73 . . b . . . . L a s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 20 65 64 69 74 65 64 20 32 t   e d i t e d   2 
+2014-08-31 10:10:51 DEBUG Utils:43 - 32 20 64 61 79 73 20 61 67 6F 2   d a y s   a g o 
+2014-08-31 10:10:51 DEBUG Utils:43 - C2 A0 62 79 C2 A0 41 6C 62 61 . . b y . . A l b a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 79 20 4E 59 0A 0A 53 63 69 n y   N Y . . S c i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6E 74 69 66 69 63 20 63 6F e n t i f i c   c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 72 6F 6C 0A 0A 46 6F 72 n t r o l . . F o r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 74 68 65 72 20 75 73 65   o t h e r   u s e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 2C 20 73 65 65 C2 A0 43 6F s ,   s e e . . C o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 72 6F 6C 2E 0A 0A 54 68 n t r o l . . . T h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 73 20 70 61 67 65 20 68 61 i s   p a g e   h a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 73 6F 6D 65 20 69 73 73 s   s o m e   i s s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 75 65 73 0A 0A EF BF BC 0A 0A u e s . . . . . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 54 61 6B 65 20 69 64 65 6E 74 T a k e   i d e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 63 61 6C 20 67 72 6F 77 69 i c a l   g r o w i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 67 20 70 6C 61 6E 74 73 20 n g   p l a n t s   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6E 64 20 67 69 76 65 20 66 a n d   g i v e   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 6F 20 68 61 6C 66 20 6F 66 t o   h a l f   o f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 6D 2E 20 49 66 20   t h e m .   I f   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 72 65 20 61 72 65 20 t h e r e   a r e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 69 66 66 65 72 65 6E 63 65 d i f f e r e n c e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 62 65 74 77 65 65 6E 20 s   b e t w e e n   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 20 66 65 72 74 69 6C t h e   f e r t i l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 7A 65 64 20 67 72 6F 75 70 i z e d   g r o u p 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 6E 64 20 74 68 65 20 75   a n d   t h e   u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 66 65 72 74 69 6C 69 7A 65 n f e r t i l i z e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 20 22 63 6F 6E 74 72 6F 6C d   " c o n t r o l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 22 20 67 72 6F 75 70 2C 20 74 "   g r o u p ,   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 73 65 20 64 69 66 66 65 h e s e   d i f f e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 65 6E 63 65 73 20 6D 61 79 r e n c e s   m a y 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 62 65 20 64 75 65 20 74 6F   b e   d u e   t o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 66 65 72 74 69   t h e   f e r t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 69 7A 65 72 2E 0A 0A 41 C2 l i z e r . . . A . 
+2014-08-31 10:10:51 DEBUG Utils:43 - A0 73 63 69 65 6E 74 69 66 69 . s c i e n t i f i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 20 63 6F 6E 74 72 6F 6C C2 c   c o n t r o l . 
+2014-08-31 10:10:51 DEBUG Utils:43 - A0 69 73 20 61 6E C2 A0 65 78 . i s   a n . . e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 C2 A0 p e r i m e n t . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 72 C2 A0 6F 62 73 65 72 76 o r . . o b s e r v 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 74 69 6F 6E C2 A0 64 65 73 a t i o n . . d e s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 67 6E 65 64 20 74 6F 20 6D i g n e d   t o   m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6E 69 6D 69 7A 65 20 74 68 i n i m i z e   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 65 66 66 65 63 74 73 20 e   e f f e c t s   
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 66 20 76 61 72 69 61 62 6C o f   v a r i a b l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 73 20 6F 74 68 65 72 20 74 e s   o t h e r   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 61 6E 20 74 68 65 20 73 69 h a n   t h e   s i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 67 6C 65 C2 A0 69 6E 64 65 n g l e . . i n d e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 6E 64 65 6E 74 20 76 61 p e n d e n t   v a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 69 61 62 6C 65 2E 20 54 68 r i a b l e .   T h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 73 20 69 6E 63 72 65 61 73 i s   i n c r e a s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 73 20 74 68 65 20 72 65 6C e s   t h e   r e l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 61 62 69 6C 69 74 79 20 6F i a b i l i t y   o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 20 74 68 65 20 72 65 73 75 f   t h e   r e s u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 74 73 2C 20 6F 66 74 65 6E l t s ,   o f t e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 72 6F 75 67 68 20 61   t h r o u g h   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 63 6F 6D 70 61 72 69 73 6F   c o m p a r i s o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 20 62 65 74 77 65 65 6E 20 n   b e t w e e n   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 65 c o n t r o l   m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 73 75 72 65 6D 65 6E 74 73 a s u r e m e n t s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 6E 64 20 74 68 65 20 6F   a n d   t h e   o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 72 20 6D 65 61 73 75 t h e r   m e a s u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 65 6D 65 6E 74 73 2E 20 53 r e m e n t s .   S 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 69 65 6E 74 69 66 69 63 20 c i e n t i f i c   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 73 20 61 c o n t r o l s   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 65 20 61 20 70 61 72 74 20 r e   a   p a r t   
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 66 20 74 68 65 C2 A0 73 63 o f   t h e . . s c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 65 6E 74 69 66 69 63 20 6D i e n t i f i c   m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 74 68 6F 64 2E 0A 0A 41 6E e t h o d . . . A n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 65 78 61 6D 70 6C 65 20 6F   e x a m p l e   o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 20 61 6E 20 65 78 70 65 72 f   a n   e x p e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6D 65 6E 74 61 6C 20 63 6F i m e n t a l   c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 72 6F 6C 20 6D 69 67 68 n t r o l   m i g h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 20 62 65 20 74 65 73 74 69 t   b e   t e s t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 67 20 70 6C 61 6E 74 20 66 n g   p l a n t   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 79 20 67 69 76 69 6E 67 20 b y   g i v i n g   
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 74 20 74 6F 20 6F 6E 6C 79 i t   t o   o n l y 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 68 61 6C 66 20 74 68 65 20   h a l f   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 6C 61 6E 74 73 20 69 6E 20 p l a n t s   i n   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 20 67 61 72 64 65 6E 3A 20 a   g a r d e n :   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 20 70 6C 61 6E 74 73 t h e   p l a n t s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 61 74 20 72 65 63 65   t h a t   r e c e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 76 65 20 6E 6F 20 66 65 72 i v e   n o   f e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 6C 69 7A 65 72 20 61 72 t i l i z e r   a r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 74 68 65 20 63 6F 6E 74 e   t h e   c o n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 6F 6C 20 67 72 6F 75 70 2C r o l   g r o u p , 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 62 65 63 61 75 73 65 20 74   b e c a u s e   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 79 20 65 73 74 61 62 6C h e y   e s t a b l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 73 68 20 74 68 65 20 62 61 i s h   t h e   b a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 65 6C 69 6E 65 20 6C 65 76 s e l i n e   l e v 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6C 20 6F 66 20 67 72 6F 77 e l   o f   g r o w 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 20 74 68 61 74 20 74 68 t h   t h a t   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 66 65 72 74 69 6C 69 7A e   f e r t i l i z 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 2D 74 72 65 61 74 65 64 e r - t r e a t e d 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 70 6C 61 6E 74 73 20 77 69   p l a n t s   w i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 6C 20 62 65 20 63 6F 6D 70 l l   b e   c o m p 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 72 65 64 20 61 67 61 69 6E a r e d   a g a i n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 74 2E 20 57 69 74 68 6F 75 s t .   W i t h o u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 20 61 20 63 6F 6E 74 72 6F t   a   c o n t r o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 20 67 72 6F 75 70 2C 20 74 l   g r o u p ,   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 20 65 78 70 65 72 69 6D h e   e x p e r i m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6E 74 20 63 61 6E 6E 6F 74 e n t   c a n n o t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 64 65 74 65 72 6D 69 6E 65   d e t e r m i n e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 77 68 65 74 68 65 72 20 74   w h e t h e r   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 20 66 65 72 74 69 6C 69 h e   f e r t i l i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 7A 65 72 2D 74 72 65 61 74 65 z e r - t r e a t e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 20 70 6C 61 6E 74 73 20 67 d   p l a n t s   g 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 6F 77 C2 A0 6D 6F 72 65 20 r o w . . m o r e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 61 6E C2 A0 74 68 65 79 t h a n . . t h e y 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 77 6F 75 6C 64 20 68 61 76   w o u l d   h a v 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 69 66 20 75 6E 74 72 65 e   i f   u n t r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 74 65 64 2E 0A 0A 49 64 65 a t e d . . . I d e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6C 6C 79 2C 20 61 6C 6C 20 a l l y ,   a l l   
+2014-08-31 10:10:51 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 73 20 v a r i a b l e s   
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6E 20 61 6E 20 65 78 70 65 i n   a n   e x p e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 69 6D 65 6E 74 20 77 69 6C r i m e n t   w i l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 20 62 65 20 63 6F 6E 74 72 l   b e   c o n t r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6C 6C 65 64 20 28 61 63 63 o l l e d   ( a c c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 75 6E 74 65 64 20 66 6F 72 o u n t e d   f o r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 62 79 20 74 68 65 20 63 6F   b y   t h e   c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 72 6F 6C 20 6D 65 61 73 n t r o l   m e a s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 75 72 65 6D 65 6E 74 73 29 20 u r e m e n t s )   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6E 64 20 6E 6F 6E 65 20 77 a n d   n o n e   w 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6C 6C 20 62 65 20 75 6E 63 i l l   b e   u n c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 2E o n t r o l l e d . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 49 6E 20 73 75 63 68 20 61   I n   s u c h   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 20 65 78 70 65 72 69 6D 65 n   e x p e r i m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 2C 20 69 66 20 61 6C 6C n t ,   i f   a l l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 63 6F 6E 74 72   t h e   c o n t r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6C 73 20 77 6F 72 6B 20 61 o l s   w o r k   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 65 78 70 65 63 74 65 64 s   e x p e c t e d 
+2014-08-31 10:10:51 DEBUG Utils:43 - 2C 20 69 74 20 69 73 20 70 6F ,   i t   i s   p o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 73 69 62 6C 65 20 74 6F 20 s s i b l e   t o   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 63 6C 75 64 65 20 74 c o n c l u d e   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 61 74 20 74 68 65 20 65 78 h a t   t h e   e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 20 69 p e r i m e n t   i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 77 6F 72 6B 69 6E 67 20 s   w o r k i n g   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 73 20 69 6E 74 65 6E 64 65 a s   i n t e n d e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 20 61 6E 64 20 74 68 61 74 d   a n d   t h a t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 72 65 73 75 6C   t h e   r e s u l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 73 20 6F 66 20 74 68 65 20 t s   o f   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 72 65 20 64 75 65 20 74   a r e   d u e   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 20 74 68 65 20 65 66 66 65 o   t h e   e f f e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 74 20 6F 66 20 74 68 65 20 c t   o f   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 20 62 v a r i a b l e   b 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 69 6E 67 20 74 65 73 74 65 e i n g   t e s t e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 2E 20 54 68 61 74 20 69 73 d .   T h a t   i s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 2C 20 73 63 69 65 6E 74 69 66 ,   s c i e n t i f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 63 20 63 6F 6E 74 72 6F 6C i c   c o n t r o l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 61 6C 6C 6F 77 20 61 6E s   a l l o w   a n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 69 6E 76 65 73 74 69 67 61   i n v e s t i g a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 6F 72 20 74 6F 20 6D 61 6B t o r   t o   m a k 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 61 20 63 6C 61 69 6D 20 e   a   c l a i m   
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 69 6B 65 20 22 54 77 6F 20 l i k e   " T w o   
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 69 74 75 61 74 69 6F 6E 73 s i t u a t i o n s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 77 65 72 65 20 69 64 65 6E   w e r e   i d e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 63 61 6C 20 75 6E 74 69 t i c a l   u n t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 20 66 61 63 74 6F 72 20 58 l   f a c t o r   X 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 63 63 75 72 72 65 64 2E   o c c u r r e d . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 53 69 6E 63 65 20 66 61 63   S i n c e   f a c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 6F 72 20 58 20 69 73 20 74 t o r   X   i s   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 20 6F 6E 6C 79 20 64 69 h e   o n l y   d i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 66 65 72 65 6E 63 65 20 62 f f e r e n c e   b 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 74 77 65 65 6E 20 74 68 65 e t w e e n   t h e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 77 6F 20 73 69 74 75 61   t w o   s i t u a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 6F 6E 73 2C 20 74 68 65 t i o n s ,   t h e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6E 65 77 20 6F 75 74 63 6F   n e w   o u t c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 65 20 77 61 73 20 63 61 75 m e   w a s   c a u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 65 64 20 62 79 20 66 61 63 s e d   b y   f a c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 6F 72 20 58 2E 22 0A 0A 43 t o r   X . " . . C 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6E 74 65 6E 74 73 0A 0A 43 o n t e n t s . . C 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 20 o n t r o l l e d   
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 54 79 70 65 73 20 6F 66 20 s T y p e s   o f   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 4E 65 67 c o n t r o l N e g 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 74 69 76 65 50 6F 73 69 74 a t i v e P o s i t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 76 65 52 61 6E 64 6F 6D 69 i v e R a n d o m i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 7A 61 74 69 6F 6E 42 6C 69 6E z a t i o n B l i n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 20 65 78 70 65 72 69 6D 65 d   e x p e r i m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 73 44 6F 75 62 6C 65 2D n t s D o u b l e - 
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 6C 69 6E 64 20 65 78 70 65 b l i n d   e x p e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 69 6D 65 6E 74 73 53 65 65 r i m e n t s S e e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 6C 73 6F 52 65 66 65 72   a l s o R e f e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6E 63 65 73 0A 0A 43 6F 6E e n c e s . . C o n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 65 78 t r o l l e d   e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 45 p e r i m e n t s E 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 69 74 0A 0A 53 65 65 20 61 d i t . . S e e   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 73 6F 3A C2 A0 53 63 69 65 l s o : . . S c i e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 69 66 69 63 20 6D 65 74 n t i f i c   m e t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 6F 64 C2 A0 61 6E 64 C2 A0 h o d . . a n d . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 45 78 70 65 72 69 6D 65 6E 74 E x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6C 20 64 65 73 69 67 6E 0A a l   d e s i g n . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 0A 54 68 65 72 65 20 61 72 65 . T h e r e   a r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6D 61 6E 79 20 66 6F 72 6D   m a n y   f o r m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 6F 66 20 63 6F 6E 74 72 s   o f   c o n t r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6C 6C 65 64 20 65 78 70 65 o l l e d   e x p e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 69 6D 65 6E 74 73 2E 20 41 r i m e n t s .   A 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 72 65 6C 61 74 69 76 65 6C   r e l a t i v e l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 79 20 73 69 6D 70 6C 65 20 6F y   s i m p l e   o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 65 20 73 65 70 61 72 61 74 n e   s e p a r a t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 73 20 72 65 73 65 61 72 63 e s   r e s e a r c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 20 73 01 8F 62 00 00 00 07 h   s . . b . . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 -                               
+2014-08-31 10:10:51 INFO  MessageInterpreter:40 - Authenticated message from user 1152921504606846978 with session 16c6ff71-e300-451e-8dc6-0b7fa1e4db74
+2014-08-31 10:10:51 INFO  MessageInterpreter:108 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :editing document - 472c2b51-2f31-4628-b89f-2e8e265c883e
+2014-08-31 10:10:51 INFO  DocumentEditMessage:40 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :edited by the creator itself
+2014-08-31 10:10:51 DEBUG DocumentEditMessage:42 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 editors of the document- ["1152921504606846977"]
+2014-08-31 10:10:51 DEBUG DocumentEditMessage:43 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 readers of the document- ["1152921504606846977"]
+2014-08-31 10:10:51 INFO  DocumentEditMessage:60 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :sync check passed
+2014-08-31 10:10:51 DEBUG Utils:25 - buffer : diff_received
+2014-08-31 10:10:51 DEBUG Utils:26 - size : 2038 bytes
+2014-08-31 10:10:51 DEBUG Utils:43 - D6 C3 C4 00 00 01 29 00 8F 6C . . . . . . ) . . l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 8F 62 00 8F 62 03 00 0A 0A 4C . b . . b . . . . L 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 73 74 20 65 64 69 74 65 64 a s t   e d i t e d 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 32 32 20 64 61 79 73 20 61   2 2   d a y s   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 67 6F C2 A0 62 79 C2 A0 41 6C g o . . b y . . A l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 61 6E 79 20 4E 59 0A 0A 53 b a n y   N Y . . S 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 69 65 6E 74 69 66 69 63 20 c i e n t i f i c   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 0A 0A 46 c o n t r o l . . F 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 72 20 6F 74 68 65 72 20 75 o r   o t h e r   u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 65 73 2C 20 73 65 65 C2 A0 s e s ,   s e e . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 43 6F 6E 74 72 6F 6C 2E 0A 0A C o n t r o l . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 54 68 69 73 20 70 61 67 65 20 T h i s   p a g e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 61 73 20 73 6F 6D 65 20 69 h a s   s o m e   i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 73 75 65 73 0A 0A EF BF BC s s u e s . . . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 0A 0A 54 61 6B 65 20 69 64 65 . . T a k e   i d e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 69 63 61 6C 20 67 72 6F n t i c a l   g r o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 77 69 6E 67 20 70 6C 61 6E 74 w i n g   p l a n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 61 6E 64 20 67 69 76 65 s   a n d   g i v e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 66 65 72 74 69 6C 69 7A 65   f e r t i l i z e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 20 74 6F 20 68 61 6C 66 20 r   t o   h a l f   
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 66 20 74 68 65 6D 2E 20 49 o f   t h e m .   I 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 20 74 68 65 72 65 20 61 72 f   t h e r e   a r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 64 69 66 66 65 72 65 6E e   d i f f e r e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 65 73 20 62 65 74 77 65 65 c e s   b e t w e e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 20 74 68 65 20 66 65 72 74 n   t h e   f e r t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6C 69 7A 65 64 20 67 72 6F i l i z e d   g r o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 75 70 20 61 6E 64 20 74 68 65 u p   a n d   t h e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 75 6E 66 65 72 74 69 6C 69   u n f e r t i l i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 7A 65 64 20 22 63 6F 6E 74 72 z e d   " c o n t r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6C 22 20 67 72 6F 75 70 2C o l "   g r o u p , 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 73 65 20 64 69 66   t h e s e   d i f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 65 72 65 6E 63 65 73 20 6D f e r e n c e s   m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 79 20 62 65 20 64 75 65 20 a y   b e   d u e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 6F 20 74 68 65 20 66 65 72 t o   t h e   f e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 6C 69 7A 65 72 2E 0A 0A t i l i z e r . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 41 C2 A0 73 63 69 65 6E 74 69 A . . s c i e n t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 69 63 20 63 6F 6E 74 72 6F f i c   c o n t r o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C C2 A0 69 73 20 61 6E C2 A0 l . . i s   a n . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - C2 A0 6F 72 C2 A0 6F 62 73 65 . . o r . . o b s e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 76 61 74 69 6F 6E C2 A0 64 r v a t i o n . . d 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 73 69 67 6E 65 64 20 74 6F e s i g n e d   t o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6D 69 6E 69 6D 69 7A 65 20   m i n i m i z e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 20 65 66 66 65 63 74 t h e   e f f e c t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 6F 66 20 76 61 72 69 61 s   o f   v a r i a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 6C 65 73 20 6F 74 68 65 72 b l e s   o t h e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 61 6E 20 74 68 65 20   t h a n   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 69 6E 67 6C 65 C2 A0 69 6E s i n g l e . . i n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 65 70 65 6E 64 65 6E 74 20 d e p e n d e n t   
+2014-08-31 10:10:51 DEBUG Utils:43 - 76 61 72 69 61 62 6C 65 2E 20 v a r i a b l e .   
+2014-08-31 10:10:51 DEBUG Utils:43 - 54 68 69 73 20 69 6E 63 72 65 T h i s   i n c r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 73 65 73 20 74 68 65 20 72 a s e s   t h e   r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6C 69 61 62 69 6C 69 74 79 e l i a b i l i t y 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 66 20 74 68 65 20 72 65   o f   t h e   r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 75 6C 74 73 2C 20 6F 66 74 s u l t s ,   o f t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6E 20 74 68 72 6F 75 67 68 e n   t h r o u g h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 20 63 6F 6D 70 61 72 69   a   c o m p a r i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 6F 6E 20 62 65 74 77 65 65 s o n   b e t w e e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 20 63 6F 6E 74 72 6F 6C 20 n   c o n t r o l   
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 65 61 73 75 72 65 6D 65 6E m e a s u r e m e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 73 20 61 6E 64 20 74 68 65 t s   a n d   t h e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 74 68 65 72 20 6D 65 61   o t h e r   m e a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 75 72 65 6D 65 6E 74 73 2E s u r e m e n t s . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 53 63 69 65 6E 74 69 66 69   S c i e n t i f i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 20 63 6F 6E 74 72 6F 6C 73 c   c o n t r o l s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 72 65 20 61 20 70 61 72   a r e   a   p a r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 20 6F 66 20 74 68 65 C2 A0 t   o f   t h e . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 63 69 65 6E 74 69 66 69 63 s c i e n t i f i c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6D 65 74 68 6F 64 2E 0A 0A   m e t h o d . . . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 41 6E 20 65 78 61 6D 70 6C 65 A n   e x a m p l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 66 20 61 6E 20 65 78 70   o f   a n   e x p 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 69 6D 65 6E 74 61 6C 20 e r i m e n t a l   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 69 c o n t r o l   m i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 67 68 74 20 62 65 20 74 65 73 g h t   b e   t e s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 6E 67 20 70 6C 61 6E 74 t i n g   p l a n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 66 65 72 74 69 6C 69 7A 65   f e r t i l i z e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 20 62 79 20 67 69 76 69 6E r   b y   g i v i n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 67 20 69 74 20 74 6F 20 6F 6E g   i t   t o   o n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 79 20 68 61 6C 66 20 74 68 l y   h a l f   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 70 6C 61 6E 74 73 20 69 e   p l a n t s   i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 20 61 20 67 61 72 64 65 6E n   a   g a r d e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 3A 20 74 68 65 20 70 6C 61 6E :   t h e   p l a n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 73 20 74 68 61 74 20 72 65 t s   t h a t   r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 65 69 76 65 20 6E 6F 20 66 c e i v e   n o   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 74 69 6C 69 7A 65 72 20 e r t i l i z e r   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 72 65 20 74 68 65 20 63 6F a r e   t h e   c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 72 6F 6C 20 67 72 6F 75 n t r o l   g r o u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 2C 20 62 65 63 61 75 73 65 p ,   b e c a u s e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 79 20 65 73 74 61   t h e y   e s t a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 6C 69 73 68 20 74 68 65 20 b l i s h   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 62 61 73 65 6C 69 6E 65 20 6C b a s e l i n e   l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 76 65 6C 20 6F 66 20 67 72 e v e l   o f   g r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 77 74 68 20 74 68 61 74 20 o w t h   t h a t   
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 68 65 20 66 65 72 74 69 6C t h e   f e r t i l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 7A 65 72 2D 74 72 65 61 74 i z e r - t r e a t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 64 20 70 6C 61 6E 74 73 20 e d   p l a n t s   
+2014-08-31 10:10:51 DEBUG Utils:43 - 77 69 6C 6C 20 62 65 20 63 6F w i l l   b e   c o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 70 61 72 65 64 20 61 67 61 m p a r e d   a g a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6E 73 74 2E 20 57 69 74 68 i n s t .   W i t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 75 74 20 61 20 63 6F 6E 74 o u t   a   c o n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 6F 6C 20 67 72 6F 75 70 2C r o l   g r o u p , 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 65 78 70 65 72   t h e   e x p e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6D 65 6E 74 20 63 61 6E 6E i m e n t   c a n n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 74 20 64 65 74 65 72 6D 69 o t   d e t e r m i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 65 20 77 68 65 74 68 65 72 n e   w h e t h e r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 66 65 72 74 69   t h e   f e r t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 69 7A 65 72 2D 74 72 65 61 l i z e r - t r e a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 65 64 20 70 6C 61 6E 74 73 t e d   p l a n t s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 67 72 6F 77 C2 A0 6D 6F 72   g r o w . . m o r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 74 68 61 6E C2 A0 74 68 e   t h a n . . t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 79 20 77 6F 75 6C 64 20 68 e y   w o u l d   h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 76 65 20 69 66 20 75 6E 74 a v e   i f   u n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 65 61 74 65 64 2E 0A 0A 49 r e a t e d . . . I 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 65 61 6C 6C 79 2C 20 61 6C d e a l l y ,   a l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 20 76 61 72 69 61 62 6C 65 l   v a r i a b l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 20 69 6E 20 61 6E 20 65 78 s   i n   a n   e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 20 77 p e r i m e n t   w 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6C 6C 20 62 65 20 63 6F 6E i l l   b e   c o n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 28 61 t r o l l e d   ( a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 63 6F 75 6E 74 65 64 20 66 c c o u n t e d   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 72 20 62 79 20 74 68 65 20 o r   b y   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6E 74 72 6F 6C 20 6D 65 c o n t r o l   m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 73 75 72 65 6D 65 6E 74 73 a s u r e m e n t s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 29 20 61 6E 64 20 6E 6F 6E 65 )   a n d   n o n e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 77 69 6C 6C 20 62 65 20 75   w i l l   b e   u 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 63 6F 6E 74 72 6F 6C 6C 65 n c o n t r o l l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 2E 20 49 6E 20 73 75 63 68 d .   I n   s u c h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 6E 20 65 78 70 65 72 69   a n   e x p e r i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 65 6E 74 2C 20 69 66 20 61 m e n t ,   i f   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6C 6C 20 74 68 65 20 63 6F 6E l l   t h e   c o n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 72 6F 6C 73 20 77 6F 72 6B t r o l s   w o r k 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 73 20 65 78 70 65 63 74   a s   e x p e c t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 64 2C 20 69 74 20 69 73 20 e d ,   i t   i s   
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 6F 73 73 69 62 6C 65 20 74 p o s s i b l e   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 20 63 6F 6E 63 6C 75 64 65 o   c o n c l u d e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 61 74 20 74 68 65 20   t h a t   t h e   
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 69 73 20 77 6F 72 6B 69 6E   i s   w o r k i n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 67 20 61 73 20 69 6E 74 65 6E g   a s   i n t e n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 65 64 20 61 6E 64 20 74 68 d e d   a n d   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 74 20 74 68 65 20 72 65 73 a t   t h e   r e s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 75 6C 74 73 20 6F 66 20 74 68 u l t s   o f   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 65 78 70 65 72 69 6D 65 e   e x p e r i m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 20 61 72 65 20 64 75 65 n t   a r e   d u e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 6F 20 74 68 65 20 65 66   t o   t h e   e f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 65 63 74 20 6F 66 20 74 68 f e c t   o f   t h 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 20 76 61 72 69 61 62 6C 65 e   v a r i a b l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 62 65 69 6E 67 20 74 65 73   b e i n g   t e s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 65 64 2E 20 54 68 61 74 20 t e d .   T h a t   
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 73 2C 20 73 63 69 65 6E 74 i s ,   s c i e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 66 69 63 20 63 6F 6E 74 72 i f i c   c o n t r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6C 73 20 61 6C 6C 6F 77 20 o l s   a l l o w   
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6E 20 69 6E 76 65 73 74 69 a n   i n v e s t i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 67 61 74 6F 72 20 74 6F 20 6D g a t o r   t o   m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 6B 65 20 61 20 63 6C 61 69 a k e   a   c l a i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 20 6C 69 6B 65 20 22 54 77 m   l i k e   " T w 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 20 73 69 74 75 61 74 69 6F o   s i t u a t i o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 73 20 77 65 72 65 20 69 64 n s   w e r e   i d 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6E 74 69 63 61 6C 20 75 6E e n t i c a l   u n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 69 6C 20 66 61 63 74 6F 72 t i l   f a c t o r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 58 20 6F 63 63 75 72 72 65   X   o c c u r r e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 2E 20 53 69 6E 63 65 20 66 d .   S i n c e   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 63 74 6F 72 20 58 20 69 73 a c t o r   X   i s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 74 68 65 20 6F 6E 6C 79 20   t h e   o n l y   
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 69 66 66 65 72 65 6E 63 65 d i f f e r e n c e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 62 65 74 77 65 65 6E 20 74   b e t w e e n   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 20 74 77 6F 20 73 69 74 h e   t w o   s i t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 75 61 74 69 6F 6E 73 2C 20 74 u a t i o n s ,   t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 68 65 20 6E 65 77 20 6F 75 74 h e   n e w   o u t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 63 6F 6D 65 20 77 61 73 20 63 c o m e   w a s   c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 75 73 65 64 20 62 79 20 66 a u s e d   b y   f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 63 74 6F 72 20 58 2E 22 0A a c t o r   X . " . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 0A 43 6F 6E 74 65 6E 74 73 0A . C o n t e n t s . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 0A 43 6F 6E 74 72 6F 6C 6C 65 . C o n t r o l l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 64 20 65 78 70 65 72 69 6D 65 d   e x p e r i m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 73 54 79 70 65 73 20 6F n t s T y p e s   o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 66 20 63 6F 6E 74 72 6F 6C 4E f   c o n t r o l N 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 67 61 74 69 76 65 50 6F 73 e g a t i v e P o s 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 74 69 76 65 52 61 6E 64 6F i t i v e R a n d o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 69 7A 61 74 69 6F 6E 42 6C m i z a t i o n B l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 6E 64 20 65 78 70 65 72 69 i n d   e x p e r i 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6D 65 6E 74 73 44 6F 75 62 6C m e n t s D o u b l 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 2D 62 6C 69 6E 64 20 65 78 e - b l i n d   e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 53 p e r i m e n t s S 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 65 20 61 6C 73 6F 52 65 66 e e   a l s o R e f 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 72 65 6E 63 65 73 0A 0A 43 e r e n c e s . . C 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6F 6E 74 72 6F 6C 6C 65 64 20 o n t r o l l e d   
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 78 70 65 72 69 6D 65 6E 74 e x p e r i m e n t 
+2014-08-31 10:10:51 DEBUG Utils:43 - 73 45 64 69 74 0A 0A 53 65 65 s E d i t . . S e e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 61 6C 73 6F 3A C2 A0 53 63   a l s o : . . S c 
+2014-08-31 10:10:51 DEBUG Utils:43 - 69 65 6E 74 69 66 69 63 20 6D i e n t i f i c   m 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 74 68 6F 64 C2 A0 61 6E 64 e t h o d . . a n d 
+2014-08-31 10:10:51 DEBUG Utils:43 - C2 A0 45 78 70 65 72 69 6D 65 . . E x p e r i m e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 74 61 6C 20 64 65 73 69 67 n t a l   d e s i g 
+2014-08-31 10:10:51 DEBUG Utils:43 - 6E 0A 0A 54 68 65 72 65 20 61 n . . T h e r e   a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 65 20 6D 61 6E 79 20 66 6F r e   m a n y   f o 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 6D 73 20 6F 66 20 63 6F 6E r m s   o f   c o n 
+2014-08-31 10:10:51 DEBUG Utils:43 - 74 72 6F 6C 6C 65 64 20 65 78 t r o l l e d   e x 
+2014-08-31 10:10:51 DEBUG Utils:43 - 70 65 72 69 6D 65 6E 74 73 2E p e r i m e n t s . 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 41 20 72 65 6C 61 74 69 76   A   r e l a t i v 
+2014-08-31 10:10:51 DEBUG Utils:43 - 65 6C 79 20 73 69 6D 70 6C 65 e l y   s i m p l e 
+2014-08-31 10:10:51 DEBUG Utils:43 - 20 6F 6E 65 20 73 65 70 61 72   o n e   s e p a r 
+2014-08-31 10:10:51 DEBUG Utils:43 - 61 74 65 73 20 72 65 73 65 61 a t e s   r e s e a 
+2014-08-31 10:10:51 DEBUG Utils:43 - 72 63 68 20 73 01 8F 62       r c h   s . . b 
+2014-08-31 10:10:51 INFO  DocumentEditMessage:82 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 's copy: 
+
+Last edited 22 days ago by Albany NY
+
+Scientific control
+
+For other uses, see Control.
+
+This page has some issues
+
+￼
+
+Take identical growing plants and give fertilizer to half of them. If there are differences between the fertilized group and the unfertilized "control" group, these differences may be due to the fertilizer.
+
+A scientific control is an experiment or observation designed to minimize the effects of variables other than the single independent variable. This increases the reliability of the results, often through a comparison between control measurements and the other measurements. Scientific controls are a part of the scientific method.
+
+An example of an experimental control might be testing plant fertilizer by giving it to only half the plants in a garden: the plants that receive no fertilizer are the control group, because they establish the baseline level of growth that the fertilizer-treated plants will be compared against. Without a control group, the experiment cannot determine whether the fertilizer-treated plants grow more than they would have if untreated.
+
+Ideally, all variables in an experiment will be controlled (accounted for by the control measurements) and none will be uncontrolled. In such an experiment, if all the controls work as expected, it is possible to conclude that the experiment is working as intended and that the results of the experiment are due to the effect of the variable being tested. That is, scientific controls allow an investigator to make a claim like "Two situations were identical until factor X occurred. Since factor X is the only difference between the two situations, the new outcome was caused by factor X."
+
+Contents
+
+Controlled experimentsTypes of controlNegativePositiveRandomizationBlind experimentsDouble-blind experimentsSee alsoReferences
+
+Controlled experimentsEdit
+
+See also: Scientific method and Experimental design
+
+There are many forms of controlled experiments. A relatively simple one separates research s
+2014-08-31 10:10:51 INFO  DocumentEditMessage:83 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 version: 7
+2014-08-31 10:10:51 DEBUG DocumentEditMessage:102 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 GCM ids: []
+2014-08-31 10:10:51 DEBUG Utils:25 - buffer : response
+2014-08-31 10:10:51 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:10:51 DEBUG Utils:43 - 01 03 00 00 FF FF             . . . . . . 
+2014-08-31 10:10:51 INFO  DsyncserverHandler:49 - Message Responded :6
+2014-08-31 10:16:22 INFO  DsyncserverHandler:43 - Message Received from ip /10.42.0.52:37856:7
+2014-08-31 10:16:22 DEBUG Utils:25 - buffer : request
+2014-08-31 10:16:22 DEBUG Utils:26 - size : 22 bytes
+2014-08-31 10:16:22 DEBUG Utils:43 - 01 09 00 00 FF FF 8D C6 0B 7F . . . . . . . . .  
+2014-08-31 10:16:22 DEBUG Utils:43 - A1 E4 DB 74 16 C6 FF 71 E3 00 . . . t . . . q . . 
+2014-08-31 10:16:22 DEBUG Utils:43 - 45 1E                         E  
+2014-08-31 10:16:22 INFO  MessageInterpreter:40 - Authenticated message from user 1152921504606846978 with session 16c6ff71-e300-451e-8dc6-0b7fa1e4db74
+2014-08-31 10:16:22 INFO  MessageInterpreter:126 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 :logged out 
+2014-08-31 10:16:22 DEBUG UserLogoutMessage:31 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 current sessions- null
+2014-08-31 10:16:22 DEBUG UserLogoutMessage:32 - 16c6ff71-e300-451e-8dc6-0b7fa1e4db74 and useragents- null
+2014-08-31 10:16:22 DEBUG Utils:25 - buffer : response
+2014-08-31 10:16:22 DEBUG Utils:26 - size : 6 bytes
+2014-08-31 10:16:22 DEBUG Utils:43 - 01 09 00 00 FF FF             . . . . . . 
+2014-08-31 10:16:22 INFO  DsyncserverHandler:49 - Message Responded :7

@@ -40,7 +40,7 @@ public class Dsyncserver {
 
     public void start() throws Exception {
         logger.info("kickstarting server..");
-        ArrayList<URI> nodes = new ArrayList<>();
+        ArrayList<URI> nodes = new ArrayList<URI>();
         try {
             nodes.add(URI.create("http://127.0.0.1:8091/pools"));
             cclient = new CouchbaseClient(nodes, "default", "");

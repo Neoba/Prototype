@@ -61,8 +61,31 @@ public class DsyncHeadlessClient {
                     in = sendPost(buff);
                     buff.clear();
                     break;
+                case "del":
+                    UUID docuid = docs.get(cmd.split(" ")[1]);
+                    buff=null;
+                    if (docuid != null) {
+                        buff = ByteBuffer.allocate(2 + 4 + 16 + 16 );
+                        buff.put((byte) 0x01);
+                        buff.put((byte) 0x0B);
+                        buff.putInt(0x0000DE1E);
+                        putcookie(buff, cookie);
+                        buff.putLong(docuid.getLeastSignificantBits());
+                        buff.putLong(docuid.getMostSignificantBits());
+                    }
+                    in = sendPost(buff);
+                    if (in.getInt(2) == 0xFFFF) {
+                        //cache.remove(docuid);
+                        System.out.println("yup deleted");
+                        
+                    } else {
+                        System.err.println("som error");
+                    }
+                    buff.clear();
+                    break;
                 case "login":
-                    buff = ByteBuffer.allocate(6 + 20 + cmd.split(" ")[1].length());
+                    String regid="CONSOLE";
+                    buff = ByteBuffer.allocate(6 + 20 +1+ cmd.split(" ")[1].length()+4+regid.length());
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x06);
                     buff.putInt(cmd.split(" ")[1].length());
@@ -70,6 +93,9 @@ public class DsyncHeadlessClient {
                     for (byte b : MessageDigest.getInstance("SHA").digest(cmd.split(" ")[2].getBytes())) {
                         buff.put(b);
                     }
+                    buff.put((byte)0x0C);
+                    buff.putInt(regid.length());
+                    buff.put(regid.getBytes());
                     in = sendPost(buff);
                     if (in.getInt(2) == 0xFFFF) {
                         cookie = new UUID(in.getLong(14), in.getLong(6));
@@ -93,7 +119,7 @@ public class DsyncHeadlessClient {
                         System.out.println("created a new doc: " + docid.toString());
                         docs.put(docname, docid);
                         System.out.println("created [" + docid.toString() + "]");
-                        cache.put(docid, new document(docname, new ArrayList(), 0, "",(byte)2));
+                        cache.put(docid, new document(docname, new ArrayList(), -1, "", (byte) 2,true));
                     } else {
                         System.err.println("som error");
                     }
@@ -101,7 +127,7 @@ public class DsyncHeadlessClient {
                     break;
                 case "ed":
                     System.out.println(docs);
-                    UUID docuid = docs.get(cmd.split(" ")[1]);
+                    docuid = docs.get(cmd.split(" ")[1]);
                     if (docuid != null) {
                         byte[] edit = new VcdiffEncoder(cache.get(docuid).dict, cmd.split(" ")[2]).encode();
                         buff = ByteBuffer.allocate(2 + 4 + 16 + 16 + edit.length + 4);
@@ -170,23 +196,115 @@ public class DsyncHeadlessClient {
 
                         String title = Charset.forName("UTF-8").decode(ByteBuffer.wrap(titlearray)).toString();
                         int age = in.getInt(base + 28 + sdiff + sdict + stitle);
-                        byte permission=in.get(base + 28 + sdiff + sdict + stitle+4);
-                        base = base + 32 + sdiff + sdict + stitle+1;
-                        cache.put(id, new document(title, diff, age, dict,permission));
-                        docs.put( title,id);
-                        System.out.println("added to cache: " + cache.get(id).title  +":"+cache.get(id).permission);
+                        byte permission = in.get(base + 28 + sdiff + sdict + stitle + 4);
+                        boolean owns=in.get(base + 28 + sdiff + sdict + stitle + 4+1)==0x1;
+                        base = base + 32 + sdiff + sdict + stitle + 1+1;
+                        cache.put(id, new document(title, diff, age, dict, permission,owns));
+                        docs.put(title, id);
+                        System.out.println("added to cache: " + cache.get(id).title + ":" + cache.get(id).permission + ":owns="+owns);
+                    }
+                    int followerc = in.getInt(base);
+                    base += 4;
+                    for (int i = 0; i < followerc; i++) {
+                        int strc = in.getInt(base);
+                        base += 4;
+                        byte[] ff = new byte[strc];
 
+                        for (int j = 0; j < strc; j++) {
+                            ff[j] = in.get(base + j);
+
+                        }
+                        base += strc;
+                        String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+                        System.out.println("follower" + dict);
+                        System.out.print(" with id" + in.getLong(base));
+                        base += 8;
+                    }
+                    followerc = in.getInt(base);
+                    base += 4;
+                    System.out.println(followerc);
+                    for (int i = 0; i < followerc; i++) {
+                        int strc = in.getInt(base);
+                        base += 4;
+                        byte[] ff = new byte[strc];
+
+                        for (int j = 0; j < strc; j++) {
+                            ff[j] = in.get(base + j);
+
+                        }
+                        base += strc;
+                        String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+                        System.out.println("following" + dict);
+                        System.out.print(" id " + in.getLong(base));
+                        base += 8;
+                    }
+
+                    int ownc = in.getInt(base);
+                    base += 4;
+                    for (int i = 0; i < ownc; i++) {
+                        UUID doc = new UUID(in.getLong(base + 8), in.getLong(base));
+                        System.err.println("OWNS!--> " + doc.toString());
+                        base += 16;
+                        int reac = in.getInt(base);
+                        base += 4;
+                        for (int j = 0; j < reac; j++) {
+                            System.err.println("READS!-->" + in.getLong(base));
+                            base += 8;
+                        }
+                        reac = in.getInt(base);
+                        base += 4;
+                        for (int j = 0; j < reac; j++) {
+                            System.err.println(in.getLong(base));
+                            base += 8;
+                        }
                     }
                     break;
                 case "follow":
-                    buff = ByteBuffer.allocate(6 + 16+8);
+                    buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x07);
-                    buff.putInt(0xFFFF);
+                    buff.putInt(cmd.split(" ")[1].length());
                     putcookie(buff, cookie);
-                    buff.putLong(Long.parseLong(cmd.split(" ")[1]));
+                    buff.put(cmd.split(" ")[1].getBytes());
                     in = sendPost(buff);
                     buff.clear();
+                    if (in.getInt(2) == 0xFFFF) {
+                        System.out.println("followed " + in.getLong(6));
+                    }
+                    break;
+                case "unfollow":
+                    buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
+                    buff.put((byte) 0x01);
+                    buff.put((byte) 0x0C);
+                    buff.putInt(cmd.split(" ")[1].length());
+                    putcookie(buff, cookie);
+                    buff.put(cmd.split(" ")[1].getBytes());
+                    in = sendPost(buff);
+                    buff.clear();
+                    if (in.getInt(2) == 0xFFFF) {
+                        System.out.println("unfollowed " + in.getLong(6));
+                        int count=in.getInt(6+8);
+                        base=6+8+4;
+                        for(int i=0;i<count;i++){
+                            UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
+                            base+=16;
+                            System.out.println("removing "+id+" from cache");
+                            cache.remove(id);
+                        }
+                    }
+                    break;
+                case "poke":
+                    buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
+                    buff.put((byte) 0x01);
+                    buff.put((byte) 0x0A);
+                    buff.putInt(cmd.split(" ")[1].length());
+                    putcookie(buff, cookie);
+                    buff.put(cmd.split(" ")[1].getBytes());
+                    in = sendPost(buff);
+                    buff.clear();
+                    if (in.getInt(2) == 0xFFFF) {
+                        System.out.println("followed " + in.getLong(6));
+                    }
                     break;
                 case "logout":
                     buff = ByteBuffer.allocate(6 + 16);
@@ -198,10 +316,10 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     break;
                 case "grant":
-                    buff = ByteBuffer.allocate(6  +16+16 + 9 * ((cmd.split(" ").length - 2))/2);
+                    buff = ByteBuffer.allocate(6 + 16 + 16 + 9 * ((cmd.split(" ").length - 2)) / 2);
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x08);
-                    buff.putInt((cmd.split(" ").length - 2)/2);
+                    buff.putInt((cmd.split(" ").length - 2) / 2);
                     putcookie(buff, cookie);
                     buff.putLong((docs.get(cmd.split(" ")[1])).getLeastSignificantBits());
                     buff.putLong((docs.get(cmd.split(" ")[1])).getMostSignificantBits());
@@ -219,7 +337,7 @@ public class DsyncHeadlessClient {
                         }
 
                         buff.putLong(Long.parseLong(cmd.split(" ")[i + 1]));
-                        System.out.println(Long.parseLong(cmd.split(" ")[i + 1])+" "+cmd.split(" ")[i+1]);
+                        System.out.println(Long.parseLong(cmd.split(" ")[i + 1]) + " " + cmd.split(" ")[i + 1]);
                     }
                     in = sendPost(buff);
                     buff.clear();
@@ -246,12 +364,15 @@ public class DsyncHeadlessClient {
         public String dict;
         public String title;
         public byte permission;
-        document(String t, ArrayList d, int a, String di,byte perm) {
+        public boolean owns;
+
+        document(String t, ArrayList d, int a, String di, byte perm, boolean owns) {
             this.diff = d;
             this.age = a;
             this.dict = di;
             this.title = t;
-            this.permission=perm;
+            this.permission = perm;
+            this.owns=owns;
         }
     }
 
