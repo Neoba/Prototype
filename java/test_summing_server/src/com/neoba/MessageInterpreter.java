@@ -93,9 +93,9 @@ class MessageInterpreter {
             switch (type) {
 
                 case Constants.DOCUMENT_CREATE:
-                    string = buff.toString(6 + 16, size, Charset.forName("UTF-8"));
-                    logger.info(sessid+" :creating new document- "+string);
-                    return new DocumentCreateMessage(string, sessid).result();
+                    doc = new UUID(buff.getLong(30), buff.getLong(22));
+                    logger.info(sessid+" :creating new document- ");
+                    return new DocumentCreateMessage(doc, sessid).result();
                 case Constants.DOCUMENT_DELETE:
                     doc = new UUID(buff.getLong(30), buff.getLong(22));
                     logger.info(sessid+" :deleting document- "+doc);
