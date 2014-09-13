@@ -69,7 +69,7 @@ public class DsyncHeadlessClient {
                         buff.put((byte) 0x01);
                         buff.put((byte) 0x0B);
                         buff.putInt(0x0000DE1E);
-                        putcookie(buff, cookie);
+                        putUUID(buff, cookie);
                         buff.putLong(docuid.getLeastSignificantBits());
                         buff.putLong(docuid.getMostSignificantBits());
                     }
@@ -107,12 +107,12 @@ public class DsyncHeadlessClient {
                     break;
                 case "cr":
                     docname = cmd.split(" ")[1];
-                    buff = ByteBuffer.allocate(16 + 2 + 4 + docname.length());
+                    buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x02);
-                    buff.putInt(docname.length());
-                    putcookie(buff, cookie);
-                    buff.put(docname.getBytes());
+                    buff.putInt(0xFFFF);
+                    putUUID(buff, cookie);
+                    putUUID(buff, UUID.randomUUID());
                     in = sendPost(buff);
                     if (in.getInt(2) == 0xFFFF) {
                         UUID docid = new UUID(in.getLong(14), in.getLong(6));
@@ -125,6 +125,7 @@ public class DsyncHeadlessClient {
                     }
                     buff.clear();
                     break;
+
                 case "ed":
                     System.out.println(docs);
                     docuid = docs.get(cmd.split(" ")[1]);
@@ -134,7 +135,7 @@ public class DsyncHeadlessClient {
                         buff.put((byte) 0x01);
                         buff.put((byte) 0x03);
                         buff.putInt(edit.length);
-                        putcookie(buff, cookie);
+                        putUUID(buff, cookie);
                         buff.putLong(docuid.getLeastSignificantBits());
                         buff.putLong(docuid.getMostSignificantBits());
                         for (byte b : edit) {
@@ -166,7 +167,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x04);
                     buff.putInt(0xFFFF);
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     in = sendPost(buff);
                     buff.clear();
                     int docount = in.getInt(2);
@@ -264,7 +265,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x07);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
                     in = sendPost(buff);
                     buff.clear();
@@ -277,7 +278,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x0C);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
                     in = sendPost(buff);
                     buff.clear();
@@ -298,7 +299,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x0A);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
                     in = sendPost(buff);
                     buff.clear();
@@ -311,7 +312,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x09);
                     buff.putInt(0xFFFF);
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     in = sendPost(buff);
                     buff.clear();
                     break;
@@ -320,7 +321,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x01);
                     buff.put((byte) 0x08);
                     buff.putInt((cmd.split(" ").length - 2) / 2);
-                    putcookie(buff, cookie);
+                    putUUID(buff, cookie);
                     buff.putLong((docs.get(cmd.split(" ")[1])).getLeastSignificantBits());
                     buff.putLong((docs.get(cmd.split(" ")[1])).getMostSignificantBits());
                     for (int i = 2; i < cmd.split(" ").length; i += 2) {
@@ -438,7 +439,7 @@ public class DsyncHeadlessClient {
 
     }
 
-    private static void putcookie(ByteBuffer buff, UUID cookie) {
+    private static void putUUID(ByteBuffer buff, UUID cookie) {
         buff.putLong(cookie.getLeastSignificantBits());
         buff.putLong(cookie.getMostSignificantBits());
     }
