@@ -50,10 +50,12 @@ public class FacebookUser {
         JSONArray friendspage = facebook_obj.getJSONObject("friends").getJSONArray("data");
         do {
             for (int i = 0; i < friendspage.length(); i++) {
-                JSONObject temp=friendspage.getJSONObject(i);
-                JSONObject extra=fbid_to_id(temp.getString("id"));
-                temp.put("username",extra.get("username"));
-                temp.put("sid",extra.get("id"));
+                JSONObject temp = friendspage.getJSONObject(i);
+                JSONObject extra = fbid_to_id(temp.getString("id"));
+                if (extra != null) {
+                    temp.put("username", extra.get("username"));
+                    temp.put("sid", extra.get("id"));
+                }
                 friends.put(temp);
             }
             String url = facebook_obj.getJSONObject("friends").getJSONObject("paging").getString("next");
@@ -68,8 +70,11 @@ public class FacebookUser {
         query.setKey(fbid);
         query.setStale(Stale.FALSE);
         ViewResponse result = Dsyncserver.cclient.query(view, query);
-        JSONObject ob = new JSONObject(result.iterator().next().getValue());
-        return ob;
+        if (result != null) {
+            JSONObject ob = new JSONObject(result.iterator().next().getValue());
+            return ob;
+        }
+        return null;
     }
 
 }
