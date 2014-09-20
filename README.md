@@ -1,7 +1,7 @@
-Dsync
-=====
+Syncpad
+=======
 
-Neoba Dsync is a vcdiff based data synchronization platform
+Syncpad is a vcdiff based data synchronization platform
 
 Version
 ----
