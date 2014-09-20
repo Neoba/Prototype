@@ -43,7 +43,6 @@ class FacebookUserCreateMessage {
         if (!isnametaken) {
             id = Dsyncserver.cclient.incr("idgen", 1, 1152921504606846976L);
             JSONObject user = new JSONObject();
-
             user.put("username", username);
             user.put("type", "user");
             user.put("name", fuser.getName());
@@ -71,5 +70,7 @@ class FacebookUserCreateMessage {
             reply.writeInt(Constants.W_ERR_DUP_USERNAME);
         return reply;
     }
+    
+
     
 }

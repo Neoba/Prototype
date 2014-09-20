@@ -1,0 +1,912 @@
+2014-09-20 17:32:38 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:32:39 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:32:39 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:32:39 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:32:39 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:32:39 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:32:39 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:32:39 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:32:39 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:32:39 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:32:39 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:32:39 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:32:39 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:32:39 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:32:39 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:32:39 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:32:39 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:32:39 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:32:39 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:32:39 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:32:39 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x100d6cd19cbe506f
+2014-09-20 17:32:39 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:32:39 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:32:39 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:32:39 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:32:39 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:32:39 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:32:54 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:32:54 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40099:1
+2014-09-20 17:32:54 DEBUG Utils:25 - buffer : request
+2014-09-20 17:32:54 DEBUG Utils:26 - size : 240 bytes
+2014-09-20 17:32:54 DEBUG Utils:43 - 02 F5 00 00 00 03 61 74 61 00 . . . . . . a t a . 
+2014-09-20 17:32:54 DEBUG Utils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 17:32:54 DEBUG Utils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 17:32:54 DEBUG Utils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 17:32:54 DEBUG Utils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 17:32:54 DEBUG Utils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 17:32:54 DEBUG Utils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 17:32:54 DEBUG Utils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 17:32:54 DEBUG Utils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 17:32:54 DEBUG Utils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 17:32:54 DEBUG Utils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 17:32:54 DEBUG Utils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 17:32:54 DEBUG Utils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 17:32:54 DEBUG Utils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 17:32:54 DEBUG Utils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 17:32:54 DEBUG Utils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 17:32:54 DEBUG Utils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 17:32:54 DEBUG Utils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 17:32:54 DEBUG Utils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 17:32:54 DEBUG Utils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 17:32:54 DEBUG Utils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 17:32:54 DEBUG Utils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 17:32:54 DEBUG Utils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 17:32:54 DEBUG Utils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 17:32:54 DEBUG Utils:43 -                               
+2014-09-20 17:32:54 INFO  MessageInterpreter:69 - facebook access_token: ata
+2014-09-20 17:32:55 INFO  UserCreateMessage:53 - created user {"username":"ata","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 17:32:55 DEBUG Utils:25 - buffer : response
+2014-09-20 17:32:55 DEBUG Utils:26 - size : 6 bytes
+2014-09-20 17:32:55 DEBUG Utils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 17:32:55 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 17:34:19 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:34:20 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:34:20 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:34:20 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:34:20 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:34:20 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:34:20 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:34:20 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:34:20 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:34:20 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:34:20 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:34:20 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:34:20 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:34:20 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:34:20 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:34:20 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:34:20 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:34:20 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:34:20 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:34:20 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:34:20 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xb9b02249b5ccdcae
+2014-09-20 17:34:20 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:34:20 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:34:20 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:34:20 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:34:20 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:34:20 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:34:31 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:34:31 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40105:1
+2014-09-20 17:34:31 DEBUG Utils:25 - buffer : request
+2014-09-20 17:34:31 DEBUG Utils:26 - size : 241 bytes
+2014-09-20 17:34:31 DEBUG Utils:43 - 02 F5 00 00 00 04 61 74 75 61 . . . . . . a t u a 
+2014-09-20 17:34:31 DEBUG Utils:43 - 00 00 00 E3 43 41 41 43 45 64 . . . . C A A C E d 
+2014-09-20 17:34:31 DEBUG Utils:43 - 45 6F 73 65 30 63 42 41 4F 63 E o s e 0 c B A O c 
+2014-09-20 17:34:31 DEBUG Utils:43 - 50 6D 4B 4D 69 6E 47 37 78 50 P m K M i n G 7 x P 
+2014-09-20 17:34:31 DEBUG Utils:43 - 48 5A 43 43 51 76 42 42 66 38 H Z C C Q v B B f 8 
+2014-09-20 17:34:31 DEBUG Utils:43 - 6C 6F 4D 37 73 64 38 33 4E 56 l o M 7 s d 8 3 N V 
+2014-09-20 17:34:31 DEBUG Utils:43 - 61 76 61 4A 52 6C 46 32 46 6B a v a J R l F 2 F k 
+2014-09-20 17:34:31 DEBUG Utils:43 - 41 75 6B 78 55 62 54 59 35 33 A u k x U b T Y 5 3 
+2014-09-20 17:34:31 DEBUG Utils:43 - 43 62 79 54 69 55 64 59 53 5A C b y T i U d Y S Z 
+2014-09-20 17:34:31 DEBUG Utils:43 - 41 79 39 54 44 51 32 46 6E 35 A y 9 T D Q 2 F n 5 
+2014-09-20 17:34:31 DEBUG Utils:43 - 63 76 42 48 48 71 53 68 62 6E c v B H H q S h b n 
+2014-09-20 17:34:31 DEBUG Utils:43 - 6A 36 57 62 78 71 6A 38 62 66 j 6 W b x q j 8 b f 
+2014-09-20 17:34:31 DEBUG Utils:43 - 79 66 4A 77 37 4E 34 72 52 61 y f J w 7 N 4 r R a 
+2014-09-20 17:34:31 DEBUG Utils:43 - 6A 78 74 70 50 4A 6B 44 52 70 j x t p P J k D R p 
+2014-09-20 17:34:31 DEBUG Utils:43 - 33 46 33 30 44 31 48 67 5A 42 3 F 3 0 D 1 H g Z B 
+2014-09-20 17:34:31 DEBUG Utils:43 - 44 64 36 34 4C 37 76 4E 69 6E D d 6 4 L 7 v N i n 
+2014-09-20 17:34:31 DEBUG Utils:43 - 34 46 77 7A 69 49 54 6C 58 67 4 F w z i I T l X g 
+2014-09-20 17:34:31 DEBUG Utils:43 - 4A 65 4F 49 4A 6F 50 6C 71 30 J e O I J o P l q 0 
+2014-09-20 17:34:31 DEBUG Utils:43 - 73 77 5A 43 64 79 51 7A 39 30 s w Z C d y Q z 9 0 
+2014-09-20 17:34:31 DEBUG Utils:43 - 62 36 52 30 68 6F 5A 43 63 32 b 6 R 0 h o Z C c 2 
+2014-09-20 17:34:31 DEBUG Utils:43 - 65 54 43 41 57 63 57 37 43 39 e T C A W c W 7 C 9 
+2014-09-20 17:34:31 DEBUG Utils:43 - 6F 68 45 36 51 58 52 70 72 56 o h E 6 Q X R p r V 
+2014-09-20 17:34:31 DEBUG Utils:43 - 65 69 49 4B 37 70 68 63 68 31 e i I K 7 p h c h 1 
+2014-09-20 17:34:31 DEBUG Utils:43 - 57 39 48 30 39 45 62 70 63 5A W 9 H 0 9 E b p c Z 
+2014-09-20 17:34:31 DEBUG Utils:43 - 44                            D 
+2014-09-20 17:34:31 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:34:31 INFO  UserCreateMessage:53 - created user {"username":"atua","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 17:34:31 DEBUG Utils:25 - buffer : response
+2014-09-20 17:34:31 DEBUG Utils:26 - size : 6 bytes
+2014-09-20 17:34:31 DEBUG Utils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 17:34:31 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 17:41:13 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:41:14 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:41:14 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:41:14 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:41:14 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:41:14 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:41:14 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:41:14 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:41:14 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:41:14 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:41:14 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:41:14 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:41:14 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:41:14 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:41:14 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:41:14 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:41:14 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:41:14 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:41:14 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:41:14 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:41:14 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xcfcae6b62e785d3e
+2014-09-20 17:41:14 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:41:14 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:41:14 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:41:14 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:41:14 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:41:14 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:41:23 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:41:23 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40116:1
+2014-09-20 17:41:23 DEBUG Utils:25 - buffer : request
+2014-09-20 17:41:23 DEBUG Utils:26 - size : 241 bytes
+2014-09-20 17:41:23 DEBUG Utils:43 - 02 F5 00 00 00 04 61 74 61 61 . . . . . . a t a a 
+2014-09-20 17:41:23 DEBUG Utils:43 - 00 00 00 E3 43 41 41 43 45 64 . . . . C A A C E d 
+2014-09-20 17:41:23 DEBUG Utils:43 - 45 6F 73 65 30 63 42 41 4F 63 E o s e 0 c B A O c 
+2014-09-20 17:41:23 DEBUG Utils:43 - 50 6D 4B 4D 69 6E 47 37 78 50 P m K M i n G 7 x P 
+2014-09-20 17:41:23 DEBUG Utils:43 - 48 5A 43 43 51 76 42 42 66 38 H Z C C Q v B B f 8 
+2014-09-20 17:41:23 DEBUG Utils:43 - 6C 6F 4D 37 73 64 38 33 4E 56 l o M 7 s d 8 3 N V 
+2014-09-20 17:41:23 DEBUG Utils:43 - 61 76 61 4A 52 6C 46 32 46 6B a v a J R l F 2 F k 
+2014-09-20 17:41:23 DEBUG Utils:43 - 41 75 6B 78 55 62 54 59 35 33 A u k x U b T Y 5 3 
+2014-09-20 17:41:23 DEBUG Utils:43 - 43 62 79 54 69 55 64 59 53 5A C b y T i U d Y S Z 
+2014-09-20 17:41:23 DEBUG Utils:43 - 41 79 39 54 44 51 32 46 6E 35 A y 9 T D Q 2 F n 5 
+2014-09-20 17:41:23 DEBUG Utils:43 - 63 76 42 48 48 71 53 68 62 6E c v B H H q S h b n 
+2014-09-20 17:41:23 DEBUG Utils:43 - 6A 36 57 62 78 71 6A 38 62 66 j 6 W b x q j 8 b f 
+2014-09-20 17:41:23 DEBUG Utils:43 - 79 66 4A 77 37 4E 34 72 52 61 y f J w 7 N 4 r R a 
+2014-09-20 17:41:23 DEBUG Utils:43 - 6A 78 74 70 50 4A 6B 44 52 70 j x t p P J k D R p 
+2014-09-20 17:41:23 DEBUG Utils:43 - 33 46 33 30 44 31 48 67 5A 42 3 F 3 0 D 1 H g Z B 
+2014-09-20 17:41:23 DEBUG Utils:43 - 44 64 36 34 4C 37 76 4E 69 6E D d 6 4 L 7 v N i n 
+2014-09-20 17:41:23 DEBUG Utils:43 - 34 46 77 7A 69 49 54 6C 58 67 4 F w z i I T l X g 
+2014-09-20 17:41:23 DEBUG Utils:43 - 4A 65 4F 49 4A 6F 50 6C 71 30 J e O I J o P l q 0 
+2014-09-20 17:41:23 DEBUG Utils:43 - 73 77 5A 43 64 79 51 7A 39 30 s w Z C d y Q z 9 0 
+2014-09-20 17:41:23 DEBUG Utils:43 - 62 36 52 30 68 6F 5A 43 63 32 b 6 R 0 h o Z C c 2 
+2014-09-20 17:41:23 DEBUG Utils:43 - 65 54 43 41 57 63 57 37 43 39 e T C A W c W 7 C 9 
+2014-09-20 17:41:23 DEBUG Utils:43 - 6F 68 45 36 51 58 52 70 72 56 o h E 6 Q X R p r V 
+2014-09-20 17:41:23 DEBUG Utils:43 - 65 69 49 4B 37 70 68 63 68 31 e i I K 7 p h c h 1 
+2014-09-20 17:41:23 DEBUG Utils:43 - 57 39 48 30 39 45 62 70 63 5A W 9 H 0 9 E b p c Z 
+2014-09-20 17:41:23 DEBUG Utils:43 - 44                            D 
+2014-09-20 17:41:23 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:41:34 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.net.UnknownHostException: graph.facebook.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:178)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:618)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:160)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:275)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:371)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:932)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at com.neoba.HTTPUtils.json_get(HTTPUtils.java:30)
+	at com.neoba.FacebookUserCreateMessage.<init>(FacebookUserCreateMessage.java:35)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:72)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:46)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:27)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:744)
+2014-09-20 17:42:15 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:42:15 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:42:15 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:42:15 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:42:15 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:42:15 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:42:15 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:42:15 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:42:15 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:42:15 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:42:15 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:42:15 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:42:15 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:42:15 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:42:15 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:42:15 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:42:15 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:42:15 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:42:16 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:42:16 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:42:16 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x6765052a535615cd
+2014-09-20 17:42:16 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:42:16 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:42:16 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:42:16 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:42:16 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:42:16 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:42:21 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:42:21 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40123:1
+2014-09-20 17:42:21 DEBUG Utils:25 - buffer : request
+2014-09-20 17:42:21 DEBUG Utils:26 - size : 239 bytes
+2014-09-20 17:42:21 DEBUG Utils:43 - 02 F5 00 00 00 02 61 61 00 00 . . . . . . a a . . 
+2014-09-20 17:42:21 DEBUG Utils:43 - 00 E3 43 41 41 43 45 64 45 6F . . C A A C E d E o 
+2014-09-20 17:42:21 DEBUG Utils:43 - 73 65 30 63 42 41 4F 63 50 6D s e 0 c B A O c P m 
+2014-09-20 17:42:21 DEBUG Utils:43 - 4B 4D 69 6E 47 37 78 50 48 5A K M i n G 7 x P H Z 
+2014-09-20 17:42:21 DEBUG Utils:43 - 43 43 51 76 42 42 66 38 6C 6F C C Q v B B f 8 l o 
+2014-09-20 17:42:21 DEBUG Utils:43 - 4D 37 73 64 38 33 4E 56 61 76 M 7 s d 8 3 N V a v 
+2014-09-20 17:42:21 DEBUG Utils:43 - 61 4A 52 6C 46 32 46 6B 41 75 a J R l F 2 F k A u 
+2014-09-20 17:42:21 DEBUG Utils:43 - 6B 78 55 62 54 59 35 33 43 62 k x U b T Y 5 3 C b 
+2014-09-20 17:42:21 DEBUG Utils:43 - 79 54 69 55 64 59 53 5A 41 79 y T i U d Y S Z A y 
+2014-09-20 17:42:21 DEBUG Utils:43 - 39 54 44 51 32 46 6E 35 63 76 9 T D Q 2 F n 5 c v 
+2014-09-20 17:42:21 DEBUG Utils:43 - 42 48 48 71 53 68 62 6E 6A 36 B H H q S h b n j 6 
+2014-09-20 17:42:21 DEBUG Utils:43 - 57 62 78 71 6A 38 62 66 79 66 W b x q j 8 b f y f 
+2014-09-20 17:42:21 DEBUG Utils:43 - 4A 77 37 4E 34 72 52 61 6A 78 J w 7 N 4 r R a j x 
+2014-09-20 17:42:21 DEBUG Utils:43 - 74 70 50 4A 6B 44 52 70 33 46 t p P J k D R p 3 F 
+2014-09-20 17:42:21 DEBUG Utils:43 - 33 30 44 31 48 67 5A 42 44 64 3 0 D 1 H g Z B D d 
+2014-09-20 17:42:21 DEBUG Utils:43 - 36 34 4C 37 76 4E 69 6E 34 46 6 4 L 7 v N i n 4 F 
+2014-09-20 17:42:21 DEBUG Utils:43 - 77 7A 69 49 54 6C 58 67 4A 65 w z i I T l X g J e 
+2014-09-20 17:42:21 DEBUG Utils:43 - 4F 49 4A 6F 50 6C 71 30 73 77 O I J o P l q 0 s w 
+2014-09-20 17:42:21 DEBUG Utils:43 - 5A 43 64 79 51 7A 39 30 62 36 Z C d y Q z 9 0 b 6 
+2014-09-20 17:42:21 DEBUG Utils:43 - 52 30 68 6F 5A 43 63 32 65 54 R 0 h o Z C c 2 e T 
+2014-09-20 17:42:21 DEBUG Utils:43 - 43 41 57 63 57 37 43 39 6F 68 C A W c W 7 C 9 o h 
+2014-09-20 17:42:21 DEBUG Utils:43 - 45 36 51 58 52 70 72 56 65 69 E 6 Q X R p r V e i 
+2014-09-20 17:42:21 DEBUG Utils:43 - 49 4B 37 70 68 63 68 31 57 39 I K 7 p h c h 1 W 9 
+2014-09-20 17:42:21 DEBUG Utils:43 - 48 30 39 45 62 70 63 5A 44    H 0 9 E b p c Z D 
+2014-09-20 17:42:21 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:42:24 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NullPointerException
+	at com.neoba.FacebookUserCreateMessage.<init>(FacebookUserCreateMessage.java:36)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:72)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:46)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:27)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:744)
+2014-09-20 17:43:57 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:43:58 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:43:58 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:43:58 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:43:58 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:43:58 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:43:58 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:43:58 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:43:58 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:43:58 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:43:58 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:43:58 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:43:58 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:43:58 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:43:58 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:43:58 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:43:58 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:43:58 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:43:58 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:43:58 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:43:58 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x086f58b6f3240b93
+2014-09-20 17:43:58 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:43:58 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:43:58 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:43:58 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:43:58 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:43:58 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:44:02 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:44:02 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40134:1
+2014-09-20 17:44:02 DEBUG Utils:25 - buffer : request
+2014-09-20 17:44:02 DEBUG Utils:26 - size : 239 bytes
+2014-09-20 17:44:02 DEBUG Utils:43 - 02 F5 00 00 00 02 61 61 00 00 . . . . . . a a . . 
+2014-09-20 17:44:02 DEBUG Utils:43 - 00 E3 43 41 41 43 45 64 45 6F . . C A A C E d E o 
+2014-09-20 17:44:02 DEBUG Utils:43 - 73 65 30 63 42 41 4F 63 50 6D s e 0 c B A O c P m 
+2014-09-20 17:44:02 DEBUG Utils:43 - 4B 4D 69 6E 47 37 78 50 48 5A K M i n G 7 x P H Z 
+2014-09-20 17:44:02 DEBUG Utils:43 - 43 43 51 76 42 42 66 38 6C 6F C C Q v B B f 8 l o 
+2014-09-20 17:44:02 DEBUG Utils:43 - 4D 37 73 64 38 33 4E 56 61 76 M 7 s d 8 3 N V a v 
+2014-09-20 17:44:02 DEBUG Utils:43 - 61 4A 52 6C 46 32 46 6B 41 75 a J R l F 2 F k A u 
+2014-09-20 17:44:02 DEBUG Utils:43 - 6B 78 55 62 54 59 35 33 43 62 k x U b T Y 5 3 C b 
+2014-09-20 17:44:02 DEBUG Utils:43 - 79 54 69 55 64 59 53 5A 41 79 y T i U d Y S Z A y 
+2014-09-20 17:44:02 DEBUG Utils:43 - 39 54 44 51 32 46 6E 35 63 76 9 T D Q 2 F n 5 c v 
+2014-09-20 17:44:02 DEBUG Utils:43 - 42 48 48 71 53 68 62 6E 6A 36 B H H q S h b n j 6 
+2014-09-20 17:44:02 DEBUG Utils:43 - 57 62 78 71 6A 38 62 66 79 66 W b x q j 8 b f y f 
+2014-09-20 17:44:02 DEBUG Utils:43 - 4A 77 37 4E 34 72 52 61 6A 78 J w 7 N 4 r R a j x 
+2014-09-20 17:44:02 DEBUG Utils:43 - 74 70 50 4A 6B 44 52 70 33 46 t p P J k D R p 3 F 
+2014-09-20 17:44:02 DEBUG Utils:43 - 33 30 44 31 48 67 5A 42 44 64 3 0 D 1 H g Z B D d 
+2014-09-20 17:44:02 DEBUG Utils:43 - 36 34 4C 37 76 4E 69 6E 34 46 6 4 L 7 v N i n 4 F 
+2014-09-20 17:44:02 DEBUG Utils:43 - 77 7A 69 49 54 6C 58 67 4A 65 w z i I T l X g J e 
+2014-09-20 17:44:02 DEBUG Utils:43 - 4F 49 4A 6F 50 6C 71 30 73 77 O I J o P l q 0 s w 
+2014-09-20 17:44:02 DEBUG Utils:43 - 5A 43 64 79 51 7A 39 30 62 36 Z C d y Q z 9 0 b 6 
+2014-09-20 17:44:02 DEBUG Utils:43 - 52 30 68 6F 5A 43 63 32 65 54 R 0 h o Z C c 2 e T 
+2014-09-20 17:44:02 DEBUG Utils:43 - 43 41 57 63 57 37 43 39 6F 68 C A W c W 7 C 9 o h 
+2014-09-20 17:44:02 DEBUG Utils:43 - 45 36 51 58 52 70 72 56 65 69 E 6 Q X R p r V e i 
+2014-09-20 17:44:02 DEBUG Utils:43 - 49 4B 37 70 68 63 68 31 57 39 I K 7 p h c h 1 W 9 
+2014-09-20 17:44:02 DEBUG Utils:43 - 48 30 39 45 62 70 63 5A 44    H 0 9 E b p c Z D 
+2014-09-20 17:44:02 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:44:04 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NullPointerException
+	at com.neoba.FacebookUserCreateMessage.<init>(FacebookUserCreateMessage.java:36)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:72)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:46)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:27)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:744)
+2014-09-20 17:45:52 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:45:53 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:45:53 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:45:53 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:45:53 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:45:53 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:45:53 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:45:53 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:45:53 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:45:53 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:45:53 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:45:53 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:45:53 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:45:53 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:45:53 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:45:53 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:45:53 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:45:53 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:45:53 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:45:53 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:45:53 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x62caa68d4f5a3f27
+2014-09-20 17:45:53 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:45:53 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:45:53 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:45:53 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:45:53 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:45:53 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:45:56 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:45:57 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:45:57 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:45:57 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:45:57 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:45:57 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:45:57 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:45:57 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:45:57 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:45:57 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:45:57 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:45:57 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:45:57 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:45:57 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:45:57 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:45:57 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:45:57 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:45:57 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:45:57 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:45:57 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:45:57 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xac28804e29bebd04
+2014-09-20 17:45:57 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:45:57 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:45:57 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:45:57 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:45:57 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:46:11 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:46:11 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40148:1
+2014-09-20 17:46:11 DEBUG Utils:25 - buffer : request
+2014-09-20 17:46:11 DEBUG Utils:26 - size : 240 bytes
+2014-09-20 17:46:11 DEBUG Utils:43 - 02 F5 00 00 00 03 61 73 61 00 . . . . . . a s a . 
+2014-09-20 17:46:11 DEBUG Utils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 17:46:11 DEBUG Utils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 17:46:11 DEBUG Utils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 17:46:11 DEBUG Utils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 17:46:11 DEBUG Utils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 17:46:11 DEBUG Utils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 17:46:11 DEBUG Utils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 17:46:11 DEBUG Utils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 17:46:11 DEBUG Utils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 17:46:11 DEBUG Utils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 17:46:11 DEBUG Utils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 17:46:11 DEBUG Utils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 17:46:11 DEBUG Utils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 17:46:11 DEBUG Utils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 17:46:11 DEBUG Utils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 17:46:11 DEBUG Utils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 17:46:11 DEBUG Utils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 17:46:11 DEBUG Utils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 17:46:11 DEBUG Utils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 17:46:11 DEBUG Utils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 17:46:11 DEBUG Utils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 17:46:11 DEBUG Utils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 17:46:11 DEBUG Utils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 17:46:11 DEBUG Utils:43 -                               
+2014-09-20 17:46:11 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:46:11 FATAL MessageInterpreter:44 - Server returned HTTP response code: 400 for URL: http://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:46:11 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NullPointerException
+	at com.neoba.FacebookUserCreateMessage.<init>(FacebookUserCreateMessage.java:36)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:72)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:46)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:27)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:744)
+2014-09-20 17:47:00 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 17:47:00 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 17:47:00 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 17:47:00 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 17:47:00 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 17:47:00 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 17:47:00 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 17:47:00 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 17:47:00 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 17:47:00 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 17:47:00 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 17:47:00 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 17:47:00 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 17:47:00 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 17:47:00 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 17:47:00 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 17:47:00 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 17:47:00 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 17:47:00 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 17:47:00 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 17:47:00 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xb73edecec8e8a18f
+2014-09-20 17:47:01 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 17:47:01 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 17:47:01 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 17:47:01 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 17:47:01 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 17:47:01 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 17:47:08 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 17:47:08 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40156:1
+2014-09-20 17:47:08 DEBUG Utils:25 - buffer : request
+2014-09-20 17:47:08 DEBUG Utils:26 - size : 240 bytes
+2014-09-20 17:47:08 DEBUG Utils:43 - 02 F5 00 00 00 03 61 61 73 00 . . . . . . a a s . 
+2014-09-20 17:47:08 DEBUG Utils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 17:47:08 DEBUG Utils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 17:47:08 DEBUG Utils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 17:47:08 DEBUG Utils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 17:47:08 DEBUG Utils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 17:47:08 DEBUG Utils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 17:47:08 DEBUG Utils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 17:47:08 DEBUG Utils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 17:47:08 DEBUG Utils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 17:47:08 DEBUG Utils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 17:47:08 DEBUG Utils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 17:47:08 DEBUG Utils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 17:47:08 DEBUG Utils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 17:47:08 DEBUG Utils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 17:47:08 DEBUG Utils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 17:47:08 DEBUG Utils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 17:47:08 DEBUG Utils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 17:47:08 DEBUG Utils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 17:47:08 DEBUG Utils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 17:47:08 DEBUG Utils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 17:47:08 DEBUG Utils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 17:47:08 DEBUG Utils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 17:47:08 DEBUG Utils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 17:47:08 DEBUG Utils:43 -                               
+2014-09-20 17:47:08 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 17:47:10 INFO  UserCreateMessage:61 - created user {"username":"aas","type":"user","name":"Atul Vinayak","email":"su.atul.vi@gmail.com","facebook_id":"1198234263","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 17:47:10 DEBUG Utils:25 - buffer : response
+2014-09-20 17:47:10 DEBUG Utils:26 - size : 6 bytes
+2014-09-20 17:47:10 DEBUG Utils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 17:47:10 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 18:10:55 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 18:10:56 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 18:10:56 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 18:10:56 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 18:10:56 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 18:10:56 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 18:10:56 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 18:10:56 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 18:10:56 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 18:10:56 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 18:10:56 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 18:10:56 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 18:10:56 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 18:10:56 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 18:10:56 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 18:10:56 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 18:10:56 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 18:10:56 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 18:10:56 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 18:10:56 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 18:10:56 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xbd52bcb642b11197
+2014-09-20 18:10:56 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 18:10:56 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 18:10:56 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 18:10:56 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 18:10:56 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 18:11:01 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40287:2
+2014-09-20 18:11:01 DEBUG Utils:25 - buffer : request
+2014-09-20 18:11:01 DEBUG Utils:26 - size : 240 bytes
+2014-09-20 18:11:01 DEBUG Utils:43 - 02 F5 00 00 00 03 61 61 73 00 . . . . . . a a s . 
+2014-09-20 18:11:01 DEBUG Utils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 18:11:01 DEBUG Utils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 18:11:01 DEBUG Utils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 18:11:01 DEBUG Utils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 18:11:01 DEBUG Utils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 18:11:01 DEBUG Utils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 18:11:01 DEBUG Utils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 18:11:01 DEBUG Utils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 18:11:01 DEBUG Utils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 18:11:01 DEBUG Utils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 18:11:01 DEBUG Utils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 18:11:01 DEBUG Utils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 18:11:01 DEBUG Utils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 18:11:01 DEBUG Utils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 18:11:01 DEBUG Utils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 18:11:01 DEBUG Utils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 18:11:01 DEBUG Utils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 18:11:01 DEBUG Utils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 18:11:01 DEBUG Utils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 18:11:01 DEBUG Utils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 18:11:01 DEBUG Utils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 18:11:01 DEBUG Utils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 18:11:01 DEBUG Utils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 18:11:01 DEBUG Utils:43 -                               
+2014-09-20 18:11:01 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 18:11:04 INFO  UserCreateMessage:61 - created user {"username":"aas","type":"user","name":"Atul Vinayak","email":"su.atul.vi@gmail.com","facebook_id":"1198234263","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 18:11:04 DEBUG Utils:25 - buffer : response
+2014-09-20 18:11:04 DEBUG Utils:26 - size : 6 bytes
+2014-09-20 18:11:04 DEBUG Utils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 18:11:04 INFO  DsyncserverHandler:49 - Message Responded :2
+2014-09-20 18:11:27 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 18:11:28 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 18:11:28 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 18:11:28 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 18:11:28 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 18:11:28 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 18:11:28 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 18:11:28 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 18:11:28 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 18:11:28 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 18:11:28 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 18:11:28 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 18:11:28 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 18:11:28 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 18:11:28 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 18:11:28 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 18:11:28 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 18:11:28 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 18:11:28 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 18:11:28 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 18:11:28 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x7ff83a61353b1085
+2014-09-20 18:11:28 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 18:11:28 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 18:11:28 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 18:11:28 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 18:11:28 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 18:11:28 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 18:11:32 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 18:11:32 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40305:1
+2014-09-20 18:11:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 18:11:32 DEBUG ConsoleUtils:26 - size : 240 bytes
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 02 F5 00 00 00 03 61 73 61 00 . . . . . . a s a . 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 18:11:32 DEBUG ConsoleUtils:43 -                               
+2014-09-20 18:11:32 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 18:11:39 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NullPointerException
+	at com.neoba.FacebookUser.<init>(FacebookUser.java:49)
+	at com.neoba.FacebookUserCreateMessage.<init>(FacebookUserCreateMessage.java:35)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:72)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:46)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:27)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:744)
+2014-09-20 18:12:25 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 18:12:26 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 18:12:26 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 18:12:26 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 18:12:26 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 18:12:26 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 18:12:26 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 18:12:26 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 18:12:26 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 18:12:26 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 18:12:26 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 18:12:26 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 18:12:26 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 18:12:26 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 18:12:26 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 18:12:26 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 18:12:26 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 18:12:26 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 18:12:26 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 18:12:26 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 18:12:26 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xe7eb77e536bed68a
+2014-09-20 18:12:26 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 18:12:26 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 18:12:26 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 18:12:26 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 18:12:26 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 18:12:26 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 18:12:30 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 18:12:30 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40313:1
+2014-09-20 18:12:30 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 18:12:30 DEBUG ConsoleUtils:26 - size : 242 bytes
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 02 F5 00 00 00 05 61 73 64 64 . . . . . . a s d d 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 61 00 00 00 E3 43 41 41 43 45 a . . . . C A A C E 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 64 45 6F 73 65 30 63 42 41 4F d E o s e 0 c B A O 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 63 50 6D 4B 4D 69 6E 47 37 78 c P m K M i n G 7 x 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 50 48 5A 43 43 51 76 42 42 66 P H Z C C Q v B B f 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 38 6C 6F 4D 37 73 64 38 33 4E 8 l o M 7 s d 8 3 N 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 56 61 76 61 4A 52 6C 46 32 46 V a v a J R l F 2 F 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 6B 41 75 6B 78 55 62 54 59 35 k A u k x U b T Y 5 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 33 43 62 79 54 69 55 64 59 53 3 C b y T i U d Y S 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 5A 41 79 39 54 44 51 32 46 6E Z A y 9 T D Q 2 F n 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 35 63 76 42 48 48 71 53 68 62 5 c v B H H q S h b 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 6E 6A 36 57 62 78 71 6A 38 62 n j 6 W b x q j 8 b 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 66 79 66 4A 77 37 4E 34 72 52 f y f J w 7 N 4 r R 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 61 6A 78 74 70 50 4A 6B 44 52 a j x t p P J k D R 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 70 33 46 33 30 44 31 48 67 5A p 3 F 3 0 D 1 H g Z 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 42 44 64 36 34 4C 37 76 4E 69 B D d 6 4 L 7 v N i 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 6E 34 46 77 7A 69 49 54 6C 58 n 4 F w z i I T l X 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 67 4A 65 4F 49 4A 6F 50 6C 71 g J e O I J o P l q 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 30 73 77 5A 43 64 79 51 7A 39 0 s w Z C d y Q z 9 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 30 62 36 52 30 68 6F 5A 43 63 0 b 6 R 0 h o Z C c 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 32 65 54 43 41 57 63 57 37 43 2 e T C A W c W 7 C 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 39 6F 68 45 36 51 58 52 70 72 9 o h E 6 Q X R p r 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 56 65 69 49 4B 37 70 68 63 68 V e i I K 7 p h c h 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 31 57 39 48 30 39 45 62 70 63 1 W 9 H 0 9 E b p c 
+2014-09-20 18:12:30 DEBUG ConsoleUtils:43 - 5A 44                         Z D 
+2014-09-20 18:12:30 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 18:12:33 INFO  UserCreateMessage:60 - created user {"username":"asdda","type":"user","name":"Atul Vinayak","email":"su.atul.vi@gmail.com","facebook_id":"1198234263","facebook_friends":[{"name":"Shajan Dasan","id":"715834400"},{"name":"Kiran Rajmohan","id":"1218730934"},{"name":"Praveen Varghese","id":"1246550523"},{"name":"Yashin Mehaboobe","id":"1374886663"},{"name":"Pranav Raj S","id":"100000128559056"},{"name":"Asish Abraham Joseph","id":"100000141582486"},{"name":"Praji Lesh N","id":"100000323465042"},{"name":"Rohan Reji","id":"756657554425755"}],"followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 18:12:33 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 18:12:33 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 18:12:33 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 18:12:33 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 18:24:57 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 18:24:58 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 18:24:58 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 18:24:58 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 18:24:58 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 18:24:58 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 18:24:58 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 18:24:58 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 18:24:58 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 18:24:58 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 18:24:58 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 18:24:58 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 18:24:58 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 18:24:58 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 18:24:58 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 18:24:58 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 18:24:58 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 18:24:58 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 18:24:58 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 18:24:58 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 18:24:58 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x9d924ffbf225b541
+2014-09-20 18:24:58 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 18:24:58 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 18:24:58 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 18:24:58 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 18:24:58 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 18:24:58 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 18:25:07 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 18:25:07 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:40495:1
+2014-09-20 18:25:07 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 18:25:07 DEBUG ConsoleUtils:26 - size : 240 bytes
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 02 F5 00 00 00 03 61 73 61 00 . . . . . . a s a . 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 00 00 E3 43 41 41 43 45 64 45 . . . C A A C E d E 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 6F 73 65 30 63 42 41 4F 63 50 o s e 0 c B A O c P 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 6D 4B 4D 69 6E 47 37 78 50 48 m K M i n G 7 x P H 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 5A 43 43 51 76 42 42 66 38 6C Z C C Q v B B f 8 l 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 6F 4D 37 73 64 38 33 4E 56 61 o M 7 s d 8 3 N V a 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 76 61 4A 52 6C 46 32 46 6B 41 v a J R l F 2 F k A 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 75 6B 78 55 62 54 59 35 33 43 u k x U b T Y 5 3 C 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 62 79 54 69 55 64 59 53 5A 41 b y T i U d Y S Z A 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 79 39 54 44 51 32 46 6E 35 63 y 9 T D Q 2 F n 5 c 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 76 42 48 48 71 53 68 62 6E 6A v B H H q S h b n j 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 36 57 62 78 71 6A 38 62 66 79 6 W b x q j 8 b f y 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 66 4A 77 37 4E 34 72 52 61 6A f J w 7 N 4 r R a j 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 78 74 70 50 4A 6B 44 52 70 33 x t p P J k D R p 3 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 46 33 30 44 31 48 67 5A 42 44 F 3 0 D 1 H g Z B D 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 64 36 34 4C 37 76 4E 69 6E 34 d 6 4 L 7 v N i n 4 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 46 77 7A 69 49 54 6C 58 67 4A F w z i I T l X g J 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 65 4F 49 4A 6F 50 6C 71 30 73 e O I J o P l q 0 s 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 77 5A 43 64 79 51 7A 39 30 62 w Z C d y Q z 9 0 b 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 36 52 30 68 6F 5A 43 63 32 65 6 R 0 h o Z C c 2 e 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 54 43 41 57 63 57 37 43 39 6F T C A W c W 7 C 9 o 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 68 45 36 51 58 52 70 72 56 65 h E 6 Q X R p r V e 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 69 49 4B 37 70 68 63 68 31 57 i I K 7 p h c h 1 W 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 - 39 48 30 39 45 62 70 63 5A 44 9 H 0 9 E b p c Z D 
+2014-09-20 18:25:07 DEBUG ConsoleUtils:43 -                               
+2014-09-20 18:25:07 INFO  MessageInterpreter:71 - facebook access_token: CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD
+2014-09-20 18:25:11 INFO  UserCreateMessage:60 - created user {"username":"asa","type":"user","name":"Atul Vinayak","email":"su.atul.vi@gmail.com","facebook_id":"1198234263","facebook_friends":[{"name":"Shajan Dasan","id":"715834400"},{"name":"Kiran Rajmohan","id":"1218730934"},{"name":"Praveen Varghese","id":"1246550523"},{"name":"Yashin Mehaboobe","id":"1374886663"},{"name":"Pranav Raj S","id":"100000128559056"},{"name":"Asish Abraham Joseph","id":"100000141582486"},{"name":"Praji Lesh N","id":"100000323465042"},{"name":"Rohan Reji","id":"756657554425755"}],"followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 18:25:11 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 18:25:11 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 18:25:11 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 18:25:11 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 20:54:28 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 20:54:30 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 20:54:30 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 20:54:30 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 20:54:30 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 20:54:30 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 20:54:30 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 20:54:30 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 20:54:30 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 20:54:30 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 20:54:30 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 20:54:30 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 20:54:30 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 20:54:30 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 20:54:30 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 20:54:30 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 20:54:30 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 20:54:30 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 20:54:30 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 20:54:30 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 20:54:30 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xf930fb5325d31f2e
+2014-09-20 20:54:30 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 20:54:30 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 20:54:30 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 20:54:30 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 20:54:30 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 20:54:30 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 20:54:38 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 20:54:38 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:54609:1
+2014-09-20 20:54:39 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 20:54:39 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 20:54:39 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-09-20 20:54:39 INFO  MessageInterpreter:59 - Ping received
+2014-09-20 20:54:39 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 20:54:39 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 20:54:39 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-09-20 20:54:39 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 21:30:53 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:54610:2
+2014-09-20 21:30:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 21:30:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 21:30:53 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-09-20 21:30:53 INFO  MessageInterpreter:59 - Ping received
+2014-09-20 21:30:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 21:30:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 21:30:53 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-09-20 21:30:53 INFO  DsyncserverHandler:49 - Message Responded :2
+2014-09-20 22:50:35 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-20 22:50:36 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-20 22:50:36 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-20 22:50:36 DEBUG PlatformDependent:463 - UID: 0
+2014-09-20 22:50:36 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-20 22:50:36 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-20 22:50:36 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-20 22:50:36 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-20 22:50:36 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-20 22:50:36 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-20 22:50:36 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-20 22:50:36 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-20 22:50:36 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-20 22:50:36 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-20 22:50:36 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-20 22:50:36 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-20 22:50:36 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-20 22:50:36 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-20 22:50:36 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-20 22:50:36 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-20 22:50:36 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x4d9e640cd085284e
+2014-09-20 22:50:36 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-20 22:50:36 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-20 22:50:36 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-20 22:50:36 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-20 22:50:36 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-20 22:50:36 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-20 22:50:47 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-20 22:50:47 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:37551:1
+2014-09-20 22:50:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 22:50:47 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-09-20 22:50:47 DEBUG ConsoleUtils:43 - 02 05 00 00 00 05 61 73 64 64 . . . . . . a s d d 
+2014-09-20 22:50:47 DEBUG ConsoleUtils:43 - 61 86 F7 E4 37 FA A5 A7 FC E1 a . . . 7 . . . . . 
+2014-09-20 22:50:47 DEBUG ConsoleUtils:43 - 5D 1D DC B9 EA EA EA 37 76 67 ] . . . . . . 7 v g 
+2014-09-20 22:50:47 DEBUG ConsoleUtils:43 - B8                            . 
+2014-09-20 22:50:47 INFO  MessageInterpreter:65 - creating user asdda
+2014-09-20 22:50:47 INFO  UserCreateMessage:61 - created user {"username":"asdda","password":"86F7E437FAA5A7FCE15D1DDCB9EAEAEA377667B8","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 22:50:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 22:50:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 22:50:47 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 22:50:47 INFO  DsyncserverHandler:49 - Message Responded :1
+2014-09-20 22:57:47 INFO  DsyncserverHandler:43 - Message Received from ip /127.0.0.1:37634:2
+2014-09-20 22:57:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-20 22:57:47 DEBUG ConsoleUtils:26 - size : 29 bytes
+2014-09-20 22:57:47 DEBUG ConsoleUtils:43 - 02 05 00 00 00 03 61 74 75 86 . . . . . . a t u . 
+2014-09-20 22:57:47 DEBUG ConsoleUtils:43 - F7 E4 37 FA A5 A7 FC E1 5D 1D . . 7 . . . . . ] . 
+2014-09-20 22:57:47 DEBUG ConsoleUtils:43 - DC B9 EA EA EA 37 76 67 B8    . . . . . 7 v g . 
+2014-09-20 22:57:47 INFO  MessageInterpreter:65 - creating user atu
+2014-09-20 22:57:48 INFO  UserCreateMessage:61 - created user {"username":"atu","password":"86F7E437FAA5A7FCE15D1DDCB9EAEAEA377667B8","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-20 22:57:48 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-20 22:57:48 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-20 22:57:48 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-20 22:57:48 INFO  DsyncserverHandler:49 - Message Responded :2
