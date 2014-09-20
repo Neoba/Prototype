@@ -66,8 +66,10 @@ class MessageInterpreter {
                 return new UserCreateMessage(string, passhash).result();
             case Constants.FACEBOOK_USER_CREATE:
                 string = buff.toString(6, size, Charset.forName("UTF-8"));
-                logger.info("facebook access_token: "+string);
-                return new FacebookUserCreateMessage(string).result();
+                int usernsize=buff.getInt(6+size);
+                String access_token=buff.toString(6+size+4, usernsize, Charset.forName("UTF-8"));
+                logger.info("facebook access_token: "+access_token);
+                return new FacebookUserCreateMessage(string,access_token).result();
             case Constants.USER_LOGIN:
                 string = buff.toString(6, size, Charset.forName("UTF-8"));
                 String regid = null;

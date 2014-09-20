@@ -7,6 +7,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -16,6 +17,8 @@ import java.util.HashMap;
 import java.util.UUID;
 import net.dongliu.vcdiff.VcdiffDecoder;
 import net.dongliu.vcdiff.VcdiffEncoder;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 /**
  *
@@ -29,6 +32,7 @@ public class DsyncHeadlessClient {
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version=0x02;
+    static String access_token="CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD";
     public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
@@ -58,6 +62,17 @@ public class DsyncHeadlessClient {
                     for (byte b : MessageDigest.getInstance("SHA").digest(cmd.split(" ")[2].getBytes())) {
                         buff.put(b);
                     }
+                    in = sendPost(buff);
+                    buff.clear();
+                    break;
+                case "fcu":
+                    buff = ByteBuffer.allocate(6 + cmd.split(" ")[1].length()+4+access_token.length());
+                    buff.put(version);
+                    buff.put((byte) 0xF5);
+                    buff.putInt(cmd.split(" ")[1].length());
+                    buff.put(cmd.split(" ")[1].getBytes());
+                    buff.putInt(access_token.length());
+                    buff.put(access_token.getBytes());
                     in = sendPost(buff);
                     buff.clear();
                     break;
@@ -465,4 +480,28 @@ public class DsyncHeadlessClient {
         buff.putLong(cookie.getMostSignificantBits());
     }
 
+    public static JSONObject json_get(String url) throws MalformedURLException, IOException, JSONException {
+
+            URL obj;
+            obj = new URL(url);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+            con.setRequestMethod("GET");
+            con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
+            int responseCode = con.getResponseCode();
+            try {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                JSONObject ret = new JSONObject(response.toString());
+                return ret;
+            } catch (Exception e) {
+                return null;
+            }
+
+        }
 }

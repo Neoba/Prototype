@@ -73,7 +73,7 @@ class DocumentEditMessage implements Message {
         }
 
         if (haspermission) {
-            Utils.printhex("diff_received",diff, diff.length);
+            ConsoleUtils.printhex("diff_received",diff, diff.length);
             age += 1;
             if (age % 5 == 0) {
                 JSONArray history=json.getJSONArray("history");

@@ -41,10 +41,10 @@ public class DsyncserverHandler extends SimpleChannelInboundHandler<HttpContent>
         //System.out.println(new String(in.array()));
         msgcount+=1;
         logger.info("Message Received from ip "+ctx.channel().remoteAddress()+":"+msgcount);
-        Utils.printhex("request",in.array(), in.array().length);
+        ConsoleUtils.printhex("request",in.array(), in.array().length);
         MessageInterpreter mi = new MessageInterpreter(ctx, in);
         ByteBuf reply = mi.generateReply();
-        Utils.printhex("response",reply.array(), reply.array().length);
+        ConsoleUtils.printhex("response",reply.array(), reply.array().length);
         respondAndFlush(reply, ctx,false);
         logger.info("Message Responded :"+msgcount);
 

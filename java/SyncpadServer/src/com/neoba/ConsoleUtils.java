@@ -14,9 +14,9 @@ import org.codehaus.jettison.json.JSONException;
  *
  * @author atul
  */
-public class Utils {
+public class ConsoleUtils {
 
-    static Logger logger = Logger.getLogger(Utils.class);
+    static Logger logger = Logger.getLogger(ConsoleUtils.class);
 
     public static void printhex(String title,byte[] b, int count) {
         int rem = count;
