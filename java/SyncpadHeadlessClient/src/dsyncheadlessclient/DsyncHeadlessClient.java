@@ -73,6 +73,9 @@ public class DsyncHeadlessClient {
                     buff.put(cmd.split(" ")[1].getBytes());
                     buff.putInt(access_token.length());
                     buff.put(access_token.getBytes());
+                    JSONObject facebook_obj=json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token="+access_token);  
+                    String suggested=json_get("https://graph.facebook.com/"+facebook_obj.getString("id")).getString("username");
+                    System.out.println("We suggest you take this name: "+suggested);
                     in = sendPost(buff);
                     buff.clear();
                     break;
