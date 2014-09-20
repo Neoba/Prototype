@@ -32,10 +32,8 @@ class FacebookUserCreateMessage {
         query.setStale( Stale.FALSE );
         ViewResponse result = Dsyncserver.cclient.query(view, query);
         Logger logger=Logger.getLogger(UserCreateMessage.class);
-        JSONObject facebook_obj=HTTPUtils.json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token="+access_token);
-        String facebook_id=facebook_obj.getString("id");
-        String facebook_name=facebook_obj.getString("name");
-        String facebook_email=facebook_obj.getString("email");
+        FacebookUser fuser=new FacebookUser(access_token);
+        
         if(result.size()!=0)
         {
             isnametaken=true;
@@ -48,9 +46,10 @@ class FacebookUserCreateMessage {
 
             user.put("username", username);
             user.put("type", "user");
-            user.put("name", facebook_name);
-            user.put("email", facebook_email);
-            user.put("facebook_id", facebook_id);
+            user.put("name", fuser.getName());
+            user.put("email",fuser.getEmail());
+            user.put("facebook_id", fuser.getId());
+            user.put("facebook_friends", fuser.getFriends());
             user.put("type", "user");
             user.put("followers", new JSONArray());
             user.put("gcm_registration","");
@@ -63,7 +62,7 @@ class FacebookUserCreateMessage {
     }
 
     ByteBuf result() {
-                ByteBuf reply=buffer(6);
+        ByteBuf reply=buffer(6);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.USER_CREATE);
         if(!isnametaken)
