@@ -12,7 +12,7 @@ package com.neoba;
  */
 public class Constants {
     
-    static final byte VERSION=                          0x2;
+    static final byte VERSION=                          0x02;
     
     static final byte PINGPONG=                         0x1;
     static final byte DOCUMENT_CREATE=                  0x2;
@@ -26,7 +26,8 @@ public class Constants {
     static final byte POKE=                             0xA;
     static final byte DOCUMENT_DELETE=                  0xB;
     static final byte USER_UNFOLLOW=                    0xC;
-    
+    static final byte FACEBOOK_USER_CREATE=             (byte)0x0F5;
+    static final byte FACEBOOK_USER_LOGIN=              (byte)0x0F6;
     
     static final byte CLIENT_ACK=                       (byte) 0xFF;
     

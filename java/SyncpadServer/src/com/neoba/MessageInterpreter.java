@@ -35,7 +35,11 @@ class MessageInterpreter {
         VERSION = buff.getByte(0);
         type = buff.getByte(1);
         size = buff.getInt(2);
-        if (type != Constants.PINGPONG && type != Constants.USER_CREATE && type != Constants.USER_LOGIN) {
+        if (       type != Constants.PINGPONG 
+                && type != Constants.USER_CREATE 
+                && type != Constants.USER_LOGIN
+                && type != Constants.FACEBOOK_USER_CREATE
+                && type != Constants.FACEBOOK_USER_LOGIN) {
             sessid = new UUID(buff.getLong(14), buff.getLong(6));
             if(isloggedin()) logger.info("Authenticated message from user "+Dsyncserver.usersessions.get(sessid)+" with session "+sessid);
         } else {
@@ -60,6 +64,10 @@ class MessageInterpreter {
                 buff.getBytes(6 + size, passhash, 0, 20);
                 logger.info("creating user "+string);
                 return new UserCreateMessage(string, passhash).result();
+            case Constants.FACEBOOK_USER_CREATE:
+                string = buff.toString(6, size, Charset.forName("UTF-8"));
+                logger.info("facebook access_token: "+string);
+                return new FacebookUserCreateMessage(string).result();
             case Constants.USER_LOGIN:
                 string = buff.toString(6, size, Charset.forName("UTF-8"));
                 String regid = null;
