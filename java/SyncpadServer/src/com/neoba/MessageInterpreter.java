@@ -70,12 +70,36 @@ class MessageInterpreter {
                 String access_token=buff.toString(6+size+4, usernsize, Charset.forName("UTF-8"));
                 logger.info("facebook access_token: "+access_token);
                 return new FacebookUserCreateMessage(string,access_token).result();
-            case Constants.USER_LOGIN:
+           case Constants.FACEBOOK_USER_LOGIN:
                 string = buff.toString(6, size, Charset.forName("UTF-8"));
                 String regid = null;
+                byte uagent=buff.getByte(6+size);
+                switch(uagent){
+                    case Constants.USER_AGENT_ANDROID:
+                        logger.info("user agent detected: Android OS >= 4.0.3");
+                        int reglength = buff.getInt(6 + size +1);
+                         regid = buff.toString(6 + size+ 1+4, reglength, Charset.forName("UTF-8"));
+                        break;
+                    case Constants.USER_AGENT_CONSOLE:
+                        logger.info("user agent detected: Console");
+                        regid="";
+                        break;
+                }
+                logger.debug("User Agent: "+uagent);
+                logger.info("logging in new user via facebook");
+                FacebookUserLogin fsess = new FacebookUserLogin(string, regid,uagent);
+                if (fsess.getid() != null) {
+                    logger.info("new facebook user session: " + fsess.getid() + " "+string);
+                    Dsyncserver.useragents.put(fsess.sessid, uagent);
+                    logger.info("user_agents: " + Dsyncserver.useragents);
+                }
+                return fsess.result();
+            case Constants.USER_LOGIN:
+                string = buff.toString(6, size, Charset.forName("UTF-8"));
+                regid = null;
                 passhash = new byte[20];
                 buff.getBytes(6 + size, passhash, 0, 20);
-                byte uagent=buff.getByte(6+size+20);
+                uagent=buff.getByte(6+size+20);
                 
                 switch(uagent){
                     case Constants.USER_AGENT_ANDROID:

@@ -73,9 +73,22 @@ public class FacebookUser {
         query.setKey("\""+fbid+"\"");
         query.setStale(Stale.FALSE);
         ViewResponse result = Dsyncserver.cclient.query(view, query);
-        if (result != null) {
+        if (result.size()!=0) {
             JSONObject ob = new JSONObject(result.iterator().next().getValue());
             return ob;
+        }
+        return null;
+    }
+    
+    public String getSyncpadId() throws JSONException {
+        View view = Dsyncserver.cclient.getView("dev_neoba", "facebookidtoid");
+        Query query = new Query();
+        query.setKey("\""+this.id+"\"");
+        query.setStale(Stale.FALSE);
+        ViewResponse result = Dsyncserver.cclient.query(view, query);
+        if (result.size()!=0) {
+            JSONObject ob = new JSONObject(result.iterator().next().getValue());
+            return ob.getString("id");
         }
         return null;
     }
