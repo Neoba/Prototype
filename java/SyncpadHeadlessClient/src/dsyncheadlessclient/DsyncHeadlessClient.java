@@ -32,8 +32,7 @@ public class DsyncHeadlessClient {
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version = 0x02;
-    static String access_token = "CAACEdEose0cBAJhwJLdc8PohYxjv8DwOw96rHo52TZBRf9EKlSfNJOkNYZA01S3YPe8GMnPcGEXGOWpdVmXFNG5Gfr7Dwu65waRbVioP9PdNy1r7Bkwp51GsT4v3UBG61n6ebX6pz4gCVtNs6oZC5rg6yDqFpyyfqJg9dVtcZCzZC39G0sADmmdBrF0ynQtf3sE4zKfBtagPZBhmJafdXbaXwZALZAZBLHagZD";
-
+    static String access_token = "CAACEdEose0cBAOJpxZBJ0ZAKkRomW8qc6KAOABPP9p0MsQIZAzbSwQ3mh3xsROUwDOpBoRMAmvIUCklkbOGiA6AqPlhXN5wMkILzIrDjAa6CbxEfPpHZA1mlpeU2RHeASHhzomY4IIAgBip5U8OSvHlqTWA9DZAfmOh0RsHUrZA0LaGDc1XsWgg0e352tfB7he8Cq4SuMqbVrfyqrf5lZAXxQx26spW2p8ZD";
     public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
@@ -120,15 +119,11 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     break;
                 case "flogin":
-
-                    buff = ByteBuffer.allocate(6 + 20 + 1 + cmd.split(" ")[1].length() + 4 + regid.length());
+                    buff = ByteBuffer.allocate(6 + 1 + access_token.length() + 4 + regid.length());
                     buff.put(version);
-                    buff.put((byte) 0x06);
-                    buff.putInt(cmd.split(" ")[1].length());
-                    buff.put(cmd.split(" ")[1].getBytes());
-                    for (byte b : MessageDigest.getInstance("SHA").digest(cmd.split(" ")[2].getBytes())) {
-                        buff.put(b);
-                    }
+                    buff.put((byte) 0xF6);
+                    buff.putInt(access_token.length());
+                    buff.put(access_token.getBytes());
                     buff.put((byte) 0x0C);
                     buff.putInt(regid.length());
                     buff.put(regid.getBytes());
