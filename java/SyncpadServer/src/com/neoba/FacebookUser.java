@@ -5,6 +5,7 @@
  */
 package com.neoba;
 
+import com.neoba.utils.HTTPUtils;
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;

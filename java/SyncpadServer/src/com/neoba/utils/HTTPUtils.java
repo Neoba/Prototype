@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.utils;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +23,7 @@ import org.codehaus.jettison.json.JSONObject;
 public class HTTPUtils {
         static Logger logger; 
         public static JSONObject json_get(String url) throws MalformedURLException, IOException, JSONException {
-            logger = Logger.getLogger(MessageInterpreter.class);
+            logger = Logger.getLogger(HTTPUtils.class);
             URL obj;
             obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
