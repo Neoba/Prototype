@@ -32,7 +32,7 @@ public class DsyncHeadlessClient {
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version=0x02;
-    static String access_token="CAACEdEose0cBAOcPmKMinG7xPHZCCQvBBf8loM7sd83NVavaJRlF2FkAukxUbTY53CbyTiUdYSZAy9TDQ2Fn5cvBHHqShbnj6Wbxqj8bfyfJw7N4rRajxtpPJkDRp3F30D1HgZBDd64L7vNin4FwziITlXgJeOIJoPlq0swZCdyQz90b6R0hoZCc2eTCAWcW7C9ohE6QXRprVeiIK7phch1W9H09EbpcZD";
+    static String access_token="CAACEdEose0cBAOZBTogiACoM5ZAymya6GB1w6YwxUroAsJ7NTRM8UiB9WtniyuVAS9jhZCZBu1t2IG9in6RJ05eKU6ZCFnAXFCqnCcywNYxggzZA6b4np1C3XC4DEvvgHEHO2Ik6UylGtU8xLuHd7IxreEzbPD1UsIj2SDEML0DOEWHKiSdPpunGZAgdKe0wlZAUSc1z2jKoGjgqSRZC4yrXMPhj6iZCgUtgsZD";
     public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
