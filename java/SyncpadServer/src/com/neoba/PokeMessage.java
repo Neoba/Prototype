@@ -63,8 +63,6 @@ class PokeMessage implements Message {
 
         if (already_following) {
             reply.writeInt(Constants.W_ERR_ALREADY_FOLLOWING);
-        } else if (self_follow) {
-            reply.writeInt(Constants.W_ERR_SELF_FOLLOW);
         } else if (!userfound) {
             reply.writeInt(Constants.W_ERR_NONEXISTENT_USER);
         } else if (!push_success) {
