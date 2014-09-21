@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.messages;
 
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
+import com.neoba.Constants;
+import com.neoba.CouchManager;
+import com.neoba.Dsyncserver;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.UUID;
@@ -21,11 +24,11 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class UserLoginMessage implements Message {
+public class UserLoginMessage implements Message {
 
     Boolean found = false;
     String id = null;
-    UUID sessid;
+    public UUID sessid;
     int response;
     Logger logger = Logger.getLogger(UserLoginMessage.class);
 
@@ -96,7 +99,7 @@ class UserLoginMessage implements Message {
         return reply;
     }
 
-    String getid() {
+    public String getid() {
         return id;
     }
 

@@ -1,5 +1,11 @@
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.utils.Base64;
+import com.neoba.Constants;
+import com.neoba.CouchManager;
+import com.neoba.Dsyncserver;
+import com.neoba.GoogleCloudMessager;
+import com.neoba.messages.Message;
 import com.neoba.utils.ConsoleUtils;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
@@ -20,7 +26,7 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class DocumentEditMessage implements Message {
+public class DocumentEditMessage implements Message {
 
     Boolean haspermission = false, documents_are_synced = false;
     Boolean creatoredited=false;
@@ -29,7 +35,7 @@ class DocumentEditMessage implements Message {
     String dict;
     int age;
     
-    DocumentEditMessage(UUID doc, byte[] diff, int version, UUID sessid) throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException, Exception {
+    public DocumentEditMessage(UUID doc, byte[] diff, int version, UUID sessid) throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException, Exception {
         JSONObject json = new JSONObject((String) Dsyncserver.cclient.get(doc.toString()));
         byte[] oldiff = Arrays.copyOf(diff, diff.length);
         JSONArray diffarray = null;

@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.Constants;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 
 /**
  *
- * @author atul
+ * @author root
  */
-class NotLoggedInMessage implements Message{
+public class ProtocolExpiredMessage implements Message{
     
-    public NotLoggedInMessage() {
-
+    int type;
+    public ProtocolExpiredMessage(int type) {
+        this.type=type;
     }
     
     @Override
@@ -24,9 +26,8 @@ class NotLoggedInMessage implements Message{
         
         ByteBuf reply=buffer(6);
         reply.writeByte(Constants.VERSION);
-        reply.writeByte(Constants.CREDENTIAL_REQ);
-        reply.writeInt(Constants.W_ERR_NOT_LOGGED_IN);
+        reply.writeByte(type);
+        reply.writeInt(Constants.W_ERR_PROTOCOL_EXPIRED);
         return reply;
     }
-    
 }

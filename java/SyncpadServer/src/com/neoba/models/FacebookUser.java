@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.models;
 
 import com.neoba.utils.HTTPUtils;
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
+import com.neoba.Dsyncserver;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import org.apache.log4j.Logger;

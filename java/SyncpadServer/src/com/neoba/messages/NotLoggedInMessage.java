@@ -4,27 +4,29 @@
  * and open the template in the editor.
  */
 
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.Constants;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
-import io.netty.channel.Channel;
 
 /**
  *
  * @author atul
  */
-class PingPongMessage implements Message{
+public class NotLoggedInMessage implements Message{
+    
+    public NotLoggedInMessage() {
 
-
+    }
+    
     @Override
     public ByteBuf result(){
-       
+        
         ByteBuf reply=buffer(6);
         reply.writeByte(Constants.VERSION);
-        reply.writeByte(Constants.PINGPONG);
-        reply.writeInt(Constants.W_PING);
-       
+        reply.writeByte(Constants.CREDENTIAL_REQ);
+        reply.writeInt(Constants.W_ERR_NOT_LOGGED_IN);
         return reply;
     }
     

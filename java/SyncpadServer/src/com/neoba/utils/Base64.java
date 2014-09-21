@@ -1,4 +1,4 @@
-package com.neoba;
+package com.neoba.utils;
 
 import java.util.Arrays;
 

@@ -1,10 +1,14 @@
-package com.neoba;
+package com.neoba.messages;
 
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
+import com.neoba.Constants;
+import com.neoba.CouchManager;
+import com.neoba.Dsyncserver;
+import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
@@ -19,7 +23,7 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class UserUnFollowMessage implements Message {
+public class UserUnFollowMessage implements Message {
 
     String fid = "0";
     private boolean userfound = false;

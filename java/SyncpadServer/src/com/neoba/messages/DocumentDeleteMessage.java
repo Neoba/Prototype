@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.Constants;
+import com.neoba.CouchManager;
+import com.neoba.Dsyncserver;
+import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
@@ -18,7 +22,7 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author Atul Vinayak
  */
-class DocumentDeleteMessage {
+public class DocumentDeleteMessage {
 
     private boolean candelete = false;
     private boolean creatordeleted = false;
@@ -185,7 +189,7 @@ class DocumentDeleteMessage {
         }
     }
 
-    ByteBuf result() {
+    public ByteBuf result() {
         ByteBuf reply = buffer(2 + 4);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.DOCUMENT_EDIT);

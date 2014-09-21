@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.Constants;
+import com.neoba.Dsyncserver;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.UUID;
@@ -14,7 +16,7 @@ import org.apache.log4j.Logger;
  *
  * @author Atul Vinayak
  */
-class UserLogoutMessage {
+public class UserLogoutMessage {
 
     private boolean session_not_found;
     Logger logger = Logger.getLogger(UserLogoutMessage.class);
@@ -32,7 +34,7 @@ class UserLogoutMessage {
         logger.debug(sessid + " and useragents- " + Dsyncserver.useragents.get(sessid));
     }
 
-    ByteBuf result() {
+    public ByteBuf result() {
         ByteBuf reply = buffer(6);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.LOGOUT);

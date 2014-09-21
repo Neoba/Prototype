@@ -5,6 +5,20 @@
  */
 package com.neoba;
 
+import com.neoba.messages.DocumentEditMessage;
+import com.neoba.messages.DocumentDeleteMessage;
+import com.neoba.messages.DocumentCreateMessage;
+import com.neoba.messages.GrantPermissionMessage;
+import com.neoba.messages.GetDigestMessage;
+import com.neoba.messages.PokeMessage;
+import com.neoba.messages.NotLoggedInMessage;
+import com.neoba.messages.PingPongMessage;
+import com.neoba.messages.ProtocolExpiredMessage;
+import com.neoba.messages.UserCreateMessage;
+import com.neoba.messages.UserFollowMessage;
+import com.neoba.messages.UserLoginMessage;
+import com.neoba.messages.UserLogoutMessage;
+import com.neoba.messages.UserUnFollowMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;

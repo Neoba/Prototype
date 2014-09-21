@@ -6,6 +6,8 @@
 
 package com.neoba;
 
+
+import com.neoba.models.FacebookUser;
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
@@ -34,7 +36,7 @@ class FacebookUserCreateMessage {
         query.setKey(username);
         query.setStale( Stale.FALSE );
         ViewResponse result = Dsyncserver.cclient.query(view, query);
-        Logger logger=Logger.getLogger(UserCreateMessage.class);
+        Logger logger=Logger.getLogger(FacebookUserCreateMessage.class);
         fuser=new FacebookUser(access_token);
         
         if(result.size()!=0)

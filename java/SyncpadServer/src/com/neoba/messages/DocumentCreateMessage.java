@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.Constants;
+import com.neoba.Dsyncserver;
+import com.neoba.messages.Message;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.io.IOException;
@@ -21,7 +24,7 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class DocumentCreateMessage implements Message{
+public class DocumentCreateMessage implements Message{
     UUID id;
     String userid;
     Logger logger=Logger.getLogger(DocumentCreateMessage.class);

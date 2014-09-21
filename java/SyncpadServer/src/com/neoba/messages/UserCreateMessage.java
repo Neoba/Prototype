@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.neoba;
+package com.neoba.messages;
 
 import com.couchbase.client.protocol.views.Query;
 import com.couchbase.client.protocol.views.Stale;
 import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
+import com.neoba.Constants;
+import com.neoba.Dsyncserver;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import org.apache.log4j.Logger;
@@ -22,10 +24,10 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class UserCreateMessage implements Message{
+public class UserCreateMessage implements Message{
     Long id;
     Boolean isnametaken=false;
-    UserCreateMessage(String username, byte[] passhash) throws JSONException {
+    public UserCreateMessage(String username, byte[] passhash) throws JSONException {
         
         View view = Dsyncserver.cclient.getView("dev_neoba", "userstoid");
         Query query = new Query();
@@ -73,7 +75,6 @@ class UserCreateMessage implements Message{
         else
             reply.writeInt(Constants.W_ERR_DUP_USERNAME);
         return reply;
-        
     }
     
 }

@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.neoba;
+package com.neoba.messages;
 
+import com.neoba.utils.Base64;
+import com.neoba.Constants;
+import com.neoba.CouchManager;
+import com.neoba.Dsyncserver;
+import com.neoba.GoogleCloudMessager;
+import com.neoba.messages.Message;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
@@ -20,7 +26,7 @@ import org.codehaus.jettison.json.JSONObject;
  *
  * @author atul
  */
-class GrantPermissionMessage implements Message {
+public class GrantPermissionMessage implements Message {
 
     private boolean unfollowed_user = false;
     private boolean unprivilaged = false;

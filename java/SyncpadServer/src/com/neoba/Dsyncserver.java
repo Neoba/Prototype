@@ -25,9 +25,9 @@ import org.apache.log4j.PropertyConfigurator;
 public class Dsyncserver {
 
     private final int port;
-    static CouchbaseClient cclient = null;
-    static HashMap<UUID,String> usersessions=new HashMap<UUID,String>();
-    static HashMap<UUID,Byte> useragents=new HashMap<UUID,Byte>();
+    public static CouchbaseClient cclient = null;
+    public static HashMap<UUID,String> usersessions=new HashMap<UUID,String>();
+    public static HashMap<UUID,Byte> useragents=new HashMap<UUID,Byte>();
     
     Logger logger = Logger.getLogger(Dsyncserver.class);
     public Dsyncserver(int port) {
