@@ -57,7 +57,7 @@ public class FacebookUser {
                 JSONObject extra = fbid_to_id(temp.getString("id"));
                 if (extra != null) {
                     temp.put("username", extra.get("username"));
-                    temp.put("sid", extra.get("id"));
+                    temp.put("sid", extra.get("id"));    
                 }
                 friends.put(temp);
             }
