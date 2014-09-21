@@ -55,7 +55,7 @@ class FacebookUserCreateMessage {
             user.put("following", new JSONArray());
             user.put("docs", new JSONArray());
             user.put("edit_docs", new JSONArray());
-            //Dsyncserver.cclient.add(id.toString(), user.toString());
+            Dsyncserver.cclient.add(id.toString(), user.toString());
             logger.info("created user "+user.toString());
         }
     }

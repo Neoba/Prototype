@@ -11,6 +11,7 @@ import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -40,7 +41,7 @@ public class FacebookUser {
     public String getEmail() {
         return email;
     }
-
+    Logger logger=Logger.getLogger(FacebookUser.class);
     public FacebookUser(String access_token) throws IOException, MalformedURLException, JSONException {
         JSONObject facebook_obj = HTTPUtils.json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
         id = facebook_obj.getString("id");
@@ -51,6 +52,7 @@ public class FacebookUser {
         do {
             for (int i = 0; i < friendspage.length(); i++) {
                 JSONObject temp = friendspage.getJSONObject(i);
+                logger.info("fbtoid "+temp.getString("id"));
                 JSONObject extra = fbid_to_id(temp.getString("id"));
                 if (extra != null) {
                     temp.put("username", extra.get("username"));
@@ -65,9 +67,9 @@ public class FacebookUser {
     }
 
     private JSONObject fbid_to_id(String fbid) throws JSONException {
-        View view = Dsyncserver.cclient.getView("dev_neoba", "userstoid");
+        View view = Dsyncserver.cclient.getView("dev_neoba", "facebookidtoid");
         Query query = new Query();
-        query.setKey(fbid);
+        query.setKey("\""+fbid+"\"");
         query.setStale(Stale.FALSE);
         ViewResponse result = Dsyncserver.cclient.query(view, query);
         if (result != null) {
