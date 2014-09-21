@@ -23,8 +23,11 @@ import org.codehaus.jettison.json.JSONObject;
  * @author root
  */
 class FacebookUserCreateMessage {
-    Long id;
-    Boolean isnametaken=false;
+    private Long id;
+    private Boolean isnametaken=false;
+    private int suggestionssize=0;
+    private FacebookUser fuser;
+    
     public FacebookUserCreateMessage(String username,String access_token) throws JSONException, IOException {
         View view = Dsyncserver.cclient.getView("dev_neoba", "userstoid");
         Query query = new Query();
@@ -32,7 +35,7 @@ class FacebookUserCreateMessage {
         query.setStale( Stale.FALSE );
         ViewResponse result = Dsyncserver.cclient.query(view, query);
         Logger logger=Logger.getLogger(UserCreateMessage.class);
-        FacebookUser fuser=new FacebookUser(access_token);
+        fuser=new FacebookUser(access_token);
         
         if(result.size()!=0)
         {
@@ -57,15 +60,32 @@ class FacebookUserCreateMessage {
             user.put("edit_docs", new JSONArray());
             Dsyncserver.cclient.add(id.toString(), user.toString());
             logger.info("created user "+user.toString());
+            
+            suggestionssize+=4;
+            for(int i=0;i<fuser.getFriends().length();i++){
+                suggestionssize+=8;
+                suggestionssize+=4;
+                suggestionssize+=(fuser.getFriends().getJSONObject(i).getString("username").length());
+            }
+            
         }
     }
 
-    ByteBuf result() {
-        ByteBuf reply=buffer(6);
+    ByteBuf result() throws JSONException {
+        ByteBuf reply=isnametaken?buffer(6):buffer(6+suggestionssize);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.USER_CREATE);
         if(!isnametaken)
+        {
             reply.writeInt(Constants.W_SUCCESS);
+            reply.writeInt(fuser.getFriends().length());
+            for(int i=0;i<fuser.getFriends().length();i++){
+                reply.writeLong(Long.parseLong(fuser.getFriends().getJSONObject(i).getString("id")));
+                reply.writeInt(fuser.getFriends().getJSONObject(i).getString("username").length());
+                reply.writeBytes(fuser.getFriends().getJSONObject(i).getString("username").getBytes());
+            }
+            
+        }
         else
             reply.writeInt(Constants.W_ERR_DUP_USERNAME);
         return reply;
