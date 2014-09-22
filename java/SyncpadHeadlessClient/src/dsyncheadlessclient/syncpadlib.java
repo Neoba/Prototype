@@ -5,7 +5,6 @@
  */
 package dsyncheadlessclient;
 
-import static dsyncheadlessclient.DsyncHeadlessClient.version;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -27,7 +26,8 @@ import org.codehaus.jettison.json.JSONObject;
  * @author root
  */
 public class syncpadlib {
-
+    private static final byte version=0x02;
+    private static String url = "http://localhost:2811";
     static boolean ping() {
         ByteBuffer buff = ByteBuffer.allocate(6);
         buff.put(version);
@@ -124,8 +124,6 @@ public class syncpadlib {
     }
 
     static ByteBuffer sendPost(ByteBuffer a) throws Exception {
-
-        String url = "http://localhost:2811";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
