@@ -81,8 +81,13 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     break;
                 case "flogin":
-                    
-                    System.out.println();
+                    ArrayList<HashMap<String,String>> a=syncpadlib.facebookLoginUser(access_token, regid);
+                    System.out.println(a);
+                    if(a.get(0).get("result").equals("success")){
+                        cookie=UUID.fromString(a.get(1).get("cookie"));
+                    }else{
+                        System.out.println("Unregireted user.. please sign up");
+                    }
                     break;
                 case "login":
                     buff = ByteBuffer.allocate(6 + 20 + 1 + cmd.split(" ")[1].length() + 4 + regid.length());
