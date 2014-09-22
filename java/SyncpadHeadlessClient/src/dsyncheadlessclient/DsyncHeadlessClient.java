@@ -81,7 +81,8 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     break;
                 case "flogin":
-                    System.out.println(syncpadlib.facebookLoginUser(access_token, regid));
+                    
+                    System.out.println();
                     break;
                 case "login":
                     buff = ByteBuffer.allocate(6 + 20 + 1 + cmd.split(" ")[1].length() + 4 + regid.length());

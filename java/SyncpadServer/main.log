@@ -5208,3 +5208,49 @@ org.codehaus.jettison.json.JSONException: JSONObject["username"] not found.
 2014-09-22 19:44:12 DEBUG ConsoleUtils:43 - E2 A1 88 B5 FE 00 00 00 05 72 . . . . . . . . . r 
 2014-09-22 19:44:12 DEBUG ConsoleUtils:43 - 6F 68 61 6E                   o h a n 
 2014-09-22 19:44:12 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-09-22 20:17:35 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:33809:3
+2014-09-22 20:17:35 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-22 20:17:35 DEBUG ConsoleUtils:26 - size : 270 bytes
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 FC 43 41 41 55 . . . . . . C A A U 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 42 41 4B 72 6B 6E 4D 56 5A 43 B A K r k n M V Z C 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 57 6D 43 58 34 30 35 4B 65 5A W m C X 4 0 5 K e Z 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 43 4A 71 35 61 45 5A 41 66 4F C J q 5 a E Z A f O 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 37 66 4C 4F 68 76 4F 42 55 39 7 f L O h v O B U 9 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 4E 51 7A 50 62 30 6F 38 65 63 N Q z P b 0 o 8 e c 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 64 36 57 79 33 59 48 33 31 68 d 6 W y 3 Y H 3 1 h 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 67 4C 56 6B 4A 54 5A 41 4D 32 g L V k J T Z A M 2 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 76 35 6D 71 66 58 35 51 63 31 v 5 m q f X 5 Q c 1 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 34 42 68 57 31 6F 78 4B 6B 73 4 B h W 1 o x K k s 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 57 75 45 65 76 62 6B 69 4B 42 W u E e v b k i K B 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 36 56 35 41 36 52 33 38 4E 30 6 V 5 A 6 R 3 8 N 0 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 5A 41 42 58 75 68 33 59 45 6E Z A B X u h 3 Y E n 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 68 31 30 43 61 79 30 78 43 77 h 1 0 C a y 0 x C w 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 78 50 6B 68 34 55 44 4B 6C 49 x P k h 4 U D K l I 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 58 67 78 6F 63 6C 36 34 50 61 X g x o c l 6 4 P a 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 54 54 4D 48 6B 42 57 45 4C 72 T T M H k B W E L r 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 58 56 54 4D 48 67 59 33 56 6A X V T M H g Y 3 V j 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 64 4B 49 4A 45 5A 43 30 6A 70 d K I J E Z C 0 j p 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 39 61 34 31 47 49 5A 42 48 4B 9 a 4 1 G I Z B H K 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 5A 43 5A 41 67 42 43 57 67 38 Z C Z A g B C W g 8 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 79 4F 63 4E 6E 71 59 78 32 70 y O c N n q Y x 2 p 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 53 48 63 41 50 50 51 69 51 6E S H c A P P Q i Q n 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 56 70 57 69 35 62 4B 47 50 6A V p W i 5 b K G P j 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 70 44 58 38 6F 44 6B 61 0C 00 p D X 8 o D k a . . 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 - 00 00 07 43 4F 4E 53 4F 4C 45 . . . C O N S O L E 
+2014-09-22 20:17:35 DEBUG ConsoleUtils:43 -                               
+2014-09-22 20:17:35 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-09-22 20:17:35 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-09-22 20:17:35 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-09-22 20:17:38 INFO  FacebookUser:58 - fbtoid 10202711286454972
+2014-09-22 20:17:39 INFO  FacebookUser:58 - fbtoid 758536884237822
+2014-09-22 20:17:40 INFO  FacebookUserLogin:48 - atul :user found
+2014-09-22 20:17:40 INFO  FacebookUserLogin:49 - atul :session- f63f319f-0104-4c40-a714-1e4dcb37f082
+2014-09-22 20:17:40 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAKrknMVZCWmCX405KeZCJq5aEZAfO7fLOhvOBU9NQzPb0o8ecd6Wy3YH31hgLVkJTZAM2v5mqfX5Qc14BhW1oxKksWuEevbkiKB6V5A6R38N0ZABXuh3YEnh10Cay0xCwxPkh4UDKlIXgxocl64PaTTMHkBWELrXVTMHgY3VjdKIJEZC0jp9a41GIZBHKZCZAgBCWg8yOcNnqYx2pSHcAPPQiQnVpWi5bKGPjpDX8oDka
+2014-09-22 20:17:40 INFO  MessageInterpreter:108 - user_agents: {f63f319f-0104-4c40-a714-1e4dcb37f082=12}
+2014-09-22 20:17:40 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-22 20:17:40 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-22 20:17:40 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF A7 14 1E 4D . . . . . . . .  M 
+2014-09-22 20:17:40 DEBUG ConsoleUtils:43 - CB 37 F0 82 F6 3F 31 9F 01 04 . 7 . . . ? 1 . . . 
+2014-09-22 20:17:40 DEBUG ConsoleUtils:43 - 4C 40                         L @ 
+2014-09-22 20:17:40 INFO  DsyncserverHandler:50 - Message Responded :3
