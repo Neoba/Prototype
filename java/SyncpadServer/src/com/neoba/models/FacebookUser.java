@@ -50,6 +50,7 @@ public class FacebookUser {
         name = facebook_obj.getString("name");
         email = facebook_obj.getString("email");
         friends = new JSONArray();
+        String url="";
         JSONArray friendspage = facebook_obj.getJSONObject("friends").getJSONArray("data");
         do {
             for (int i = 0; i < friendspage.length(); i++) {
@@ -62,8 +63,11 @@ public class FacebookUser {
                 }
                 friends.put(temp);
             }
-            String url = facebook_obj.getJSONObject("friends").getJSONObject("paging").getString("next");
-            friendspage = HTTPUtils.json_get(url).getJSONArray("data");
+            if(friendspage.length()!=0)
+            {
+                url = facebook_obj.getJSONObject("friends").getJSONObject("paging").getString("next");
+                friendspage = HTTPUtils.json_get(url).getJSONArray("data");
+            }
 
         } while (friendspage.length() != 0);
     }

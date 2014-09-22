@@ -2,3 +2,9 @@
 /com.neoba.dsync.vcdiff/build/
 /com.neoba.dsync.server/build/
 /com.neoba.dsync.client/build/
+/java/SyncpadServer/build/
+/java/SyncpadHeadlessClient/build/
+/java/SyncpadHeadlessClient/dist/
+/java/libsyncpad/nbproject/private/
+/java/libsyncpad/build/
+/java/libsyncpad/dist/

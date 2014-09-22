@@ -85,15 +85,15 @@ public class syncpadlib {
         buff.putInt(access_token.length());
         buff.put(access_token.getBytes());
         JSONObject facebook_obj = json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
-        String suggested = json_get("https://graph.facebook.com/" + facebook_obj.getString("id")).getString("username");
-        System.out.println("We suggest you take this name: " + suggested);
+        //String suggested = json_get("https://graph.facebook.com/" + facebook_obj.getString("id")).getString("username");
+        //System.out.println("We suggest you take this name: " + suggested);
+        ByteBuffer in;
         try {
-            ByteBuffer in = sendPost(buff);
+            in = sendPost(buff);
         } catch (Exception err) {
             System.err.println(err);
             return null;
         }
-        ByteBuffer in = sendPost(buff);
         ArrayList<HashMap<String, String>> sugestions = new ArrayList<HashMap<String, String>>();
         if (in.getInt(2) == 0xFFFF) {
             int suggestion_size = in.getInt(6), base = 10;
@@ -169,7 +169,7 @@ public class syncpadlib {
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
         int responseCode = con.getResponseCode();
-        try {
+        //try {
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
             StringBuffer response = new StringBuffer();
@@ -180,9 +180,10 @@ public class syncpadlib {
             in.close();
             JSONObject ret = new JSONObject(response.toString());
             return ret;
-        } catch (Exception e) {
-            return null;
-        }
+        //} catch (Exception e) {
+            
+            //return null;
+       // }
 
     }
 }

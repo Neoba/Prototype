@@ -71,7 +71,5 @@ public class Constants {
     public static final String GCM_API_KEY=                    "key=AIzaSyC7EVwGwadMtVj_XZMBbhsp1YT7b4_Bcf4";
     public static final String GCM_API_ENDPOINT=               "https://android.googleapis.com/gcm/send";
     public static final int GCM_MAX_RETRY=                     1;
-    
-    
-    
+
 }
