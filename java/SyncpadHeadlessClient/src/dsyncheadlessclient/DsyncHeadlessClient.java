@@ -1,14 +1,9 @@
 package dsyncheadlessclient;
 
-import java.io.BufferedInputStream;
+
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
@@ -17,8 +12,6 @@ import java.util.HashMap;
 import java.util.UUID;
 import net.dongliu.vcdiff.VcdiffDecoder;
 import net.dongliu.vcdiff.VcdiffEncoder;
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
 
 /**
  *
@@ -29,10 +22,12 @@ public class DsyncHeadlessClient {
     /**
      * @param args the command line arguments
      */
+    
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version = 0x02;
-    static String access_token = "CAACEdEose0cBAOJpxZBJ0ZAKkRomW8qc6KAOABPP9p0MsQIZAzbSwQ3mh3xsROUwDOpBoRMAmvIUCklkbOGiA6AqPlhXN5wMkILzIrDjAa6CbxEfPpHZA1mlpeU2RHeASHhzomY4IIAgBip5U8OSvHlqTWA9DZAfmOh0RsHUrZA0LaGDc1XsWgg0e352tfB7he8Cq4SuMqbVrfyqrf5lZAXxQx26spW2p8ZD";
+    static String access_token = "CAACEdEose0cBAOCmZB71Yj4BhOgLSYr7o5QyE3Xvuxpug8HKXascMZBiZBMrZB1cGM38ByE3QLIe6W6E49EIuLDImCHAj8JnI0HGWAOiKfFcpVZAIZBblSmGMrBNfU9svjzEOFZC653Ibi8n7YYSwBBSfYJOERHDunKF7ug2hvcUnEnzAlt7GeZAKxE5byhGZBfEMjHMZAncCfcA3AZAt5yTZBRJYCWjtviDHcUZD";
+
     public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
@@ -47,12 +42,7 @@ public class DsyncHeadlessClient {
             boolean e = false;
             switch (cmd.split(" ")[0]) {
                 case "ping":
-                    buff = ByteBuffer.allocate(6);
-                    buff.put(version);
-                    buff.put((byte) 0x01);
-                    buff.put("PING".getBytes());
-                    in = sendPost(buff);
-                    buff.clear();
+                    System.out.println(syncpadlib.ping() ? "Pong!" : "Nope!");
                     break;
                 case "cu":
                     buff = ByteBuffer.allocate(6 + 20 + cmd.split(" ")[1].length());
@@ -63,38 +53,11 @@ public class DsyncHeadlessClient {
                     for (byte b : MessageDigest.getInstance("SHA").digest(cmd.split(" ")[2].getBytes())) {
                         buff.put(b);
                     }
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     break;
                 case "fcu":
-                    buff = ByteBuffer.allocate(6 + cmd.split(" ")[1].length() + 4 + access_token.length());
-                    buff.put(version);
-                    buff.put((byte) 0xF5);
-                    buff.putInt(cmd.split(" ")[1].length());
-                    buff.put(cmd.split(" ")[1].getBytes());
-                    buff.putInt(access_token.length());
-                    buff.put(access_token.getBytes());
-                    JSONObject facebook_obj = json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
-                    String suggested = json_get("https://graph.facebook.com/" + facebook_obj.getString("id")).getString("username");
-                    System.out.println("We suggest you take this name: " + suggested);
-                    in = sendPost(buff);
-
-                    if (in.getInt(2) == 0xFFFF) {
-                        System.out.println("we suggest you follow these guys..");
-                        int suggestion_size = in.getInt(6), base = 10;
-                        for (int i = 0; i < suggestion_size; i++) {
-                            System.out.println(in.getLong(base));
-                            int names = in.getInt(base + 8);
-                            StringBuilder dictnew = new StringBuilder();
-                            for (int h = 0; h < names; h++) {
-                                dictnew.append((char) in.get(base + 4 + 8 + h));
-                            }
-                            System.out.println(dictnew.toString());
-                            base+=(8+4+names);
-                        }
-                    }
-
-                    buff.clear();
+                    System.out.println(syncpadlib.facebookCreateUser(cmd.split(" ")[1], access_token));
                     break;
                 case "del":
                     UUID docuid = docs.get(cmd.split(" ")[1]);
@@ -104,11 +67,11 @@ public class DsyncHeadlessClient {
                         buff.put(version);
                         buff.put((byte) 0x0B);
                         buff.putInt(0x0000DE1E);
-                        putUUID(buff, cookie);
+                        syncpadlib.putUUID(buff, cookie);
                         buff.putLong(docuid.getLeastSignificantBits());
                         buff.putLong(docuid.getMostSignificantBits());
                     }
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     if (in.getInt(2) == 0xFFFF) {
                         //cache.remove(docuid);
                         System.out.println("yup deleted");
@@ -119,22 +82,7 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     break;
                 case "flogin":
-                    buff = ByteBuffer.allocate(6 + 1 + access_token.length() + 4 + regid.length());
-                    buff.put(version);
-                    buff.put((byte) 0xF6);
-                    buff.putInt(access_token.length());
-                    buff.put(access_token.getBytes());
-                    buff.put((byte) 0x0C);
-                    buff.putInt(regid.length());
-                    buff.put(regid.getBytes());
-                    in = sendPost(buff);
-                    if (in.getInt(2) == 0xFFFF) {
-                        cookie = new UUID(in.getLong(14), in.getLong(6));
-                        System.out.println("recived a cookie :) --> " + cookie);
-                    } else {
-                        System.err.println("error");
-                    }
-                    buff.clear();
+                    System.out.println(syncpadlib.facebookLoginUser(access_token, regid));
                     break;
                 case "login":
                     buff = ByteBuffer.allocate(6 + 20 + 1 + cmd.split(" ")[1].length() + 4 + regid.length());
@@ -148,7 +96,7 @@ public class DsyncHeadlessClient {
                     buff.put((byte) 0x0C);
                     buff.putInt(regid.length());
                     buff.put(regid.getBytes());
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     if (in.getInt(2) == 0xFFFF) {
                         cookie = new UUID(in.getLong(14), in.getLong(6));
                         System.out.println("recived a cookie :) --> " + cookie);
@@ -163,9 +111,9 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x02);
                     buff.putInt(0xFFFF);
-                    putUUID(buff, cookie);
-                    putUUID(buff, UUID.randomUUID());
-                    in = sendPost(buff);
+                    syncpadlib.putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, UUID.randomUUID());
+                    in = syncpadlib.sendPost(buff);
                     if (in.getInt(2) == 0xFFFF) {
                         UUID docid = new UUID(in.getLong(14), in.getLong(6));
                         System.out.println("created a new doc: " + docid.toString());
@@ -187,14 +135,14 @@ public class DsyncHeadlessClient {
                         buff.put(version);
                         buff.put((byte) 0x03);
                         buff.putInt(edit.length);
-                        putUUID(buff, cookie);
+                        syncpadlib.putUUID(buff, cookie);
                         buff.putLong(docuid.getLeastSignificantBits());
                         buff.putLong(docuid.getMostSignificantBits());
                         for (byte b : edit) {
                             buff.put(b);
                         }
                         buff.putInt(((document) cache.get(docuid)).age + 1);
-                        in = sendPost(buff);
+                        in = syncpadlib.sendPost(buff);
                         buff.clear();
                         if (in.getInt(2) == 0xFFFF || in.getInt(2) == 0x8008) {
 
@@ -236,8 +184,8 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x04);
                     buff.putInt(0xFFFF);
-                    putUUID(buff, cookie);
-                    in = sendPost(buff);
+                    syncpadlib.putUUID(buff, cookie);
+                    in = syncpadlib.sendPost(buff);
                     int docnum = 1; // hack to deprecate titles. Instead of titles, we use numbers.. really sorry
                     buff.clear();
                     int docount = in.getInt(2);
@@ -337,9 +285,9 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x07);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("followed " + in.getLong(6));
@@ -350,9 +298,9 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x0C);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("unfollowed " + in.getLong(6));
@@ -371,9 +319,9 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x0A);
                     buff.putInt(cmd.split(" ")[1].length());
-                    putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, cookie);
                     buff.put(cmd.split(" ")[1].getBytes());
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("followed " + in.getLong(6));
@@ -384,8 +332,8 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x09);
                     buff.putInt(0xFFFF);
-                    putUUID(buff, cookie);
-                    in = sendPost(buff);
+                    syncpadlib.putUUID(buff, cookie);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     break;
                 case "grant":
@@ -393,7 +341,7 @@ public class DsyncHeadlessClient {
                     buff.put(version);
                     buff.put((byte) 0x08);
                     buff.putInt((cmd.split(" ").length - 2) / 2);
-                    putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, cookie);
                     buff.putLong((docs.get(cmd.split(" ")[1])).getLeastSignificantBits());
                     buff.putLong((docs.get(cmd.split(" ")[1])).getMostSignificantBits());
                     for (int i = 2; i < cmd.split(" ").length; i += 2) {
@@ -412,7 +360,7 @@ public class DsyncHeadlessClient {
                         buff.putLong(Long.parseLong(cmd.split(" ")[i + 1]));
                         System.out.println(Long.parseLong(cmd.split(" ")[i + 1]) + " " + cmd.split(" ")[i + 1]);
                     }
-                    in = sendPost(buff);
+                    in = syncpadlib.sendPost(buff);
                     buff.clear();
                     break;
                 case "exit":
@@ -422,8 +370,8 @@ public class DsyncHeadlessClient {
                     e = true;
             }
             if (!e) {
-                System.out.println("Res:");
-                printhex(in.array(), in.array().length);
+                //System.out.println("Res:");
+                //printhex(in.array(), in.array().length);
             }
 
         }
@@ -447,41 +395,6 @@ public class DsyncHeadlessClient {
             this.permission = perm;
             this.owns = owns;
         }
-    }
-
-    static ByteBuffer sendPost(ByteBuffer a) throws Exception {
-
-        String url = "http://localhost:2811";
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-        //add reuqest header
-        con.setRequestMethod("POST");
-        con.setRequestProperty("User-Agent", "Android 7.9 Upsidedown cake");
-        con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        con.setRequestProperty("Content-Type", "application/octet-stream");
-        // Send post request
-        a.flip();
-        con.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.write(a.array());
-        wr.flush();
-        wr.close();
-
-        int responseCode = con.getResponseCode();
-
-        printhex(a.array(), a.array().length);
-        BufferedInputStream in = new BufferedInputStream(con.getInputStream());
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        int next = in.read();
-        while (next > -1) {
-            bos.write(next);
-            next = in.read();
-        }
-        bos.flush();
-        byte[] result = bos.toByteArray();
-        return ByteBuffer.wrap(result);
-
     }
 
     public static void printhex(byte[] b, int count) {
@@ -511,33 +424,9 @@ public class DsyncHeadlessClient {
 
     }
 
-    private static void putUUID(ByteBuffer buff, UUID cookie) {
-        buff.putLong(cookie.getLeastSignificantBits());
-        buff.putLong(cookie.getMostSignificantBits());
-    }
 
-    public static JSONObject json_get(String url) throws MalformedURLException, IOException, JSONException {
 
-        URL obj;
-        obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
-        int responseCode = con.getResponseCode();
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            JSONObject ret = new JSONObject(response.toString());
-            return ret;
-        } catch (Exception e) {
-            return null;
-        }
-
-    }
+    
+ 
 }
