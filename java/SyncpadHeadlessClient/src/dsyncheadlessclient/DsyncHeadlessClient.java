@@ -60,25 +60,12 @@ public class DsyncHeadlessClient {
                     break;
                 case "del":
                     UUID docuid = docs.get(cmd.split(" ")[1]);
-                    buff = null;
-                    if (docuid != null) {
-                        buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
-                        buff.put(version);
-                        buff.put((byte) 0x0B);
-                        buff.putInt(0x0000DE1E);
-                        syncpadlib.putUUID(buff, cookie);
-                        buff.putLong(docuid.getLeastSignificantBits());
-                        buff.putLong(docuid.getMostSignificantBits());
+                    if(syncpadlib.deleteNote(docuid.toString(), cookie)){
+                        System.out.println("yep deteteld "+cmd.split(" ")[1]);
+                        cache.remove(docuid);
+                    }else{
+                        System.out.println("nope counldnt delete "+cmd.split(" ")[1]);
                     }
-                    in = syncpadlib.sendPost(buff);
-                    if (in.getInt(2) == 0xFFFF) {
-                        //cache.remove(docuid);
-                        System.out.println("yup deleted");
-
-                    } else {
-                        System.err.println("som error");
-                    }
-                    buff.clear();
                     break;
                 case "flogin":
                     ArrayList<HashMap<String,String>> a=syncpadlib.facebookLoginUser(access_token, regid);
@@ -112,23 +99,15 @@ public class DsyncHeadlessClient {
                     break;
                 case "cr":
                     docname = cmd.split(" ")[1];
-                    buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
-                    buff.put(version);
-                    buff.put((byte) 0x02);
-                    buff.putInt(0xFFFF);
-                    syncpadlib.putUUID(buff, cookie);
-                    syncpadlib.putUUID(buff, UUID.randomUUID());
-                    in = syncpadlib.sendPost(buff);
-                    if (in.getInt(2) == 0xFFFF) {
-                        UUID docid = new UUID(in.getLong(14), in.getLong(6));
-                        System.out.println("created a new doc: " + docid.toString());
-                        docs.put(docname, docid);
-                        System.out.println("created [" + docid.toString() + "]");
-                        cache.put(docid, new document(docname, new ArrayList(), -1, "", (byte) 2, true));
-                    } else {
-                        System.err.println("som error");
+                    ArrayList<HashMap<String, String>> result = syncpadlib.createNote(cookie);
+                    if(result.get(0).get("result").equals("success"))
+                    {
+                        System.out.println("created document :  "+UUID.fromString(result.get(1).get("id")));
+                        docs.put(docname, UUID.fromString(result.get(1).get("id")));
+                        cache.put( UUID.fromString(result.get(1).get("id")), new document(docname, new ArrayList(), -1, "", (byte) 2, true));
+                    }else{
+                        System.out.println("error: "+result.get(0).get("result"));
                     }
-                    buff.clear();
                     break;
 
                 case "ed":

@@ -5,6 +5,7 @@
  */
 package dsyncheadlessclient;
 
+import static dsyncheadlessclient.DsyncHeadlessClient.version;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -26,8 +27,10 @@ import org.codehaus.jettison.json.JSONObject;
  * @author root
  */
 public class syncpadlib {
-    private static final byte version=0x02;
+
+    private static final byte version = 0x02;
     private static String url = "http://localhost:2811";
+
     static boolean ping() {
         ByteBuffer buff = ByteBuffer.allocate(6);
         buff.put(version);
@@ -39,6 +42,65 @@ public class syncpadlib {
         } catch (Exception err) {
             //System.err.println(err);
             return false;
+        }
+    }
+
+    static ArrayList<HashMap<String, String>> createNote(UUID cookie) {
+        ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
+        buff.put(version);
+        buff.put((byte) 0x02);
+        buff.putInt(0xFFFF);
+        UUID randid=UUID.randomUUID();
+        syncpadlib.putUUID(buff, cookie);
+        syncpadlib.putUUID(buff, randid);
+        
+        ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
+        try {
+            ByteBuffer in = syncpadlib.sendPost(buff);
+            if (in.getInt(2) == 0xFFFF) {
+                HashMap<String, String> result = new HashMap<String, String>();
+                result.put("result", "success");
+                returnlist.add(result);
+                HashMap<String, String> cookieh = new HashMap<String, String>();
+                cookieh.put("id", randid.toString());
+                returnlist.add(cookieh);
+            } else {
+                System.err.println("som error");
+                HashMap<String, String> result = new HashMap<String, String>();
+                result.put("result", "error");
+                returnlist.add(result);
+            }
+        } catch (Exception ex) {
+                HashMap<String, String> result = new HashMap<String, String>();
+                result.put("result", "connection_fail");
+                returnlist.add(result);
+        }
+        return returnlist;
+    }
+
+    static boolean deleteNote(String uuid_, UUID cookie) {
+        {
+            UUID docuid = UUID.fromString(uuid_);
+            ByteBuffer buff = null;
+            if (docuid != null) {
+                buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
+                buff.put(version);
+                buff.put((byte) 0x0B);
+                buff.putInt(0x0000DE1E);
+                syncpadlib.putUUID(buff, cookie);
+                buff.putLong(docuid.getLeastSignificantBits());
+                buff.putLong(docuid.getMostSignificantBits());
+            }
+            try {
+                ByteBuffer in = syncpadlib.sendPost(buff);
+                if (in.getInt(2) == 0xFFFF) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (Exception ex) {
+                return false;
+            }
         }
     }
 
@@ -84,7 +146,7 @@ public class syncpadlib {
         buff.put(username.getBytes());
         buff.putInt(access_token.length());
         buff.put(access_token.getBytes());
-        JSONObject facebook_obj = json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
+        JSONObject facebook_obj = jsonGet("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
         //String suggested = json_get("https://graph.facebook.com/" + facebook_obj.getString("id")).getString("username");
         //System.out.println("We suggest you take this name: " + suggested);
         ByteBuffer in;
@@ -161,7 +223,7 @@ public class syncpadlib {
         buff.putLong(cookie.getMostSignificantBits());
     }
 
-    public static JSONObject json_get(String url) throws MalformedURLException, IOException, JSONException {
+    public static JSONObject jsonGet(String url) throws MalformedURLException, IOException, JSONException {
 
         URL obj;
         obj = new URL(url);
@@ -170,20 +232,19 @@ public class syncpadlib {
         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
         int responseCode = con.getResponseCode();
         //try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            JSONObject ret = new JSONObject(response.toString());
-            return ret;
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        JSONObject ret = new JSONObject(response.toString());
+        return ret;
         //} catch (Exception e) {
-            
-            //return null;
-       // }
 
+        //return null;
+        // }
     }
 }
