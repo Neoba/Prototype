@@ -30,7 +30,9 @@ public class syncpadlib {
 
     private static final byte version = 0x02;
     private static String url = "http://localhost:2811";
-
+    
+    public static boolean DEBUG=true;
+    
     static boolean ping() {
         ByteBuffer buff = ByteBuffer.allocate(6);
         buff.put(version);
@@ -38,11 +40,13 @@ public class syncpadlib {
         buff.put("PING".getBytes());
         try {
             ByteBuffer in = sendPost(buff);
+            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
             return true;
         } catch (Exception err) {
             //System.err.println(err);
             return false;
         }
+        
     }
 
     static ArrayList<HashMap<String, String>> createNote(UUID cookie) {
@@ -57,6 +61,7 @@ public class syncpadlib {
         ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
         try {
             ByteBuffer in = syncpadlib.sendPost(buff);
+            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
             if (in.getInt(2) == 0xFFFF) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put("result", "success");
@@ -75,6 +80,7 @@ public class syncpadlib {
                 result.put("result", "connection_fail");
                 returnlist.add(result);
         }
+        
         return returnlist;
     }
 
@@ -93,6 +99,7 @@ public class syncpadlib {
             }
             try {
                 ByteBuffer in = syncpadlib.sendPost(buff);
+                if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                 if (in.getInt(2) == 0xFFFF) {
                     return true;
                 } else {
@@ -116,6 +123,7 @@ public class syncpadlib {
         ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
         try {
             ByteBuffer in = sendPost(buff);
+            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
             if (in.getInt(2) == 0xFFFF) {
                 UUID cookie = new UUID(in.getLong(14), in.getLong(6));
                 HashMap<String, String> result = new HashMap<String, String>();
@@ -152,6 +160,7 @@ public class syncpadlib {
         ByteBuffer in;
         try {
             in = sendPost(buff);
+            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
         } catch (Exception err) {
             System.err.println(err);
             return null;
@@ -203,8 +212,7 @@ public class syncpadlib {
         wr.close();
 
         int responseCode = con.getResponseCode();
-
-        //printhex(a.array(), a.array().length);
+        if(DEBUG){System.out.println("Req:");printhex(a.array(), a.array().length);}
         BufferedInputStream in = new BufferedInputStream(con.getInputStream());
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         int next = in.read();
@@ -241,10 +249,33 @@ public class syncpadlib {
         }
         in.close();
         JSONObject ret = new JSONObject(response.toString());
+        
         return ret;
-        //} catch (Exception e) {
+    }
+    public static void printhex(byte[] b, int count) {
+        int rem = count;
+        String outs;
+        int ran = 0;
+        //System.out.println(count + "B dump");
+        for (int i = 0; i < ((count / 10) + 1); i++) {
+            for (int j = 0; (j < rem && j < 10); j++) {
+                outs = String.format("%02X ", b[j + count - rem] & 0xff);
 
-        //return null;
-        // }
+                System.out.print(outs);
+                ran++;
+            }
+            for (int j = 0; j < 29 - (ran * 2 + ran - 1); j++) {
+                System.out.print(" ");
+            }
+            ran = 0;
+            for (int j = 0; (j < rem && j < 10); j++) {
+                System.out.print((char) (b[j + count - rem] >= 30 && b[j + count - rem] <= 127 ? b[j + count - rem] : '.') + " ");
+            }
+            rem -= 10;
+
+            System.out.println("");
+
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 package dsyncheadlessclient;
 
-
+import static dsyncheadlessclient.syncpadlib.printhex;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,8 +15,88 @@ import net.dongliu.vcdiff.VcdiffEncoder;
 
 /**
  *
- * @author root
- */
+ * @author neoba systems
+ * 
+ * syncpad-headless-client
+ * -----------------------
+ * 
+ * This is a simple client program that can be used to work with the syncpad server
+ * commands and their users:
+ * 
+ * 1- Ping: pings the server to check if it's alive
+ *  syntax : "ping"
+ * 
+ * 2- create user: creates a new user in the server
+ *  syntax : cu username password
+ * 
+ * 3- login: logs in the user and gets a cookie if successful
+ *  syntax: login username password
+ * 
+ * -- these next commands require you to be logged in to execute --
+ * 
+ * 4- create document: creates a new document
+ *  syntax: cr name
+ * 
+ * 5- edit : edits a document. diffing will be done automatically
+ *  syntax: ed name edited-content-with-no-spaces
+ * 
+ * 6- follow: lets you follow a user
+ *  syntax: follow username
+ * 
+ * 7- grant: grants access permissions[read/write/nothing] to followers. 
+ *  syntax: grant docname [r/w/n] userid(number) [[r/w/n] userid2(number)] [[r/w/n] userid2(number)]
+ * 
+ *  this permissions list is absolute non-additive. if 'grant docname' is used, all existing
+ *  permissions are removed. ignoring users with n works too.
+ * 
+ * 8- get digest: gets a digest, all the data(docs,permissions,usernames) for an existing user. usually done at login
+ *  syntax- gd
+ * 
+ *  gd is the primary mechanism analogous to push in mobile phones. if a user followed you, doing gd 
+ *  afterwords will show you the username of the user.
+ * 
+ * 9- delete: deletes a document that you own/shared with you
+ *  syntax- del docname
+ * 
+ *  in phones, this will sends a push message forcing users to delete if you own the doc
+ *  or changes the permission table in the owner's device if he shared it with you
+ * 
+ * 10- unfollow- unfollows a user you're already following
+ *  syntax- unfollow username
+ * 
+ *  sends push message forcing mobile client to delete from follow table
+ * 
+ * 11- logout- properly logout from server. this causes deletion of cookie
+ *  syntax- logout
+ * 
+ * -- these features are for testing phone clients with push capability --
+ * 
+ * 12- poke- push pokes a user. similar to the yo app(for testing push connection only)
+ *  syntax- poke
+ * 
+ * -- newer facebook-specific features. ie requires a facebook access token.  --
+ * * trying this out might cause an error in server side right now--
+ * 
+ * 13- create a facebook-integrated user. returns a list of usernames you might want to follow
+ *  syntax- fcu username
+ * 
+ * 14- flogin - passwordless facebook login
+ *  syntax- flogin
+ * 
+ * 
+ * debuging
+ * ========
+ * set syncpadlib.DEBUG to true to see message payloads,request and response in binary
+ * 
+ * 
+ * general message
+ * ===============
+ * 
+ * we're currently trying to move functions from main() and design a unified return type
+ * to syncpadlib.java to make development easier for android and other java-based clients
+ * bear with us.
+ * 
+ */ 
 public class DsyncHeadlessClient {
 
     /**
@@ -42,6 +122,7 @@ public class DsyncHeadlessClient {
             switch (cmd.split(" ")[0]) {
                 case "ping":
                     System.out.println(syncpadlib.ping() ? "Pong!" : "Nope!");
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "cu":
                     buff = ByteBuffer.allocate(6 + 20 + cmd.split(" ")[1].length());
@@ -54,9 +135,11 @@ public class DsyncHeadlessClient {
                     }
                     in = syncpadlib.sendPost(buff);
                     buff.clear();
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "fcu":
                     System.out.println(syncpadlib.facebookCreateUser(cmd.split(" ")[1], access_token));
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "del":
                     UUID docuid = docs.get(cmd.split(" ")[1]);
@@ -75,6 +158,7 @@ public class DsyncHeadlessClient {
                     }else{
                         System.out.println("Unregireted user.. please sign up");
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "login":
                     buff = ByteBuffer.allocate(6 + 20 + 1 + cmd.split(" ")[1].length() + 4 + regid.length());
@@ -108,6 +192,7 @@ public class DsyncHeadlessClient {
                     }else{
                         System.out.println("error: "+result.get(0).get("result"));
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
 
                 case "ed":
@@ -162,6 +247,7 @@ public class DsyncHeadlessClient {
                         }
                         buff.clear();
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "gd":
                     buff = ByteBuffer.allocate(6 + 16);
@@ -263,6 +349,7 @@ public class DsyncHeadlessClient {
                             base += 8;
                         }
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "follow":
                     buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
@@ -276,6 +363,7 @@ public class DsyncHeadlessClient {
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("followed " + in.getLong(6));
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "unfollow":
                     buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
@@ -297,6 +385,7 @@ public class DsyncHeadlessClient {
                             cache.remove(id);
                         }
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "poke":
                     buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
@@ -310,6 +399,7 @@ public class DsyncHeadlessClient {
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("followed " + in.getLong(6));
                     }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "logout":
                     buff = ByteBuffer.allocate(6 + 16);
@@ -319,6 +409,7 @@ public class DsyncHeadlessClient {
                     syncpadlib.putUUID(buff, cookie);
                     in = syncpadlib.sendPost(buff);
                     buff.clear();
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "grant":
                     buff = ByteBuffer.allocate(6 + 16 + 16 + 9 * ((cmd.split(" ").length - 2)) / 2);
@@ -346,16 +437,13 @@ public class DsyncHeadlessClient {
                     }
                     in = syncpadlib.sendPost(buff);
                     buff.clear();
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
                 case "exit":
                     System.exit(0);
                 default:
                     System.out.println("bad command");
                     e = true;
-            }
-            if (!e) {
-                //System.out.println("Res:");
-                //printhex(in.array(), in.array().length);
             }
 
         }
@@ -380,37 +468,4 @@ public class DsyncHeadlessClient {
             this.owns = owns;
         }
     }
-
-    public static void printhex(byte[] b, int count) {
-        int rem = count;
-        String outs;
-        int ran = 0;
-        //System.out.println(count + "B dump");
-        for (int i = 0; i < ((count / 10) + 1); i++) {
-            for (int j = 0; (j < rem && j < 10); j++) {
-                outs = String.format("%02X ", b[j + count - rem] & 0xff);
-
-                System.out.print(outs);
-                ran++;
-            }
-            for (int j = 0; j < 29 - (ran * 2 + ran - 1); j++) {
-                System.out.print(" ");
-            }
-            ran = 0;
-            for (int j = 0; (j < rem && j < 10); j++) {
-                System.out.print((char) (b[j + count - rem] >= 30 && b[j + count - rem] <= 127 ? b[j + count - rem] : '.') + " ");
-            }
-            rem -= 10;
-
-            System.out.println("");
-
-        }
-
-    }
-
-
-
-
-    
- 
 }
