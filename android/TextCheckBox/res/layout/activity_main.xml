@@ -1,0 +1,88 @@
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main1"
+        android:background="#fff" >
+       		  <LinearLayout
+       		      android:id="@+id/l1"
+      			  android:layout_width="fill_parent"
+     			  android:layout_height="fill_parent"
+    			  android:background="#fff"
+    			  android:paddingBottom="40dp">
+         			  <ScrollView
+                		android:id="@+id/scrollView1"
+               		    android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" 
+                        android:background="#fff">
+                                <LinearLayout
+                                  android:id="@+id/rl"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent" 
+                                  android:background="#fff"
+                                  android:orientation="vertical"
+                                  android:stackFromBottom="true"
+                                  android:transcriptMode="alwaysScroll">
+
+           
+								</LinearLayout>
+               
+              
+            		  </ScrollView>
+			  </LinearLayout>
+          	  <LinearLayout
+                android:id="@+id/r"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+    
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:background="#95a5a6">
+
+           
+
+                         <CheckBox
+                           android:id="@+id/checkBox1"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+             
+            
+                           android:text=""
+                           android:onClick="checked" />
+
+                         <ToggleButton
+                           android:id="@+id/boldbutton"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textOff="b"
+                           android:textOn="B"
+                           android:textStyle="bold" 
+                           android:background="@android:color/transparent"/>
+
+                         <ToggleButton
+                           android:id="@+id/italicbutton"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textOff="i"
+			               android:textOn="I" 
+                           android:textStyle="italic"
+                           android:background="@android:color/transparent"/>
+
+                         <ToggleButton
+                           android:id="@+id/underbutton"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textOff="u"
+			               android:textOn="U" 
+			               android:background="@android:color/transparent" />
+
+              </LinearLayout>    
+</RelativeLayout>
+
+
+
+
+
+
+
+

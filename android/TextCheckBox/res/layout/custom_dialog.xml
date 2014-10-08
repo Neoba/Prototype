@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" >
+
+        <Button
+            android:id="@+id/cb1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="45dp"
+            android:text=" "
+            android:background="#2ecc71" />
+
+        <Button
+            android:id="@+id/cb2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text=" "
+            android:background="#3498db" />
+
+        <Button
+            android:id="@+id/cb3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="45dp"
+            android:text=" "
+             android:background="#9b59b6" />
+          <Button
+        android:id="@+id/cb4"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cb1"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="45dp"
+        android:background="#f1c40f"
+        android:text=" " />
+
+          <Button
+              android:id="@+id/cb5"
+              style="?android:attr/buttonStyleSmall"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignBaseline="@+id/cb4"
+              android:layout_alignBottom="@+id/cb4"
+              android:layout_centerHorizontal="true"
+              android:background="#e67e22"
+              android:text=" " />
+
+          <Button
+              android:id="@+id/cb6"
+              style="?android:attr/buttonStyleSmall"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignBaseline="@+id/cb5"
+              android:layout_alignBottom="@+id/cb5"
+              android:layout_alignLeft="@+id/cb3"
+              android:background="#e74c3c"
+              android:text=" " />
+          
+           <Button
+        android:id="@+id/cb7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cb4"
+        android:layout_marginLeft="45dp"
+         android:layout_marginTop="45dp"
+         android:background="#95a5a6"
+        android:text=" " />
+
+           <Button
+               android:id="@+id/cb8"
+               style="?android:attr/buttonStyleSmall"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBaseline="@+id/cb7"
+               android:layout_alignBottom="@+id/cb7"
+               android:layout_alignLeft="@+id/cb5"
+               android:background="#7f8c8d"
+               android:text=" " />
+
+           <Button
+               android:id="@+id/cb9"
+               style="?android:attr/buttonStyleSmall"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBaseline="@+id/cb8"
+               android:layout_alignBottom="@+id/cb8"
+                android:background="#f39c12"
+               android:layout_alignLeft="@+id/cb6"
+               android:text=" " />
+
+    </RelativeLayout>
+
+    
+    
+</RelativeLayout>
