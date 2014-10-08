@@ -5457,3 +5457,412 @@ org.codehaus.jettison.json.JSONException: JSONObject["username"] not found.
 2014-09-22 20:35:49 DEBUG ConsoleUtils:26 - size : 6 bytes
 2014-09-22 20:35:49 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
 2014-09-22 20:35:49 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-09-23 22:13:52 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-23 22:13:54 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-23 22:13:54 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-23 22:13:54 DEBUG PlatformDependent:463 - UID: 0
+2014-09-23 22:13:54 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-23 22:13:54 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-23 22:13:54 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-23 22:13:54 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-23 22:13:54 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-23 22:13:54 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-23 22:13:54 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-23 22:13:54 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-23 22:13:54 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-23 22:13:54 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-23 22:13:54 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-23 22:13:54 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-23 22:13:54 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-23 22:13:54 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-23 22:13:54 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-23 22:13:54 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-23 22:13:54 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x9c6abd1db1ab2a99
+2014-09-23 22:13:54 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-23 22:13:54 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-23 22:13:54 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-23 22:13:54 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-23 22:13:54 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-23 22:13:54 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-23 22:14:01 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-23 22:14:01 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53083:1
+2014-09-23 22:14:01 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:14:01 DEBUG ConsoleUtils:26 - size : 30 bytes
+2014-09-23 22:14:01 DEBUG ConsoleUtils:43 - 02 05 00 00 00 04 61 74 75 6C . . . . . . a t u l 
+2014-09-23 22:14:01 DEBUG ConsoleUtils:43 - C3 5A 08 BA 28 EF 69 C2 1E F0 . Z . . ( . i .  . 
+2014-09-23 22:14:01 DEBUG ConsoleUtils:43 - 09 96 37 DE 28 DF C9 FD 85 E3 . . 7 . ( . . . . . 
+2014-09-23 22:14:01 DEBUG ConsoleUtils:43 -                               
+2014-09-23 22:14:01 INFO  MessageInterpreter:79 - creating user atul
+2014-09-23 22:14:06 INFO  UserCreateMessage:63 - created user {"username":"atul","password":"C35A08BA28EF69C21EF0099637DE28DFC9FD85E3","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-23 22:14:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:14:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-23 22:14:06 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-23 22:14:06 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-09-23 22:14:26 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53086:2
+2014-09-23 22:14:26 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:14:26 DEBUG ConsoleUtils:26 - size : 42 bytes
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 02 06 00 00 00 04 61 74 75 6C . . . . . . a t u l 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - C3 5A 08 BA 28 EF 69 C2 1E F0 . Z . . ( . i .  . 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 09 96 37 DE 28 DF C9 FD 85 E3 . . 7 . ( . . . . . 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 0C 00 00 00 07 43 4F 4E 53 4F . . . . . C O N S O 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 4C 45                         L E 
+2014-09-23 22:14:26 INFO  MessageInterpreter:125 - user agent detected: Console
+2014-09-23 22:14:26 DEBUG MessageInterpreter:131 - User Agent: 12
+2014-09-23 22:14:26 INFO  MessageInterpreter:133 - logging in new user
+2014-09-23 22:14:26 INFO  UserLoginMessage:72 - atul :user found
+2014-09-23 22:14:26 INFO  UserLoginMessage:73 - atul :session- 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59
+2014-09-23 22:14:26 INFO  MessageInterpreter:136 - new user session: 1152921504606846983 atul
+2014-09-23 22:14:26 INFO  MessageInterpreter:138 - user_agents: {39fea6e8-cf8b-40a7-b7f6-9a16fe224e59=12}
+2014-09-23 22:14:26 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:14:26 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF B7 F6 9A 16 . . . . . . . . . . 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - FE 22 4E 59 39 FE A6 E8 CF 8B . " N Y 9 . . . . . 
+2014-09-23 22:14:26 DEBUG ConsoleUtils:43 - 40 A7                         @ . 
+2014-09-23 22:14:26 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-09-23 22:14:34 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53087:3
+2014-09-23 22:14:34 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:14:34 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF B7 F6 9A 16 . . . . . . . . . . 
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - FE 22 4E 59 39 FE A6 E8 CF 8B . " N Y 9 . . . . . 
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 40 A7 A1 38 42 19 81 7A 15 C2 @ . . 8 B . . z . . 
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 04 CA 99 5C F1 00 48 CD       . . . \ . . H . 
+2014-09-23 22:14:34 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846983 with session 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59
+2014-09-23 22:14:34 INFO  MessageInterpreter:149 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59 :creating new document- 
+2014-09-23 22:14:34 INFO  DocumentCreateMessage:63 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59: Created new Document [04ca995c-f100-48cd-a138-4219817a15c2] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846983","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-09-23 22:14:34 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:14:34 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A1 38 42 19 . . . . . . . 8 B . 
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 81 7A 15 C2 04 CA 99 5C F1 00 . z . . . . . \ . . 
+2014-09-23 22:14:34 DEBUG ConsoleUtils:43 - 48 CD                         H . 
+2014-09-23 22:14:34 INFO  DsyncserverHandler:50 - Message Responded :3
+2014-09-23 22:14:43 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53089:4
+2014-09-23 22:14:43 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:14:43 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-23 22:14:43 DEBUG ConsoleUtils:43 - 02 0B 00 00 DE 1E B7 F6 9A 16 . . . . .  . . . . 
+2014-09-23 22:14:43 DEBUG ConsoleUtils:43 - FE 22 4E 59 39 FE A6 E8 CF 8B . " N Y 9 . . . . . 
+2014-09-23 22:14:43 DEBUG ConsoleUtils:43 - 40 A7 A1 38 42 19 81 7A 15 C2 @ . . 8 B . . z . . 
+2014-09-23 22:14:43 DEBUG ConsoleUtils:43 - 04 CA 99 5C F1 00 48 CD       . . . \ . . H . 
+2014-09-23 22:14:43 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846983 with session 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59
+2014-09-23 22:14:43 INFO  MessageInterpreter:153 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59 :deleting document- 04ca995c-f100-48cd-a138-4219817a15c2
+2014-09-23 22:14:43 INFO  DocumentEditMessage:57 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59 :deleted by the creator itself
+2014-09-23 22:14:43 DEBUG DocumentEditMessage:113 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59 GCM ids: []
+2014-09-23 22:14:43 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:14:43 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-23 22:14:43 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-09-23 22:14:43 INFO  DsyncserverHandler:50 - Message Responded :4
+2014-09-23 22:14:59 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53091:5
+2014-09-23 22:14:59 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:14:59 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF B7 F6 9A 16 . . . . . . . . . . 
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - FE 22 4E 59 39 FE A6 E8 CF 8B . " N Y 9 . . . . . 
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 40 A7 9B 4F 73 DB 41 2B 4D B8 @ . . O s . A + M . 
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 97 BF 73 FD 40 89 4E 7F       . . s . @ . N  
+2014-09-23 22:14:59 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846983 with session 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59
+2014-09-23 22:14:59 INFO  MessageInterpreter:149 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59 :creating new document- 
+2014-09-23 22:14:59 INFO  DocumentCreateMessage:63 - 39fea6e8-cf8b-40a7-b7f6-9a16fe224e59: Created new Document [97bf73fd-4089-4e7f-9b4f-73db412b4db8] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846983","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-09-23 22:14:59 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:14:59 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 9B 4F 73 DB . . . . . . . O s . 
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 41 2B 4D B8 97 BF 73 FD 40 89 A + M . . . s . @ . 
+2014-09-23 22:14:59 DEBUG ConsoleUtils:43 - 4E 7F                         N  
+2014-09-23 22:14:59 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-09-23 22:45:14 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-23 22:45:15 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-23 22:45:15 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-23 22:45:15 DEBUG PlatformDependent:463 - UID: 0
+2014-09-23 22:45:15 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-23 22:45:15 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-23 22:45:15 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-23 22:45:15 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-23 22:45:15 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-23 22:45:15 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-23 22:45:15 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-23 22:45:15 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-23 22:45:15 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-23 22:45:15 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-23 22:45:15 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-23 22:45:15 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-23 22:45:15 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-23 22:45:15 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-23 22:45:15 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-23 22:45:15 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-23 22:45:15 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x564827fd192a3f03
+2014-09-23 22:45:15 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-23 22:45:15 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-23 22:45:15 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-23 22:45:15 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-23 22:45:15 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-23 22:45:15 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-23 22:45:25 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-23 22:45:25 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53188:1
+2014-09-23 22:45:25 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:45:25 DEBUG ConsoleUtils:26 - size : 42 bytes
+2014-09-23 22:45:25 DEBUG ConsoleUtils:43 - 02 06 00 00 00 04 61 74 75 6C . . . . . . a t u l 
+2014-09-23 22:45:25 DEBUG ConsoleUtils:43 - C3 5A 08 BA 28 EF 69 C2 1E F0 . Z . . ( . i .  . 
+2014-09-23 22:45:25 DEBUG ConsoleUtils:43 - 09 96 37 DE 28 DF C9 FD 85 E3 . . 7 . ( . . . . . 
+2014-09-23 22:45:25 DEBUG ConsoleUtils:43 - 0C 00 00 00 07 43 4F 4E 53 4F . . . . . C O N S O 
+2014-09-23 22:45:25 DEBUG ConsoleUtils:43 - 4C 45                         L E 
+2014-09-23 22:45:25 INFO  MessageInterpreter:125 - user agent detected: Console
+2014-09-23 22:45:25 DEBUG MessageInterpreter:131 - User Agent: 12
+2014-09-23 22:45:25 INFO  MessageInterpreter:133 - logging in new user
+2014-09-23 22:45:26 INFO  UserLoginMessage:72 - atul :user found
+2014-09-23 22:45:26 INFO  UserLoginMessage:73 - atul :session- 8c68b5af-b973-4de5-8b10-6e3fc8eda91e
+2014-09-23 22:45:26 INFO  MessageInterpreter:136 - new user session: 1152921504606846983 atul
+2014-09-23 22:45:26 INFO  MessageInterpreter:138 - user_agents: {8c68b5af-b973-4de5-8b10-6e3fc8eda91e=12}
+2014-09-23 22:45:26 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:45:26 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:45:26 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 8B 10 6E 3F . . . . . . . . n ? 
+2014-09-23 22:45:26 DEBUG ConsoleUtils:43 - C8 ED A9 1E 8C 68 B5 AF B9 73 . . .  . h . . . s 
+2014-09-23 22:45:26 DEBUG ConsoleUtils:43 - 4D E5                         M . 
+2014-09-23 22:45:26 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-09-23 22:45:30 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53188:2
+2014-09-23 22:45:30 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:45:30 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 8B 10 6E 3F . . . . . . . . n ? 
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - C8 ED A9 1E 8C 68 B5 AF B9 73 . . .  . h . . . s 
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - 4D E5 9F D7 3E A3 F4 19 73 F4 M . . . > . . . s . 
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - 34 09 3D E6 97 DE 4E 18       4 . = . . . N . 
+2014-09-23 22:45:30 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846983 with session 8c68b5af-b973-4de5-8b10-6e3fc8eda91e
+2014-09-23 22:45:30 INFO  MessageInterpreter:149 - 8c68b5af-b973-4de5-8b10-6e3fc8eda91e :creating new document- 
+2014-09-23 22:45:30 INFO  DocumentCreateMessage:63 - 8c68b5af-b973-4de5-8b10-6e3fc8eda91e: Created new Document [34093de6-97de-4e18-9fd7-3ea3f41973f4] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846983","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-09-23 22:45:30 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:45:30 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 9F D7 3E A3 . . . . . . . . > . 
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - F4 19 73 F4 34 09 3D E6 97 DE . . s . 4 . = . . . 
+2014-09-23 22:45:30 DEBUG ConsoleUtils:43 - 4E 18                         N . 
+2014-09-23 22:45:30 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-09-23 22:46:04 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-23 22:46:06 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-23 22:46:06 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-23 22:46:06 DEBUG PlatformDependent:463 - UID: 0
+2014-09-23 22:46:06 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-23 22:46:06 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-23 22:46:06 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-23 22:46:06 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-23 22:46:06 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-23 22:46:06 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-23 22:46:06 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-23 22:46:06 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-23 22:46:06 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-23 22:46:06 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-23 22:46:06 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-23 22:46:06 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-23 22:46:06 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-23 22:46:06 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-23 22:46:06 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-23 22:46:06 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-23 22:46:06 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x89d315a1007f01c3
+2014-09-23 22:46:06 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-23 22:46:06 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-23 22:46:06 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-23 22:46:06 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-23 22:46:06 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-23 22:46:06 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-23 22:46:25 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-23 22:46:25 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53198:1
+2014-09-23 22:46:25 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:46:25 DEBUG ConsoleUtils:26 - size : 42 bytes
+2014-09-23 22:46:25 DEBUG ConsoleUtils:43 - 02 06 00 00 00 04 61 74 75 6C . . . . . . a t u l 
+2014-09-23 22:46:25 DEBUG ConsoleUtils:43 - C3 5A 08 BA 28 EF 69 C2 1E F0 . Z . . ( . i .  . 
+2014-09-23 22:46:25 DEBUG ConsoleUtils:43 - 09 96 37 DE 28 DF C9 FD 85 E3 . . 7 . ( . . . . . 
+2014-09-23 22:46:25 DEBUG ConsoleUtils:43 - 0C 00 00 00 07 43 4F 4E 53 4F . . . . . C O N S O 
+2014-09-23 22:46:25 DEBUG ConsoleUtils:43 - 4C 45                         L E 
+2014-09-23 22:46:25 INFO  MessageInterpreter:125 - user agent detected: Console
+2014-09-23 22:46:25 DEBUG MessageInterpreter:131 - User Agent: 12
+2014-09-23 22:46:25 INFO  MessageInterpreter:133 - logging in new user
+2014-09-23 22:46:26 INFO  UserLoginMessage:72 - atul :user found
+2014-09-23 22:46:26 INFO  UserLoginMessage:73 - atul :session- 0ddf43c5-fb87-41ea-bcc6-a8942fc00b3c
+2014-09-23 22:46:26 INFO  MessageInterpreter:136 - new user session: 1152921504606846983 atul
+2014-09-23 22:46:26 INFO  MessageInterpreter:138 - user_agents: {0ddf43c5-fb87-41ea-bcc6-a8942fc00b3c=12}
+2014-09-23 22:46:26 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:46:26 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:46:26 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF BC C6 A8 94 . . . . . . . . . . 
+2014-09-23 22:46:26 DEBUG ConsoleUtils:43 - 2F C0 0B 3C 0D DF 43 C5 FB 87 / . . < . . C . . . 
+2014-09-23 22:46:26 DEBUG ConsoleUtils:43 - 41 EA                         A . 
+2014-09-23 22:46:26 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-09-23 22:46:36 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:53201:2
+2014-09-23 22:46:36 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-23 22:46:36 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF BC C6 A8 94 . . . . . . . . . . 
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - 2F C0 0B 3C 0D DF 43 C5 FB 87 / . . < . . C . . . 
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - 41 EA AD 15 CE 52 E6 20 06 72 A . . . . R .   . r 
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - AE 7A B5 60 50 0E 49 D0       . z . ` P . I . 
+2014-09-23 22:46:36 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846983 with session 0ddf43c5-fb87-41ea-bcc6-a8942fc00b3c
+2014-09-23 22:46:36 INFO  MessageInterpreter:149 - 0ddf43c5-fb87-41ea-bcc6-a8942fc00b3c :creating new document- 
+2014-09-23 22:46:36 INFO  DocumentCreateMessage:63 - 0ddf43c5-fb87-41ea-bcc6-a8942fc00b3c: Created new Document [ae7ab560-500e-49d0-ad15-ce52e6200672] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846983","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-09-23 22:46:36 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-23 22:46:36 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF AD 15 CE 52 . . . . . . . . . R 
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - E6 20 06 72 AE 7A B5 60 50 0E .   . r . z . ` P . 
+2014-09-23 22:46:36 DEBUG ConsoleUtils:43 - 49 D0                         I . 
+2014-09-23 22:46:36 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-09-27 14:52:08 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-27 14:52:09 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-27 14:52:09 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-27 14:52:09 DEBUG PlatformDependent:463 - UID: 0
+2014-09-27 14:52:09 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-27 14:52:09 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-27 14:52:09 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-27 14:52:09 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-27 14:52:09 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-27 14:52:09 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-27 14:52:09 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-27 14:52:09 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-27 14:52:09 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-27 14:52:09 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-27 14:52:09 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-27 14:52:09 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-27 14:52:09 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-27 14:52:09 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-27 14:52:09 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-27 14:52:09 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-27 14:52:09 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xf05196d978a4f814
+2014-09-27 14:52:09 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-27 14:52:09 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-27 14:52:09 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-27 14:52:09 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-27 14:52:09 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-27 14:52:09 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-27 14:52:21 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-27 14:52:21 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52957:1
+2014-09-27 14:52:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:52:21 DEBUG ConsoleUtils:26 - size : 30 bytes
+2014-09-27 14:52:21 DEBUG ConsoleUtils:43 - 02 05 00 00 00 04 6D 61 67 67 . . . . . . m a g g 
+2014-09-27 14:52:21 DEBUG ConsoleUtils:43 - 6B 0D 31 C0 D5 63 22 30 24 DA k . 1 . . c " 0 $ . 
+2014-09-27 14:52:21 DEBUG ConsoleUtils:43 - 45 69 15 84 64 3A C7 8C 96 E8 E i . . d : . . . . 
+2014-09-27 14:52:21 DEBUG ConsoleUtils:43 -                               
+2014-09-27 14:52:21 INFO  MessageInterpreter:79 - creating user magg
+2014-09-27 14:52:22 INFO  UserCreateMessage:63 - created user {"username":"magg","password":"6B0D31C0D563223024DA45691584643AC78C96E8","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-27 14:52:22 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:52:22 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:52:22 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-27 14:52:22 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-09-27 14:52:48 INFO  Dsyncserver:39 - kickstarting server..
+2014-09-27 14:52:48 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-09-27 14:52:48 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-09-27 14:52:48 DEBUG PlatformDependent:463 - UID: 0
+2014-09-27 14:52:48 DEBUG PlatformDependent:540 - Java version: 7
+2014-09-27 14:52:48 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-09-27 14:52:48 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-09-27 14:52:48 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-09-27 14:52:48 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-09-27 14:52:48 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-09-27 14:52:48 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-09-27 14:52:48 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-09-27 14:52:48 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-09-27 14:52:48 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-09-27 14:52:48 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-09-27 14:52:48 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-09-27 14:52:48 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-09-27 14:52:48 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-09-27 14:52:48 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-09-27 14:52:48 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-09-27 14:52:48 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x1250f7549e6b5f16
+2014-09-27 14:52:48 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-09-27 14:52:48 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-09-27 14:52:48 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-09-27 14:52:48 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-09-27 14:52:48 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-09-27 14:52:49 INFO  Dsyncserver:67 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-09-27 14:53:00 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-09-27 14:53:00 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52963:1
+2014-09-27 14:53:00 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:00 DEBUG ConsoleUtils:26 - size : 30 bytes
+2014-09-27 14:53:00 DEBUG ConsoleUtils:43 - 02 05 00 00 00 04 6D 61 67 67 . . . . . . m a g g 
+2014-09-27 14:53:00 DEBUG ConsoleUtils:43 - 6B 0D 31 C0 D5 63 22 30 24 DA k . 1 . . c " 0 $ . 
+2014-09-27 14:53:00 DEBUG ConsoleUtils:43 - 45 69 15 84 64 3A C7 8C 96 E8 E i . . d : . . . . 
+2014-09-27 14:53:00 DEBUG ConsoleUtils:43 -                               
+2014-09-27 14:53:00 INFO  MessageInterpreter:79 - creating user magg
+2014-09-27 14:53:01 ERROR UserCreateMessage:41 - username taken
+2014-09-27 14:53:01 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:01 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:53:01 DEBUG ConsoleUtils:43 - 02 05 00 00 80 00             . . . . . . 
+2014-09-27 14:53:01 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-09-27 14:53:10 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52965:2
+2014-09-27 14:53:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:10 DEBUG ConsoleUtils:26 - size : 29 bytes
+2014-09-27 14:53:10 DEBUG ConsoleUtils:43 - 02 05 00 00 00 03 61 61 62 86 . . . . . . a a b . 
+2014-09-27 14:53:10 DEBUG ConsoleUtils:43 - F7 E4 37 FA A5 A7 FC E1 5D 1D . . 7 . . . . . ] . 
+2014-09-27 14:53:10 DEBUG ConsoleUtils:43 - DC B9 EA EA EA 37 76 67 B8    . . . . . 7 v g . 
+2014-09-27 14:53:10 INFO  MessageInterpreter:79 - creating user aab
+2014-09-27 14:53:10 INFO  UserCreateMessage:63 - created user {"username":"aab","password":"86F7E437FAA5A7FCE15D1DDCB9EAEAEA377667B8","type":"user","followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-09-27 14:53:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:53:10 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF             . . . . . . 
+2014-09-27 14:53:10 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-09-27 14:53:17 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52966:3
+2014-09-27 14:53:17 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:17 DEBUG ConsoleUtils:26 - size : 41 bytes
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - 02 06 00 00 00 03 61 61 62 86 . . . . . . a a b . 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - F7 E4 37 FA A5 A7 FC E1 5D 1D . . 7 . . . . . ] . 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - DC B9 EA EA EA 37 76 67 B8 0C . . . . . 7 v g . . 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - 45                            E 
+2014-09-27 14:53:17 INFO  MessageInterpreter:125 - user agent detected: Console
+2014-09-27 14:53:17 DEBUG MessageInterpreter:131 - User Agent: 12
+2014-09-27 14:53:17 INFO  MessageInterpreter:133 - logging in new user
+2014-09-27 14:53:17 INFO  UserLoginMessage:72 - aab :user found
+2014-09-27 14:53:17 INFO  UserLoginMessage:73 - aab :session- bf849976-437a-4e82-abf6-284cab1fa825
+2014-09-27 14:53:17 INFO  MessageInterpreter:136 - new user session: 1152921504606846985 aab
+2014-09-27 14:53:17 INFO  MessageInterpreter:138 - user_agents: {bf849976-437a-4e82-abf6-284cab1fa825=12}
+2014-09-27 14:53:17 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:17 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF AB F6 28 4C . . . . . . . . ( L 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - AB 1F A8 25 BF 84 99 76 43 7A .  . % . . . v C z 
+2014-09-27 14:53:17 DEBUG ConsoleUtils:43 - 4E 82                         N . 
+2014-09-27 14:53:17 INFO  DsyncserverHandler:50 - Message Responded :3
+2014-09-27 14:53:27 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52967:4
+2014-09-27 14:53:27 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:27 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF AB F6 28 4C . . . . . . . . ( L 
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - AB 1F A8 25 BF 84 99 76 43 7A .  . % . . . v C z 
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - 4E 82 A1 0A 57 2F D3 2E E3 D9 N . . . W / . . . . 
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - 58 6C FD 9F 3A 33 43 EC       X l . . : 3 C . 
+2014-09-27 14:53:27 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846985 with session bf849976-437a-4e82-abf6-284cab1fa825
+2014-09-27 14:53:27 INFO  MessageInterpreter:149 - bf849976-437a-4e82-abf6-284cab1fa825 :creating new document- 
+2014-09-27 14:53:27 INFO  DocumentCreateMessage:63 - bf849976-437a-4e82-abf6-284cab1fa825: Created new Document [586cfd9f-3a33-43ec-a10a-572fd32ee3d9] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846985","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-09-27 14:53:27 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:27 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A1 0A 57 2F . . . . . . . . W / 
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - D3 2E E3 D9 58 6C FD 9F 3A 33 . . . . X l . . : 3 
+2014-09-27 14:53:27 DEBUG ConsoleUtils:43 - 43 EC                         C . 
+2014-09-27 14:53:27 INFO  DsyncserverHandler:50 - Message Responded :4
+2014-09-27 14:53:36 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52968:5
+2014-09-27 14:53:36 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:36 DEBUG ConsoleUtils:26 - size : 65 bytes
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 02 03 00 00 00 17 AB F6 28 4C . . . . . . . . ( L 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - AB 1F A8 25 BF 84 99 76 43 7A .  . % . . . v C z 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 4E 82 A1 0A 57 2F D3 2E E3 D9 N . . . W / . . . . 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 58 6C FD 9F 3A 33 43 EC D6 C3 X l . . : 3 C . . . 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - C4 00 00 01 00 00 0E 08 00 08 . . . . . . . . . . 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 01 00 74 68 69 73 69 73 6F 6B . . t h i s i s o k 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 09 00 00 00 00                . . . . . 
+2014-09-27 14:53:36 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846985 with session bf849976-437a-4e82-abf6-284cab1fa825
+2014-09-27 14:53:36 INFO  MessageInterpreter:160 - bf849976-437a-4e82-abf6-284cab1fa825 :editing document - 586cfd9f-3a33-43ec-a10a-572fd32ee3d9
+2014-09-27 14:53:36 INFO  DocumentEditMessage:51 - bf849976-437a-4e82-abf6-284cab1fa825 :edited by the creator itself
+2014-09-27 14:53:36 DEBUG DocumentEditMessage:53 - bf849976-437a-4e82-abf6-284cab1fa825 editors of the document- []
+2014-09-27 14:53:36 DEBUG DocumentEditMessage:54 - bf849976-437a-4e82-abf6-284cab1fa825 readers of the document- []
+2014-09-27 14:53:36 INFO  DocumentEditMessage:71 - bf849976-437a-4e82-abf6-284cab1fa825 :sync check passed
+2014-09-27 14:53:36 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-09-27 14:53:36 DEBUG ConsoleUtils:26 - size : 23 bytes
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 00 00 0E 08 . . . . . . . . . . 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 00 08 01 00 74 68 69 73 69 73 . . . . t h i s i s 
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 6F 6B 09                      o k . 
+2014-09-27 14:53:36 INFO  DocumentEditMessage:91 - bf849976-437a-4e82-abf6-284cab1fa825 :dictionary updated
+2014-09-27 14:53:36 INFO  DocumentEditMessage:92 - bf849976-437a-4e82-abf6-284cab1fa825 :new dictionary- thisisok
+2014-09-27 14:53:36 INFO  DocumentEditMessage:100 - bf849976-437a-4e82-abf6-284cab1fa825 's copy: thisisok
+2014-09-27 14:53:36 INFO  DocumentEditMessage:101 - bf849976-437a-4e82-abf6-284cab1fa825 version: 0
+2014-09-27 14:53:36 DEBUG DocumentEditMessage:120 - bf849976-437a-4e82-abf6-284cab1fa825 GCM ids: []
+2014-09-27 14:53:36 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:36 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:53:36 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-09-27 14:53:36 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-09-27 14:53:54 INFO  DsyncserverHandler:44 - Message Received from ip /127.0.0.1:52969:6
+2014-09-27 14:53:54 DEBUG ConsoleUtils:25 - buffer : request
+2014-09-27 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-09-27 14:53:54 INFO  MessageInterpreter:73 - Ping received
+2014-09-27 14:53:54 DEBUG ConsoleUtils:25 - buffer : response
+2014-09-27 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-09-27 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-09-27 14:53:54 INFO  DsyncserverHandler:50 - Message Responded :6

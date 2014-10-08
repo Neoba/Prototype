@@ -29,10 +29,13 @@ public final class R {
         public static final int checkbox3=0x7f020000;
         public static final int checkbox_checked=0x7f020001;
         public static final int checkbox_unchecked=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int palette3=0x7f020004;
-        public static final int pen29=0x7f020005;
-        public static final int send4=0x7f020006;
+        public static final int ic_action_share=0x7f020003;
+        public static final int ic_edit=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_share=0x7f020006;
+        public static final int palette3=0x7f020007;
+        public static final int pen29=0x7f020008;
+        public static final int send4=0x7f020009;
     }
     public static final class id {
         public static final int action_cart=0x7f090016;

@@ -56,7 +56,7 @@ public class HomeActivity extends Activity {
 	        super.onCreate(savedInstanceState);
 	        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 	        ActionBar actionBar = getActionBar();
-	        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#330000ff")));
+	        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#34495e")));
 	        checker();
 	    }
 	 @Override
@@ -120,8 +120,8 @@ public class HomeActivity extends Activity {
 					TextView sharedwithname=new TextView(this);
 					ImageView editicon=new ImageView(this);
 					ImageView sendicon=new ImageView(this);
-					editicon.setImageResource(R.drawable.pen29);
-					sendicon.setImageResource(R.drawable.send4);
+					editicon.setImageResource(R.drawable.ic_share);
+					sendicon.setImageResource(R.drawable.ic_edit);
 					RelativeLayout footer=new RelativeLayout(this);
 					RelativeLayout shareddet=new RelativeLayout(this);
 					RelativeLayout footericon=new RelativeLayout(this);
