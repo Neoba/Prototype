@@ -78,6 +78,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(1),cursor.getString(2));
         System.out.println(note.getColor()+"on getting note");
         // return note
+        db.close();
         return note;
     }
      
@@ -102,7 +103,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 noteList.add(note);
             } while (cursor.moveToNext());
         }
- 
+        db.close();
         // return note list
         return noteList;
     }
@@ -116,8 +117,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_COLOR, note.getColor());
         
         // updating row
-        return db.update(TABLE_NOTES, values, KEY_ID + " = ?",
+       	int ret=db.update(TABLE_NOTES, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(note.getID()) });
+        db.close();
+        return ret;
+        
     }
  
     // Deleting single note
@@ -137,6 +141,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         
         
         // return count
-        return cursor.getCount();
+        int ret=cursor.getCount();
+        db.close();
+        return ret;
     }
 }

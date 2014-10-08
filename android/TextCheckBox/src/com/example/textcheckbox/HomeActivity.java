@@ -54,7 +54,7 @@ public class HomeActivity extends Activity {
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+	        //getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 	        ActionBar actionBar = getActionBar();
 	        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#34495e")));
 	        checker();
@@ -99,16 +99,16 @@ public class HomeActivity extends Activity {
 				 llist=new ArrayList<RelativeLayout>();
 				 LinearLayout ll=(LinearLayout)findViewById(R.id.linear1);
 				 TypedValue tv = new TypedValue();
-				 int actionBarHeight;
+//				 int actionBarHeight;
 				 
-				 if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
-				 {
-				     actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
-				 }
-				 else
-				 {
-					 actionBarHeight=10; 
-				 }
+//				 if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+//				 {
+//				     actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+//				 }
+//				 else
+//				 {
+//					 actionBarHeight=10; 
+//				 }
 				 for(int i=0;i<db.getNotesCount();i++)
 				 {
 					uuid.add(i,notes.get(i).getID());
@@ -161,8 +161,8 @@ public class HomeActivity extends Activity {
 					sharedwith.setTextSize(20);
 					sharedwithname.setText("@Atul"+" ");
 					sharedwithname.setTextSize(20);
-					t.setTextSize(100);
-				    t.setMaxTextSize(100);
+					t.setTextSize(200);
+				    t.setMaxTextSize(500);
 				   
 				    t.setMinTextSize(27);
 				    t.setAddEllipsis(true);
@@ -172,9 +172,9 @@ public class HomeActivity extends Activity {
 				    EditText dumm=new EditText(this);
 				    dumm.setText("\n");
 				    
-				    if(i==0)
-				    t.setText((Spanned)TextUtils.concat(dumm.getText(), s));
-				    else
+				    //if(i==0)
+				    //t.setText((Spanned)TextUtils.concat(dumm.getText(), s));
+				    //else
 				    	t.setText(s);
 				    
 				
@@ -227,11 +227,11 @@ public class HomeActivity extends Activity {
 					footer.setPadding(0,20,0, 20);
 					
 				  
-				    if(i==0)
-				    {
-				    	  LL.setPadding(10, actionBarHeight,10, 0);
-				    }
-				    else
+//				    if(i==0)
+//				    {
+//				    	  LL.setPadding(10, actionBarHeight,10, 0);
+//				    }
+//				    else
 				    	  LL.setPadding(10, 0, 10, 0);
 				  
 				   	LL.setBackgroundColor(Color.parseColor(notes.get(i).getColor()));
