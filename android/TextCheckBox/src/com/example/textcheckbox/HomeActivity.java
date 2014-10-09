@@ -55,8 +55,6 @@ public class HomeActivity extends Activity {
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        //getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
-	        ActionBar actionBar = getActionBar();
-	        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#34495e")));
 	        checker();
 	    }
 	 @Override

@@ -4,7 +4,7 @@
        
         android:title="import"
         android:orderInCategory="100"
-        android:icon="@drawable/palette3"
+        android:icon="@drawable/ic_action_color_wheel"
       
         android:showAsAction="always"/> 
 </menu>
