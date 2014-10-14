@@ -120,6 +120,7 @@ public class MainActivity extends Activity  {
 	    edittext.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
 		edittext.setBackgroundColor(Color.parseColor(colorcode));
 		LL.setBackgroundColor(Color.parseColor(colorcode));
+		c.setChecked(true);
 		if(checked==1)
 		{
 			ch.setChecked(true);
@@ -154,7 +155,7 @@ public class MainActivity extends Activity  {
     		{
 				System.out.println("this is:)");
 				SpannableString sf;
-				
+				if((s.length()!=0))
     			edittext.setText(s.subSequence(0, s.length()-2));
 
 				//count++;
@@ -332,7 +333,7 @@ public class MainActivity extends Activity  {
     		edittext1.setSingleLine(false);
     		
     		edittext1.setPadding(4,20,0,20);
-    		
+    		c.setChecked(false);
     		
     		edittext1.setBackgroundColor(Color.parseColor(colorcode));
     		
@@ -360,7 +361,7 @@ public class MainActivity extends Activity  {
         		{
     				System.out.println("this is:)");
     				SpannableString sf;
-    				
+    				if(s.length()!=0)
         			edittext1.setText(s.subSequence(0, s.length()-2));
 
     			
@@ -879,6 +880,7 @@ public class MainActivity extends Activity  {
 		   for(int i=1;i<=countbr;i++)
 		   {
 			   checkflag=0;
+			 //  prev_val++;
 			   if(spp[i].contains("[*]"))
 			   {
 				   spp[i]=spp[i].replace("[*]", "");
@@ -912,8 +914,8 @@ public class MainActivity extends Activity  {
 			   }
 			   
 		   }
-		  
-		   
+		  ///
+		   prev_val=countbr-1;
 		   
 		   
 		   
@@ -938,13 +940,14 @@ public class MainActivity extends Activity  {
 			  if(checkflag==1)
 			   {
 				   checkBoxAdder();
-				   prev_val++;
+				  // prev_val++;
 			   }
 			   else
 			   {
 				   editTextAdder();
-				   prev_val++;
+				   //prev_val++;
 			   }
+			  //prev_val=1;
 		  }
 		   
 	   }
