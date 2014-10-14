@@ -31,7 +31,7 @@ public class syncpadlib {
     private static final byte version = 0x02;
     private static String url = "http://localhost:2811";
     
-    public static boolean DEBUG=true;
+    public static boolean DEBUG=false;
     
     static boolean ping() {
         ByteBuffer buff = ByteBuffer.allocate(6);

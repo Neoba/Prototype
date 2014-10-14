@@ -7,38 +7,62 @@
     <uses-sdk
         android:minSdkVersion="13"
         android:targetSdkVersion="21" />
-       <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-         <meta-data
-android:name="com.google.android.gms.version"
-android:value="@integer/google_play_services_version" />
-    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-     <activity android:name="com.facebook.LoginActivity"/>
-    
+        android:theme="@style/Theme.Syncpad" >
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity android:name="com.facebook.LoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.neoba.syncpad.MainActivity"
             android:label="@string/app_name"
-              android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity
-            android:name=".FbLogin"
+        <activity
+            android:name="com.neoba.syncpad.FbLogin"
             android:label="@string/app_name"
-              android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.neoba.syncpad.Signup"
+            android:label="@string/title_activity_signup"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.neoba.syncpad.SuggestedUsers"
+            android:label="@string/title_activity_suggested_users"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.neoba.syncpad.FrontActivity"
+            android:label="@string/title_activity_front" >
         </activity>
     </application>
 

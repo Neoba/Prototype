@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="app_id">1472234206394698</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_suggested_users">Suggested Users</string>
+    <string name="title_activity_front">SyncPad</string>
 
 </resources>

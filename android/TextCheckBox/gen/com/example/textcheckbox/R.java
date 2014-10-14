@@ -93,8 +93,8 @@ public final class R {
         public static final int relativeLayout1=0x7f09000c;
         public static final int rl=0x7f090004;
         public static final int scrollView1=0x7f090000;
-        public static final int textView1=0x7f09000a;
-        public static final int textView2=0x7f09000b;
+        public static final int textView1=0x7f09000b;
+        public static final int textView2=0x7f09000a;
         public static final int underbutton=0x7f090009;
     }
     public static final class layout {

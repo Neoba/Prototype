@@ -3,12 +3,8 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry exported="true" kind="lib" path="/TransitNow/libs/activation.jar"/>
-	<classpathentry exported="true" kind="lib" path="/TransitNow/libs/additionnal.jar"/>
-	<classpathentry exported="true" kind="lib" path="/TransitNow/libs/mail.jar"/>
-	<classpathentry exported="true" kind="lib" path="/TransitNow/libs/pixlui.jar"/>
-	<classpathentry exported="true" kind="lib" path="/TransitNow/libs/zip4j_1.3.2.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/picasso-2.3.4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

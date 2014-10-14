@@ -7,29 +7,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.neoba.syncpad.MainActivity" 
-    android:background="@drawable/background169"
-   >
+    android:background="@drawable/background169">
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <TextView
+        android:id="@+id/tvPing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Ping"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/ivFollow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvPing"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp"
+        android:layout_marginBottom="28dp"
         android:clickable="true"
         android:onClick="clicked"
         android:src="@drawable/facebooklogin" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="105dp"
-        android:text="Syncpad"
-        android:textColor="#fff"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
