@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.UUID;
 
 import com.squareup.picasso.Picasso;
 
@@ -63,8 +64,11 @@ public class SuggestedUsers extends Activity {
 		@Override
 		protected Void doInBackground(String... arg0) {
 			try {
-				Thread.sleep(5000);
+				ByteMessenger.FollowUser(arg0[0],UUID.fromString(PreferenceManager.getDefaultSharedPreferences(SuggestedUsers.this).getString("cookie", "default")));
 			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			followed.put(arg0[0], true);

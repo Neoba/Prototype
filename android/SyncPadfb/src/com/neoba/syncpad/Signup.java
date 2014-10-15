@@ -156,7 +156,7 @@ public class Signup extends Activity {
 				Log.d("SIGNUP","Login Failed");
 			}else if (lsession.get(0).get("result").equals("success")) {
 				
-				PreferenceManager.getDefaultSharedPreferences(Signup.this).edit().putString("cookie",session.get(1).get("cookie")).commit();
+				PreferenceManager.getDefaultSharedPreferences(Signup.this).edit().putString("cookie",lsession.get(1).get("cookie")).commit();
 				String n="",f="",url="";
 				for(int i=1;i<session.size();i++){
 					n+=(session.get(i).get("username"));

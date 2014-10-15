@@ -79,6 +79,7 @@ public class FbLogin extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == 1) {
+			Log.d("FBLOGIN","Here ");
 			finish();
 		}
 		Session.getActiveSession().onActivityResult(this, requestCode,

@@ -115,7 +115,26 @@ public class ByteMessenger {
 		}
 
 	}
-
+	public static Long FollowUser(String username, UUID cookie)
+			throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+		buff.put((byte) 0x01);
+		buff.put((byte) 0x07);
+		buff.putInt(username.length());
+		putcookie(buff, cookie);
+		buff.put(username.getBytes());
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+		if (in.getInt(2) == 0xFFFF) {
+			Log.d("FOLLOW", "followed " + in.getLong(6));
+			return in.getLong(6);
+		}
+		return null;
+	}
+	private static void putcookie(ByteBuffer buff, UUID cookie) {
+		buff.putLong(cookie.getLeastSignificantBits());
+		buff.putLong(cookie.getMostSignificantBits());
+	}
 
 	public static int Ping() throws Exception {
 		ByteBuffer buff = ByteBuffer.allocate(6);

@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
 
 	public void clicked(View v)
 	{
+		finish();
 		startActivity(new Intent(MainActivity.this,FbLogin.class));
 	}
     @Override
