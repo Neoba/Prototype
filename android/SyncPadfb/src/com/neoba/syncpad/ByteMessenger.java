@@ -118,7 +118,7 @@ public class ByteMessenger {
 	public static Long FollowUser(String username, UUID cookie)
 			throws Exception {
 		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
-		buff.put((byte) 0x01);
+		buff.put((byte) 0x02);
 		buff.put((byte) 0x07);
 		buff.putInt(username.length());
 		putcookie(buff, cookie);

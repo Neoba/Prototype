@@ -45,7 +45,7 @@ public class FbLogin extends Activity {
 			@Override
 			public void call(Session session, SessionState state,
 					Exception exception) {
-
+				Log.d("FBLOGIN","Heresss ");
 				if (session.isOpened()) {
 					final Session s = session;
 					if (flag == 0)
@@ -79,7 +79,7 @@ public class FbLogin extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == 1) {
-			Log.d("FBLOGIN","Here ");
+			
 			finish();
 		}
 		Session.getActiveSession().onActivityResult(this, requestCode,
@@ -93,9 +93,9 @@ public class FbLogin extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialoggd = new ProgressDialog(FbLogin.this);
-			dialoggd.setMessage("Logging in..");
-			dialoggd.show();
+//			dialoggd = new ProgressDialog(FbLogin.this);
+//			dialoggd.setMessage("Logging in..");
+//			dialoggd.show();
 		}
 
 		@Override
@@ -126,8 +126,8 @@ public class FbLogin extends Activity {
 			// return session;
 			Log.d("FBLOGIN", session.toString());
 			Log.d("FBLOGIN", session.toString()+" is one of this");
-			dialoggd.dismiss();
-			dialoggd = null;
+//			dialoggd.dismiss();
+//			dialoggd = null;
 			if (session.get(0).get("result").equals("unregistered")) {
 				Intent i = new Intent(FbLogin.this, Signup.class);
 				finish();
@@ -135,7 +135,8 @@ public class FbLogin extends Activity {
 			}else if (session.get(0).get("result").equals("success")) {
 				Log.d("FBLOGIN","Success");
 				PreferenceManager.getDefaultSharedPreferences(FbLogin.this).edit().putString("cookie",session.get(1).get("cookie")).commit();
-				Intent i = new Intent(FbLogin.this, FrontActivity.class);
+				Intent i = new Intent(FbLogin.this, NotesList.class);
+				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				finish();
 				startActivity(i);
 			}

@@ -2,7 +2,7 @@
 
 
 
-package com.example.textcheckbox;
+package com.neoba.syncpad;
 
 public class Notes {
     

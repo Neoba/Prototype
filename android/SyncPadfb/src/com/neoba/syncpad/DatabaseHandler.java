@@ -1,4 +1,4 @@
-package com.example.textcheckbox;
+package com.neoba.syncpad;
 
 import java.util.ArrayList;
 import java.util.List;

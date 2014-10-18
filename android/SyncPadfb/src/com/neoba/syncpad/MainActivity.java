@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         TextView pingbutton = (TextView) findViewById(R.id.tvPing);
         if(!(PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getString("cookie", "default").equals("default"))){
-			Intent i = new Intent(MainActivity.this	, FrontActivity.class);
+			Intent i = new Intent(MainActivity.this	, NotesList.class);
 			finish();
 			startActivity(i);
         }

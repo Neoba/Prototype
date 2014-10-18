@@ -61,8 +61,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.neoba.syncpad.FrontActivity"
+            android:name="com.neoba.syncpad.NotesList"
             android:label="@string/title_activity_front" >
+        </activity>
+                <activity
+            android:name="com.neoba.syncpad.NotesEditor"
+            android:label="Edit" >
         </activity>
     </application>
 

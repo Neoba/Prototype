@@ -157,7 +157,8 @@ public class SuggestedUsers extends Activity {
 		if (id == R.id.action_settings) {
 			Log.d("SIGNUP","Login success");
 			
-			Intent i = new Intent(SuggestedUsers.this, FrontActivity.class);
+			Intent i = new Intent(SuggestedUsers.this, NotesList.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			finish();
 			startActivity(i);
 			return true;
