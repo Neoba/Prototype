@@ -201,16 +201,16 @@ public class DsyncHeadlessClient {
                     if (docuid != null) {
                         byte[] edit = new VcdiffEncoder(cache.get(docuid).dict, cmd.split(" ")[2]).encode();
                         buff = ByteBuffer.allocate(2 + 4 + 16 + 16 + edit.length + 4);
-                        buff.put(version);
-                        buff.put((byte) 0x03);
-                        buff.putInt(edit.length);
-                        syncpadlib.putUUID(buff, cookie);
-                        buff.putLong(docuid.getLeastSignificantBits());
-                        buff.putLong(docuid.getMostSignificantBits());
+                        buff.put(version);//1
+                        buff.put((byte) 0x03);//1
+                        buff.putInt(edit.length);//1
+                        syncpadlib.putUUID(buff, cookie);//1
+                        buff.putLong(docuid.getLeastSignificantBits());//1
+                        buff.putLong(docuid.getMostSignificantBits());//1
                         for (byte b : edit) {
                             buff.put(b);
                         }
-                        buff.putInt(((document) cache.get(docuid)).age + 1);
+                        buff.putInt(((document) cache.get(docuid)).age + 1);//1
                         in = syncpadlib.sendPost(buff);
                         buff.clear();
                         if (in.getInt(2) == 0xFFFF || in.getInt(2) == 0x8008) {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="classes" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/couchbase-client-1.4.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/couchbase-client-1.4.2-sources.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/couchbase-client-1.4.2.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/httpcore-4.3.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/httpcore-nio-4.3.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/netty-3.5.5.Final.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/spymemcached-2.11.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/spymemcached-2.11.3-sources.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/couchbase/spymemcached-2.11.3.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/jvcdiff-1.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/home/akash/Neoba/SyncpadServer/libs/netty-all-4.0.18.Final.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,14 @@
+Neoba Syncpad Server
+====================
+
+run run.sh to run forever
+
+otherwise do
+
+```
+	ant -f build-cli.xml
+```
+
+for debugging
+
+also, this project can be opened in netbeans IDE
