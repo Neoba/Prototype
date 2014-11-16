@@ -1,6 +1,5 @@
 package com.neoba.syncpad;
 
-
 import java.io.StringReader;
 
 import javax.xml.parsers.SAXParser;
@@ -27,27 +26,30 @@ class NeoHTML extends DefaultHandler {
 	String html;
 	Context context;
 	SpannableNote note;
-	
-	
-	
+
 	public SpannableNote getNote() {
 		return note;
 	}
 
-	public NeoHTML(String html,Context context) {
+	public NeoHTML(String html, Context context) {
 		s = new SpannableStringBuilder("");
 		this.html = html;
-		this.context=context;
-		 generateNote();
+		this.context = context;
+		generateNote();
 	}
-	
-	public void generateNote(){
-		String content="",colorcode=html.split("\n")[0];
-		for(int i=1;i<html.split("\n").length;i++)
-			content+=html.split("\n")[i];
-		Spanned x=Html.fromHtml(content);
-		SpannableStringBuilder ss=new SpannableStringBuilder(x);
-		note=new SpannableNote(ss,colorcode);
+
+	public void generateNote() {
+		if (!html.equals("")) {
+			String content = "", colorcode = html.split("\n")[0];
+			for (int i = 1; i < html.split("\n").length; i++)
+				content += html.split("\n")[i];
+
+			Spanned x = Html.fromHtml(content);
+			SpannableStringBuilder ss = new SpannableStringBuilder(x);
+			note = new SpannableNote(ss, colorcode);
+		} else {
+			note = new SpannableNote(new SpannableStringBuilder(""), "#FFFFFF");
+		}
 	}
 
 	public SpannableStringBuilder getSpannable() {
@@ -69,7 +71,8 @@ class NeoHTML extends DefaultHandler {
 				int italicsTag = 0;
 				int underlineTag = 0;
 				int pointer = 0;
-				boolean brpassed=false;
+				boolean brpassed = false;
+
 				public void startElement(String uri, String localName,
 						String qName, Attributes attributes)
 						throws SAXException {
@@ -87,31 +90,32 @@ class NeoHTML extends DefaultHandler {
 
 				public void characters(char ch[], int start, int length)
 						throws SAXException {
-					int tstart=start;
-					
+					int tstart = start;
 
-						if(new String(ch, start, length).startsWith("[ ]")){
-							s.append("b");
-							Typeface font = Typeface.createFromAsset(context.getAssets(), "tickfont.ttf");
-							s.setSpan (new CustomTypefaceSpan("", font),pointer, pointer+1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-							pointer+=1;
-							tstart+=3;
-						}
-						
-						else if(new String(ch, start, length).startsWith("[*]")){
-							s.append("a");
-							Typeface font = Typeface.createFromAsset(context.getAssets(), "tickfont.ttf");
-							s.setSpan (new CustomTypefaceSpan("", font),pointer, pointer+1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-							pointer+=1;
-							tstart+=3;
-						}
+					if (new String(ch, start, length).startsWith("[ ]")) {
+						s.append("b");
+						Typeface font = Typeface.createFromAsset(
+								context.getAssets(), "tickfont.ttf");
+						s.setSpan(new CustomTypefaceSpan("", font), pointer,
+								pointer + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+						pointer += 1;
+						tstart += 3;
+					}
 
+					else if (new String(ch, start, length).startsWith("[*]")) {
+						s.append("a");
+						Typeface font = Typeface.createFromAsset(
+								context.getAssets(), "tickfont.ttf");
+						s.setSpan(new CustomTypefaceSpan("", font), pointer,
+								pointer + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+						pointer += 1;
+						tstart += 3;
+					}
 
-					
 					if (boldTag > 0 || italicsTag > 0 || underlineTag > 0) {
 						s.append(new String(ch, tstart, length));
 						if (boldTag > 0) {
-							
+
 							s.setSpan(new StyleSpan(
 									android.graphics.Typeface.BOLD), pointer,
 									pointer + length,
@@ -148,8 +152,8 @@ class NeoHTML extends DefaultHandler {
 					}
 					if (qName.equalsIgnoreCase("BR")) {
 						s.append("\n");
-						pointer+=1;
-						brpassed=true;
+						pointer += 1;
+						brpassed = true;
 					}
 					if (qName.equalsIgnoreCase("I")) {
 						italicsTag -= 1;

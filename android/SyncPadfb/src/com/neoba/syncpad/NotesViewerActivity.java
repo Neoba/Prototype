@@ -1,9 +1,14 @@
 package com.neoba.syncpad;
 
+import java.io.IOException;
+import java.util.UUID;
+
+import net.dongliu.vcdiff.exception.VcdiffDecodeException;
 
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.app.Activity;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.os.Build;
+import android.preference.PreferenceManager;
 
 public class NotesViewerActivity extends Activity {
 
@@ -21,14 +27,35 @@ public class NotesViewerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notes_viewer);
-		int id=getIntent().getExtras().getInt("uuid");
-		DatabaseHandler db = new DatabaseHandler(this);
-		String note=db.getNote(id).getNote();
-		float size=getIntent().getExtras().getFloat("size");
-		
-		((RelativeLayout)findViewById(R.id.rlNoteViewer)).setBackgroundColor(Color.parseColor(note.split("\n")[0]));
-		TextView tv=(TextView)findViewById(R.id.tvNotesViewText);
-		tv.setText(new NeoHTML(note, NotesViewerActivity.this).getNote().getcontent());
+		String id = getIntent().getExtras().getString("uuid");
+
+		DBManager db = new DBManager(NotesViewerActivity.this);
+		db.open();
+		String note = null;
+		try {
+			note = db.getDoc(id);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (VcdiffDecodeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		db.close();
+		TextView tv = (TextView) findViewById(R.id.tvNotesViewText);
+
+		float size = getIntent().getExtras().getFloat("size");
+		if (!note.equals("")) {
+			((RelativeLayout) findViewById(R.id.rlNoteViewer))
+					.setBackgroundColor(Color.parseColor(note.split("\n")[0]));
+
+			tv.setText(new NeoHTML(note, NotesViewerActivity.this).getNote()
+					.getcontent());
+		} else {
+			((RelativeLayout) findViewById(R.id.rlNoteViewer))
+					.setBackgroundColor(Color.parseColor("#FFFFFF"));
+		}
+
 		tv.setTextSize(size);
 		tv.setMovementMethod(new ScrollingMovementMethod());
 	}
@@ -52,6 +79,5 @@ public class NotesViewerActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 
 }

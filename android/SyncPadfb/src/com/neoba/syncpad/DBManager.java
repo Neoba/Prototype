@@ -91,9 +91,13 @@ public class DBManager {
 		Cursor c = db.rawQuery(sql, new String[] { Integer.toString(rowid) });
 		c.moveToFirst();
 		// String i, String t, byte[] d, int a, String di, byte p
-		document d = new document(c.getString(0), c.getString(4), c.getBlob(1),
-				c.getInt(3), c.getString(2), (byte) c.getInt(5),c.getInt(6)==1?true:false,c.getInt(7));
+		document d =doccursorToDocument(c);
 		return d;
+	}
+	
+	public document doccursorToDocument(Cursor c){
+		return  new document(c.getString(1), c.getString(5), c.getBlob(2),
+				c.getInt(4), c.getString(3), (byte) c.getInt(6),c.getInt(7)==1?true:false,c.getInt(8));
 	}
 	
 	public boolean isDocMine(String docid){

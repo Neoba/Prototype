@@ -20,6 +20,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -53,10 +54,19 @@ public class NotesList extends ListActivity {
 		super.onCreate(savedInstanceState);
 		getListView().setDivider(null);
 		getListView().setDividerHeight(0);
-		DatabaseHandler db = new DatabaseHandler(this);
-		List<Notes> notes = db.getAllNotes();
-		nla = new NotesListAdapter(this,R.layout.activity_front, notes);
-		setListAdapter(nla);
+		DBManager db = new DBManager(NotesList.this);
+		db.open();
+		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
+		Cursor c=db.getAllDocs();
+	    c.moveToFirst();
+	    while (!c.isAfterLast()) {
+			document d =db.doccursorToDocument(c);
+			a.add(d);
+	      c.moveToNext();
+	    }
+		db.close();
+		nla = new NotesListAdapter(this,R.layout.activity_front, a);
+		this.setListAdapter(nla);
 		
 		 Calendar cal = Calendar.getInstance();
          cal.add(Calendar.SECOND, 10);
@@ -99,9 +109,9 @@ public class NotesList extends ListActivity {
 			
 			startService(new Intent(this, OfflineSyncService.class));
 
-//			Intent i = new Intent(NotesList.this, NotesEditor.class);
-//			i.putExtra("uuid", newdoc.toString()+"*");
-//			startActivity(i);
+			Intent i = new Intent(NotesList.this, NotesEditor.class);
+			i.putExtra("uuid", newdoc.toString()+"N");
+			startActivity(i);
 			return true;
 		}
 		if (id == R.id.action_user) {
@@ -123,13 +133,13 @@ public class NotesList extends ListActivity {
 	}
 	
 
-	public class NotesListAdapter extends ArrayAdapter<Notes> {
+	public class NotesListAdapter extends ArrayAdapter<document> {
 
 		private final Context context;
-		private final List<Notes> values;
+		private final List<document> values;
 
 		public NotesListAdapter(Context context, int resource,
-				List<Notes> values) {
+				List<document> values) {
 			super(context, resource, values);
 			this.context = context;
 			this.values = values;
@@ -144,14 +154,14 @@ public class NotesList extends ListActivity {
 			pp.setVisibility(View.VISIBLE);
 			final TextView textView = (TextView) rowView
 					.findViewById(R.id.output_autofit);
-			new NoteParse().execute(rowView,values.get(position).getNote());
+			new NoteParse().execute(rowView,values.get(position).title);
 			ImageButton editb=(ImageButton)rowView.findViewById(R.id.bNotesListLeft);
 			editb.setOnClickListener(new OnClickListener() {
 				
 				@Override
 				public void onClick(View arg0) {
 					Intent i = new Intent(NotesList.this,NotesEditor.class);
-					i.putExtra("uuid", values.get(position).getID());
+					i.putExtra("uuid", values.get(position).id);
 					startActivity(i);
 					
 				}
@@ -162,7 +172,7 @@ public class NotesList extends ListActivity {
 				@Override
 				public void onClick(View v) {
 					Intent i = new Intent(NotesList.this,NotesViewerActivity.class);
-					i.putExtra("uuid", values.get(position).getID());
+					i.putExtra("uuid", values.get(position).id);
 					i.putExtra("size", textView.getTextSize());
 					startActivity(i);
 					
@@ -189,10 +199,18 @@ public class NotesList extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-
-		DatabaseHandler db = new DatabaseHandler(this);
-		List<Notes> notes = db.getAllNotes();
-		nla = new NotesListAdapter(this,R.layout.activity_front, notes);
+		DBManager db = new DBManager(NotesList.this);
+		db.open();
+		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
+		Cursor c=db.getAllDocs();
+	    c.moveToFirst();
+	    while (!c.isAfterLast()) {
+			document d =db.doccursorToDocument(c);
+			a.add(d);
+	      c.moveToNext();
+	    }
+		db.close();
+		nla = new NotesListAdapter(this,R.layout.activity_front, a);
 		this.setListAdapter(nla);
 	}
 
@@ -200,9 +218,18 @@ public class NotesList extends ListActivity {
 	protected void onRestart() {
 		// TODO Auto-generated method stub
 		super.onRestart();
-		DatabaseHandler db = new DatabaseHandler(this);
-		List<Notes> notes = db.getAllNotes();
-		nla = new NotesListAdapter(this,R.layout.activity_front, notes);
+		DBManager db = new DBManager(NotesList.this);
+		db.open();
+		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
+		Cursor c=db.getAllDocs();
+	    c.moveToFirst();
+	    while (!c.isAfterLast()) {
+			document d =db.doccursorToDocument(c);
+			a.add(d);
+	      c.moveToNext();
+	    }
+		db.close();
+		nla = new NotesListAdapter(this,R.layout.activity_front, a);
 		this.setListAdapter(nla);
 	}
 	
