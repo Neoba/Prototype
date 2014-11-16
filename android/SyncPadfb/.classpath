@@ -6,5 +6,6 @@
 	<classpathentry exported="true" kind="lib" path="libs/picasso-2.3.4.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/jvcdiff-1.2-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

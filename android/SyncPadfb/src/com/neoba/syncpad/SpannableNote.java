@@ -2,12 +2,12 @@ package com.neoba.syncpad;
 
 import android.text.SpannableStringBuilder;
 
-public class Note {
+public class SpannableNote {
 
 	String color;
 	SpannableStringBuilder content;
 
-	public Note(SpannableStringBuilder SpannableStringBuilder, String color) {
+	public SpannableNote(SpannableStringBuilder SpannableStringBuilder, String color) {
 		super();
 		this.content = SpannableStringBuilder;
 		this.color = color;

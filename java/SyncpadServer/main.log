@@ -18333,3 +18333,1979 @@ com.couchbase.client.protocol.views.InvalidViewException: Could not load view "u
 2014-11-16 11:45:15 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
 2014-11-16 11:45:15 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
 2014-11-16 11:45:15 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-11-16 14:53:34 INFO  Dsyncserver:42 - kickstarting server..
+2014-11-16 14:53:35 INFO  Dsyncserver:57 - created view - idsview
+2014-11-16 14:53:35 INFO  Dsyncserver:57 - created view - userstoid
+2014-11-16 14:53:35 INFO  Dsyncserver:57 - created view - usernamelistview
+2014-11-16 14:53:36 INFO  Dsyncserver:57 - created view - created_docs
+2014-11-16 14:53:36 INFO  Dsyncserver:57 - created view - facebookidtoid
+2014-11-16 14:53:37 INFO  Dsyncserver:57 - created view - usernametofacebookid
+2014-11-16 14:53:37 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-11-16 14:53:37 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-11-16 14:53:37 DEBUG PlatformDependent:463 - UID: 1000
+2014-11-16 14:53:37 DEBUG PlatformDependent:540 - Java version: 7
+2014-11-16 14:53:37 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-11-16 14:53:37 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-11-16 14:53:37 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-11-16 14:53:37 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-11-16 14:53:37 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-11-16 14:53:37 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-11-16 14:53:37 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-11-16 14:53:37 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-11-16 14:53:37 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-11-16 14:53:37 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-11-16 14:53:37 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-11-16 14:53:37 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-11-16 14:53:37 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-11-16 14:53:37 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-11-16 14:53:37 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-11-16 14:53:37 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x5fe55cd5f7418ba3
+2014-11-16 14:53:37 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-11-16 14:53:37 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-11-16 14:53:37 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-11-16 14:53:37 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-11-16 14:53:37 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-11-16 14:53:37 INFO  Dsyncserver:79 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-11-16 14:53:43 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-11-16 14:53:43 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:1
+2014-11-16 14:53:43 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:43 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:43 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:53:43 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:53:43 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:43 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:43 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:53:43 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-11-16 14:53:50 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:2
+2014-11-16 14:53:50 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:50 DEBUG ConsoleUtils:26 - size : 266 bytes
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F8 43 41 41 55 . . . . . . C A A U 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 42 41 4A 44 47 32 78 5A 41 79 B A J D G 2 x Z A y 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 6E 6A 52 52 5A 41 64 6D 35 69 n j R R Z A d m 5 i 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 75 71 62 75 79 50 30 67 4B 50 u q b u y P 0 g K P 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 72 31 5A 43 51 4E 36 69 6F 54 r 1 Z C Q N 6 i o T 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 62 4D 7A 39 61 55 44 61 52 66 b M z 9 a U D a R f 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 45 79 61 62 63 33 56 4B 63 56 E y a b c 3 V K c V 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 51 33 79 31 36 72 32 78 56 5A Q 3 y 1 6 r 2 x V Z 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 41 33 43 6C 53 64 65 47 5A 42 A 3 C l S d e G Z B 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 6C 6C 58 56 4F 31 4C 5A 43 77 l l X V O 1 L Z C w 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 33 77 6A 4E 33 48 77 61 54 55 3 w j N 3 H w a T U 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 66 71 32 5A 41 68 30 32 4C 4B f q 2 Z A h 0 2 L K 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 6F 5A 43 75 67 58 49 35 39 34 o Z C u g X I 5 9 4 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 66 62 6E 7A 74 6B 52 39 44 58 f b n z t k R 9 D X 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 7A 41 55 6E 35 34 64 37 31 4E z A U n 5 4 d 7 1 N 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 7A 37 44 38 5A 42 4A 53 5A 42 z 7 D 8 Z B J S Z B 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 67 56 72 49 64 34 4A 79 34 76 g V r I d 4 J y 4 v 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 6E 76 56 34 55 72 69 4B 6D 5A n v V 4 U r i K m Z 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 41 6A 35 70 58 56 45 68 46 66 A j 5 p X V E h F f 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 58 39 68 34 47 4C 6F 54 32 6A X 9 h 4 G L o T 2 j 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 4C 4D 34 59 6C 57 6E 51 69 67 L M 4 Y l W n Q i g 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 75 33 75 70 69 31 42 6B 52 52 u 3 u p i 1 B k R R 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 74 37 63 52 35 67 51 57 58 71 t 7 c R 5 g Q W X q 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 35 45 70 52 45 78 34 66 33 77 5 E p R E x 4 f 3 w 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 5A 44 5A 44 0C 00 00 00 07 43 Z D Z D . . . . . C 
+2014-11-16 14:53:50 DEBUG ConsoleUtils:43 - 4F 4E 53 4F 4C 45             O N S O L E 
+2014-11-16 14:53:50 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 14:53:50 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 14:53:50 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 14:53:52 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAJDG2xZAynjRRZAdm5iuqbuyP0gKPr1ZCQN6ioTbMz9aUDaRfEyabc3VKcVQ3y16r2xVZA3ClSdeGZBllXVO1LZCw3wjN3HwaTUfq2ZAh02LKoZCugXI594fbnztkR9DXzAUn54d71Nz7D8ZBJSZBgVrId4Jy4vnvV4UriKmZAj5pXVEhFfX9h4GLoT2jLM4YlWnQigu3upi1BkRRt7cR5gQWXq5EpREx4f3wZDZD
+2014-11-16 14:53:52 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 14:53:52 INFO  FacebookUserLogin:51 - mhiff :session- 1f7f148a-f905-4ad0-ab17-48a473139231
+2014-11-16 14:53:52 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAJDG2xZAynjRRZAdm5iuqbuyP0gKPr1ZCQN6ioTbMz9aUDaRfEyabc3VKcVQ3y16r2xVZA3ClSdeGZBllXVO1LZCw3wjN3HwaTUfq2ZAh02LKoZCugXI594fbnztkR9DXzAUn54d71Nz7D8ZBJSZBgVrId4Jy4vnvV4UriKmZAj5pXVEhFfX9h4GLoT2jLM4YlWnQigu3upi1BkRRt7cR5gQWXq5EpREx4f3wZDZD
+2014-11-16 14:53:52 INFO  MessageInterpreter:108 - user_agents: {1f7f148a-f905-4ad0-ab17-48a473139231=12}
+2014-11-16 14:53:52 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:52 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 14:53:52 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF AB 17 48 A4 . . . . . . . . H . 
+2014-11-16 14:53:52 DEBUG ConsoleUtils:43 - 73 13 92 31 1F 7F 14 8A F9 05 s . . 1   . . . . 
+2014-11-16 14:53:52 DEBUG ConsoleUtils:43 - 4A D0 00 00 00 05 6D 68 69 66 J . . . . . m h i f 
+2014-11-16 14:53:52 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 14:53:52 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-11-16 14:53:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:3
+2014-11-16 14:53:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:53 DEBUG ConsoleUtils:26 - size : 262 bytes
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F4 43 41 41 55 . . . . . . C A A U 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 42 41 4F 79 42 77 65 38 61 49 B A O y B w e 8 a I 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 36 78 6B 45 37 6F 32 45 75 67 6 x k E 7 o 2 E u g 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 6A 73 55 30 59 4F 46 7A 47 79 j s U 0 Y O F z G y 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 52 78 34 51 5A 41 69 64 50 33 R x 4 Q Z A i d P 3 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 46 4A 37 6F 6D 33 62 6C 76 35 F J 7 o m 3 b l v 5 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 5A 41 64 49 46 37 71 6A 54 43 Z A d I F 7 q j T C 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 52 4C 69 42 6D 42 48 55 47 4E R L i B m B H U G N 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 74 4D 72 47 49 39 54 61 56 43 t M r G I 9 T a V C 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 72 6C 4A 49 5A 41 6B 4D 53 42 r l J I Z A k M S B 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 39 55 34 6A 6F 62 66 52 79 4A 9 U 4 j o b f R y J 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 52 54 6E 6D 50 46 79 45 54 6F R T n m P F y E T o 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 56 58 53 69 38 58 67 7A 4B 6F V X S i 8 X g z K o 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 36 68 5A 42 6D 33 39 6B 64 4D 6 h Z B m 3 9 k d M 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 6D 61 77 5A 42 31 78 72 46 58 m a w Z B 1 x r F X 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 72 73 70 6B 73 65 4E 61 6B 57 r s p k s e N a k W 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 48 4B 43 6D 58 4F 78 4D 71 73 H K C m X O x M q s 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 56 35 32 67 58 66 49 68 46 45 V 5 2 g X f I h F E 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 48 46 4C 55 4B 61 61 54 4B 5A H F L U K a a T K Z 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 41 71 41 44 52 67 45 30 62 42 A q A D R g E 0 b B 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 4F 72 34 38 53 68 75 41 4B 38 O r 4 8 S h u A K 8 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 77 33 42 33 38 4D 49 35 53 72 w 3 B 3 8 M I 5 S r 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 79 6A 4C 30 77 6F 4B 33 4C 36 y j L 0 w o K 3 L 6 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 6D 48 5A 41 4C 67 5A 44 5A 44 m H Z A L g Z D Z D 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 0C 00 00 00 07 43 4F 4E 53 4F . . . . . C O N S O 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 4C 45                         L E 
+2014-11-16 14:53:53 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 14:53:53 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 14:53:53 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 14:53:53 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAOyBwe8aI6xkE7o2EugjsU0YOFzGyRx4QZAidP3FJ7om3blv5ZAdIF7qjTCRLiBmBHUGNtMrGI9TaVCrlJIZAkMSB9U4jobfRyJRTnmPFyEToVXSi8XgzKo6hZBm39kdMmawZB1xrFXrspkseNakWHKCmXOxMqsV52gXfIhFEHFLUKaaTKZAqADRgE0bBOr48ShuAK8w3B38MI5SryjL0woK3L6mHZALgZDZD
+2014-11-16 14:53:53 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 14:53:53 INFO  FacebookUserLogin:51 - mhiff :session- 2663499a-fcfb-4bfe-919a-3f58643ef6ff
+2014-11-16 14:53:53 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAOyBwe8aI6xkE7o2EugjsU0YOFzGyRx4QZAidP3FJ7om3blv5ZAdIF7qjTCRLiBmBHUGNtMrGI9TaVCrlJIZAkMSB9U4jobfRyJRTnmPFyEToVXSi8XgzKo6hZBm39kdMmawZB1xrFXrspkseNakWHKCmXOxMqsV52gXfIhFEHFLUKaaTKZAqADRgE0bBOr48ShuAK8w3B38MI5SryjL0woK3L6mHZALgZDZD
+2014-11-16 14:53:53 INFO  MessageInterpreter:108 - user_agents: {2663499a-fcfb-4bfe-919a-3f58643ef6ff=12, 1f7f148a-f905-4ad0-ab17-48a473139231=12}
+2014-11-16 14:53:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:53 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 91 9A 3F 58 . . . . . . . . ? X 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 64 3E F6 FF 26 63 49 9A FC FB d > . . & c I . . . 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 4B FE 00 00 00 05 6D 68 69 66 K . . . . . m h i f 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 14:53:53 INFO  DsyncserverHandler:50 - Message Responded :3
+2014-11-16 14:53:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:4
+2014-11-16 14:53:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:53 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF AB 17 48 A4 . . . . . . . . H . 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 73 13 92 31 1F 7F 14 8A F9 05 s . . 1   . . . . 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 4A D0                         J . 
+2014-11-16 14:53:53 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 1f7f148a-f905-4ad0-ab17-48a473139231
+2014-11-16 14:53:53 INFO  MessageInterpreter:163 - 1f7f148a-f905-4ad0-ab17-48a473139231 :getting digest
+2014-11-16 14:53:53 DEBUG GetDigestMessage:204 - 1f7f148a-f905-4ad0-ab17-48a473139231 :digested permissions info 
+2014-11-16 14:53:53 INFO  GetDigestMessage:205 - 1f7f148a-f905-4ad0-ab17-48a473139231 :digestion successful 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:53 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 14:53:53 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 14:53:53 INFO  DsyncserverHandler:50 - Message Responded :4
+2014-11-16 14:53:54 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:5
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF 91 9A 3F 58 . . . . . . . . ? X 
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 64 3E F6 FF 26 63 49 9A FC FB d > . . & c I . . . 
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 4B FE                         K . 
+2014-11-16 14:53:54 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 2663499a-fcfb-4bfe-919a-3f58643ef6ff
+2014-11-16 14:53:54 INFO  MessageInterpreter:163 - 2663499a-fcfb-4bfe-919a-3f58643ef6ff :getting digest
+2014-11-16 14:53:54 DEBUG GetDigestMessage:204 - 2663499a-fcfb-4bfe-919a-3f58643ef6ff :digested permissions info 
+2014-11-16 14:53:54 INFO  GetDigestMessage:205 - 2663499a-fcfb-4bfe-919a-3f58643ef6ff :digestion successful 
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 14:53:54 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-11-16 14:53:54 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:6
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:53:54 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:53:54 INFO  DsyncserverHandler:50 - Message Responded :6
+2014-11-16 14:53:54 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:7
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:53:54 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:53:54 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:53:54 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:53:54 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:53:54 INFO  DsyncserverHandler:50 - Message Responded :7
+2014-11-16 14:54:03 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:57733:8
+2014-11-16 14:54:03 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:54:03 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:54:03 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:54:03 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:54:03 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:54:03 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:54:03 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:54:03 INFO  DsyncserverHandler:50 - Message Responded :8
+2014-11-16 14:54:55 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54059:9
+2014-11-16 14:54:55 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:54:55 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:54:55 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:54:55 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:54:55 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:54:55 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:54:55 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:54:55 INFO  DsyncserverHandler:50 - Message Responded :9
+2014-11-16 14:55:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54059:10
+2014-11-16 14:55:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:55:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:55:06 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:55:06 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:55:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:55:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:55:06 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:55:06 INFO  DsyncserverHandler:50 - Message Responded :10
+2014-11-16 14:55:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54059:11
+2014-11-16 14:55:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:55:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:55:06 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:55:06 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:55:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:55:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:55:06 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:55:06 INFO  DsyncserverHandler:50 - Message Responded :11
+2014-11-16 14:56:04 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54059:12
+2014-11-16 14:56:04 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 14:56:04 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:56:04 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 14:56:04 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 14:56:04 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 14:56:04 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 14:56:04 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 14:56:04 INFO  DsyncserverHandler:50 - Message Responded :12
+2014-11-16 15:05:15 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:13
+2014-11-16 15:05:15 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:15 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:15 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:05:15 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:05:15 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:15 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:15 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:05:15 INFO  DsyncserverHandler:50 - Message Responded :13
+2014-11-16 15:05:19 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:14
+2014-11-16 15:05:19 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:19 DEBUG ConsoleUtils:26 - size : 261 bytes
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F3 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 42 41 48 54 72 4C 32 43 61 49 B A H T r L 2 C a I 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 4A 71 6E 53 31 72 4F 6E 58 4F J q n S 1 r O n X O 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 5A 41 38 58 6F 42 36 34 4A 7A Z A 8 X o B 6 4 J z 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 4E 36 58 38 47 47 7A 62 66 4B N 6 X 8 G G z b f K 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 4B 73 50 31 6B 5A 43 48 4E 61 K s P 1 k Z C H N a 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 4D 77 4B 59 71 41 45 76 76 44 M w K Y q A E v v D 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 32 56 4D 34 58 53 6C 4E 71 46 2 V M 4 X S l N q F 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 30 4E 79 31 73 48 31 77 54 46 0 N y 1 s H 1 w T F 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 42 78 56 4A 31 63 48 63 43 6B B x V J 1 c H c C k 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 46 41 33 42 76 65 6E 36 6D 57 F A 3 B v e n 6 m W 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 7A 48 73 74 74 59 5A 43 43 70 z H s t t Y Z C C p 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 63 5A 42 6A 5A 42 6B 4F 57 74 c Z B j Z B k O W t 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 54 68 31 64 4A 72 36 72 46 78 T h 1 d J r 6 r F x 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 37 69 78 63 47 5A 41 78 69 70 7 i x c G Z A x i p 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 34 76 38 36 65 55 4E 74 4A 36 4 v 8 6 e U N t J 6 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 74 44 52 48 6E 47 69 44 30 62 t D R H n G i D 0 b 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 31 77 63 72 4C 61 62 62 66 36 1 w c r L a b b f 6 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 47 72 61 47 56 37 6D 61 41 71 G r a G V 7 m a A q 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 72 34 74 48 55 35 36 73 55 4B r 4 t H U 5 6 s U K 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 37 63 6C 45 41 30 6E 67 6F 43 7 c l E A 0 n g o C 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 50 76 6D 6C 74 63 7A 6D 4E 41 P v m l t c z m N A 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 4D 53 62 4D 72 51 6C 37 36 39 M S b M r Q l 7 6 9 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 31 6B 41 4A 67 5A 44 5A 44 0C 1 k A J g Z D Z D . 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2014-11-16 15:05:19 DEBUG ConsoleUtils:43 - 45                            E 
+2014-11-16 15:05:19 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:05:19 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:05:19 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:05:20 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAHTrL2CaIJqnS1rOnXOZA8XoB64JzN6X8GGzbfKKsP1kZCHNaMwKYqAEvvD2VM4XSlNqF0Ny1sH1wTFBxVJ1cHcCkFA3Bven6mWzHsttYZCCpcZBjZBkOWtTh1dJr6rFx7ixcGZAxip4v86eUNtJ6tDRHnGiD0b1wcrLabbf6GraGV7maAqr4tHU56sUK7clEA0ngoCPvmltczmNAMSbMrQl7691kAJgZDZD
+2014-11-16 15:05:20 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 15:05:20 INFO  FacebookUserLogin:51 - mhiff :session- e44bd8bc-83ef-4282-b8d6-fa3336fc5744
+2014-11-16 15:05:20 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAHTrL2CaIJqnS1rOnXOZA8XoB64JzN6X8GGzbfKKsP1kZCHNaMwKYqAEvvD2VM4XSlNqF0Ny1sH1wTFBxVJ1cHcCkFA3Bven6mWzHsttYZCCpcZBjZBkOWtTh1dJr6rFx7ixcGZAxip4v86eUNtJ6tDRHnGiD0b1wcrLabbf6GraGV7maAqr4tHU56sUK7clEA0ngoCPvmltczmNAMSbMrQl7691kAJgZDZD
+2014-11-16 15:05:20 INFO  MessageInterpreter:108 - user_agents: {e44bd8bc-83ef-4282-b8d6-fa3336fc5744=12, 2663499a-fcfb-4bfe-919a-3f58643ef6ff=12, 1f7f148a-f905-4ad0-ab17-48a473139231=12}
+2014-11-16 15:05:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:20 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF B8 D6 FA 33 . . . . . . . . . 3 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 36 FC 57 44 E4 4B D8 BC 83 EF 6 . W D . K . . . . 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 42 82 00 00 00 05 6D 68 69 66 B . . . . . m h i f 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 15:05:20 INFO  DsyncserverHandler:50 - Message Responded :14
+2014-11-16 15:05:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:15
+2014-11-16 15:05:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF B8 D6 FA 33 . . . . . . . . . 3 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 36 FC 57 44 E4 4B D8 BC 83 EF 6 . W D . K . . . . 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 42 82                         B . 
+2014-11-16 15:05:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e44bd8bc-83ef-4282-b8d6-fa3336fc5744
+2014-11-16 15:05:20 INFO  MessageInterpreter:163 - e44bd8bc-83ef-4282-b8d6-fa3336fc5744 :getting digest
+2014-11-16 15:05:20 DEBUG GetDigestMessage:204 - e44bd8bc-83ef-4282-b8d6-fa3336fc5744 :digested permissions info 
+2014-11-16 15:05:20 INFO  GetDigestMessage:205 - e44bd8bc-83ef-4282-b8d6-fa3336fc5744 :digestion successful 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:05:20 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 15:05:20 INFO  DsyncserverHandler:50 - Message Responded :15
+2014-11-16 15:05:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:16
+2014-11-16 15:05:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:21 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:05:21 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:05:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:21 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:05:21 INFO  DsyncserverHandler:50 - Message Responded :16
+2014-11-16 15:05:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:17
+2014-11-16 15:05:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:21 DEBUG ConsoleUtils:26 - size : 264 bytes
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F6 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 42 41 4E 31 33 73 64 38 77 51 B A N 1 3 s d 8 w Q 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 33 41 34 53 6B 47 45 70 57 45 3 A 4 S k G E p W E 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 61 76 65 4C 62 5A 43 4F 68 63 a v e L b Z C O h c 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 32 79 4D 39 5A 42 51 6C 61 72 2 y M 9 Z B Q l a r 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 73 59 50 35 73 32 6E 69 50 6C s Y P 5 s 2 n i P l 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 30 41 72 4C 43 6E 77 35 50 30 0 A r L C n w 5 P 0 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 6E 70 31 37 4D 4D 50 70 39 49 n p 1 7 M M P p 9 I 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 44 39 33 74 4A 44 4D 37 4D 6B D 9 3 t J D M 7 M k 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 30 36 64 51 46 68 6B 7A 32 35 0 6 d Q F h k z 2 5 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 32 71 39 72 54 47 30 65 67 44 2 q 9 r T G 0 e g D 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 50 51 42 73 41 32 48 69 35 32 P Q B s A 2 H i 5 2 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 70 38 34 42 57 4F 6D 72 62 6C p 8 4 B W O m r b l 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 58 4D 5A 42 77 75 7A 67 44 76 X M Z B w u z g D v 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 47 31 6F 30 6C 5A 41 57 73 42 G 1 o 0 l Z A W s B 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 76 5A 41 78 47 44 34 38 58 55 v Z A x G D 4 8 X U 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 5A 41 58 46 4E 76 65 6D 6D 54 Z A X F N v e m m T 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 38 51 38 5A 43 5A 43 4C 54 63 8 Q 8 Z C Z C L T c 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 67 62 62 33 49 72 61 36 51 32 g b b 3 I r a 6 Q 2 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 77 4D 49 6C 75 49 36 39 35 74 w M I l u I 6 9 5 t 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 4F 49 56 71 46 7A 4D 75 79 6D O I V q F z M u y m 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 54 75 6D 42 73 55 42 66 66 55 T u m B s U B f f U 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 75 5A 42 55 32 31 42 35 30 66 u Z B U 2 1 B 5 0 f 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 35 44 73 31 6B 32 7A 77 5A 44 5 D s 1 k 2 z w Z D 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 5A 44 0C 00 00 00 07 43 4F 4E Z D . . . . . C O N 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 53 4F 4C 45                   S O L E 
+2014-11-16 15:05:21 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:05:21 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:05:21 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:05:21 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAN13sd8wQ3A4SkGEpWEaveLbZCOhc2yM9ZBQlarsYP5s2niPl0ArLCnw5P0np17MMPp9ID93tJDM7Mk06dQFhkz252q9rTG0egDPQBsA2Hi52p84BWOmrblXMZBwuzgDvG1o0lZAWsBvZAxGD48XUZAXFNvemmT8Q8ZCZCLTcgbb3Ira6Q2wMIluI695tOIVqFzMuymTumBsUBffUuZBU21B50f5Ds1k2zwZDZD
+2014-11-16 15:05:21 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 15:05:21 INFO  FacebookUserLogin:51 - mhiff :session- e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:05:21 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAN13sd8wQ3A4SkGEpWEaveLbZCOhc2yM9ZBQlarsYP5s2niPl0ArLCnw5P0np17MMPp9ID93tJDM7Mk06dQFhkz252q9rTG0egDPQBsA2Hi52p84BWOmrblXMZBwuzgDvG1o0lZAWsBvZAxGD48XUZAXFNvemmT8Q8ZCZCLTcgbb3Ira6Q2wMIluI695tOIVqFzMuymTumBsUBffUuZBU21B50f5Ds1k2zwZDZD
+2014-11-16 15:05:21 INFO  MessageInterpreter:108 - user_agents: {e44bd8bc-83ef-4282-b8d6-fa3336fc5744=12, 2663499a-fcfb-4bfe-919a-3f58643ef6ff=12, 1f7f148a-f905-4ad0-ab17-48a473139231=12, e5331aa4-4cea-48b7-9743-e4bc1477cb25=12}
+2014-11-16 15:05:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:21 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 48 B7 00 00 00 05 6D 68 69 66 H . . . . . m h i f 
+2014-11-16 15:05:21 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 15:05:21 INFO  DsyncserverHandler:50 - Message Responded :17
+2014-11-16 15:05:22 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:18
+2014-11-16 15:05:22 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:22 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 48 B7                         H . 
+2014-11-16 15:05:22 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:05:22 INFO  MessageInterpreter:163 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :getting digest
+2014-11-16 15:05:22 DEBUG GetDigestMessage:204 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :digested permissions info 
+2014-11-16 15:05:22 INFO  GetDigestMessage:205 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :digestion successful 
+2014-11-16 15:05:22 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:22 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 15:05:22 INFO  DsyncserverHandler:50 - Message Responded :18
+2014-11-16 15:05:22 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:19
+2014-11-16 15:05:22 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:22 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:05:22 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:05:22 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:22 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:22 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:05:22 INFO  DsyncserverHandler:50 - Message Responded :19
+2014-11-16 15:05:28 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:20
+2014-11-16 15:05:28 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:28 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:28 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:05:28 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:05:28 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:28 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:28 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:05:28 INFO  DsyncserverHandler:50 - Message Responded :20
+2014-11-16 15:05:32 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:21
+2014-11-16 15:05:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:05:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:32 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:05:32 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:05:32 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:05:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:05:32 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:05:32 INFO  DsyncserverHandler:50 - Message Responded :21
+2014-11-16 15:06:32 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43882:22
+2014-11-16 15:06:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:06:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:06:32 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:06:32 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:06:32 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:06:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:06:32 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:06:32 INFO  DsyncserverHandler:50 - Message Responded :22
+2014-11-16 15:06:58 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:23
+2014-11-16 15:06:58 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:06:58 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:06:58 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:06:58 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:06:58 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:06:58 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:06:58 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:06:58 INFO  DsyncserverHandler:50 - Message Responded :23
+2014-11-16 15:06:59 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:24
+2014-11-16 15:06:59 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:06:59 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:06:59 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:06:59 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:06:59 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [2a831eb8-c422-47a1-a664-db10d9214585] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:06:59 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:06:59 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 64 DB 10 . . . . . . . d . . 
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - D9 21 45 85 2A 83 1E B8 C4 22 . ! E . * .  . . " 
+2014-11-16 15:06:59 DEBUG ConsoleUtils:43 - 47 A1                         G . 
+2014-11-16 15:06:59 INFO  DsyncserverHandler:50 - Message Responded :24
+2014-11-16 15:07:09 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:25
+2014-11-16 15:07:09 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:09 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:07:09 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:07:09 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:07:09 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:09 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:07:09 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:07:09 INFO  DsyncserverHandler:50 - Message Responded :25
+2014-11-16 15:07:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:26
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:07:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:07:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:07:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [2a831eb8-c422-47a1-a664-db10d9214585] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 64 DB 10 . . . . . . . d . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - D9 21 45 85 2A 83 1E B8 C4 22 . ! E . * .  . . " 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 47 A1                         G . 
+2014-11-16 15:07:10 INFO  DsyncserverHandler:50 - Message Responded :26
+2014-11-16 15:07:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:27
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 48 B7 A0 E8 65 B5 C4 D7 20 24 H . . . e . . .   $ 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - D0 CC 17 FA E6 13 4E D2       . . . . . . N . 
+2014-11-16 15:07:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:07:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:07:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [d0cc17fa-e613-4ed2-a0e8-65b5c4d72024] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A0 E8 65 B5 . . . . . . . . e . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - C4 D7 20 24 D0 CC 17 FA E6 13 . .   $ . . . . . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 4E D2                         N . 
+2014-11-16 15:07:10 INFO  DsyncserverHandler:50 - Message Responded :27
+2014-11-16 15:07:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:28
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:07:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:07:10 INFO  DsyncserverHandler:50 - Message Responded :28
+2014-11-16 15:07:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:29
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:07:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:07:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:07:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [2a831eb8-c422-47a1-a664-db10d9214585] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 64 DB 10 . . . . . . . d . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - D9 21 45 85 2A 83 1E B8 C4 22 . ! E . * .  . . " 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 47 A1                         G . 
+2014-11-16 15:07:10 INFO  DsyncserverHandler:50 - Message Responded :29
+2014-11-16 15:07:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:30
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 48 B7 A0 E8 65 B5 C4 D7 20 24 H . . . e . . .   $ 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - D0 CC 17 FA E6 13 4E D2       . . . . . . N . 
+2014-11-16 15:07:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:07:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:07:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [d0cc17fa-e613-4ed2-a0e8-65b5c4d72024] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:07:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:07:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A0 E8 65 B5 . . . . . . . . e . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - C4 D7 20 24 D0 CC 17 FA E6 13 . .   $ . . . . . . 
+2014-11-16 15:07:10 DEBUG ConsoleUtils:43 - 4E D2                         N . 
+2014-11-16 15:07:10 INFO  DsyncserverHandler:50 - Message Responded :30
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:31
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:08:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :31
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:32
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [2a831eb8-c422-47a1-a664-db10d9214585] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 64 DB 10 . . . . . . . d . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - D9 21 45 85 2A 83 1E B8 C4 22 . ! E . * .  . . " 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 47 A1                         G . 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :32
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:33
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 A0 E8 65 B5 C4 D7 20 24 H . . . e . . .   $ 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - D0 CC 17 FA E6 13 4E D2       . . . . . . N . 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [d0cc17fa-e613-4ed2-a0e8-65b5c4d72024] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A0 E8 65 B5 . . . . . . . . e . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - C4 D7 20 24 D0 CC 17 FA E6 13 . .   $ . . . . . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 4E D2                         N . 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :33
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:34
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 BE DE 44 7B 06 02 DE 34 H . . . D { . . . 4 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - CA E9 51 E2 6F B6 47 49       . . Q . o . G I 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [cae951e2-6fb6-4749-bede-447b0602de34] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF BE DE 44 7B . . . . . . . . D { 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 06 02 DE 34 CA E9 51 E2 6F B6 . . . 4 . . Q . o . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 47 49                         G I 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :34
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:35
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:08:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :35
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:36
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [2a831eb8-c422-47a1-a664-db10d9214585] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 64 DB 10 . . . . . . . d . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - D9 21 45 85 2A 83 1E B8 C4 22 . ! E . * .  . . " 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 47 A1                         G . 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :36
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:37
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 A0 E8 65 B5 C4 D7 20 24 H . . . e . . .   $ 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - D0 CC 17 FA E6 13 4E D2       . . . . . . N . 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [d0cc17fa-e613-4ed2-a0e8-65b5c4d72024] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A0 E8 65 B5 . . . . . . . . e . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - C4 D7 20 24 D0 CC 17 FA E6 13 . .   $ . . . . . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 4E D2                         N . 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :37
+2014-11-16 15:08:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:32814:38
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 48 B7 BE DE 44 7B 06 02 DE 34 H . . . D { . . . 4 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - CA E9 51 E2 6F B6 47 49       . . Q . o . G I 
+2014-11-16 15:08:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:08:10 INFO  MessageInterpreter:149 - e5331aa4-4cea-48b7-9743-e4bc1477cb25 :creating new document- 
+2014-11-16 15:08:10 INFO  DocumentCreateMessage:63 - e5331aa4-4cea-48b7-9743-e4bc1477cb25: Created new Document [cae951e2-6fb6-4749-bede-447b0602de34] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:08:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:08:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF BE DE 44 7B . . . . . . . . D { 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 06 02 DE 34 CA E9 51 E2 6F B6 . . . 4 . . Q . o . 
+2014-11-16 15:08:10 DEBUG ConsoleUtils:43 - 47 49                         G I 
+2014-11-16 15:08:10 INFO  DsyncserverHandler:50 - Message Responded :38
+2014-11-16 15:08:40 INFO  Dsyncserver:42 - kickstarting server..
+2014-11-16 15:08:40 INFO  Dsyncserver:57 - created view - idsview
+2014-11-16 15:08:41 INFO  Dsyncserver:57 - created view - userstoid
+2014-11-16 15:08:41 INFO  Dsyncserver:57 - created view - usernamelistview
+2014-11-16 15:08:42 INFO  Dsyncserver:57 - created view - created_docs
+2014-11-16 15:08:42 INFO  Dsyncserver:57 - created view - facebookidtoid
+2014-11-16 15:08:42 INFO  Dsyncserver:57 - created view - usernametofacebookid
+2014-11-16 15:08:42 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-11-16 15:08:42 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-11-16 15:08:43 DEBUG PlatformDependent:463 - UID: 1000
+2014-11-16 15:08:43 DEBUG PlatformDependent:540 - Java version: 7
+2014-11-16 15:08:43 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-11-16 15:08:43 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-11-16 15:08:43 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-11-16 15:08:43 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-11-16 15:08:43 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-11-16 15:08:43 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-11-16 15:08:43 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-11-16 15:08:43 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-11-16 15:08:43 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-11-16 15:08:43 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-11-16 15:08:43 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-11-16 15:08:43 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-11-16 15:08:43 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-11-16 15:08:43 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-11-16 15:08:43 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-11-16 15:08:43 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0xd01dced3c058d733
+2014-11-16 15:08:43 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-11-16 15:08:43 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-11-16 15:08:43 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-11-16 15:08:43 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-11-16 15:08:43 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-11-16 15:08:43 INFO  Dsyncserver:79 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-11-16 15:09:08 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:1
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:09:08 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:2
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 48 B7 A6 64 DB 10 D9 21 45 85 H . . d . . . ! E . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 2A 83 1E B8 C4 22 47 A1       * .  . . " G . 
+2014-11-16 15:09:08 INFO  MessageInterpreter:193 - session id received is non-existant: e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 70 00 00 80 03             . p . . . . 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:3
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 48 B7 A0 E8 65 B5 C4 D7 20 24 H . . . e . . .   $ 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - D0 CC 17 FA E6 13 4E D2       . . . . . . N . 
+2014-11-16 15:09:08 INFO  MessageInterpreter:193 - session id received is non-existant: e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 70 00 00 80 03             . p . . . . 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :3
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:4
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 48 B7 BE DE 44 7B 06 02 DE 34 H . . . D { . . . 4 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - CA E9 51 E2 6F B6 47 49       . . Q . o . G I 
+2014-11-16 15:09:08 INFO  MessageInterpreter:193 - session id received is non-existant: e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 70 00 00 80 03             . p . . . . 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :4
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:5
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 48 B7 95 4D 22 12 07 69 F9 94 H . . M " . . i . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 83 01 8A 82 CF E5 40 97       . . . . . . @ . 
+2014-11-16 15:09:08 INFO  MessageInterpreter:193 - session id received is non-existant: e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 70 00 00 80 03             . p . . . . 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-11-16 15:09:08 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54883:6
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 43 E4 BC . . . . . . . C . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 14 77 CB 25 E5 33 1A A4 4C EA . w . % . 3 . . L . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 48 B7 BE 6D 30 F3 97 3E FD 89 H . . m 0 . . > . . 
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 18 02 92 A4 46 73 45 96       . . . . F s E . 
+2014-11-16 15:09:08 INFO  MessageInterpreter:193 - session id received is non-existant: e5331aa4-4cea-48b7-9743-e4bc1477cb25
+2014-11-16 15:09:08 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:09:08 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:09:08 DEBUG ConsoleUtils:43 - 02 70 00 00 80 03             . p . . . . 
+2014-11-16 15:09:08 INFO  DsyncserverHandler:50 - Message Responded :6
+2014-11-16 15:11:07 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:7
+2014-11-16 15:11:07 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:07 DEBUG ConsoleUtils:26 - size : 271 bytes
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 FD 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 42 41 47 47 70 51 5A 41 6D 5A B A G G p Q Z A m Z 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 42 65 64 5A 41 54 6C 56 6D 65 B e d Z A T l V m e 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 50 55 72 5A 41 7A 5A 41 32 4D P U r Z A z Z A 2 M 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 5A 43 30 4C 51 57 59 58 61 59 Z C 0 L Q W Y X a Y 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 78 69 31 6F 34 72 4B 6A 72 74 x i 1 o 4 r K j r t 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 6B 42 72 75 77 4B 33 4C 58 6E k B r u w K 3 L X n 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 76 59 57 5A 42 75 6C 33 6C 4D v Y W Z B u l 3 l M 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 6B 67 53 78 7A 53 61 76 43 39 k g S x z S a v C 9 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 45 44 55 58 33 54 78 4F 6C 4B E D U X 3 T x O l K 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 6E 53 5A 43 33 66 34 5A 43 47 n S Z C 3 f 4 Z C G 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 37 68 36 50 4F 37 7A 47 52 66 7 h 6 P O 7 z G R f 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 74 54 77 53 5A 42 34 31 79 51 t T w S Z B 4 1 y Q 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 4E 70 72 54 7A 6D 67 68 31 6A N p r T z m g h 1 j 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 46 5A 43 38 44 5A 43 36 43 5A F Z C 8 D Z C 6 C Z 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 41 61 59 65 6C 6B 66 70 45 4A A a Y e l k f p E J 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 44 47 44 59 4B 54 31 79 47 56 D G D Y K T 1 y G V 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 71 34 35 76 34 48 37 74 4D 6D q 4 5 v 4 H 7 t M m 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 64 44 58 75 33 73 35 4A 44 47 d D X u 3 s 5 J D G 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 50 55 34 5A 41 41 55 6F 33 75 P U 4 Z A A U o 3 u 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 74 6D 52 54 4A 5A 41 69 54 4D t m R T J Z A i T M 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 69 61 6B 45 49 71 7A 67 55 34 i a k E I q z g U 4 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 45 77 73 39 36 34 73 6D 57 5A E w s 9 6 4 s m W Z 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 42 48 6F 65 34 42 34 52 33 73 B H o e 4 B 4 R 3 s 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 6A 6B 72 77 67 5A 44 5A 44 0C j k r w g Z D Z D . 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2014-11-16 15:11:07 DEBUG ConsoleUtils:43 - 45                            E 
+2014-11-16 15:11:07 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:11:07 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:11:07 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:11:08 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAGGpQZAmZBedZATlVmePUrZAzZA2MZC0LQWYXaYxi1o4rKjrtkBruwK3LXnvYWZBul3lMkgSxzSavC9EDUX3TxOlKnSZC3f4ZCG7h6PO7zGRftTwSZB41yQNprTzmgh1jFZC8DZC6CZAaYelkfpEJDGDYKT1yGVq45v4H7tMmdDXu3s5JDGPU4ZAAUo3utmRTJZAiTMiakEIqzgU4Ews964smWZBHoe4B4R3sjkrwgZDZD
+2014-11-16 15:11:08 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 15:11:08 INFO  FacebookUserLogin:51 - mhiff :session- b8f11d43-5c44-491f-af7a-158819afa241
+2014-11-16 15:11:08 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAGGpQZAmZBedZATlVmePUrZAzZA2MZC0LQWYXaYxi1o4rKjrtkBruwK3LXnvYWZBul3lMkgSxzSavC9EDUX3TxOlKnSZC3f4ZCG7h6PO7zGRftTwSZB41yQNprTzmgh1jFZC8DZC6CZAaYelkfpEJDGDYKT1yGVq45v4H7tMmdDXu3s5JDGPU4ZAAUo3utmRTJZAiTMiakEIqzgU4Ews964smWZBHoe4B4R3sjkrwgZDZD
+2014-11-16 15:11:09 INFO  MessageInterpreter:108 - user_agents: {b8f11d43-5c44-491f-af7a-158819afa241=12}
+2014-11-16 15:11:09 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:09 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF AF 7A 15 88 . . . . . . . z . . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 19 AF A2 41 B8 F1 1D 43 5C 44 . . . A . . . C \ D 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 49 1F 00 00 00 05 6D 68 69 66 I  . . . . m h i f 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 15:11:09 INFO  DsyncserverHandler:50 - Message Responded :7
+2014-11-16 15:11:09 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:8
+2014-11-16 15:11:09 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:09 DEBUG ConsoleUtils:26 - size : 271 bytes
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 FD 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 42 41 47 47 70 51 5A 41 6D 5A B A G G p Q Z A m Z 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 42 65 64 5A 41 54 6C 56 6D 65 B e d Z A T l V m e 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 50 55 72 5A 41 7A 5A 41 32 4D P U r Z A z Z A 2 M 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 5A 43 30 4C 51 57 59 58 61 59 Z C 0 L Q W Y X a Y 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 78 69 31 6F 34 72 4B 6A 72 74 x i 1 o 4 r K j r t 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 6B 42 72 75 77 4B 33 4C 58 6E k B r u w K 3 L X n 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 76 59 57 5A 42 75 6C 33 6C 4D v Y W Z B u l 3 l M 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 6B 67 53 78 7A 53 61 76 43 39 k g S x z S a v C 9 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 45 44 55 58 33 54 78 4F 6C 4B E D U X 3 T x O l K 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 6E 53 5A 43 33 66 34 5A 43 47 n S Z C 3 f 4 Z C G 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 37 68 36 50 4F 37 7A 47 52 66 7 h 6 P O 7 z G R f 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 74 54 77 53 5A 42 34 31 79 51 t T w S Z B 4 1 y Q 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 4E 70 72 54 7A 6D 67 68 31 6A N p r T z m g h 1 j 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 46 5A 43 38 44 5A 43 36 43 5A F Z C 8 D Z C 6 C Z 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 41 61 59 65 6C 6B 66 70 45 4A A a Y e l k f p E J 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 44 47 44 59 4B 54 31 79 47 56 D G D Y K T 1 y G V 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 71 34 35 76 34 48 37 74 4D 6D q 4 5 v 4 H 7 t M m 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 64 44 58 75 33 73 35 4A 44 47 d D X u 3 s 5 J D G 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 50 55 34 5A 41 41 55 6F 33 75 P U 4 Z A A U o 3 u 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 74 6D 52 54 4A 5A 41 69 54 4D t m R T J Z A i T M 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 69 61 6B 45 49 71 7A 67 55 34 i a k E I q z g U 4 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 45 77 73 39 36 34 73 6D 57 5A E w s 9 6 4 s m W Z 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 42 48 6F 65 34 42 34 52 33 73 B H o e 4 B 4 R 3 s 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 6A 6B 72 77 67 5A 44 5A 44 0C j k r w g Z D Z D . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 45                            E 
+2014-11-16 15:11:09 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:11:09 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:11:09 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:11:09 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAGGpQZAmZBedZATlVmePUrZAzZA2MZC0LQWYXaYxi1o4rKjrtkBruwK3LXnvYWZBul3lMkgSxzSavC9EDUX3TxOlKnSZC3f4ZCG7h6PO7zGRftTwSZB41yQNprTzmgh1jFZC8DZC6CZAaYelkfpEJDGDYKT1yGVq45v4H7tMmdDXu3s5JDGPU4ZAAUo3utmRTJZAiTMiakEIqzgU4Ews964smWZBHoe4B4R3sjkrwgZDZD
+2014-11-16 15:11:09 INFO  FacebookUserLogin:50 - mhiff :user found
+2014-11-16 15:11:09 INFO  FacebookUserLogin:51 - mhiff :session- 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:11:09 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846981 CAAU6ZCTzlZBUoBAGGpQZAmZBedZATlVmePUrZAzZA2MZC0LQWYXaYxi1o4rKjrtkBruwK3LXnvYWZBul3lMkgSxzSavC9EDUX3TxOlKnSZC3f4ZCG7h6PO7zGRftTwSZB41yQNprTzmgh1jFZC8DZC6CZAaYelkfpEJDGDYKT1yGVq45v4H7tMmdDXu3s5JDGPU4ZAAUo3utmRTJZAiTMiakEIqzgU4Ews964smWZBHoe4B4R3sjkrwgZDZD
+2014-11-16 15:11:09 INFO  MessageInterpreter:108 - user_agents: {0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc=12, b8f11d43-5c44-491f-af7a-158819afa241=12}
+2014-11-16 15:11:09 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:09 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 4E F7 00 00 00 05 6D 68 69 66 N . . . . . m h i f 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 15:11:09 INFO  DsyncserverHandler:50 - Message Responded :8
+2014-11-16 15:11:09 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:9
+2014-11-16 15:11:09 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:09 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF AF 7A 15 88 . . . . . . . z . . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 19 AF A2 41 B8 F1 1D 43 5C 44 . . . A . . . C \ D 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 49 1F                         I  
+2014-11-16 15:11:09 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session b8f11d43-5c44-491f-af7a-158819afa241
+2014-11-16 15:11:09 INFO  MessageInterpreter:163 - b8f11d43-5c44-491f-af7a-158819afa241 :getting digest
+2014-11-16 15:11:09 DEBUG GetDigestMessage:204 - b8f11d43-5c44-491f-af7a-158819afa241 :digested permissions info 
+2014-11-16 15:11:09 INFO  GetDigestMessage:205 - b8f11d43-5c44-491f-af7a-158819afa241 :digestion successful 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:09 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:11:09 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 15:11:09 INFO  DsyncserverHandler:50 - Message Responded :9
+2014-11-16 15:11:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:10
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 4E F7                         N . 
+2014-11-16 15:11:10 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:11:10 INFO  MessageInterpreter:163 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :getting digest
+2014-11-16 15:11:10 DEBUG GetDigestMessage:204 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :digested permissions info 
+2014-11-16 15:11:10 INFO  GetDigestMessage:205 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :digestion successful 
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 00 00                         . . 
+2014-11-16 15:11:10 INFO  DsyncserverHandler:50 - Message Responded :10
+2014-11-16 15:11:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:11
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:11:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:11:10 INFO  DsyncserverHandler:50 - Message Responded :11
+2014-11-16 15:11:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:12
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:11:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:11:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:11:10 INFO  DsyncserverHandler:50 - Message Responded :12
+2014-11-16 15:11:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:13
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:11:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:11:20 INFO  DsyncserverHandler:50 - Message Responded :13
+2014-11-16 15:11:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:14
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:11:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:11:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:11:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:11:20 INFO  DsyncserverHandler:50 - Message Responded :14
+2014-11-16 15:11:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:15
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:11:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:11:20 INFO  DsyncserverHandler:50 - Message Responded :15
+2014-11-16 15:11:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:38959:16
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:11:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:11:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:11:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:11:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:11:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:11:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:11:20 INFO  DsyncserverHandler:50 - Message Responded :16
+2014-11-16 15:12:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:17
+2014-11-16 15:12:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:12:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:12:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:12:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:12:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:12:20 INFO  DsyncserverHandler:50 - Message Responded :17
+2014-11-16 15:12:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:18
+2014-11-16 15:12:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:12:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:12:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:12:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:12:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:12:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:12:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:12:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:12:20 INFO  DsyncserverHandler:50 - Message Responded :18
+2014-11-16 15:12:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:19
+2014-11-16 15:12:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:12:21 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:12:21 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:12:21 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:12:21 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:12:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:12:21 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:12:21 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:12:21 INFO  DsyncserverHandler:50 - Message Responded :19
+2014-11-16 15:13:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:20
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:13:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:13:20 INFO  DsyncserverHandler:50 - Message Responded :20
+2014-11-16 15:13:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:21
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:13:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:13:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:13:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:13:20 INFO  DsyncserverHandler:50 - Message Responded :21
+2014-11-16 15:13:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:22
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:13:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:13:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:13:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:13:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:13:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:13:20 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:13:20 INFO  DsyncserverHandler:50 - Message Responded :22
+2014-11-16 15:14:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:23
+2014-11-16 15:14:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:14:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:14:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:14:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:14:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:14:20 INFO  DsyncserverHandler:50 - Message Responded :23
+2014-11-16 15:14:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:24
+2014-11-16 15:14:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:14:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:14:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:14:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:14:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:14:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:14:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:14:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:14:20 INFO  DsyncserverHandler:50 - Message Responded :24
+2014-11-16 15:14:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:25
+2014-11-16 15:14:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:14:21 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:14:21 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:14:21 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:14:21 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:14:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:14:21 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:14:21 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:14:21 INFO  DsyncserverHandler:50 - Message Responded :25
+2014-11-16 15:15:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:26
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:15:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:15:20 INFO  DsyncserverHandler:50 - Message Responded :26
+2014-11-16 15:15:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:27
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:15:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:15:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:15:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:15:20 INFO  DsyncserverHandler:50 - Message Responded :27
+2014-11-16 15:15:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:28
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:15:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:15:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:15:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:15:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:15:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:15:20 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:15:20 INFO  DsyncserverHandler:50 - Message Responded :28
+2014-11-16 15:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:29
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:16:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:16:20 INFO  DsyncserverHandler:50 - Message Responded :29
+2014-11-16 15:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:30
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:16:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:16:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:16:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:16:20 INFO  DsyncserverHandler:50 - Message Responded :30
+2014-11-16 15:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:31
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:16:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:16:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:16:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:16:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:16:20 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:16:20 INFO  DsyncserverHandler:50 - Message Responded :31
+2014-11-16 15:17:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:32
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:17:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:17:20 INFO  DsyncserverHandler:50 - Message Responded :32
+2014-11-16 15:17:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:33
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:17:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:17:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:17:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:17:20 INFO  DsyncserverHandler:50 - Message Responded :33
+2014-11-16 15:17:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:34
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:17:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:17:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:17:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:17:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:17:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:17:20 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:17:20 INFO  DsyncserverHandler:50 - Message Responded :34
+2014-11-16 15:18:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:35
+2014-11-16 15:18:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:18:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:18:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:18:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:18:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:18:20 INFO  DsyncserverHandler:50 - Message Responded :35
+2014-11-16 15:18:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:36
+2014-11-16 15:18:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:18:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:18:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:18:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:18:20 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:18:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:18:20 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:18:20 INFO  DsyncserverHandler:50 - Message Responded :36
+2014-11-16 15:18:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47586:37
+2014-11-16 15:18:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:18:20 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:18:20 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:18:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:18:20 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:18:21 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:18:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:18:21 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:18:21 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:18:21 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:18:21 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:18:21 INFO  DsyncserverHandler:50 - Message Responded :37
+2014-11-16 15:18:57 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:45036:38
+2014-11-16 15:18:57 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:18:57 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:18:57 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:18:57 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:18:57 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:18:57 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:18:57 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:18:57 INFO  DsyncserverHandler:50 - Message Responded :38
+2014-11-16 15:18:58 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:45036:39
+2014-11-16 15:18:58 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:18:58 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:18:58 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:18:58 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:18:58 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:18:58 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:18:58 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:18:58 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:18:58 INFO  DsyncserverHandler:50 - Message Responded :39
+2014-11-16 15:19:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:45036:40
+2014-11-16 15:19:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:19:06 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:19:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:19:06 INFO  DsyncserverHandler:50 - Message Responded :40
+2014-11-16 15:19:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:45036:41
+2014-11-16 15:19:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:06 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:19:06 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:19:06 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:19:06 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:19:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:06 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:19:06 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:19:06 INFO  DsyncserverHandler:50 - Message Responded :41
+2014-11-16 15:19:43 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:42
+2014-11-16 15:19:43 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:43 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:43 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:19:43 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:19:43 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:43 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:43 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:19:43 INFO  DsyncserverHandler:50 - Message Responded :42
+2014-11-16 15:19:44 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:43
+2014-11-16 15:19:44 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:44 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 4E F7 90 35 EB F3 DF 07 A0 49 N . . 5 . . . . . I 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - C1 83 6A AB 48 3E 4E 5C       . . j . H > N \ 
+2014-11-16 15:19:44 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:19:44 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:19:44 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [c1836aab-483e-4e5c-9035-ebf3df07a049] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:19:44 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:44 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 35 EB F3 . . . . . . . 5 . . 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - DF 07 A0 49 C1 83 6A AB 48 3E . . . I . . j . H > 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 4E 5C                         N \ 
+2014-11-16 15:19:44 INFO  DsyncserverHandler:50 - Message Responded :43
+2014-11-16 15:19:44 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:44
+2014-11-16 15:19:44 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:44 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 4E F7 97 7F A0 60 07 3A 92 F3 N . .  . ` . : . . 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 12 48 B6 FB 81 51 49 A2       . H . . . Q I . 
+2014-11-16 15:19:44 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:19:44 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:19:44 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [1248b6fb-8151-49a2-977f-a060073a92f3] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:19:44 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:44 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 97 7F A0 60 . . . . . . .  . ` 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 07 3A 92 F3 12 48 B6 FB 81 51 . : . . . H . . . Q 
+2014-11-16 15:19:44 DEBUG ConsoleUtils:43 - 49 A2                         I . 
+2014-11-16 15:19:44 INFO  DsyncserverHandler:50 - Message Responded :44
+2014-11-16 15:19:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:45
+2014-11-16 15:19:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:19:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:53 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:19:53 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:19:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:19:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:19:53 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:19:53 INFO  DsyncserverHandler:50 - Message Responded :45
+2014-11-16 15:20:19 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:46
+2014-11-16 15:20:19 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:20:19 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:20:19 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:20:19 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:20:19 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:20:19 INFO  DsyncserverHandler:50 - Message Responded :46
+2014-11-16 15:20:19 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:47246:47
+2014-11-16 15:20:19 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:20:19 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 4E F7 AB 9E 5F 97 18 0C 93 B4 N . . . _ . . . . . 
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - CC 0B B6 F4 21 98 43 3D       . . . . ! . C = 
+2014-11-16 15:20:19 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:20:19 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:20:19 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [cc0bb6f4-2198-433d-ab9e-5f97180c93b4] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:20:19 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:20:19 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF AB 9E 5F 97 . . . . . . . . _ . 
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 18 0C 93 B4 CC 0B B6 F4 21 98 . . . . . . . . ! . 
+2014-11-16 15:20:19 DEBUG ConsoleUtils:43 - 43 3D                         C = 
+2014-11-16 15:20:19 INFO  DsyncserverHandler:50 - Message Responded :47
+2014-11-16 15:21:52 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:48
+2014-11-16 15:21:52 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:21:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:21:52 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:21:52 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:21:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:21:52 INFO  DsyncserverHandler:50 - Message Responded :48
+2014-11-16 15:21:52 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:49
+2014-11-16 15:21:52 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:21:52 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 4E F7 90 41 D6 08 22 BB 4A 3E N . . A . . " . J > 
+2014-11-16 15:21:52 DEBUG ConsoleUtils:43 - 17 AE E3 10 97 B9 4E C9       . . . . . . N . 
+2014-11-16 15:21:52 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:21:52 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:21:53 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [17aee310-97b9-4ec9-9041-d60822bb4a3e] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:21:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:21:53 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 90 41 D6 08 . . . . . . . A . . 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 22 BB 4A 3E 17 AE E3 10 97 B9 " . J > . . . . . . 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 4E C9                         N . 
+2014-11-16 15:21:53 INFO  DsyncserverHandler:50 - Message Responded :49
+2014-11-16 15:21:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:50
+2014-11-16 15:21:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:21:53 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 4E F7 A6 2D F1 92 84 0E 1B 65 N . . - . . . . . e 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 74 61 99 CA E8 09 48 6D       t a . . . . H m 
+2014-11-16 15:21:53 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:21:53 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:21:53 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [746199ca-e809-486d-a62d-f192840e1b65] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:21:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:21:53 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A6 2D F1 92 . . . . . . . - . . 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 84 0E 1B 65 74 61 99 CA E8 09 . . . e t a . . . . 
+2014-11-16 15:21:53 DEBUG ConsoleUtils:43 - 48 6D                         H m 
+2014-11-16 15:21:53 INFO  DsyncserverHandler:50 - Message Responded :50
+2014-11-16 15:22:52 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:51
+2014-11-16 15:22:52 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:22:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:22:52 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:22:52 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:22:52 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:22:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:22:52 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:22:52 INFO  DsyncserverHandler:50 - Message Responded :51
+2014-11-16 15:23:52 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:52
+2014-11-16 15:23:52 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:23:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:23:52 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:23:52 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:23:52 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:23:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:23:52 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:23:52 INFO  DsyncserverHandler:50 - Message Responded :52
+2014-11-16 15:24:52 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:53
+2014-11-16 15:24:52 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:24:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:52 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:24:52 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:24:52 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:24:52 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:52 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:24:52 INFO  DsyncserverHandler:50 - Message Responded :53
+2014-11-16 15:24:55 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:54
+2014-11-16 15:24:55 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:24:55 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:55 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:24:55 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:24:55 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:24:55 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:55 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:24:55 INFO  DsyncserverHandler:50 - Message Responded :54
+2014-11-16 15:24:57 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:55
+2014-11-16 15:24:57 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:24:57 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:24:57 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:24:57 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:24:57 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:24:57 INFO  DsyncserverHandler:50 - Message Responded :55
+2014-11-16 15:24:57 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:55269:56
+2014-11-16 15:24:57 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:24:57 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 4E F7 AA 8E 8D 28 45 A0 2D 0F N . . . . ( E . - . 
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - F0 1A 58 D5 02 47 4B A2       . . X . . G K . 
+2014-11-16 15:24:57 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:24:57 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:24:57 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [f01a58d5-0247-4ba2-aa8e-8d2845a02d0f] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:24:57 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:24:57 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF AA 8E 8D 28 . . . . . . . . . ( 
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 45 A0 2D 0F F0 1A 58 D5 02 47 E . - . . . X . . G 
+2014-11-16 15:24:57 DEBUG ConsoleUtils:43 - 4B A2                         K . 
+2014-11-16 15:24:57 INFO  DsyncserverHandler:50 - Message Responded :56
+2014-11-16 15:26:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:57
+2014-11-16 15:26:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:26:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:26:06 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:26:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:26:06 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:26:06 INFO  DsyncserverHandler:50 - Message Responded :57
+2014-11-16 15:26:06 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:58
+2014-11-16 15:26:06 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:26:06 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 4E F7 9B C4 F1 D0 98 FC 6E 11 N . . . . . . . n . 
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 6F A2 80 87 1E 6C 42 6B       o . . .  l B k 
+2014-11-16 15:26:06 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:26:06 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:26:06 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [6fa28087-1e6c-426b-9bc4-f1d098fc6e11] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:26:06 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:26:06 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 9B C4 F1 D0 . . . . . . . . . . 
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 98 FC 6E 11 6F A2 80 87 1E 6C . . n . o . . .  l 
+2014-11-16 15:26:06 DEBUG ConsoleUtils:43 - 42 6B                         B k 
+2014-11-16 15:26:06 INFO  DsyncserverHandler:50 - Message Responded :58
+2014-11-16 15:27:05 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:59
+2014-11-16 15:27:05 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:27:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:27:05 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:27:05 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:27:05 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:27:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:27:05 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:27:05 INFO  DsyncserverHandler:50 - Message Responded :59
+2014-11-16 15:28:05 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:60
+2014-11-16 15:28:05 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:28:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:28:05 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:28:05 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:28:05 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:28:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:28:05 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:28:05 INFO  DsyncserverHandler:50 - Message Responded :60
+2014-11-16 15:28:30 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:61
+2014-11-16 15:28:30 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:28:30 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:28:30 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:28:30 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:28:30 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:28:30 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:28:30 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:28:30 INFO  DsyncserverHandler:50 - Message Responded :61
+2014-11-16 15:28:31 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:62
+2014-11-16 15:28:31 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:28:31 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 80 D7 E3 D7 . . . . . . . . . . 
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 80 BD F0 CC 0A C0 74 D5 5A 32 . . . . . . t . Z 2 
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 4E F7 A0 02 5B 9F BD 7E A3 4C N . . . [ . . ~ . L 
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 05 BD 43 D2 52 70 4C 9F       . . C . R p L . 
+2014-11-16 15:28:31 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846981 with session 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc
+2014-11-16 15:28:31 INFO  MessageInterpreter:149 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc :creating new document- 
+2014-11-16 15:28:31 INFO  DocumentCreateMessage:63 - 0ac074d5-5a32-4ef7-80d7-e3d780bdf0cc: Created new Document [05bd43d2-5270-4c9f-a002-5b9fbd7ea34c] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846981","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:28:31 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:28:31 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF A0 02 5B 9F . . . . . . . . [ . 
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - BD 7E A3 4C 05 BD 43 D2 52 70 . ~ . L . . C . R p 
+2014-11-16 15:28:31 DEBUG ConsoleUtils:43 - 4C 9F                         L . 
+2014-11-16 15:28:31 INFO  DsyncserverHandler:50 - Message Responded :62
+2014-11-16 15:29:05 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:54105:63
+2014-11-16 15:29:05 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:29:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:29:05 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:29:05 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:29:05 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:29:05 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:29:05 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:29:05 INFO  DsyncserverHandler:50 - Message Responded :63
+2014-11-16 15:34:42 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:34101:64
+2014-11-16 15:34:42 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:34:42 DEBUG ConsoleUtils:26 - size : 261 bytes
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F3 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 42 41 47 64 31 66 51 70 79 71 B A G d 1 f Q p y q 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 52 41 4B 59 79 34 63 70 50 6A R A K Y y 4 c p P j 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 43 71 64 33 38 4B 65 61 36 37 C q d 3 8 K e a 6 7 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 4C 34 79 43 58 62 48 6B 75 57 L 4 y C X b H k u W 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 59 77 47 4B 72 6B 74 34 70 75 Y w G K r k t 4 p u 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 58 61 44 50 74 6E 55 38 72 55 X a D P t n U 8 r U 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 4A 59 6A 67 36 7A 58 4E 37 65 J Y j g 6 z X N 7 e 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 6F 30 46 55 5A 41 35 43 33 6E o 0 F U Z A 5 C 3 n 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 48 48 72 34 61 33 6E 70 31 4E H H r 4 a 3 n p 1 N 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 78 6D 56 39 65 76 79 61 61 69 x m V 9 e v y a a i 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 46 62 69 4B 71 4B 43 6C 6D 61 F b i K q K C l m a 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 36 44 34 41 74 56 33 34 63 69 6 D 4 A t V 3 4 c i 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 6F 74 5A 42 67 36 4B 33 33 4C o t Z B g 6 K 3 3 L 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 33 6F 46 72 78 4B 4D 57 74 76 3 o F r x K M W t v 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 42 38 55 77 53 79 43 73 79 32 B 8 U w S y C s y 2 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 71 69 6C 61 5A 41 47 6B 6E 44 q i l a Z A G k n D 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 53 75 30 5A 42 50 56 77 58 68 S u 0 Z B P V w X h 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 55 69 66 77 72 71 57 72 72 6E U i f w r q W r r n 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 64 61 6C 34 65 63 5A 42 4E 65 d a l 4 e c Z B N e 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 49 78 48 42 43 65 48 50 56 33 I x H B C e H P V 3 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 72 69 33 45 34 50 45 6B 79 64 r i 3 E 4 P E k y d 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 43 66 6F 63 6A 41 5A 43 75 50 C f o c j A Z C u P 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 44 73 66 35 67 5A 44 5A 44 0C D s f 5 g Z D Z D . 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2014-11-16 15:34:42 DEBUG ConsoleUtils:43 - 45                            E 
+2014-11-16 15:34:42 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:34:42 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:34:42 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:34:43 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAGd1fQpyqRAKYy4cpPjCqd38Kea67L4yCXbHkuWYwGKrkt4puXaDPtnU8rUJYjg6zXN7eo0FUZA5C3nHHr4a3np1NxmV9evyaaiFbiKqKClma6D4AtV34ciotZBg6K33L3oFrxKMWtvB8UwSyCsy2qilaZAGknDSu0ZBPVwXhUifwrqWrrndal4ecZBNeIxHBCeHPV3ri3E4PEkydCfocjAZCuPDsf5gZDZD
+2014-11-16 15:34:43 WARN  DefaultChannelPipeline:958 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+org.codehaus.jettison.json.JSONException: JSONObject["friends"] not found.
+	at org.codehaus.jettison.json.JSONObject.get(JSONObject.java:360)
+	at org.codehaus.jettison.json.JSONObject.getJSONObject(JSONObject.java:454)
+	at com.neoba.models.FacebookUser.<init>(FacebookUser.java:53)
+	at com.neoba.FacebookUserLogin.<init>(FacebookUserLogin.java:33)
+	at com.neoba.MessageInterpreter.generateReply(MessageInterpreter.java:104)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:47)
+	at com.neoba.DsyncserverHandler.channelRead0(DsyncserverHandler.java:28)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:155)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+	at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:116)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+2014-11-16 15:38:17 INFO  Dsyncserver:42 - kickstarting server..
+2014-11-16 15:38:17 INFO  Dsyncserver:57 - created view - idsview
+2014-11-16 15:38:18 INFO  Dsyncserver:57 - created view - userstoid
+2014-11-16 15:38:18 INFO  Dsyncserver:57 - created view - usernamelistview
+2014-11-16 15:38:19 INFO  Dsyncserver:57 - created view - created_docs
+2014-11-16 15:38:19 INFO  Dsyncserver:57 - created view - facebookidtoid
+2014-11-16 15:38:19 INFO  Dsyncserver:57 - created view - usernametofacebookid
+2014-11-16 15:38:20 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2014-11-16 15:38:20 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 8
+2014-11-16 15:38:20 DEBUG PlatformDependent:463 - UID: 1000
+2014-11-16 15:38:20 DEBUG PlatformDependent:540 - Java version: 7
+2014-11-16 15:38:20 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2014-11-16 15:38:20 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2014-11-16 15:38:20 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2014-11-16 15:38:20 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2014-11-16 15:38:20 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2014-11-16 15:38:20 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2014-11-16 15:38:20 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2014-11-16 15:38:20 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2014-11-16 15:38:20 DEBUG PlatformDependent:670 - Javassist: unavailable
+2014-11-16 15:38:20 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2014-11-16 15:38:20 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2014-11-16 15:38:20 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 32 (sun.arch.data.model)
+2014-11-16 15:38:20 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2014-11-16 15:38:20 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2014-11-16 15:38:20 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2014-11-16 15:38:20 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x31bf45b1564b59c0
+2014-11-16 15:38:20 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2014-11-16 15:38:20 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2014-11-16 15:38:20 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2014-11-16 15:38:20 DEBUG NetUtil:155 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+2014-11-16 15:38:20 DEBUG NetUtil:187 - /proc/sys/net/core/somaxconn: 128
+2014-11-16 15:38:20 INFO  Dsyncserver:79 - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2014-11-16 15:38:26 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2014-11-16 15:38:26 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:1
+2014-11-16 15:38:26 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:26 DEBUG ConsoleUtils:26 - size : 265 bytes
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F7 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 42 41 42 4B 53 6C 72 56 38 57 B A B K S l r V 8 W 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 53 73 33 70 59 5A 43 57 35 66 S s 3 p Y Z C W 5 f 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 5A 42 41 63 62 4F 6A 32 47 51 Z B A c b O j 2 G Q 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 42 66 59 6A 4E 35 65 52 72 4C B f Y j N 5 e R r L 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 66 4A 36 59 62 78 35 6E 6A 46 f J 6 Y b x 5 n j F 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 41 37 43 50 64 5A 42 44 68 50 A 7 C P d Z B D h P 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 70 46 34 59 63 76 70 56 41 38 p F 4 Y c v p V A 8 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 6E 67 50 32 33 42 58 4A 58 34 n g P 2 3 B X J X 4 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 38 76 62 38 49 32 49 4E 33 67 8 v b 8 I 2 I N 3 g 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 57 74 45 6D 31 47 54 49 63 70 W t E m 1 G T I c p 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 54 6E 74 33 73 62 67 34 71 48 T n t 3 s b g 4 q H 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 57 5A 43 49 51 47 57 67 36 54 W Z C I Q G W g 6 T 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 78 6E 73 4C 43 32 6A 69 6C 69 x n s L C 2 j i l i 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 55 6A 4B 67 37 51 4C 69 34 5A U j K g 7 Q L i 4 Z 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 41 4A 50 30 44 35 35 55 4E 59 A J P 0 D 5 5 U N Y 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 50 38 5A 41 69 32 63 75 69 58 P 8 Z A i 2 c u i X 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 32 76 46 7A 5A 43 51 45 58 76 2 v F z Z C Q E X v 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 6C 46 6E 4C 34 38 6F 34 4F 49 l F n L 4 8 o 4 O I 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 70 55 45 61 54 4A 5A 42 44 42 p U E a T J Z B D B 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 6D 69 4E 61 65 42 56 51 6E 61 m i N a e B V Q n a 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 70 30 5A 43 68 70 49 58 43 6E p 0 Z C h p I X C n 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 54 62 42 34 4C 6E 42 68 49 4F T b B 4 L n B h I O 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 41 63 4E 5A 41 38 34 34 51 5A A c N Z A 8 4 4 Q Z 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 44 5A 44 0C 00 00 00 07 43 4F D Z D . . . . . C O 
+2014-11-16 15:38:26 DEBUG ConsoleUtils:43 - 4E 53 4F 4C 45                N S O L E 
+2014-11-16 15:38:26 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:38:26 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:38:26 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:38:27 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBABKSlrV8WSs3pYZCW5fZBAcbOj2GQBfYjN5eRrLfJ6Ybx5njFA7CPdZBDhPpF4YcvpVA8ngP23BXJX48vb8I2IN3gWtEm1GTIcpTnt3sbg4qHWZCIQGWg6TxnsLC2jiliUjKg7QLi4ZAJP0D55UNYP8ZAi2cuiX2vFzZCQEXvlFnL48o4OIpUEaTJZBDBmiNaeBVQnap0ZChpIXCnTbB4LnBhIOAcNZA844QZDZD
+2014-11-16 15:38:27 INFO  FacebookUserLogin:55 - Mark Hoffman :user dosn't exist 
+2014-11-16 15:38:27 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:27 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:27 DEBUG ConsoleUtils:43 - 02 06 00 00 80 02             . . . . . . 
+2014-11-16 15:38:27 INFO  DsyncserverHandler:50 - Message Responded :1
+2014-11-16 15:38:28 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:2
+2014-11-16 15:38:28 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:28 DEBUG ConsoleUtils:26 - size : 267 bytes
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F9 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 42 41 48 69 6A 74 38 41 33 68 B A H i j t 8 A 3 h 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 4F 5A 42 44 32 62 35 65 65 37 O Z B D 2 b 5 e e 7 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 4D 52 4A 54 53 37 46 53 32 53 M R J T S 7 F S 2 S 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 73 39 55 31 4D 70 77 50 61 37 s 9 U 1 M p w P a 7 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 76 76 5A 43 76 6F 53 4C 5A 41 v v Z C v o S L Z A 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 4F 43 51 65 32 50 78 78 69 68 O C Q e 2 P x x i h 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 45 6E 46 4A 33 46 38 58 49 62 E n F J 3 F 8 X I b 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 48 4B 6B 74 79 4A 74 44 44 6A H K k t y J t D D j 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 52 33 77 30 67 37 4C 6A 4C 51 R 3 w 0 g 7 L j L Q 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 68 56 4A 69 41 6C 67 65 35 52 h V J i A l g e 5 R 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 39 37 68 75 6E 47 64 51 65 5A 9 7 h u n G d Q e Z 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 43 4A 33 79 65 53 6B 64 5A 41 C J 3 y e S k d Z A 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 67 76 73 52 6B 6E 66 65 5A 43 g v s R k n f e Z C 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 5A 41 62 54 73 71 4A 6F 35 42 Z A b T s q J o 5 B 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 4A 6A 71 63 5A 43 68 35 54 78 J j q c Z C h 5 T x 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 56 32 70 70 65 5A 43 78 4F 32 V 2 p p e Z C x O 2 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 4B 4B 72 38 4A 47 30 48 79 6B K K r 8 J G 0 H y k 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 76 50 41 71 56 55 4A 54 44 49 v P A q V U J T D I 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 59 7A 6F 76 4F 77 74 74 31 79 Y z o v O w t t 1 y 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 34 6E 33 33 42 39 44 41 63 52 4 n 3 3 B 9 D A c R 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 5A 41 4A 67 75 51 41 6E 59 41 Z A J g u Q A n Y A 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 44 4D 65 5A 43 36 71 4A 33 68 D M e Z C 6 q J 3 h 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 66 34 30 75 59 5A 43 69 55 37 f 4 0 u Y Z C i U 7 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 51 5A 44 5A 44 0C 00 00 00 07 Q Z D Z D . . . . . 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 43 4F 4E 53 4F 4C 45          C O N S O L E 
+2014-11-16 15:38:28 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:38:28 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:38:28 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:38:28 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAHijt8A3hOZBD2b5ee7MRJTS7FS2Ss9U1MpwPa7vvZCvoSLZAOCQe2PxxihEnFJ3F8XIbHKktyJtDDjR3w0g7LjLQhVJiAlge5R97hunGdQeZCJ3yeSkdZAgvsRknfeZCZAbTsqJo5BJjqcZCh5TxV2ppeZCxO2KKr8JG0HykvPAqVUJTDIYzovOwtt1y4n33B9DAcRZAJguQAnYADMeZC6qJ3hf40uYZCiU7QZDZD
+2014-11-16 15:38:28 INFO  FacebookUserLogin:55 - Mark Hoffman :user dosn't exist 
+2014-11-16 15:38:28 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:28 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:28 DEBUG ConsoleUtils:43 - 02 06 00 00 80 02             . . . . . . 
+2014-11-16 15:38:28 INFO  DsyncserverHandler:50 - Message Responded :2
+2014-11-16 15:38:35 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:3
+2014-11-16 15:38:35 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:35 DEBUG ConsoleUtils:26 - size : 264 bytes
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 02 F5 00 00 00 05 6D 68 6F 66 . . . . . . m h o f 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 66 00 00 00 F9 43 41 41 55 36 f . . . . C A A U 6 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 5A 43 54 7A 6C 5A 42 55 6F 42 Z C T z l Z B U o B 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 41 48 69 6A 74 38 41 33 68 4F A H i j t 8 A 3 h O 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 5A 42 44 32 62 35 65 65 37 4D Z B D 2 b 5 e e 7 M 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 52 4A 54 53 37 46 53 32 53 73 R J T S 7 F S 2 S s 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 39 55 31 4D 70 77 50 61 37 76 9 U 1 M p w P a 7 v 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 76 5A 43 76 6F 53 4C 5A 41 4F v Z C v o S L Z A O 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 43 51 65 32 50 78 78 69 68 45 C Q e 2 P x x i h E 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 6E 46 4A 33 46 38 58 49 62 48 n F J 3 F 8 X I b H 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 4B 6B 74 79 4A 74 44 44 6A 52 K k t y J t D D j R 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 33 77 30 67 37 4C 6A 4C 51 68 3 w 0 g 7 L j L Q h 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 56 4A 69 41 6C 67 65 35 52 39 V J i A l g e 5 R 9 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 37 68 75 6E 47 64 51 65 5A 43 7 h u n G d Q e Z C 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 4A 33 79 65 53 6B 64 5A 41 67 J 3 y e S k d Z A g 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 76 73 52 6B 6E 66 65 5A 43 5A v s R k n f e Z C Z 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 41 62 54 73 71 4A 6F 35 42 4A A b T s q J o 5 B J 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 6A 71 63 5A 43 68 35 54 78 56 j q c Z C h 5 T x V 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 32 70 70 65 5A 43 78 4F 32 4B 2 p p e Z C x O 2 K 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 4B 72 38 4A 47 30 48 79 6B 76 K r 8 J G 0 H y k v 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 50 41 71 56 55 4A 54 44 49 59 P A q V U J T D I Y 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 7A 6F 76 4F 77 74 74 31 79 34 z o v O w t t 1 y 4 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 6E 33 33 42 39 44 41 63 52 5A n 3 3 B 9 D A c R Z 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 41 4A 67 75 51 41 6E 59 41 44 A J g u Q A n Y A D 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 4D 65 5A 43 36 71 4A 33 68 66 M e Z C 6 q J 3 h f 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 34 30 75 59 5A 43 69 55 37 51 4 0 u Y Z C i U 7 Q 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 5A 44 5A 44                   Z D Z D 
+2014-11-16 15:38:35 INFO  MessageInterpreter:85 - facebook access_token: CAAU6ZCTzlZBUoBAHijt8A3hOZBD2b5ee7MRJTS7FS2Ss9U1MpwPa7vvZCvoSLZAOCQe2PxxihEnFJ3F8XIbHKktyJtDDjR3w0g7LjLQhVJiAlge5R97hunGdQeZCJ3yeSkdZAgvsRknfeZCZAbTsqJo5BJjqcZCh5TxV2ppeZCxO2KKr8JG0HykvPAqVUJTDIYzovOwtt1y4n33B9DAcRZAJguQAnYADMeZC6qJ3hf40uYZCiU7QZDZD
+2014-11-16 15:38:35 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAHijt8A3hOZBD2b5ee7MRJTS7FS2Ss9U1MpwPa7vvZCvoSLZAOCQe2PxxihEnFJ3F8XIbHKktyJtDDjR3w0g7LjLQhVJiAlge5R97hunGdQeZCJ3yeSkdZAgvsRknfeZCZAbTsqJo5BJjqcZCh5TxV2ppeZCxO2KKr8JG0HykvPAqVUJTDIYzovOwtt1y4n33B9DAcRZAJguQAnYADMeZC6qJ3hf40uYZCiU7QZDZD
+2014-11-16 15:38:35 INFO  FacebookUserCreateMessage:63 - created user {"username":"mhoff","type":"user","name":"Mark Hoffman","facebook_id":"1390501281241252","facebook_friends":[],"followers":[],"gcm_registration":"","following":[],"docs":[],"edit_docs":[]}
+2014-11-16 15:38:35 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:35 DEBUG ConsoleUtils:26 - size : 10 bytes
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 - 02 05 00 00 FF FF 00 00 00 00 . . . . . . . . . . 
+2014-11-16 15:38:35 DEBUG ConsoleUtils:43 -                               
+2014-11-16 15:38:35 INFO  DsyncserverHandler:50 - Message Responded :3
+2014-11-16 15:38:36 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:4
+2014-11-16 15:38:36 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:36 DEBUG ConsoleUtils:26 - size : 267 bytes
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F9 43 41 41 55 . . . . . . C A A U 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 42 41 48 69 6A 74 38 41 33 68 B A H i j t 8 A 3 h 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 4F 5A 42 44 32 62 35 65 65 37 O Z B D 2 b 5 e e 7 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 4D 52 4A 54 53 37 46 53 32 53 M R J T S 7 F S 2 S 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 73 39 55 31 4D 70 77 50 61 37 s 9 U 1 M p w P a 7 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 76 76 5A 43 76 6F 53 4C 5A 41 v v Z C v o S L Z A 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 4F 43 51 65 32 50 78 78 69 68 O C Q e 2 P x x i h 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 45 6E 46 4A 33 46 38 58 49 62 E n F J 3 F 8 X I b 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 48 4B 6B 74 79 4A 74 44 44 6A H K k t y J t D D j 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 52 33 77 30 67 37 4C 6A 4C 51 R 3 w 0 g 7 L j L Q 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 68 56 4A 69 41 6C 67 65 35 52 h V J i A l g e 5 R 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 39 37 68 75 6E 47 64 51 65 5A 9 7 h u n G d Q e Z 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 43 4A 33 79 65 53 6B 64 5A 41 C J 3 y e S k d Z A 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 67 76 73 52 6B 6E 66 65 5A 43 g v s R k n f e Z C 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 5A 41 62 54 73 71 4A 6F 35 42 Z A b T s q J o 5 B 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 4A 6A 71 63 5A 43 68 35 54 78 J j q c Z C h 5 T x 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 56 32 70 70 65 5A 43 78 4F 32 V 2 p p e Z C x O 2 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 4B 4B 72 38 4A 47 30 48 79 6B K K r 8 J G 0 H y k 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 76 50 41 71 56 55 4A 54 44 49 v P A q V U J T D I 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 59 7A 6F 76 4F 77 74 74 31 79 Y z o v O w t t 1 y 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 34 6E 33 33 42 39 44 41 63 52 4 n 3 3 B 9 D A c R 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 5A 41 4A 67 75 51 41 6E 59 41 Z A J g u Q A n Y A 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 44 4D 65 5A 43 36 71 4A 33 68 D M e Z C 6 q J 3 h 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 66 34 30 75 59 5A 43 69 55 37 f 4 0 u Y Z C i U 7 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 51 5A 44 5A 44 0C 00 00 00 07 Q Z D Z D . . . . . 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 43 4F 4E 53 4F 4C 45          C O N S O L E 
+2014-11-16 15:38:36 INFO  MessageInterpreter:98 - user agent detected: Console
+2014-11-16 15:38:36 DEBUG MessageInterpreter:102 - User Agent: 12
+2014-11-16 15:38:36 INFO  MessageInterpreter:103 - logging in new user via facebook
+2014-11-16 15:38:36 INFO  FacebookUser:47 - fbtoid access token CAAU6ZCTzlZBUoBAHijt8A3hOZBD2b5ee7MRJTS7FS2Ss9U1MpwPa7vvZCvoSLZAOCQe2PxxihEnFJ3F8XIbHKktyJtDDjR3w0g7LjLQhVJiAlge5R97hunGdQeZCJ3yeSkdZAgvsRknfeZCZAbTsqJo5BJjqcZCh5TxV2ppeZCxO2KKr8JG0HykvPAqVUJTDIYzovOwtt1y4n33B9DAcRZAJguQAnYADMeZC6qJ3hf40uYZCiU7QZDZD
+2014-11-16 15:38:36 INFO  FacebookUserLogin:50 - mhoff :user found
+2014-11-16 15:38:36 INFO  FacebookUserLogin:51 - mhoff :session- 844461aa-3ecd-416d-96e8-86390795737a
+2014-11-16 15:38:36 INFO  MessageInterpreter:106 - new facebook user session: 1152921504606846982 CAAU6ZCTzlZBUoBAHijt8A3hOZBD2b5ee7MRJTS7FS2Ss9U1MpwPa7vvZCvoSLZAOCQe2PxxihEnFJ3F8XIbHKktyJtDDjR3w0g7LjLQhVJiAlge5R97hunGdQeZCJ3yeSkdZAgvsRknfeZCZAbTsqJo5BJjqcZCh5TxV2ppeZCxO2KKr8JG0HykvPAqVUJTDIYzovOwtt1y4n33B9DAcRZAJguQAnYADMeZC6qJ3hf40uYZCiU7QZDZD
+2014-11-16 15:38:36 INFO  MessageInterpreter:108 - user_agents: {844461aa-3ecd-416d-96e8-86390795737a=12}
+2014-11-16 15:38:36 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:36 DEBUG ConsoleUtils:26 - size : 31 bytes
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 96 E8 86 39 . . . . . . . . . 9 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 07 95 73 7A 84 44 61 AA 3E CD . . s z . D a . > . 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 41 6D 00 00 00 05 6D 68 6F 66 A m . . . . m h o f 
+2014-11-16 15:38:36 DEBUG ConsoleUtils:43 - 66                            f 
+2014-11-16 15:38:36 INFO  DsyncserverHandler:50 - Message Responded :4
+2014-11-16 15:38:37 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:5
+2014-11-16 15:38:37 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:37 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:37 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:38:37 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:38:37 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:37 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:37 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:38:37 INFO  DsyncserverHandler:50 - Message Responded :5
+2014-11-16 15:38:46 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:6
+2014-11-16 15:38:46 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:46 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:38:46 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:38:46 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:46 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:38:46 INFO  DsyncserverHandler:50 - Message Responded :6
+2014-11-16 15:38:46 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:7
+2014-11-16 15:38:46 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:46 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 96 E8 86 39 . . . . . . . . . 9 
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 07 95 73 7A 84 44 61 AA 3E CD . . s z . D a . > . 
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 41 6D 95 61 36 11 15 2C 2B 4A A m . a 6 . . , + J 
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - D4 BD CA 42 AD AB 4A 40       . . . B . . J @ 
+2014-11-16 15:38:46 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session 844461aa-3ecd-416d-96e8-86390795737a
+2014-11-16 15:38:46 INFO  MessageInterpreter:149 - 844461aa-3ecd-416d-96e8-86390795737a :creating new document- 
+2014-11-16 15:38:46 INFO  DocumentCreateMessage:63 - 844461aa-3ecd-416d-96e8-86390795737a: Created new Document [d4bdca42-adab-4a40-9561-3611152c2b4a] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846982","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:38:46 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:46 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 95 61 36 11 . . . . . . . a 6 . 
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 15 2C 2B 4A D4 BD CA 42 AD AB . , + J . . . B . . 
+2014-11-16 15:38:46 DEBUG ConsoleUtils:43 - 4A 40                         J @ 
+2014-11-16 15:38:46 INFO  DsyncserverHandler:50 - Message Responded :7
+2014-11-16 15:38:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:33254:8
+2014-11-16 15:38:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:38:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:38:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:38:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:38:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:38:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:38:47 INFO  DsyncserverHandler:50 - Message Responded :8
+2014-11-16 15:39:32 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:9
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:39:32 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:39:32 INFO  DsyncserverHandler:50 - Message Responded :9
+2014-11-16 15:39:32 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:10
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 96 E8 86 39 . . . . . . . . . 9 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 07 95 73 7A 84 44 61 AA 3E CD . . s z . D a . > . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 41 6D 9A 29 50 5B F6 5D 0E 11 A m . ) P [ . ] . . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 36 E9 2D 9C 44 1D 46 39       6 . - . D . F 9 
+2014-11-16 15:39:32 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session 844461aa-3ecd-416d-96e8-86390795737a
+2014-11-16 15:39:32 INFO  MessageInterpreter:149 - 844461aa-3ecd-416d-96e8-86390795737a :creating new document- 
+2014-11-16 15:39:32 INFO  DocumentCreateMessage:63 - 844461aa-3ecd-416d-96e8-86390795737a: Created new Document [36e92d9c-441d-4639-9a29-505bf65d0e11] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846982","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 9A 29 50 5B . . . . . . . ) P [ 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - F6 5D 0E 11 36 E9 2D 9C 44 1D . ] . . 6 . - . D . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 46 39                         F 9 
+2014-11-16 15:39:32 INFO  DsyncserverHandler:50 - Message Responded :10
+2014-11-16 15:39:32 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:11
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 96 E8 86 39 . . . . . . . . . 9 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 07 95 73 7A 84 44 61 AA 3E CD . . s z . D a . > . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 41 6D BB BB 8E 87 DF 2C BE 7A A m . . . . . , . z 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 95 74 E9 34 12 17 4C 92       . t . 4 . . L . 
+2014-11-16 15:39:32 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session 844461aa-3ecd-416d-96e8-86390795737a
+2014-11-16 15:39:32 INFO  MessageInterpreter:149 - 844461aa-3ecd-416d-96e8-86390795737a :creating new document- 
+2014-11-16 15:39:32 INFO  DocumentCreateMessage:63 - 844461aa-3ecd-416d-96e8-86390795737a: Created new Document [9574e934-1217-4c92-bbbb-8e87df2cbe7a] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846982","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-16 15:39:32 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:39:32 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF BB BB 8E 87 . . . . . . . . . . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - DF 2C BE 7A 95 74 E9 34 12 17 . , . z . t . 4 . . 
+2014-11-16 15:39:32 DEBUG ConsoleUtils:43 - 4C 92                         L . 
+2014-11-16 15:39:32 INFO  DsyncserverHandler:50 - Message Responded :11
+2014-11-16 15:39:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:12
+2014-11-16 15:39:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:39:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:39:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:39:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:39:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:39:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:39:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:39:47 INFO  DsyncserverHandler:50 - Message Responded :12
+2014-11-16 15:40:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:13
+2014-11-16 15:40:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:40:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:40:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:40:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:40:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:40:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:40:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:40:47 INFO  DsyncserverHandler:50 - Message Responded :13
+2014-11-16 15:41:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:14
+2014-11-16 15:41:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:41:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:41:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:41:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:41:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:41:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:41:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:41:47 INFO  DsyncserverHandler:50 - Message Responded :14
+2014-11-16 15:42:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:15
+2014-11-16 15:42:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:42:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:42:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:42:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:42:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:42:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:42:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:42:47 INFO  DsyncserverHandler:50 - Message Responded :15
+2014-11-16 15:43:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:16
+2014-11-16 15:43:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:43:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:43:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:43:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:43:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:43:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:43:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:43:47 INFO  DsyncserverHandler:50 - Message Responded :16
+2014-11-16 15:44:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:17
+2014-11-16 15:44:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:44:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:44:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:44:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:44:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:44:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:44:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:44:47 INFO  DsyncserverHandler:50 - Message Responded :17
+2014-11-16 15:45:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:18
+2014-11-16 15:45:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:45:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:45:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:45:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:45:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:45:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:45:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:45:47 INFO  DsyncserverHandler:50 - Message Responded :18
+2014-11-16 15:46:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:19
+2014-11-16 15:46:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:46:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:46:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:46:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:46:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:46:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:46:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:46:47 INFO  DsyncserverHandler:50 - Message Responded :19
+2014-11-16 15:47:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:20
+2014-11-16 15:47:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:47:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:47:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:47:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:47:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:47:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:47:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:47:47 INFO  DsyncserverHandler:50 - Message Responded :20
+2014-11-16 15:48:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:21
+2014-11-16 15:48:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:48:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:48:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:48:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:48:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:48:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:48:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:48:47 INFO  DsyncserverHandler:50 - Message Responded :21
+2014-11-16 15:49:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:22
+2014-11-16 15:49:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:49:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:49:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:49:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:49:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:49:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:49:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:49:47 INFO  DsyncserverHandler:50 - Message Responded :22
+2014-11-16 15:50:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:23
+2014-11-16 15:50:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:50:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:50:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:50:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:50:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:50:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:50:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:50:47 INFO  DsyncserverHandler:50 - Message Responded :23
+2014-11-16 15:51:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:24
+2014-11-16 15:51:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:51:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:51:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:51:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:51:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:51:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:51:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:51:47 INFO  DsyncserverHandler:50 - Message Responded :24
+2014-11-16 15:52:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:53590:25
+2014-11-16 15:52:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-16 15:52:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:52:47 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-16 15:52:47 INFO  MessageInterpreter:73 - Ping received
+2014-11-16 15:52:47 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-16 15:52:47 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-16 15:52:47 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-16 15:52:47 INFO  DsyncserverHandler:50 - Message Responded :25

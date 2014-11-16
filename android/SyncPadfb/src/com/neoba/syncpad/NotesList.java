@@ -1,10 +1,17 @@
 package com.neoba.syncpad;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
+
+import com.neoba.syncpad.ByteMessenger.document;
+
+import net.dongliu.vcdiff.VcdiffEncoder;
+import net.dongliu.vcdiff.exception.VcdiffEncodeException;
+import net.dongliu.vcdiff.vc.Vcdiff;
 
 import android.app.AlarmManager;
 import android.app.ListActivity;
@@ -76,11 +83,25 @@ public class NotesList extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			UUID newdoc=UUID.randomUUID();
+			DBManager db = new DBManager(NotesList.this);
+			db.open();
+			try {
+				db.insertDoc(new document(newdoc.toString(), "",new VcdiffEncoder("", "").encode() , -1, "", (byte)2,true,Constants.UNSYNCED_CREATE));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (VcdiffEncodeException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			db.close();
+			
 			startService(new Intent(this, OfflineSyncService.class));
 
-			Intent i = new Intent(NotesList.this, NotesEditor.class);
-			i.putExtra("uuid", 0);
-			startActivity(i);
+//			Intent i = new Intent(NotesList.this, NotesEditor.class);
+//			i.putExtra("uuid", newdoc.toString()+"*");
+//			startActivity(i);
 			return true;
 		}
 		if (id == R.id.action_user) {
@@ -194,7 +215,7 @@ public class NotesList extends ListActivity {
 			String html=(String)params[1];
 			html=html.replaceAll(Pattern.quote("[ ]"),"\uE000");
 			html=html.replaceAll(Pattern.quote("[*]"),"\uE001");
-			final Note note=new NeoHTML(html, NotesList.this).getNote();
+			final SpannableNote note=new NeoHTML(html, NotesList.this).getNote();
 			final SpannableStringBuilder ss=note.getcontent();
 			Typeface font2 = Typeface.createFromAsset(NotesList.this.getAssets(), "fonts/checkfont.ttf");
 			ss.setSpan (new CustomTypefaceSpan("", font2),0, ss.length(),Spanned.SPAN_EXCLUSIVE_INCLUSIVE);

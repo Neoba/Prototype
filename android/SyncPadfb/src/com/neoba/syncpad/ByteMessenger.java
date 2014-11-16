@@ -96,7 +96,7 @@ public class ByteMessenger {
 			boolean owns = in.get(base + 28 + sdiff + sdict + stitle + 4 + 1) == 0x1;
 			base = base + 32 + sdiff + sdict + stitle + 1 + 1;
 			cache.put(id, new document(id.toString(), title, diff, age, dict,
-					perm, owns));
+					perm, owns,0));
 
 			Log.d("NEOBA", "added to cache: " + cache.get(id).title);
 
@@ -187,27 +187,20 @@ public class ByteMessenger {
 		public byte permission;
 		public String id;
 		public boolean owns;
-
-		document(String i, String t, byte[] d, int a, String di, byte p) {
-			this.id = i;
-			this.diff = d;
-			this.age = a;
-			this.dict = di;
-			this.title = t;
-			this.permission = p;
-			this.owns = true;
+		public int synced;
+		
+		document(String id, String title, byte[] diff, int age, String dict, byte permission,boolean owns,int synced) {
+			this.id = id;
+			this.diff = diff;
+			this.age = age;
+			this.dict = dict;
+			this.title = title;
+			this.permission = permission;
+			this.owns = owns;
+			this.synced=synced;
 		}
 
-		document(String i, String t, byte[] d, int a, String di, byte p,
-				boolean o) {
-			this.id = i;
-			this.diff = d;
-			this.age = a;
-			this.dict = di;
-			this.title = t;
-			this.permission = p;
-			this.owns = o;
-		}
+
 
 		public String toString() {
 			return this.id + Arrays.toString(diff) + this.dict
@@ -402,12 +395,11 @@ public class ByteMessenger {
 		return ret;
 	}
 	
-    static ArrayList<HashMap<String, String>> createNote(UUID cookie) {
+    static ArrayList<HashMap<String, String>> createNote(UUID cookie,UUID randid) {
         ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
         buff.put((byte)0x02);
         buff.put((byte) 0x02);
         buff.putInt(0xFFFF);
-        UUID randid = UUID.randomUUID();
         putUUID(buff, cookie);
         putUUID(buff, randid);
 
@@ -418,9 +410,7 @@ public class ByteMessenger {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put("result", "success");
                 returnlist.add(result);
-                HashMap<String, String> cookieh = new HashMap<String, String>();
-                cookieh.put("id", randid.toString());
-                returnlist.add(cookieh);
+
             } else {
                 System.err.println("som error");
                 HashMap<String, String> result = new HashMap<String, String>();

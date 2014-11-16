@@ -26,11 +26,11 @@ class NeoHTML extends DefaultHandler {
 	SpannableStringBuilder s;
 	String html;
 	Context context;
-	Note note;
+	SpannableNote note;
 	
 	
 	
-	public Note getNote() {
+	public SpannableNote getNote() {
 		return note;
 	}
 
@@ -47,7 +47,7 @@ class NeoHTML extends DefaultHandler {
 			content+=html.split("\n")[i];
 		Spanned x=Html.fromHtml(content);
 		SpannableStringBuilder ss=new SpannableStringBuilder(x);
-		note=new Note(ss,colorcode);
+		note=new SpannableNote(ss,colorcode);
 	}
 
 	public SpannableStringBuilder getSpannable() {

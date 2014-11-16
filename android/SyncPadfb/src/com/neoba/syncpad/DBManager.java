@@ -46,7 +46,7 @@ public class DBManager {
 		public void onCreate(SQLiteDatabase db) {
 			String CREATE_BOOK_TABLE = "CREATE TABLE docs ( "
 					+ "id TEXT, " + "diff TEXT, "
-					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1)";
+					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1,  synced INTEGER default 0)";
 			db.execSQL(CREATE_BOOK_TABLE);
 			String CREATE_FOLLOWERS_TABLE = "CREATE TABLE follower ( "
 					+ "id LONG, " + "username TEXT "
@@ -92,7 +92,7 @@ public class DBManager {
 		c.moveToFirst();
 		// String i, String t, byte[] d, int a, String di, byte p
 		document d = new document(c.getString(0), c.getString(4), c.getBlob(1),
-				c.getInt(3), c.getString(2), (byte) c.getInt(5));
+				c.getInt(3), c.getString(2), (byte) c.getInt(5),c.getInt(6)==1?true:false,c.getInt(7));
 		return d;
 	}
 	
@@ -125,7 +125,7 @@ public class DBManager {
 		updateStmt.bindString(1, doc.id);
 		updateStmt.executeUpdateDelete();
 
-		sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date,owns) VALUES(?,?,?,?,?,?,?,?)";
+		sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date,owns,synced) VALUES(?,?,?,?,?,?,?,?,?)";
 		SQLiteStatement insertStmt = db.compileStatement(sql);
 		insertStmt.clearBindings();
 		insertStmt.bindString(1, doc.id);
@@ -136,6 +136,7 @@ public class DBManager {
 		insertStmt.bindLong(6, doc.permission);
 		insertStmt.bindLong(7, new Date().getTime());
 		insertStmt.bindLong(8, doc.owns?1:0);
+		insertStmt.bindLong(9, Constants.UNSYNCED_CREATE);
 		insertStmt.executeInsert();
 		db.execSQL("vacuum");
 	}
@@ -226,6 +227,13 @@ public class DBManager {
 		updateStmt.bindString(2, docid);
 		updateStmt.executeUpdateDelete();
 	}
+	public void syncNote(String docid) {
+		String sql = "update docs set synced=0 where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, docid);
+		updateStmt.executeUpdateDelete();
+	}
 	
 	public String getFollowerUsername(Long userid) {
 		String sql = "SELECT username FROM follower where id=?";
@@ -282,6 +290,11 @@ public class DBManager {
 
 	public Cursor getAllDocs() {
 		String sql = "SELECT rowid _id ,* FROM docs";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
+	public Cursor getAllUnsyncedCreateDocs() {
+		String sql = "SELECT rowid _id ,* FROM docs where synced=1";
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 	}

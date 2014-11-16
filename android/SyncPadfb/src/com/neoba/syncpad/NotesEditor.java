@@ -41,7 +41,7 @@ import android.widget.ToggleButton;
 public class NotesEditor extends Activity {
 	// arraylist for each linearlayout
 	ArrayList<LinearLayout> layoutList;
-	int value;
+	String value;
 	// ArrayList for each edittext
 	ArrayList<DroidWriterEditText> editList;
 	int count; // the count of linearlayouts or edittexts.
@@ -72,9 +72,9 @@ public class NotesEditor extends Activity {
 		auto_cap = 1;
 		prev_val = -1;
 		s_prev = "";
-		value = getIntent().getExtras().getInt("uuid");
+		value = getIntent().getExtras().getString("uuid");
 		fld = 0;
-		if (value != 0) {
+		if (!value.endsWith("*")) {
 			colorsetter();
 			fetcher();
 			// modifier();
@@ -924,24 +924,26 @@ public class NotesEditor extends Activity {
 		if ((layoutList.size() == 1)
 				&& ((sop.length() == 0) || sop.equals(" "))) {
 		}// if the text is empty.
-		else {
-			DatabaseHandler db = new DatabaseHandler(this);
-			if (value == 0)
-				db.addNote(new Notes(html_text, colorcode));
-			else {
-				Notes n = db.getNote(value);
-				n.setName(html_text);
-				n.setColor(colorcode);
-				db.updateNote(n);
-			}
-		}
-		finish();
+		
+		// strt here block update
+//		else {
+//			DatabaseHandler db = new DatabaseHandler(this);
+//			if (value == 0)
+//				db.addNote(new Notes(html_text, colorcode));
+//			else {
+//				Notes n = db.getNote(value);
+//				n.setName(html_text);
+//				n.setColor(colorcode);
+//				db.updateNote(n);
+//			}
+//		}
+//		finish();
 
 	}
 
 	public void fetcher() {
 		DatabaseHandler db = new DatabaseHandler(this);
-		Notes n = db.getNote(value);
+		Notes n=new Notes();// = db.getNote(value);
 		String ns="";
 		for(int i=1;i<n.getNote().split("\n").length;i++)
 			ns+=n.getNote().split("\n")[i];
@@ -1042,12 +1044,12 @@ public class NotesEditor extends Activity {
 	}
 
 	public void colorsetter() {
-		if (value == 0)
+		if (value == "")
 			colorcode = "#FFFFFF";
 
 		else {
 			DatabaseHandler db = new DatabaseHandler(this);
-			Notes n = db.getNote(value);
+			Notes n = new Notes();//db.getNote(value);
 			colorcode=n.getNote().split("\n")[0];
 			//colorcode = n.getColor();
 			System.out.println(n.getColor() + "kk");
