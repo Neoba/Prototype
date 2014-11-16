@@ -9,7 +9,7 @@
     tools:context="com.neoba.syncpad.Signup$PlaceholderFragment" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -21,11 +21,11 @@
         android:textStyle="italic" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_below="@+id/tvName"
         android:text="This name will be used across the syncpad community.."
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#888888"
@@ -44,7 +44,7 @@
         android:id="@+id/etUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/tvUsername"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:ems="10" >

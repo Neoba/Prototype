@@ -26,6 +26,8 @@ public class FacebookUserLogin {
     String sid = null;
     int response;
     Logger logger = Logger.getLogger(FacebookUserLogin.class);
+    String username;
+    JSONObject user;
 
     FacebookUserLogin(String string, String regid, byte uagent) throws IOException, MalformedURLException, JSONException {
         fbuser = new FacebookUser(string);
@@ -33,7 +35,7 @@ public class FacebookUserLogin {
         sid = fbuser.getSyncpadId();
         if (sid != null) {
 
-            JSONObject user = new JSONObject((String) Dsyncserver.cclient.get(sid));
+            user = new JSONObject((String) Dsyncserver.cclient.get(sid));
             response = Constants.W_SUCCESS;
             sessid = UUID.randomUUID();
             switch (uagent) {
@@ -56,15 +58,18 @@ public class FacebookUserLogin {
     }
 
     Long getid() {
-        if(sid!=null)
+        if (sid != null) {
             return Long.parseLong(sid);
+        }
         return null;
     }
 
-    ByteBuf result() {
+    ByteBuf result() throws JSONException {
         ByteBuf reply;
+        String username;
         if (response == Constants.W_SUCCESS) {
-            reply = buffer(6 + 16);
+            username=user.getString("username");
+            reply = buffer(6 + 16+4+username.length());
         } else {
             reply = buffer(6);
         }
@@ -75,6 +80,10 @@ public class FacebookUserLogin {
         if (response == Constants.W_SUCCESS) {
             reply.writeLong(sessid.getLeastSignificantBits());
             reply.writeLong(sessid.getMostSignificantBits());
+            reply.writeInt(user.getString("username").length());
+            for (byte b : ((String) user.get("username")).getBytes()) {
+                reply.writeByte(b);
+            }
         }
         return reply;
     }

@@ -25,7 +25,7 @@ import org.codehaus.jettison.json.JSONObject;
 public class FacebookUser {
 
     private JSONObject facebook_obj;
-    private String name, id, email;
+    private String name, id;
     private JSONArray friends;
 
     public String getName() {
@@ -40,15 +40,14 @@ public class FacebookUser {
         return id;
     }
 
-    public String getEmail() {
-        return email;
-    }
+
     Logger logger=Logger.getLogger(FacebookUser.class);
     public FacebookUser(String access_token) throws IOException, MalformedURLException, JSONException {
         JSONObject facebook_obj = HTTPUtils.json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
+        logger.info("fbtoid access token "+access_token);
         id = facebook_obj.getString("id");
         name = facebook_obj.getString("name");
-        email = facebook_obj.getString("email");
+        //email = facebook_obj.getString("email");
         friends = new JSONArray();
         String url="";
         JSONArray friendspage = facebook_obj.getJSONObject("friends").getJSONArray("data");

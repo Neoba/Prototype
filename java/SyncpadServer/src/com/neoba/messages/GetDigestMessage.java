@@ -7,6 +7,7 @@ import com.couchbase.client.protocol.views.View;
 import com.couchbase.client.protocol.views.ViewResponse;
 import com.couchbase.client.protocol.views.ViewRow;
 import com.neoba.Constants;
+import com.neoba.CouchManager;
 import com.neoba.Dsyncserver;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
@@ -61,7 +62,9 @@ public class GetDigestMessage implements Message {
         for (int i = 0; i < followers.length(); i++) {
             JSONObject f = (JSONObject) followers.get(i);
             bufsize += 4;
+            String fbid= CouchManager.getFacebookID(f.getString("username"));
             bufsize += f.getString("username").length();
+            bufsize+=(1+fbid.length());
             bufsize += 8;
             followerc += 1;
 
@@ -69,7 +72,9 @@ public class GetDigestMessage implements Message {
         for (int i = 0; i < following.length(); i++) {
             JSONObject f = (JSONObject) following.get(i);
             bufsize += 4;
+            String fbid= CouchManager.getFacebookID(f.getString("username"));
             bufsize += f.getString("username").length();
+            bufsize+=(1+fbid.length());
             bufsize += 8;
             followingc += 1;
         }
@@ -153,9 +158,11 @@ public class GetDigestMessage implements Message {
             reply.writeInt(followerc);
             for (int i = 0; i < followers.length(); i++) {
                 JSONObject f = (JSONObject) followers.get(i);
-                reply.writeInt(f.getString("username").length());
+                String fbid=CouchManager.getFacebookID( f.getString("username"));
+                reply.writeInt(f.getString("username").length()+1+fbid.length());
                 logger.debug(sessid + " :digesting follower " + f.getString("username"));
-                for (byte b : ((String) f.get("username")).getBytes()) {
+                
+                for (byte b : ((String) f.get("username")+"~"+fbid).getBytes()) {
                     reply.writeByte(b);
                 }
                 reply.writeLong(Long.parseLong(f.getString("id")));
@@ -164,8 +171,9 @@ public class GetDigestMessage implements Message {
             for (int i = 0; i < following.length(); i++) {
                 JSONObject f = (JSONObject) following.get(i);
                 logger.debug(sessid + " :digesting follower " + f.getString("username"));
-                reply.writeInt(f.getString("username").length());
-                for (byte b : ((String) f.get("username")).getBytes()) {
+                String fbid=CouchManager.getFacebookID( f.getString("username"));
+                reply.writeInt(f.getString("username").length()+1+fbid.length());
+                for (byte b : ((String) f.get("username")+"~"+fbid).getBytes()) {
                     reply.writeByte(b);
                 }
                 reply.writeLong(Long.parseLong(f.getString("id")));

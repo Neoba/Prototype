@@ -106,8 +106,8 @@ public class DsyncHeadlessClient {
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version = 0x02;
-    static String access_token ="CAAU6ZCTzlZBUoBAKrknMVZCWmCX405KeZCJq5aEZAfO7fLOhvOBU9NQzPb0o8ecd6Wy3YH31hgLVkJTZAM2v5mqfX5Qc14BhW1oxKksWuEevbkiKB6V5A6R38N0ZABXuh3YEnh10Cay0xCwxPkh4UDKlIXgxocl64PaTTMHkBWELrXVTMHgY3VjdKIJEZC0jp9a41GIZBHKZCZAgBCWg8yOcNnqYx2pSHcAPPQiQnVpWi5bKGPjpDX8oDka";
-    public static void main(String[] args) throws IOException, Exception {
+    static String access_token ="CAAU6ZCTzlZBUoBAKqy3DguwCJzdBMqPpktYb3I19fUiBVJqxLgZBAYqV9AmG3Jk0PEZC2ZCx81G1ZBRfb6YYpkZAzGJZAPje5MR6ZCytLGAZBFCctPSfte5sBZByxifTLh3lOmVShJA6Y4PIQw478HbZBwuVNvxdmsXwffjz5KQNk281qH4v7m0FAoNDfDhelAGFxF4BQElOiQNfIO5Qn7KQNqpF";
+            public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
         cache = new HashMap();

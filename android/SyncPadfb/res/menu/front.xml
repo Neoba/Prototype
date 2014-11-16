@@ -7,5 +7,8 @@
         android:id="@+id/action_settings"
         android:title="new"
         android:showAsAction="always"/>
-
+    <item
+        android:id="@+id/action_user"
+        android:title="user"
+        android:showAsAction="always"/>
 </menu>

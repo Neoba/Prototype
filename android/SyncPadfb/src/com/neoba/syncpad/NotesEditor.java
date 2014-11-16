@@ -5,11 +5,13 @@ import hu.scythe.droidwriter.DroidWriterEditText;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import android.text.Editable;
 import android.text.Html;
 import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -19,14 +21,17 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,7 +44,6 @@ public class NotesEditor extends Activity {
 	int value;
 	// ArrayList for each edittext
 	ArrayList<DroidWriterEditText> editList;
-
 	int count; // the count of linearlayouts or edittexts.
 	int prev_val; // (the index of edittext in focus)-1
 	CheckBox c; // the checkbox adder
@@ -47,6 +51,7 @@ public class NotesEditor extends Activity {
 	int fg;
 	String colorcode;
 	int checked = 0;
+	int auto_cap;
 	int fld;
 	Spanned s;
 	ToggleButton bb, ib, ub; // the bold , italic and underline togglebutton
@@ -64,6 +69,7 @@ public class NotesEditor extends Activity {
 		editList = new ArrayList<DroidWriterEditText>();
 		count = 0;
 		fg = 0;
+		auto_cap = 1;
 		prev_val = -1;
 		s_prev = "";
 		value = getIntent().getExtras().getInt("uuid");
@@ -119,17 +125,159 @@ public class NotesEditor extends Activity {
 		ch.setLayoutParams(ladderParams);
 
 		edittext.setLayoutParams(dummyParams);
+
+		// The Kevin's suggestion code.
+
+		edittext.setImeOptions(EditorInfo.PARCELABLE_WRITE_RETURN_VALUE);
+		edittext.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() != KeyEvent.ACTION_DOWN) {
+					// We only look at ACTION_DOWN in this code, assuming that
+					// ACTION_UP is redundant.
+					// If not, adjust accordingly.
+					return false;
+				} else if (event.getUnicodeChar() == (int) EditableAccomodatingLatinIMETypeNullIssues.ONE_UNPROCESSED_CHARACTER
+						.charAt(0)) {
+					// We are ignoring this character, and we want everyone else
+					// to ignore it, too, so
+					// we return true indicating that we have handled it (by
+					// ignoring it).
+					return true;
+				}
+
+				//
+				// Now, just do your event handling as usual...
+				//
+
+				else if (keyCode == KeyEvent.KEYCODE_DEL) {
+					// Backspace key processing goes here...
+
+					Spanned str = ((EditText) v).getText();
+
+					if (((EditText) v).getSelectionStart() != 0) {
+						if (str.length() >= 2) {
+
+							int start = edittext.getSelectionStart();
+							int end = edittext.getSelectionEnd();
+							SpannableStringBuilder sr = new SpannableStringBuilder(
+									edittext.getText());
+							sr.replace(start - 1, end, "");
+
+							// getting the selected Text
+
+							// replacing the selected text with empty String and
+							// setting it to EditText
+							edittext.setText(sr);
+							edittext.setSelection(start - 1);
+						} else {
+							((EditText) v).setText("");
+							((EditText) v).setSelection(((EditText) v).length());
+						}
+					} else {
+						if (count != 1) {
+							int ac = editList.indexOf(edittext);
+							LinearLayout l2 = (LinearLayout) layoutList.get(ac);
+
+							l2.setVisibility(View.INVISIBLE);
+							layoutList.remove(ac);
+							editList.remove(ac);
+							((LinearLayout) findViewById(R.id.rl))
+									.removeView(l2);
+
+							count--;
+							if (ac >= 1) {
+								DroidWriterEditText e2 = (DroidWriterEditText) editList
+										.get(ac - 1);
+								int cursorPosition1 = e2.getSelectionStart();
+								e2.setSelection(e2.getText().length());
+								e2.setFocusableInTouchMode(true);
+								e2.requestFocus();
+								prev_val = editList.indexOf(e2) - 1;
+
+							}
+						} else {
+							edittext.setHint("Enter Your Note");
+						}
+					}
+					return true;
+				}
+
+				else if (keyCode == KeyEvent.KEYCODE_ENTER) {
+					String textFromEditView = ((EditText) v).getText()
+							.toString();
+					if (((EditText) v).length() <= 1) {
+
+						int ac = editList.indexOf(edittext);
+						LinearLayout l2 = (LinearLayout) layoutList.get(ac);
+
+						l2.setVisibility(View.INVISIBLE);
+						layoutList.remove(ac);
+						editList.remove(ac);
+						((LinearLayout) findViewById(R.id.rl)).removeView(l2);
+
+						count--;
+
+						if (ac >= 1) {
+							DroidWriterEditText e2 = (DroidWriterEditText) editList
+									.get(ac - 1);
+							int cursorPosition1 = e2.getSelectionStart();
+							e2.setSelection(cursorPosition1);
+							e2.setFocusableInTouchMode(true);
+							e2.requestFocus();
+							prev_val = editList.indexOf(e2) - 1;
+						}
+						s_prev = "";
+						fg = 1;
+						prev_val = ac - 1;
+						c.toggle();
+						editTextAdder();
+
+					} else {
+						int cursorPosition = edittext.getSelectionStart();
+						int cursorPositione = edittext.getSelectionEnd();
+						// Here is the problem... rectified :P
+						Spannable st = edittext.getText();
+						edittext.setText(st.subSequence(0, cursorPosition));
+						if (cursorPositione != st.length()) {
+							fld = 1;
+							String lefto = "<p>"
+									+ st.subSequence(cursorPosition,
+											st.length()) + "</p>";
+							s = Html.fromHtml(lefto);
+							prev_val = editList.indexOf(edittext);
+
+							s_prev = "";
+							editTextAdder();
+						} else {
+
+							edittext.setSelection(edittext.getText().length());
+							prev_val = editList.indexOf(edittext);
+
+							s_prev = "";
+
+							modifier();
+						}
+					}
+					return true;
+				} else
+					return false;
+
+			}
+		});
+
 		// edittext.setPadding(-1,0, 0, 0);
 
 		if (s_prev.equals("")) {
 
-			String sv = " ";
+			String sv = "";
 			if (fld == 1) {
 				System.out.println("this is:)");
 				SpannableString sf;
 				if ((s.length() != 0))
 					edittext.setText(s.subSequence(0, s.length() - 2));
-
+				else
+					edittext.setText("");
 				// count++;
 				fld = 0;
 				// editTextAdder();
@@ -203,47 +351,6 @@ public class NotesEditor extends Activity {
 					fg = 0;
 					if (textFromEditView.charAt(textFromEditView.length() - 1) == '\n') {
 
-						if (textFromEditView.length() <= 1) {
-							int ac = editList.indexOf(edittext);
-							LinearLayout l2 = (LinearLayout) layoutList.get(ac);
-
-							l2.setVisibility(View.INVISIBLE);
-							layoutList.remove(ac);
-							editList.remove(ac);
-							((LinearLayout) findViewById(R.id.rl))
-									.removeView(l2);
-
-							count--;
-
-							if (ac >= 1) {
-								DroidWriterEditText e2 = (DroidWriterEditText) editList
-										.get(ac - 1);
-								int cursorPosition1 = e2.getSelectionStart();
-								e2.setSelection(cursorPosition1);
-								e2.setFocusableInTouchMode(true);
-								e2.requestFocus();
-								prev_val = editList.indexOf(e2) - 1;
-							}
-							s_prev = "";
-							fg = 1;
-							prev_val = ac - 1;
-							c.toggle();
-							editTextAdder();
-						} else {
-							int cursorPosition = edittext.getSelectionStart();
-							Spannable s = edittext.getText();
-							edittext.setText(s.subSequence(0, s.length() - 1));
-							// edittext.append(" ");
-
-							edittext.setSelection(edittext.getText().length());
-							prev_val = editList.indexOf(edittext);
-
-							s_prev = "";
-
-							modifier();
-
-						}
-
 					}
 				} else {
 					int ac = editList.indexOf(edittext);
@@ -281,6 +388,7 @@ public class NotesEditor extends Activity {
 	}
 
 	// Adds the simple edittext views for you .
+
 	void editTextAdder() {
 		LinearLayout LL = new LinearLayout(this);
 
@@ -290,8 +398,8 @@ public class NotesEditor extends Activity {
 				| InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
 				| InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
 		edittext1.setSingleLine(false);
+		edittext1.setPadding(4, 0, 0, 15);
 
-		edittext1.setPadding(4, 20, 0, 20);
 		c.setChecked(false);
 
 		edittext1.setBackgroundColor(Color.parseColor(colorcode));
@@ -313,14 +421,129 @@ public class NotesEditor extends Activity {
 				LinearLayout.LayoutParams.WRAP_CONTENT);
 
 		edittext1.setLayoutParams(dummyParams);
+		edittext1.setImeOptions(EditorInfo.PARCELABLE_WRITE_RETURN_VALUE);
+		edittext1.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() != KeyEvent.ACTION_DOWN) {
+					// We only look at ACTION_DOWN in this code, assuming that
+					// ACTION_UP is redundant.
+					// If not, adjust accordingly.
+					return false;
+				} else if (event.getUnicodeChar() == (int) EditableAccomodatingLatinIMETypeNullIssues.ONE_UNPROCESSED_CHARACTER
+						.charAt(0)) {
+					// We are ignoring this character, and we want everyone else
+					// to ignore it, too, so
+					// we return true indicating that we have handled it (by
+					// ignoring it).
+					return true;
+				}
 
+				//
+				// Now, just do your event handling as usual...
+				//
+
+				else if (keyCode == KeyEvent.KEYCODE_DEL) {
+					// Backspace key processing goes here...
+
+					Spanned str = ((EditText) v).getText();
+
+					if (((EditText) v).getSelectionStart() != 0) {
+						if (str.length() >= 2) {
+
+							int start = edittext1.getSelectionStart();
+							int end = edittext1.getSelectionEnd();
+							SpannableStringBuilder sr = new SpannableStringBuilder(
+									edittext1.getText());
+							sr.replace(start - 1, end, "");
+
+							// getting the selected Text
+
+							// replacing the selected text with empty String and
+							// setting it to EditText
+							edittext1.setText(sr);
+							edittext1.setSelection(start - 1);
+						} else {
+							((EditText) v).setText("");
+							((EditText) v).setSelection(((EditText) v).length());
+						}
+					} else {
+						if (count != 1) {
+							int ac = editList.indexOf(edittext1);
+							LinearLayout l2 = (LinearLayout) layoutList.get(ac);
+
+							l2.setVisibility(View.INVISIBLE);
+							layoutList.remove(ac);
+							editList.remove(ac);
+							((LinearLayout) findViewById(R.id.rl))
+									.removeView(l2);
+
+							count--;
+							if (ac >= 1) {
+								DroidWriterEditText e2 = (DroidWriterEditText) editList
+										.get(ac - 1);
+								int cursorPosition1 = e2.getSelectionStart();
+								e2.setSelection(e2.getText().length());
+								e2.setFocusableInTouchMode(true);
+								e2.requestFocus();
+								prev_val = editList.indexOf(e2) - 1;
+
+							}
+						} else {
+							edittext1.setHint("Enter Your Note");
+						}
+					}
+					return true;
+				}
+
+				else if (keyCode == KeyEvent.KEYCODE_ENTER) {
+					String textFromEditView = ((EditText) v).getText()
+							.toString();
+					if (((EditText) v).length() <= 1) {
+
+						if (edittext1.length() != 0) {
+							edittext1.setText(textFromEditView.substring(0,
+									textFromEditView.length() - 1));
+
+						}
+						prev_val = editList.indexOf(edittext1);
+						s_prev = "";
+						modifier();
+
+					} else {
+						int cursorPosition = edittext1.getSelectionStart();
+						int cursorPositione = edittext1.getSelectionEnd();
+						// Here is the problem... rectified :P
+						Spannable st = edittext1.getText();
+						edittext1.setText(st.subSequence(0, cursorPosition));
+						if (cursorPositione != st.length()) {
+							fld = 1;
+							String lefto = "<p>"
+									+ st.subSequence(cursorPosition,
+											st.length()) + "</p>";
+							s = Html.fromHtml(lefto);
+						}
+						prev_val = editList.indexOf(edittext1);
+
+						s_prev = "";
+						modifier();
+					}
+					return true;
+				} else
+					return false;
+
+			}
+		});
 		if (s_prev.equals("")) {
-			String sv = " ";
+			String sv = "";
 			if (fld == 1) {
 				System.out.println("this is:)");
 				SpannableString sf;
 				if (s.length() != 0)
 					edittext1.setText(s.subSequence(0, s.length() - 2));
+				else {
+					edittext1.setText("");
+				}
 
 				fld = 0;
 			} else {
@@ -394,6 +617,21 @@ public class NotesEditor extends Activity {
 			@Override
 			public void afterTextChanged(Editable e) {
 				// TODO Auto-generated method stub
+				float textWidth = edittext1.getPaint()
+						.measureText(e.toString());
+
+				final DroidWriterEditText edittex = new DroidWriterEditText(
+						NotesEditor.this);
+				edittex.setInputType(InputType.TYPE_CLASS_TEXT
+						| InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
+						| InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+						| InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+				edittex.setSingleLine(true);
+				edittex.setImeOptions(EditorInfo.PARCELABLE_WRITE_RETURN_VALUE);
+				edittex.setHorizontallyScrolling(false);
+				edittex.setText("  ");
+				float a = edittex.getPaint().measureText(
+						edittex.getText().toString());
 
 				if (bb.isChecked()) {
 					// //Toast.akeText(getApplicationContext(),
@@ -404,32 +642,7 @@ public class NotesEditor extends Activity {
 				String textFromEditView = e.toString();
 
 				if (textFromEditView.length() > 0) {
-					if (textFromEditView.charAt(textFromEditView.length() - 1) == '\n') {
 
-						if (textFromEditView.length() <= 1) {
-
-							if (edittext1.length() != 1) {
-								edittext1.setText(textFromEditView.substring(0,
-										textFromEditView.length() - 2));
-
-							}
-							prev_val = editList.indexOf(edittext1);
-							s_prev = "";
-							modifier();
-
-						} else {
-							int cursorPosition = edittext1.getSelectionStart();
-							// Here is the problem... rectified :P
-							Spannable s = edittext1.getText();
-							edittext1.setText(s.subSequence(0, s.length() - 1));
-
-							prev_val = editList.indexOf(edittext1);
-
-							s_prev = "";
-							modifier();
-						}
-
-					}
 				} else {
 					if (count != 1) {
 						int ac = editList.indexOf(edittext1);
@@ -540,8 +753,8 @@ public class NotesEditor extends Activity {
 				public void onClick(View v) {
 
 					// //Toast.akeText(getApplicationContext(),
-					// "#2ecc71",Toast.LENGTH_SHORT).show();
-					colorcode = "#2ecc71";
+					// "#FFFFFF",Toast.LENGTH_SHORT).show();
+					colorcode = "#FFFFFF";
 					changer();
 
 				}
@@ -641,16 +854,12 @@ public class NotesEditor extends Activity {
 			});
 			break;
 
-		case R.id.action_ok:
-			saveNote();
-			break;
-
 		}
 
 		return true;
 	}
 
-	public void saveNote() {
+	public void onBackPressed() {
 		Spannable strin;
 		Spanned stri;
 		String sop = "";
@@ -706,17 +915,15 @@ public class NotesEditor extends Activity {
 			}
 		}
 
-		html_text = Html.toHtml(stri);
-		try {
-			html_text = replceLast(html_text, "<br>", "");
-		} catch (Exception e) {
-		}
+		html_text = colorcode + "\n" + Html.toHtml(stri);
+		// try{
+		// html_text=replceLast(html_text,"<br>", "");
+		// }catch (Exception e) {}
 		Log.d("Html ", html_text);
-		html_text += "<color val=" + colorcode + ">";
+
 		if ((layoutList.size() == 1)
 				&& ((sop.length() == 0) || sop.equals(" "))) {
 		}// if the text is empty.
-		
 		else {
 			DatabaseHandler db = new DatabaseHandler(this);
 			if (value == 0)
@@ -729,12 +936,16 @@ public class NotesEditor extends Activity {
 			}
 		}
 		finish();
+
 	}
 
 	public void fetcher() {
 		DatabaseHandler db = new DatabaseHandler(this);
 		Notes n = db.getNote(value);
-		String html_text = n.getNote();
+		String ns="";
+		for(int i=1;i<n.getNote().split("\n").length;i++)
+			ns+=n.getNote().split("\n")[i];
+		String html_text = ns;
 		System.out.println(n.getColor() + "kk");
 
 		Pattern p = Pattern.compile("<br>");
@@ -832,12 +1043,13 @@ public class NotesEditor extends Activity {
 
 	public void colorsetter() {
 		if (value == 0)
-			colorcode = "#2ecc71";
+			colorcode = "#FFFFFF";
 
 		else {
 			DatabaseHandler db = new DatabaseHandler(this);
 			Notes n = db.getNote(value);
-			colorcode = n.getColor();
+			colorcode=n.getNote().split("\n")[0];
+			//colorcode = n.getColor();
 			System.out.println(n.getColor() + "kk");
 
 		}

@@ -59,6 +59,20 @@ public class MainActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000ff")));
         setContentView(R.layout.activity_main);
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.neoba.syncpad", 
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                }
+        } catch (NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
         TextView pingbutton = (TextView) findViewById(R.id.tvPing);
         if(!(PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getString("cookie", "default").equals("default"))){
 			Intent i = new Intent(MainActivity.this	, NotesList.class);

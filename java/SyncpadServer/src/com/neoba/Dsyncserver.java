@@ -1,6 +1,8 @@
 package com.neoba;
 
 import com.couchbase.client.CouchbaseClient;
+import com.couchbase.client.protocol.views.DesignDocument;
+import com.couchbase.client.protocol.views.View;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -26,10 +28,11 @@ public class Dsyncserver {
 
     private final int port;
     public static CouchbaseClient cclient = null;
-    public static HashMap<UUID,String> usersessions=new HashMap<UUID,String>();
-    public static HashMap<UUID,Byte> useragents=new HashMap<UUID,Byte>();
-    
+    public static HashMap<UUID, String> usersessions = new HashMap<UUID, String>();
+    public static HashMap<UUID, Byte> useragents = new HashMap<UUID, Byte>();
+
     Logger logger = Logger.getLogger(Dsyncserver.class);
+
     public Dsyncserver(int port) {
         this.port = port;
         PropertyConfigurator.configure("logging.properties");
@@ -45,7 +48,16 @@ public class Dsyncserver {
             logger.fatal("Error connecting to Couchbase: " + e.getMessage());
             System.exit(1);
         }
-    //cclient.add("idgenerator", 271397319);
+        
+        CouchViews cv = new CouchViews();
+        HashMap<String,String> views=cv.getViews();
+        for (String view : views.keySet()) {
+
+                CouchManager.createView(view, views.get(view));
+                logger.info("created view - " + view);
+        }
+        //System.out.println(CouchManager.getFacebookID("atulvi"));
+        //cclient.add("idgenerator", 271397319);
 
         NioEventLoopGroup group = new NioEventLoopGroup();
         try {
@@ -57,7 +69,7 @@ public class Dsyncserver {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast("httpDecoder", new HttpRequestDecoder());
-                            ch.pipeline().addLast("httpAggregator",new HttpObjectAggregator(Constants.HTTP_MAX_BODY_SIZE));
+                            ch.pipeline().addLast("httpAggregator", new HttpObjectAggregator(Constants.HTTP_MAX_BODY_SIZE));
                             ch.pipeline().addLast("httpEncoder", new HttpResponseEncoder());
                             ch.pipeline().addLast("handler", new DsyncserverHandler());
                         }

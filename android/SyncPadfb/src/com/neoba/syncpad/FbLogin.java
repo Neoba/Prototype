@@ -10,6 +10,7 @@ import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
+import com.neoba.syncpad.ByteMessenger.document;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -35,7 +36,7 @@ public class FbLogin extends Activity {
 		setContentView(R.layout.login_view);
 
 		final Session.NewPermissionsRequest newPermissionsRequest = new Session.NewPermissionsRequest(
-				this, Arrays.asList("user_friends", "email"));
+				this, Arrays.asList("user_friends"));
 
 		flag = 0;
 
@@ -45,8 +46,9 @@ public class FbLogin extends Activity {
 			@Override
 			public void call(Session session, SessionState state,
 					Exception exception) {
-				Log.d("FBLOGIN","Heresss ");
+				Log.d("FBLOGIN","call starts ");
 				if (session.isOpened()) {
+					Log.d("FBLOGIN","sessionopned in call ");
 					final Session s = session;
 					if (flag == 0)
 						session.requestNewReadPermissions(newPermissionsRequest);
@@ -69,12 +71,18 @@ public class FbLogin extends Activity {
 
 								}
 							}).executeAsync();
+				}else{
+					Log.d("FBLOGIN","session no in call ");
 				}
 
 			}
 		});
 	}
-
+//	@Override
+//	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//	    super.onActivityResult(requestCode, resultCode, data);
+//	    Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+//	}
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -135,10 +143,75 @@ public class FbLogin extends Activity {
 			}else if (session.get(0).get("result").equals("success")) {
 				Log.d("FBLOGIN","Success");
 				PreferenceManager.getDefaultSharedPreferences(FbLogin.this).edit().putString("cookie",session.get(1).get("cookie")).commit();
-				Intent i = new Intent(FbLogin.this, NotesList.class);
-				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				finish();
-				startActivity(i);
+				PreferenceManager.getDefaultSharedPreferences(FbLogin.this).edit().putString("username",session.get(1).get("username")).commit();
+				new GetDigest().execute(UUID.fromString(session.get(1).get("cookie")));
+
+			}
+			return null;
+		}
+
+	}
+	
+	public class GetDigest extends AsyncTask<UUID, Void, HashMap<UUID, ByteMessenger.document>> {
+
+
+
+		@Override
+		protected void onPostExecute(HashMap<UUID, document> result) {
+			Intent i = new Intent(FbLogin.this, NotesList.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			finish();
+			startActivity(i);
+			finish();
+		}
+
+		@Override
+		protected HashMap<UUID, document> doInBackground(UUID... params) {
+			try {
+				@SuppressWarnings("unchecked")
+				ArrayList<Object> obtained = ByteMessenger.getDigest(params[0]);
+				@SuppressWarnings("unchecked")
+				HashMap<UUID, document> docs = (HashMap<UUID, document>) obtained
+						.get(0);
+				@SuppressWarnings("unchecked")
+				HashMap<Long, String> follower = (HashMap<Long, String>) obtained
+						.get(1);
+				@SuppressWarnings("unchecked")
+				HashMap<Long, String> following = (HashMap<Long, String>) obtained
+						.get(2);
+				@SuppressWarnings("unchecked")
+				ArrayList<ShareSchema> shares = (ArrayList<ShareSchema>) obtained
+						.get(3);
+				
+				Log.d("FBLOGIN",follower+" "+following);
+				DBManager db = new DBManager(FbLogin.this);
+				db.open();
+				for (UUID a : docs.keySet()) {
+					db.insertDoc(docs.get(a));
+
+				}
+				for (Long a : follower.keySet()) {
+					db.insertFollower(a, follower.get(a));
+
+				}
+				for (Long a : following.keySet()) {
+					db.insertFollowing(a, following.get(a));
+
+				}
+				db.close();
+
+				db.open();
+				for (ShareSchema s : shares) {
+					String docid = s.docid;
+					for (Long id : s.read)
+						db.insertPermission(docid, db.getFollowerUsername(id),id, 1);
+					for (Long id : s.edit)
+						db.escalatePermission(docid, id);
+				}
+				db.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			return null;
 		}

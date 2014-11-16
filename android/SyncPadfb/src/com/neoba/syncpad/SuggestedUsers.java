@@ -8,8 +8,6 @@ import java.util.UUID;
 
 import com.squareup.picasso.Picasso;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
 import android.app.ListActivity;
@@ -46,7 +44,7 @@ public class SuggestedUsers extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_suggested_users);
 		Intent i = getIntent();
-		lvsugg = (ListView) findViewById(R.id.listView1);
+		lvsugg = (ListView) findViewById(R.id.lvUsersFollowing);
 		usernames = i.getExtras().getString("usernames").split(",");
 		names = i.getExtras().getString("names").split(",");
 		urls = i.getExtras().getString("pics").split(" ");
@@ -119,7 +117,7 @@ public class SuggestedUsers extends Activity {
 				followb.setImageResource(R.drawable.ic_followok);
 
 			final ProgressBar pb = (ProgressBar) rowView
-					.findViewById(R.id.progressBar1);
+					.findViewById(R.id.pbProfile);
 			followb.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -137,7 +135,6 @@ public class SuggestedUsers extends Activity {
 
 			textView.setText(values[position]);
 			textView2.setText("@" + usernames[position]);
-			imageView.setImageResource(R.drawable.abc_ic_search_api_holo_light);
 			Picasso.with(context).load(urls[position])
 					.transform(new RoundedTransformation(60, 0))
 					.into(imageView);

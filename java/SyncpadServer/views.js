@@ -21,3 +21,21 @@ function (doc, meta) {
   if(doc.type=="user")
   	emit(doc.username, meta.id);
 }
+
+//usernametofacebookid
+function (doc, meta) {
+  if(doc.type=="user")
+  {
+    emit(doc.username,doc.facebook_id);
+  }
+  
+}
+
+//facebookidtoid
+function (doc, meta) {
+  if(doc.type=="user")
+  {
+    emit(doc.facebook_id,{"id":meta.id,"username":doc.username});
+  }
+  
+}

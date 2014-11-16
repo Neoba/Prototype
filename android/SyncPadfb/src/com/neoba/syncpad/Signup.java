@@ -12,8 +12,6 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -140,12 +138,14 @@ public class Signup extends Activity {
 		@Override
 		protected UUID doInBackground(String... params) {
 			ArrayList<HashMap<String, String>> lsession = null;
+			do{
 			try {
 				lsession = ByteMessenger.facebookLoginUser(params[0], params[1]);
 			} catch (Exception e) {
 				Log.d("FBLOGIN","Login failed "+e);
 				e.printStackTrace();
 			}
+			}while(lsession.get(0).get("result").equals("unregistered"));
 			// if (session != null)
 			// saveCookie(session);
 			// return session;
@@ -157,40 +157,49 @@ public class Signup extends Activity {
 			}else if (lsession.get(0).get("result").equals("success")) {
 				
 				PreferenceManager.getDefaultSharedPreferences(Signup.this).edit().putString("cookie",lsession.get(1).get("cookie")).commit();
+				PreferenceManager.getDefaultSharedPreferences(Signup.this).edit().putString("username",lsession.get(1).get("username")).commit();
 				String n="",f="",url="";
-				for(int i=1;i<session.size();i++){
-					n+=(session.get(i).get("username"));
-					n+=",";
-					JSONObject user;
-					
-					try {
-						user=ByteMessenger.jsonGet("https://graph.facebook.com/v2.1/"+session.get(i).get("id")+"?fields=id,name,picture&access_token="+access_token);
-						f+=user.getString("name");
-						f+=",";
-						url+=user.getJSONObject("picture").getJSONObject("data").getString("url");
-						url+=" ";
-					} catch (MalformedURLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				if(session.size()==1){
+					Intent i = new Intent(Signup.this, NotesList.class);
+					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					finish();
+					startActivity(i);
+				}else{
+					for(int i=1;i<session.size();i++){
+						n+=(session.get(i).get("username"));
+						n+=",";
+						JSONObject user;
+						
+						try {
+							user=ByteMessenger.jsonGet("https://graph.facebook.com/v2.1/"+session.get(i).get("id")+"?fields=id,name,picture&access_token="+access_token);
+							f+=user.getString("name");
+							f+=",";
+							url+=user.getJSONObject("picture").getJSONObject("data").getString("url");
+							url+=" ";
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
 					}
-					
-				}
 
-				n=n.substring(0, n.length());
-				f=f.substring(0, f.length());
-				url=url.substring(0, url.length());
-				Intent i = new Intent(Signup.this,SuggestedUsers.class);
-				i.putExtra("usernames", n);
-				i.putExtra("names", f);
-				i.putExtra("pics", url);
-				finish();
-				startActivity(i);
+					n=n.substring(0, n.length());
+					f=f.substring(0, f.length());
+					url=url.substring(0, url.length());
+					Intent i = new Intent(Signup.this,SuggestedUsers.class);
+					i.putExtra("usernames", n);
+					i.putExtra("names", f);
+					i.putExtra("pics", url);
+					finish();
+					startActivity(i);
+				}
+				
 				
 			}
 			return null;

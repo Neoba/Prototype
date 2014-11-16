@@ -51,7 +51,6 @@ class FacebookUserCreateMessage {
             user.put("username", username);
             user.put("type", "user");
             user.put("name", fuser.getName());
-            user.put("email",fuser.getEmail());
             user.put("facebook_id", fuser.getId());
             user.put("facebook_friends", fuser.getFriends());
             user.put("type", "user");

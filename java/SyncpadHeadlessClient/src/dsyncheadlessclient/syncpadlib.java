@@ -16,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
@@ -30,9 +31,9 @@ public class syncpadlib {
 
     private static final byte version = 0x02;
     private static String url = "http://localhost:2811";
-    
-    public static boolean DEBUG=false;
-    
+
+    public static boolean DEBUG = false;
+
     static boolean ping() {
         ByteBuffer buff = ByteBuffer.allocate(6);
         buff.put(version);
@@ -40,13 +41,16 @@ public class syncpadlib {
         buff.put("PING".getBytes());
         try {
             ByteBuffer in = sendPost(buff);
-            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+            if (syncpadlib.DEBUG) {
+                System.out.println("Res:");
+                printhex(in.array(), in.array().length);
+            }
             return true;
         } catch (Exception err) {
             //System.err.println(err);
             return false;
         }
-        
+
     }
 
     static ArrayList<HashMap<String, String>> createNote(UUID cookie) {
@@ -54,14 +58,17 @@ public class syncpadlib {
         buff.put(version);
         buff.put((byte) 0x02);
         buff.putInt(0xFFFF);
-        UUID randid=UUID.randomUUID();
+        UUID randid = UUID.randomUUID();
         syncpadlib.putUUID(buff, cookie);
         syncpadlib.putUUID(buff, randid);
-        
+
         ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
         try {
             ByteBuffer in = syncpadlib.sendPost(buff);
-            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+            if (syncpadlib.DEBUG) {
+                System.out.println("Res:");
+                printhex(in.array(), in.array().length);
+            }
             if (in.getInt(2) == 0xFFFF) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put("result", "success");
@@ -76,11 +83,11 @@ public class syncpadlib {
                 returnlist.add(result);
             }
         } catch (Exception ex) {
-                HashMap<String, String> result = new HashMap<String, String>();
-                result.put("result", "connection_fail");
-                returnlist.add(result);
+            HashMap<String, String> result = new HashMap<String, String>();
+            result.put("result", "connection_fail");
+            returnlist.add(result);
         }
-        
+
         return returnlist;
     }
 
@@ -99,7 +106,10 @@ public class syncpadlib {
             }
             try {
                 ByteBuffer in = syncpadlib.sendPost(buff);
-                if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+                if (syncpadlib.DEBUG) {
+                    System.out.println("Res:");
+                    printhex(in.array(), in.array().length);
+                }
                 if (in.getInt(2) == 0xFFFF) {
                     return true;
                 } else {
@@ -123,15 +133,28 @@ public class syncpadlib {
         ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
         try {
             ByteBuffer in = sendPost(buff);
-            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+            if (syncpadlib.DEBUG) {
+                System.out.println("Res:");
+                printhex(in.array(), in.array().length);
+            }
             if (in.getInt(2) == 0xFFFF) {
+
                 UUID cookie = new UUID(in.getLong(14), in.getLong(6));
+                int usernamel = in.getInt(22);
+                byte[] unarray = new byte[usernamel];
+                for (int j = 0; j < usernamel; j++) {
+                    unarray[j] = in.get(26 + j);
+                }
+                String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(unarray)).toString();
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put("result", "success");
                 returnlist.add(result);
                 HashMap<String, String> cookieh = new HashMap<String, String>();
                 cookieh.put("cookie", cookie.toString());
                 returnlist.add(cookieh);
+                HashMap<String, String> un = new HashMap<String, String>();
+                cookieh.put("username", dict);
+                returnlist.add(un);
             } else {
                 System.err.println("error not signed up");
                 HashMap<String, String> result = new HashMap<String, String>();
@@ -160,7 +183,10 @@ public class syncpadlib {
         ByteBuffer in;
         try {
             in = sendPost(buff);
-            if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+            if (syncpadlib.DEBUG) {
+                System.out.println("Res:");
+                printhex(in.array(), in.array().length);
+            }
         } catch (Exception err) {
             System.err.println(err);
             return null;
@@ -212,7 +238,10 @@ public class syncpadlib {
         wr.close();
 
         int responseCode = con.getResponseCode();
-        if(DEBUG){System.out.println("Req:");printhex(a.array(), a.array().length);}
+        if (DEBUG) {
+            System.out.println("Req:");
+            printhex(a.array(), a.array().length);
+        }
         BufferedInputStream in = new BufferedInputStream(con.getInputStream());
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         int next = in.read();
@@ -249,9 +278,10 @@ public class syncpadlib {
         }
         in.close();
         JSONObject ret = new JSONObject(response.toString());
-        
+
         return ret;
     }
+
     public static void printhex(byte[] b, int count) {
         int rem = count;
         String outs;

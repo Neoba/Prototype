@@ -9,6 +9,7 @@
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -40,6 +41,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.neoba.syncpad.OfflineSyncService"
+            android:icon="@drawable/ic_launcher"
+            android:label="HeavyWater" >
+        </service>
+
         <activity
             android:name="com.neoba.syncpad.Signup"
             android:label="@string/title_activity_signup"
@@ -64,10 +72,19 @@
             android:name="com.neoba.syncpad.NotesList"
             android:label="@string/title_activity_front" >
         </activity>
-                <activity
+        <activity
             android:name="com.neoba.syncpad.NotesEditor"
             android:label="Edit" >
         </activity>
+        <activity
+            android:name="com.neoba.syncpad.NotesViewerActivity"
+            android:label="@string/title_activity_notes_viewer" >
+        </activity>
+        <activity
+            android:name="com.neoba.syncpad.UserActivity"
+            android:label="@string/title_activity_user" >
+        </activity>
+
     </application>
 
 </manifest>
