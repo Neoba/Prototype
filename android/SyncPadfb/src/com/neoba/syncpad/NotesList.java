@@ -71,7 +71,7 @@ public class NotesList extends ListActivity {
 		getMenuInflater().inflate(R.menu.front, menu);
 		return true;
 	}
-
+	// this is
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();

@@ -21,6 +21,7 @@ public class Postman {
 	        con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 	        con.setRequestProperty("Content-Type", "application/octet-stream");
 	        con.setConnectTimeout(10000);
+	        
 	        a.flip();
 	        DataOutputStream wr=null;
 	        con.setDoOutput(true);
