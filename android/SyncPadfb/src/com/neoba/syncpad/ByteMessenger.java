@@ -20,6 +20,9 @@ import java.util.UUID;
 //import net.dongliu.vcdiff.VcdiffEncoder;
 
 
+import net.dongliu.vcdiff.VcdiffDecoder;
+import net.dongliu.vcdiff.VcdiffEncoder;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -425,7 +428,52 @@ public class ByteMessenger {
 
         return returnlist;
     }
-	
+	public static document Editdoc(document doc, UUID cookie) throws Exception {
+		if (doc.id != null) {
+            ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16 + doc.diff.length + 4);
+            buff.put((byte)0x2);
+            buff.put((byte) 0x03);
+            buff.putInt(doc.diff.length);
+            putUUID(buff, cookie);
+            putUUID(buff, UUID.fromString(doc.id));
+            for (byte b : doc.diff) {
+                buff.put(b);
+            }
+            buff.putInt(doc.age + 1);
+            ByteBuffer in = Postman.post(buff);
+            buff.clear();
+            if (in.getInt(2) == 0xFFFF || in.getInt(2) == 0x8008) {
+
+                if (in.getInt(2) == 0x8008) {
+                    doc.age = in.getInt(6);
+                    System.out.println("Syncfail recovery: correct version " + doc.age);
+                    int length = in.getInt(10);
+
+                    StringBuilder dictnew = new StringBuilder();
+                    for (int h = 0; h < length; h++) {
+                        dictnew.append((char) in.get(14 + h));
+                    }
+                    doc.dict = dictnew.toString();
+                    System.out.println("Syncfail recovery: correct dictionary " + doc.dict);
+                    doc.diff = new VcdiffEncoder(doc.dict, doc.title).encode();
+                } else {
+                    doc.age += 1;
+                }
+
+
+                if (doc.age % 5 == 0) {
+                    doc.dict = new VcdiffDecoder(doc.dict, doc.diff).decode();
+                    System.out.println("dictionary updated.. new dict: \n" + doc.dict);
+                }
+
+                System.out.println("version" + doc.age);
+            } else {
+                System.err.println("some errr");
+            }
+            buff.clear();
+        }
+		return doc;
+	}
 	
 	//
 	// public static ArrayList<Share> ShareMessage(ArrayList<Share> shares,

@@ -61,6 +61,7 @@ public class NotesList extends ListActivity {
 	    c.moveToFirst();
 	    while (!c.isAfterLast()) {
 			document d =db.doccursorToDocument(c);
+			Log.d("NOTELIST",d.toString() );
 			a.add(d);
 	      c.moveToNext();
 	    }

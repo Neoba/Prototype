@@ -2,6 +2,8 @@ package com.neoba.syncpad;
 
 import java.util.UUID;
 
+import com.neoba.syncpad.ByteMessenger.document;
+
 import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Intent;
@@ -50,7 +52,7 @@ public class OfflineSyncService extends Service {
 
 		@Override
 		protected Void doInBackground(final Integer... params) {
-
+			UUID cookie=UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default"));
 			try {
 				ByteMessenger.Ping();
 				Log.d("ok", "PONG");
@@ -60,15 +62,27 @@ public class OfflineSyncService extends Service {
 				db.open();
 				Cursor cursor=db.getAllUnsyncedCreateDocs();
 			    cursor.moveToFirst();
+			    
 			    while (!cursor.isAfterLast()) {
 			      String id=cursor.getString(1);
-			      if(ByteMessenger.createNote(
-			    		  UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default")),
+			      if(ByteMessenger.createNote(cookie
+			    		  ,
 			    		  UUID.fromString(id)).get(0).get("result").equals("success")){
 			    	  db.syncNote(id);
 			      }
 			      cursor.moveToNext();
 			    }
+			    cursor=db.getAllUnsyncedEditDocs();
+			    cursor.moveToFirst();
+			    while (!cursor.isAfterLast()) {
+			      String id=cursor.getString(1);
+			      document doc=db.getDocument(id);
+			      document udoc=ByteMessenger.Editdoc(doc, cookie);
+			      db.updateContent(udoc);
+			      db.synceditNote(id);
+			      cursor.moveToNext();
+			    }
+			    
 				db.close();
 
 			} catch (Exception e) {

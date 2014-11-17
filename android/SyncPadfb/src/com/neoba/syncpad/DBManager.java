@@ -46,7 +46,7 @@ public class DBManager {
 		public void onCreate(SQLiteDatabase db) {
 			String CREATE_BOOK_TABLE = "CREATE TABLE docs ( "
 					+ "id TEXT, " + "diff TEXT, "
-					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1,  synced INTEGER default 0)";
+					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1,  synced INTEGER default 0,syncede INTEGER default 0,syncedd INTEGER default 0)";
 			db.execSQL(CREATE_BOOK_TABLE);
 			String CREATE_FOLLOWERS_TABLE = "CREATE TABLE follower ( "
 					+ "id LONG, " + "username TEXT "
@@ -95,10 +95,21 @@ public class DBManager {
 		return d;
 	}
 	
+	public document getDocument(String docid) {
+		String sql = "SELECT * from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { docid });
+		c.moveToFirst();
+		// String i, String t, byte[] d, int a, String di, byte p
+		document d =new document(c.getString(0), c.getString(4), c.getBlob(1),
+				c.getInt(3), c.getString(2), (byte) c.getInt(5),c.getInt(6)==1?true:false,c.getInt(7));
+		return d;
+	}
+	
 	public document doccursorToDocument(Cursor c){
 		return  new document(c.getString(1), c.getString(5), c.getBlob(2),
 				c.getInt(4), c.getString(3), (byte) c.getInt(6),c.getInt(7)==1?true:false,c.getInt(8));
 	}
+	
 	
 	public boolean isDocMine(String docid){
 		String sql = "SELECT owns from docs where id=?";
@@ -213,14 +224,15 @@ public class DBManager {
 		insertStmt.executeInsert();
 	}
 	public void updateContent(document doc) {
-		String sql = "update docs set diff=?,dict=?,age=?,date=? where id=?";
+		String sql = "update docs set diff=?,dict=?,age=?,date=?,title=?,syncede=1 where id=?";
 		SQLiteStatement updateStmt = db.compileStatement(sql);
 		updateStmt.clearBindings();
 		updateStmt.bindBlob(1, doc.diff);
 		updateStmt.bindString(2, doc.dict);
 		updateStmt.bindLong(3, doc.age);
 		updateStmt.bindLong(4,new Date().getTime());
-		updateStmt.bindString(5, doc.id);
+		updateStmt.bindString(5, doc.title);
+		updateStmt.bindString(6, doc.id);
 		updateStmt.executeUpdateDelete();
 	}
 	public void escalatePermission(String docid,Long id) {
@@ -238,7 +250,13 @@ public class DBManager {
 		updateStmt.bindString(1, docid);
 		updateStmt.executeUpdateDelete();
 	}
-	
+	public void synceditNote(String docid) {
+		String sql = "update docs set syncede=0 where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, docid);
+		updateStmt.executeUpdateDelete();
+	}
 	public String getFollowerUsername(Long userid) {
 		String sql = "SELECT username FROM follower where id=?";
 		Cursor cursor = db.rawQuery(sql, new String[] {Long.toString(userid)});
@@ -299,6 +317,12 @@ public class DBManager {
 	}
 	public Cursor getAllUnsyncedCreateDocs() {
 		String sql = "SELECT rowid _id ,* FROM docs where synced=1";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
+
+	public Cursor getAllUnsyncedEditDocs() {
+		String sql = "SELECT rowid _id ,* FROM docs where syncede=1";
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 	}

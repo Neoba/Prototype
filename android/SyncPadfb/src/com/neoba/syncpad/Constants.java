@@ -63,7 +63,7 @@ public class Constants {
 
 	public static final int SYNCED = 0;
 	public static final int UNSYNCED_CREATE = 1;
-	public static final int UNSYNCED_ = 2;
+	public static final int UNSYNCED_EDIT = 2;
 	public static final int UNSYNCED_DELETE = 3;
 
 }
