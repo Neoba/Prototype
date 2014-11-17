@@ -91,6 +91,7 @@ public class NotesEditor extends Activity {
 			colorsetter();
 			try {
 				fetcher();
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -1086,11 +1087,11 @@ public class NotesEditor extends Activity {
 			e.printStackTrace();
 		}
 		db.close();
-
+		colorcode=note.split("\n")[0];
 			
 			//colorcode = n.getColor();
 			System.out.println("Its a color "+colorcode);
-
+			colorcode=colorcode.length()==0?"#FFFFFF":colorcode;
 		((LinearLayout) findViewById(R.id.l1)).setBackgroundColor(Color
 				.parseColor(colorcode.charAt(0)=='#'?colorcode:"#FFFFFF"));
 	}

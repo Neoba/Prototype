@@ -24676,3 +24676,835 @@ alwell as&#160; being ok<br>
 2014-11-17 12:49:31 DEBUG ConsoleUtils:26 - size : 6 bytes
 2014-11-17 12:49:31 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
 2014-11-17 12:49:31 INFO  DsyncserverHandler:50 - Message Responded :53
+2014-11-17 12:50:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:54
+2014-11-17 12:50:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:50:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:50:53 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:50:53 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:50:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:50:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:50:53 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:50:53 INFO  DsyncserverHandler:50 - Message Responded :54
+2014-11-17 12:51:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:55
+2014-11-17 12:51:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:51:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:51:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:51:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:51:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:51:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:51:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:51:23 INFO  DsyncserverHandler:50 - Message Responded :55
+2014-11-17 12:52:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:56
+2014-11-17 12:52:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:52:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:52:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:52:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:52:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:52:23 INFO  DsyncserverHandler:50 - Message Responded :56
+2014-11-17 12:52:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:57
+2014-11-17 12:52:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:52:23 DEBUG ConsoleUtils:26 - size : 69 bytes
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 02 03 00 00 00 1B 9E BC 55 7D . . . . . . . . U } 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - C4 00 00 01 66 00 12 61 00 05 . . . . f . . a . . 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 06 02 2A 2F 70 3E 0A 73 3C 02 . . * / p > . s < . 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 13 20 05 00 3D 00 00 00 07    .   . . = . . . . 
+2014-11-17 12:52:23 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 12:52:23 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 12:52:23 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 12:52:23 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 12:52:23 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 12:52:23 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 12:52:23 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 12:52:23 DEBUG ConsoleUtils:26 - size : 27 bytes
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 66 00 12 61 . . . . . . f . . a 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 00 05 06 02 2A 2F 70 3E 0A 73 . . . . * / p > . s 
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 3C 02 13 20 05 00 3D          < . .   . . = 
+2014-11-17 12:52:23 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #FFFFFF
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[*]orteH<br>
+[ ]fgh</p>
+
+2014-11-17 12:52:23 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 7
+2014-11-17 12:52:23 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 12:52:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:52:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:52:23 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 12:52:23 INFO  DsyncserverHandler:50 - Message Responded :57
+2014-11-17 12:53:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:58
+2014-11-17 12:53:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:53:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:53:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:53:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:53:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:53:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:53:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:53:23 INFO  DsyncserverHandler:50 - Message Responded :58
+2014-11-17 12:54:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:59
+2014-11-17 12:54:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:54:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:54:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:54:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:54:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:54:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:54:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:54:23 INFO  DsyncserverHandler:50 - Message Responded :59
+2014-11-17 12:55:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:60
+2014-11-17 12:55:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:55:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:55:53 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:55:53 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:55:53 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:55:53 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:55:53 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:55:53 INFO  DsyncserverHandler:50 - Message Responded :60
+2014-11-17 12:56:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:61
+2014-11-17 12:56:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:56:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:56:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:56:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:56:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:56:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:56:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:56:23 INFO  DsyncserverHandler:50 - Message Responded :61
+2014-11-17 12:57:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:49266:62
+2014-11-17 12:57:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:57:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:57:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:57:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:57:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:57:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:57:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:57:23 INFO  DsyncserverHandler:50 - Message Responded :62
+2014-11-17 12:58:45 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:63
+2014-11-17 12:58:45 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:58:45 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:58:45 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:58:45 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:58:45 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:58:45 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:58:45 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:58:45 INFO  DsyncserverHandler:50 - Message Responded :63
+2014-11-17 12:59:23 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:64
+2014-11-17 12:59:23 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:59:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:23 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:59:23 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:59:23 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:59:23 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:59:23 INFO  DsyncserverHandler:50 - Message Responded :64
+2014-11-17 12:59:31 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:65
+2014-11-17 12:59:31 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:59:31 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:31 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:59:31 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:59:31 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:59:31 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:31 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:59:31 INFO  DsyncserverHandler:50 - Message Responded :65
+2014-11-17 12:59:41 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:66
+2014-11-17 12:59:41 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 12:59:41 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:41 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 12:59:41 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 12:59:41 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 12:59:41 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 12:59:41 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 12:59:41 INFO  DsyncserverHandler:50 - Message Responded :66
+2014-11-17 13:00:14 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:67
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:00:14 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:00:14 INFO  DsyncserverHandler:50 - Message Responded :67
+2014-11-17 13:00:14 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:68
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 38 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF 9E BC 55 7D . . . . . . . . U } 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 45 67 AE 81 88 27 43 BB 45 DF E g . . . ' C . E . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - FF EE 66 C9 3F 43 42 96       . . f . ? C B . 
+2014-11-17 13:00:14 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:00:14 INFO  MessageInterpreter:149 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :creating new document- 
+2014-11-17 13:00:14 INFO  DocumentCreateMessage:63 - a9c989da-e9b5-4567-9ebc-557d1f2c2205: Created new Document [ffee66c9-3f43-4296-ae81-882743bb45df] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846982","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 02 00 00 FF FF AE 81 88 27 . . . . . . . . . ' 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 43 BB 45 DF FF EE 66 C9 3F 43 C . E . . . f . ? C 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 42 96                         B . 
+2014-11-17 13:00:14 INFO  DsyncserverHandler:50 - Message Responded :68
+2014-11-17 13:00:14 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:69
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 77 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 03 00 00 00 23 9E BC 55 7D . . . . . # . . U } 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - C4 00 00 01 66 00 1A 61 00 0C . . . . f . . a . . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 07 02 23 33 34 39 38 64 62 2A . . # 3 4 9 8 d b * 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 2F 70 3E 0A 08 13 35 02 33 20 / p > . . . 5 . 3   
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 05 07 36 00 00 00 08          . . 6 . . . . 
+2014-11-17 13:00:14 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:00:14 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 13:00:14 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:00:14 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:00:14 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:00:14 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 35 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 66 00 1A 61 . . . . . . f . . a 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 00 0C 07 02 23 33 34 39 38 64 . . . . # 3 4 9 8 d 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 62 2A 2F 70 3E 0A 08 13 35 02 b * / p > . . . 5 . 
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 33 20 05 07 36                3   . . 6 
+2014-11-17 13:00:14 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #3498db
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[*]orteH<br>
+[ ]fgh</p>
+
+2014-11-17 13:00:14 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 8
+2014-11-17 13:00:14 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:00:14 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:00:14 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:00:14 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:00:14 INFO  DsyncserverHandler:50 - Message Responded :69
+2014-11-17 13:00:15 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:40905:70
+2014-11-17 13:00:15 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:00:15 DEBUG ConsoleUtils:26 - size : 84 bytes
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 02 03 00 00 00 2A 9E BC 55 7D . . . . . * . . U } 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 45 67 8B E1 72 ED C8 25 B0 3D E g . . r . . % . = 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 01 AA 18 44 44 5F 42 FB D6 C3 . . . D D _ B . . . 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - C4 00 00 01 38 00 21 43 00 17 . . . . 8 . ! C . . 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 04 01 23 65 37 34 63 33 63 20 . . # e 7 4 c 3 c   
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 6D 61 79 62 65 3C 62 72 3E 0A m a y b e < b r > . 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 3C 2F 70 3E 0A 08 13 2C 11 07 < / p > . . . , . . 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 00 00 00 01                   . . . . 
+2014-11-17 13:00:15 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:00:15 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - 01aa1844-445f-42fb-8be1-72edc825b03d
+2014-11-17 13:00:15 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:00:15 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:00:15 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:00:15 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:00:15 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:00:15 DEBUG ConsoleUtils:26 - size : 42 bytes
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 38 00 21 43 . . . . . . 8 . ! C 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 00 17 04 01 23 65 37 34 63 33 . . . . # e 7 4 c 3 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 63 20 6D 61 79 62 65 3C 62 72 c   m a y b e < b r 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 3E 0A 3C 2F 70 3E 0A 08 13 2C > . < / p > . . . , 
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 11 07                         . . 
+2014-11-17 13:00:15 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #e74c3c
+<p>this is a fun way to do doc<br>
+[ ]check maybe<br>
+</p>
+
+2014-11-17 13:00:15 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 1
+2014-11-17 13:00:15 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:00:15 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:00:15 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:00:15 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:00:15 INFO  DsyncserverHandler:50 - Message Responded :70
+2014-11-17 13:02:46 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:71
+2014-11-17 13:02:46 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:02:46 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:02:46 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:02:46 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:02:46 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:02:46 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:02:46 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:02:46 INFO  DsyncserverHandler:50 - Message Responded :71
+2014-11-17 13:03:10 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:72
+2014-11-17 13:03:10 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:03:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:03:10 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:03:10 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:03:10 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:03:10 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:03:10 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:03:10 INFO  DsyncserverHandler:50 - Message Responded :72
+2014-11-17 13:03:22 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:73
+2014-11-17 13:03:22 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:03:22 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:03:22 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:03:22 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:03:22 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:03:22 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:03:22 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:03:22 INFO  DsyncserverHandler:50 - Message Responded :73
+2014-11-17 13:04:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:74
+2014-11-17 13:04:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:04:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:04:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:04:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:04:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:04:20 INFO  DsyncserverHandler:50 - Message Responded :74
+2014-11-17 13:04:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:75
+2014-11-17 13:04:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:04:20 DEBUG ConsoleUtils:26 - size : 90 bytes
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 30 9E BC 55 7D . . . . . 0 . . U } 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 45 67 AE 81 88 27 43 BB 45 DF E g . . . ' C . E . 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - FF EE 66 C9 3F 43 42 96 D6 C3 . . f . ? C B . . . 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - C4 00 00 01 00 00 27 20 00 20 . . . . . . '   .   
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 02 00 23 66 33 39 63 31 32 0A . . # f 3 9 c 1 2 . 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 3C 70 3E 73 70 65 63 69 61 6C < p > s p e c i a l 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 69 7A 65 64 3C 62 72 3E 0A 3C i z e d < b r > . < 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 2F 70 3E 0A 01 20 00 00 00 00 / p > . .   . . . . 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 -                               
+2014-11-17 13:04:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:04:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - ffee66c9-3f43-4296-ae81-882743bb45df
+2014-11-17 13:04:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:04:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:04:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:04:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:04:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:04:20 DEBUG ConsoleUtils:26 - size : 48 bytes
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 00 00 27 20 . . . . . . . . '   
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 00 20 02 00 23 66 33 39 63 31 .   . . # f 3 9 c 1 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 32 0A 3C 70 3E 73 70 65 63 69 2 . < p > s p e c i 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 61 6C 69 7A 65 64 3C 62 72 3E a l i z e d < b r > 
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 0A 3C 2F 70 3E 0A 01 20       . < / p > . .   
+2014-11-17 13:04:20 INFO  DocumentEditMessage:91 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :dictionary updated
+2014-11-17 13:04:20 INFO  DocumentEditMessage:92 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :new dictionary- #f39c12
+<p>specialized<br>
+</p>
+
+2014-11-17 13:04:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #f39c12
+<p>specialized<br>
+</p>
+
+2014-11-17 13:04:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 0
+2014-11-17 13:04:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:04:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:04:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:04:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:04:20 INFO  DsyncserverHandler:50 - Message Responded :75
+2014-11-17 13:05:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:76
+2014-11-17 13:05:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:05:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:05:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:05:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:05:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:05:20 INFO  DsyncserverHandler:50 - Message Responded :76
+2014-11-17 13:05:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:77
+2014-11-17 13:05:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:05:20 DEBUG ConsoleUtils:26 - size : 106 bytes
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 40 9E BC 55 7D . . . . . @ . . U } 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - C4 00 00 01 66 00 37 61 00 2C . . . . f . 7 a . , 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 05 01 23 33 34 39 38 64 62 2A . . # 3 4 9 8 d b * 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 5D 6E 75 6D 72 75 20 3C 62 72 ] n u m r u   < b r 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 3E 0A 5B 20 5D 6F 72 74 65 48 > . [   ] o r t e H 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 3C 62 72 3E 0A 5B 2A 5D 66 67 < b r > . [ * ] f g 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 68 3C 2F 70 3E 0A 08 13 35 01 h < / p > . . . 5 . 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 25 07 00 00 00 09             % . . . . . 
+2014-11-17 13:05:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:05:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 13:05:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:05:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:05:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:05:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:05:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:05:20 DEBUG ConsoleUtils:26 - size : 64 bytes
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 66 00 37 61 . . . . . . f . 7 a 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 00 2C 05 01 23 33 34 39 38 64 . , . . # 3 4 9 8 d 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 62 2A 5D 6E 75 6D 72 75 20 3C b * ] n u m r u   < 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 62 72 3E 0A 5B 20 5D 6F 72 74 b r > . [   ] o r t 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 65 48 3C 62 72 3E 0A 5B 2A 5D e H < b r > . [ * ] 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 66 67 68 3C 2F 70 3E 0A 08 13 f g h < / p > . . . 
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 35 01 25 07                   5 . % . 
+2014-11-17 13:05:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #3498db
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[ ]orteH<br>
+[*]fgh</p>
+
+2014-11-17 13:05:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 9
+2014-11-17 13:05:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:05:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:05:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:05:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:05:20 INFO  DsyncserverHandler:50 - Message Responded :77
+2014-11-17 13:05:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:78
+2014-11-17 13:05:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:05:21 DEBUG ConsoleUtils:26 - size : 87 bytes
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 02 03 00 00 00 2D 9E BC 55 7D . . . . . - . . U } 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 45 67 8B E1 72 ED C8 25 B0 3D E g . . r . . % . = 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 01 AA 18 44 44 5F 42 FB D6 C3 . . . D D _ B . . . 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - C4 00 00 01 38 00 24 3E 00 19 . . . . 8 . $ > . . 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 05 01 23 65 37 34 63 33 63 2A . . # e 7 4 c 3 c * 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 5D 63 68 65 63 6B 20 6D 61 79 ] c h e c k   m a y 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 62 65 3C 2F 70 3E 0A 08 13 25 b e < / p > . . . % 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 01 12 07 00 00 00 02          . . . . . . . 
+2014-11-17 13:05:21 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:05:21 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - 01aa1844-445f-42fb-8be1-72edc825b03d
+2014-11-17 13:05:21 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:05:21 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:05:21 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:05:21 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:05:21 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:05:21 DEBUG ConsoleUtils:26 - size : 45 bytes
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 38 00 24 3E . . . . . . 8 . $ > 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 00 19 05 01 23 65 37 34 63 33 . . . . # e 7 4 c 3 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 63 2A 5D 63 68 65 63 6B 20 6D c * ] c h e c k   m 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 61 79 62 65 3C 2F 70 3E 0A 08 a y b e < / p > . . 
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 13 25 01 12 07                . % . . . 
+2014-11-17 13:05:21 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #e74c3c
+<p>this is a fun way to do doc<br>
+[*]check maybe</p>
+
+2014-11-17 13:05:21 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 2
+2014-11-17 13:05:21 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:05:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:05:21 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:05:21 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:05:21 INFO  DsyncserverHandler:50 - Message Responded :78
+2014-11-17 13:06:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:79
+2014-11-17 13:06:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:06:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:06:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:06:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:06:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:06:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:06:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:06:20 INFO  DsyncserverHandler:50 - Message Responded :79
+2014-11-17 13:07:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:80
+2014-11-17 13:07:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:07:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:07:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:07:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:07:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:07:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:07:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:07:20 INFO  DsyncserverHandler:50 - Message Responded :80
+2014-11-17 13:08:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:81
+2014-11-17 13:08:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:08:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:08:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:08:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:08:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:08:20 INFO  DsyncserverHandler:50 - Message Responded :81
+2014-11-17 13:08:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:82
+2014-11-17 13:08:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:08:20 DEBUG ConsoleUtils:26 - size : 106 bytes
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 40 9E BC 55 7D . . . . . @ . . U } 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - C4 00 00 01 66 00 37 61 00 2C . . . . f . 7 a . , 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 05 01 23 33 34 39 38 64 62 2A . . # 3 4 9 8 d b * 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 5D 6E 75 6D 72 75 20 3C 62 72 ] n u m r u   < b r 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 3E 0A 5B 20 5D 6F 72 74 65 48 > . [   ] o r t e H 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 3C 62 72 3E 0A 5B 2A 5D 66 67 < b r > . [ * ] f g 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 68 3C 2F 70 3E 0A 08 13 35 01 h < / p > . . . 5 . 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 25 07 00 00 00 0A             % . . . . . 
+2014-11-17 13:08:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:08:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 13:08:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:08:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:08:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:08:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:08:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:08:20 DEBUG ConsoleUtils:26 - size : 64 bytes
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 66 00 37 61 . . . . . . f . 7 a 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 00 2C 05 01 23 33 34 39 38 64 . , . . # 3 4 9 8 d 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 62 2A 5D 6E 75 6D 72 75 20 3C b * ] n u m r u   < 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 62 72 3E 0A 5B 20 5D 6F 72 74 b r > . [   ] o r t 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 65 48 3C 62 72 3E 0A 5B 2A 5D e H < b r > . [ * ] 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 66 67 68 3C 2F 70 3E 0A 08 13 f g h < / p > . . . 
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 35 01 25 07                   5 . % . 
+2014-11-17 13:08:20 INFO  DocumentEditMessage:91 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :dictionary updated
+2014-11-17 13:08:20 INFO  DocumentEditMessage:92 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :new dictionary- #3498db
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[ ]orteH<br>
+[*]fgh</p>
+
+2014-11-17 13:08:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #3498db
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[ ]orteH<br>
+[*]fgh</p>
+
+2014-11-17 13:08:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 10
+2014-11-17 13:08:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:08:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:08:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:08:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:08:20 INFO  DsyncserverHandler:50 - Message Responded :82
+2014-11-17 13:08:21 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:83
+2014-11-17 13:08:21 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:08:21 DEBUG ConsoleUtils:26 - size : 92 bytes
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 02 03 00 00 00 32 9E BC 55 7D . . . . . 2 . . U } 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 45 67 8B E1 72 ED C8 25 B0 3D E g . . r . . % . = 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 01 AA 18 44 44 5F 42 FB D6 C3 . . . D D _ B . . . 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - C4 00 00 01 38 00 29 43 00 1E . . . . 8 . ) C .  
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 05 01 23 65 37 34 63 33 63 2A . . # e 7 4 c 3 c * 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 5D 63 68 65 63 6B 20 6D 61 79 ] c h e c k   m a y 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 62 65 3C 62 72 3E 0A 3C 2F 70 b e < b r > . < / p 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 3E 0A 08 13 25 01 17 07 00 00 > . . . % . . . . . 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 00 03                         . . 
+2014-11-17 13:08:21 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:08:21 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - 01aa1844-445f-42fb-8be1-72edc825b03d
+2014-11-17 13:08:21 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:08:21 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:08:21 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:08:21 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:08:21 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:08:21 DEBUG ConsoleUtils:26 - size : 50 bytes
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 38 00 29 43 . . . . . . 8 . ) C 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 00 1E 05 01 23 65 37 34 63 33 .  . . # e 7 4 c 3 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 63 2A 5D 63 68 65 63 6B 20 6D c * ] c h e c k   m 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 61 79 62 65 3C 62 72 3E 0A 3C a y b e < b r > . < 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 2F 70 3E 0A 08 13 25 01 17 07 / p > . . . % . . . 
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 -                               
+2014-11-17 13:08:21 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #e74c3c
+<p>this is a fun way to do doc<br>
+[*]check maybe<br>
+</p>
+
+2014-11-17 13:08:21 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 3
+2014-11-17 13:08:21 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:08:21 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:08:21 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:08:21 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:08:21 INFO  DsyncserverHandler:50 - Message Responded :83
+2014-11-17 13:09:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:84
+2014-11-17 13:09:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:09:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:09:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:09:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:09:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:09:20 INFO  DsyncserverHandler:50 - Message Responded :84
+2014-11-17 13:09:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:85
+2014-11-17 13:09:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:09:20 DEBUG ConsoleUtils:26 - size : 59 bytes
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 11 9E BC 55 7D . . . . . . . . U } 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - C4 00 00 01 61 00 08 61 00 00 . . . . a . . a . . 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 02 01 73 61 00 00 00 00 0B    . . s a . . . . . 
+2014-11-17 13:09:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:09:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 13:09:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:09:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:09:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:09:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:09:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:09:20 DEBUG ConsoleUtils:26 - size : 17 bytes
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 61 00 08 61 . . . . . . a . . a 
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 00 00 02 01 73 61 00          . . . . s a . 
+2014-11-17 13:09:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #3498db
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[ ]orteH<br>
+[*]fgh</p>
+
+2014-11-17 13:09:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 11
+2014-11-17 13:09:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:09:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:09:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:09:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:09:20 INFO  DsyncserverHandler:50 - Message Responded :85
+2014-11-17 13:10:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:86
+2014-11-17 13:10:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:10:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:10:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:10:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:10:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:10:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:10:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:10:20 INFO  DsyncserverHandler:50 - Message Responded :86
+2014-11-17 13:11:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:87
+2014-11-17 13:11:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:11:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:11:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:11:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:11:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:11:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:11:20 INFO  DsyncserverHandler:50 - Message Responded :87
+2014-11-17 13:12:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:88
+2014-11-17 13:12:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:12:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:12:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:12:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:12:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:12:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:12:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:12:20 INFO  DsyncserverHandler:50 - Message Responded :88
+2014-11-17 13:13:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:89
+2014-11-17 13:13:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:13:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:13:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:13:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:13:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:13:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:13:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:13:20 INFO  DsyncserverHandler:50 - Message Responded :89
+2014-11-17 13:14:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:90
+2014-11-17 13:14:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:14:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:14:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:14:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:14:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:14:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:14:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:14:20 INFO  DsyncserverHandler:50 - Message Responded :90
+2014-11-17 13:15:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:91
+2014-11-17 13:15:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:15:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:15:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:15:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:15:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:15:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:15:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:15:20 INFO  DsyncserverHandler:50 - Message Responded :91
+2014-11-17 13:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:92
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:16:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:16:20 INFO  DsyncserverHandler:50 - Message Responded :92
+2014-11-17 13:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:93
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 92 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 32 9E BC 55 7D . . . . . 2 . . U } 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 45 67 87 1B 66 0E 23 48 4C 61 E g . . f . # H L a 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - D1 83 06 78 DE 6B 4F 81 D6 C3 . . . x . k O . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - C4 00 00 01 61 00 29 61 00 1E . . . . a . ) a .  
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 05 01 23 66 31 63 34 30 66 2A . . # f 1 c 4 0 f * 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 5D 6F 72 74 65 48 3C 62 72 3E ] o r t e H < b r > 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 0A 5B 2A 5D 66 67 68 3C 2F 70 . [ * ] f g h < / p 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 3E 0A 08 13 43 01 17 07 00 00 > . . . C . . . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 00 0C                         . . 
+2014-11-17 13:16:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:16:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - d1830678-de6b-4f81-871b-660e23484c61
+2014-11-17 13:16:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:16:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 50 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 61 00 29 61 . . . . . . a . ) a 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 00 1E 05 01 23 66 31 63 34 30 .  . . # f 1 c 4 0 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 66 2A 5D 6F 72 74 65 48 3C 62 f * ] o r t e H < b 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 72 3E 0A 5B 2A 5D 66 67 68 3C r > . [ * ] f g h < 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 2F 70 3E 0A 08 13 43 01 17 07 / p > . . . C . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 -                               
+2014-11-17 13:16:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #f1c40f
+<p>this looks fab<br>
+alwell as&#160; being ok<br>
+[*]numru <br>
+[*]orteH<br>
+[*]fgh</p>
+
+2014-11-17 13:16:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 12
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:16:20 INFO  DsyncserverHandler:50 - Message Responded :93
+2014-11-17 13:16:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:94
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 87 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 2D 9E BC 55 7D . . . . . - . . U } 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 45 67 8B E1 72 ED C8 25 B0 3D E g . . r . . % . = 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 01 AA 18 44 44 5F 42 FB D6 C3 . . . D D _ B . . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - C4 00 00 01 38 00 24 3E 00 19 . . . . 8 . $ > . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 05 01 23 39 35 61 35 61 36 2A . . # 9 5 a 5 a 6 * 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 5D 63 68 65 63 6B 20 6D 61 79 ] c h e c k   m a y 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 62 65 3C 2F 70 3E 0A 08 13 25 b e < / p > . . . % 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 01 12 07 00 00 00 04          . . . . . . . 
+2014-11-17 13:16:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:16:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - 01aa1844-445f-42fb-8be1-72edc825b03d
+2014-11-17 13:16:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:16:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 45 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 38 00 24 3E . . . . . . 8 . $ > 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 00 19 05 01 23 39 35 61 35 61 . . . . # 9 5 a 5 a 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 36 2A 5D 63 68 65 63 6B 20 6D 6 * ] c h e c k   m 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 61 79 62 65 3C 2F 70 3E 0A 08 a y b e < / p > . . 
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 13 25 01 12 07                . % . . . 
+2014-11-17 13:16:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #95a5a6
+<p>this is a fun way to do doc<br>
+[*]check maybe</p>
+
+2014-11-17 13:16:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 4
+2014-11-17 13:16:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:16:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:16:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:16:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:16:20 INFO  DsyncserverHandler:50 - Message Responded :94
+2014-11-17 13:17:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:95
+2014-11-17 13:17:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:17:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:17:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:17:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:17:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:17:20 INFO  DsyncserverHandler:50 - Message Responded :95
+2014-11-17 13:17:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:96
+2014-11-17 13:17:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:17:20 DEBUG ConsoleUtils:26 - size : 122 bytes
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 50 9E BC 55 7D . . . . . P . . U } 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 45 67 AE 81 88 27 43 BB 45 DF E g . . . ' C . E . 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - FF EE 66 C9 3F 43 42 96 D6 C3 . . f . ? C B . . . 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - C4 00 00 01 20 00 47 40 00 40 . . . .   . G @ . @ 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 02 00 23 66 33 39 63 31 32 0A . . # f 3 9 c 1 2 . 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 3C 70 3E 73 70 65 63 69 61 6C < p > s p e c i a l 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 69 7A 65 64 20 65 71 75 69 70 i z e d   e q u i p 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 6D 65 6E 74 20 65 6E 6E 75 20 m e n t   e n n u   
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 76 65 6E 65 6E 6B 69 6C 20 70 v e n e n k i l   p 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 61 72 61 79 61 6D 3C 62 72 3E a r a y a m < b r > 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 0A 3C 2F 70 3E 0A 01 40 00 00 . < / p > . . @ . . 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 00 01                         . . 
+2014-11-17 13:17:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:17:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - ffee66c9-3f43-4296-ae81-882743bb45df
+2014-11-17 13:17:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:17:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:17:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:17:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:17:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:17:20 DEBUG ConsoleUtils:26 - size : 80 bytes
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 20 00 47 40 . . . . . .   . G @ 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 00 40 02 00 23 66 33 39 63 31 . @ . . # f 3 9 c 1 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 32 0A 3C 70 3E 73 70 65 63 69 2 . < p > s p e c i 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 61 6C 69 7A 65 64 20 65 71 75 a l i z e d   e q u 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 69 70 6D 65 6E 74 20 65 6E 6E i p m e n t   e n n 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 75 20 76 65 6E 65 6E 6B 69 6C u   v e n e n k i l 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 20 70 61 72 61 79 61 6D 3C 62   p a r a y a m < b 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 72 3E 0A 3C 2F 70 3E 0A 01 40 r > . < / p > . . @ 
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 -                               
+2014-11-17 13:17:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #f39c12
+<p>specialized equipment ennu venenkil parayam<br>
+</p>
+
+2014-11-17 13:17:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 1
+2014-11-17 13:17:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:17:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:17:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:17:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:17:20 INFO  DsyncserverHandler:50 - Message Responded :96
+2014-11-17 13:18:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:97
+2014-11-17 13:18:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:18:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:18:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:18:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:18:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:18:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:18:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:18:20 INFO  DsyncserverHandler:50 - Message Responded :97
+2014-11-17 13:19:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:98
+2014-11-17 13:19:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:19:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:19:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:19:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:19:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:19:20 INFO  DsyncserverHandler:50 - Message Responded :98
+2014-11-17 13:19:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:99
+2014-11-17 13:19:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:19:20 DEBUG ConsoleUtils:26 - size : 109 bytes
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 02 03 00 00 00 43 9E BC 55 7D . . . . . C . . U } 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 1F 2C 22 05 A9 C9 89 DA E9 B5  , " . . . . . . . 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 45 67 8B E1 72 ED C8 25 B0 3D E g . . r . . % . = 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 01 AA 18 44 44 5F 42 FB D6 C3 . . . D D _ B . . . 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - C4 00 00 01 38 00 3A 54 00 2F . . . . 8 . : T . / 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 05 01 23 39 35 61 35 61 36 2A . . # 9 5 a 5 a 6 * 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 5D 63 68 65 63 6B 20 6D 61 79 ] c h e c k   m a y 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 62 65 3C 62 72 3E 0A 5B 2A 5D b e < b r > . [ * ] 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 79 65 73 3C 62 72 3E 0A 5B 20 y e s < b r > . [   
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 5D 68 6F 77 3C 2F 70 3E 0A 08 ] h o w < / p > . . 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 13 25 01 28 07 00 00 00 05    . % . ( . . . . . 
+2014-11-17 13:19:20 INFO  MessageInterpreter:58 - Authenticated message from user 1152921504606846982 with session a9c989da-e9b5-4567-9ebc-557d1f2c2205
+2014-11-17 13:19:20 INFO  MessageInterpreter:160 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :editing document - 01aa1844-445f-42fb-8be1-72edc825b03d
+2014-11-17 13:19:20 INFO  DocumentEditMessage:51 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :edited by the creator itself
+2014-11-17 13:19:20 DEBUG DocumentEditMessage:53 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 editors of the document- []
+2014-11-17 13:19:20 DEBUG DocumentEditMessage:54 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 readers of the document- []
+2014-11-17 13:19:20 INFO  DocumentEditMessage:71 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :sync check passed
+2014-11-17 13:19:20 DEBUG ConsoleUtils:25 - buffer : diff_received
+2014-11-17 13:19:20 DEBUG ConsoleUtils:26 - size : 67 bytes
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - D6 C3 C4 00 00 01 38 00 3A 54 . . . . . . 8 . : T 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 00 2F 05 01 23 39 35 61 35 61 . / . . # 9 5 a 5 a 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 36 2A 5D 63 68 65 63 6B 20 6D 6 * ] c h e c k   m 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 61 79 62 65 3C 62 72 3E 0A 5B a y b e < b r > . [ 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 2A 5D 79 65 73 3C 62 72 3E 0A * ] y e s < b r > . 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 5B 20 5D 68 6F 77 3C 2F 70 3E [   ] h o w < / p > 
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 0A 08 13 25 01 28 07          . . . % . ( . 
+2014-11-17 13:19:20 INFO  DocumentEditMessage:91 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :dictionary updated
+2014-11-17 13:19:20 INFO  DocumentEditMessage:92 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 :new dictionary- #95a5a6
+<p>this is a fun way to do doc<br>
+[*]check maybe<br>
+[*]yes<br>
+[ ]how</p>
+
+2014-11-17 13:19:20 INFO  DocumentEditMessage:100 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 's copy: #95a5a6
+<p>this is a fun way to do doc<br>
+[*]check maybe<br>
+[*]yes<br>
+[ ]how</p>
+
+2014-11-17 13:19:20 INFO  DocumentEditMessage:101 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 version: 5
+2014-11-17 13:19:20 DEBUG DocumentEditMessage:120 - a9c989da-e9b5-4567-9ebc-557d1f2c2205 GCM ids: []
+2014-11-17 13:19:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:19:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:19:20 DEBUG ConsoleUtils:43 - 02 03 00 00 FF FF             . . . . . . 
+2014-11-17 13:19:20 INFO  DsyncserverHandler:50 - Message Responded :99
+2014-11-17 13:20:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:100
+2014-11-17 13:20:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:20:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:20:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:20:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:20:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:20:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:20:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:20:20 INFO  DsyncserverHandler:50 - Message Responded :100
+2014-11-17 13:21:20 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.150.2:43761:101
+2014-11-17 13:21:20 DEBUG ConsoleUtils:25 - buffer : request
+2014-11-17 13:21:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:21:20 DEBUG ConsoleUtils:43 - 02 01 50 49 4E 47             . . P I N G 
+2014-11-17 13:21:20 INFO  MessageInterpreter:73 - Ping received
+2014-11-17 13:21:20 DEBUG ConsoleUtils:25 - buffer : response
+2014-11-17 13:21:20 DEBUG ConsoleUtils:26 - size : 6 bytes
+2014-11-17 13:21:20 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
+2014-11-17 13:21:20 INFO  DsyncserverHandler:50 - Message Responded :101
