@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,13 +22,14 @@ public class OfflineSyncService extends Service {
 		// TODO: Return the communication channel to the service.
 		throw new UnsupportedOperationException("Not yet implemented");
 	}
-
+	LocalBroadcastManager broadcaster;
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
 
 		Toast.makeText(getApplicationContext(), "Service Created", 1).show();
 		Log.d("Serv", "Crea");
+		broadcaster = LocalBroadcastManager.getInstance(this);
 		super.onCreate();
 	}
 
@@ -39,9 +41,10 @@ public class OfflineSyncService extends Service {
 		super.onDestroy();
 	}
 
+
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-
+		
 		Log.d("Serv", "ok");
 		
 		new Ping().execute(0);
@@ -90,7 +93,7 @@ public class OfflineSyncService extends Service {
 			    	  db.deleteDoc(id);
 			      cursor.moveToNext();
 			    }
-			    
+			    broadcaster.sendBroadcast(new Intent("com.neoba.syncpad.NotesList"));
 				db.close();
 
 			} catch (Exception e) {

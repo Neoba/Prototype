@@ -187,7 +187,7 @@ public class FbLogin extends Activity {
 				DBManager db = new DBManager(FbLogin.this);
 				db.open();
 				for (UUID a : docs.keySet()) {
-					db.insertDoc(docs.get(a));
+					db.insertDocFromDigest(docs.get(a));
 
 				}
 				for (Long a : follower.keySet()) {

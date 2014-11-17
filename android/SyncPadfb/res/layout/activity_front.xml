@@ -100,8 +100,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/ab_texture_tile_syncpad" />
+                    android:src="@drawable/ic_unsynced"
+                    android:visibility="invisible" />
                 
     </com.neoba.syncpad.SquareLayout>
 

@@ -13,14 +13,17 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -33,6 +36,7 @@ import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -42,7 +46,7 @@ import android.widget.Toast;
 public class NotesList extends ListActivity {
 
 	NotesListAdapter nla;
-
+	BroadcastReceiver receiver;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,6 +59,12 @@ public class NotesList extends ListActivity {
 		c.moveToFirst();
 		while (!c.isAfterLast()) {
 			document d = db.doccursorToDocument(c);
+			if(!db.isDocUnSynced(d.id))
+			{
+				Log.d("NOTELIST", "Unsynced "+d.id);
+				d.synced=2;
+			}
+			else d.synced=0;
 			Log.d("NOTELIST", d.toString());
 			a.add(d);
 			c.moveToNext();
@@ -72,12 +82,48 @@ public class NotesList extends ListActivity {
 				60 * 1000, pintent);
 		startService(new Intent(getBaseContext(), OfflineSyncService.class));
 
+		receiver = new BroadcastReceiver() {
+	        @Override
+	        public void onReceive(Context context, Intent intent) {
+	        	DBManager db = new DBManager(NotesList.this);
+	    		db.open();
+	    		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
+	    		Cursor c = db.getAllUndeletedDocs();
+	    		c.moveToFirst();
+	    		while (!c.isAfterLast()) {
+	    			document d = db.doccursorToDocument(c);
+	    			if(!db.isDocUnSynced(d.id))
+	    			{
+	    				Log.d("NOTELIST", "Unsynced "+d.id);
+	    				d.synced=2;
+	    			}
+	    			else d.synced=0;
+	    			Log.d("NOTELIST", d.toString());
+	    			a.add(d);
+	    			c.moveToNext();
+	    		}
+	    		db.close();
+	    		nla = new NotesListAdapter(NotesList.this, R.layout.activity_front, a);
+	    		NotesList.this.setListAdapter(nla);
+	        }
+	    };
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.front, menu);
 		return true;
+	}
+	@Override
+	protected void onStart() {
+	    super.onStart();
+	    LocalBroadcastManager.getInstance(this).registerReceiver((receiver), new IntentFilter("com.neoba.syncpad.NotesList"));
+	}
+
+	@Override
+	protected void onStop() {
+	    LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
+	    super.onStop();
 	}
 
 	// this is
@@ -151,16 +197,19 @@ public class NotesList extends ListActivity {
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View rowView = inflater.inflate(R.layout.activity_front, parent,
 					false);
-			ProgressBar pp = (ProgressBar) rowView
-					.findViewById(R.id.pnNoteLoader);
-			pp.setVisibility(View.VISIBLE);
+			//ProgressBar pp = (ProgressBar) rowView
+			//		.findViewById(R.id.pnNoteLoader);
+			//pp.setVisibility(View.VISIBLE);
 			final TextView textView = (TextView) rowView
 					.findViewById(R.id.output_autofit);
 			new NoteParse().execute(rowView, values.get(position).title);
 			ImageButton editb = (ImageButton) rowView
 					.findViewById(R.id.bNotesListLeft);
-			editb.setOnClickListener(new OnClickListener() {
 
+			if(values.get(position).synced==2)
+				((ImageView)rowView.findViewById(R.id.ivsynced)).setVisibility(View.VISIBLE);
+			editb.setOnClickListener(new OnClickListener() {
+				
 				@Override
 				public void onClick(View arg0) {
 					Intent i = new Intent(NotesList.this, NotesEditor.class);
@@ -169,9 +218,12 @@ public class NotesList extends ListActivity {
 
 				}
 			});
-			String color =values.get(position).title.split("\n")[0].charAt(0)=='#'?values.get(position).title.split("\n")[0]:"#FFFFFF";
+			String color;
+			if(values.get(position).title.length()==0)color="#FFFFFF";
+			else
+				color =values.get(position).title.split("\n")[0].charAt(0)=='#'?values.get(position).title.split("\n")[0]:"#FFFFFF";
 			
-			((SquareLayout)rowView.findViewById(R.id.squareLayout1)).setBackgroundColor(Color.parseColor(values.get(position).title.split("\n")[0]));
+			((SquareLayout)rowView.findViewById(R.id.squareLayout1)).setBackgroundColor(Color.parseColor(color));
 			textView.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -201,6 +253,7 @@ public class NotesList extends ListActivity {
 											DBManager db = new DBManager(
 													NotesList.this);
 											db.open();
+											
 											db.setDeleted(values.get(position).id);
 											Log.d("deleted",
 													values.get(position).id);
@@ -264,7 +317,9 @@ public class NotesList extends ListActivity {
 		Cursor c = db.getAllUndeletedDocs();
 		c.moveToFirst();
 		while (!c.isAfterLast()) {
-			document d = db.doccursorToDocument(c);
+						document d = db.doccursorToDocument(c);
+			if(!db.isDocUnSynced(d.id))
+				d.synced=2;
 			a.add(d);
 			c.moveToNext();
 		}
@@ -283,7 +338,9 @@ public class NotesList extends ListActivity {
 		Cursor c = db.getAllUndeletedDocs();
 		c.moveToFirst();
 		while (!c.isAfterLast()) {
-			document d = db.doccursorToDocument(c);
+						document d = db.doccursorToDocument(c);
+			if(!db.isDocUnSynced(d.id))
+				d.synced=2;
 			a.add(d);
 			c.moveToNext();
 		}
@@ -321,9 +378,9 @@ public class NotesList extends ListActivity {
 				public void run() {
 					aa.setText("");
 					aa.setText(ss);
-					ProgressBar pp = (ProgressBar) cv
-							.findViewById(R.id.pnNoteLoader);
-					pp.setVisibility(View.INVISIBLE);
+					//ProgressBar pp = (ProgressBar) cv
+					//		.findViewById(R.id.pnNoteLoader);
+					//pp.setVisibility(View.INVISIBLE);
 				}
 			});
 			return null;
