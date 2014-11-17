@@ -6,29 +6,21 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
-
 import com.neoba.syncpad.ByteMessenger.document;
-
 import net.dongliu.vcdiff.VcdiffEncoder;
 import net.dongliu.vcdiff.exception.VcdiffEncodeException;
-import net.dongliu.vcdiff.vc.Vcdiff;
-
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.PendingIntent;
-import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.preference.PreferenceManager;
-import android.text.Html;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -37,9 +29,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,8 +41,8 @@ import android.widget.Toast;
 
 public class NotesList extends ListActivity {
 
-	private String lorem = "Lorem ipsum dolor sit amet, te eum repudiare adipiscing, quando nonumy vocibus per at. Elit intellegebat id usu, at equidem verterem legendos sea. Sea summo clita te. Qui eu enim natum tacimates, qui te facer homero. Nec vivendo placerat postulant an, et quidam fastidii qui. Te dicit atomorum eos, ei esse justo consequuntur mel.el in duis fuisset, ad cum minim adipisci liberavisse, cu nec admodum percipitur. Et usu omnesque probatus. Pri idque consulatu consectetuer te, qui habemus mnesarchum contentiones at, te velit legendos eam. Integre labitur no pri. At mei posse urbanitas.Quo graece facilis cu, per movet soluta id. Esse eius omittam eu has, duo ad augue saepe prodesset. Iusto alterum appellantur mea et. Ad sit solet meliore liberavisse, laudem apeirian at quo.Nam abhorreant percipitur ad, ad duo dicat scribentur, torquatos honestatis eam an. Eum mutat sonet indoctum no, sit in habeo dicam. Te sea porro possim. Quo sint tincidunt suscipiantur ei, mel cu vitae postulant, dicat homero insolens quo et.Id possim scaevola pertinacia sed. Eam debet sensibus eu, alii percipit et mel. Dicant euripidis referrentur ex quo. Vim at ipsum complectitur. Cu vim alienum splendide. Graeci senserit sit te, id tation torquatos eos.Ad vix partiendo consetetur, consulatu concludaturque ut his. Lorem incorrupte vim no, epicurei principes vix an, est ea reprimique neglegentur. Prima habemus sit te, ei quod lorem mazim cum. Elit numquam eos ne, ut illum nonumes gubergren ius. Duo suas possim et, ex debet utinam omittantur cum, ut vis fabellas probatus. Vocibus nusquam dissentias et per.Duo id nibh iudicabit consulatu, fabulas commune his ad. Ne justo dicta splendide vix, utinam impetus efficiendi usu cu. Usu quidam legimus admodum ut, usu ea iisque recteque vulputate. Sit te blandit volutpat forensibus.Quo no mollis similique sententiae. Qui aliquam periculis quaerendum eu, mea id mandamus appellantur. Vis in facete utamur cotidieque. Ex dicit iriure eos, ne his bonorum sensibus. Laboramus delicatissimi in qui. Mei ad delicata constituam, commodo senserit tincidunt ne quo, noster impedit ei eum.Reque detracto id mei. Sonet tollit ut vel, est assum discere liberavisse ad. No audire corpora nec, placerat definitionem eos an, sale democritum ullamcorper id eos. Quem tacimates repudiare est ad, error ubique sed ei, vim legimus laoreet an.Facer graeci ad sit. Sit in nibh legere semper, decore placerat ea sit. Duo clita doctus at, per ea audiam molestiae, persecuti moderatius vel ex. Eum modus noster ea.";
 	NotesListAdapter nla;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,31 +50,27 @@ public class NotesList extends ListActivity {
 		getListView().setDividerHeight(0);
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
-		Cursor c=db.getAllDocs();
-	    c.moveToFirst();
-	    while (!c.isAfterLast()) {
-			document d =db.doccursorToDocument(c);
-			Log.d("NOTELIST",d.toString() );
+		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
+		Cursor c = db.getAllUndeletedDocs();
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			document d = db.doccursorToDocument(c);
+			Log.d("NOTELIST", d.toString());
 			a.add(d);
-	      c.moveToNext();
-	    }
+			c.moveToNext();
+		}
 		db.close();
-		nla = new NotesListAdapter(this,R.layout.activity_front, a);
+		nla = new NotesListAdapter(this, R.layout.activity_front, a);
 		this.setListAdapter(nla);
-		
-		 Calendar cal = Calendar.getInstance();
-         cal.add(Calendar.SECOND, 10);
-        
-         Intent intent = new Intent(this, OfflineSyncService.class);
- 
-         PendingIntent pintent = PendingIntent.getService(this, 0, intent, 0);
-        
-         AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-         //for 30 mint 60*60*1000
-         alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),
-                      60*1000, pintent);
-         startService(new Intent(getBaseContext(), OfflineSyncService.class));
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.SECOND, 10);
+		Intent intent = new Intent(this, OfflineSyncService.class);
+		PendingIntent pintent = PendingIntent.getService(this, 0, intent, 0);
+		AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		// for 30 mint 60*60*1000
+		alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),
+				60 * 1000, pintent);
+		startService(new Intent(getBaseContext(), OfflineSyncService.class));
 
 	}
 
@@ -89,16 +79,19 @@ public class NotesList extends ListActivity {
 		getMenuInflater().inflate(R.menu.front, menu);
 		return true;
 	}
+
 	// this is
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
-			UUID newdoc=UUID.randomUUID();
+			UUID newdoc = UUID.randomUUID();
 			DBManager db = new DBManager(NotesList.this);
 			db.open();
 			try {
-				db.insertDoc(new document(newdoc.toString(), "",new VcdiffEncoder("", "").encode() , -1, "", (byte)2,true,Constants.UNSYNCED_CREATE));
+				db.insertDoc(new document(newdoc.toString(), "",
+						new VcdiffEncoder("", "").encode(), -1, "", (byte) 2,
+						true, Constants.UNSYNCED_CREATE));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -107,11 +100,11 @@ public class NotesList extends ListActivity {
 				e.printStackTrace();
 			}
 			db.close();
-			
+
 			startService(new Intent(this, OfflineSyncService.class));
 
 			Intent i = new Intent(NotesList.this, NotesEditor.class);
-			i.putExtra("uuid", newdoc.toString()+"N");
+			i.putExtra("uuid", newdoc.toString() + "N");
 			startActivity(i);
 			return true;
 		}
@@ -122,17 +115,23 @@ public class NotesList extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	public class CreateNote extends AsyncTask<Void, Void, Void>{
+
+	public class CreateNote extends AsyncTask<Void, Void, Void> {
 
 		@Override
 		protected Void doInBackground(Void... params) {
-			
+
 			return null;
 		}
-		
+
 	}
-	
+
+	protected void onListItemClick(ListView listView, View view, int position,
+			long id) {
+		Toast.makeText(this,
+				"Clicked " + getListAdapter().getItem(position).toString(),
+				Toast.LENGTH_SHORT).show();
+	}
 
 	public class NotesListAdapter extends ArrayAdapter<document> {
 
@@ -146,50 +145,109 @@ public class NotesList extends ListActivity {
 			this.values = values;
 		}
 
-		public View getView(final int position, View convertView, ViewGroup parent) {
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View rowView = inflater.inflate(R.layout.activity_front, parent,
 					false);
-			ProgressBar pp=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
+			ProgressBar pp = (ProgressBar) rowView
+					.findViewById(R.id.pnNoteLoader);
 			pp.setVisibility(View.VISIBLE);
 			final TextView textView = (TextView) rowView
 					.findViewById(R.id.output_autofit);
-			new NoteParse().execute(rowView,values.get(position).title);
-			ImageButton editb=(ImageButton)rowView.findViewById(R.id.bNotesListLeft);
+			new NoteParse().execute(rowView, values.get(position).title);
+			ImageButton editb = (ImageButton) rowView
+					.findViewById(R.id.bNotesListLeft);
 			editb.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View arg0) {
-					Intent i = new Intent(NotesList.this,NotesEditor.class);
+					Intent i = new Intent(NotesList.this, NotesEditor.class);
 					i.putExtra("uuid", values.get(position).id);
 					startActivity(i);
-					
+
 				}
 			});
+			String color =values.get(position).title.split("\n")[0].charAt(0)=='#'?values.get(position).title.split("\n")[0]:"#FFFFFF";
 			
+			((SquareLayout)rowView.findViewById(R.id.squareLayout1)).setBackgroundColor(Color.parseColor(values.get(position).title.split("\n")[0]));
 			textView.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
-					Intent i = new Intent(NotesList.this,NotesViewerActivity.class);
+					Intent i = new Intent(NotesList.this,
+							NotesViewerActivity.class);
 					i.putExtra("uuid", values.get(position).id);
 					i.putExtra("size", textView.getTextSize());
 					startActivity(i);
-					
+
 				}
 			});
-			//ProgressBar s=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
-			//s.setVisibility(View.VISIBLE);
-			//textView.setText(new NeoHTML(values.get(position).getNote(),context).getSpannable());
-			//textView.setText(Html.fromHtml(values.get(position).getNote()));
-			//textView.setText(new HtmlSpanner().fromHtml("<html><head></head><body>"+values.get(position).getNote()+"</body></ 	html>"));
-			
+			textView.setOnLongClickListener(new OnLongClickListener() {
+
+				@Override
+				public boolean onLongClick(View arg0) {
+					new AlertDialog.Builder(NotesList.this)
+							.setTitle("Delete entry")
+							.setMessage(
+									"Are you sure you want to delete this entry?")
+							.setPositiveButton(android.R.string.yes,
+									new DialogInterface.OnClickListener() {
+										public void onClick(
+												DialogInterface dialog,
+												int which) {
+											// continue with delete
+											DBManager db = new DBManager(
+													NotesList.this);
+											db.open();
+											db.setDeleted(values.get(position).id);
+											Log.d("deleted",
+													values.get(position).id);
+											ArrayList<document> a = new ArrayList<ByteMessenger.document>();
+											Cursor c = db.getAllUndeletedDocs();
+											c.moveToFirst();
+											while (!c.isAfterLast()) {
+												document d = db
+														.doccursorToDocument(c);
+												Log.d("NOTELIST", d.toString());
+												a.add(d);
+												c.moveToNext();
+											}
+											db.close();
+											nla = new NotesListAdapter(
+													NotesList.this,
+													R.layout.activity_front, a);
+											NotesList.this.setListAdapter(nla);
+											startService(new Intent(NotesList.this, OfflineSyncService.class));
+										}
+									})
+							.setNegativeButton(android.R.string.no,
+									new DialogInterface.OnClickListener() {
+										public void onClick(
+												DialogInterface dialog,
+												int which) {
+											// do nothing
+										}
+									})
+
+							.show();
+					return false;
+				}
+			});
+			// ProgressBar
+			// s=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
+			// s.setVisibility(View.VISIBLE);
+			// textView.setText(new
+			// NeoHTML(values.get(position).getNote(),context).getSpannable());
+			// textView.setText(Html.fromHtml(values.get(position).getNote()));
+			// textView.setText(new
+			// HtmlSpanner().fromHtml("<html><head></head><body>"+values.get(position).getNote()+"</body></ 	html>"));
+
 			return rowView;
 		}
 
 	}
-	
 
 	@Override
 	protected void onPause() {
@@ -202,16 +260,16 @@ public class NotesList extends ListActivity {
 		super.onResume();
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
-		Cursor c=db.getAllDocs();
-	    c.moveToFirst();
-	    while (!c.isAfterLast()) {
-			document d =db.doccursorToDocument(c);
+		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
+		Cursor c = db.getAllUndeletedDocs();
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			document d = db.doccursorToDocument(c);
 			a.add(d);
-	      c.moveToNext();
-	    }
+			c.moveToNext();
+		}
 		db.close();
-		nla = new NotesListAdapter(this,R.layout.activity_front, a);
+		nla = new NotesListAdapter(this, R.layout.activity_front, a);
 		this.setListAdapter(nla);
 	}
 
@@ -221,53 +279,56 @@ public class NotesList extends ListActivity {
 		super.onRestart();
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a=new ArrayList<ByteMessenger.document>();
-		Cursor c=db.getAllDocs();
-	    c.moveToFirst();
-	    while (!c.isAfterLast()) {
-			document d =db.doccursorToDocument(c);
+		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
+		Cursor c = db.getAllUndeletedDocs();
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			document d = db.doccursorToDocument(c);
 			a.add(d);
-	      c.moveToNext();
-	    }
+			c.moveToNext();
+		}
 		db.close();
-		nla = new NotesListAdapter(this,R.layout.activity_front, a);
+		nla = new NotesListAdapter(this, R.layout.activity_front, a);
 		this.setListAdapter(nla);
 	}
-	
-	class NoteParse extends AsyncTask<Object, Void, Void>{
+
+	class NoteParse extends AsyncTask<Object, Void, Void> {
 
 		@Override
 		protected Void doInBackground(Object... params) {
 			// TODO Auto-generated method stub
-			final View cv=(View)params[0];
-			String html=(String)params[1];
-			html=html.replaceAll(Pattern.quote("[ ]"),"\uE000");
-			html=html.replaceAll(Pattern.quote("[*]"),"\uE001");
-			final SpannableNote note=new NeoHTML(html, NotesList.this).getNote();
-			final SpannableStringBuilder ss=note.getcontent();
-			Typeface font2 = Typeface.createFromAsset(NotesList.this.getAssets(), "fonts/checkfont.ttf");
-			ss.setSpan (new CustomTypefaceSpan("", font2),0, ss.length(),Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-//			final SpannableStringBuilder ss=new SpannableStringBuilder("a");
-//			Typeface font = Typeface.createFromAsset(NotesList.this.getAssets(), "fonts/tickfont.ttf");
-//			ss.setSpan (new CustomTypefaceSpan("", font),0, 1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-//			ss.append(s2);
-			final AutoResizeTextView aa=((AutoResizeTextView)cv.findViewById(R.id.output_autofit));
+			final View cv = (View) params[0];
+			String html = (String) params[1];
+			html = html.replaceAll(Pattern.quote("[ ]"), "\uE000");
+			html = html.replaceAll(Pattern.quote("[*]"), "\uE001");
+			final SpannableNote note = new NeoHTML(html, NotesList.this)
+					.getNote();
+			final SpannableStringBuilder ss = note.getcontent();
+			Typeface font2 = Typeface.createFromAsset(
+					NotesList.this.getAssets(), "fonts/checkfont.ttf");
+			ss.setSpan(new CustomTypefaceSpan("", font2), 0, ss.length(),
+					Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// final SpannableStringBuilder ss=new SpannableStringBuilder("a");
+			// Typeface font =
+			// Typeface.createFromAsset(NotesList.this.getAssets(),
+			// "fonts/tickfont.ttf");
+			// ss.setSpan (new CustomTypefaceSpan("", font),0,
+			// 1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// ss.append(s2);
+			final AutoResizeTextView aa = ((AutoResizeTextView) cv
+					.findViewById(R.id.output_autofit));
 			runOnUiThread(new Runnable() {
 				public void run() {
 					aa.setText("");
 					aa.setText(ss);
-					ProgressBar pp=(ProgressBar)cv.findViewById(R.id.pnNoteLoader);
-					RelativeLayout ss=(RelativeLayout) cv.findViewById(R.id.rlNotelist);
-					ss.setBackgroundColor(Color
-							.parseColor(note.getColor()));
+					ProgressBar pp = (ProgressBar) cv
+							.findViewById(R.id.pnNoteLoader);
 					pp.setVisibility(View.INVISIBLE);
 				}
 			});
 			return null;
 		}
-		
+
 	}
-	
-	
 
 }

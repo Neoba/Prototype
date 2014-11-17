@@ -235,6 +235,13 @@ public class DBManager {
 		updateStmt.bindString(6, doc.id);
 		updateStmt.executeUpdateDelete();
 	}
+	public void setDeleted(String id) {
+		String sql = "update docs set syncedd=1 where id=?";
+		SQLiteStatement updateStmt = db.compileStatement(sql);
+		updateStmt.clearBindings();
+		updateStmt.bindString(1, id);
+		updateStmt.executeUpdateDelete();
+	}
 	public void escalatePermission(String docid,Long id) {
 		String sql = "update permissions set permission=2 where userid=? and docid=?";
 		SQLiteStatement updateStmt = db.compileStatement(sql);
@@ -315,6 +322,11 @@ public class DBManager {
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 	}
+	public Cursor getAllUndeletedDocs() {
+		String sql = "SELECT rowid _id ,* FROM docs where syncedd=0";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
 	public Cursor getAllUnsyncedCreateDocs() {
 		String sql = "SELECT rowid _id ,* FROM docs where synced=1";
 		Cursor cursor = db.rawQuery(sql, new String[] {});
@@ -327,6 +339,11 @@ public class DBManager {
 		return cursor;
 	}
 
+	public Cursor getAllUnsyncedDeletedDocs() {
+		String sql = "SELECT rowid _id ,* FROM docs where syncedd=1";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+	}
 	public String getDoc(String id) throws IOException, VcdiffDecodeException {
 
 		String sql = "SELECT dict,diff from docs where id=?";

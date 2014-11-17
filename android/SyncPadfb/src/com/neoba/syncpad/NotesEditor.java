@@ -26,6 +26,7 @@ import android.text.TextWatcher;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -67,12 +68,13 @@ public class NotesEditor extends Activity {
 	ToggleButton bb, ib, ub; // the bold , italic and underline togglebutton
 								// respectively
 	boolean isempty;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notes_editor);
 		colorcode = "#FFFFFF";
-		
+
 		c = (CheckBox) findViewById(R.id.checkBox1);
 		bb = (ToggleButton) findViewById(R.id.boldbutton);
 		ib = (ToggleButton) findViewById(R.id.italicbutton);
@@ -87,7 +89,7 @@ public class NotesEditor extends Activity {
 		value = getIntent().getExtras().getString("uuid");
 		fld = 0;
 		if (!value.endsWith("N")) {
-			isempty=false;
+			isempty = false;
 			colorsetter();
 			try {
 				fetcher();
@@ -101,8 +103,8 @@ public class NotesEditor extends Activity {
 			}
 			// modifier();
 		} else {
-			value=value.split("N")[0];
-			isempty=true;
+			value = value.split("N")[0];
+			isempty = true;
 			colorsetter();
 			modifier();
 
@@ -949,13 +951,15 @@ public class NotesEditor extends Activity {
 				&& ((sop.length() == 0) || sop.equals(" "))) {
 		}// if the text is empty.
 		else {
-			
+
 			DBManager db = new DBManager(NotesEditor.this);
 			db.open();
-			document doc=db.getDocument(value);
-			document newdoc=null;
+			document doc = db.getDocument(value);
+			document newdoc = null;
 			try {
-				newdoc = new document(value, html_text, new VcdiffEncoder(doc.dict, html_text).encode(), doc.age,doc.dict, doc.permission, doc.owns, Constants.UNSYNCED_EDIT);
+				newdoc = new document(value, html_text, new VcdiffEncoder(
+						doc.dict, html_text).encode(), doc.age, doc.dict,
+						doc.permission, doc.owns, Constants.UNSYNCED_EDIT);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -964,9 +968,10 @@ public class NotesEditor extends Activity {
 				e.printStackTrace();
 			}
 			db.updateContent(newdoc);
-			Log.d(this.getLocalClassName(),"the new one "+newdoc.toString());
+			Log.d(this.getLocalClassName(), "the new one " + newdoc.toString());
 			db.close();
 		}
+		startService(new Intent(this, OfflineSyncService.class));
 		finish();
 
 	}
@@ -975,9 +980,9 @@ public class NotesEditor extends Activity {
 		DBManager db = new DBManager(NotesEditor.this);
 		db.open();
 		String n = db.getDoc(value);
-		String ns="";
-		for(int i=1;i<n.split("\n").length;i++)
-			ns+=n.split("\n")[i];
+		String ns = "";
+		for (int i = 1; i < n.split("\n").length; i++)
+			ns += n.split("\n")[i];
 		String html_text = ns;
 		Pattern p = Pattern.compile("<br>");
 		Matcher m = p.matcher(html_text);
@@ -1087,13 +1092,14 @@ public class NotesEditor extends Activity {
 			e.printStackTrace();
 		}
 		db.close();
-		colorcode=note.split("\n")[0];
-			
-			//colorcode = n.getColor();
-			System.out.println("Its a color "+colorcode);
-			colorcode=colorcode.length()==0?"#FFFFFF":colorcode;
-		((LinearLayout) findViewById(R.id.l1)).setBackgroundColor(Color
-				.parseColor(colorcode.charAt(0)=='#'?colorcode:"#FFFFFF"));
+		colorcode = note.split("\n")[0];
+
+		// colorcode = n.getColor();
+		System.out.println("Its a color " + colorcode);
+		colorcode = colorcode.length() == 0 ? "#FFFFFF" : colorcode;
+		((LinearLayout) findViewById(R.id.l1))
+				.setBackgroundColor(Color.parseColor(colorcode.charAt(0) == '#' ? colorcode
+						: "#FFFFFF"));
 	}
 
 	public void changer() {

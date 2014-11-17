@@ -82,6 +82,14 @@ public class OfflineSyncService extends Service {
 			      db.synceditNote(id);
 			      cursor.moveToNext();
 			    }
+			    cursor=db.getAllUnsyncedDeletedDocs();
+			    cursor.moveToFirst();
+			    while (!cursor.isAfterLast()) {
+			      String id=cursor.getString(1);
+			      if(ByteMessenger.deleteNote(UUID.fromString(id), cookie))
+			    	  db.deleteDoc(id);
+			      cursor.moveToNext();
+			    }
 			    
 				db.close();
 

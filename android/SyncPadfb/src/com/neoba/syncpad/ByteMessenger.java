@@ -428,6 +428,33 @@ public class ByteMessenger {
 
         return returnlist;
     }
+    
+    static boolean deleteNote(UUID docuid, UUID cookie) {
+        {
+            ByteBuffer buff = null;
+            if (docuid != null) {
+                buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
+                buff.put((byte)0x02);
+                buff.put((byte) 0x0B);
+                buff.putInt(0x0000DE1E);
+                putUUID(buff, cookie);
+                buff.putLong(docuid.getLeastSignificantBits());
+                buff.putLong(docuid.getMostSignificantBits());
+            }
+            try {
+                ByteBuffer in = Postman.post(buff);
+
+                if (in.getInt(2) == 0xFFFF) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (Exception ex) {
+                return false;
+            }
+        }
+    }
+    
 	public static document Editdoc(document doc, UUID cookie) throws Exception {
 		if (doc.id != null) {
             ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16 + doc.diff.length + 4);
