@@ -75,6 +75,9 @@ public class OfflineSyncService extends Service {
 			      }
 			      cursor.moveToNext();
 			    }
+			    db.close();
+			    db = new DBManager(OfflineSyncService.this);
+				db.open();
 			    cursor=db.getAllUnsyncedEditDocs();
 			    cursor.moveToFirst();
 			    while (!cursor.isAfterLast()) {
@@ -85,6 +88,9 @@ public class OfflineSyncService extends Service {
 			      db.synceditNote(id);
 			      cursor.moveToNext();
 			    }
+			    db.close();
+			    db = new DBManager(OfflineSyncService.this);
+				db.open();
 			    cursor=db.getAllUnsyncedDeletedDocs();
 			    cursor.moveToFirst();
 			    while (!cursor.isAfterLast()) {

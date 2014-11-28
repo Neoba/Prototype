@@ -7,5 +7,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="lib" path="libs/jvcdiff-1.2-SNAPSHOT.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/google-play-services_lib"/>
+	<classpathentry exported="true" kind="lib" path="/home/atul/Lab/clones/Prototype/android/SyncPadfb/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/atul/Lab/clones/Prototype/android/SyncPadfb/libs/droidwriter-0.8.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

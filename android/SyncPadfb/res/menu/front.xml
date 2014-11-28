@@ -6,9 +6,15 @@
     <item
         android:id="@+id/action_settings"
         android:title="new"
-        android:showAsAction="always"/>
+        android:showAsAction="always"
+        />
     <item
         android:id="@+id/action_user"
         android:title="user"
-        android:showAsAction="always"/>
+        android:showAsAction="always"
+        />
+     <item
+        android:id="@+id/action_debug"
+        android:showAsAction="never"
+        android:title="Debug"/>
 </menu>

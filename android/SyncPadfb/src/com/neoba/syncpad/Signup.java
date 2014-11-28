@@ -12,6 +12,8 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.neoba.syncpad.FbLogin.Login;
+
 import android.support.v4.app.Fragment;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -114,7 +116,8 @@ public class Signup extends Activity {
 			
 			if(session!=null && session.get(0).get("result").equals("success")){
 				
-				new Login().execute(access_token,"CONSOLE");
+				new Login().execute(access_token,
+						PreferenceManager.getDefaultSharedPreferences(Signup.this).getString("regid", ":("));
 
 	
 			}

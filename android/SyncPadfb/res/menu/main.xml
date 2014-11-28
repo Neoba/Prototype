@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.neoba.syncpad.MainActivity" >
 
-  
+       <item
+        android:id="@+id/action_debugf"
+        android:icon="@drawable/ic_action_bug_50"
+        android:showAsAction="always"
+        android:title="debug"/>
 
 </menu>

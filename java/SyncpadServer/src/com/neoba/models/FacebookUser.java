@@ -50,8 +50,9 @@ public class FacebookUser {
         //email = facebook_obj.getString("email");
         friends = new JSONArray();
         String url="";
-        JSONArray friendspage = facebook_obj.getJSONObject("friends").getJSONArray("data");
-        do {
+        try{
+            JSONArray friendspage = facebook_obj.getJSONObject("friends").getJSONArray("data");
+            do {
             for (int i = 0; i < friendspage.length(); i++) {
                 JSONObject temp = friendspage.getJSONObject(i);
                 logger.info("fbtoid "+temp.getString("id"));
@@ -69,6 +70,10 @@ public class FacebookUser {
             }
 
         } while (friendspage.length() != 0);
+        }catch(Exception e){
+            logger.error("Frineds unavailable in response!");
+        }
+        
     }
 
     private JSONObject fbid_to_id(String fbid) throws JSONException {

@@ -133,7 +133,7 @@ public class UserActivity extends FragmentActivity {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						Picasso.with(UserActivity.this).load("https://graph.facebook.com/v2.1/me/picture?type=normal&access_token="+access_token).transform(new RoundedTransformation(2000,0))
+						Picasso.with(UserActivity.this).load("https://graph.facebook.com/v2.1/me/picture?type=square&access_token="+access_token).transform(new RoundedTransformation(2000,0))
 								.into(image);
 						try {
 							Picasso.with(UserActivity.this).load(userjson.getJSONObject("cover").getString("source")).fit().centerCrop().into(cover);

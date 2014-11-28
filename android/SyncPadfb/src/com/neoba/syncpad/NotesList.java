@@ -1,6 +1,7 @@
 package com.neoba.syncpad;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -33,6 +34,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -50,6 +52,17 @@ public class NotesList extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+	    try {
+	       ViewConfiguration config = ViewConfiguration.get(this);
+	       Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+	       if(menuKeyField != null) {
+	           menuKeyField.setAccessible(true);
+	           menuKeyField.setBoolean(config, false);
+	       }
+	   } catch (Exception e) {
+	       e.printStackTrace();
+	   }
 		getListView().setDivider(null);
 		getListView().setDividerHeight(0);
 		DBManager db = new DBManager(NotesList.this);
@@ -158,6 +171,11 @@ public class NotesList extends ListActivity {
 			Intent i = new Intent(NotesList.this, UserActivity.class);
 			startActivity(i);
 			return true;
+		}
+		if (id == R.id.action_debug) {
+			Intent i = new Intent(NotesList.this, DebugActivity.class);
+			startActivity(i);
+		    return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

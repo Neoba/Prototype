@@ -20,6 +20,7 @@
 <resources>
 
     <style name="Theme.Syncpad" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <item name="android:actionBarDivider">@null</item>
         <item name="android:actionBarItemBackground">@drawable/selectable_background_syncpad</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Syncpad</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Syncpad</item>

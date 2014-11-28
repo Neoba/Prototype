@@ -5,11 +5,20 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="13"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.neoba.syncpad.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.neoba.syncpad.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +31,7 @@
 
         <activity android:name="com.facebook.LoginActivity" />
         <activity
-            android:name="com.neoba.syncpad.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -32,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.neoba.syncpad.FbLogin"
+            android:name=".FbLogin"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -43,13 +52,25 @@
         </activity>
 
         <service
-            android:name="com.neoba.syncpad.OfflineSyncService"
+            android:name=".OfflineSyncService"
             android:icon="@drawable/ic_launcher"
             android:label="HeavyWater" >
         </service>
 
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.neoba.syncpad" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GcmMessageHandler" />
+
         <activity
-            android:name="com.neoba.syncpad.Signup"
+            android:name=".Signup"
             android:label="@string/title_activity_signup"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -59,7 +80,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.neoba.syncpad.SuggestedUsers"
+            android:name=".SuggestedUsers"
             android:label="@string/title_activity_suggested_users"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -69,22 +90,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.neoba.syncpad.NotesList"
+            android:name=".NotesList"
             android:label="@string/title_activity_front" >
         </activity>
         <activity
-            android:name="com.neoba.syncpad.NotesEditor"
+            android:name=".NotesEditor"
             android:label="Edit" >
         </activity>
         <activity
-            android:name="com.neoba.syncpad.NotesViewerActivity"
+            android:name=".NotesViewerActivity"
             android:label="@string/title_activity_notes_viewer" >
         </activity>
         <activity
-            android:name="com.neoba.syncpad.UserActivity"
+            android:name=".UserActivity"
             android:label="@string/title_activity_user" >
         </activity>
-
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".DebugActivity"
+            android:label="@string/title_activity_debug"
+            android:parentActivityName=".NotesList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.neoba.syncpad.NotesList" />
+        </activity>
+        <activity
+            android:name=".ShareListActivity"
+            android:label="@string/title_activity_share_list" >
+        </activity>
     </application>
 
 </manifest>

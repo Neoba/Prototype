@@ -1,11 +1,16 @@
 package com.neoba.syncpad;
 
 
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
+
+import net.dongliu.vcdiff.VcdiffEncoder;
+import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -15,6 +20,8 @@ import com.facebook.SessionLoginBehavior;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.neoba.syncpad.ByteMessenger.document;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -46,11 +53,14 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	int flag;
-
+	GoogleCloudMessaging gcm;
+	String regid = "Cannot connect to push service..";
+	String PROJECT_NUMBER = "1053985856790";
 	public void clicked(View v)
 	{
-		finish();
-		startActivity(new Intent(MainActivity.this,FbLogin.class));
+		
+		getRegId();
+		
 	}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,8 +109,76 @@ public class MainActivity extends Activity {
       Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
      
     }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+	
+		if (id == R.id.action_debugf) {
+		    return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
-    
+    public void getRegId() {
+		new AsyncTask<Void, Void, Boolean>() {
+
+
+
+			@Override
+			protected void onPreExecute() {
+
+			}
+
+			@Override
+			protected Boolean doInBackground(Void... params) {
+				String msg = "";
+				boolean f;
+				int tries = 5;
+				if (gcm == null) {
+					gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+				}
+				do {
+					f = false;
+					tries -= 1;
+					try {
+						Log.d("PUSH", tries + regid);
+						regid = gcm.register(PROJECT_NUMBER);
+					} catch (IOException ex) {
+						msg = ex.getMessage();
+						f = true;
+					}
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} while (f && tries >= 0);
+
+				return tries >= 0;
+
+			}
+
+			@Override
+			protected void onPostExecute(Boolean res) {
+
+				if (res)
+				{
+					Log.d("GCMID", regid);
+					PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putString("regid", regid).commit(); 
+					startActivity(new Intent(MainActivity.this,FbLogin.class));
+					finish();
+				}
+
+
+			}
+		}.execute(null, null, null);
+	}
     /**
      * Async Tasks for LoginActivity
      * 

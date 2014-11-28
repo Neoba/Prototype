@@ -26,6 +26,8 @@ import net.dongliu.vcdiff.VcdiffEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.neoba.syncpad.ByteMessenger.Share;
+
 import android.annotation.SuppressLint;
 import android.util.Log;
 
@@ -277,7 +279,7 @@ public class ByteMessenger {
 		buff.put((byte) 0xF6);
 		buff.putInt(access_token.length());
 		buff.put(access_token.getBytes());
-		buff.put((byte) 0x0C);
+		buff.put((byte) 0x0A);	//A for android :)
 		buff.putInt(regid.length());
 		buff.put(regid.getBytes());
 		ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
@@ -501,7 +503,36 @@ public class ByteMessenger {
         }
 		return doc;
 	}
-	
+
+	public static ArrayList<Share> ShareMessage(ArrayList<Share> shares,
+			UUID docid, UUID cookie) throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + 16 + 9 * shares.size());
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x08);
+		buff.putInt(shares.size());
+		putUUID(buff, cookie);
+		buff.putLong(docid.getLeastSignificantBits());
+		buff.putLong(docid.getMostSignificantBits());
+		for (Share s : shares) {
+			switch (s.permission) {
+			case 1:
+				buff.put((byte) 0x01);
+				break;
+			case 2:
+				buff.put((byte) 0x02);
+				break;
+			}
+
+			buff.putLong(s.userid);
+
+		}
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+
+		if (in.getInt(2) == 0xFFFF)
+			return shares;
+		return null;
+	}
 	//
 	// public static ArrayList<Share> ShareMessage(ArrayList<Share> shares,
 	// UUID docid, UUID cookie) throws Exception {

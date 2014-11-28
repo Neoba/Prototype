@@ -981,6 +981,7 @@ public class NotesEditor extends Activity {
 		db.open();
 		String n = db.getDoc(value);
 		String ns = "";
+		db.close();
 		for (int i = 1; i < n.split("\n").length; i++)
 			ns += n.split("\n")[i];
 		String html_text = ns;
