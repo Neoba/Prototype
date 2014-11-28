@@ -2,4 +2,5 @@
 <resources>
       <color name="ash">#AAAAAAAA</color>
   <color name="transparent">#000000ff</color> 
+  <color name="midnight_blue"> #2c3e50</color>
 </resources>

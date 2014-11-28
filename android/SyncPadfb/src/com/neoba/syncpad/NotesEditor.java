@@ -759,10 +759,10 @@ public class NotesEditor extends Activity {
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 
-		int itemId = item.getItemId();
 
-		switch (itemId) {
-		case R.id.action_cart:
+
+		int id = item.getItemId();
+		if (id == R.id.action_color) {
 			Context mContext = getApplicationContext();
 			Dialog dialog = new Dialog(this);
 			dialog.setTitle("Color Picker");
@@ -878,7 +878,7 @@ public class NotesEditor extends Activity {
 
 				}
 			});
-			break;
+			
 
 		}
 
