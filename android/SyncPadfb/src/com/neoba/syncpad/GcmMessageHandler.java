@@ -26,6 +26,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import android.widget.Toast;
@@ -36,7 +37,6 @@ public class GcmMessageHandler extends IntentService {
 	String content;
 	String action;
 	private Handler handler;
-
 	public GcmMessageHandler() {
 		super("GcmMessageHandler");
 	}
@@ -45,8 +45,7 @@ public class GcmMessageHandler extends IntentService {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		handler = new Handler();
-	}
+		handler = new Handler();	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
@@ -83,7 +82,7 @@ public class GcmMessageHandler extends IntentService {
 						,jaction.getInt("age")
 						,jaction.getString("dict")
 						,(byte)jaction.getInt("permission"),false,0);
-				db.insertDoc(pushed);
+				db.insertDocFromDigest(pushed);
 				Log.d("pushre",pushed.toString());
 				db.close();
 				updateDocsListActivity(getApplicationContext());
@@ -141,6 +140,7 @@ public class GcmMessageHandler extends IntentService {
 
 	}
 	static void updateDocsListActivity(Context context) {
+
 	    Intent intent = new Intent("com.neoba.syncpad.LISTUPDATE");
 	    context.sendBroadcast(intent);
 	}

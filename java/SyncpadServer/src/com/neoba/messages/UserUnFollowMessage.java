@@ -161,7 +161,7 @@ public class UserUnFollowMessage implements Message {
                 revokearray.put(s);
             }
             unfollowaction.put("docs", revokearray);
-            ArrayList<String> regids = new ArrayList<String>();
+            TreeSet<String> regids = new TreeSet<String>();
             for (String rid : CouchManager.get_gcm_rids(fid)) {
                 regids.add(rid);
             }

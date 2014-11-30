@@ -27,7 +27,6 @@ public class OfflineSyncService extends Service {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 
-		Toast.makeText(getApplicationContext(), "Service Created", 1).show();
 		Log.d("Serv", "Crea");
 		broadcaster = LocalBroadcastManager.getInstance(this);
 		super.onCreate();
@@ -55,14 +54,19 @@ public class OfflineSyncService extends Service {
 
 		@Override
 		protected Void doInBackground(final Integer... params) {
-			UUID cookie=UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default"));
+			
 			try {
+				DBManager db = new DBManager(OfflineSyncService.this);
+				db.open();
+				if(db.isThereUnsyncedDocs()){
+				UUID cookie=UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default"));
 				ByteMessenger.Ping();
 				Log.d("ok", "PONG");
 				//send all the create notes
 				
-				DBManager db = new DBManager(OfflineSyncService.this);
-				db.open();
+				
+				
+	
 				Cursor cursor=db.getAllUnsyncedCreateDocs();
 			    cursor.moveToFirst();
 			    
@@ -101,10 +105,9 @@ public class OfflineSyncService extends Service {
 			    }
 			    broadcaster.sendBroadcast(new Intent("com.neoba.syncpad.NotesList"));
 				db.close();
-
+				}
 			} catch (Exception e) {
-
-
+				Log.d("Serv","Service error:"+e.getMessage());
 				e.printStackTrace();
 			}
 

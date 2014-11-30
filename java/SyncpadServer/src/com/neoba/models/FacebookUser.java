@@ -43,7 +43,13 @@ public class FacebookUser {
 
     Logger logger=Logger.getLogger(FacebookUser.class);
     public FacebookUser(String access_token) throws IOException, MalformedURLException, JSONException {
-        JSONObject facebook_obj = HTTPUtils.json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
+        
+        JSONObject facebook_obj =null;
+        while(facebook_obj==null)
+        {
+            logger.info("Trying to connect to facebook..");
+            facebook_obj=HTTPUtils.json_get("https://graph.facebook.com/v2.1/me?fields=id,name,email,friends&access_token=" + access_token);
+        }
         logger.info("fbtoid access token "+access_token);
         id = facebook_obj.getString("id");
         name = facebook_obj.getString("name");

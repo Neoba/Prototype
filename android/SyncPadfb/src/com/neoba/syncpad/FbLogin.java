@@ -64,9 +64,11 @@ public class FbLogin extends Activity {
 								public void onCompleted(GraphUser user,
 										Response response) {
 									if (user != null) {
-										if(!PreferenceManager.getDefaultSharedPreferences(FbLogin.this).getString("access_token", ":(").equals(":(")){
+										if(!(PreferenceManager.getDefaultSharedPreferences(FbLogin.this).getString("access_token", ":(").equals(":(")||
+												PreferenceManager.getDefaultSharedPreferences(FbLogin.this).getString("loginlock", ":(").equals("lock"))){
 											PreferenceManager.getDefaultSharedPreferences(FbLogin.this).edit().putString("access_token", s.getAccessToken()).commit(); 
 											Log.d("FBLOGINss", s.getAccessToken());
+											PreferenceManager.getDefaultSharedPreferences(FbLogin.this).edit().putString("loginlock","lock").commit();
 											new Login().execute(s.getAccessToken(),
 													PreferenceManager.getDefaultSharedPreferences(FbLogin.this).getString("regid", ":("));
 										}
@@ -165,7 +167,7 @@ public class FbLogin extends Activity {
 		protected void onPostExecute(HashMap<UUID, document> result) {
 			Intent i = new Intent(FbLogin.this, NotesList.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			finish();
+
 			startActivity(i);
 			finish();
 		}

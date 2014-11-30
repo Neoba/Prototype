@@ -72,6 +72,7 @@ public class Dsyncserver {
                             ch.pipeline().addLast("httpAggregator", new HttpObjectAggregator(Constants.HTTP_MAX_BODY_SIZE));
                             ch.pipeline().addLast("httpEncoder", new HttpResponseEncoder());
                             ch.pipeline().addLast("handler", new DsyncserverHandler());
+                            
                         }
                     });
 

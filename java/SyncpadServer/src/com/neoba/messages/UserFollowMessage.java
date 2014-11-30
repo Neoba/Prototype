@@ -11,6 +11,7 @@ import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.UUID;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
@@ -23,6 +24,7 @@ import org.codehaus.jettison.json.JSONObject;
 public class UserFollowMessage implements Message {
 
     String fid = "0";
+    String facebookid = "0";
     private boolean userfound = false;
     private boolean already_following = false;
     private boolean self_follow = false;
@@ -66,12 +68,12 @@ public class UserFollowMessage implements Message {
             fl.put("id", fid);
             following.put(fl);
             self.put("following", following);
-
+            facebookid=(String)user.get("facebook_id");
             JSONObject followaction = new JSONObject();
             followaction.put("type", "follow");
-            followaction.put("username", (String) self.get("username"));
+            followaction.put("username", (String) self.get("username")+"~"+(String) self.get("facebook_id"));
             followaction.put("id", (String) (String) Dsyncserver.usersessions.get(session));
-            ArrayList<String> regids = new ArrayList<String>();
+            TreeSet<String> regids = new TreeSet<String>();
             for (String rid : CouchManager.get_gcm_rids(fid)) {
                 regids.add(rid);
             }
@@ -91,7 +93,7 @@ public class UserFollowMessage implements Message {
 
     @Override
     public ByteBuf result() {
-        ByteBuf reply = buffer(6 + 8);
+        ByteBuf reply = buffer(6 + 16);
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.USER_FOLLOW);
 
@@ -108,6 +110,7 @@ public class UserFollowMessage implements Message {
 
         }
         reply.writeLong(Long.parseLong(this.fid));
+        reply.writeLong(Long.parseLong(this.facebookid));
         return reply;
     }
 

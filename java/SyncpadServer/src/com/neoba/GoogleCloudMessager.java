@@ -12,6 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
@@ -22,7 +23,7 @@ public class GoogleCloudMessager {
     static Logger logger = Logger.getLogger(GoogleCloudMessager.class);
     static UUID session;
 
-    public static boolean Push(UUID sess, List<String> regs, String title, String content, JSONObject action) throws Exception {
+    public static boolean Push(UUID sess,Set<String> regs, String title, String content, JSONObject action) throws Exception {
         logger.debug(sess + " GCM Post Initializing");
         session = sess; 
         //String ou1t=" { \"data\": { \"title\": \"without a doubt the best out put\",\"message\": \"Test Message\"},\"registration_ids\": [\"APA91bG5FNex2MbGC0yRXQ3eg_i8gtDO4c4VHGPvsO3q3ZKzOLKd4GuL6sSu20uEqb0s2or43C6TcnD2JFZSan2eTEOLb3ygqDgzWiWhPe5HLf_C6zaKC6NDtBuzJ_8FaWE-OXBbeCmSXX3nSsDwS5-Wl4Oz5SnhKA\"] } ";

@@ -11,6 +11,7 @@ import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.UUID;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -48,7 +49,7 @@ public class PokeMessage implements Message {
             JSONObject pokeaction = new JSONObject();
             pokeaction.put("type", "poke");
             pokeaction.put("username", (String) self.get("username"));
-            ArrayList<String> regids = new ArrayList<String>();
+            TreeSet<String> regids = new TreeSet<String>();
             for (String rid : CouchManager.get_gcm_rids(fid)) {
                 regids.add(rid);
             }

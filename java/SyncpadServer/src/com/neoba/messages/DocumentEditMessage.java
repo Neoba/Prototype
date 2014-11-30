@@ -1,17 +1,19 @@
 package com.neoba.messages;
 
-import com.neoba.utils.Base64;
 import com.neoba.Constants;
 import com.neoba.CouchManager;
 import com.neoba.Dsyncserver;
 import com.neoba.GoogleCloudMessager;
 import com.neoba.messages.Message;
+import com.neoba.utils.Base64;
 import com.neoba.utils.ConsoleUtils;
 import io.netty.buffer.ByteBuf;
+import static io.netty.buffer.Unpooled.buffer;
 import static io.netty.buffer.Unpooled.buffer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.TreeSet;
 import java.util.UUID;
 import net.dongliu.vcdiff.VcdiffDecoder;
 import net.dongliu.vcdiff.VcdiffEncoder;
@@ -102,7 +104,7 @@ public class DocumentEditMessage implements Message {
             json.put("version", age);
 
             //prepare gcm ids list of android users
-            ArrayList<String> readlist_android = new ArrayList<String>();
+            TreeSet<String> readlist_android = new TreeSet<String>();
             for (int i = 0; i < readers.length(); i++) {
                 if (!user.equals(readers.getString(i))) {
                     //add android pushes

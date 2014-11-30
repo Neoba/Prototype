@@ -121,6 +121,10 @@
             android:name=".ShareListActivity"
             android:label="@string/title_activity_share_list" >
         </activity>
+        <activity
+            android:name=".List2"
+            android:label="@string/title_activity_list2" >
+        </activity>
     </application>
 
 </manifest>

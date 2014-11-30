@@ -104,6 +104,17 @@ public class DBManager {
 		return new document(c.getString(1), c.getString(5), c.getBlob(2),
 				c.getInt(4), c.getString(3), (byte) c.getInt(6),
 				c.getInt(7) == 1 ? true : false, c.getInt(8));
+		
+	}
+	
+	public boolean isThereUnsyncedDocs() {
+		String sql = "SELECT * from docs where syncede=? or syncedd=1 or synced=1";
+		Cursor c = db.rawQuery(sql, new String[] { "1" });
+		c.moveToFirst();
+		if (c.getCount()> 0) {
+			return true;
+		}
+		return false;
 	}
 
 	public boolean isDocMine(String docid) {
@@ -165,28 +176,30 @@ public class DBManager {
 
 	public void editDoc(String id, byte[] diff, int int1) throws IOException,
 			VcdiffDecodeException, VcdiffEncodeException {
-		String sql = "update docs set diff=?,age=?,date=? where id=?";
+		String sql = "update docs set diff=?,age=?,date=?,title=? where id=?";
 		SQLiteStatement updateStmt = db.compileStatement(sql);
 		updateStmt.clearBindings();
 		updateStmt.bindBlob(1, diff);
-		updateStmt.bindString(4, id);
+		updateStmt.bindString(5, id);
 		updateStmt.bindLong(2, int1);
 		updateStmt.bindLong(3, new Date().getTime());
-
+		updateStmt.bindString(4,new VcdiffDecoder(getDict(id), diff).decode());
 		updateStmt.executeUpdateDelete();
 		if (int1 % 5 == 0) {
-			String sql1 = "update docs set dict=?,diff=? where id=?";
+			String sql1 = "update docs set dict=?,diff=?,title=? where id=?";
 			SQLiteStatement updateStmt1 = db.compileStatement(sql1);
 			String dict = getDict(id);
 			Log.d("updatedictbefore", getDict(id));
 			dict = new VcdiffDecoder(dict, diff).decode();
 			updateStmt1.bindString(1, dict);
 			updateStmt1.bindBlob(2, new VcdiffEncoder(dict, dict).encode());
-			updateStmt1.bindString(3, id);
+			updateStmt1.bindString(4, id);
+			updateStmt1.bindString(3,dict);
 			updateStmt1.executeUpdateDelete();
 			Log.d("updatedictafter", getDict(id));
 
 		}
+
 	}
 
 	public void insertFollower(Long id, String username) {
@@ -336,6 +349,12 @@ public class DBManager {
 
 	public Cursor getAllFollowingUsernames() {
 		String sql = "SELECT rowid _id ,username FROM following";
+		Cursor cursor = db.rawQuery(sql, new String[] {});
+		return cursor;
+
+	}
+	public Cursor getAllFollowerUsernames() {
+		String sql = "SELECT rowid _id ,username FROM follower";
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 

@@ -11,7 +11,9 @@ import com.neoba.Dsyncserver;
 import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
+import static io.netty.buffer.Unpooled.buffer;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONArray;
@@ -57,7 +59,7 @@ public class DocumentDeleteMessage {
             logger.info(sessid + " :deleted by the creator itself");
         }
 
-        ArrayList<String> readlist_android = new ArrayList<String>();
+        TreeSet<String> readlist_android = new TreeSet<String>();
         if (doc_exists && candelete) {
             if (creatordeleted) {
 

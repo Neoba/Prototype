@@ -165,7 +165,7 @@ public class GrantPermissionMessage implements Message {
                 oldeditset.remove(s);
             }
             if (oldeditset.size() > 0 || oldreadset.size() > 0) {
-                ArrayList<String> readpush_android = new ArrayList<String>();
+                TreeSet<String> readpush_android = new TreeSet<String>();
                 logger.info(session + " : permission revoked- " + oldeditset);
                 for (String s : oldreadset) {
                     for (String rid : CouchManager.get_gcm_rids(s)) {
@@ -187,8 +187,8 @@ public class GrantPermissionMessage implements Message {
                 push_successn = true;
             }
             if (push_successn && (editarray.length() > 0 || readarray.length() > 0)) {
-                ArrayList<String> readpush_android = new ArrayList<String>();
-                ArrayList<String> writepush_android = new ArrayList<String>();
+                TreeSet<String> readpush_android = new TreeSet<String>();
+                TreeSet<String> writepush_android = new TreeSet<String>();
                 for (String s : readset) {
                     if (!editset.contains(s)) {
                         for (String rid : CouchManager.get_gcm_rids(s)) {

@@ -14,6 +14,7 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -143,6 +145,28 @@ public class NotesList extends ListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
+		if (id == R.id.action_logout) {
+
+			DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					switch (which) {
+					case DialogInterface.BUTTON_POSITIVE:
+						new Logout().execute();
+						break;
+
+					case DialogInterface.BUTTON_NEGATIVE:
+						// No button clicked
+						break;
+					}
+				}
+			};
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage("Are you sure?")
+					.setPositiveButton("Yes", dialogClickListener)
+					.setNegativeButton("No", dialogClickListener).show();
+		}
 		if (id == R.id.action_settings) {
 			UUID newdoc = UUID.randomUUID();
 			DBManager db = new DBManager(NotesList.this);
@@ -223,9 +247,22 @@ public class NotesList extends ListActivity {
 			new NoteParse().execute(rowView, values.get(position).title);
 			ImageButton editb = (ImageButton) rowView
 					.findViewById(R.id.bNotesListLeft);
+			ImageButton shareb = (ImageButton) rowView
+					.findViewById(R.id.bNotesListRight);
 
 			if(values.get(position).synced==2)
 				((ImageView)rowView.findViewById(R.id.ivsynced)).setVisibility(View.VISIBLE);
+			
+			shareb.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					Intent i = new Intent(NotesList.this,ShareListActivity.class);
+					i.putExtra("docid", values.get(position).id);
+					startActivity(i);
+				}
+			});
+			
 			editb.setOnClickListener(new OnClickListener() {
 				
 				@Override
@@ -306,8 +343,8 @@ public class NotesList extends ListActivity {
 					return false;
 				}
 			});
-			// ProgressBar
-			// s=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
+			 ProgressBar
+			 s=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
 			// s.setVisibility(View.VISIBLE);
 			// textView.setText(new
 			// NeoHTML(values.get(position).getNote(),context).getSpannable());
@@ -396,11 +433,62 @@ public class NotesList extends ListActivity {
 				public void run() {
 					aa.setText("");
 					aa.setText(ss);
-					//ProgressBar pp = (ProgressBar) cv
-					//		.findViewById(R.id.pnNoteLoader);
-					//pp.setVisibility(View.INVISIBLE);
+					ProgressBar pp = (ProgressBar) cv
+							.findViewById(R.id.pnNoteLoader);
+					pp.setVisibility(View.INVISIBLE);
 				}
 			});
+			return null;
+		}
+
+	}
+	public class Logout extends AsyncTask<Void, Void, Void> {
+		private ProgressDialog dialog;
+
+		@Override
+		protected void onPreExecute() {
+			this.dialog = new ProgressDialog(NotesList.this);
+			this.dialog.setMessage("Logging out..");
+			this.dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			if (dialog.isShowing()) {
+				dialog.dismiss();
+				dialog = null;
+			}
+		}
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			boolean status = false;
+			try {
+				status = ByteMessenger.Logout(UUID.fromString(PreferenceManager.getDefaultSharedPreferences(NotesList.this).getString("cookie", ":(")));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			if (status) {
+				PreferenceManager.getDefaultSharedPreferences(NotesList.this).edit().remove("cookie").commit();
+				PreferenceManager.getDefaultSharedPreferences(NotesList.this).edit().remove("loginlock").commit();
+				DBManager db = new DBManager(NotesList.this);
+				db.open();
+				db.Truncate();
+				db.close();
+
+				NotesList.this.finish();
+			} else {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Toast.makeText(getApplicationContext(),
+								"Sorry.. Can't connect to our server :(",
+								Toast.LENGTH_LONG).show();
+					}
+				});
+			}
 			return null;
 		}
 

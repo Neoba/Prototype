@@ -183,6 +183,21 @@ public class ByteMessenger {
 		return ret;
 	}
 
+	public static Long PokeUser(String username, UUID cookie) throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x0A);
+		buff.putInt(username.length());
+		putUUID(buff, cookie);
+		buff.put(username.getBytes());
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+		if (in.getInt(2) == 0xFFFF) {
+			Log.d("poked!", "poked " + in.getLong(6));
+			return in.getLong(6);
+		}
+		return null;
+	}
 	static class document {
 
 		public byte[] diff;
@@ -238,7 +253,7 @@ public class ByteMessenger {
 
 	}
 
-	public static Long FollowUser(String username, UUID cookie)
+	public static String FollowUser(String username, UUID cookie)
 			throws Exception {
 		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
 		buff.put((byte) 0x02);
@@ -250,7 +265,7 @@ public class ByteMessenger {
 		buff.clear();
 		if (in.getInt(2) == 0xFFFF) {
 			Log.d("FOLLOW", "followed " + in.getLong(6));
-			return in.getLong(6);
+			return in.getLong(6)+"~"+in.getLong(14);
 		}
 		return null;
 	}
@@ -564,17 +579,17 @@ public class ByteMessenger {
 	// return null;
 	// }
 	//
-	// public static boolean Logout(UUID cookie) throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16);
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x09);
-	// buff.putInt(0xFFFF);
-	// putUUID(buff, cookie);
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// return in != null;
-	//
-	// }
+	 public static boolean Logout(UUID cookie) throws Exception {
+	 ByteBuffer buff = ByteBuffer.allocate(6 + 16);
+	 buff.put((byte) 0x02);
+	 buff.put((byte) 0x09);
+	 buff.putInt(0xFFFF);
+	 putUUID(buff, cookie);
+	 ByteBuffer in = Postman.post(buff);
+	 buff.clear();
+	 return in != null;
+	
+	 }
 	//
 	// public static boolean Delete(UUID cookie, UUID docuid) throws Exception {
 	//
