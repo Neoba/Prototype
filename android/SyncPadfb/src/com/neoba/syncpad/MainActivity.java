@@ -119,6 +119,8 @@ public class MainActivity extends Activity {
 		int id = item.getItemId();
 	
 		if (id == R.id.action_debugf) {
+			Intent i=new Intent(this,NotesList.class);
+			startActivity(i);
 		    return true;
 		}
 		return super.onOptionsItemSelected(item);
