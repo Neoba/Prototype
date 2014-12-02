@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.neoba.syncpad.ByteMessenger.document;
+import com.squareup.otto.Bus;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -26,7 +27,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.LocalBroadcastManager;
+import android.os.Looper;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import android.widget.Toast;
@@ -37,6 +38,8 @@ public class GcmMessageHandler extends IntentService {
 	String content;
 	String action;
 	private Handler handler;
+	static String ACTIONNOTELISTUPDATE="com.neoba.syncpad.NOTELISTUPDATE";
+	
 	public GcmMessageHandler() {
 		super("GcmMessageHandler");
 	}
@@ -45,7 +48,8 @@ public class GcmMessageHandler extends IntentService {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		handler = new Handler();	}
+		handler = new Handler();
+	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
@@ -70,7 +74,7 @@ public class GcmMessageHandler extends IntentService {
 				db.open();
 				db.insertFollower(Long.parseLong( jaction.getString("id")), jaction.getString("username"));
 				db.close();
-				updateFollowerListActivity(getApplicationContext());
+
 			}else if(jaction.getString("type").equals("permission_grant")){
 				
 				Log.d("GCMPOKE",jaction.toString());
@@ -85,33 +89,38 @@ public class GcmMessageHandler extends IntentService {
 				db.insertDocFromDigest(pushed);
 				Log.d("pushre",pushed.toString());
 				db.close();
-				updateDocsListActivity(getApplicationContext());
+				notelistupdate();
+
 			}else if(jaction.getString("type").equals("permission_revoke")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.deleteDoc(jaction.getString("id"));
 				db.close();
-				updateDocsListActivity(getApplicationContext());
+				notelistupdate();
+
 			}else if(jaction.getString("type").equals("edit")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.editDoc(jaction.getString("id"),Base64.decode(jaction.getString("diff")),jaction.getInt("age"));
 				db.close();
-				updateViewerActivity(this);
+				notelistupdate();
+
 			}else if(jaction.getString("type").equals("delete")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.deleteDoc(jaction.getString("id"));
 				db.close();
-				updateDocsListActivity(getApplicationContext());
+				notelistupdate();
+				
 			}else if(jaction.getString("type").equals("user_deleted")){
 				DBManager db = new DBManager(this);
 				db.open();
 				db.clearPermissions(jaction.getString("docid"));
 				db.close();
-				updateDocsListActivity(getApplicationContext());
+				notelistupdate();
+
 			}else if(jaction.getString("type").equals("unfollowed")){
-				updateFollowerListActivity(getApplicationContext());
+				
 				DBManager db = new DBManager(this);
 				db.open();
 				JSONArray docs=jaction.getJSONArray("docs");
@@ -119,6 +128,7 @@ public class GcmMessageHandler extends IntentService {
 					db.clearPermissions(docs.getString(i),jaction.getString("userid"));
 				db.deleteFollower(jaction.getString("userid"));
 				db.close();
+				notelistupdate();
 			}
 
 		} catch (JSONException e) {
@@ -139,20 +149,12 @@ public class GcmMessageHandler extends IntentService {
 		WakefulBroadcastReceiver.completeWakefulIntent(intent);
 
 	}
-	static void updateDocsListActivity(Context context) {
-
-	    Intent intent = new Intent("com.neoba.syncpad.LISTUPDATE");
-	    context.sendBroadcast(intent);
-	}
-	
-	static void updateFollowerListActivity(Context context) {
-	    Intent intent = new Intent("com.neoba.syncpad.FOLLOWERUPDATE");
-	    context.sendBroadcast(intent);
-	}
-	static void updateViewerActivity(Context context) {
-	    Intent intent = new Intent("com.neoba.syncpad.VIEWERUPDATE");
-	    context.sendBroadcast(intent);
-	}
+private void notelistupdate(){
+	Intent broadcastIntent = new Intent();
+    broadcastIntent.setAction(ACTIONNOTELISTUPDATE);
+    broadcastIntent.addCategory(Intent.CATEGORY_DEFAULT);
+    sendBroadcast(broadcastIntent);
+}
 	public void showToast() {
 		handler.post(new Runnable() {
 			@Override

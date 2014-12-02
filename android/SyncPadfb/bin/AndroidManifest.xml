@@ -21,6 +21,7 @@
     <uses-permission android:name="com.neoba.syncpad.permission.C2D_MESSAGE" />
 
     <application
+         android:name="com.neoba.syncpad.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"

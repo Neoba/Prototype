@@ -11,5 +11,6 @@
 	<classpathentry exported="true" kind="lib" path="/home/atul/Lab/clones/Prototype/android/SyncPadfb/libs/droidwriter-0.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="/google-play-services_lib/libs/google-play-services.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/google-play-services_lib"/>
+	<classpathentry exported="true" kind="lib" path="/home/atul/Lab/clones/Prototype/android/SyncPadfb/libs/otto-1.3.5.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

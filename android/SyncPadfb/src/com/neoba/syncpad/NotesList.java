@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.widget.CursorAdapter;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -49,44 +50,38 @@ import android.widget.Toast;
 
 public class NotesList extends ListActivity {
 
-	NotesListAdapter nla;
+
 	BroadcastReceiver receiver;
+	private GCMReceiver receiver2;
+	NoteListAdapter nl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		IntentFilter filter = new IntentFilter(GcmMessageHandler.ACTIONNOTELISTUPDATE);
+		filter.addCategory(Intent.CATEGORY_DEFAULT);
+		receiver2 = new GCMReceiver();
+		registerReceiver(receiver2, filter);
 
-	    try {
-	       ViewConfiguration config = ViewConfiguration.get(this);
-	       Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
-	       if(menuKeyField != null) {
-	           menuKeyField.setAccessible(true);
-	           menuKeyField.setBoolean(config, false);
-	       }
-	   } catch (Exception e) {
-	       e.printStackTrace();
-	   }
+		try {
+			ViewConfiguration config = ViewConfiguration.get(this);
+			Field menuKeyField = ViewConfiguration.class
+					.getDeclaredField("sHasPermanentMenuKey");
+			if (menuKeyField != null) {
+				menuKeyField.setAccessible(true);
+				menuKeyField.setBoolean(config, false);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		getListView().setDivider(null);
 		getListView().setDividerHeight(0);
+
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
-		Cursor c = db.getAllUndeletedDocs();
-		c.moveToFirst();
-		while (!c.isAfterLast()) {
-			document d = db.doccursorToDocument(c);
-			if(!db.isDocUnSynced(d.id))
-			{
-				Log.d("NOTELIST", "Unsynced "+d.id);
-				d.synced=2;
-			}
-			else d.synced=0;
-			Log.d("NOTELIST", d.toString());
-			a.add(d);
-			c.moveToNext();
-		}
+		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+		this.setListAdapter(nl);
 		db.close();
-		nla = new NotesListAdapter(this, R.layout.activity_front, a);
-		this.setListAdapter(nla);
+		
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.SECOND, 10);
 		Intent intent = new Intent(this, OfflineSyncService.class);
@@ -98,30 +93,37 @@ public class NotesList extends ListActivity {
 		startService(new Intent(getBaseContext(), OfflineSyncService.class));
 
 		receiver = new BroadcastReceiver() {
-	        @Override
-	        public void onReceive(Context context, Intent intent) {
-	        	DBManager db = new DBManager(NotesList.this);
-	    		db.open();
-	    		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
-	    		Cursor c = db.getAllUndeletedDocs();
-	    		c.moveToFirst();
-	    		while (!c.isAfterLast()) {
-	    			document d = db.doccursorToDocument(c);
-	    			if(!db.isDocUnSynced(d.id))
-	    			{
-	    				Log.d("NOTELIST", "Unsynced "+d.id);
-	    				d.synced=2;
-	    			}
-	    			else d.synced=0;
-	    			Log.d("NOTELIST", d.toString());
-	    			a.add(d);
-	    			c.moveToNext();
-	    		}
-	    		db.close();
-	    		nla = new NotesListAdapter(NotesList.this, R.layout.activity_front, a);
-	    		NotesList.this.setListAdapter(nla);
-	        }
-	    };
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				DBManager db = new DBManager(NotesList.this);
+				db.open();
+				nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+				NotesList.this.setListAdapter(nl);
+				db.close();
+
+			}
+		};
+	}
+
+	public class GCMReceiver extends BroadcastReceiver {
+
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			DBManager db = new DBManager(NotesList.this);
+			db.open();
+			nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+			NotesList.this.setListAdapter(nl);
+			db.close();
+
+		}
+
+	}
+
+	@Override
+	public void onDestroy() {
+		this.unregisterReceiver(receiver2);
+		super.onDestroy();
 	}
 
 	@Override
@@ -129,16 +131,18 @@ public class NotesList extends ListActivity {
 		getMenuInflater().inflate(R.menu.front, menu);
 		return true;
 	}
+
 	@Override
 	protected void onStart() {
-	    super.onStart();
-	    LocalBroadcastManager.getInstance(this).registerReceiver((receiver), new IntentFilter("com.neoba.syncpad.NotesList"));
+		super.onStart();
+		LocalBroadcastManager.getInstance(this).registerReceiver((receiver),
+				new IntentFilter("com.neoba.syncpad.NotesList"));
 	}
 
 	@Override
 	protected void onStop() {
-	    LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
-	    super.onStop();
+		LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
+		super.onStop();
 	}
 
 	// this is
@@ -199,7 +203,7 @@ public class NotesList extends ListActivity {
 		if (id == R.id.action_debug) {
 			Intent i = new Intent(NotesList.this, DebugActivity.class);
 			startActivity(i);
-		    return true;
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -221,142 +225,7 @@ public class NotesList extends ListActivity {
 				Toast.LENGTH_SHORT).show();
 	}
 
-	public class NotesListAdapter extends ArrayAdapter<document> {
-
-		private final Context context;
-		private final List<document> values;
-
-		public NotesListAdapter(Context context, int resource,
-				List<document> values) {
-			super(context, resource, values);
-			this.context = context;
-			this.values = values;
-		}
-
-		public View getView(final int position, View convertView,
-				ViewGroup parent) {
-			LayoutInflater inflater = (LayoutInflater) context
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View rowView = inflater.inflate(R.layout.activity_front, parent,
-					false);
-			//ProgressBar pp = (ProgressBar) rowView
-			//		.findViewById(R.id.pnNoteLoader);
-			//pp.setVisibility(View.VISIBLE);
-			final TextView textView = (TextView) rowView
-					.findViewById(R.id.output_autofit);
-			new NoteParse().execute(rowView, values.get(position).title);
-			ImageButton editb = (ImageButton) rowView
-					.findViewById(R.id.bNotesListLeft);
-			ImageButton shareb = (ImageButton) rowView
-					.findViewById(R.id.bNotesListRight);
-
-			if(values.get(position).synced==2)
-				((ImageView)rowView.findViewById(R.id.ivsynced)).setVisibility(View.VISIBLE);
-			
-			shareb.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View arg0) {
-					Intent i = new Intent(NotesList.this,ShareListActivity.class);
-					i.putExtra("docid", values.get(position).id);
-					startActivity(i);
-				}
-			});
-			
-			editb.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View arg0) {
-					Intent i = new Intent(NotesList.this, NotesEditor.class);
-					i.putExtra("uuid", values.get(position).id);
-					startActivity(i);
-
-				}
-			});
-			String color;
-			if(values.get(position).title.length()==0)color="#FFFFFF";
-			else
-				color =values.get(position).title.split("\n")[0].charAt(0)=='#'?values.get(position).title.split("\n")[0]:"#FFFFFF";
-			
-			((SquareLayout)rowView.findViewById(R.id.squareLayout1)).setBackgroundColor(Color.parseColor(color));
-			textView.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					Intent i = new Intent(NotesList.this,
-							NotesViewerActivity.class);
-					i.putExtra("uuid", values.get(position).id);
-					i.putExtra("size", textView.getTextSize());
-					startActivity(i);
-
-				}
-			});
-			textView.setOnLongClickListener(new OnLongClickListener() {
-
-				@Override
-				public boolean onLongClick(View arg0) {
-					new AlertDialog.Builder(NotesList.this)
-							.setTitle("Delete entry")
-							.setMessage(
-									"Are you sure you want to delete this entry?")
-							.setPositiveButton(android.R.string.yes,
-									new DialogInterface.OnClickListener() {
-										public void onClick(
-												DialogInterface dialog,
-												int which) {
-											// continue with delete
-											DBManager db = new DBManager(
-													NotesList.this);
-											db.open();
-											
-											db.setDeleted(values.get(position).id);
-											Log.d("deleted",
-													values.get(position).id);
-											ArrayList<document> a = new ArrayList<ByteMessenger.document>();
-											Cursor c = db.getAllUndeletedDocs();
-											c.moveToFirst();
-											while (!c.isAfterLast()) {
-												document d = db
-														.doccursorToDocument(c);
-												Log.d("NOTELIST", d.toString());
-												a.add(d);
-												c.moveToNext();
-											}
-											db.close();
-											nla = new NotesListAdapter(
-													NotesList.this,
-													R.layout.activity_front, a);
-											NotesList.this.setListAdapter(nla);
-											startService(new Intent(NotesList.this, OfflineSyncService.class));
-										}
-									})
-							.setNegativeButton(android.R.string.no,
-									new DialogInterface.OnClickListener() {
-										public void onClick(
-												DialogInterface dialog,
-												int which) {
-											// do nothing
-										}
-									})
-
-							.show();
-					return false;
-				}
-			});
-			 ProgressBar
-			 s=(ProgressBar)rowView.findViewById(R.id.pnNoteLoader);
-			// s.setVisibility(View.VISIBLE);
-			// textView.setText(new
-			// NeoHTML(values.get(position).getNote(),context).getSpannable());
-			// textView.setText(Html.fromHtml(values.get(position).getNote()));
-			// textView.setText(new
-			// HtmlSpanner().fromHtml("<html><head></head><body>"+values.get(position).getNote()+"</body></ 	html>"));
-
-			return rowView;
-		}
-
-	}
-
+	
 	@Override
 	protected void onPause() {
 		super.onPause();
@@ -365,22 +234,13 @@ public class NotesList extends ListActivity {
 
 	@Override
 	protected void onResume() {
+
 		super.onResume();
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
-		Cursor c = db.getAllUndeletedDocs();
-		c.moveToFirst();
-		while (!c.isAfterLast()) {
-						document d = db.doccursorToDocument(c);
-			if(!db.isDocUnSynced(d.id))
-				d.synced=2;
-			a.add(d);
-			c.moveToNext();
-		}
+		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+		NotesList.this.setListAdapter(nl);
 		db.close();
-		nla = new NotesListAdapter(this, R.layout.activity_front, a);
-		this.setListAdapter(nla);
 	}
 
 	@Override
@@ -389,19 +249,9 @@ public class NotesList extends ListActivity {
 		super.onRestart();
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
-		ArrayList<document> a = new ArrayList<ByteMessenger.document>();
-		Cursor c = db.getAllUndeletedDocs();
-		c.moveToFirst();
-		while (!c.isAfterLast()) {
-						document d = db.doccursorToDocument(c);
-			if(!db.isDocUnSynced(d.id))
-				d.synced=2;
-			a.add(d);
-			c.moveToNext();
-		}
+		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+		NotesList.this.setListAdapter(nl);
 		db.close();
-		nla = new NotesListAdapter(this, R.layout.activity_front, a);
-		this.setListAdapter(nla);
 	}
 
 	class NoteParse extends AsyncTask<Object, Void, Void> {
@@ -442,6 +292,7 @@ public class NotesList extends ListActivity {
 		}
 
 	}
+
 	public class Logout extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog dialog;
 
@@ -464,15 +315,19 @@ public class NotesList extends ListActivity {
 		protected Void doInBackground(Void... params) {
 			boolean status = false;
 			try {
-				status = ByteMessenger.Logout(UUID.fromString(PreferenceManager.getDefaultSharedPreferences(NotesList.this).getString("cookie", ":(")));
+				status = ByteMessenger.Logout(UUID.fromString(PreferenceManager
+						.getDefaultSharedPreferences(NotesList.this).getString(
+								"cookie", ":(")));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 			if (status) {
-				PreferenceManager.getDefaultSharedPreferences(NotesList.this).edit().remove("cookie").commit();
-				PreferenceManager.getDefaultSharedPreferences(NotesList.this).edit().remove("loginlock").commit();
+				PreferenceManager.getDefaultSharedPreferences(NotesList.this)
+						.edit().remove("cookie").commit();
+				PreferenceManager.getDefaultSharedPreferences(NotesList.this)
+						.edit().remove("loginlock").commit();
 				DBManager db = new DBManager(NotesList.this);
 				db.open();
 				db.Truncate();
@@ -494,4 +349,167 @@ public class NotesList extends ListActivity {
 
 	}
 
+public class NoteListAdapter extends CursorAdapter{
+
+	public NoteListAdapter(Context context, Cursor c) {
+		super(context, c);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void bindView(View rowView, Context arg1, Cursor c) {
+		// TODO Auto-generated method stub
+		final TextView textView = (TextView) rowView
+				.findViewById(R.id.output_autofit);
+		
+		final document d =new document(c.getString(1), c.getString(5), c.getBlob(2),
+				c.getInt(4), c.getString(3), (byte) c.getInt(6),
+				c.getInt(7) == 1 ? true : false, c.getInt(8));
+		DBManager db = new DBManager(NotesList.this);
+		db.open();
+		if (!db.isDocUnSynced(d.id)) {
+			Log.d("NOTELIST", "Unsynced " + d.id);
+			d.synced = 2;
+		} else
+			d.synced = 0;
+		db.close();
+		new NoteParse().execute(rowView, d.title);
+		ImageButton editb = (ImageButton) rowView
+				.findViewById(R.id.bNotesListLeft);
+		ImageButton shareb = (ImageButton) rowView
+				.findViewById(R.id.bNotesListRight);
+
+		if (d.synced == 2)
+			((ImageView) rowView.findViewById(R.id.ivsynced))
+					.setVisibility(View.VISIBLE);
+
+		shareb.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(NotesList.this,ShareListActivity.class);
+				i.putExtra("docid", d.id);
+				startActivity(i);
+			}
+		});
+
+		editb.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(NotesList.this, NotesEditor.class);
+				i.putExtra("uuid", d.id);
+				startActivity(i);
+
+			}
+		});
+		String color;
+		if (d.title.length() == 0)
+			color = "#FFFFFF";
+		else
+			color = d.title.split("\n")[0].charAt(0) == '#' ? d.title.split("\n")[0] : "#FFFFFF";
+
+		((SquareLayout) rowView.findViewById(R.id.squareLayout1))
+				.setBackgroundColor(Color.parseColor(color));
+		textView.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(NotesList.this,
+						NotesViewerActivity.class);
+				i.putExtra("uuid", d.id);
+				i.putExtra("size", textView.getTextSize());
+				startActivity(i);
+
+			}
+		});
+		textView.setOnLongClickListener(new OnLongClickListener() {
+
+			@Override
+			public boolean onLongClick(View arg0) {
+				new AlertDialog.Builder(NotesList.this)
+						.setTitle("Delete entry")
+						.setMessage(
+								"Are you sure you want to delete this entry?")
+						.setPositiveButton(android.R.string.yes,
+								new DialogInterface.OnClickListener() {
+									public void onClick(
+											DialogInterface dialog,
+											int which) {
+										// continue with delete
+										DBManager db = new DBManager(
+												NotesList.this);
+										db.open();
+
+										db.setDeleted(d.id);
+										nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+										db.close();
+										startService(new Intent(
+												NotesList.this,
+												OfflineSyncService.class));
+									}
+								})
+						.setNegativeButton(android.R.string.no,
+								new DialogInterface.OnClickListener() {
+									public void onClick(
+											DialogInterface dialog,
+											int which) {
+										// do nothing
+									}
+								})
+
+						.show();
+				return false;
+			}
+		});
+		ProgressBar s = (ProgressBar) rowView
+				.findViewById(R.id.pnNoteLoader);
+	}
+
+	@Override
+	public View newView(Context arg0, Cursor arg1, ViewGroup parent) {
+	      LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+	        View retView = inflater.inflate(R.layout.activity_front, parent, false);
+	 
+	        return retView;
+	}
+	class NoteParse extends AsyncTask<Object, Void, Void> {
+
+		@Override
+		protected Void doInBackground(Object... params) {
+			// TODO Auto-generated method stub
+			final View cv = (View) params[0];
+			String html = (String) params[1];
+			html = html.replaceAll(Pattern.quote("[ ]"), "\uE000");
+			html = html.replaceAll(Pattern.quote("[*]"), "\uE001");
+			final SpannableNote note = new NeoHTML(html, NotesList.this)
+					.getNote();
+			final SpannableStringBuilder ss = note.getcontent();
+			Typeface font2 = Typeface.createFromAsset(
+					NotesList.this.getAssets(), "fonts/checkfont.ttf");
+			ss.setSpan(new CustomTypefaceSpan("", font2), 0, ss.length(),
+					Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// final SpannableStringBuilder ss=new SpannableStringBuilder("a");
+			// Typeface font =
+			// Typeface.createFromAsset(NotesList.this.getAssets(),
+			// "fonts/tickfont.ttf");
+			// ss.setSpan (new CustomTypefaceSpan("", font),0,
+			// 1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// ss.append(s2);
+			final AutoResizeTextView aa = ((AutoResizeTextView) cv
+					.findViewById(R.id.output_autofit));
+			runOnUiThread(new Runnable() {
+				public void run() {
+					aa.setText("");
+					aa.setText(ss);
+					ProgressBar pp = (ProgressBar) cv
+							.findViewById(R.id.pnNoteLoader);
+					pp.setVisibility(View.INVISIBLE);
+				}
+			});
+			return null;
+		}
+
+	}
+}
 }
