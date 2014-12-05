@@ -55,11 +55,11 @@ public class UserActivity extends FragmentActivity {
 //        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),new String[] {},new String[] {},new String[] {});
 //        vpPager.setAdapter(adapterViewPager);
 		
-		username=(TextView)findViewById(R.id.tvUsername);
+		username=(TextView)findViewById(R.id.tvSharedUsers);
 		followercount=(TextView)findViewById(R.id.tvFollowerCount);
 		image=(ImageView)findViewById(R.id.ivPicture);
 		cover=(ImageView)findViewById(R.id.ivCover);
-		name=(TextView)findViewById(R.id.tvName);
+		name=(TextView)findViewById(R.id.tvTimeStamp);
 		pb=(ProgressBar)findViewById(R.id.pbProfileLoad);
 		
 		username.setVisibility(View.INVISIBLE);

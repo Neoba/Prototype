@@ -94,14 +94,14 @@ public class ByteMessenger {
 				titlearray[j] = in.get(base + 28 + sdiff + sdict + j);
 			}
 
-			String title = Charset.forName("UTF-8")
+			String creator = Charset.forName("UTF-8")
 					.decode(ByteBuffer.wrap(titlearray)).toString();
 			int age = in.getInt(base + 28 + sdiff + sdict + stitle);
 			byte perm = in.get(base + 28 + sdiff + sdict + stitle + 4);
 			boolean owns = in.get(base + 28 + sdiff + sdict + stitle + 4 + 1) == 0x1;
 			base = base + 32 + sdiff + sdict + stitle + 1 + 1;
-			cache.put(id, new document(id.toString(), title, diff, age, dict,
-					perm, owns,0));
+			cache.put(id, new document(id.toString(), "", diff, age, dict,
+					perm, owns,0,creator));
 
 			Log.d("NEOBA", "added to cache: " + cache.get(id).title);
 
@@ -208,6 +208,7 @@ public class ByteMessenger {
 		public String id;
 		public boolean owns;
 		public int synced;
+		public String owner;
 		
 		document(String id, String title, byte[] diff, int age, String dict, byte permission,boolean owns,int synced) {
 			this.id = id;
@@ -218,9 +219,19 @@ public class ByteMessenger {
 			this.permission = permission;
 			this.owns = owns;
 			this.synced=synced;
+			this.owner="you";
 		}
-
-
+		document(String id, String title, byte[] diff, int age, String dict, byte permission,boolean owns,int synced,String owner) {
+			this.id = id;
+			this.diff = diff;
+			this.age = age;
+			this.dict = dict;
+			this.title = title;
+			this.permission = permission;
+			this.owns = owns;
+			this.synced=synced;
+			this.owner=owner;
+		}
 
 		public String toString() {
 			return this.id + Arrays.toString(diff) + this.dict

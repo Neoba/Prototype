@@ -2,12 +2,16 @@ package com.neoba.syncpad;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import com.neoba.syncpad.ByteMessenger.document;
+import com.ocpsoft.pretty.time.PrettyTime;
+
 import net.dongliu.vcdiff.VcdiffEncoder;
 import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 import android.app.AlarmManager;
@@ -42,6 +46,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -364,7 +370,11 @@ public class NoteListAdapter extends CursorAdapter{
 		
 		final document d =new document(c.getString(1), c.getString(5), c.getBlob(2),
 				c.getInt(4), c.getString(3), (byte) c.getInt(6),
-				c.getInt(7) == 1 ? true : false, c.getInt(8));
+				c.getInt(8) == 1 ? true : false, c.getInt(9),c.getString(12));
+		Long ltime=c.getLong(7);
+		ArrayList<String > shares;
+		((TextView)rowView.findViewById(R.id.tvTimeStamp)).setText(new PrettyTime().format(new Date(ltime)));
+		//c.getLong(columnIndex)
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
 		if (!db.isDocUnSynced(d.id)) {
@@ -372,13 +382,39 @@ public class NoteListAdapter extends CursorAdapter{
 			d.synced = 2;
 		} else
 			d.synced = 0;
+		shares=db.getShares(d.id);
+		TextView shareinfo=(TextView)rowView.findViewById(R.id.tvSharedUsers);
+		Log.d("SHARES",shares+"");
+		if(d.owns && shares.size()==0)
+			shareinfo.setVisibility(View.GONE);
+		else if(d.owns && shares.size()>0)
+		{
+			String sharestring="Shared with ";
+			if(shares.size()==1)
+				sharestring+="@"+shares.get(0).split("~")[0];
+			else if(shares.size()==2)
+				sharestring+=("@"+shares.get(0).split("~")[0]+" and @"+shares.get(1).split("~")[0]);
+			else if(shares.size()==3)
+				sharestring+=("@"+shares.get(0).split("~")[0]+", @"+shares.get(1).split("~")[0]+" and 1 other");
+			else
+				sharestring+=("@"+shares.get(0).split("~")[0]+", @"+shares.get(1).split("~")[0]+" and "+(shares.size()-2)+" others");
+			shareinfo.setText(sharestring);
+		}
+		else if(!d.owns)
+			shareinfo.setText("Created by @"+d.owner.split("~")[0]);
 		db.close();
 		new NoteParse().execute(rowView, d.title);
 		ImageButton editb = (ImageButton) rowView
 				.findViewById(R.id.bNotesListLeft);
 		ImageButton shareb = (ImageButton) rowView
 				.findViewById(R.id.bNotesListRight);
-
+		if(!d.owns)
+		{
+			editb.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 10f));
+			shareb.setVisibility(View.GONE);
+		}
+		if(d.permission!=2)
+			editb.setVisibility(View.GONE);
 		if (d.synced == 2)
 			((ImageView) rowView.findViewById(R.id.ivsynced))
 					.setVisibility(View.VISIBLE);
@@ -443,6 +479,7 @@ public class NoteListAdapter extends CursorAdapter{
 
 										db.setDeleted(d.id);
 										nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
+										NotesList.this.getListView().setAdapter(nl);
 										db.close();
 										startService(new Intent(
 												NotesList.this,
@@ -464,12 +501,14 @@ public class NoteListAdapter extends CursorAdapter{
 		});
 		ProgressBar s = (ProgressBar) rowView
 				.findViewById(R.id.pnNoteLoader);
+
+		s.setVisibility(View.VISIBLE);
 	}
 
 	@Override
 	public View newView(Context arg0, Cursor arg1, ViewGroup parent) {
 	      LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-	        View retView = inflater.inflate(R.layout.activity_front, parent, false);
+	        View retView = inflater.inflate(R.layout.notes_list_element, parent, false);
 	 
 	        return retView;
 	}

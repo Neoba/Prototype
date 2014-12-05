@@ -77,15 +77,16 @@ public class GcmMessageHandler extends IntentService {
 
 			}else if(jaction.getString("type").equals("permission_grant")){
 				
-				Log.d("GCMPOKE",jaction.toString());
+				Log.d("GCMPGRANT",jaction.toString());
 				DBManager db = new DBManager(this);
 				db.open();
+				
 				document pushed=new document(jaction.getString("id"),
 						jaction.getString("title")
 						,Base64.decode(jaction.getString("diff"))
 						,jaction.getInt("age")
 						,jaction.getString("dict")
-						,(byte)jaction.getInt("permission"),false,0);
+						,(byte)jaction.getInt("permission"),false,0,jaction.getString("owner"));
 				db.insertDocFromDigest(pushed);
 				Log.d("pushre",pushed.toString());
 				db.close();

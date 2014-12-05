@@ -62,11 +62,6 @@ public class OfflineSyncService extends Service {
 				UUID cookie=UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default"));
 				ByteMessenger.Ping();
 				Log.d("ok", "PONG");
-				//send all the create notes
-				
-				
-				
-	
 				Cursor cursor=db.getAllUnsyncedCreateDocs();
 			    cursor.moveToFirst();
 			    

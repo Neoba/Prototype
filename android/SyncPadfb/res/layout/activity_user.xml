@@ -34,7 +34,7 @@
                 android:paddingLeft="10dp" />
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvTimeStamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/ivPicture"
@@ -45,10 +45,10 @@
                 android:textColor="#FFFFFF" />
 
             <TextView
-                android:id="@+id/tvUsername"
+                android:id="@+id/tvSharedUsers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvName"
+                android:layout_below="@+id/tvTimeStamp"
                 android:layout_toRightOf="@+id/ivPicture"
                 android:paddingLeft="10dp"
                 android:text="asdad"
@@ -66,8 +66,8 @@
                 android:id="@+id/tvFollowerCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tvUsername"
-                android:layout_below="@+id/tvUsername"
+                android:layout_alignLeft="@+id/tvSharedUsers"
+                android:layout_below="@+id/tvSharedUsers"
                 android:paddingLeft="10dp"
                 android:text="12 FOLLOWERS"
                 android:textAppearance="?android:attr/textAppearanceSmall"

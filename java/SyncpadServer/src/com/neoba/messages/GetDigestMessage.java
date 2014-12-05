@@ -52,7 +52,7 @@ public class GetDigestMessage implements Message {
             logger.debug(sessid + " :calculating digest of " + doc.get("title") + " version " + (Integer) doc.get("version"));
             bufsize += ((JSONArray) doc.get("diff")).length();
             bufsize += ((String) doc.get("dict")).length();
-            bufsize += ((String) doc.get("title")).length();
+            bufsize += (getOwner((String)docs.get(i))).length();
             bufsize += (16 + 4 + 4 + 4 + 4);
             bufsize += 1;
             bufsize+=1;
@@ -109,6 +109,12 @@ public class GetDigestMessage implements Message {
         return ts;
         
     }
+    public String getOwner(String id) throws JSONException{
+        JSONObject doc = new JSONObject((String) Dsyncserver.cclient.get(id));
+        String creatorid=doc.getString("creator");
+        JSONObject owner=new JSONObject((String) Dsyncserver.cclient.get(creatorid));
+        return owner.getString("username")+"~"+owner.getString("facebook_id");
+    }
 
     @Override
     public ByteBuf result() {
@@ -139,8 +145,10 @@ public class GetDigestMessage implements Message {
                 for (byte b : ((String) doc.get("dict")).getBytes()) {
                     reply.writeByte(b);
                 }
-                reply.writeInt(((String) doc.get("title")).length());
-                for (byte b : ((String) doc.get("title")).getBytes()) {
+                String temp=getOwner(id.toString());
+                reply.writeInt(temp.length());
+                
+                for (byte b : (temp).getBytes()) {
                     reply.writeByte(b);
                 }
                 reply.writeInt(doc.getInt("version"));

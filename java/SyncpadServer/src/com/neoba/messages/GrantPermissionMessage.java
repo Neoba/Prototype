@@ -214,6 +214,7 @@ public class GrantPermissionMessage implements Message {
                 action.put("age", (Integer) document.get("version"));
                 action.put("id", doc.toString());
                 action.put("title", document.getString("title"));
+                action.put("owner", user.getString("username")+"~"+user.getString("facebook_id"));
                 if (writepush_android.size() > 0) {
                     action.put("permission", Constants.PERMISSION_EDIT);
                     if (GoogleCloudMessager.Push(session, writepush_android, document.getString("title"), user.getString("username") + " shared a new document", action)) {

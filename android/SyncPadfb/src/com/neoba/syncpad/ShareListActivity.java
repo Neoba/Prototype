@@ -1,7 +1,5 @@
 package com.neoba.syncpad;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -40,6 +38,7 @@ public class ShareListActivity extends Activity {
 	ArrayList<Share> shares;
 	ListView slist;
 	String docid;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,6 +51,7 @@ public class ShareListActivity extends Activity {
 
 		slist = (ListView) findViewById(R.id.lvShares);
 		Button add = (Button) findViewById(R.id.bSLAdd);
+		Button shareb = (Button) findViewById(R.id.bSLShare);
 		final Spinner sp = (Spinner) findViewById(R.id.spFollower);
 
 		Cursor uc = db.getAllFollower();
@@ -62,32 +62,41 @@ public class ShareListActivity extends Activity {
 			} while (uc.moveToNext());
 		}
 
-		sp.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, usernames));
-		
-		shares=new ArrayList<ByteMessenger.Share>();
-		Cursor c=db.getPermissionsForDoc(docid);
-		if(c.moveToFirst()){
-			do{
-				shares.add(new Share(docid,c.getLong(1),c.getString(0),(byte) c.getInt(2)));
-			}while(c.moveToNext());
+		sp.setAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, usernames));
+
+		shares = new ArrayList<ByteMessenger.Share>();
+		Cursor c = db.getPermissionsForDoc(docid);
+		if (c.moveToFirst()) {
+			do {
+				shares.add(new Share(docid, c.getLong(1), c.getString(0),
+						(byte) c.getInt(2)));
+			} while (c.moveToNext());
 		}
-		
+
 		db.close();
-		sa = new ShareAdapter(this, R.layout.share_list_element,shares);
+		sa = new ShareAdapter(this, R.layout.share_list_element, shares);
 		slist.setAdapter(sa);
-		
+		shareb.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new ShareSync().execute(shares);
+			}
+		});
 		add.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				for(Share i:shares){
-					if(i.username.equals((String) sp.getSelectedItem()))
+				for (Share i : shares) {
+					if (i.username.equals((String) sp.getSelectedItem()))
 						return;
 				}
 				DBManager db = new DBManager(getApplicationContext());
 				db.open();
-				shares.add(new Share(docid,db.getFollowerid((String) sp.getSelectedItem()) ,(String) sp.getSelectedItem(),(byte)1));
+				shares.add(new Share(docid, db.getFollowerid((String) sp
+						.getSelectedItem()), (String) sp.getSelectedItem(),
+						(byte) 1));
 				slist.setAdapter(sa);
-				Log.d("PERMADD",""+shares);
+				Log.d("PERMADD", "" + shares);
 				db.close();
 			}
 		});
@@ -103,14 +112,15 @@ public class ShareListActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == R.id.action_sync_share) {
-			new ShareSync().execute(shares);
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
 	public class ShareAdapter extends ArrayAdapter<Share> {
 
-		public ShareAdapter(Context context, int textViewResourceId,List<Share> objects) {
+		public ShareAdapter(Context context, int textViewResourceId,
+				List<Share> objects) {
 			super(context, textViewResourceId, objects);
 			this.layoutResourceId = textViewResourceId;
 			this.context = context;
@@ -136,8 +146,9 @@ public class ShareListActivity extends Activity {
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView,
 						boolean isChecked) {
-					items.get(position).setPermission((byte)(isChecked?2:1));
-					Log.d("PERMCHANGE", ""+items);
+					items.get(position).setPermission(
+							(byte) (isChecked ? 2 : 1));
+					Log.d("PERMCHANGE", "" + items);
 				}
 			});
 			remove.setOnClickListener(new OnClickListener() {
@@ -146,7 +157,7 @@ public class ShareListActivity extends Activity {
 				public void onClick(View v) {
 					items.remove(position);
 					notifyDataSetChanged();
-					Log.d("PERMREM", ""+items);
+					Log.d("PERMREM", "" + items);
 				}
 			});
 
@@ -156,7 +167,8 @@ public class ShareListActivity extends Activity {
 			holder.sw = (Switch) row.findViewById(R.id.swRW);
 			row.setTag(holder);
 			holder.username.setText(holder.share.username);
-			if(holder.share.permission==2)holder.sw.toggle();
+			if (holder.share.permission == 2)
+				holder.sw.toggle();
 			return row;
 
 		}
@@ -167,7 +179,9 @@ public class ShareListActivity extends Activity {
 			Switch sw;
 		}
 	}
-	public class ShareSync extends AsyncTask<ArrayList<Share>, Void, ArrayList<Share>> {
+
+	public class ShareSync extends
+			AsyncTask<ArrayList<Share>, Void, ArrayList<Share>> {
 		private ProgressDialog dialog;
 
 		@Override
@@ -182,22 +196,25 @@ public class ShareListActivity extends Activity {
 		protected void onPostExecute(ArrayList<Share> result) {
 			if (dialog.isShowing()) {
 				dialog.dismiss();
-				dialog=null;
+				dialog = null;
 			}
-			
-			if(result==null){
-				runOnUiThread(new Runnable(){
-			          @Override
-			          public void run(){
-			        	  Toast.makeText(getApplicationContext(),"Sorry.. Share failed :(", Toast.LENGTH_LONG).show();
-			          }
-			       });
-			}else{
+
+			if (result == null) {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Toast.makeText(getApplicationContext(),
+								"Sorry.. Share failed :(", Toast.LENGTH_LONG)
+								.show();
+					}
+				});
+			} else {
 				DBManager db = new DBManager(getApplicationContext());
 				db.open();
 				db.clearPermissions(docid);
-				for(Share s:result){
-					db.insertPermission(docid, s.username, s.userid, s.permission);
+				for (Share s : result) {
+					db.insertPermission(docid, s.username, s.userid,
+							s.permission);
 				}
 				db.close();
 			}
@@ -207,7 +224,8 @@ public class ShareListActivity extends Activity {
 		protected ArrayList<Share> doInBackground(ArrayList<Share>... params) {
 			ArrayList<Share> result = null;
 			try {
-				result=ByteMessenger.ShareMessage(params[0], UUID.fromString(docid), getCookie());
+				result = ByteMessenger.ShareMessage(params[0],
+						UUID.fromString(docid), getCookie());
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -216,6 +234,7 @@ public class ShareListActivity extends Activity {
 		}
 
 	}
+
 	private UUID getCookie() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);

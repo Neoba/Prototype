@@ -1,6 +1,7 @@
 package com.neoba.syncpad;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -44,7 +45,16 @@ public class DBManager {
 			String CREATE_BOOK_TABLE = "CREATE TABLE docs ( "
 					+ "id TEXT, "
 					+ "diff TEXT, "
-					+ "dict TEXT,age INTEGER,title TEXT,permission INTEGER,date LONG ,owns INTEGER default 1,  synced INTEGER default 0,syncede INTEGER default 0,syncedd INTEGER default 0)";
+					+ "dict TEXT," +
+					"age INTEGER," +
+					"title TEXT," +
+					"permission INTEGER," +
+					"date LONG ," +
+					"owns INTEGER default 1,  " +
+					"synced INTEGER default 0," +
+					"syncede INTEGER default 0," +
+					"syncedd INTEGER default 0," +
+					"owner TEXT default \"you\")";
 			db.execSQL(CREATE_BOOK_TABLE);
 			String CREATE_FOLLOWERS_TABLE = "CREATE TABLE follower ( "
 					+ "id LONG, " + "username TEXT " + ")";
@@ -116,7 +126,16 @@ public class DBManager {
 		}
 		return false;
 	}
-
+	public ArrayList<String> getShares(String docid) {
+		String sql = "SELECT username from permissions where docid=?";
+		Cursor c = db.rawQuery(sql, new String[] { docid });
+		//c.moveToFirst();
+		ArrayList<String> list=new ArrayList<String>();
+		while(c.moveToNext()){
+			list.add(c.getString(0));
+		}
+		return list;
+	}
 	public boolean isDocMine(String docid) {
 		String sql = "SELECT owns from docs where id=?";
 		Cursor c = db.rawQuery(sql, new String[] { docid });
@@ -480,7 +499,7 @@ public class DBManager {
 			updateStmt.bindString(1, doc.id);
 			updateStmt.executeUpdateDelete();
 
-			sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date,owns,synced) VALUES(?,?,?,?,?,?,?,?,?)";
+			sql = "INSERT INTO docs (id,diff,dict,age,title,permission,date,owns,synced,owner) VALUES(?,?,?,?,?,?,?,?,?,?)";
 			SQLiteStatement insertStmt = db.compileStatement(sql);
 			insertStmt.clearBindings();
 			insertStmt.bindString(1, doc.id);
@@ -492,6 +511,7 @@ public class DBManager {
 			insertStmt.bindLong(7, new Date().getTime());
 			insertStmt.bindLong(8, doc.owns ? 1 : 0);
 			insertStmt.bindLong(9, Constants.SYNCED);
+			insertStmt.bindString(10,doc.owner);
 			insertStmt.executeInsert();
 			db.execSQL("vacuum");
 

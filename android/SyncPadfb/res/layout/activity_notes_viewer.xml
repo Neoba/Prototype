@@ -8,7 +8,7 @@
         android:id="@+id/tvNotesViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tvUsername"
+        android:layout_above="@+id/tvSharedUsers"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvTimeStamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout1"
@@ -61,10 +61,10 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/tvUsername"
+        android:id="@+id/tvSharedUsers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tvName"
+        android:layout_above="@+id/tvTimeStamp"
         android:layout_alignParentLeft="true"
         android:paddingLeft="10dp"
         android:text="Large Text"
