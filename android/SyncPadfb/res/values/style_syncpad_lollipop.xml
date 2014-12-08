@@ -2,9 +2,9 @@
 <resources>
     <style name="Theme.SyncPadLollipop" parent="AppTheme.Base"/>
  
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/material_blue_grey_900</item>
-        <item name="colorPrimaryDark">@color/material_blue_grey_800</item>
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/flatui_wet_asphalt</item>
+        <item name="colorPrimaryDark">@color/flatui_midnight_blue</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>

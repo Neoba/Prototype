@@ -33,6 +33,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -66,6 +67,10 @@ public class NotesList extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notes_list);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
 		lv=(ListView)findViewById(R.id.lvNotesList);
 		IntentFilter filter = new IntentFilter(GcmMessageHandler.ACTIONNOTELISTUPDATE);
 		filter.addCategory(Intent.CATEGORY_DEFAULT);

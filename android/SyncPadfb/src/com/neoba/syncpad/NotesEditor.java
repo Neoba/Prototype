@@ -14,6 +14,8 @@ import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 
 import com.neoba.syncpad.ByteMessenger.document;
 
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.Html;
 import android.text.InputType;
@@ -23,6 +25,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -49,7 +52,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
-public class NotesEditor extends Activity {
+public class NotesEditor extends ActionBarActivity {
 	// arraylist for each linearlayout
 	ArrayList<LinearLayout> layoutList;
 	String value;
@@ -73,6 +76,10 @@ public class NotesEditor extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notes_editor);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.tbEdit);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
 		colorcode = "#FFFFFF";
 
 		c = (CheckBox) findViewById(R.id.checkBox1);
@@ -751,13 +758,12 @@ public class NotesEditor extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.editor, menu);
+		getMenuInflater().inflate(R.menu.editor, menu);
 		return true;
 	}
-
+	
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 
 
 
@@ -882,8 +888,11 @@ public class NotesEditor extends Activity {
 
 		}
 
-		return true;
+
+		return super.onOptionsItemSelected(item);
 	}
+
+	
 
 	public void onBackPressed() {
 		Spannable strin;
