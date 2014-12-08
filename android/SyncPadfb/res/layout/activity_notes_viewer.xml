@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:maxLines="30"
         android:padding="10dp"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:transitionName="TRANS" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"

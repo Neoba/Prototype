@@ -25,7 +25,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
-            android:textSize="120sp" />
+            android:textSize="120sp" 
+            android:transitionName="TRANS"/>
 
                 <LinearLayout
                     android:id="@+id/linearLayout1"

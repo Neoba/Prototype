@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentManager;
@@ -24,6 +25,8 @@ import android.database.Cursor;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -38,7 +41,7 @@ import android.widget.Toast;
 import com.facebook.*;
 import com.facebook.model.GraphObject;
 import com.squareup.picasso.Picasso;
-public class UserActivity extends FragmentActivity {
+public class UserActivity extends ActionBarActivity {
 
 	TextView name;
 	TextView followercount;
@@ -51,6 +54,10 @@ public class UserActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.tbUser);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
 		vpPager = (ViewPager) findViewById(R.id.vpPager);
 //        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),new String[] {},new String[] {},new String[] {});
 //        vpPager.setAdapter(adapterViewPager);

@@ -30,6 +30,8 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.ActionBarActivity;
@@ -458,7 +460,14 @@ public class NoteListAdapter extends CursorAdapter{
 						NotesViewerActivity.class);
 				i.putExtra("uuid", d.id);
 				i.putExtra("size", textView.getTextSize());
-				startActivity(i);
+				ActivityOptionsCompat options =
+						ActivityOptionsCompat.makeSceneTransitionAnimation(NotesList.this,
+						    v,   // The view which starts the transition
+						    "TRANS"    // The transitionName of the view we’re transitioning to
+						    );
+						ActivityCompat.startActivity(NotesList.this, i, options.toBundle());
+				
+
 
 			}
 		});
