@@ -32,6 +32,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.CursorAdapter;
+import android.support.v7.app.ActionBarActivity;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -54,15 +55,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NotesList extends ListActivity {
+public class NotesList extends ActionBarActivity {
 
 
 	BroadcastReceiver receiver;
 	private GCMReceiver receiver2;
 	NoteListAdapter nl;
+	ListView lv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_notes_list);
+		lv=(ListView)findViewById(R.id.lvNotesList);
 		IntentFilter filter = new IntentFilter(GcmMessageHandler.ACTIONNOTELISTUPDATE);
 		filter.addCategory(Intent.CATEGORY_DEFAULT);
 		receiver2 = new GCMReceiver();
@@ -79,13 +83,13 @@ public class NotesList extends ListActivity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		getListView().setDivider(null);
-		getListView().setDividerHeight(0);
+		lv.setDivider(null);
+		lv.setDividerHeight(0);
 
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
 		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-		this.setListAdapter(nl);
+		lv.setAdapter(nl);
 		db.close();
 		
 		Calendar cal = Calendar.getInstance();
@@ -104,7 +108,7 @@ public class NotesList extends ListActivity {
 				DBManager db = new DBManager(NotesList.this);
 				db.open();
 				nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-				NotesList.this.setListAdapter(nl);
+				lv.setAdapter(nl);
 				db.close();
 
 			}
@@ -119,7 +123,7 @@ public class NotesList extends ListActivity {
 			DBManager db = new DBManager(NotesList.this);
 			db.open();
 			nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-			NotesList.this.setListAdapter(nl);
+			lv.setAdapter(nl);
 			db.close();
 
 		}
@@ -224,12 +228,6 @@ public class NotesList extends ListActivity {
 
 	}
 
-	protected void onListItemClick(ListView listView, View view, int position,
-			long id) {
-		Toast.makeText(this,
-				"Clicked " + getListAdapter().getItem(position).toString(),
-				Toast.LENGTH_SHORT).show();
-	}
 
 	
 	@Override
@@ -245,7 +243,7 @@ public class NotesList extends ListActivity {
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
 		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-		NotesList.this.setListAdapter(nl);
+		lv.setAdapter(nl);
 		db.close();
 	}
 
@@ -256,7 +254,7 @@ public class NotesList extends ListActivity {
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
 		nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-		NotesList.this.setListAdapter(nl);
+		lv.setAdapter(nl);
 		db.close();
 	}
 
@@ -479,7 +477,7 @@ public class NoteListAdapter extends CursorAdapter{
 
 										db.setDeleted(d.id);
 										nl = new NoteListAdapter(NotesList.this,  db.getAllUndeletedDocs());
-										NotesList.this.getListView().setAdapter(nl);
+										NotesList.this.lv.setAdapter(nl);
 										db.close();
 										startService(new Intent(
 												NotesList.this,

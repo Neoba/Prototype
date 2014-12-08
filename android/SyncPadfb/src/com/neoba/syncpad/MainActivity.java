@@ -52,7 +52,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	int flag;
 	GoogleCloudMessaging gcm;
 	String regid = "Cannot connect to push service..";
