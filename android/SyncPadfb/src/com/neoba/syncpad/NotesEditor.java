@@ -4,6 +4,8 @@ import hu.scythe.droidwriter.DroidWriterEditText;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,24 +34,33 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class NotesEditor extends ActionBarActivity {
@@ -77,9 +88,9 @@ public class NotesEditor extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notes_editor);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.tbEdit);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
+		if (toolbar != null) {
+			setSupportActionBar(toolbar);
+		}
 		colorcode = "#FFFFFF";
 
 		c = (CheckBox) findViewById(R.id.checkBox1);
@@ -761,138 +772,56 @@ public class NotesEditor extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.editor, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
-
 
 		int id = item.getItemId();
 		if (id == R.id.action_color) {
 			Context mContext = getApplicationContext();
-			Dialog dialog = new Dialog(this);
-			dialog.setTitle("Color Picker");
-
-			dialog.setCancelable(true);
-			// initilizeMap();
-			dialog.setContentView(R.layout.custom_dialog);
-
-			dialog.show();
-			Button cb1 = (Button) dialog.findViewById(R.id.cb1);
-			cb1.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					// //Toast.akeText(getApplicationContext(),
-					// "#FFFFFF",Toast.LENGTH_SHORT).show();
-					colorcode = "#FFFFFF";
-					changer();
-
-				}
-			});
-			Button cb2 = (Button) dialog.findViewById(R.id.cb2);
-			cb2.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					colorcode = "#3498db";
-					changer();
-
-				}
-			});
-
-			Button cb3 = (Button) dialog.findViewById(R.id.cb3);
-			cb3.setOnClickListener(new OnClickListener() {
+			final String[] colors = new String[] {"Turquoise~#1abc9c",
+					"Green sea~#16a085",
+					"Emerald~#2ecc71",
+					"Nephritis~#27ae60",
+					"Peter river~#3498db",
+					"Belize hole~#2980b9",
+					"Amethyst~#9b59b6",
+					"Wisteria~#8e44ad",
+					"Wet asphalt~#34495e",
+					"Midnight blue~#2c3e50",
+					"Sun flower~#f1c40f",
+					"Orange~#f39c12",
+					"Carrot~#e67e22",
+					"Pumpkin~#d35400",
+					"Alizarin~#e74c3c",
+					"Pomegranate~#c0392b",
+					"Clouds~#ecf0f1",
+					"Silver~#bdc3c7",
+					"Concrete~#95a5a6",
+					"Asbestos~#7f8c8d" };
+			Dialog dialog2 = new Dialog(this);
+			dialog2.setContentView(R.layout.color_picker_dialog);
+			ListView lv = (ListView) dialog2.findViewById(R.id.lvColorPicker);
+			ColorListAdapter adapter = new ColorListAdapter(this,
+					Arrays.asList(colors));
+			lv.setAdapter(adapter);
+			lv.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
-				public void onClick(View v) {
-
-					colorcode = "#9b59b6";
+				public void onItemClick(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					colorcode=colors[arg2].split("~")[1];
 					changer();
-
 				}
 			});
-
-			Button cb4 = (Button) dialog.findViewById(R.id.cb4);
-			cb4.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#f1c40f";
-					changer();
-
-				}
-			});
-
-			Button cb5 = (Button) dialog.findViewById(R.id.cb5);
-			cb5.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#e67e22";
-					changer();
-
-				}
-			});
-			Button cb6 = (Button) dialog.findViewById(R.id.cb6);
-			cb6.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#e74c3c";
-					changer();
-
-				}
-			});
-
-			Button cb7 = (Button) dialog.findViewById(R.id.cb7);
-			cb7.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#95a5a6";
-					changer();
-
-				}
-			});
-
-			Button cb8 = (Button) dialog.findViewById(R.id.cb8);
-			cb8.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#7f8c8d";
-					changer();
-
-				}
-			});
-
-			Button cb9 = (Button) dialog.findViewById(R.id.cb9);
-			cb9.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-
-					colorcode = "#f39c12";
-					changer();
-
-				}
-			});
+			dialog2.setCancelable(true);
+			dialog2.show();
 			
 
 		}
 
-
 		return super.onOptionsItemSelected(item);
 	}
-
-	
 
 	public void onBackPressed() {
 		Spannable strin;
@@ -1137,5 +1066,4 @@ public class NotesEditor extends ActionBarActivity {
 				+ frist.length(), second);
 		return b.toString();
 	}
-
 }
