@@ -26,6 +26,7 @@ public class Constants {
     public static final byte POKE=                             0xA;
     public static final byte DOCUMENT_DELETE=                  0xB;
     public static final byte USER_UNFOLLOW=                    0xC;
+    public static final byte DICTIONARY_REQ=                   0xD;
     public static final byte FACEBOOK_USER_CREATE=             (byte)0x0F5;
     public static final byte FACEBOOK_USER_LOGIN=              (byte)0x0F6;
     

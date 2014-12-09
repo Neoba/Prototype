@@ -17,11 +17,14 @@ import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -32,6 +35,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -41,6 +46,8 @@ import android.widget.Toast;
 import com.facebook.*;
 import com.facebook.model.GraphObject;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Picasso.LoadedFrom;
+import com.squareup.picasso.Target;
 public class UserActivity extends ActionBarActivity {
 
 	TextView name;
@@ -50,14 +57,22 @@ public class UserActivity extends ActionBarActivity {
 	ProgressBar pb;
 	FragmentPagerAdapter adapterViewPager;
 	ViewPager vpPager ;
+	Toolbar toolbar;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user);
-		Toolbar toolbar = (Toolbar) findViewById(R.id.tbUser);
+		toolbar = (Toolbar) findViewById(R.id.tbUser);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
+        if(Build.VERSION.SDK_INT<Build.VERSION_CODES.KITKAT){
+        	MarginLayoutParams mp=(MarginLayoutParams)toolbar.getLayoutParams();
+        	mp.topMargin=0;
+        	toolbar.setLayoutParams(mp);
+        }
+        getSupportActionBar().setTitle("");
+//        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 		vpPager = (ViewPager) findViewById(R.id.vpPager);
 //        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),new String[] {},new String[] {},new String[] {});
 //        vpPager.setAdapter(adapterViewPager);
@@ -135,7 +150,7 @@ public class UserActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 	public class UserFetch extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -227,10 +242,14 @@ public class UserActivity extends ActionBarActivity {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						Picasso.with(UserActivity.this).load("https://graph.facebook.com/v2.1/me/picture?type=square&access_token="+access_token).transform(new RoundedTransformation(2000,0))
+						Picasso.with(UserActivity.this).load("https://graph.facebook.com/v2.1/me/picture?type=large&access_token="+access_token).resize(100,100).transform(new RoundedTransformation(200,0))
 								.into(image);
+
 						try {
+	
 							Picasso.with(UserActivity.this).load(userjson.getJSONObject("cover").getString("source")).fit().centerCrop().into(cover);
+
+
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -393,6 +412,6 @@ public class UserActivity extends ActionBarActivity {
 
 			
 		}
-
+		
 
 }

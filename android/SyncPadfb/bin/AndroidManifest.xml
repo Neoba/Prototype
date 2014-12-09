@@ -104,7 +104,8 @@
         </activity>
         <activity
             android:name=".UserActivity"
-            android:label="@string/title_activity_user" >
+            android:label="@string/title_activity_user"
+            android:theme="@style/Theme.SyncPadImageHeaderLollipop" >
         </activity>
         <activity
             android:name=".SettingsActivity"

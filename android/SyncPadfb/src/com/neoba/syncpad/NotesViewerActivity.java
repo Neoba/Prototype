@@ -7,6 +7,7 @@ import net.dongliu.vcdiff.exception.VcdiffDecodeException;
 
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.os.Build;
@@ -23,6 +25,7 @@ import android.preference.PreferenceManager;
 
 public class NotesViewerActivity extends Activity {
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,7 +51,9 @@ public class NotesViewerActivity extends Activity {
 		if (!note.equals("")) {
 			((RelativeLayout) findViewById(R.id.rlNoteViewer))
 					.setBackgroundColor(Color.parseColor(note.split("\n")[0]));
-
+			Window s=getWindow();
+			if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP)
+				s.setStatusBarColor(Color.parseColor(note.split("\n")[0]));
 			tv.setText(new NeoHTML(note, NotesViewerActivity.this).getNote()
 					.getcontent());
 		} else {

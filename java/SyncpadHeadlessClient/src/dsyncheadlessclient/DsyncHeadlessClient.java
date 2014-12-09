@@ -352,6 +352,28 @@ public class DsyncHeadlessClient {
                     }
                     if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;
+                case "dict":
+                    buff = ByteBuffer.allocate(6 + 16+16 + 4);
+                    buff.put(version);
+                    buff.put((byte) 0x0D);
+                    buff.putInt(cmd.split(" ")[1].length());
+                    syncpadlib.putUUID(buff, cookie);
+                    syncpadlib.putUUID(buff, UUID.fromString(cmd.split(" ")[1]));
+                    buff.putInt(Integer.parseInt(cmd.split(" ")[2]));
+                    in = syncpadlib.sendPost(buff);
+                    buff.clear();
+                    byte[] aarray=null;
+                    if (in.getInt(2) == 0xFFFF) {
+                        int stitle = in.getInt(6);
+                        aarray = new byte[stitle];
+
+                        for (int j = 0; j < stitle; j++) {
+                            aarray[j] = in.get(10 + j);
+                        }
+                    }
+                    System.out.println(Charset.forName("UTF-8").decode(ByteBuffer.wrap(aarray)).toString());
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+                    break;
                 case "follow":
                     buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
                     buff.put(version);

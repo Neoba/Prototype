@@ -30,7 +30,7 @@ import org.codehaus.jettison.json.JSONObject;
  */
 public class DocumentEditMessage implements Message {
 
-    Boolean haspermission = false, documents_are_synced = false;
+    Boolean haspermission = false,unknownerror=false, documents_are_synced = false;
     Boolean creatoredited=false;
     private boolean push_success = false;
     Logger logger=Logger.getLogger(DocumentEditMessage.class);
@@ -38,7 +38,9 @@ public class DocumentEditMessage implements Message {
     int age;
     
     public DocumentEditMessage(UUID doc, byte[] diff, int version, UUID sessid) throws JSONException, IOException, VcdiffDecodeException, VcdiffEncodeException, Exception {
-        JSONObject json = new JSONObject((String) Dsyncserver.cclient.get(doc.toString()));
+        try{
+            JSONObject json = new JSONObject((String) Dsyncserver.cclient.get(doc.toString()));
+        
         byte[] oldiff = Arrays.copyOf(diff, diff.length);
         JSONArray diffarray = null;
         JSONArray editors = json.getJSONArray("permission_edit");
@@ -139,6 +141,10 @@ public class DocumentEditMessage implements Message {
                 Dsyncserver.cclient.replace(doc.toString(), json.toString());
             }
         }
+        } catch (Exception e){
+            logger.error(sessid+" :An error flew by: "+e);
+            unknownerror=true;
+        }
     }
 
     @Override
@@ -146,7 +152,8 @@ public class DocumentEditMessage implements Message {
         ByteBuf reply = documents_are_synced?buffer(2 + 4):buffer(2 + 4+4+4+dict.length());
         reply.writeByte(Constants.VERSION);
         reply.writeByte(Constants.DOCUMENT_EDIT);
-
+        if(unknownerror)
+            reply.writeInt(Constants.W_ERR_UNKNOWN);
          if (!documents_are_synced) {
             reply.writeInt(Constants.W_ERR_DOCUMENT_OUT_OF_SYNC);
             reply.writeInt(age);

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@color/flatui_midnight_blue">
 
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,10 +15,16 @@
         android:background="?attr/colorPrimary" 
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <ListView
-        android:id="@+id/lvNotesList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+<GridView 
+    android:id="@+id/lvNotesList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnWidth="220dp"
+    android:numColumns="auto_fit"
+    android:verticalSpacing="0dp"
+    android:horizontalSpacing="0dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+/>
 
 </LinearLayout>

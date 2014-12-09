@@ -4,13 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.neoba.syncpad.UserActivity$PlaceholderFragment" >
-    <android.support.v7.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/tbUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary" 
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <FrameLayout
         android:id="@+id/frameLayout1"
@@ -18,12 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tbUser"
-        android:background="#34495e" >
+        android:background="#34495e"   >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="158dp" >
+            android:layout_height="258dp" >
 
             <ImageView
                 android:id="@+id/ivCover"
@@ -105,6 +97,18 @@
                 android:paddingBottom="4dp"
                 android:paddingTop="4dp" />
         </android.support.v4.view.ViewPager>
+
     </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tbUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:layout_marginTop="30dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+         >
+    </android.support.v7.widget.Toolbar>
 
 </RelativeLayout>

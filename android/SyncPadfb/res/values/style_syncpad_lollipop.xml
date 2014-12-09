@@ -5,7 +5,23 @@
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/flatui_wet_asphalt</item>
         <item name="colorPrimaryDark">@color/flatui_midnight_blue</item>
+         <item name="colorAccent">@color/pink_a200</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
     </style>
+    
+    
+        <style name="Theme.SyncPadImageHeaderLollipop" parent="AppThemeImageHeader.Base"/>
+ 
+    <style name="AppThemeImageHeader.Base" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/flatui_wet_asphalt</item>
+        <item name="colorPrimaryDark">@color/flatui_midnight_blue</item>
+         <item name="colorAccent">@color/pink_a200</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+    </style>
+    
+ 
 </resources>

@@ -14,17 +14,10 @@
         <group>
             <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/GoogleCloudMessager.java</file>
             <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/UserUnFollowMessage.java</file>
+            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/GetDigestMessage.java</file>
             <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/UserFollowMessage.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/PokeMessage.java</file>
             <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/CouchManager.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/MessageInterpreter.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/models/FacebookUser.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/DsyncserverHandler.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/Constants.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/UserLogoutMessage.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/DocumentDeleteMessage.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/GrantPermissionMessage.java</file>
-            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/DocumentEditMessage.java</file>
+            <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/messages/PokeMessage.java</file>
             <file>file:/home/atul/Lab/clones/Prototype/java/SyncpadServer/src/com/neoba/Dsyncserver.java</file>
         </group>
     </open-files>

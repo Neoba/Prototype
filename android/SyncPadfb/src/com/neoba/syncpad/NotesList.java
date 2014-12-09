@@ -28,10 +28,9 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.ActionBarActivity;
@@ -39,6 +38,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +47,9 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -64,7 +66,7 @@ public class NotesList extends ActionBarActivity {
 	BroadcastReceiver receiver;
 	private GCMReceiver receiver2;
 	NoteListAdapter nl;
-	ListView lv;
+	GridView lv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -73,7 +75,21 @@ public class NotesList extends ActionBarActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
-		lv=(ListView)findViewById(R.id.lvNotesList);
+        FloatingActionButton fabButton = new FloatingActionButton.Builder(this)
+        .withDrawable(getResources().getDrawable(R.drawable.ic_add_white_24dp))
+        .withButtonColor(getResources().getColor(R.color.pink_a200))
+        .withGravity(Gravity.BOTTOM | Gravity.RIGHT)
+        .withMargins(0, 0, 16, 16)
+        .create();
+        fabButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				createNote();
+				
+			}
+		});
+		lv=(GridView)findViewById(R.id.lvNotesList);
 		IntentFilter filter = new IntentFilter(GcmMessageHandler.ACTIONNOTELISTUPDATE);
 		filter.addCategory(Intent.CATEGORY_DEFAULT);
 		receiver2 = new GCMReceiver();
@@ -90,8 +106,8 @@ public class NotesList extends ActionBarActivity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		lv.setDivider(null);
-		lv.setDividerHeight(0);
+//		lv.setDivider(null);
+//		lv.setDividerHeight(0);
 
 		DBManager db = new DBManager(NotesList.this);
 		db.open();
@@ -187,30 +203,6 @@ public class NotesList extends ActionBarActivity {
 			builder.setMessage("Are you sure?")
 					.setPositiveButton("Yes", dialogClickListener)
 					.setNegativeButton("No", dialogClickListener).show();
-		}
-		if (id == R.id.action_settings) {
-			UUID newdoc = UUID.randomUUID();
-			DBManager db = new DBManager(NotesList.this);
-			db.open();
-			try {
-				db.insertDoc(new document(newdoc.toString(), "",
-						new VcdiffEncoder("", "").encode(), -1, "", (byte) 2,
-						true, Constants.UNSYNCED_CREATE));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (VcdiffEncodeException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			db.close();
-
-			startService(new Intent(this, OfflineSyncService.class));
-
-			Intent i = new Intent(NotesList.this, NotesEditor.class);
-			i.putExtra("uuid", newdoc.toString() + "N");
-			startActivity(i);
-			return true;
 		}
 		if (id == R.id.action_user) {
 			Intent i = new Intent(NotesList.this, UserActivity.class);
@@ -456,18 +448,12 @@ public class NoteListAdapter extends CursorAdapter{
 
 			@Override
 			public void onClick(View v) {
+				
 				Intent i = new Intent(NotesList.this,
 						NotesViewerActivity.class);
 				i.putExtra("uuid", d.id);
 				i.putExtra("size", textView.getTextSize());
-				ActivityOptionsCompat options =
-						ActivityOptionsCompat.makeSceneTransitionAnimation(NotesList.this,
-						    v,   // The view which starts the transition
-						    "TRANS"    // The transitionName of the view we’re transitioning to
-						    );
-						ActivityCompat.startActivity(NotesList.this, i, options.toBundle());
-				
-
+				startActivity(i);
 
 			}
 		});
@@ -562,5 +548,29 @@ public class NoteListAdapter extends CursorAdapter{
 		}
 
 	}
+	
+}
+void createNote(){
+	UUID newdoc = UUID.randomUUID();
+	DBManager db = new DBManager(NotesList.this);
+	db.open();
+	try {
+		db.insertDoc(new document(newdoc.toString(), "",
+				new VcdiffEncoder("", "").encode(), -1, "", (byte) 2,
+				true, Constants.UNSYNCED_CREATE));
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (VcdiffEncodeException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	db.close();
+
+	startService(new Intent(NotesList.this, OfflineSyncService.class));
+
+	Intent i = new Intent(NotesList.this, NotesEditor.class);
+	i.putExtra("uuid", newdoc.toString() + "N");
+	startActivity(i);
 }
 }
