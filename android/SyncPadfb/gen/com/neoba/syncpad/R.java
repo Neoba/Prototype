@@ -1080,6 +1080,16 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int middleBarArrowSize=0x7f01009e;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int minTextSize=0x7f0100db;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1192,6 +1202,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int popupWindowStyle=0x7f010038;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int precision=0x7f0100dc;
         /**  Whether space should be reserved in layout when an icon is missing. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1365,6 +1383,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int show_title_bar=0x7f0100cb;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int sizeToFit=0x7f0100dd;
         /**  Whether bars should rotate or not during transition 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -2886,25 +2912,24 @@ containing a value of this type.
         public static final int action_bar_title=0x7f060031;
         public static final int action_color=0x7f0600af;
         public static final int action_context_bar=0x7f060045;
-        public static final int action_debug=0x7f0600b2;
-        public static final int action_debugf=0x7f0600b5;
-        public static final int action_logout=0x7f0600b3;
+        public static final int action_debug=0x7f0600b1;
+        public static final int action_debugf=0x7f0600b4;
+        public static final int action_logout=0x7f0600b2;
         public static final int action_menu_divider=0x7f06001a;
         public static final int action_menu_presenter=0x7f06001b;
         public static final int action_mode_bar=0x7f060041;
         public static final int action_mode_bar_stub=0x7f060040;
         public static final int action_mode_close_button=0x7f060033;
-        public static final int action_ok=0x7f0600b0;
-        public static final int action_settings=0x7f0600b4;
-        public static final int action_sync_share=0x7f0600b6;
-        public static final int action_user=0x7f0600b1;
+        public static final int action_settings=0x7f0600b3;
+        public static final int action_sync_share=0x7f0600b5;
+        public static final int action_user=0x7f0600b0;
         public static final int activity_chooser_view_content=0x7f060034;
         public static final int always=0x7f06000d;
         public static final int bNotesListLeft=0x7f0600a6;
         public static final int bNotesListRight=0x7f0600a7;
-        public static final int bSLAdd=0x7f060069;
+        public static final int bSLAdd=0x7f06006a;
         public static final int bSLERemove=0x7f0600aa;
-        public static final int bSLShare=0x7f06006b;
+        public static final int bSLShare=0x7f060067;
         public static final int bSignup=0x7f06006c;
         public static final int beginning=0x7f060012;
         public static final int boldbutton=0x7f06005b;
@@ -2984,13 +3009,13 @@ containing a value of this type.
         public static final int large=0x7f060030;
         public static final int layout_root=0x7f06009e;
         public static final int linearLayout1=0x7f060063;
-        public static final int linearLayout2=0x7f060067;
+        public static final int linearLayout2=0x7f060068;
         public static final int linearLayout31=0x7f0600a5;
         public static final int listMode=0x7f060002;
         public static final int list_item=0x7f060038;
         public static final int lvColorPicker=0x7f060077;
         public static final int lvNotesList=0x7f06005f;
-        public static final int lvShares=0x7f06006a;
+        public static final int lvShares=0x7f06006b;
         public static final int lvUsersFollowing=0x7f06006e;
         public static final int main1=0x7f060054;
         public static final int match_parent=0x7f060028;
@@ -3035,7 +3060,7 @@ containing a value of this type.
         public static final int showHome=0x7f060006;
         public static final int showTitle=0x7f060008;
         public static final int small=0x7f06002f;
-        public static final int spFollower=0x7f060068;
+        public static final int spFollower=0x7f060069;
         public static final int split_action_bar=0x7f060019;
         public static final int squareLayout1=0x7f0600a3;
         public static final int strict_sandbox=0x7f060025;
@@ -3389,10 +3414,10 @@ containing a value of this type.
         public static final int wallet_buy_button_place_holder=0x7f0b0032;
     }
     public static final class style {
-        public static final int ActionBar_Solid_Syncpad=0x7f0c00fa;
-        public static final int ActionBar_Transparent_Syncpad=0x7f0c00fb;
-        public static final int ActionBarTabStyle_Syncpad=0x7f0c00fe;
-        public static final int ActionButton_CloseMode_Syncpad=0x7f0c0101;
+        public static final int ActionBar_Solid_Syncpad=0x7f0c00fb;
+        public static final int ActionBar_Transparent_Syncpad=0x7f0c00fc;
+        public static final int ActionBarTabStyle_Syncpad=0x7f0c00ff;
+        public static final int ActionButton_CloseMode_Syncpad=0x7f0c0102;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -3414,11 +3439,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0c00f7;
+        public static final int AppBaseTheme=0x7f0c00f8;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0c00f8;
+        public static final int AppTheme=0x7f0c00f9;
         public static final int AppTheme_Base=0x7f0c00f4;
         public static final int AppThemeImageHeader_Base=0x7f0c00f6;
         public static final int Base_TextAppearance_AppCompat=0x7f0c0098;
@@ -3565,14 +3590,14 @@ containing a value of this type.
     
          */
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0c0090;
-        public static final int DropDownListView_Syncpad=0x7f0c00fd;
-        public static final int DropDownNav_Syncpad=0x7f0c00ff;
+        public static final int DropDownListView_Syncpad=0x7f0c00fe;
+        public static final int DropDownNav_Syncpad=0x7f0c0100;
         public static final int Platform_AppCompat=0x7f0c00c9;
         public static final int Platform_AppCompat_Dialog=0x7f0c00cb;
         public static final int Platform_AppCompat_Light=0x7f0c00ca;
         public static final int Platform_AppCompat_Light_Dialog=0x7f0c00cc;
-        public static final int PopupMenu_Syncpad=0x7f0c00fc;
-        public static final int ProgressBar_Syncpad=0x7f0c0100;
+        public static final int PopupMenu_Syncpad=0x7f0c00fd;
+        public static final int ProgressBar_Syncpad=0x7f0c0101;
         public static final int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem=0x7f0c00b4;
         public static final int RtlOverlay_Widget_AppCompat_ActionButton_CloseMode=0x7f0c00b5;
         public static final int RtlOverlay_Widget_AppCompat_ActionButton_Overflow=0x7f0c00b6;
@@ -3658,12 +3683,13 @@ containing a value of this type.
         public static final int Theme_AppCompat_Light_NoActionBar=0x7f0c00be;
         public static final int Theme_AppCompat_NoActionBar=0x7f0c00bd;
         public static final int Theme_IAPTheme=0x7f0c00eb;
+        public static final int Theme_SyncPadDialog=0x7f0c00f7;
         public static final int Theme_SyncPadImageHeaderLollipop=0x7f0c00f5;
         public static final int Theme_SyncPadLollipop=0x7f0c00f3;
-        public static final int Theme_Syncpad=0x7f0c00f9;
+        public static final int Theme_Syncpad=0x7f0c00fa;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_Syncpad_Widget=0x7f0c0102;
+        public static final int Theme_Syncpad_Widget=0x7f0c0103;
         public static final int ThemeOverlay_AppCompat=0x7f0c00c4;
         /**  Theme overlay that replaces the normal control color, which by default is the same as the
          secondary text color, with the primary text color. 
@@ -4532,6 +4558,67 @@ containing a value of this type.
           @attr name com.neoba.syncpad:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
+        /** Attributes that can be used with a AutofitTextView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AutofitTextView_minTextSize com.neoba.syncpad:minTextSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutofitTextView_precision com.neoba.syncpad:precision}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutofitTextView_sizeToFit com.neoba.syncpad:sizeToFit}</code></td><td></td></tr>
+           </table>
+           @see #AutofitTextView_minTextSize
+           @see #AutofitTextView_precision
+           @see #AutofitTextView_sizeToFit
+         */
+        public static final int[] AutofitTextView = {
+            0x7f0100db, 0x7f0100dc, 0x7f0100dd
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.neoba.syncpad.R.attr#minTextSize}
+          attribute's value can be found in the {@link #AutofitTextView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.neoba.syncpad:minTextSize
+        */
+        public static final int AutofitTextView_minTextSize = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.neoba.syncpad.R.attr#precision}
+          attribute's value can be found in the {@link #AutofitTextView} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.neoba.syncpad:precision
+        */
+        public static final int AutofitTextView_precision = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.neoba.syncpad.R.attr#sizeToFit}
+          attribute's value can be found in the {@link #AutofitTextView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.neoba.syncpad:sizeToFit
+        */
+        public static final int AutofitTextView_sizeToFit = 2;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>

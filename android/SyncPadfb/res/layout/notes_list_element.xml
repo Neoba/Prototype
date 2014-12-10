@@ -9,8 +9,11 @@
         android:id="@+id/squareLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp" >
+      
         <com.neoba.syncpad.AutoResizeTextView
             android:id="@+id/output_autofit"
             android:layout_width="match_parent"
@@ -21,11 +24,7 @@
             android:ellipsize="end"
             android:focusable="true"
             android:maxLines="15"
-            android:paddingBottom="0dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:textSize="120sp" 
+            android:textSize="100sp" 
             android:transitionName="TRANS"/>
 
                 <LinearLayout

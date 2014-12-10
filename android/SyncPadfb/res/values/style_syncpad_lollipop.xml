@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.SyncPadLollipop" parent="AppTheme.Base"/>
- 
+
+    <style name="Theme.SyncPadLollipop" parent="AppTheme.Base" />
+
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/flatui_wet_asphalt</item>
         <item name="colorPrimaryDark">@color/flatui_midnight_blue</item>
-         <item name="colorAccent">@color/pink_a200</item>
+        <item name="colorAccent">@color/pink_a200</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-
     </style>
-    
-    
-        <style name="Theme.SyncPadImageHeaderLollipop" parent="AppThemeImageHeader.Base"/>
- 
+
+    <style name="Theme.SyncPadImageHeaderLollipop" parent="AppThemeImageHeader.Base" />
+
     <style name="AppThemeImageHeader.Base" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/flatui_wet_asphalt</item>
         <item name="colorPrimaryDark">@color/flatui_midnight_blue</item>
-         <item name="colorAccent">@color/pink_a200</item>
+        <item name="colorAccent">@color/pink_a200</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-
     </style>
-    
- 
+
+    <style name="Theme.SyncPadDialog" parent="AppTheme.Base">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>

@@ -16,6 +16,7 @@ import net.dongliu.vcdiff.VcdiffEncoder;
 import net.dongliu.vcdiff.exception.VcdiffEncodeException;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -273,18 +274,10 @@ public class NotesList extends ActionBarActivity {
 					NotesList.this.getAssets(), "fonts/checkfont.ttf");
 			ss.setSpan(new CustomTypefaceSpan("", font2), 0, ss.length(),
 					Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-			// final SpannableStringBuilder ss=new SpannableStringBuilder("a");
-			// Typeface font =
-			// Typeface.createFromAsset(NotesList.this.getAssets(),
-			// "fonts/tickfont.ttf");
-			// ss.setSpan (new CustomTypefaceSpan("", font),0,
-			// 1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-			// ss.append(s2);
 			final AutoResizeTextView aa = ((AutoResizeTextView) cv
 					.findViewById(R.id.output_autofit));
 			runOnUiThread(new Runnable() {
 				public void run() {
-					aa.setText("");
 					aa.setText(ss);
 					ProgressBar pp = (ProgressBar) cv
 							.findViewById(R.id.pnNoteLoader);
@@ -380,6 +373,9 @@ public class NoteListAdapter extends CursorAdapter{
 		} else
 			d.synced = 0;
 		shares=db.getShares(d.id);
+		
+			
+		
 		TextView shareinfo=(TextView)rowView.findViewById(R.id.tvSharedUsers);
 		Log.d("SHARES",shares+"");
 		if(d.owns && shares.size()==0)
@@ -420,9 +416,12 @@ public class NoteListAdapter extends CursorAdapter{
 
 			@Override
 			public void onClick(View arg0) {
+
+				
 				Intent i = new Intent(NotesList.this,ShareListActivity.class);
 				i.putExtra("docid", d.id);
 				startActivity(i);
+
 			}
 		});
 

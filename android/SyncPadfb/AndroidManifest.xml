@@ -121,7 +121,8 @@
         </activity>
         <activity
             android:name=".ShareListActivity"
-            android:label="@string/title_activity_share_list" >
+            android:label="@string/title_activity_share_list" 
+            android:theme="@style/Theme.SyncPadDialog">
         </activity>
         <activity
             android:name=".List2"

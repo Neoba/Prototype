@@ -800,6 +800,7 @@ public class NotesEditor extends ActionBarActivity {
 					"Concrete~#95a5a6",
 					"Asbestos~#7f8c8d" };
 			Dialog dialog2 = new Dialog(this);
+			dialog2.setTitle("Color Picker");
 			dialog2.setContentView(R.layout.color_picker_dialog);
 			ListView lv = (ListView) dialog2.findViewById(R.id.lvColorPicker);
 			ColorListAdapter adapter = new ColorListAdapter(this,
@@ -1057,7 +1058,7 @@ public class NotesEditor extends ActionBarActivity {
 		}
 		((LinearLayout) findViewById(R.id.l1)).setBackgroundColor(Color
 				.parseColor(colorcode));
-
+		
 	}
 
 	public String replceLast(String yourString, String frist, String second) {

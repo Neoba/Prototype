@@ -27,7 +27,7 @@ public class OfflineSyncService extends Service {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 
-		Log.d("Serv", "Crea");
+		//Log.d("Serv", "Crea");
 		broadcaster = LocalBroadcastManager.getInstance(this);
 		super.onCreate();
 	}
@@ -36,7 +36,7 @@ public class OfflineSyncService extends Service {
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		Toast.makeText(getApplicationContext(), "Service Destroy", 1).show();
-		Log.d("Serv", "Dest");
+		//Log.d("Serv", "Dest");
 		super.onDestroy();
 	}
 
@@ -44,7 +44,7 @@ public class OfflineSyncService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		
-		Log.d("Serv", "ok");
+		//Log.d("Serv", "ok");
 		
 		new Ping().execute(0);
 		return super.onStartCommand(intent, flags, startId);
@@ -61,7 +61,7 @@ public class OfflineSyncService extends Service {
 				if(db.isThereUnsyncedDocs()){
 				UUID cookie=UUID.fromString(PreferenceManager.getDefaultSharedPreferences(OfflineSyncService.this).getString("cookie", "default"));
 				ByteMessenger.Ping();
-				Log.d("ok", "PONG");
+				//Log.d("ok", "PONG");
 				Cursor cursor=db.getAllUnsyncedCreateDocs();
 			    cursor.moveToFirst();
 			    
@@ -102,8 +102,8 @@ public class OfflineSyncService extends Service {
 				db.close();
 				}
 			} catch (Exception e) {
-				Log.d("Serv","Service error:"+e.getMessage());
-				e.printStackTrace();
+				//Log.d("Serv","Service error:"+e.getMessage());
+				//e.printStackTrace();
 			}
 
 			return null;

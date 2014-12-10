@@ -37,7 +37,7 @@ public class Postman {
 	        wr = new DataOutputStream(con.getOutputStream());
 	        }
 	        catch(Exception e){
-	        	Log.d("HTTP err",""+e);
+	        	//Log.d("HTTP err",""+e);
 	        	return null;
 	        }
 	        byte[] p=a.array();
