@@ -99,8 +99,17 @@ public class SuggestedUsers extends Activity {
 			this.usernames = usernames;
 			this.urls = urls;
 		}
-
+		@Override
 		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			return getCustomView(position, convertView, parent);
+		}
+		@Override
+		public View getDropDownView(final int position, View convertView,
+				ViewGroup parent) {
+			return getCustomView(position, convertView, parent);
+		}
+		public View getCustomView(final int position, View convertView,
 				ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

@@ -1,57 +1,62 @@
-
-
-     <RelativeLayout
-              xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:orientation="vertical" >
-         <Button
-             android:id="@+id/bSLShare"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentBottom="true"
-             android:layout_centerHorizontal="true"
-             android:text="Share" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-         <LinearLayout
-             android:id="@+id/linearLayout2"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignParentLeft="false"
-             android:layout_alignParentRight="false"
-             android:weightSum="10" >
+    <Button
+        android:id="@+id/bSLShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Share" />
 
-             <Spinner
-                 android:id="@+id/spFollower"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="9" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:weightSum="10" >
 
-             <Button
-                 android:id="@+id/bSLAdd"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="1"
-                 android:text="Add" />
+        <Spinner
+            android:id="@+id/spFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="9" />
 
-         </LinearLayout>
+        <Button
+            android:id="@+id/bSLAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add" />
+    </LinearLayout>
 
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_above="@+id/bSLShare"
-             android:layout_alignParentLeft="true"
-             android:layout_below="@+id/linearLayout2"
-             android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bSLShare"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout2"
+        android:orientation="vertical" >
 
-             <ListView
-                 android:id="@+id/lvShares"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_alignParentLeft="true"
-                 android:layout_alignParentTop="true" >
-             </ListView>
-         </LinearLayout>
+        <ListView
+            android:id="@+id/lvShares"
+            android:layout_width="match_parent"
+            android:layout_height="645dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+        </ListView>
+    </LinearLayout>
 
-     </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/pbShares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -4,32 +4,60 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_weight="10">
+        android:layout_height="wrap_content"
+        android:padding="15dp" >
 
         <Button
             android:id="@+id/bSLERemove"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
             android:text="X" />
 
-        <TextView
-            android:id="@+id/tvsleUname"
+        <ImageView
+            android:id="@+id/ivslePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_share" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:layout_weight="5" />
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
-        <Switch
+            <TextView
+                android:id="@+id/tvsleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="asdasd"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvsleUname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="asda"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.SwitchCompat
             android:id="@+id/swRW"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"
+            android:paddingRight="10dp"
             android:textOff="read"
             android:textOn="write" />
 

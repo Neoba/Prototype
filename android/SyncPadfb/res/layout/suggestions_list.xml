@@ -24,7 +24,7 @@
         android:singleLine="true"
         android:text="Description"
         android:textColor="#777777"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="italic" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
         android:text="Example application"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/ivFollow"
