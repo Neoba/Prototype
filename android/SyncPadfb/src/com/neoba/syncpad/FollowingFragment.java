@@ -1,15 +1,24 @@
 package com.neoba.syncpad;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
+import com.neoba.syncpad.NotesList.NoteListAdapter;
 import com.neoba.syncpad.SuggestedUsers.Follow;
 import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +26,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.webkit.WebView.FindListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -60,12 +71,96 @@ public class FollowingFragment extends Fragment {
         lvFollowings=(ListView)view.findViewById(R.id.lvUsersFollowing);
         FollowingAdapter fa=new FollowingAdapter(view.getContext(), FollowingFragment.names, FollowingFragment.usernames,  FollowingFragment.urls);
         lvFollowings.setAdapter(fa);
-        return view;
-        
-        
+
+        lvFollowings.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View view,
+					final int arg2, long arg3) {
+				final AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+				b.setIcon(android.R.drawable.ic_dialog_alert);
+				b.setMessage("Unfollow User?");
+				b.setPositiveButton("OK",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+								DBManager db = new DBManager(getActivity());
+								db.open();
+								new Unfollow().execute(db.getFollowingUsernameFromRowid(arg2+1).split("~")[0]);
+								db.close();
+								
+							}
+						});
+				b.setNegativeButton("Cancel",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+
+							}
+						});
+
+				b.show();
+
+				return false;
+			}
+        }); 
+        return view;  
         
     }
-	
+    public class Unfollow extends AsyncTask<String, Void, Void>{
+		private ProgressDialog dialog;
+
+		@Override
+		protected void onPreExecute() {
+			this.dialog = new ProgressDialog(getActivity());
+			this.dialog.setMessage("Unfollowing..");
+			this.dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			if (dialog.isShowing()) {
+				dialog.dismiss();
+				dialog = null;
+			}
+		}
+		@Override
+		protected Void doInBackground(String... params) {
+			ArrayList<UUID> docs = null;
+			try {
+				docs=ByteMessenger.Unfollow(getCookie(), params[0]);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			DBManager db = new DBManager(getActivity());
+			db.open();
+			if(docs!=null){
+				for(UUID s:docs){
+					db.deleteDoc(s.toString());
+				}
+				
+				db.deleteFollowing(params[0]);
+					
+			}
+			db.close();
+			return null;
+		}
+		
+	}
+    private UUID getCookie() {
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(getActivity());
+		String name = sharedPreferences.getString("cookie", null);
+		Log.d("sess", name == null ? "null" : name);
+		if (name != null)
+			return UUID.fromString(name);
+		else
+			return null;
+
+	}
     public class FollowingAdapter extends ArrayAdapter<String> {
 		private final Context context;
 		private final String[] values;
@@ -94,6 +189,7 @@ public class FollowingFragment extends Fragment {
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 			final ImageView followb = (ImageView) rowView
 					.findViewById(R.id.ivFollow);
+			followb.setVisibility(View.INVISIBLE);
 
 //			if (followed.get(usernames[position]))
 //				followb.setImageResource(R.drawable.ic_followok);
@@ -119,7 +215,7 @@ public class FollowingFragment extends Fragment {
 			textView2.setText("@" + usernames[position]);
 			
 			Picasso.with(context).load(urls[position])
-					.transform(new RoundedTransformation(60, 0))
+					.resize(70,70).transform(new RoundedTransformation(60, 0))
 					.into(imageView);
 			return rowView;
 		}

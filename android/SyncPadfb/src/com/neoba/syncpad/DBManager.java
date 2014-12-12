@@ -109,6 +109,14 @@ public class DBManager {
 				c.getInt(6) == 1 ? true : false, c.getInt(7));
 		return d;
 	}
+	public Cursor getDocumentForViewer(String docid) {
+		String sql = "SELECT rowid _id,* from docs where id=?";
+		Cursor c = db.rawQuery(sql, new String[] { docid });
+		c.moveToFirst();
+		// String i, String t, byte[] d, int a, String di, byte p
+		
+		return c;
+	}
 
 	public document doccursorToDocument(Cursor c) {
 		return new document(c.getString(1), c.getString(5), c.getBlob(2),
@@ -384,7 +392,6 @@ public class DBManager {
 		Cursor cursor = db.rawQuery(sql, new String[] {});
 		return cursor;
 	}
-
 	public Cursor getAllUndeletedDocs() {
 		String sql = "SELECT rowid _id ,* FROM docs where syncedd=0";
 		Cursor cursor = db.rawQuery(sql, new String[] {});

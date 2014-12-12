@@ -15,5 +15,9 @@
     <string name="title_activity_debug">DebugActivity</string>
     <string name="title_activity_share_list">ShareListActivity</string>
     <string name="title_activity_list2">List2</string>
+    <string name="title_activity_welcome">Syncpad</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

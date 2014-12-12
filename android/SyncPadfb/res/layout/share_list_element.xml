@@ -9,13 +9,15 @@
         android:layout_height="wrap_content"
         android:padding="15dp" >
 
-        <Button
+        <ImageButton
             android:id="@+id/bSLERemove"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
+            android:background="@drawable/buttonback"
+            android:src="@drawable/ic_clear_grey600_24dp"
             android:text="X" />
 
         <ImageView

@@ -4,8 +4,7 @@
     android:id="@+id/rlNotelist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    >
+    android:layout_margin="3dp" >
 
     <com.neoba.syncpad.SquareLayout
         android:id="@+id/squareLayout1"
@@ -14,7 +13,9 @@
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingTop="16dp" >
+        android:paddingTop="16dp"
+
+        >
       
         <com.neoba.syncpad.AutoResizeTextView
             android:id="@+id/output_autofit"
@@ -23,11 +24,12 @@
             android:layout_above="@+id/linearLayout31"
             android:layout_alignParentTop="true"
             android:layout_gravity="fill"
+            android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:focusable="true"
             android:maxLines="15"
-            android:textSize="100sp" 
-            android:transitionName="TRANS"/>
+            android:textSize="100sp"
+            android:transitionName="TRANS" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout1"
@@ -37,6 +39,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_weight="10"
                     android:orientation="horizontal"
+                    android:padding="5dp"
                     android:weightSum="10" >
 
                     <ImageButton
@@ -45,8 +48,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="5"
                         android:background="@drawable/buttonback"
-                        android:paddingBottom="5dp"
-                        android:src="@drawable/ic_edit" />
+                        android:src="@drawable/ic_create_black_24dp" />
 
                     <ImageButton
                         android:id="@+id/bNotesListRight"
@@ -56,8 +58,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_weight="5"
                         android:background="@drawable/buttonback"
-                        android:paddingBottom="5dp"
-                        android:src="@drawable/ic_share"
+                        android:src="@drawable/ic_send_black_24dp"
                         android:text="SHARE" />
 
                 </LinearLayout>
@@ -100,7 +101,10 @@
                     android:layout_centerVertical="true"
                     android:visibility="invisible" />
 
-                <ImageView
+  
+                
+    </com.neoba.syncpad.SquareLayout>
+              <ImageView
                     android:id="@+id/ivsynced"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,7 +112,4 @@
                     android:layout_alignParentTop="true"
                     android:src="@drawable/ic_unsynced"
                     android:visibility="invisible" />
-                
-    </com.neoba.syncpad.SquareLayout>
-
 </RelativeLayout>

@@ -91,7 +91,7 @@ public class NotesEditor extends ActionBarActivity {
 		if (toolbar != null) {
 			setSupportActionBar(toolbar);
 		}
-		colorcode = "#FFFFFF";
+		colorcode = "#F8F8FF";
 
 		c = (CheckBox) findViewById(R.id.checkBox1);
 		bb = (ToggleButton) findViewById(R.id.boldbutton);
@@ -795,12 +795,11 @@ public class NotesEditor extends ActionBarActivity {
 					"Pumpkin~#d35400",
 					"Alizarin~#e74c3c",
 					"Pomegranate~#c0392b",
-					"Clouds~#ecf0f1",
+					"Ghost~#F8F8FF",
 					"Silver~#bdc3c7",
 					"Concrete~#95a5a6",
 					"Asbestos~#7f8c8d" };
 			Dialog dialog2 = new Dialog(this);
-			dialog2.setTitle("Color Picker");
 			dialog2.setContentView(R.layout.color_picker_dialog);
 			ListView lv = (ListView) dialog2.findViewById(R.id.lvColorPicker);
 			ColorListAdapter adapter = new ColorListAdapter(this,
@@ -1036,10 +1035,10 @@ public class NotesEditor extends ActionBarActivity {
 
 		// colorcode = n.getColor();
 		System.out.println("Its a color " + colorcode);
-		colorcode = colorcode.length() == 0 ? "#FFFFFF" : colorcode;
+		colorcode = colorcode.length() == 0 ? "#F8F8FF" : colorcode;
 		((LinearLayout) findViewById(R.id.l1))
 				.setBackgroundColor(Color.parseColor(colorcode.charAt(0) == '#' ? colorcode
-						: "#FFFFFF"));
+						: "#F8F8FF"));
 	}
 
 	public void changer() {
@@ -1058,7 +1057,7 @@ public class NotesEditor extends ActionBarActivity {
 		}
 		((LinearLayout) findViewById(R.id.l1)).setBackgroundColor(Color
 				.parseColor(colorcode));
-		
+
 	}
 
 	public String replceLast(String yourString, String frist, String second) {

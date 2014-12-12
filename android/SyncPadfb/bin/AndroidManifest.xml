@@ -21,7 +21,7 @@
     <uses-permission android:name="com.neoba.syncpad.permission.C2D_MESSAGE" />
 
     <application
-         android:name="com.neoba.syncpad.BaseApplication"
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -121,13 +121,14 @@
         </activity>
         <activity
             android:name=".ShareListActivity"
-            android:label="@string/title_activity_share_list" 
-            android:theme="@style/Theme.SyncPadDialog">
+            android:label="@string/title_activity_share_list"
+            android:theme="@style/Theme.SyncPadDialog" >
         </activity>
         <activity
             android:name=".List2"
             android:label="@string/title_activity_list2" >
         </activity>
+        
     </application>
 
 </manifest>

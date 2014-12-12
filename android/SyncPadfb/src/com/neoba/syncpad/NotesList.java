@@ -461,9 +461,9 @@ public class NoteListAdapter extends CursorAdapter{
 			@Override
 			public boolean onLongClick(View arg0) {
 				new AlertDialog.Builder(NotesList.this)
-						.setTitle("Delete entry")
+						.setTitle("Delete")
 						.setMessage(
-								"Are you sure you want to delete this entry?")
+								"Are you sure you want to delete this note?")
 						.setPositiveButton(android.R.string.yes,
 								new DialogInterface.OnClickListener() {
 									public void onClick(

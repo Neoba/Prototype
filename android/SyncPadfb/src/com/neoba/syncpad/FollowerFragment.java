@@ -94,7 +94,7 @@ public class FollowerFragment extends Fragment {
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 			final ImageView followb = (ImageView) rowView
 					.findViewById(R.id.ivFollow);
-
+			followb.setVisibility(View.INVISIBLE);
 //			if (followed.get(usernames[position]))
 //				followb.setImageResource(R.drawable.ic_followok);
 
@@ -119,7 +119,7 @@ public class FollowerFragment extends Fragment {
 			textView2.setText("@" + usernames[position]);
 			
 			Picasso.with(context).load(urls[position])
-					.transform(new RoundedTransformation(60, 0))
+					.resize(70,70).transform(new RoundedTransformation(60, 0))
 					.into(imageView);
 			return rowView;
 		}

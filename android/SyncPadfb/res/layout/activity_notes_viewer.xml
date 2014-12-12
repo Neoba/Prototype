@@ -12,6 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
         android:maxLines="30"
         android:padding="10dp"
         android:scrollbars="vertical"
@@ -24,31 +25,32 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="10" >
+    
+                    <ImageButton
+                        android:id="@+id/bNotesListLeftv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:background="@drawable/buttonback"
+                        android:paddingBottom="5dp"
+                        android:src="@drawable/ic_create_black_24dp" />
 
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignLeft="@+id/linearLayout1"
-            android:layout_alignParentBottom="true"
-            android:layout_weight="4.98"
-            android:background="@drawable/buttonback"
-            android:src="@drawable/ic_edit"
-            android:text="Button" />
-
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button2"
-            android:layout_alignLeft="@+id/linearLayout1"
-            android:layout_weight="5"
-            android:background="@drawable/buttonback"
-            android:src="@drawable/ic_share"
-            android:text="Button" />
-
+                    <ImageButton
+                        android:id="@+id/bNotesListRightv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="5"
+                        android:background="@drawable/buttonback"
+                        android:paddingBottom="5dp"
+                        android:src="@drawable/ic_send_black_24dp"
+                        android:text="SHARE" />
     </LinearLayout>
 
     <TextView
@@ -57,9 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout1"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
         android:paddingLeft="10dp"
         android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tvSharedUsers"
@@ -67,8 +71,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvTimeStamp"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
         android:paddingLeft="10dp"
         android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="16sp" />
 
 </RelativeLayout>

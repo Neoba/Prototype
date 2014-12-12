@@ -255,7 +255,7 @@ public class UserActivity extends ActionBarActivity {
 							e.printStackTrace();
 						}
 						
-						followercount.setText(ingusernames.length+(ingusernames.length==1?" FOLLOWER":" FOLLOWERS"));
+						followercount.setText(erusernames.length+(erusernames.length==1?" FOLLOWER":" FOLLOWERS"));
 					    adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),ingnames,ingusernames,ingurls,ernames,erusernames,erurls);
 					    vpPager.setAdapter(adapterViewPager);
 						

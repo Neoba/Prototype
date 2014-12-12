@@ -61,7 +61,7 @@ public class GcmMessageHandler extends IntentService {
 		title = extras.getString("title");
 		content = extras.getString("content");
 		action= extras.getString("action");
-		showNotification(title,content, getApplicationContext());
+		
 		//showToast();
 		Log.i("GCM","Received : (" + messageType + ")  "+ extras.getString("title"));
 
@@ -74,9 +74,9 @@ public class GcmMessageHandler extends IntentService {
 				db.open();
 				db.insertFollower(Long.parseLong( jaction.getString("id")), jaction.getString("username"));
 				db.close();
-
+				showNotification("Syncpad",content, getApplicationContext());
 			}else if(jaction.getString("type").equals("permission_grant")){
-				
+				showNotification("Syncpad",content, getApplicationContext());
 				Log.d("GCMPGRANT",jaction.toString());
 				DBManager db = new DBManager(this);
 				db.open();
@@ -93,6 +93,7 @@ public class GcmMessageHandler extends IntentService {
 				notelistupdate();
 
 			}else if(jaction.getString("type").equals("permission_revoke")){
+				showNotification("Syncpad",content, getApplicationContext());
 				DBManager db = new DBManager(this);
 				db.open();
 				db.deleteDoc(jaction.getString("id"));
@@ -100,6 +101,7 @@ public class GcmMessageHandler extends IntentService {
 				notelistupdate();
 
 			}else if(jaction.getString("type").equals("edit")){
+				
 				DBManager db = new DBManager(this);
 				db.open();
 				db.editDoc(jaction.getString("id"),Base64.decode(jaction.getString("diff")),jaction.getInt("age"));
@@ -107,6 +109,7 @@ public class GcmMessageHandler extends IntentService {
 				notelistupdate();
 
 			}else if(jaction.getString("type").equals("delete")){
+				showNotification("Syncpad",content, getApplicationContext());
 				DBManager db = new DBManager(this);
 				db.open();
 				db.deleteDoc(jaction.getString("id"));
@@ -114,6 +117,7 @@ public class GcmMessageHandler extends IntentService {
 				notelistupdate();
 				
 			}else if(jaction.getString("type").equals("user_deleted")){
+				showNotification("Syncpad",content, getApplicationContext());
 				DBManager db = new DBManager(this);
 				db.open();
 				db.clearPermissions(jaction.getString("docid"));
@@ -121,7 +125,7 @@ public class GcmMessageHandler extends IntentService {
 				notelistupdate();
 
 			}else if(jaction.getString("type").equals("unfollowed")){
-				
+				showNotification("Syncpad",content, getApplicationContext());
 				DBManager db = new DBManager(this);
 				db.open();
 				JSONArray docs=jaction.getJSONArray("docs");

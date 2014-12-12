@@ -32,6 +32,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -53,7 +54,7 @@ public class ShareListActivity extends Activity {
 	public HashMap<String,String> urls;
 	ProgressBar pb;
 	Spinner sp;
-	Button add,shareb;
+	ImageButton add,shareb;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -66,8 +67,8 @@ public class ShareListActivity extends Activity {
 		// sch.setDocid(db.getId(rowid));
 		access_token=PreferenceManager.getDefaultSharedPreferences(ShareListActivity.this).getString("access_token", "defaultStringIfNothingFound");
 		slist = (ListView) findViewById(R.id.lvShares);
-		add = (Button) findViewById(R.id.bSLAdd);
-		shareb = (Button) findViewById(R.id.bSLShare);
+		add = (ImageButton) findViewById(R.id.bSLAdd);
+		shareb = (ImageButton) findViewById(R.id.bSLShare);
 		add.setVisibility(View.INVISIBLE);
 		shareb.setVisibility(View.INVISIBLE);
 		
@@ -158,7 +159,7 @@ public class ShareListActivity extends Activity {
 
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			final View row = inflater.inflate(layoutResourceId, parent, false);
-			Button remove = (Button) row.findViewById(R.id.bSLERemove);
+			ImageButton remove = (ImageButton) row.findViewById(R.id.bSLERemove);
 			android.support.v7.widget.SwitchCompat rw = (android.support.v7.widget.SwitchCompat) row.findViewById(R.id.swRW);
 			rw.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -190,8 +191,8 @@ public class ShareListActivity extends Activity {
 			
 			holder.username.setText("@"+holder.share.username.split("~")[0]);
 			holder.name.setText(names.get(holder.share.username));
-			Picasso.with(context).load(urls.get(usernames[position]	))
-			.transform(new RoundedTransformation(60, 0))
+			Picasso.with(context).load(urls.get(holder.share.username	))
+			.resize(70,70).transform(new RoundedTransformation(60, 0))
 			.into(holder.profilepic);
 			
 			if (holder.share.permission == 2)
@@ -307,7 +308,7 @@ public class ShareListActivity extends Activity {
 
 					textView.setText(names.get(usernames[position]));
 					Picasso.with(context).load(urls.get(usernames[position]	))
-							.resize(50,50).transform(new RoundedTransformation(60, 0))
+							.resize(70,70).transform(new RoundedTransformation(60, 0))
 							.into(imageView);
 		
 				return rowView;
@@ -334,8 +335,7 @@ public class ShareListActivity extends Activity {
 
 					textView.setText(names.get(usernames[position]));
 					Picasso.with(context).load(urls.get(usernames[position]	))
-							.resize(50,50)
-							.transform(new RoundedTransformation(60, 0))
+							.resize(70,70).transform(new RoundedTransformation(60, 0))
 							.into(imageView);
 		
 				return rowView;

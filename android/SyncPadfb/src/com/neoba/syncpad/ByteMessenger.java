@@ -931,4 +931,30 @@ public class ByteMessenger {
 	// return null;
 	// }
 
+		public static ArrayList<UUID> Unfollow(UUID cookie,String username) throws Exception {
+			ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+			buff.put((byte) 0x02);
+			buff.put((byte) 0x0C);
+			buff.putInt(username.length());
+			putUUID(buff, cookie);
+			buff.put(username.getBytes());
+			ArrayList<UUID> temp=new ArrayList<UUID>();
+			ByteBuffer in = Postman.post(buff);
+			buff.clear();
+			if (in.getInt(2) == 0xFFFF) {
+				System.out.println("unfollowed " + in.getLong(6));
+				int count = in.getInt(6 + 8);
+				int base = 6 + 8 + 4;
+				for (int i = 0; i < count; i++) {
+					UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
+					base += 16;
+					System.out.println("removing " + id + " from cache");
+					temp.add(id);
+				}
+				return temp;
+			}else
+				return null;
+
+		}
+
 }
