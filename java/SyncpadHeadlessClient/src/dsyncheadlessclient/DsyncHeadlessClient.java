@@ -106,7 +106,7 @@ public class DsyncHeadlessClient {
     static UUID cookie = null;//UUID.fromString("0a3e8a08-630a-4082-b533-3a6cc2c73984");
     static HashMap<UUID, document> cache;
     static byte version = 0x02;
-    static String access_token ="CAAU6ZCTzlZBUoBAHZBkEkxTbVySQgjEnZB3R6djFtoax45jWBKn2EBGC4FcKZC0SSIClUJj8dwy8wkHpyCb9f5pZBLtljgZAEKYF3nmQj5LgxSOKStMpfevPpOVPl9VX6b9OXTFyZBepTY9C0ODMQxWZC6stXvcd9ljJA2ZAsEqODlpLi9y5yBXpAs10pdKD6k970BEjBt7aqZCSGpblSxZCKkb8";
+    static String access_token ="CAAU6ZCTzlZBUoBAMx8YRGsbhNMW7CPg3Dtavqptd0hrhEiiEPXnb34GgBZB6GuNfOMvHsmtAfNPymMID324sMifouMvNzYu5mdOjOoAjImNSe6eLSvsUl89bE496lnxfKZBMFkFo5RadRhBo9PaSnLXdGrC4kVn35XGPqws6yuOAhFIV6ZCZA0RkJisSEnaP4aXSBYUeF6hVem2PHMGhqo";
             public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         HashMap<String, UUID> docs = new HashMap();
@@ -385,6 +385,28 @@ public class DsyncHeadlessClient {
                     buff.clear();
                     if (in.getInt(2) == 0xFFFF) {
                         System.out.println("followed " + in.getLong(6));
+                    }
+                    if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
+                    break;
+                case "user":
+                    buff = ByteBuffer.allocate(6 + 16 + cmd.split(" ")[1].length());
+                    buff.put(version);
+                    buff.put((byte) 0x0E);
+                    buff.putInt(cmd.split(" ")[1].length());
+                    syncpadlib.putUUID(buff, cookie);
+                    buff.put(cmd.split(" ")[1].getBytes());
+                    in = syncpadlib.sendPost(buff);
+                    buff.clear();
+                    if (in.getInt(2) == 0xFFFF) {
+                        int size=in.getInt(6);
+                        byte[] ff = new byte[size];
+
+                        for (int j = 0; j < size; j++) {
+                            ff[j] = in.get(10+ j);
+
+                        }
+                        String data= Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+                        System.out.println("userdata " + data);
                     }
                     if(syncpadlib.DEBUG){System.out.println("Res:");printhex(in.array(), in.array().length);}
                     break;

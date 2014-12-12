@@ -3898,34 +3898,35 @@ containing a value of this type.
         public static final int activity_signup=0x7f03001e;
         public static final int activity_suggested_users=0x7f03001f;
         public static final int activity_user=0x7f030020;
-        public static final int activity_welcome=0x7f030021;
-        public static final int color_picker_dialog=0x7f030022;
-        public static final int color_picker_element=0x7f030023;
-        public static final int com_facebook_friendpickerfragment=0x7f030024;
-        public static final int com_facebook_login_activity_layout=0x7f030025;
-        public static final int com_facebook_picker_activity_circle_row=0x7f030026;
-        public static final int com_facebook_picker_checkbox=0x7f030027;
-        public static final int com_facebook_picker_image=0x7f030028;
-        public static final int com_facebook_picker_list_row=0x7f030029;
-        public static final int com_facebook_picker_list_section_header=0x7f03002a;
-        public static final int com_facebook_picker_search_box=0x7f03002b;
-        public static final int com_facebook_picker_title_bar=0x7f03002c;
-        public static final int com_facebook_picker_title_bar_stub=0x7f03002d;
-        public static final int com_facebook_placepickerfragment=0x7f03002e;
-        public static final int com_facebook_placepickerfragment_list_row=0x7f03002f;
-        public static final int com_facebook_search_bar_layout=0x7f030030;
-        public static final int com_facebook_tooltip_bubble=0x7f030031;
-        public static final int com_facebook_usersettingsfragment=0x7f030032;
-        public static final int custom_dialog=0x7f030033;
-        public static final int dialog_follow=0x7f030034;
-        public static final int fragment_follower=0x7f030035;
-        public static final int fragment_following=0x7f030036;
-        public static final int fragment_welcome=0x7f030037;
-        public static final int login_view=0x7f030038;
-        public static final int notes_list_element=0x7f030039;
-        public static final int share_list_element=0x7f03003a;
-        public static final int suggestions_list=0x7f03003b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03003c;
+        public static final int activity_vitals=0x7f030021;
+        public static final int activity_welcome=0x7f030022;
+        public static final int color_picker_dialog=0x7f030023;
+        public static final int color_picker_element=0x7f030024;
+        public static final int com_facebook_friendpickerfragment=0x7f030025;
+        public static final int com_facebook_login_activity_layout=0x7f030026;
+        public static final int com_facebook_picker_activity_circle_row=0x7f030027;
+        public static final int com_facebook_picker_checkbox=0x7f030028;
+        public static final int com_facebook_picker_image=0x7f030029;
+        public static final int com_facebook_picker_list_row=0x7f03002a;
+        public static final int com_facebook_picker_list_section_header=0x7f03002b;
+        public static final int com_facebook_picker_search_box=0x7f03002c;
+        public static final int com_facebook_picker_title_bar=0x7f03002d;
+        public static final int com_facebook_picker_title_bar_stub=0x7f03002e;
+        public static final int com_facebook_placepickerfragment=0x7f03002f;
+        public static final int com_facebook_placepickerfragment_list_row=0x7f030030;
+        public static final int com_facebook_search_bar_layout=0x7f030031;
+        public static final int com_facebook_tooltip_bubble=0x7f030032;
+        public static final int com_facebook_usersettingsfragment=0x7f030033;
+        public static final int custom_dialog=0x7f030034;
+        public static final int dialog_follow=0x7f030035;
+        public static final int fragment_follower=0x7f030036;
+        public static final int fragment_following=0x7f030037;
+        public static final int fragment_welcome=0x7f030038;
+        public static final int login_view=0x7f030039;
+        public static final int notes_list_element=0x7f03003a;
+        public static final int share_list_element=0x7f03003b;
+        public static final int suggestions_list=0x7f03003c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03003d;
     }
     public static final class menu {
         public static final int editor=0x7f0e0000;
@@ -3937,7 +3938,8 @@ containing a value of this type.
         public static final int signup=0x7f0e0006;
         public static final int suggested_users=0x7f0e0007;
         public static final int user=0x7f0e0008;
-        public static final int welcome=0x7f0e0009;
+        public static final int vitals=0x7f0e0009;
+        public static final int welcome=0x7f0e000a;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -4131,38 +4133,39 @@ containing a value of this type.
         public static final int facebook_app_id=0x7f0c0050;
         public static final int hello_blank_fragment=0x7f0c0057;
         public static final int hello_world=0x7f0c004e;
-        public static final int pref_default_display_name=0x7f0c0064;
-        public static final int pref_description_social_recommendations=0x7f0c0062;
+        public static final int pref_default_display_name=0x7f0c0065;
+        public static final int pref_description_social_recommendations=0x7f0c0063;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f0c0066;
+        public static final int pref_header_data_sync=0x7f0c0067;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f0c0060;
+        public static final int pref_header_general=0x7f0c0061;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f0c0069;
-        public static final int pref_ringtone_silent=0x7f0c006c;
-        public static final int pref_title_add_friends_to_messages=0x7f0c0065;
-        public static final int pref_title_display_name=0x7f0c0063;
-        public static final int pref_title_new_message_notifications=0x7f0c006a;
-        public static final int pref_title_ringtone=0x7f0c006b;
-        public static final int pref_title_social_recommendations=0x7f0c0061;
-        public static final int pref_title_sync_frequency=0x7f0c0067;
-        public static final int pref_title_system_sync_settings=0x7f0c0068;
-        public static final int pref_title_vibrate=0x7f0c006d;
+        public static final int pref_header_notifications=0x7f0c006a;
+        public static final int pref_ringtone_silent=0x7f0c006d;
+        public static final int pref_title_add_friends_to_messages=0x7f0c0066;
+        public static final int pref_title_display_name=0x7f0c0064;
+        public static final int pref_title_new_message_notifications=0x7f0c006b;
+        public static final int pref_title_ringtone=0x7f0c006c;
+        public static final int pref_title_social_recommendations=0x7f0c0062;
+        public static final int pref_title_sync_frequency=0x7f0c0068;
+        public static final int pref_title_system_sync_settings=0x7f0c0069;
+        public static final int pref_title_vibrate=0x7f0c006e;
         public static final int store_picture_message=0x7f0c0011;
         public static final int store_picture_title=0x7f0c0010;
         public static final int title_activity_debug=0x7f0c0058;
         public static final int title_activity_front=0x7f0c0054;
         public static final int title_activity_list2=0x7f0c005a;
         public static final int title_activity_notes_viewer=0x7f0c0055;
-        public static final int title_activity_settings=0x7f0c005f;
+        public static final int title_activity_settings=0x7f0c0060;
         public static final int title_activity_share_list=0x7f0c0059;
         public static final int title_activity_signup=0x7f0c0052;
         public static final int title_activity_suggested_users=0x7f0c0053;
         public static final int title_activity_user=0x7f0c0056;
+        public static final int title_activity_vitals=0x7f0c005f;
         public static final int title_activity_welcome=0x7f0c005b;
         public static final int title_section1=0x7f0c005c;
         public static final int title_section2=0x7f0c005d;

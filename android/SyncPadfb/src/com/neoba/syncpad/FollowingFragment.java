@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.webkit.WebView.FindListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -71,7 +72,17 @@ public class FollowingFragment extends Fragment {
         lvFollowings=(ListView)view.findViewById(R.id.lvUsersFollowing);
         FollowingAdapter fa=new FollowingAdapter(view.getContext(), FollowingFragment.names, FollowingFragment.usernames,  FollowingFragment.urls);
         lvFollowings.setAdapter(fa);
+        lvFollowings.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Intent i = new Intent(getActivity(),VitalsActivity.class);
+				i.putExtra("user",usernames[arg2]);
+				startActivityForResult(i,1);
+				
+			}
+		});
         lvFollowings.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 
@@ -88,7 +99,7 @@ public class FollowingFragment extends Fragment {
 									int whichButton) {
 								DBManager db = new DBManager(getActivity());
 								db.open();
-								new Unfollow().execute(db.getFollowingUsernameFromRowid(arg2+1).split("~")[0]);
+								new Unfollow().execute(arg2+"~"+db.getFollowingUsernameFromRowid(arg2+1));
 								db.close();
 								
 							}
@@ -127,23 +138,55 @@ public class FollowingFragment extends Fragment {
 			}
 		}
 		@Override
-		protected Void doInBackground(String... params) {
+		protected Void doInBackground(final String... params) {
 			ArrayList<UUID> docs = null;
 			try {
-				docs=ByteMessenger.Unfollow(getCookie(), params[0]);
+				docs=ByteMessenger.Unfollow(getCookie(), params[0].split("~")[1]);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			DBManager db = new DBManager(getActivity());
+			db.close();
 			db.open();
 			if(docs!=null){
 				for(UUID s:docs){
 					db.deleteDoc(s.toString());
 				}
+				db.deleteFollowing(params[0].split("~")[1]+"~"+params[0].split("~")[2]);
+				int index=Integer.parseInt(params[0].split("~")[0]);
+				String tem[] = new String[FollowerFragment.names.length-1];
+				String tem1[] = new String[FollowerFragment.names.length-1];
+				String tem2[] = new String[FollowerFragment.names.length-1];
 				
-				db.deleteFollowing(params[0]);
+				for(int i=0;i<index;i++)
+					tem[i]=FollowingFragment.names[i];
+				for(int i=index+1;i<tem.length;i++)
+					tem[i]=FollowingFragment.names[i];
+				
+				
+				for(int i=0;i<index;i++)
+					tem1[i]=FollowingFragment.usernames[i];
+				for(int i=index+1;i<tem1.length;i++)
+					tem1[i]=FollowingFragment.usernames[i];
+				
+				
+				for(int i=0;i<index;i++)
+					tem2[i]=FollowingFragment.urls[i];
+				for(int i=index+1;i<tem.length;i++)
+					tem2[i]=FollowingFragment.urls[i];
+				
+				getActivity().runOnUiThread(new Runnable() {
 					
+					@Override
+					public void run() {
+						
+						FollowingAdapter fa=new FollowingAdapter(getActivity(), FollowingFragment.names, FollowingFragment.usernames,  FollowingFragment.urls);
+				        lvFollowings.setAdapter(fa);
+						
+					}
+				});
+
 			}
 			db.close();
 			return null;

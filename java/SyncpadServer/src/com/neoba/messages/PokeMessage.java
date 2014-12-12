@@ -10,7 +10,6 @@ import com.neoba.Dsyncserver;
 import com.neoba.GoogleCloudMessager;
 import io.netty.buffer.ByteBuf;
 import static io.netty.buffer.Unpooled.buffer;
-import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.UUID;
 import org.codehaus.jettison.json.JSONException;

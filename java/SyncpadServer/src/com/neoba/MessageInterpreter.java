@@ -5,20 +5,21 @@
  */
 package com.neoba;
 
-import com.neoba.messages.DocumentEditMessage;
-import com.neoba.messages.DocumentDeleteMessage;
 import com.neoba.messages.DocumentCreateMessage;
-import com.neoba.messages.GrantPermissionMessage;
+import com.neoba.messages.DocumentDeleteMessage;
+import com.neoba.messages.DocumentEditMessage;
 import com.neoba.messages.GetDigestMessage;
-import com.neoba.messages.PokeMessage;
+import com.neoba.messages.GrantPermissionMessage;
 import com.neoba.messages.NotLoggedInMessage;
 import com.neoba.messages.PingPongMessage;
+import com.neoba.messages.PokeMessage;
 import com.neoba.messages.ProtocolExpiredMessage;
 import com.neoba.messages.UserCreateMessage;
 import com.neoba.messages.UserFollowMessage;
 import com.neoba.messages.UserLoginMessage;
 import com.neoba.messages.UserLogoutMessage;
 import com.neoba.messages.UserUnFollowMessage;
+import com.neoba.messages.UserVitalsMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;
@@ -177,6 +178,10 @@ class MessageInterpreter {
                 case Constants.LOGOUT:
                     logger.info(sessid+" :logged out ");
                     return new UserLogoutMessage(sessid).result();
+                case Constants.USER_VITALS:
+                    string = buff.toString(6 + 16, size, Charset.forName("UTF-8"));
+                    logger.info(sessid+" :following user "+string);
+                     return new UserVitalsMessage(string, sessid).result();
                 case Constants.GRANT_PERMISSION:
                     HashMap<String, Byte> permissions = new HashMap();
                     int base = 22 + 16;

@@ -22,8 +22,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Fragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -151,6 +153,12 @@ public class UserActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		// TODO Auto-generated method stub
+		new UserFetch().execute();
+		super.onActivityResult(arg0, arg1, arg2);
+	}
 	public class UserFetch extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -193,7 +201,7 @@ public class UserActivity extends ActionBarActivity {
 		        int i=0;
 		        for(String s:a)
 		        {
-		        	ingusernames[i]=s.split("~")[0];
+		        	ingusernames[i]=s;
 		        	try {
 						JSONObject user=ByteMessenger.jsonGet("https://graph.facebook.com/v2.1/"+s.split("~")[1]+"?fields=id,name,picture&access_token="+access_token);
 						ingnames[i]=user.getString("name");
@@ -214,7 +222,7 @@ public class UserActivity extends ActionBarActivity {
 		        for(String s:b)
 		        {
 		        	Log.d("er usrname",s);
-		        	erusernames[i]=s.split("~")[0];
+		        	erusernames[i]=s;
 		        	try {
 						JSONObject user=ByteMessenger.jsonGet("https://graph.facebook.com/v2.1/"+s.split("~")[1]+"?fields=id,name,picture&access_token="+access_token);
 						ernames[i]=user.getString("name");
@@ -248,24 +256,29 @@ public class UserActivity extends ActionBarActivity {
 						try {
 	
 							Picasso.with(UserActivity.this).load(userjson.getJSONObject("cover").getString("source")).fit().centerCrop().into(cover);
-
+							cover.setColorFilter(Color.argb(50, 0,0,0));
 
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
-						followercount.setText(erusernames.length+(erusernames.length==1?" FOLLOWER":" FOLLOWERS"));
-					    adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),ingnames,ingusernames,ingurls,ernames,erusernames,erurls);
-					    vpPager.setAdapter(adapterViewPager);
-						
-						
-						pb.setVisibility(View.INVISIBLE);
-						username.setVisibility(View.VISIBLE);
-						followercount.setVisibility(View.VISIBLE);
-						image.setVisibility(View.VISIBLE);
-						cover.setVisibility(View.VISIBLE);
-						name.setVisibility(View.VISIBLE);
+						try{
+							followercount.setText(erusernames.length+(erusernames.length==1?" FOLLOWER":" FOLLOWERS"));
+						    adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),ingnames,ingusernames,ingurls,ernames,erusernames,erurls);
+						    vpPager.setAdapter(adapterViewPager);
+							
+							
+							pb.setVisibility(View.INVISIBLE);
+							username.setVisibility(View.VISIBLE);
+							followercount.setVisibility(View.VISIBLE);
+							image.setVisibility(View.VISIBLE);
+							cover.setVisibility(View.VISIBLE);
+							name.setVisibility(View.VISIBLE);
+						}catch(Exception e){
+							e.printStackTrace();
+							
+						}
+
 						
 					}
 				});

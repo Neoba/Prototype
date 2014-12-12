@@ -19,7 +19,6 @@ import java.util.UUID;
 //import net.dongliu.vcdiff.VcdiffDecoder;
 //import net.dongliu.vcdiff.VcdiffEncoder;
 
-
 import net.dongliu.vcdiff.VcdiffDecoder;
 import net.dongliu.vcdiff.VcdiffEncoder;
 
@@ -32,7 +31,7 @@ import android.annotation.SuppressLint;
 import android.util.Log;
 
 public class ByteMessenger {
-	
+
 	static class user {
 		String username;
 		Long id;
@@ -54,10 +53,7 @@ public class ByteMessenger {
 		}
 
 	}
-	
-	
 
-	
 	@SuppressLint("UseSparseArrays")
 	public static ArrayList<Object> getDigest(UUID cookie) throws Exception {
 		ByteBuffer buff = ByteBuffer.allocate(6 + 16);
@@ -101,7 +97,7 @@ public class ByteMessenger {
 			boolean owns = in.get(base + 28 + sdiff + sdict + stitle + 4 + 1) == 0x1;
 			base = base + 32 + sdiff + sdict + stitle + 1 + 1;
 			cache.put(id, new document(id.toString(), "", diff, age, dict,
-					perm, owns,0,creator));
+					perm, owns, 0, creator));
 
 			Log.d("NEOBA", "added to cache: " + cache.get(id).title);
 
@@ -198,6 +194,7 @@ public class ByteMessenger {
 		}
 		return null;
 	}
+
 	static class document {
 
 		public byte[] diff;
@@ -209,8 +206,9 @@ public class ByteMessenger {
 		public boolean owns;
 		public int synced;
 		public String owner;
-		
-		document(String id, String title, byte[] diff, int age, String dict, byte permission,boolean owns,int synced) {
+
+		document(String id, String title, byte[] diff, int age, String dict,
+				byte permission, boolean owns, int synced) {
 			this.id = id;
 			this.diff = diff;
 			this.age = age;
@@ -218,10 +216,12 @@ public class ByteMessenger {
 			this.title = title;
 			this.permission = permission;
 			this.owns = owns;
-			this.synced=synced;
-			this.owner="you";
+			this.synced = synced;
+			this.owner = "you";
 		}
-		document(String id, String title, byte[] diff, int age, String dict, byte permission,boolean owns,int synced,String owner) {
+
+		document(String id, String title, byte[] diff, int age, String dict,
+				byte permission, boolean owns, int synced, String owner) {
 			this.id = id;
 			this.diff = diff;
 			this.age = age;
@@ -229,8 +229,8 @@ public class ByteMessenger {
 			this.title = title;
 			this.permission = permission;
 			this.owns = owns;
-			this.synced=synced;
-			this.owner=owner;
+			this.synced = synced;
+			this.owner = owner;
 		}
 
 		public String toString() {
@@ -276,7 +276,34 @@ public class ByteMessenger {
 		buff.clear();
 		if (in.getInt(2) == 0xFFFF) {
 			Log.d("FOLLOW", "followed " + in.getLong(6));
-			return in.getLong(6)+"~"+in.getLong(14);
+			return in.getLong(6) + "~" + in.getLong(14);
+		}
+		return null;
+	}
+	
+	
+	public static String UserVitals(String username, UUID cookie)
+			throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x0E);
+		buff.putInt(username.length());
+		putUUID(buff, cookie);
+		buff.put(username.getBytes());
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+		if (in.getInt(2) == 0xFFFF) {
+			Log.d("vital", "followed " + in.getLong(6));
+			 int size=in.getInt(6);
+             byte[] ff = new byte[size];
+
+             for (int j = 0; j < size; j++) {
+                 ff[j] = in.get(10+ j);
+
+             }
+             String data= Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff)).toString();
+             System.out.println("userdata " + data);
+             return data;
 		}
 		return null;
 	}
@@ -305,7 +332,7 @@ public class ByteMessenger {
 		buff.put((byte) 0xF6);
 		buff.putInt(access_token.length());
 		buff.put(access_token.getBytes());
-		buff.put((byte) 0x0A);	//A for android :)
+		buff.put((byte) 0x0A); // A for android :)
 		buff.putInt(regid.length());
 		buff.put(regid.getBytes());
 		ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
@@ -397,8 +424,6 @@ public class ByteMessenger {
 		}
 		return null;
 	}
-	
-   
 
 	public static JSONObject jsonGet(String url) throws MalformedURLException,
 			IOException, JSONException {
@@ -425,108 +450,112 @@ public class ByteMessenger {
 
 		return ret;
 	}
-	
-    static ArrayList<HashMap<String, String>> createNote(UUID cookie,UUID randid) {
-        ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
-        buff.put((byte)0x02);
-        buff.put((byte) 0x02);
-        buff.putInt(0xFFFF);
-        putUUID(buff, cookie);
-        putUUID(buff, randid);
 
-        ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
-        try {
-            ByteBuffer in = Postman.post(buff);
-            if (in.getInt(2) == 0xFFFF) {
-                HashMap<String, String> result = new HashMap<String, String>();
-                result.put("result", "success");
-                returnlist.add(result);
+	static ArrayList<HashMap<String, String>> createNote(UUID cookie,
+			UUID randid) {
+		ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + 16);
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x02);
+		buff.putInt(0xFFFF);
+		putUUID(buff, cookie);
+		putUUID(buff, randid);
 
-            } else {
-                System.err.println("som error");
-                HashMap<String, String> result = new HashMap<String, String>();
-                result.put("result", "error");
-                returnlist.add(result);
-            }
-        } catch (Exception ex) {
-            HashMap<String, String> result = new HashMap<String, String>();
-            result.put("result", "connection_fail");
-            returnlist.add(result);
-        }
+		ArrayList<HashMap<String, String>> returnlist = new ArrayList<HashMap<String, String>>();
+		try {
+			ByteBuffer in = Postman.post(buff);
+			if (in.getInt(2) == 0xFFFF) {
+				HashMap<String, String> result = new HashMap<String, String>();
+				result.put("result", "success");
+				returnlist.add(result);
 
-        return returnlist;
-    }
-    
-    static boolean deleteNote(UUID docuid, UUID cookie) {
-        {
-            ByteBuffer buff = null;
-            if (docuid != null) {
-                buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
-                buff.put((byte)0x02);
-                buff.put((byte) 0x0B);
-                buff.putInt(0x0000DE1E);
-                putUUID(buff, cookie);
-                buff.putLong(docuid.getLeastSignificantBits());
-                buff.putLong(docuid.getMostSignificantBits());
-            }
-            try {
-                ByteBuffer in = Postman.post(buff);
+			} else {
+				System.err.println("som error");
+				HashMap<String, String> result = new HashMap<String, String>();
+				result.put("result", "error");
+				returnlist.add(result);
+			}
+		} catch (Exception ex) {
+			HashMap<String, String> result = new HashMap<String, String>();
+			result.put("result", "connection_fail");
+			returnlist.add(result);
+		}
 
-                if (in.getInt(2) == 0xFFFF) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (Exception ex) {
-                return false;
-            }
-        }
-    }
-    
+		return returnlist;
+	}
+
+	static boolean deleteNote(UUID docuid, UUID cookie) {
+		{
+			ByteBuffer buff = null;
+			if (docuid != null) {
+				buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
+				buff.put((byte) 0x02);
+				buff.put((byte) 0x0B);
+				buff.putInt(0x0000DE1E);
+				putUUID(buff, cookie);
+				buff.putLong(docuid.getLeastSignificantBits());
+				buff.putLong(docuid.getMostSignificantBits());
+			}
+			try {
+				ByteBuffer in = Postman.post(buff);
+
+				if (in.getInt(2) == 0xFFFF) {
+					return true;
+				} else {
+					return false;
+				}
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+	}
+
 	public static document Editdoc(document doc, UUID cookie) throws Exception {
 		if (doc.id != null) {
-            ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16 + doc.diff.length + 4);
-            buff.put((byte)0x2);
-            buff.put((byte) 0x03);
-            buff.putInt(doc.diff.length);
-            putUUID(buff, cookie);
-            putUUID(buff, UUID.fromString(doc.id));
-            for (byte b : doc.diff) {
-                buff.put(b);
-            }
-            buff.putInt(doc.age + 1);
-            ByteBuffer in = Postman.post(buff);
-            buff.clear();
-            if (in.getInt(2) == 0xFFFF || in.getInt(2) == 0x8008) {
+			ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16
+					+ doc.diff.length + 4);
+			buff.put((byte) 0x2);
+			buff.put((byte) 0x03);
+			buff.putInt(doc.diff.length);
+			putUUID(buff, cookie);
+			putUUID(buff, UUID.fromString(doc.id));
+			for (byte b : doc.diff) {
+				buff.put(b);
+			}
+			buff.putInt(doc.age + 1);
+			ByteBuffer in = Postman.post(buff);
+			buff.clear();
+			if (in.getInt(2) == 0xFFFF || in.getInt(2) == 0x8008) {
 
-                if (in.getInt(2) == 0x8008) {
-                    doc.age = in.getInt(6);
-                    System.out.println("Syncfail recovery: correct version " + doc.age);
-                    int length = in.getInt(10);
+				if (in.getInt(2) == 0x8008) {
+					doc.age = in.getInt(6);
+					System.out.println("Syncfail recovery: correct version "
+							+ doc.age);
+					int length = in.getInt(10);
 
-                    StringBuilder dictnew = new StringBuilder();
-                    for (int h = 0; h < length; h++) {
-                        dictnew.append((char) in.get(14 + h));
-                    }
-                    doc.dict = dictnew.toString();
-                    System.out.println("Syncfail recovery: correct dictionary " + doc.dict);
-                    doc.diff = new VcdiffEncoder(doc.dict, doc.title).encode();
-                } else {
-                    doc.age += 1;
-                }
+					StringBuilder dictnew = new StringBuilder();
+					for (int h = 0; h < length; h++) {
+						dictnew.append((char) in.get(14 + h));
+					}
+					doc.dict = dictnew.toString();
+					System.out.println("Syncfail recovery: correct dictionary "
+							+ doc.dict);
+					doc.diff = new VcdiffEncoder(doc.dict, doc.title).encode();
+				} else {
+					doc.age += 1;
+				}
 
+				if (doc.age % 5 == 0) {
+					doc.dict = new VcdiffDecoder(doc.dict, doc.diff).decode();
+					System.out.println("dictionary updated.. new dict: \n"
+							+ doc.dict);
+				}
 
-                if (doc.age % 5 == 0) {
-                    doc.dict = new VcdiffDecoder(doc.dict, doc.diff).decode();
-                    System.out.println("dictionary updated.. new dict: \n" + doc.dict);
-                }
-
-                System.out.println("version" + doc.age);
-            } else {
-                System.err.println("some errr");
-            }
-            buff.clear();
-        }
+				System.out.println("version" + doc.age);
+			} else {
+				System.err.println("some errr");
+			}
+			buff.clear();
+		}
 		return doc;
 	}
 
@@ -559,402 +588,44 @@ public class ByteMessenger {
 			return shares;
 		return null;
 	}
-	//
-	// public static ArrayList<Share> ShareMessage(ArrayList<Share> shares,
-	// UUID docid, UUID cookie) throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16 + 16 + 9 * shares.size());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x08);
-	// buff.putInt(shares.size());
-	// putUUID(buff, cookie);
-	// buff.putLong(docid.getLeastSignificantBits());
-	// buff.putLong(docid.getMostSignificantBits());
-	// for (Share s : shares) {
-	// switch (s.permission) {
-	// case 1:
-	// buff.put((byte) 0x01);
-	// break;
-	// case 2:
-	// buff.put((byte) 0x02);
-	// break;
-	// }
-	//
-	// buff.putLong(s.userid);
-	//
-	// }
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	//
-	// if (in.getInt(2) == 0xFFFF)
-	// return shares;
-	// return null;
-	// }
-	//
-	 public static boolean Logout(UUID cookie) throws Exception {
-	 ByteBuffer buff = ByteBuffer.allocate(6 + 16);
-	 buff.put((byte) 0x02);
-	 buff.put((byte) 0x09);
-	 buff.putInt(0xFFFF);
-	 putUUID(buff, cookie);
-	 ByteBuffer in = Postman.post(buff);
-	 buff.clear();
-	 return in != null;
-	
-	 }
-	//
-	// public static boolean Delete(UUID cookie, UUID docuid) throws Exception {
-	//
-	// ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16);
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x0B);
-	// buff.putInt(0x0000DE1E);
-	// putUUID(buff, cookie);
-	// buff.putLong(docuid.getLeastSignificantBits());
-	// buff.putLong(docuid.getMostSignificantBits());
-	// buff.clear();
-	// ByteBuffer in = Postman.post(buff);
-	// if (in == null)
-	// return false;
-	// if (in.getInt(2) == 0xFFFF) {
-	// return true;
-	//
-	// } else {
-	// return false;
-	// }
-	//
-	// }
-	//
-	// public static ArrayList<UUID> Unfollow(UUID cookie,String username)
-	// throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x0C);
-	// buff.putInt(username.length());
-	// putUUID(buff, cookie);
-	// buff.put(username.getBytes());
-	// ArrayList<UUID> temp=new ArrayList<UUID>();
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in.getInt(2) == 0xFFFF) {
-	// System.out.println("unfollowed " + in.getLong(6));
-	// int count = in.getInt(6 + 8);
-	// int base = 6 + 8 + 4;
-	// for (int i = 0; i < count; i++) {
-	// UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
-	// base += 16;
-	// System.out.println("removing " + id + " from cache");
-	// temp.add(id);
-	// }
-	// return temp;
-	// }else
-	// return null;
-	//
-	// }
-	//
-	// public static int SignUp(String username, String password) throws
-	// Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 20 + username.length());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x05);
-	// buff.putInt(username.length());
-	// buff.put(username.getBytes());
-	// for (byte b : MessageDigest.getInstance("SHA").digest(
-	// password.getBytes())) {
-	// buff.put(b);
-	// }
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in != null)
-	// return in.getInt(2);
-	// else
-	// return 0;
-	// }
-	//
-	// public static UUID Login(String username, String password, String regid)
-	// throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 20 + username.length() + 4
-	// + regid.length() + 1);
-	// UUID cookie = null;
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x06);
-	// buff.putInt(username.length());
-	// buff.put(username.getBytes());
-	// for (byte b : MessageDigest.getInstance("SHA").digest(
-	// password.getBytes())) {
-	// buff.put(b);
-	// }
-	// buff.put((byte) 0x0A);
-	// buff.putInt(regid.length());
-	// buff.put(regid.getBytes());
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in != null) {
-	// if (in.getInt(2) == 0xFFFF) {
-	// cookie = new UUID(in.getLong(14), in.getLong(6));
-	// Log.d("NEOBA", "recived a cookie :) --> " + cookie);
-	// return cookie;
-	// } else {
-	// Log.d("NEOBA", "error logging in");
-	// return null;
-	// }
-	// }
-	// return cookie;
-	//
-	// }
-	//
-	// @SuppressLint("UseSparseArrays")
-	// public static ArrayList<Object> getDigest(UUID cookie) throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16);
-	// HashMap<UUID, document> cache = new HashMap<UUID, document>();
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x04);
-	// buff.putInt(0xFFFF);
-	// putUUID(buff, cookie);
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// int docount = in.getInt(2);
-	// int base = 6;
-	// for (int i = 0; i < docount; i++) {
-	// UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
-	//
-	// int sdiff = in.getInt(base + 16);
-	// byte[] diff = new byte[sdiff];
-	//
-	// for (int j = 0; j < sdiff; j++) {
-	// diff[j] = in.get(base + 20 + j);
-	// }
-	// int sdict = in.getInt(base + 20 + sdiff);
-	// byte[] dictarray = new byte[sdict];
-	//
-	// for (int j = 0; j < sdict; j++) {
-	// dictarray[j] = in.get(base + 24 + sdiff + j);
-	// }
-	// String dict = Charset.forName("UTF-8")
-	// .decode(ByteBuffer.wrap(dictarray)).toString();
-	// int stitle = in.getInt(base + 24 + sdiff + sdict);
-	// byte[] titlearray = new byte[stitle];
-	//
-	// for (int j = 0; j < stitle; j++) {
-	// titlearray[j] = in.get(base + 28 + sdiff + sdict + j);
-	// }
-	//
-	// String title = Charset.forName("UTF-8")
-	// .decode(ByteBuffer.wrap(titlearray)).toString();
-	// int age = in.getInt(base + 28 + sdiff + sdict + stitle);
-	// byte perm = in.get(base + 28 + sdiff + sdict + stitle + 4);
-	// boolean owns = in.get(base + 28 + sdiff + sdict + stitle + 4 + 1) == 0x1;
-	// base = base + 32 + sdiff + sdict + stitle + 1 + 1;
-	// cache.put(id, new document(id.toString(), title, diff, age, dict,
-	// perm, owns));
-	//
-	// Log.d("NEOBA", "added to cache: " + cache.get(id).title);
-	//
-	// }
-	// HashMap<Long, String> follower = new HashMap<Long, String>();
-	// ArrayList<Object> ret = new ArrayList<Object>();
-	// ret.add(cache);
-	// int followerc = in.getInt(base);
-	// base += 4;
-	// for (int i = 0; i < followerc; i++) {
-	// int strc = in.getInt(base);
-	// base += 4;
-	// byte[] ff = new byte[strc];
-	//
-	// for (int j = 0; j < strc; j++) {
-	// ff[j] = in.get(base + j);
-	//
-	// }
-	// base += strc;
-	// String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff))
-	// .toString();
-	// Long ii = in.getLong(base);
-	// Log.d("GD", "follower" + dict);
-	// Log.d("GD", "with id" + ii);
-	// follower.put(ii, dict);
-	// base += 8;
-	// }
-	// HashMap<Long, String> following = new HashMap<Long, String>();
-	// followerc = in.getInt(base);
-	// base += 4;
-	// System.out.println(followerc);
-	// for (int i = 0; i < followerc; i++) {
-	// int strc = in.getInt(base);
-	// base += 4;
-	// byte[] ff = new byte[strc];
-	//
-	// for (int j = 0; j < strc; j++) {
-	// ff[j] = in.get(base + j);
-	//
-	// }
-	// base += strc;
-	// String dict = Charset.forName("UTF-8").decode(ByteBuffer.wrap(ff))
-	// .toString();
-	// Log.d("GD", "following" + dict);
-	// Long ii = in.getLong(base);
-	// Log.d("GD", " id " + ii);
-	// following.put(ii, dict);
-	// base += 8;
-	// }
-	// ret.add(follower);
-	// ret.add(following);
-	//
-	// int ownc = in.getInt(base);
-	// ArrayList<ShareSchema> shares = new ArrayList<ShareSchema>();
-	// base += 4;
-	// for (int i = 0; i < ownc; i++) {
-	//
-	// UUID doc = new UUID(in.getLong(base + 8), in.getLong(base));
-	// System.err.println("OWNS!--> " + doc.toString());
-	// ShareSchema ss = new ShareSchema(doc.toString());
-	// base += 16;
-	// int reac = in.getInt(base);
-	// base += 4;
-	// for (int j = 0; j < reac; j++) {
-	// System.err.println("READS!-->" + in.getLong(base));
-	// ss.addread(in.getLong(base));
-	// base += 8;
-	// }
-	// reac = in.getInt(base);
-	// base += 4;
-	// for (int j = 0; j < reac; j++) {
-	// System.err.println(in.getLong(base));
-	// ss.addedit(in.getLong(base));
-	// base += 8;
-	// }
-	// shares.add(ss);
-	// }
-	// ret.add(shares);
-	// return ret;
-	// }
-	//
-	// private static void putUUID(ByteBuffer buff, UUID cookie) {
-	// buff.putLong(cookie.getLeastSignificantBits());
-	// buff.putLong(cookie.getMostSignificantBits());
-	// }
-	//
-	// public static document Editdoc(document docs, UUID cookie) throws
-	// Exception {
-	// UUID docuid = UUID.fromString(docs.id);
-	// if (docuid != null) {
-	// ByteBuffer buff = ByteBuffer.allocate(2 + 4 + 16 + 16
-	// + docs.diff.length + 4);
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x03);
-	// buff.putInt(docs.diff.length);
-	// putUUID(buff, cookie);
-	// buff.putLong(docuid.getLeastSignificantBits());
-	// buff.putLong(docuid.getMostSignificantBits());
-	// for (byte b : docs.diff) {
-	// buff.put(b);
-	// }
-	// buff.putInt(docs.age + 1);
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in.getInt(2) == 0xFFFF) {
-	// docs.age += 1;
-	//
-	// if (docs.age % 5 == 0) {
-	// docs.dict = new VcdiffDecoder(docs.dict, docs.diff)
-	// .decode();
-	// docs.diff = new VcdiffEncoder(docs.dict, docs.dict)
-	// .encode();
-	// Log.d("Bytemessenger", "dictionary updated.. new dict: \n"
-	// + docs.dict);
-	// }
-	// return docs;
-	// } else
-	// Log.d("Bytemessgnger.getdocs",
-	// Integer.toHexString(in.getInt(2)));
-	//
-	// }
-	// return null;
-	// }
-	//
-	// public static Long FollowUser(String username, UUID cookie)
-	// throws Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x07);
-	// buff.putInt(username.length());
-	// putUUID(buff, cookie);
-	// buff.put(username.getBytes());
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in.getInt(2) == 0xFFFF) {
-	// Log.d("FOLLOWW!", "followed " + in.getLong(6));
-	// return in.getLong(6);
-	// }
-	// return null;
-	// }
-	//
-	// public static Long PokeUser(String username, UUID cookie) throws
-	// Exception {
-	// ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x0A);
-	// buff.putInt(username.length());
-	// putUUID(buff, cookie);
-	// buff.put(username.getBytes());
-	// ByteBuffer in = Postman.post(buff);
-	// buff.clear();
-	// if (in.getInt(2) == 0xFFFF) {
-	// Log.d("poked!", "poked " + in.getLong(6));
-	// return in.getLong(6);
-	// }
-	// return null;
-	// }
-	//
-	// public static document CreateDoc(String docname, UUID cookie)
-	// throws Exception {
-	//
-	// ByteBuffer buff = ByteBuffer.allocate(16 + 2 + 4 + docname.length());
-	// buff.put((byte) 0x01);
-	// buff.put((byte) 0x02);
-	// buff.putInt(docname.length());
-	// putUUID(buff, cookie);
-	// buff.put(docname.getBytes());
-	// ByteBuffer in = Postman.post(buff);
-	// try {
-	// if (in.getInt(2) == 0xFFFF) {
-	// UUID docid = new UUID(in.getLong(14), in.getLong(6));
-	// document rdoc = new document(docid.toString(), docname,
-	// new VcdiffEncoder("", "").encode(), -1, "", (byte) 2);
-	// return rdoc;
-	// } else {
-	// Log.d("CREATEDOC", "error " + Integer.toHexString(in.getInt(2)));
-	// }
-	// } catch (Exception e) {
-	// Log.d("CREATEDOC", "server down probably " + in.getInt(2));
-	// return null;
-	// }
-	// buff.clear();
-	// return null;
-	// }
 
-		public static ArrayList<UUID> Unfollow(UUID cookie,String username) throws Exception {
-			ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
-			buff.put((byte) 0x02);
-			buff.put((byte) 0x0C);
-			buff.putInt(username.length());
-			putUUID(buff, cookie);
-			buff.put(username.getBytes());
-			ArrayList<UUID> temp=new ArrayList<UUID>();
-			ByteBuffer in = Postman.post(buff);
-			buff.clear();
-			if (in.getInt(2) == 0xFFFF) {
-				System.out.println("unfollowed " + in.getLong(6));
-				int count = in.getInt(6 + 8);
-				int base = 6 + 8 + 4;
-				for (int i = 0; i < count; i++) {
-					UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
-					base += 16;
-					System.out.println("removing " + id + " from cache");
-					temp.add(id);
-				}
-				return temp;
-			}else
-				return null;
+	public static boolean Logout(UUID cookie) throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16);
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x09);
+		buff.putInt(0xFFFF);
+		putUUID(buff, cookie);
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+		return in != null;
 
-		}
+	}
+
+	public static ArrayList<UUID> Unfollow(UUID cookie, String username)
+			throws Exception {
+		ByteBuffer buff = ByteBuffer.allocate(6 + 16 + username.length());
+		buff.put((byte) 0x02);
+		buff.put((byte) 0x0C);
+		buff.putInt(username.length());
+		putUUID(buff, cookie);
+		buff.put(username.getBytes());
+		ArrayList<UUID> temp = new ArrayList<UUID>();
+		ByteBuffer in = Postman.post(buff);
+		buff.clear();
+		if (in.getInt(2) == 0xFFFF) {
+			System.out.println("unfollowed " + in.getLong(6));
+			int count = in.getInt(6 + 8);
+			int base = 6 + 8 + 4;
+			for (int i = 0; i < count; i++) {
+				UUID id = new UUID(in.getLong(base + 8), in.getLong(base));
+				base += 16;
+				System.out.println("removing " + id + " from cache");
+				temp.add(id);
+			}
+			return temp;
+		} else
+			return null;
+
+	}
 
 }

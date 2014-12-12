@@ -7,6 +7,7 @@ import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,12 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.webkit.WebView.FindListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 public class FollowerFragment extends Fragment {
     // Store instance variables
     private String title;
@@ -60,6 +63,17 @@ public class FollowerFragment extends Fragment {
         lvFollowers=(ListView)view.findViewById(R.id.lvUsersFollowing);
         FollowerAdapter fa=new FollowerAdapter(view.getContext(), FollowerFragment.names, FollowerFragment.usernames,  FollowerFragment.urls);
         lvFollowers.setAdapter(fa);
+        lvFollowers.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Intent i = new Intent(getActivity(),VitalsActivity.class);
+				i.putExtra("user",usernames[arg2]);
+				startActivityForResult(i,1);
+				
+			}
+		});
         return view;
         
         
