@@ -78,8 +78,16 @@ public class FollowingFragment extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				Intent i = new Intent(getActivity(),VitalsActivity.class);
-				i.putExtra("user",usernames[arg2]);
-				startActivityForResult(i,1);
+				if(usernames[arg2].split("~")[0].equals(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("username", "default")))
+				{getActivity().finish();
+					startActivity(new Intent(getActivity(),UserActivity.class));
+				}
+				
+				else{
+					getActivity().finish();
+					i.putExtra("user",usernames[arg2]);
+					startActivity(i);
+				}
 				
 			}
 		});
@@ -222,7 +230,7 @@ public class FollowingFragment extends Fragment {
 
 		public View getView(final int position, View convertView,
 				ViewGroup parent) {
-			LayoutInflater inflater = (LayoutInflater) context
+			LayoutInflater inflater =(LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View rowView = inflater.inflate(R.layout.suggestions_list, parent,
 					false);
@@ -255,7 +263,7 @@ public class FollowingFragment extends Fragment {
 			});
 
 			textView.setText(values[position]);
-			textView2.setText("@" + usernames[position]);
+			textView2.setText("@" + usernames[position].split("~")[0]);
 			
 			Picasso.with(context).load(urls[position])
 					.resize(70,70).transform(new RoundedTransformation(60, 0))

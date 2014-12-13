@@ -70,7 +70,7 @@ public class VFollowingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_following, container, false);
         lvFollowings=(ListView)view.findViewById(R.id.lvUsersFollowing);
-        FollowingAdapter fa=new FollowingAdapter(view.getContext(), VFollowingFragment.names, VFollowingFragment.usernames,  VFollowingFragment.urls);
+        VFollowingAdapter fa=new VFollowingAdapter(view.getContext(), VFollowingFragment.names, VFollowingFragment.usernames,  VFollowingFragment.urls);
         lvFollowings.setAdapter(fa);
         lvFollowings.setOnItemClickListener(new OnItemClickListener() {
 
@@ -79,48 +79,20 @@ public class VFollowingFragment extends Fragment {
 					long arg3) {
 				Intent i = new Intent(getActivity(),VitalsActivity.class);
 				if(usernames[arg2].split("~")[0].equals(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("username", "default")))
+				{
+					getActivity().finish();
 					startActivity(new Intent(getActivity(),UserActivity.class));
+				}
 				else{
+					getActivity().finish();
 					i.putExtra("user",usernames[arg2]);
 					startActivity(i);
 				}
 				
 			}
 		});
-        lvFollowings.setOnItemLongClickListener(new OnItemLongClickListener() {
+        
 
-
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> arg0, View view,
-					final int arg2, long arg3) {
-				final AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-				b.setIcon(android.R.drawable.ic_dialog_alert);
-				b.setMessage("Unfollow User?");
-				b.setPositiveButton("OK",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int whichButton) {
-								DBManager db = new DBManager(getActivity());
-								db.open();
-								new Unfollow().execute(arg2+"~"+db.getFollowingUsernameFromRowid(arg2+1));
-								db.close();
-								
-							}
-						});
-				b.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int whichButton) {
-
-							}
-						});
-
-				b.show();
-
-				return false;
-			}
-        }); 
         return view;  
         
     }
@@ -185,7 +157,7 @@ public class VFollowingFragment extends Fragment {
 					@Override
 					public void run() {
 						
-						FollowingAdapter fa=new FollowingAdapter(getActivity(), VFollowingFragment.names, VFollowingFragment.usernames,  VFollowingFragment.urls);
+						VFollowingAdapter fa=new VFollowingAdapter(getActivity(), VFollowingFragment.names, VFollowingFragment.usernames,  VFollowingFragment.urls);
 				        lvFollowings.setAdapter(fa);
 						
 					}
@@ -208,13 +180,13 @@ public class VFollowingFragment extends Fragment {
 			return null;
 
 	}
-    public class FollowingAdapter extends ArrayAdapter<String> {
+    public class VFollowingAdapter extends ArrayAdapter<String> {
 		private final Context context;
 		private final String[] values;
 		private final String[] usernames;
 		private final String[] urls;
 
-		public FollowingAdapter(Context context, String[] values,
+		public VFollowingAdapter(Context context, String[] values,
 				String[] usernames, String[] urls) {
 			super(context, R.layout.suggestions_list, values);
 
@@ -226,7 +198,7 @@ public class VFollowingFragment extends Fragment {
 
 		public View getView(final int position, View convertView,
 				ViewGroup parent) {
-			LayoutInflater inflater = (LayoutInflater) context
+			LayoutInflater inflater =(LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View rowView = inflater.inflate(R.layout.suggestions_list, parent,
 					false);
@@ -259,7 +231,7 @@ public class VFollowingFragment extends Fragment {
 			});
 
 			textView.setText(values[position]);
-			textView2.setText("@" + usernames[position]);
+			textView2.setText("@" + usernames[position].split("~")[0]);
 			
 			Picasso.with(context).load(urls[position])
 					.resize(70,70).transform(new RoundedTransformation(60, 0))

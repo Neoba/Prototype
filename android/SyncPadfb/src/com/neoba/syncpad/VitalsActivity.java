@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -18,17 +19,22 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.MarginLayoutParams;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +63,8 @@ public class VitalsActivity extends ActionBarActivity {
     String[] erusernames;
     String[] ernames;
     String[] erurls;
+    FloatingActionButton fabButton ;
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,7 +83,18 @@ public class VitalsActivity extends ActionBarActivity {
 		vpPager = (ViewPager) findViewById(R.id.vpPager);
 //        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(),new String[] {},new String[] {},new String[] {});
 //        vpPager.setAdapter(adapterViewPager);
-		
+
+		PagerTabStrip strip = (PagerTabStrip) findViewById(R.id.pager_header);
+		strip.setDrawFullUnderline(false);
+		strip.setTabIndicatorColor(Color.WHITE);
+		FloatingActionButton fabButton = new FloatingActionButton.Builder(
+				VitalsActivity.this)
+				.withDrawable(
+						getResources()
+								.getDrawable(R.drawable.ic_person_add_white_24dp))
+				.withButtonColor(getResources().getColor(R.color.light_blue_500))
+				.withGravity(Gravity.TOP|Gravity.RIGHT).withMargins(0, 258-35, 16, 0) .create();
+        
 		username=(TextView)findViewById(R.id.tvSharedUsers);
 		followercount=(TextView)findViewById(R.id.tvFollowerCount);
 		image=(ImageView)findViewById(R.id.ivPicture);
@@ -211,7 +230,7 @@ public class VitalsActivity extends ActionBarActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.user, menu);
+		getMenuInflater().inflate(R.menu.vitals, menu);
 		return true;
 	}
 	AlertDialog alertDialog=null;
@@ -306,21 +325,21 @@ public class VitalsActivity extends ActionBarActivity {
 		            }
 		        }
 
-		        // Returns the page title for the top indicator
-		        @Override
-		        public CharSequence getPageTitle(int position) {
-		            switch (position) {
+				// Returns the page title for the top indicator
+				@Override
+				public CharSequence getPageTitle(int position) {
+					switch (position) {
 					case 0:
-						return "FOLLOWERS";
+						return "                                 FOLLOWERS                                 ";
 
 					case 1:
-						return "FOLLOWING";
+						return "                                 FOLLOWING                                 ";
 
 					default:
 						break;
 					}
 					return null;
-		        }
+				}
 
 		    }
 	 

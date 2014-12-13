@@ -68,6 +68,7 @@ public class FollowerFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
+				getActivity().finish();
 				Intent i = new Intent(getActivity(),VitalsActivity.class);
 				i.putExtra("user",usernames[arg2]);
 				startActivityForResult(i,1);
@@ -130,7 +131,7 @@ public class FollowerFragment extends Fragment {
 			});
 
 			textView.setText(values[position]);
-			textView2.setText("@" + usernames[position]);
+			textView2.setText("@" + usernames[position].split("~")[0]);
 			
 			Picasso.with(context).load(urls[position])
 					.resize(70,70).transform(new RoundedTransformation(60, 0))
