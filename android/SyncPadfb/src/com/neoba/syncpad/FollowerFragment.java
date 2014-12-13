@@ -2,7 +2,7 @@ package com.neoba.syncpad;
 
 import java.util.ArrayList;
 
-import com.neoba.syncpad.SuggestedUsers.Follow;
+
 import com.squareup.picasso.Picasso;
 
 import android.app.Activity;

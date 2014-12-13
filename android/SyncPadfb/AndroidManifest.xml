@@ -34,7 +34,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+             android:theme="@style/Theme.SyncPadImageHeaderLollipop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

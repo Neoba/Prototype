@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import com.neoba.syncpad.NotesList.NoteListAdapter;
-import com.neoba.syncpad.SuggestedUsers.Follow;
 import com.squareup.picasso.Picasso;
 
 import android.app.Activity;

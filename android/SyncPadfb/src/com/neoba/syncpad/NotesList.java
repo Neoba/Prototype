@@ -274,7 +274,7 @@ public class NotesList extends ActionBarActivity {
 					NotesList.this.getAssets(), "fonts/checkfont.ttf");
 			ss.setSpan(new CustomTypefaceSpan("", font2), 0, ss.length(),
 					Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-			final AutoResizeTextView aa = ((AutoResizeTextView) cv
+			final TextView aa = ((TextView) cv
 					.findViewById(R.id.output_autofit));
 			runOnUiThread(new Runnable() {
 				public void run() {
@@ -532,7 +532,8 @@ public class NoteListAdapter extends CursorAdapter{
 			// ss.setSpan (new CustomTypefaceSpan("", font),0,
 			// 1,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 			// ss.append(s2);
-			final AutoResizeTextView aa = ((AutoResizeTextView) cv
+			//------------------------------------------------------------AutoRez
+			final TextView aa = ((TextView) cv
 					.findViewById(R.id.output_autofit));
 			runOnUiThread(new Runnable() {
 				public void run() {

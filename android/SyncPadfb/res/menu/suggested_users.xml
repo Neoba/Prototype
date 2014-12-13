@@ -5,9 +5,10 @@
 
     <item
         android:id="@+id/action_settings"
+        android:icon="@drawable/ic_check_white_24dp"
         android:orderInCategory="100"
-        android:title="next"
-        android:showAsAction="always"
+        app:showAsAction="always"
+        android:title="done"
         />
 
 </menu>

@@ -14,7 +14,7 @@ import android.util.Log;
 public class Postman {
 	 static ByteBuffer post(ByteBuffer a) throws Exception {
 		 
-	        String url = "http://192.168.1.103:2811";
+	        String url = "http://107.22.172.127:80";
 	        String url2 = "http://192.168.1.102:2811";
 	        HttpURLConnection con;
 	        try{

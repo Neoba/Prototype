@@ -9,6 +9,9 @@ import java.util.UUID;
 import com.squareup.picasso.Picasso;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -17,6 +20,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +36,7 @@ import android.widget.Toast;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
-public class SuggestedUsers extends Activity {
+public class SuggestedUsers extends ActionBarActivity {
 
 	HashMap<String, Boolean> followed;
 	ListView lvsugg;
@@ -43,6 +47,12 @@ public class SuggestedUsers extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_suggested_users);
+		
+		Toolbar toolbar = (Toolbar) findViewById(R.id.tbSU);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+        getSupportActionBar().setTitle("Suggested Followers");
 		Intent i = getIntent();
 		lvsugg = (ListView) findViewById(R.id.lvUsersFollowing);
 		usernames = i.getExtras().getString("usernames").split(",");
@@ -57,32 +67,7 @@ public class SuggestedUsers extends Activity {
 
 	}
 
-	public class Follow extends AsyncTask<String, Void, Void> {
 
-		@Override
-		protected Void doInBackground(String... arg0) {
-			try {
-				ByteMessenger.FollowUser(arg0[0],UUID.fromString(PreferenceManager.getDefaultSharedPreferences(SuggestedUsers.this).getString("cookie", "default")));
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			followed.put(arg0[0], true);
-			runOnUiThread(new Runnable() {
-
-				@Override
-				public void run() {
-					adapter.notifyDataSetChanged();
-
-				}
-			});
-
-			return null;
-		}
-
-	}
 
 	public class SuggestionsAdapter extends ArrayAdapter<String> {
 		private final Context context;
@@ -137,7 +122,7 @@ public class SuggestedUsers extends Activity {
 
 						followb.setVisibility(View.INVISIBLE);
 						pb.setVisibility(View.VISIBLE);
-						new Follow().execute(usernames[position]);
+						new FollowUser().execute(usernames[position]);
 					}
 				}
 			});
@@ -171,5 +156,83 @@ public class SuggestedUsers extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	public class FollowUser extends AsyncTask<String, Void, Long> {
+		private ProgressDialog dialog;
 
+		@Override
+		protected void onPostExecute(Long result) {
+			super.onPostExecute(result);
+			if (dialog.isShowing()) {
+				dialog.dismiss();
+				dialog = null;
+			}
+
+		}
+
+		@Override
+		protected void onPreExecute() {
+
+			this.dialog = new ProgressDialog(SuggestedUsers.this);
+			this.dialog.setMessage("Following user..");
+			this.dialog.show();
+		}
+
+		@Override
+		protected Long doInBackground(String... params) {
+
+			String doc = null;
+			try {
+				doc = ByteMessenger.FollowUser(params[0], UUID
+						.fromString(PreferenceManager
+								.getDefaultSharedPreferences(
+										SuggestedUsers.this).getString(
+										"cookie", ":(")));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			if (doc != null) {
+				DBManager db = new DBManager(SuggestedUsers.this);
+				db.open();
+				Long id = Long.parseLong(doc.split("~")[0]);
+				db.insertFollowing(id, params[0] + "~" + doc.split("~")[1]);
+				Log.d("FOLLOWING", doc + "" + params[0]);
+				db.close();
+
+				followed.put(params[0], true);
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						adapter.notifyDataSetChanged();
+
+					}
+				});
+
+
+			} else {
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						Toast.makeText(getApplicationContext(),
+								"Sorry.. Can't connect to our server :(",
+								Toast.LENGTH_LONG).show();
+					}
+				});
+
+			}
+
+			return null;
+		}
+
+	}
 }

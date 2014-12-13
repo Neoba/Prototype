@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import com.neoba.syncpad.NotesList.NoteListAdapter;
-import com.neoba.syncpad.SuggestedUsers.Follow;
 import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
@@ -91,40 +90,7 @@ public class FollowingFragment extends Fragment {
 				
 			}
 		});
-        lvFollowings.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> arg0, View view,
-					final int arg2, long arg3) {
-				final AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-				b.setIcon(android.R.drawable.ic_dialog_alert);
-				b.setMessage("Unfollow User?");
-				b.setPositiveButton("OK",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int whichButton) {
-								DBManager db = new DBManager(getActivity());
-								db.open();
-								new Unfollow().execute(arg2+"~"+db.getFollowingUsernameFromRowid(arg2+1));
-								db.close();
-								
-							}
-						});
-				b.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int whichButton) {
-
-							}
-						});
-
-				b.show();
-
-				return false;
-			}
-        }); 
         return view;  
         
     }
