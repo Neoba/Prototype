@@ -65,6 +65,7 @@ public class ShareListActivity extends Activity {
 		db.open();
 		// sch=new ShareSchema();
 		// sch.setDocid(db.getId(rowid));
+		
 		access_token=PreferenceManager.getDefaultSharedPreferences(ShareListActivity.this).getString("access_token", "defaultStringIfNothingFound");
 		slist = (ListView) findViewById(R.id.lvShares);
 		add = (ImageButton) findViewById(R.id.bSLAdd);
@@ -112,10 +113,16 @@ public class ShareListActivity extends Activity {
 				}
 				DBManager db = new DBManager(getApplicationContext());
 				db.open();
+				try{
 				shares.add(new Share(docid, db.getFollowerid((String) sp
 						.getSelectedItem()), (String) sp.getSelectedItem(),
 						(byte) 1));
-				slist.setAdapter(sa);
+					slist.setAdapter(sa);
+				}
+				catch(Exception e){
+					Log.d("Bug","FIC");
+				}
+				
 				Log.d("PERMADD", "" + shares);
 				db.close();
 			}
