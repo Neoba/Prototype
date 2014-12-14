@@ -366,7 +366,12 @@ public class NoteListAdapter extends CursorAdapter{
 		((TextView)rowView.findViewById(R.id.tvTimeStamp)).setText(new PrettyTime().format(new Date(ltime)));
 		//c.getLong(columnIndex)
 		DBManager db = new DBManager(NotesList.this);
+		try{
 		db.open();
+		}
+		catch(Exception e){
+			Log.d("Bug",e.getLocalizedMessage());
+		}
 		if (!db.isDocUnSynced(d.id)) {
 			Log.d("NOTELIST", "Unsynced " + d.id);
 			d.synced = 2;

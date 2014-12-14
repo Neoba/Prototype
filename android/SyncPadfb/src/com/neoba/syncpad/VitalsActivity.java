@@ -424,15 +424,14 @@ public class VitalsActivity extends ActionBarActivity {
 			}
 		}
 
-		// Returns the page title for the top indicator
 		@Override
 		public CharSequence getPageTitle(int position) {
 			switch (position) {
 			case 0:
-				return "                                 FOLLOWERS                                 ";
+				return "                      FOLLOWERS                      ";
 
 			case 1:
-				return "                                 FOLLOWING                                 ";
+				return "                      FOLLOWING                      ";
 
 			default:
 				break;
@@ -441,6 +440,7 @@ public class VitalsActivity extends ActionBarActivity {
 		}
 
 	}
+
 
 	public class FollowUser extends AsyncTask<String, Void, Long> {
 		private ProgressDialog dialog;

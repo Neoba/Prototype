@@ -390,10 +390,10 @@ public class UserActivity extends ActionBarActivity {
 		public CharSequence getPageTitle(int position) {
 			switch (position) {
 			case 0:
-				return "                                 FOLLOWERS                                 ";
+				return "                      FOLLOWERS                      ";
 
 			case 1:
-				return "                                 FOLLOWING                                 ";
+				return "                      FOLLOWING                      ";
 
 			default:
 				break;

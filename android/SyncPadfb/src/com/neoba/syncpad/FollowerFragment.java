@@ -59,7 +59,9 @@ public class FollowerFragment extends Fragment {
     // Inflate the view for the fragment based on layout XML
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_follower, container, false);
+    	View view = names.length == 0 ? inflater.inflate(
+				R.layout.empty_userlist, container, false) :inflater.inflate(R.layout.fragment_follower, container, false);
+				if(names.length!=0){
         lvFollowers=(ListView)view.findViewById(R.id.lvUsersFollowing);
         FollowerAdapter fa=new FollowerAdapter(view.getContext(), FollowerFragment.names, FollowerFragment.usernames,  FollowerFragment.urls);
         lvFollowers.setAdapter(fa);
@@ -75,6 +77,7 @@ public class FollowerFragment extends Fragment {
 				
 			}
 		});
+				}
         return view;
         
         

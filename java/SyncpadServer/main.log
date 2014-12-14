@@ -9944,3 +9944,206 @@ Cfgchv<br>
 2014-12-14 01:22:23 DEBUG ConsoleUtils:26 - size : 6 bytes
 2014-12-14 01:22:23 DEBUG ConsoleUtils:43 - 02 01 50 4F 4E 47             . . P O N G 
 2014-12-14 01:22:23 INFO  DsyncserverHandler:50 - Message Responded :243
+2014-12-14 01:23:47 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.1.102:33922:244
+2014-12-14 01:23:47 DEBUG ConsoleUtils:25 - buffer : request
+2014-12-14 01:23:47 DEBUG ConsoleUtils:26 - size : 417 bytes
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 02 F6 00 00 00 F4 43 41 41 55 . . . . . . C A A U 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 42 41 46 52 54 54 79 54 50 38 B A F R T T y T P 8 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 48 62 63 6D 65 6F 6F 5A 42 46 H b c m e o o Z B F 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 56 6A 50 34 4A 4E 32 5A 42 46 V j P 4 J N 2 Z B F 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 78 69 76 58 35 70 76 37 65 6B x i v X 5 p v 7 e k 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 4C 55 4F 33 59 63 51 6D 36 7A L U O 3 Y c Q m 6 z 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 70 42 53 66 74 31 44 43 39 43 p B S f t 1 D C 9 C 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 52 69 34 49 6D 76 32 43 79 5A R i 4 I m v 2 C y Z 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 41 41 4F 74 72 32 66 67 48 35 A A O t r 2 f g H 5 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 75 47 7A 5A 41 4D 6C 4A 66 57 u G z Z A M l J f W 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 61 65 44 54 54 73 43 59 59 57 a e D T T s C Y Y W 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 74 6F 79 55 5A 42 55 65 5A 43 t o y U Z B U e Z C 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 6D 66 67 4D 7A 78 37 64 4F 75 m f g M z x 7 d O u 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 69 36 7A 67 66 6D 69 64 61 35 i 6 z g f m i d a 5 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 6A 52 79 52 53 44 36 6F 78 4C j R y R S D 6 o x L 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 74 57 6E 44 42 74 6B 5A 41 72 t W n D B t k Z A r 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 56 67 30 7A 6B 51 4D 61 33 69 V g 0 z k Q M a 3 i 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 55 77 35 39 50 6D 30 53 42 69 U w 5 9 P m 0 S B i 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 55 37 66 43 73 48 43 49 6D 4D U 7 f C s H C I m M 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 4D 69 76 70 77 4A 68 53 57 62 M i v p w J h S W b 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 51 6B 33 48 77 63 78 4F 44 63 Q k 3 H w c x O D c 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 6C 4D 53 75 6B 65 6B 70 41 63 l M S u k e k p A c 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 45 58 65 73 66 41 78 74 72 53 E X e s f A x t r S 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 71 65 4C 75 34 51 5A 44 5A 44 q e L u 4 Q Z D Z D 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 0A 00 00 00 A2 41 50 41 39 31 . . . . . A P A 9 1 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 62 45 44 41 76 34 79 36 6F 2D b E D A v 4 y 6 o - 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 69 62 73 52 6A 64 4C 6F 6F 56 i b s R j d L o o V 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 44 56 6C 48 7A 4E 52 61 51 42 D V l H z N R a Q B 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 7A 75 32 59 4A 5F 4A 5F 43 44 z u 2 Y J _ J _ C D 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 48 4E 6F 2D 65 64 6B 45 33 6F H N o - e d k E 3 o 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 34 49 6F 51 6D 5A 4D 31 51 42 4 I o Q m Z M 1 Q B 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 39 78 54 75 37 33 69 67 34 7A 9 x T u 7 3 i g 4 z 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 54 70 66 44 46 56 4D 69 6E 59 T p f D F V M i n Y 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 74 5A 64 6B 79 6A 52 72 2D 67 t Z d k y j R r - g 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 48 45 6F 38 4E 59 41 42 69 77 H E o 8 N Y A B i w 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 32 4B 4E 42 49 6E 69 66 58 4C 2 K N B I n i f X L 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 55 58 71 58 30 70 38 59 63 2D U X q X 0 p 8 Y c - 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 56 50 64 7A 79 76 44 4A 5A 4F V P d z y v D J Z O 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 39 55 47 71 31 67 6F 63 48 43 9 U G q 1 g o c H C 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 7A 78 47 77 77 77 45 43 57 64 z x G w w w E C W d 
+2014-12-14 01:23:47 DEBUG ConsoleUtils:43 - 6A 52 75 34 6D 65 41          j R u 4 m e A 
+2014-12-14 01:23:47 INFO  MessageInterpreter:99 - user agent detected: Android OS >= 4.0.3
+2014-12-14 01:23:47 DEBUG MessageInterpreter:108 - User Agent: 10
+2014-12-14 01:23:47 INFO  MessageInterpreter:109 - logging in new user via facebook
+2014-12-14 01:23:47 INFO  FacebookUser:50 - Trying to connect to facebook..
+2014-12-14 01:23:47 INFO  FacebookUser:53 - fbtoid access token CAAU6ZCTzlZBUoBAFRTTyTP8HbcmeooZBFVjP4JN2ZBFxivX5pv7ekLUO3YcQm6zpBSft1DC9CRi4Imv2CyZAAOtr2fgH5uGzZAMlJfWaeDTTsCYYWtoyUZBUeZCmfgMzx7dOui6zgfmida5jRyRSD6oxLtWnDBtkZArVg0zkQMa3iUw59Pm0SBiU7fCsHCImMMivpwJhSWbQk3HwcxODclMSukekpAcEXesfAxtrSqeLu4QZDZD
+2014-12-14 01:23:49 INFO  FacebookUserLogin:50 - eli :user found
+2014-12-14 01:23:49 INFO  FacebookUserLogin:51 - eli :session- 96c88396-c40d-4189-8c3a-1f004f57c4af
+2014-12-14 01:23:49 INFO  MessageInterpreter:112 - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAFRTTyTP8HbcmeooZBFVjP4JN2ZBFxivX5pv7ekLUO3YcQm6zpBSft1DC9CRi4Imv2CyZAAOtr2fgH5uGzZAMlJfWaeDTTsCYYWtoyUZBUeZCmfgMzx7dOui6zgfmida5jRyRSD6oxLtWnDBtkZArVg0zkQMa3iUw59Pm0SBiU7fCsHCImMMivpwJhSWbQk3HwcxODclMSukekpAcEXesfAxtrSqeLu4QZDZD
+2014-12-14 01:23:49 INFO  MessageInterpreter:114 - user_agents: {afdf3989-d428-4597-9e13-e5115ade24d0=10, 81b9791e-ab92-488b-97f3-173d94ec6657=10, 088f3dcc-487b-4ffe-8647-0053125eba31=10, 96c88396-c40d-4189-8c3a-1f004f57c4af=10, ce9e50e8-9da9-4b7a-bb1a-7eb86827271c=10}
+2014-12-14 01:23:49 DEBUG ConsoleUtils:25 - buffer : response
+2014-12-14 01:23:49 DEBUG ConsoleUtils:26 - size : 29 bytes
+2014-12-14 01:23:49 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF 8C 3A 1F 00 . . . . . . . :  . 
+2014-12-14 01:23:49 DEBUG ConsoleUtils:43 - 4F 57 C4 AF 96 C8 83 96 C4 0D O W . . . . . . . . 
+2014-12-14 01:23:49 DEBUG ConsoleUtils:43 - 41 89 00 00 00 03 65 6C 69    A . . . . . e l i 
+2014-12-14 01:23:49 INFO  DsyncserverHandler:50 - Message Responded :244
+2014-12-14 01:23:50 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.1.102:33922:245
+2014-12-14 01:23:50 DEBUG ConsoleUtils:25 - buffer : request
+2014-12-14 01:23:50 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF 8C 3A 1F 00 . . . . . . . :  . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 4F 57 C4 AF 96 C8 83 96 C4 0D O W . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 41 89                         A . 
+2014-12-14 01:23:50 INFO  MessageInterpreter:61 - Authenticated message from user 1152921504606846977 with session 96c88396-c40d-4189-8c3a-1f004f57c4af
+2014-12-14 01:23:50 INFO  MessageInterpreter:168 - 96c88396-c40d-4189-8c3a-1f004f57c4af :getting digest
+2014-12-14 01:23:50 DEBUG GetDigestMessage:52 - 96c88396-c40d-4189-8c3a-1f004f57c4af :calculating digest of  version 2
+2014-12-14 01:23:50 DEBUG GetDigestMessage:52 - 96c88396-c40d-4189-8c3a-1f004f57c4af :calculating digest of  version 0
+2014-12-14 01:23:50 DEBUG GetDigestMessage:136 - 96c88396-c40d-4189-8c3a-1f004f57c4af :digesting doc  version 2
+2014-12-14 01:23:50 DEBUG GetDigestMessage:136 - 96c88396-c40d-4189-8c3a-1f004f57c4af :digesting doc  version 0
+2014-12-14 01:23:50 DEBUG GetDigestMessage:171 - 96c88396-c40d-4189-8c3a-1f004f57c4af :digesting follower mhoff
+2014-12-14 01:23:50 DEBUG GetDigestMessage:212 - 96c88396-c40d-4189-8c3a-1f004f57c4af :digested permissions info 
+2014-12-14 01:23:50 INFO  GetDigestMessage:213 - 96c88396-c40d-4189-8c3a-1f004f57c4af :digestion successful 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:25 - buffer : response
+2014-12-14 01:23:50 DEBUG ConsoleUtils:26 - size : 387 bytes
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 02 04 00 00 00 02 88 B6 15 C0 . . . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 57 72 76 04 5E 36 F1 45 40 17 W r v . ^ 6 . E @ . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 40 B9 00 00 00 11 D6 C3 C4 00 @ . . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 01 4F 00 08 4F 00 00 02 01 . . O . . O . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 73 4F 00 00 00 00 4F 23 32 65 s O . . . . O # 2 e 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 63 63 37 31 0A 3C 70 20 64 69 c c 7 1 . < p   d i 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 72 3D 22 6C 74 72 22 3E 3C 62 r = " l t r " > < b 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 3E 4B 6C 6F 73 65 72 3C 2F 62 > K l o s e r < / b 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 3E 3C 69 3E 20 3C 2F 69 3E 3C > < i >   < / i > < 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 62 72 3E 0A 3C 69 3E 4E 69 6E b r > . < i > N i n 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 65 20 49 6E 63 68 20 4E 61 69 e   I n c h   N a i 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 6C 73 3C 2F 69 3E 3C 62 72 3E l s < / i > < b r > 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 0A 3C 2F 70 3E 0A 00 00 00 14 . < / p > . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 65 6C 69 7E 31 33 37 34 38 31 e l i ~ 1 3 7 4 8 1 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 37 35 37 39 34 37 39 31 35 37 7 5 7 9 4 7 9 1 5 7 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 00 02 02 01 A0 68 2F 3F . . . . . . . h / ? 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 61 C9 6F D6 3F 1C 34 39 06 11 a . o . ? . 4 9 . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 48 AC 00 00 00 11 D6 C3 C4 00 H . . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 01 3E 00 08 3E 00 00 02 01 . . > . . > . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 73 3E 00 00 00 00 3E 23 46 38 s > . . . . > # F 8 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 46 38 46 46 0A 3C 70 20 64 69 F 8 F F . < p   d i 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 72 3D 22 6C 74 72 22 3E 54 68 r = " l t r " > T h 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 69 73 3C 62 72 3E 0A 3C 62 3E i s < b r > . < b > 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 46 67 68 6A 3C 2F 62 3E 3C 62 F g h j < / b > < b 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 72 3E 0A 43 66 67 63 68 76 3C r > . C f g c h v < 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 62 72 3E 0A 3C 2F 70 3E 0A 00 b r > . < / p > . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 14 65 6C 69 7E 31 33 37 . . . e l i ~ 1 3 7 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 34 38 31 37 35 37 39 34 37 39 4 8 1 7 5 7 9 4 7 9 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 31 35 37 00 00 00 00 02 01 00 1 5 7 . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 01 00 00 00 16 6D 68 6F . . . . . . . m h o 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 66 66 7E 31 33 39 30 35 30 31 f f ~ 1 3 9 0 5 0 1 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 32 38 31 32 34 31 32 35 32 10 2 8 1 2 4 1 2 5 2 . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 04 00 00 00 . . . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 00 00 02 A0 68 2F 3F 61 . . . . . . h / ? a 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - C9 6F D6 3F 1C 34 39 06 11 48 . o . ? . 4 9 . . H 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - AC 00 00 00 00 00 00 00 00 88 . . . . . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - B6 15 C0 57 72 76 04 5E 36 F1 . . . W r v . ^ 6 . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 45 40 17 40 B9 00 00 00 00 00 E @ . @ . . . . . . 
+2014-12-14 01:23:50 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00 00          . . . . . . . 
+2014-12-14 01:23:50 INFO  DsyncserverHandler:50 - Message Responded :245
+2014-12-14 01:23:53 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.1.104:32790:246
+2014-12-14 01:23:53 DEBUG ConsoleUtils:25 - buffer : request
+2014-12-14 01:23:53 DEBUG ConsoleUtils:26 - size : 453 bytes
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 02 F6 00 00 01 18 43 41 41 55 . . . . . . C A A U 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 42 41 46 32 50 37 59 31 31 54 B A F 2 P 7 Y 1 1 T 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 31 35 6C 70 45 66 53 65 77 61 1 5 l p E f S e w a 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 41 32 73 44 43 36 69 67 47 5A A 2 s D C 6 i g G Z 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 43 70 54 6F 35 76 6A 61 37 76 C p T o 5 v j a 7 v 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 5A 42 74 33 71 62 38 79 4C 79 Z B t 3 q b 8 y L y 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 6C 4C 50 77 72 59 47 66 4B 39 l L P w r Y G f K 9 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 4B 32 45 46 49 74 37 70 62 37 K 2 E F I t 7 p b 7 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 31 39 52 65 68 34 39 63 35 37 1 9 R e h 4 9 c 5 7 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 79 41 52 45 43 4B 76 39 47 5A y A R E C K v 9 G Z 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 42 41 42 4B 71 4E 47 47 6E 4C B A B K q N G G n L 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 52 71 49 56 71 43 48 5A 43 57 R q I V q C H Z C W 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 57 59 71 4C 5A 43 34 36 64 4E W Y q L Z C 4 6 d N 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 55 68 70 5A 43 6A 68 52 79 31 U h p Z C j h R y 1 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 7A 69 66 38 68 52 33 73 44 37 z i f 8 h R 3 s D 7 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 56 4F 5A 43 34 4E 46 6C 53 45 V O Z C 4 N F l S E 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 68 30 44 32 43 55 36 6C 45 72 h 0 D 2 C U 6 l E r 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 33 54 37 55 53 62 59 57 66 6A 3 T 7 U S b Y W f j 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 55 30 4C 33 53 6D 70 63 51 76 U 0 L 3 S m p c Q v 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 75 76 6A 7A 4A 6A 46 4D 6B 37 u v j z J j F M k 7 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 52 44 41 4E 30 6B 44 32 44 35 R D A N 0 k D 2 D 5 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 54 32 39 6C 66 5A 43 49 55 46 T 2 9 l f Z C I U F 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 32 46 5A 43 6C 45 4A 47 7A 75 2 F Z C l E J G z u 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 4E 41 69 31 65 49 37 79 68 66 N A i 1 e I 7 y h f 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 42 55 35 4E 46 41 41 45 35 64 B U 5 N F A A E 5 d 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 38 44 45 74 4C 72 5A 43 42 49 8 D E t L r Z C B I 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 6F 48 58 5A 42 48 6B 55 44 50 o H X Z B H k U D P 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 79 41 5A 44 5A 44 0A 00 00 00 y A Z D Z D . . . . 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - A2 41 50 41 39 31 62 45 33 4B . A P A 9 1 b E 3 K 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 7A 69 69 4F 6D 5A 53 67 42 46 z i i O m Z S g B F 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 48 32 2D 63 62 76 64 75 4C 75 H 2 - c b v d u L u 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 6C 34 55 79 62 4C 39 34 49 69 l 4 U y b L 9 4 I i 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 36 5A 49 74 34 39 79 65 53 67 6 Z I t 4 9 y e S g 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 30 77 4A 47 59 4A 33 6F 51 72 0 w J G Y J 3 o Q r 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 58 68 6D 42 48 33 36 42 61 48 X h m B H 3 6 B a H 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 65 57 45 6D 37 76 56 74 45 68 e W E m 7 v V t E h 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 41 79 4D 38 59 33 6A 45 2D 33 A y M 8 Y 3 j E - 3 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 71 4B 48 51 4C 6B 5F 37 41 79 q K H Q L k _ 7 A y 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 77 4F 79 6D 45 7A 56 53 74 7A w O y m E z V S t z 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 5F 5F 55 6D 30 32 72 55 73 54 _ _ U m 0 2 r U s T 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 43 68 78 4D 68 68 34 53 6D 69 C h x M h h 4 S m i 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 73 75 76 68 4C 66 57 66 68 51 s u v h L f W f h Q 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 57 72 5F 32 36 74 5F 4E 38 6B W r _ 2 6 t _ N 8 k 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 4F 54 45 30 6F 50 6C 70 53 39 O T E 0 o P l p S 9 
+2014-12-14 01:23:53 DEBUG ConsoleUtils:43 - 6D 6E 51                      m n Q 
+2014-12-14 01:23:53 INFO  MessageInterpreter:99 - user agent detected: Android OS >= 4.0.3
+2014-12-14 01:23:53 DEBUG MessageInterpreter:108 - User Agent: 10
+2014-12-14 01:23:53 INFO  MessageInterpreter:109 - logging in new user via facebook
+2014-12-14 01:23:53 INFO  FacebookUser:50 - Trying to connect to facebook..
+2014-12-14 01:23:54 INFO  FacebookUser:53 - fbtoid access token CAAU6ZCTzlZBUoBAF2P7Y11T15lpEfSewaA2sDC6igGZCpTo5vja7vZBt3qb8yLylLPwrYGfK9K2EFIt7pb719Reh49c57yARECKv9GZBABKqNGGnLRqIVqCHZCWWYqLZC46dNUhpZCjhRy1zif8hR3sD7VOZC4NFlSEh0D2CU6lEr3T7USbYWfjU0L3SmpcQvuvjzJjFMk7RDAN0kD2D5T29lfZCIUF2FZClEJGzuNAi1eI7yhfBU5NFAAE5d8DEtLrZCBIoHXZBHkUDPyAZDZD
+2014-12-14 01:23:54 INFO  FacebookUser:64 - fbtoid 1390501281241252
+2014-12-14 01:23:54 INFO  FacebookUserLogin:50 - pearlwatson :user found
+2014-12-14 01:23:54 INFO  FacebookUserLogin:51 - pearlwatson :session- 79a7d69f-2cc1-471e-b949-444c1da9dfc6
+2014-12-14 01:23:54 INFO  MessageInterpreter:112 - new facebook user session: 1152921504606846984 CAAU6ZCTzlZBUoBAF2P7Y11T15lpEfSewaA2sDC6igGZCpTo5vja7vZBt3qb8yLylLPwrYGfK9K2EFIt7pb719Reh49c57yARECKv9GZBABKqNGGnLRqIVqCHZCWWYqLZC46dNUhpZCjhRy1zif8hR3sD7VOZC4NFlSEh0D2CU6lEr3T7USbYWfjU0L3SmpcQvuvjzJjFMk7RDAN0kD2D5T29lfZCIUF2FZClEJGzuNAi1eI7yhfBU5NFAAE5d8DEtLrZCBIoHXZBHkUDPyAZDZD
+2014-12-14 01:23:54 INFO  MessageInterpreter:114 - user_agents: {afdf3989-d428-4597-9e13-e5115ade24d0=10, 81b9791e-ab92-488b-97f3-173d94ec6657=10, 088f3dcc-487b-4ffe-8647-0053125eba31=10, 96c88396-c40d-4189-8c3a-1f004f57c4af=10, 79a7d69f-2cc1-471e-b949-444c1da9dfc6=10, ce9e50e8-9da9-4b7a-bb1a-7eb86827271c=10}
+2014-12-14 01:23:54 DEBUG ConsoleUtils:25 - buffer : response
+2014-12-14 01:23:54 DEBUG ConsoleUtils:26 - size : 37 bytes
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 02 06 00 00 FF FF B9 49 44 4C . . . . . . . I D L 
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 1D A9 DF C6 79 A7 D6 9F 2C C1 . . . . y . . . , . 
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 47 1E 00 00 00 0B 70 65 61 72 G  . . . . p e a r 
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 6C 77 61 74 73 6F 6E          l w a t s o n 
+2014-12-14 01:23:54 INFO  DsyncserverHandler:50 - Message Responded :246
+2014-12-14 01:23:54 INFO  DsyncserverHandler:44 - Message Received from ip /192.168.1.104:32790:247
+2014-12-14 01:23:54 DEBUG ConsoleUtils:25 - buffer : request
+2014-12-14 01:23:54 DEBUG ConsoleUtils:26 - size : 22 bytes
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 02 04 00 00 FF FF B9 49 44 4C . . . . . . . I D L 
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 1D A9 DF C6 79 A7 D6 9F 2C C1 . . . . y . . . , . 
+2014-12-14 01:23:54 DEBUG ConsoleUtils:43 - 47 1E                         G  
+2014-12-14 01:23:54 INFO  MessageInterpreter:61 - Authenticated message from user 1152921504606846984 with session 79a7d69f-2cc1-471e-b949-444c1da9dfc6
+2014-12-14 01:23:54 INFO  MessageInterpreter:168 - 79a7d69f-2cc1-471e-b949-444c1da9dfc6 :getting digest
+2014-12-14 01:23:55 DEBUG GetDigestMessage:181 - 79a7d69f-2cc1-471e-b949-444c1da9dfc6 :digesting follower mhoff
+2014-12-14 01:23:55 DEBUG GetDigestMessage:212 - 79a7d69f-2cc1-471e-b949-444c1da9dfc6 :digested permissions info 
+2014-12-14 01:23:55 INFO  GetDigestMessage:213 - 79a7d69f-2cc1-471e-b949-444c1da9dfc6 :digestion successful 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:25 - buffer : response
+2014-12-14 01:23:55 DEBUG ConsoleUtils:26 - size : 56 bytes
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 02 04 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 00 00 00 01 00 00 00 16 6D 68 . . . . . . . . m h 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 6F 66 66 7E 31 33 39 30 35 30 o f f ~ 1 3 9 0 5 0 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 31 32 38 31 32 34 31 32 35 32 1 2 8 1 2 4 1 2 5 2 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 10 00 00 00 00 00 00 04 00 00 . . . . . . . . . . 
+2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00             . . . . . . 
+2014-12-14 01:23:55 INFO  DsyncserverHandler:50 - Message Responded :247
