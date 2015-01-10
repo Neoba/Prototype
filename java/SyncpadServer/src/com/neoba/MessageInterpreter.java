@@ -9,6 +9,8 @@ import com.neoba.messages.DocumentCreateMessage;
 import com.neoba.messages.DocumentDeleteMessage;
 import com.neoba.messages.DocumentEditMessage;
 import com.neoba.messages.GetDigestMessage;
+import com.neoba.messages.IosDocumentEditMessage;
+import com.neoba.messages.IosGetDigestMessage;
 import com.neoba.messages.GrantPermissionMessage;
 import com.neoba.messages.NotLoggedInMessage;
 import com.neoba.messages.PingPongMessage;
@@ -164,9 +166,23 @@ class MessageInterpreter {
                         int version = buff.getInt(22 + 16 + size);
                         logger.info(sessid + " :editing document - " + doc);
                         return new DocumentEditMessage(doc, diff, version, sessid).result();
+						
+					case Constants.IOS_DOCUMENT_EDIT:
+						doc = new UUID(buff.getLong(30), buff.getLong(22));
+						byte[] text = new byte[size];
+						buff.getBytes(22 + 16, text, 0, size);
+						int version1 = buff.getInt(22 + 16 + size);
+						logger.info(sessid+" : editing document by Ios user - "+doc);
+						return new IosDocumentEditMessage(doc, text, version1, sessid).result();
+						
                     case Constants.GET_DIGEST:
                         logger.info(sessid + " :getting digest");
                         return new GetDigestMessage(sessid).result();
+						
+					case Constants.IOS_GET_DIGEST:
+						logger.info(sessid+" :getting digest for Ios");
+						return new IosGetDigestMessage(sessid).result();
+						
                     case Constants.USER_FOLLOW:
                         string = buff.toString(6 + 16, size, Charset.forName("UTF-8"));
                         logger.info(sessid + " :following user " + string);

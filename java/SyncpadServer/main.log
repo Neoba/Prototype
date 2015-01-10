@@ -10147,3 +10147,1101 @@ Cfgchv<br>
 2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 10 00 00 00 00 00 00 04 00 00 . . . . . . . . . . 
 2014-12-14 01:23:55 DEBUG ConsoleUtils:43 - 00 00 00 00 00 00             . . . . . . 
 2014-12-14 01:23:55 INFO  DsyncserverHandler:50 - Message Responded :247
+2015-01-10 21:17:39 INFO  Dsyncserver:? - kickstarting server..
+2015-01-10 21:17:41 INFO  Dsyncserver:? - created view - idsview
+2015-01-10 21:17:42 INFO  Dsyncserver:? - created view - userstoid
+2015-01-10 21:17:42 INFO  Dsyncserver:? - created view - usernamelistview
+2015-01-10 21:17:42 INFO  Dsyncserver:? - created view - created_docs
+2015-01-10 21:17:42 INFO  Dsyncserver:? - created view - facebookidtoid
+2015-01-10 21:17:42 INFO  Dsyncserver:? - created view - usernametofacebookid
+2015-01-10 21:17:43 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2015-01-10 21:17:43 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 4
+2015-01-10 21:17:43 DEBUG PlatformDependent:463 - UID: 502
+2015-01-10 21:17:43 DEBUG PlatformDependent:540 - Java version: 7
+2015-01-10 21:17:43 DEBUG PlatformDependent:547 - -Dio.netty.noUnsafe: false
+2015-01-10 21:17:43 DEBUG PlatformDependent0:61 - sun.nio.ch.DirectBuffer.cleaner(): available
+2015-01-10 21:17:43 DEBUG PlatformDependent0:81 - java.nio.Buffer.address: available
+2015-01-10 21:17:43 DEBUG PlatformDependent0:89 - sun.misc.Unsafe.theUnsafe: available
+2015-01-10 21:17:43 DEBUG PlatformDependent0:99 - sun.misc.Unsafe.copyMemory: available
+2015-01-10 21:17:43 DEBUG PlatformDependent0:138 - java.nio.Bits.unaligned: true
+2015-01-10 21:17:43 DEBUG PlatformDependent:574 - sun.misc.Unsafe: available
+2015-01-10 21:17:43 DEBUG PlatformDependent:657 - -Dio.netty.noJavassist: false
+2015-01-10 21:17:43 DEBUG PlatformDependent:670 - Javassist: unavailable
+2015-01-10 21:17:43 DEBUG PlatformDependent:671 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2015-01-10 21:17:43 DEBUG PlatformDependent:689 - -Dio.netty.tmpdir: /var/folders/d7/917j9pd93gq55_jrvpb7bq4h0000gp/T (java.io.tmpdir)
+2015-01-10 21:17:43 DEBUG PlatformDependent:770 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2015-01-10 21:17:43 DEBUG PlatformDependent:86 - -Dio.netty.noPreferDirect: false
+2015-01-10 21:17:43 DEBUG NioEventLoop:88 - -Dio.netty.noKeySetOptimization: false
+2015-01-10 21:17:43 DEBUG NioEventLoop:89 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2015-01-10 21:17:43 DEBUG ThreadLocalRandom:147 - -Dio.netty.initialSeedUniquifier: 0x98ab014d2ceec3de
+2015-01-10 21:17:43 DEBUG ChannelOutboundBuffer:57 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2015-01-10 21:17:43 DEBUG Recycler:50 - -Dio.netty.recycler.maxCapacity.default: 262144
+2015-01-10 21:17:44 DEBUG ByteBufUtil:55 - -Dio.netty.allocator.type: unpooled
+2015-01-10 21:17:44 DEBUG NetUtil:155 - Loopback interface: lo0 (lo0, 0:0:0:0:0:0:0:1)
+2015-01-10 21:17:44 INFO  Dsyncserver:? - com.neoba.Dsyncserver started and listen on /0:0:0:0:0:0:0:0:2811
+2015-01-10 21:25:14 DEBUG ResourceLeakDetector:91 - -Dio.netty.leakDetectionLevel: simple
+2015-01-10 21:25:15 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63125:1
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-10 21:25:15 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-10 21:25:16 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-10 21:25:16 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-10 21:25:16 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-10 21:25:16 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-10 21:25:16 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-10 21:25:39 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-10 21:25:39 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-10 21:25:48 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-10 21:25:48 INFO  FacebookUserLogin:? - fabrizio :session- 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:25:48 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-10 21:25:48 INFO  MessageInterpreter:? - user_agents: {18422fcb-a80f-4385-a449-05e2da86627c=10}
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - 43 85 00 00 00 08 66 61 62 72 C . . . . . f a b r 
+2015-01-10 21:25:48 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-10 21:25:48 INFO  DsyncserverHandler:? - Message Responded :1
+2015-01-10 21:25:49 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63125:2
+2015-01-10 21:25:49 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:25:49 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-10 21:25:49 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:25:49 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:25:49 DEBUG ConsoleUtils:? - 43 85                         C . 
+2015-01-10 21:25:49 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:25:49 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c :getting digest for Ios
+2015-01-10 21:25:49 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 2
+2015-01-10 21:25:49 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 2
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting follower new
+2015-01-10 21:25:50 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digested permissions info 
+2015-01-10 21:25:50 INFO  GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digestion successful 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - size : 399 bytes
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 02 F4 00 00 00 06 7C E5 DD 18 . . . . . . | . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - D6 05 00 00 00 0C 4E 65 77 20 . . . . . . N e w   
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 00 00 n o t e . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 02 01 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 01 00 00 00 03 6E 65 77 10 . . . . . . n e w . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 06 2B 18 AB 25 FE FC 40 E6 89 . + . . % . . @ . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - CA B6 69 8B 9C D6 05 00 00 00 . . i . . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 00 00 C8 78 7F 8C 75 . . . . . . x  . u 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 1F 44 BE 95 A0 D4 4D 83 82 83  D . . . . M . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 92 00 00 00 00 00 00 00 00 F2 . . . . . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 7E E6 AB 2A 2A 40 50 A2 BA 90 ~ . . * * @ P . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 4E 5E EE F9 29 00 00 00 00 00 N ^ . . ) . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 02 CC 44 2D BC 21 49 . . . . . D - . ! I 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - A5 AA F0 60 CF A6 5F 71 4B 00 . . . ` . . _ q K . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 7C E5 DD . . . . . . . | . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 18 B0 BC 49 24 B5 AE AC EB D4 . . . I $ . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - DE 20 0E 00 00 00 00 00 00 00 .   . . . . . . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 FF 4A 0E 5A B2 3F 40 80 BA . . J . Z . ? @ . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - A6 C9 F2 26 E8 AE 30 00 00 00 . . . & . . 0 . . . 
+2015-01-10 21:25:50 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00    . . . . . . . . . 
+2015-01-10 21:25:50 INFO  DsyncserverHandler:? - Message Responded :2
+2015-01-10 21:26:23 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63126:3
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - size : 56 bytes
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 02 F3 00 00 00 0E A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 43 85 2B 18 AB 25 FE FC 40 E6 C . + . . % . . @ . 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 89 CA B6 69 8B 9C D6 05 4E 65 . . . i . . . . N e 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 77 20 6E 6F 74 65 2E 2E 2E 2E w   n o t e . . . . 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 65 72 00 00 00 01             e r . . . . 
+2015-01-10 21:26:23 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:26:23 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c : editing document by Ios user - 89cab669-8b9c-d605-2b18-ab25fefc40e6
+2015-01-10 21:26:23 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :edited by the creator itself
+2015-01-10 21:26:23 DEBUG IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c editors of the document- []
+2015-01-10 21:26:23 DEBUG IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c readers of the document- []
+2015-01-10 21:26:23 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :sync check passed
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - buffer : diff_calculated
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - size : 29 bytes
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - D6 C3 C4 00 00 01 0C 00 14 0E . . . . . . . . . . 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 00 0E 01 00 4E 65 77 20 6E 6F . . . . N e w   n o 
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 74 65 2E 2E 2E 2E 65 72 0F    t e . . . . e r . 
+2015-01-10 21:26:23 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c 's copy: New note....er
+2015-01-10 21:26:23 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c version: 1
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - size : 6 bytes
+2015-01-10 21:26:23 DEBUG ConsoleUtils:? - 02 F3 00 00 FF FF             . . . . . . 
+2015-01-10 21:26:23 INFO  DsyncserverHandler:? - Message Responded :3
+2015-01-10 21:26:24 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63126:4
+2015-01-10 21:26:24 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:26:24 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-10 21:26:24 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:26:24 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:26:24 DEBUG ConsoleUtils:? - 43 85                         C . 
+2015-01-10 21:26:24 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:26:24 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c :getting digest for Ios
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 2
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 2
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting follower new
+2015-01-10 21:26:26 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digested permissions info 
+2015-01-10 21:26:26 INFO  GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digestion successful 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - size : 401 bytes
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 02 F4 00 00 00 06 7C E5 DD 18 . . . . . . | . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 01 00 00 00 03 6E 65 . . . . . . . . n e 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 77 10 00 00 00 00 00 00 00 00 w . . . . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 06 2B 18 AB 25 FE FC 40 . . . + . . % . . @ 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - E6 89 CA B6 69 8B 9C D6 05 00 . . . . i . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 C8 78 7F . . . . . . . . x  
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 8C 75 1F 44 BE 95 A0 D4 4D 83 . u  D . . . . M . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 82 83 92 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 F2 7E E6 AB 2A 2A 40 50 A2 . . ~ . . * * @ P . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - BA 90 4E 5E EE F9 29 00 00 00 . . N ^ . . ) . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 00 00 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 4B 00 00 00 00 00 00 00 00 7C K . . . . . . . . | 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - E5 DD 18 B0 BC 49 24 B5 AE AC . . . . . I $ . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - EB D4 DE 20 0E 00 00 00 00 00 . . .   . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:26:26 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-10 21:26:26 INFO  DsyncserverHandler:? - Message Responded :4
+2015-01-10 21:27:07 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63127:5
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - size : 38 bytes
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - 02 02 00 00 FF FF A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - 43 85 AC 83 3C CF 82 18 46 FB C . . . < . . . F . 
+2015-01-10 21:27:07 DEBUG ConsoleUtils:? - B8 C7 D8 7A EB BB FC AA       . . . z . . . . 
+2015-01-10 21:27:07 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:27:07 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c :creating new document- 
+2015-01-10 21:27:08 INFO  DocumentCreateMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c: Created new Document [b8c7d87a-ebbb-fcaa-ac83-3ccf821846fb] : {"dict":"","diff":[-42,-61,-60,0,0],"version":-1,"type":"document","title":"","creator":"1152921504606846977","global":false,"history":[],"permission_read":[],"permission_edit":[]}
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 02 02 00 00 FF FF AC 83 3C CF . . . . . . . . < . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - FC AA                         . . 
+2015-01-10 21:27:08 INFO  DsyncserverHandler:? - Message Responded :5
+2015-01-10 21:27:08 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63127:6
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - size : 52 bytes
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 02 F3 00 00 00 0A A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 43 85 AC 83 3C CF 82 18 46 FB C . . . < . . . F . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - B8 C7 D8 7A EB BB FC AA 48 61 . . . z . . . . H a 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 68 20 68 61 68 20 68 61 00 00 h   h a h   h a . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 00 00                         . . 
+2015-01-10 21:27:08 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:27:08 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c : editing document by Ios user - b8c7d87a-ebbb-fcaa-ac83-3ccf821846fb
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :edited by the creator itself
+2015-01-10 21:27:08 DEBUG IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c editors of the document- []
+2015-01-10 21:27:08 DEBUG IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c readers of the document- []
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :sync check passed
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - buffer : diff_calculated
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - size : 25 bytes
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - D6 C3 C4 00 00 01 00 00 10 0A . . . . . . . . . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 00 0A 01 00 48 61 68 20 68 61 . . . . H a h   h a 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 68 20 68 61 0B                h   h a . 
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :dictionary updated
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :new dictionary- Hah hah ha
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c 's copy: Hah hah ha
+2015-01-10 21:27:08 INFO  IosDocumentEditMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c version: 0
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - size : 6 bytes
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 02 F3 00 00 FF FF             . . . . . . 
+2015-01-10 21:27:08 INFO  DsyncserverHandler:? - Message Responded :6
+2015-01-10 21:27:08 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63127:7
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - buffer : request
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF A4 49 05 E2 . . . . . . . I . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - DA 86 62 7C 18 42 2F CB A8 0F . . b | . B / . . . 
+2015-01-10 21:27:08 DEBUG ConsoleUtils:? - 43 85                         C . 
+2015-01-10 21:27:08 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 18422fcb-a80f-4385-a449-05e2da86627c
+2015-01-10 21:27:08 INFO  MessageInterpreter:? - 18422fcb-a80f-4385-a449-05e2da86627c :getting digest for Ios
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 2
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 1
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :calculating digest of  version 0
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - Constructor
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 2
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 1
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting doc  version 0
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digesting follower new
+2015-01-10 21:27:11 DEBUG GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digested permissions info 
+2015-01-10 21:27:11 INFO  GetDigestMessage:? - 18422fcb-a80f-4385-a449-05e2da86627c :digestion successful 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - buffer : response
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-10 21:27:11 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-10 21:27:11 INFO  DsyncserverHandler:? - Message Responded :7
+2015-01-11 00:22:56 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63281:8
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-11 00:22:56 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-11 00:22:56 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-11 00:22:56 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-11 00:22:56 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-11 00:22:56 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-11 00:22:58 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:22:58 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-11 00:22:59 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-11 00:22:59 INFO  FacebookUserLogin:? - fabrizio :session- 6966e091-5296-4958-86a6-c878d4696d8d
+2015-01-11 00:22:59 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:22:59 INFO  MessageInterpreter:? - user_agents: {18422fcb-a80f-4385-a449-05e2da86627c=10, 6966e091-5296-4958-86a6-c878d4696d8d=10}
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF 86 A6 C8 78 . . . . . . . . . x 
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - D4 69 6D 8D 69 66 E0 91 52 96 . i m . i f . . R . 
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - 49 58 00 00 00 08 66 61 62 72 I X . . . . f a b r 
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-11 00:22:59 INFO  DsyncserverHandler:? - Message Responded :8
+2015-01-11 00:22:59 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63281:9
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF 86 A6 C8 78 . . . . . . . . . x 
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - D4 69 6D 8D 69 66 E0 91 52 96 . i m . i f . . R . 
+2015-01-11 00:22:59 DEBUG ConsoleUtils:? - 49 58                         I X 
+2015-01-11 00:22:59 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 6966e091-5296-4958-86a6-c878d4696d8d
+2015-01-11 00:22:59 INFO  MessageInterpreter:? - 6966e091-5296-4958-86a6-c878d4696d8d :getting digest for Ios
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 2
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 0
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 1
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 0
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 1
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 1
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:22:59 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :calculating digest of  version 0
+2015-01-11 00:22:59 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 2
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 0
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 1
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 0
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 1
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 1
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting doc  version 0
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digesting follower new
+2015-01-11 00:23:01 DEBUG GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digested permissions info 
+2015-01-11 00:23:01 INFO  GetDigestMessage:? - 6966e091-5296-4958-86a6-c878d4696d8d :digestion successful 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:23:01 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:23:01 INFO  DsyncserverHandler:? - Message Responded :9
+2015-01-11 00:26:08 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63315:10
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-11 00:26:08 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-11 00:26:08 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-11 00:26:08 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-11 00:26:08 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-11 00:26:08 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-11 00:26:09 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:26:09 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-11 00:26:09 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-11 00:26:09 INFO  FacebookUserLogin:? - fabrizio :session- ce8f6861-d173-4993-8823-0019aa0da80d
+2015-01-11 00:26:09 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:26:09 INFO  MessageInterpreter:? - user_agents: {18422fcb-a80f-4385-a449-05e2da86627c=10, 6966e091-5296-4958-86a6-c878d4696d8d=10, ce8f6861-d173-4993-8823-0019aa0da80d=10}
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF 88 23 00 19 . . . . . . . # . . 
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - AA 0D A8 0D CE 8F 68 61 D1 73 . . . . . . h a . s 
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - 49 93 00 00 00 08 66 61 62 72 I . . . . . f a b r 
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-11 00:26:09 INFO  DsyncserverHandler:? - Message Responded :10
+2015-01-11 00:26:09 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63315:11
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF 88 23 00 19 . . . . . . . # . . 
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - AA 0D A8 0D CE 8F 68 61 D1 73 . . . . . . h a . s 
+2015-01-11 00:26:09 DEBUG ConsoleUtils:? - 49 93                         I . 
+2015-01-11 00:26:09 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session ce8f6861-d173-4993-8823-0019aa0da80d
+2015-01-11 00:26:09 INFO  MessageInterpreter:? - ce8f6861-d173-4993-8823-0019aa0da80d :getting digest for Ios
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 2
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 0
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 1
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 0
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 1
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 1
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :calculating digest of  version 0
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 2
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 0
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 1
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 0
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 1
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 1
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting doc  version 0
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digesting follower new
+2015-01-11 00:26:10 DEBUG GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digested permissions info 
+2015-01-11 00:26:10 INFO  GetDigestMessage:? - ce8f6861-d173-4993-8823-0019aa0da80d :digestion successful 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:26:10 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:26:10 INFO  DsyncserverHandler:? - Message Responded :11
+2015-01-11 00:30:59 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63353:12
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-11 00:30:59 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-11 00:30:59 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-11 00:30:59 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-11 00:30:59 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-11 00:30:59 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-11 00:31:01 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:31:01 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-11 00:31:01 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-11 00:31:01 INFO  FacebookUserLogin:? - fabrizio :session- 40efe176-7dbc-4333-9fd0-14693e6350ec
+2015-01-11 00:31:01 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:31:01 INFO  MessageInterpreter:? - user_agents: {40efe176-7dbc-4333-9fd0-14693e6350ec=10, 18422fcb-a80f-4385-a449-05e2da86627c=10, 6966e091-5296-4958-86a6-c878d4696d8d=10, ce8f6861-d173-4993-8823-0019aa0da80d=10}
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF 9F D0 14 69 . . . . . . . . . i 
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - 3E 63 50 EC 40 EF E1 76 7D BC > c P . @ . . v } . 
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - 43 33 00 00 00 08 66 61 62 72 C 3 . . . . f a b r 
+2015-01-11 00:31:01 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-11 00:31:01 INFO  DsyncserverHandler:? - Message Responded :12
+2015-01-11 00:31:02 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63353:13
+2015-01-11 00:31:02 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:31:02 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:31:02 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF 9F D0 14 69 . . . . . . . . . i 
+2015-01-11 00:31:02 DEBUG ConsoleUtils:? - 3E 63 50 EC 40 EF E1 76 7D BC > c P . @ . . v } . 
+2015-01-11 00:31:02 DEBUG ConsoleUtils:? - 43 33                         C 3 
+2015-01-11 00:31:02 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 40efe176-7dbc-4333-9fd0-14693e6350ec
+2015-01-11 00:31:02 INFO  MessageInterpreter:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :getting digest for Ios
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 2
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 0
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 1
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 0
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 1
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 1
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :calculating digest of  version 0
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 2
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 0
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 1
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 0
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 1
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 1
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting doc  version 0
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digesting follower new
+2015-01-11 00:31:03 DEBUG GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digested permissions info 
+2015-01-11 00:31:03 INFO  GetDigestMessage:? - 40efe176-7dbc-4333-9fd0-14693e6350ec :digestion successful 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:31:03 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:31:03 INFO  DsyncserverHandler:? - Message Responded :13
+2015-01-11 00:33:54 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63388:14
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-11 00:33:54 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-11 00:33:54 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-11 00:33:54 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-11 00:33:54 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-11 00:33:54 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-11 00:33:54 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:33:54 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-11 00:33:55 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-11 00:33:55 INFO  FacebookUserLogin:? - fabrizio :session- 78523169-96e7-48b5-aa68-76a6d97c9aa9
+2015-01-11 00:33:55 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:33:55 INFO  MessageInterpreter:? - user_agents: {40efe176-7dbc-4333-9fd0-14693e6350ec=10, 18422fcb-a80f-4385-a449-05e2da86627c=10, 6966e091-5296-4958-86a6-c878d4696d8d=10, ce8f6861-d173-4993-8823-0019aa0da80d=10, 78523169-96e7-48b5-aa68-76a6d97c9aa9=10}
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF AA 68 76 A6 . . . . . . . h v . 
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - D9 7C 9A A9 78 52 31 69 96 E7 . | . . x R 1 i . . 
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - 48 B5 00 00 00 08 66 61 62 72 H . . . . . f a b r 
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-11 00:33:55 INFO  DsyncserverHandler:? - Message Responded :14
+2015-01-11 00:33:55 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63388:15
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF AA 68 76 A6 . . . . . . . h v . 
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - D9 7C 9A A9 78 52 31 69 96 E7 . | . . x R 1 i . . 
+2015-01-11 00:33:55 DEBUG ConsoleUtils:? - 48 B5                         H . 
+2015-01-11 00:33:55 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 78523169-96e7-48b5-aa68-76a6d97c9aa9
+2015-01-11 00:33:55 INFO  MessageInterpreter:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :getting digest for Ios
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 2
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 0
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 1
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 0
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 1
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 1
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :calculating digest of  version 0
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 2
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 0
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 1
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 0
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 1
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 1
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting doc  version 0
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digesting follower new
+2015-01-11 00:33:56 DEBUG GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digested permissions info 
+2015-01-11 00:33:56 INFO  GetDigestMessage:? - 78523169-96e7-48b5-aa68-76a6d97c9aa9 :digestion successful 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:33:56 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:33:56 INFO  DsyncserverHandler:? - Message Responded :15
+2015-01-11 00:35:53 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63424:16
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - size : 251 bytes
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 02 F6 00 00 00 E9 43 41 41 55 . . . . . . C A A U 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 36 5A 43 54 7A 6C 5A 42 55 6F 6 Z C T z l Z B U o 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 42 41 45 75 5A 41 4C 53 50 62 B A E u Z A L S P b 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 6A 72 49 32 73 55 79 54 69 46 j r I 2 s U y T i F 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 51 73 50 4A 39 6D 33 4C 4A 42 Q s P J 9 m 3 L J B 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 69 5A 42 4C 76 55 43 4F 52 42 i Z B L v U C O R B 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 5A 42 44 4B 57 72 68 48 55 49 Z B D K W r h H U I 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 7A 71 53 64 47 62 66 5A 42 6D z q S d G b f Z B m 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 37 45 4B 72 39 47 76 32 6D 37 7 E K r 9 G v 2 m 7 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 49 37 30 34 30 34 6F 76 69 31 I 7 0 4 0 4 o v i 1 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 56 64 65 43 6B 54 68 33 5A 42 V d e C k T h 3 Z B 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 73 37 7A 65 6B 55 5A 43 6D 37 s 7 z e k U Z C m 7 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 31 48 7A 47 73 6E 35 73 4D 67 1 H z G s n 5 s M g 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 58 71 6D 6E 4D 77 68 55 4A 63 X q m n M w h U J c 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 7A 6F 6D 6A 75 53 4F 47 58 4F z o m j u S O G X O 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 46 6A 51 77 55 78 36 70 35 69 F j Q w U x 6 p 5 i 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 4A 64 62 4D 6C 59 5A 41 49 63 J d b M l Y Z A I c 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 30 65 5A 43 65 46 65 4D 6A 39 0 e Z C e F e M j 9 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 70 41 41 61 4E 73 68 78 61 31 p A A a N s h x a 1 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 54 67 53 5A 41 59 47 70 47 73 T g S Z A Y G p G s 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 50 31 34 45 30 34 64 6B 54 68 P 1 4 E 0 4 d k T h 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 6C 33 75 77 4C 67 45 43 6E 58 l 3 u w L g E C n X 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 67 49 6A 50 63 6F 45 66 31 35 g I j P c o E f 1 5 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 6E 35 72 65 6C 6F 6B 5A 44 0A n 5 r e l o k Z D . 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 00 00 00 07 43 4F 4E 53 4F 4C . . . . C O N S O L 
+2015-01-11 00:35:53 DEBUG ConsoleUtils:? - 45                            E 
+2015-01-11 00:35:53 INFO  MessageInterpreter:? - user agent detected: Android OS >= 4.0.3
+2015-01-11 00:35:53 DEBUG MessageInterpreter:? - User Agent: 10
+2015-01-11 00:35:53 INFO  MessageInterpreter:? - logging in new user via facebook
+2015-01-11 00:35:53 INFO  FacebookUser:? - Trying to connect to facebook..
+2015-01-11 00:35:54 INFO  FacebookUser:? - fbtoid access token CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:35:54 INFO  FacebookUser:? - fbtoid 1379856828984582
+2015-01-11 00:35:54 INFO  FacebookUserLogin:? - fabrizio :user found
+2015-01-11 00:35:54 INFO  FacebookUserLogin:? - fabrizio :session- 0f3878e6-49fd-424e-a034-577c8b500251
+2015-01-11 00:35:54 INFO  MessageInterpreter:? - new facebook user session: 1152921504606846977 CAAU6ZCTzlZBUoBAEuZALSPbjrI2sUyTiFQsPJ9m3LJBiZBLvUCORBZBDKWrhHUIzqSdGbfZBm7EKr9Gv2m7I70404ovi1VdeCkTh3ZBs7zekUZCm71HzGsn5sMgXqmnMwhUJczomjuSOGXOFjQwUx6p5iJdbMlYZAIc0eZCeFeMj9pAAaNshxa1TgSZAYGpGsP14E04dkThl3uwLgECnXgIjPcoEf15n5relokZD
+2015-01-11 00:35:54 INFO  MessageInterpreter:? - user_agents: {40efe176-7dbc-4333-9fd0-14693e6350ec=10, 18422fcb-a80f-4385-a449-05e2da86627c=10, 6966e091-5296-4958-86a6-c878d4696d8d=10, 0f3878e6-49fd-424e-a034-577c8b500251=10, ce8f6861-d173-4993-8823-0019aa0da80d=10, 78523169-96e7-48b5-aa68-76a6d97c9aa9=10}
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - size : 34 bytes
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 02 06 00 00 FF FF A0 34 57 7C . . . . . . . 4 W | 
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 8B 50 02 51 0F 38 78 E6 49 FD . P . Q . 8 x . I . 
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 42 4E 00 00 00 08 66 61 62 72 B N . . . . f a b r 
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 69 7A 69 6F                   i z i o 
+2015-01-11 00:35:54 INFO  DsyncserverHandler:? - Message Responded :16
+2015-01-11 00:35:54 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63424:17
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF A0 34 57 7C . . . . . . . 4 W | 
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 8B 50 02 51 0F 38 78 E6 49 FD . P . Q . 8 x . I . 
+2015-01-11 00:35:54 DEBUG ConsoleUtils:? - 42 4E                         B N 
+2015-01-11 00:35:54 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 0f3878e6-49fd-424e-a034-577c8b500251
+2015-01-11 00:35:54 INFO  MessageInterpreter:? - 0f3878e6-49fd-424e-a034-577c8b500251 :getting digest for Ios
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 2
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 2
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting follower new
+2015-01-11 00:35:56 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digested permissions info 
+2015-01-11 00:35:56 INFO  GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digestion successful 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:35:56 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:35:56 INFO  DsyncserverHandler:? - Message Responded :17
+2015-01-11 00:36:02 INFO  DsyncserverHandler:? - Message Received from ip /192.168.0.27:63424:18
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - buffer : request
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - size : 22 bytes
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 02 F4 00 00 FF FF A0 34 57 7C . . . . . . . 4 W | 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 8B 50 02 51 0F 38 78 E6 49 FD . P . Q . 8 x . I . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 42 4E                         B N 
+2015-01-11 00:36:02 INFO  MessageInterpreter:? - Authenticated message from user 1152921504606846977 with session 0f3878e6-49fd-424e-a034-577c8b500251
+2015-01-11 00:36:02 INFO  MessageInterpreter:? - 0f3878e6-49fd-424e-a034-577c8b500251 :getting digest for Ios
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 2
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 1
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :calculating digest of  version 0
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - Constructor
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 2
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 1
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting doc  version 0
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digesting follower new
+2015-01-11 00:36:02 DEBUG GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digested permissions info 
+2015-01-11 00:36:02 INFO  GetDigestMessage:? - 0f3878e6-49fd-424e-a034-577c8b500251 :digestion successful 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - buffer : response
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - size : 461 bytes
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 02 F4 00 00 00 07 7C E5 DD 18 . . . . . . | . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - B0 BC 49 24 B5 AE AC EB D4 DE . . I $ . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 20 0E 00 00 00 03 57 65 66 00   . . . . . W e f . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 02 02 01 02 CC 44 2D BC . . . . . . . D - . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 21 49 A5 AA F0 60 CF A6 5F 71 ! I . . . ` . . _ q 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 4B 00 00 00 17 54 68 75 73 20 K . . . . T h u s   
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 73 70 6F 6B 65 20 5A 61 72 61 s p o k e   Z a r a 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 74 68 75 73 74 72 61 2E 00 00 t h u s t r a . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 02 01 FF 4A 0E 5A B2 3F . . . . . J . Z . ? 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 40 80 BA A6 C9 F2 26 E8 AE 30 @ . . . . . & . . 0 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 0E 4A 65 53 75 69 73 . . . . J e S u i s 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 43 68 61 72 6C 69 65 31 00 00 C h a r l i e 1 . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 01 02 01 F2 7E E6 AB 2A 2A . . . . . ~ . . * * 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 40 50 A2 BA 90 4E 5E EE F9 29 @ P . . . N ^ . . ) 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 04 53 66 68 6A 00 00 . . . . S f h j . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 02 01 C8 78 7F 8C 75 1F . . . . . x  . u  
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 44 BE 95 A0 D4 4D 83 82 83 92 D . . . . M . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 06 31 72 74 79 79 79 . . . . 1 r t y y y 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 2B 18 AB 25 . . . . . . + . . % 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - FE FC 40 E6 89 CA B6 69 8B 9C . . @ . . . . i . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - D6 05 00 00 00 0E 4E 65 77 20 . . . . . . N e w   
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 6E 6F 74 65 2E 2E 2E 2E 65 72 n o t e . . . . e r 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 01 02 01 AC 83 3C CF . . . . . . . . < . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 82 18 46 FB B8 C7 D8 7A EB BB . . F . . . . z . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - FC AA 00 00 00 0A 48 61 68 20 . . . . . . H a h   
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 68 61 68 20 68 61 00 00 00 00 h a h   h a . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 02 01 00 00 00 00 00 00 00 01 . . . . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 03 6E 65 77 10 00 00 . . . . n e w . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 07 2B . . . . . . . . . + 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 18 AB 25 FE FC 40 E6 89 CA B6 . . % . . @ . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 69 8B 9C D6 05 00 00 00 00 00 i . . . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 C8 78 7F 8C 75 1F 44 . . . . x  . u  D 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - BE 95 A0 D4 4D 83 82 83 92 00 . . . . M . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 F2 7E E6 . . . . . . . . ~ . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - AB 2A 2A 40 50 A2 BA 90 4E 5E . * * @ P . . . N ^ 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - EE F9 29 00 00 00 00 00 00 00 . . ) . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 02 CC 44 2D BC 21 49 A5 AA . . . D - . ! I . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - F0 60 CF A6 5F 71 4B 00 00 00 . ` . . _ q K . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 00 00 7C E5 DD 18 B0 . . . . . | . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - BC 49 24 B5 AE AC EB D4 DE 20 . I $ . . . . . .   
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 0E 00 00 00 00 00 00 00 00 AC . . . . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 83 3C CF 82 18 46 FB B8 C7 D8 . < . . . F . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 7A EB BB FC AA 00 00 00 00 00 z . . . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 FF 4A 0E 5A B2 3F 40 . . . . J . Z . ? @ 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 80 BA A6 C9 F2 26 E8 AE 30 00 . . . . . & . . 0 . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00 00 00 00 00 00 00 00 00 00 . . . . . . . . . . 
+2015-01-11 00:36:02 DEBUG ConsoleUtils:? - 00                            . 
+2015-01-11 00:36:02 INFO  DsyncserverHandler:? - Message Responded :18

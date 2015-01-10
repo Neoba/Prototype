@@ -32,6 +32,9 @@ public class Constants {
     public static final byte FACEBOOK_USER_LOGIN=              (byte)0x0F6;
     
     public static final byte CLIENT_ACK=                       (byte) 0xFF;
+	
+	public static final byte IOS_DOCUMENT_EDIT=                (byte)0xF3;
+    public static final byte IOS_GET_DIGEST=                   (byte)0xF4;
     
     
     public static final int W_SUCCESS=                         0x0000FFFF;
